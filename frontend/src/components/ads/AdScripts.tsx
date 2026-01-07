@@ -29,7 +29,7 @@ export default function AdScripts() {
       {GOOGLE_ADSENSE_ID && (
         <Script
           id="google-consent-mode"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         >
           {`
             window.dataLayer = window.dataLayer || [];

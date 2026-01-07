@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { MapPinIcon, AcademicCapIcon, PhoneIcon, EnvelopeIcon, GlobeAltIcon, BuildingLibraryIcon, BookOpenIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, PhoneIcon, EnvelopeIcon, GlobeAltIcon, BuildingLibraryIcon, BookOpenIcon } from '@heroicons/react/24/outline';
 import { getSchoolBySlug, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 

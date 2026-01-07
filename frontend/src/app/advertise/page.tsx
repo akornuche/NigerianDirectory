@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { 
   ChartBarIcon, 
   UserGroupIcon, 
@@ -34,7 +33,7 @@ const adOptions = [
   },
   {
     name: 'Featured School Listing',
-    description: 'Boost your school\'s visibility with premium placement',
+    description: 'Boost your school&apos;s visibility with premium placement',
     features: [
       'Top position in search results',
       'Featured badge on school profile',
@@ -79,7 +78,7 @@ export default function AdvertisePage() {
             </h1>
             <p className="mt-6 text-xl text-primary-100">
               Reach thousands of Nigerian parents actively searching for schools.
-              Connect with your target audience when they're making important education decisions.
+              Connect with your target audience when they&apos;re making important education decisions.
             </p>
             <div className="mt-8">
               <a 
@@ -220,7 +219,7 @@ export default function AdvertisePage() {
               Get In Touch
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Ready to advertise? Contact us and we'll create a custom advertising package for you.
+              Ready to advertise? Contact us and we&apos;ll create a custom advertising package for you.
             </p>
           </div>
 

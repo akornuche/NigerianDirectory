@@ -56,7 +56,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-gray-400">
-              Nigeria's comprehensive directory platform. Find schools, healthcare, 
+              Nigeria&apos;s comprehensive directory platform. Find schools, healthcare, 
               restaurants, services, and more across all 36 states.
             </p>
             

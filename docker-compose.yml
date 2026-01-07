@@ -5,9 +5,9 @@ services:
     image: postgres:15-alpine
     container_name: nigerian_directory_db
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: nigerian_directory
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-devpassword123}
+      POSTGRES_DB: ${POSTGRES_DB:-nigerian_directory}
     ports:
       - "5433:5432"
     volumes:
@@ -35,9 +35,9 @@ services:
       - NODE_ENV=development
       - DB_HOST=postgres
       - DB_PORT=5432
-      - DB_NAME=nigerian_directory
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
+      - DB_NAME=${POSTGRES_DB:-nigerian_directory}
+      - DB_USER=${POSTGRES_USER:-postgres}
+      - DB_PASSWORD=${POSTGRES_PASSWORD:-devpassword123}
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - PORT=5000
@@ -81,9 +81,9 @@ services:
     environment:
       - DB_HOST=postgres
       - DB_PORT=5432
-      - DB_NAME=nigerian_directory
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
+      - DB_NAME=${POSTGRES_DB:-nigerian_directory}
+      - DB_USER=${POSTGRES_USER:-postgres}
+      - DB_PASSWORD=${POSTGRES_PASSWORD:-devpassword123}
       - REDIS_HOST=redis
       - REDIS_PORT=6379
     volumes:

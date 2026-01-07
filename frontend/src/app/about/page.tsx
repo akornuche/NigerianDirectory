@@ -48,7 +48,7 @@ export default function AboutPage() {
               About NigerianDirectory
             </h1>
             <p className="text-xl text-primary-100">
-              Nigeria's most comprehensive school directory, helping parents and students 
+              Nigeria&apos;s most comprehensive school directory, helping parents and students 
               find the perfect educational institution since 2024.
             </p>
           </div>
@@ -67,9 +67,9 @@ export default function AboutPage() {
               across Nigeria.
             </p>
             <p className="text-lg text-gray-600">
-              Whether you're looking for a private school in Lagos, an international school in Abuja, 
-              or a boarding school in the Northern region, we're here to help you make an informed decision 
-              about your child's education.
+              Whether you&apos;re looking for a private school in Lagos, an international school in Abuja, 
+              or a boarding school in the Northern region, we&apos;re here to help you make an informed decision 
+              about your child&apos;s education.
             </p>
           </div>
         </div>

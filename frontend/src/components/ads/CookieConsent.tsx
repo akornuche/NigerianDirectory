@@ -75,7 +75,7 @@ export default function CookieConsent() {
           <div className="flex-1 text-sm">
             <p>
               We use cookies to enhance your experience, serve personalized ads, and analyze traffic.
-              By clicking "Accept All", you consent to our use of cookies.{' '}
+              By clicking &quot;Accept All&quot;, you consent to our use of cookies.{' '}
               <Link href="/privacy/" className="underline hover:text-secondary-400">
                 Privacy Policy
               </Link>

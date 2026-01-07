@@ -152,7 +152,7 @@ export default async function StatesPage() {
           {allStates.some(s => s.count === 0) && (
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon</h2>
-              <p className="text-gray-600 mb-6">We're working to add schools from these states.</p>
+              <p className="text-gray-600 mb-6">We&apos;re working to add schools from these states.</p>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
                 {allStates.filter(s => s.count === 0).map((state) => (
                   <div
@@ -178,7 +178,7 @@ export default async function StatesPage() {
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Don't See Your School?
+            Don&apos;t See Your School?
           </h2>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             Help us grow our directory by suggesting a school to be added.

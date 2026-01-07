@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPinIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 
@@ -57,7 +57,7 @@ export default async function StatePage({ params }: Props) {
             Schools in {resolvedParams.state.replace(/-/g, ' ')}
           </h1>
           <p className="text-gray-600 mb-6">
-            We're currently adding schools from this state. Check back soon!
+            We&apos;re currently adding schools from this state. Check back soon!
           </p>
           <Link href="/" className="btn-primary">
             Browse All Schools
@@ -234,14 +234,14 @@ export default async function StatePage({ params }: Props) {
           <div className="max-w-3xl mx-auto prose prose-lg">
             <h2>Finding Schools in {stateData.name}</h2>
             <p>
-              {stateData.name} is home to some of Nigeria's finest educational institutions. 
+              {stateData.name} is home to some of Nigeria&apos;s finest educational institutions. 
               From prestigious federal unity schools to world-class international academies, 
               parents have numerous options when choosing the right school for their children.
             </p>
             <p>
               Our directory includes detailed profiles of {stateData.schools.length}+ schools 
               in {stateData.name}, complete with information about curriculum, facilities, fees, 
-              and contact details. Whether you're looking for a boarding school, day school, 
+              and contact details. Whether you&apos;re looking for a boarding school, day school, 
               or a school with a specific curriculum, NigerianDirectory makes it easy to 
               compare and find the perfect fit.
             </p>

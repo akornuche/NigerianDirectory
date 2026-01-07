@@ -156,7 +156,7 @@ export default async function HomePage() {
           <div className="text-center">
             <h2 className="section-title">Browse Schools by State</h2>
             <p className="section-subtitle mx-auto">
-              Explore schools across Nigeria's major states and cities
+              Explore schools across Nigeria&apos;s major states and cities
             </p>
           </div>
 
@@ -356,16 +356,16 @@ export default async function HomePage() {
                 About NigerianDirectory.com
               </h2>
               <p className="text-gray-600 mt-6">
-                NigerianDirectory.com is Nigeria's most comprehensive school
+                NigerianDirectory.com is Nigeria&apos;s most comprehensive school
                 directory, helping parents find the best educational institutions
                 for their children. We provide verified information on over 200
                 schools across all 36 states and the Federal Capital Territory.
               </p>
               <p className="text-gray-600">
-                Whether you're looking for a private school in Lagos, a federal
+                Whether you&apos;re looking for a private school in Lagos, a federal
                 unity school in Abuja, or an international school in Port
                 Harcourt, our directory makes it easy to compare options, read
-                about facilities, and make informed decisions about your child's
+                about facilities, and make informed decisions about your child&apos;s
                 education.
               </p>
               <p className="text-gray-600">

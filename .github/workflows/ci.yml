@@ -19,7 +19,7 @@ jobs:
         image: postgres:15
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: ${{ secrets.TEST_DB_PASSWORD || 'testpassword123' }}
           POSTGRES_DB: nigerian_directory_test
         ports:
           - 5432:5432
@@ -55,17 +55,17 @@ jobs:
       - name: Run database migrations
         working-directory: ./backend
         env:
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/nigerian_directory_test
+          DATABASE_URL: postgres://postgres:${{ secrets.TEST_DB_PASSWORD || 'testpassword123' }}@localhost:5432/nigerian_directory_test
         run: |
-          psql postgres://postgres:postgres@localhost:5432/nigerian_directory_test -f database/init.sql
+          psql $DATABASE_URL -f database/init.sql
 
       - name: Run backend tests
         working-directory: ./backend
         env:
           NODE_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/nigerian_directory_test
+          DATABASE_URL: postgres://postgres:${{ secrets.TEST_DB_PASSWORD || 'testpassword123' }}@localhost:5432/nigerian_directory_test
           REDIS_URL: redis://localhost:6379
-          JWT_SECRET: test-jwt-secret
+          JWT_SECRET: ${{ secrets.JWT_SECRET || 'test-jwt-secret-for-ci' }}
         run: npm test
 
       - name: Lint backend

@@ -14,7 +14,7 @@ def get_connection():
         port=os.getenv('DB_PORT', 5432),
         database=os.getenv('DB_NAME', 'nigerian_directory'),
         user=os.getenv('DB_USER', 'postgres'),
-        password=os.getenv('DB_PASSWORD', 'postgres')
+        password=os.getenv('DB_PASSWORD')
     )
 
 def insert_school(conn, school_data):

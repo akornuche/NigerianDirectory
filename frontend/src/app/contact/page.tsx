@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const contactInfo = [
@@ -62,7 +61,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-primary-100">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
             </p>
           </div>
         </div>
@@ -116,7 +115,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
-                    <p className="text-gray-600 mb-6">Thank you for contacting us. We'll get back to you soon.</p>
+                    <p className="text-gray-600 mb-6">Thank you for contacting us. We&apos;ll get back to you soon.</p>
                     <button
                       onClick={() => setSubmitted(false)}
                       className="btn-primary"
