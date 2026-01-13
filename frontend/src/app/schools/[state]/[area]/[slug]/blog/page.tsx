@@ -387,7 +387,7 @@ export default async function SchoolBlogPage({ params }: Props) {
                 <div className="card p-6">
                   <h3 className="font-semibold text-gray-900 mb-3">Facilities</h3>
                   <div className="flex flex-wrap gap-2">
-                    {school.facilities.map((facility) => (
+                    {school.facilities.map((facility: string) => (
                       <span key={facility} className="badge-secondary text-xs">
                         {facility}
                       </span>

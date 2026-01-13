@@ -97,6 +97,31 @@ const TEMPLATES = {
 };
 
 // Helper functions for dynamic content
+
+/**
+ * Format curriculum, handling both string and array
+ */
+function formatCurriculum(curriculum, defaultValue = 'Nigerian') {
+    if (!curriculum) return defaultValue;
+    if (typeof curriculum === 'string') return curriculum;
+    // It's an array - join items
+    return Array.isArray(curriculum) && curriculum.length > 0 
+        ? curriculum.join(', ') 
+        : defaultValue;
+}
+
+/**
+ * Format levels, handling both string and array
+ */
+function formatLevels(levels, defaultValue = 'students') {
+    if (!levels) return defaultValue;
+    if (typeof levels === 'string') return levels;
+    // It's an array - join items
+    return Array.isArray(levels) && levels.length > 0 
+        ? levels.join(', ') 
+        : defaultValue;
+}
+
 function getBoardingText(school) {
     if (school.boarding && school.day_school) {
         return 'Both boarding and day';
@@ -146,15 +171,22 @@ function getAchievementsText(school) {
  * @returns {Object} - { summary: string, templateId: string }
  */
 function generateSummary(school) {
+    // Preprocess school object to normalize curriculum and levels
+    const processedSchool = {
+        ...school,
+        curriculum: formatCurriculum(school.curriculum),
+        levels: formatLevels(school.levels)
+    };
+    
     // Determine template category based on school type
     let templateCategory = 'default';
     
-    if (school.type) {
-        const type = school.type.toLowerCase();
+    if (processedSchool.type) {
+        const type = processedSchool.type.toLowerCase();
         if (type === 'international') {
             templateCategory = 'international';
         } else if (type === 'private') {
-            templateCategory = school.boarding ? 'boarding' : 'private';
+            templateCategory = processedSchool.boarding ? 'boarding' : 'private';
         } else if (type === 'public' || type === 'state') {
             templateCategory = 'public';
         } else if (type === 'federal') {
@@ -167,7 +199,7 @@ function generateSummary(school) {
     }
     
     // Special case: prioritize boarding template for boarding schools
-    if (school.boarding && !school.day_school && templateCategory !== 'federal') {
+    if (processedSchool.boarding && !processedSchool.day_school && templateCategory !== 'federal') {
         templateCategory = 'boarding';
     }
 
@@ -178,7 +210,7 @@ function generateSummary(school) {
     const template = templates[randomIndex];
     
     // Generate summary
-    const summary = template.generate(school);
+    const summary = template.generate(processedSchool);
     
     return {
         summary: summary.trim(),

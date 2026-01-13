@@ -91,22 +91,14 @@ function VerticalDropdown({ vertical, isOpen, onToggle, onClose }: DropdownProps
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen, onClose]);
 
-  const isComingSoon = vertical.status === 'coming-soon';
-
   return (
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={onToggle}
-        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors ${isOpen ? 'bg-gray-100' : ''}`}
+        className={`flex items-center gap-1 px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors ${isOpen ? 'bg-gray-100' : ''}`}
       >
-        <Icon className={`w-4 h-4 ${colors.text}`} />
         <span>{vertical.name}</span>
-        {isComingSoon && (
-          <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-amber-100 text-amber-700 rounded">
-            Soon
-          </span>
-        )}
-        <Icons.ChevronDownIcon className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <Icons.ChevronDownIcon className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
@@ -180,23 +172,17 @@ export default function MegaMenu() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-primary-600">NigerianDirectory</span>
+          <Link href="/" className="flex items-center flex-shrink-0">
+            <img src="/naijadir.png" alt="NigerianDirectory" className="h-14" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0">
             <Link 
               href="/" 
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
+              className="px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
             >
               Home
-            </Link>
-            <Link 
-              href="/about" 
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
-            >
-              About
             </Link>
 
             {/* Vertical Dropdowns */}
@@ -212,13 +198,13 @@ export default function MegaMenu() {
 
             <Link 
               href="/blog" 
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
+              className="px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
             >
               Blog
             </Link>
             <Link 
               href="/contact" 
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
+              className="px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
             >
               Contact
             </Link>

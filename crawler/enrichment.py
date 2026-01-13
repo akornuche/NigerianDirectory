@@ -102,6 +102,26 @@ TEMPLATES = {
 }
 
 
+def format_curriculum(curriculum):
+    """Format curriculum, handling both string and list"""
+    if not curriculum:
+        return 'Nigerian'
+    if isinstance(curriculum, str):
+        return curriculum
+    # It's a list - join items
+    return ', '.join(curriculum) if curriculum else 'Nigerian'
+
+
+def format_levels(levels):
+    """Format levels, handling both string and list"""
+    if not levels:
+        return 'students'
+    if isinstance(levels, str):
+        return levels
+    # It's a list - join items  
+    return ', '.join(levels) if levels else 'students'
+
+
 def get_boarding_text(school):
     """Generate boarding status text"""
     boarding = school.get('boarding', False)
@@ -199,8 +219,8 @@ def generate_summary(school):
         'city': school.get('city', school.get('state', 'Nigeria')),
         'state': school.get('state', 'Nigeria'),
         'type': school.get('type', 'established'),
-        'curriculum': school.get('curriculum', 'Nigerian'),
-        'levels': school.get('levels', 'students'),
+        'curriculum': format_curriculum(school.get('curriculum')),
+        'levels': format_levels(school.get('levels')),
         'boarding_text': get_boarding_text(school),
         'boarding_lower': get_boarding_lower(school),
         'principal_text': get_principal_text(school),

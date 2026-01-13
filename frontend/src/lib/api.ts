@@ -2,7 +2,7 @@
  * API client for fetching data from the backend
  */
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
 interface FetchOptions extends RequestInit {
   timeout?: number;
@@ -105,6 +105,20 @@ export interface School {
   social_links?: Record<string, string>;
   template_summary?: string;
   ai_summary?: string;
+  // Enriched content fields for unique SEO content
+  enriched_history?: string;
+  enriched_academics?: string;
+  enriched_student_life?: string;
+  enriched_notable_alumni?: string[];
+  enriched_recent_news?: string[];
+  enriched_campus_info?: string;
+  enriched_at?: string;
+  // Content sources for outbound links and attribution
+  content_sources?: Array<{
+    url: string;
+    title: string;
+    type: 'official' | 'reference' | 'news';
+  }>;
   established_year?: number;
   principal_name?: string;
   principal_title?: string;
@@ -227,6 +241,7 @@ export const getSchoolBySlug = async (state: string, area: string, slug: string)
 };
 
 export const getSchools = api.getSchools;
+export const getSchoolByPath = api.getSchoolByPath;
 export const getFeaturedSchools = api.getFeaturedSchools;
 export const getSchoolsByState = api.getSchoolsByState;
 export const getSchoolsByArea = api.getSchoolsByArea;

@@ -2,14 +2,28 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, GlobeAltIcon, BuildingLibraryIcon, BookOpenIcon } from '@heroicons/react/24/outline';
-import { getSchoolBySlug, School } from '@/lib/api';
+import { 
+  MapPinIcon, 
+  PhoneIcon, 
+  EnvelopeIcon, 
+  GlobeAltIcon, 
+  BuildingLibraryIcon, 
+  BookOpenIcon,
+  AcademicCapIcon,
+  UserGroupIcon,
+  TrophyIcon,
+  SparklesIcon,
+  NewspaperIcon,
+  StarIcon,
+  LinkIcon
+} from '@heroicons/react/24/outline';
+import { getSchoolByPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 
 // Fetch school data from API
 async function getSchool(state: string, area: string, slug: string): Promise<School | null> {
   try {
-    const school = await getSchoolBySlug(state, area, slug);
+    const school = await getSchoolByPath(state, area, slug);
     return school;
   } catch (error) {
     console.error('Error fetching school:', error);
@@ -25,6 +39,120 @@ interface Props {
   }>;
 }
 
+// Content section type definition
+interface ContentSection {
+  id: string;
+  title: string;
+  icon: React.ComponentType<{ className?: string }>;
+  content: string;
+  isList?: boolean;
+  listItems?: string[];
+}
+
+// Generate dynamic content sections based on school data
+// NO FALLBACK - only shows content that exists in database
+function generateSchoolSections(school: School): ContentSection[] {
+  const sections: ContentSection[] = [];
+  
+  // Section 1: School History & Overview (from database only)
+  if (school.enriched_history) {
+    sections.push({
+      id: 'history',
+      title: `The Story of ${school.name}`,
+      icon: BuildingLibraryIcon,
+      content: school.enriched_history,
+    });
+  }
+
+  // Section 2: Academic Excellence (from database only)
+  if (school.enriched_academics) {
+    sections.push({
+      id: 'academics',
+      title: 'Academic Programs & Excellence',
+      icon: AcademicCapIcon,
+      content: school.enriched_academics,
+    });
+  }
+
+  // Section 3: Campus & Facilities (from database only)
+  if (school.enriched_campus_info) {
+    sections.push({
+      id: 'campus',
+      title: 'Campus & World-Class Facilities',
+      icon: SparklesIcon,
+      content: school.enriched_campus_info,
+    });
+  }
+
+  // Section 4: Student Life (from database only)
+  if (school.enriched_student_life) {
+    sections.push({
+      id: 'student-life',
+      title: 'Life at ' + school.name,
+      icon: UserGroupIcon,
+      content: school.enriched_student_life,
+    });
+  }
+
+  // Section 5: Notable Alumni (if available)
+  if (school.enriched_notable_alumni && school.enriched_notable_alumni.length > 0) {
+    sections.push({
+      id: 'alumni',
+      title: 'Distinguished Alumni',
+      icon: StarIcon,
+      content: `${school.name} has produced remarkable individuals who have excelled in various fields.`,
+      isList: true,
+      listItems: school.enriched_notable_alumni,
+    });
+  }
+
+  // Section 6: Achievements & Recognition
+  if (school.achievements && school.achievements.length > 0) {
+    sections.push({
+      id: 'achievements',
+      title: 'Awards & Recognition',
+      icon: TrophyIcon,
+      content: `${school.name} has consistently demonstrated excellence across academics, sports, and extracurricular activities.`,
+      isList: true,
+      listItems: school.achievements,
+    });
+  }
+
+  // Section 7: Recent News & Updates (if available)
+  if (school.enriched_recent_news && school.enriched_recent_news.length > 0) {
+    sections.push({
+      id: 'news',
+      title: 'Latest News & Updates',
+      icon: NewspaperIcon,
+      content: 'Stay updated with the latest happenings at ' + school.name + ':',
+      isList: true,
+      listItems: school.enriched_recent_news,
+    });
+  }
+
+  // Section 8: Leadership (if principal info available)
+  if (school.principal_name) {
+    sections.push({
+      id: 'leadership',
+      title: 'School Leadership',
+      icon: BookOpenIcon,
+      content: `Under the guidance of ${school.principal_title || 'Principal'} ${school.principal_name}, ${school.name} continues to uphold its tradition of excellence.`,
+    });
+  }
+
+  return sections;
+}
+
+// Check if school has rich content from database
+function hasEnrichedContent(school: School): boolean {
+  return !!(
+    school.enriched_history || 
+    school.enriched_academics || 
+    school.enriched_campus_info || 
+    school.enriched_student_life
+  );
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const school = await getSchool(resolvedParams.state, resolvedParams.area, resolvedParams.slug);
@@ -35,14 +163,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  // Enhanced meta description combining profile and blog-style content
+  const metaDescription = school.meta_description || 
+    `Discover ${school.name} in ${school.area}, ${school.city}. Explore programs, facilities, student life, achievements, and admissions for this ${school.type} school in ${school.state}.`;
+
   return {
-    title: school.meta_title || `${school.name} - ${school.area}, ${school.state}`,
-    description: school.meta_description || school.template_summary?.substring(0, 160),
+    title: school.meta_title || `${school.name} - ${school.area}, ${school.state} | Profile, Programs & Admissions`,
+    description: metaDescription,
     openGraph: {
-      title: school.meta_title || school.name,
-      description: school.meta_description || school.template_summary?.substring(0, 160),
+      title: school.meta_title || `${school.name} - Complete School Profile`,
+      description: metaDescription,
       type: 'website',
       url: `/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/`,
+      images: school.hero_image_url ? [{ url: school.hero_image_url }] : undefined,
     },
   };
 }
@@ -57,6 +190,9 @@ export default async function SchoolPage({ params }: Props) {
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
   const schoolUrl = `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/`;
+
+  // Generate dynamic content sections
+  const contentSections = generateSchoolSections(school);
 
   // JSON-LD structured data for School
   const schoolJsonLd = {
@@ -84,6 +220,32 @@ export default async function SchoolPage({ params }: Props) {
     url: school.website,
     foundingDate: school.established_year?.toString(),
     sameAs: school.website ? [school.website] : undefined,
+  };
+
+  // JSON-LD Article schema for the detailed content
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${school.name} - Complete Profile, Programs & Student Life`,
+    description: `Comprehensive guide to ${school.name} in ${school.area}, ${school.city}. Learn about academics, facilities, achievements, and admissions.`,
+    image: school.hero_image_url || school.logo_url || `${siteUrl}/og-image.png`,
+    datePublished: school.created_at,
+    dateModified: school.updated_at,
+    author: {
+      '@type': 'Organization',
+      name: 'NigerianDirectory',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'NigerianDirectory',
+      url: siteUrl,
+    },
+    mainEntityOfPage: schoolUrl,
+    about: {
+      '@type': 'School',
+      name: school.name,
+    },
   };
 
   // JSON-LD Breadcrumb schema
@@ -136,6 +298,11 @@ export default async function SchoolPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolJsonLd) }}
+      />
+      {/* JSON-LD Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       {/* JSON-LD Breadcrumb Schema */}
       <script
@@ -191,111 +358,110 @@ export default async function SchoolPage({ params }: Props) {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800">
-        {/* Hero Image Banner */}
-        <div className="relative h-48 md:h-64 lg:h-80 overflow-hidden">
+      <section className="relative">
+        {/* Hero Image Banner - Full clear image */}
+        <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
           <Image
             src={school.hero_image_url || '/placeholder-school.svg'}
             alt={`${school.name} campus`}
             fill
-            className="object-cover opacity-30"
+            sizes="100vw"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary-800/90" />
+          {/* Subtle bottom gradient for text readability */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         
-        <div className="mx-auto max-w-7xl container-padding py-8 lg:py-12 -mt-24 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-            {/* School Logo */}
-            <div className="w-24 h-24 lg:w-32 lg:h-32 bg-white rounded-xl flex items-center justify-center shadow-lg overflow-hidden relative">
-              <Image
-                src={school.logo_url || '/placeholder-logo.svg'}
-                alt={`${school.name} logo`}
-                fill
-                className="object-contain p-2"
-              />
-            </div>
-
-            <div className="flex-1 text-white">
-              <div className="flex flex-wrap gap-2 mb-3">
-                <span className="badge bg-secondary-400 text-gray-900 capitalize">
-                  {school.type}
-                </span>
-                {school.verified && (
-                  <span className="badge bg-accent-500 text-white">Verified</span>
-                )}
-                {school.featured && (
-                  <span className="badge bg-white/20 text-white">Featured</span>
-                )}
+        {/* School Info Overlay */}
+        <div className="absolute inset-x-0 bottom-0 pb-6">
+          <div className="mx-auto max-w-7xl container-padding">
+            <div className="flex flex-col lg:flex-row gap-4 items-end lg:items-center">
+              {/* School Logo */}
+              <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white rounded-xl flex items-center justify-center shadow-lg overflow-hidden relative flex-shrink-0">
+                <Image
+                  src={school.logo_url || '/placeholder-logo.svg'}
+                  alt={`${school.name} logo`}
+                  fill
+                  sizes="(max-width: 1024px) 80px, 112px"
+                  className="object-contain p-2"
+                />
               </div>
 
-              <h1 className="text-3xl lg:text-4xl font-display font-bold">
-                {school.name}
-              </h1>
-
-              <div className="mt-4 flex flex-wrap gap-4 text-primary-100">
-                <span className="flex items-center">
-                  <MapPinIcon className="h-5 w-5 mr-1" />
-                  {school.area}, {school.city}, {school.state}
-                </span>
-                {school.established_year && (
-                  <span className="flex items-center">
-                    <BuildingLibraryIcon className="h-5 w-5 mr-1" />
-                    Est. {school.established_year}
+              <div className="flex-1 text-white">
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <span className="badge bg-secondary-400 text-gray-900 capitalize">
+                    {school.type}
                   </span>
-                )}
-              </div>
+                  {school.verified && (
+                    <span className="badge bg-accent-500 text-white">Verified</span>
+                  )}
+                  {school.featured && (
+                    <span className="badge bg-white/20 text-white">Featured</span>
+                  )}
+                </div>
 
-              {/* Quick Contact */}
-              <div className="mt-6 flex flex-wrap gap-4">
-                {school.phone && (
-                  <a
-                    href={`tel:${school.phone}`}
-                    className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-                  >
-                    <PhoneIcon className="h-5 w-5 mr-2" />
-                    {school.phone}
-                  </a>
-                )}
-                {school.email && (
-                  <a
-                    href={`mailto:${school.email}`}
-                    className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-                  >
-                    <EnvelopeIcon className="h-5 w-5 mr-2" />
-                    Email
-                  </a>
-                )}
-                {school.website && (
-                  <a
-                    href={school.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-                  >
-                    <GlobeAltIcon className="h-5 w-5 mr-2" />
-                    Website
-                  </a>
-                )}
-              </div>
+                <h1 className="text-2xl lg:text-4xl font-display font-bold drop-shadow-lg">
+                  {school.name}
+                </h1>
 
-              {/* Action Buttons */}
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/blog/`}
-                  className="inline-flex items-center px-5 py-2.5 bg-secondary-400 hover:bg-secondary-500 text-gray-900 font-medium rounded-lg transition-colors shadow-lg"
-                >
-                  <BookOpenIcon className="h-5 w-5 mr-2" />
-                  Read School Blog
-                </Link>
-                <Link
-                  href="/claim/"
-                  className="inline-flex items-center px-5 py-2.5 bg-white hover:bg-gray-100 text-primary-700 font-medium rounded-lg transition-colors shadow-lg"
-                >
-                  Claim This School
-                </Link>
+                <div className="mt-2 flex flex-wrap gap-4 text-white/90 text-sm lg:text-base">
+                  <span className="flex items-center drop-shadow">
+                    <MapPinIcon className="h-4 w-4 lg:h-5 lg:w-5 mr-1" />
+                    {school.area}, {school.city}, {school.state}
+                  </span>
+                  {school.established_year && (
+                    <span className="flex items-center drop-shadow">
+                      <BuildingLibraryIcon className="h-4 w-4 lg:h-5 lg:w-5 mr-1" />
+                      Est. {school.established_year}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Actions Bar */}
+      <section className="bg-primary-600 text-white py-4">
+        <div className="mx-auto max-w-7xl container-padding">
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+            {school.phone && (
+              <a
+                href={`tel:${school.phone}`}
+                className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
+              >
+                <PhoneIcon className="h-4 w-4 mr-2" />
+                {school.phone}
+              </a>
+            )}
+            {school.email && (
+              <a
+                href={`mailto:${school.email}`}
+                className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
+              >
+                <EnvelopeIcon className="h-4 w-4 mr-2" />
+                Email School
+              </a>
+            )}
+            {school.website && (
+              <a
+                href={school.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
+              >
+                <GlobeAltIcon className="h-4 w-4 mr-2" />
+                Visit Website
+              </a>
+            )}
+            <Link
+              href="/coming-soon/claim/"
+              className="inline-flex items-center px-4 py-2 bg-secondary-400 hover:bg-secondary-500 text-gray-900 font-medium rounded-lg transition-colors text-sm"
+            >
+              Claim This School
+            </Link>
           </div>
         </div>
       </section>
@@ -327,12 +493,12 @@ export default async function SchoolPage({ params }: Props) {
                 </div>
               )}
 
-              {/* About */}
-              <div className="card p-6 lg:p-8">
+              {/* Quick Summary */}
+              <div className="card p-6 lg:p-8 bg-primary-50 border-primary-100">
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">
                   About {school.name}
                 </h2>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                   {school.template_summary}
                 </p>
               </div>
@@ -342,7 +508,41 @@ export default async function SchoolPage({ params }: Props) {
                 <AdBanner slot="school-content-rect-1" size="large-rectangle" />
               </div>
 
-              {/* Key Information */}
+              {/* Dynamic Content Sections - Unique per school for SEO */}
+              {contentSections.map((section, index) => (
+                <article key={section.id} id={section.id} className="card p-6 lg:p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 bg-primary-100 rounded-lg">
+                      <section.icon className="h-5 w-5 text-primary-600" />
+                    </div>
+                    <h2 className="text-xl font-semibold text-gray-900">
+                      {section.title}
+                    </h2>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {section.content}
+                  </p>
+                  {section.isList && section.listItems && (
+                    <ul className="space-y-2 mt-4">
+                      {section.listItems.map((item, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="mr-2 text-accent-500 flex-shrink-0">✓</span>
+                          <span className="text-gray-600">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {/* Insert ad after every 2 sections */}
+                  {index === 1 && (
+                    <div className="mt-6 flex justify-center">
+                      <AdBanner slot="school-content-inline-1" size="rectangle" />
+                    </div>
+                  )}
+                </article>
+              ))}
+
+              {/* Key Information Grid */}
               <div className="card p-6 lg:p-8">
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">
                   Key Information
@@ -397,7 +597,7 @@ export default async function SchoolPage({ params }: Props) {
               {school.facilities && school.facilities.length > 0 && (
                 <div className="card p-6 lg:p-8">
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                    Facilities
+                    Facilities & Amenities
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {school.facilities.map((facility) => (
@@ -409,17 +609,39 @@ export default async function SchoolPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Achievements */}
-              {school.achievements && school.achievements.length > 0 && (
+              {/* External Resources - Outbound Links for SEO */}
+              {school.content_sources && school.content_sources.length > 0 && (
                 <div className="card p-6 lg:p-8">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                    Achievements
-                  </h2>
-                  <ul className="space-y-2">
-                    {school.achievements.map((achievement, index) => (
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 bg-primary-100 rounded-lg">
+                      <LinkIcon className="h-5 w-5 text-primary-600" />
+                    </div>
+                    <h2 className="text-xl font-semibold text-gray-900">
+                      External Resources
+                    </h2>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    Learn more about {school.name} from these trusted sources:
+                  </p>
+                  <ul className="space-y-3">
+                    {school.content_sources.map((source: { url: string; title: string; type?: string }, index: number) => (
                       <li key={index} className="flex items-start">
-                        <span className="mr-2 text-accent-500">✓</span>
-                        <span className="text-gray-600">{achievement}</span>
+                        <GlobeAltIcon className="h-5 w-5 text-gray-400 mr-3 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <a
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary-600 hover:underline font-medium"
+                          >
+                            {source.title}
+                          </a>
+                          {source.type && (
+                            <span className="ml-2 text-xs text-gray-400 capitalize">
+                              ({source.type})
+                            </span>
+                          )}
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -443,37 +665,41 @@ export default async function SchoolPage({ params }: Props) {
                   Contact Information
                 </h3>
                 <div className="space-y-3">
-                  {school.address && (
-                    <div className="flex items-start text-sm">
-                      <MapPinIcon className="h-5 w-5 text-gray-400 mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600">{school.address}</span>
-                    </div>
-                  )}
-                  {school.phone && (
-                    <div className="flex items-center text-sm">
-                      <PhoneIcon className="h-5 w-5 text-gray-400 mr-3" />
+                  <div className="flex items-start text-sm">
+                    <MapPinIcon className="h-5 w-5 text-gray-400 mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600">
+                      {school.address || `${school.area}, ${school.city || ''} ${school.state}`.replace(', ,', ',').trim()}
+                    </span>
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <PhoneIcon className="h-5 w-5 text-gray-400 mr-3" />
+                    {school.phone ? (
                       <a
                         href={`tel:${school.phone}`}
                         className="text-primary-600 hover:underline"
                       >
                         {school.phone}
                       </a>
-                    </div>
-                  )}
-                  {school.email && (
-                    <div className="flex items-center text-sm">
-                      <EnvelopeIcon className="h-5 w-5 text-gray-400 mr-3" />
+                    ) : (
+                      <span className="text-gray-400 italic">Not available</span>
+                    )}
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <EnvelopeIcon className="h-5 w-5 text-gray-400 mr-3" />
+                    {school.email ? (
                       <a
                         href={`mailto:${school.email}`}
                         className="text-primary-600 hover:underline"
                       >
                         {school.email}
                       </a>
-                    </div>
-                  )}
-                  {school.website && (
-                    <div className="flex items-center text-sm">
-                      <GlobeAltIcon className="h-5 w-5 text-gray-400 mr-3" />
+                    ) : (
+                      <span className="text-gray-400 italic">Not available</span>
+                    )}
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <GlobeAltIcon className="h-5 w-5 text-gray-400 mr-3" />
+                    {school.website ? (
                       <a
                         href={school.website}
                         target="_blank"
@@ -482,8 +708,10 @@ export default async function SchoolPage({ params }: Props) {
                       >
                         {school.website.replace(/^https?:\/\//, '')}
                       </a>
-                    </div>
-                  )}
+                    ) : (
+                      <span className="text-gray-400 italic">Not available</span>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -527,7 +755,7 @@ export default async function SchoolPage({ params }: Props) {
                   Claim your profile to update information and respond to
                   inquiries.
                 </p>
-                <Link href="/claim/" className="btn-primary w-full text-center">
+                <Link href="/coming-soon/claim/" className="btn-primary w-full text-center">
                   Claim This School
                 </Link>
               </div>

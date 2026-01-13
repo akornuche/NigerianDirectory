@@ -135,6 +135,7 @@ export default async function StatePage({ params }: Props) {
                         src={school.hero_image_url || school.logo_url || '/placeholder-school.svg'}
                         alt={school.name}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       {school.logo_url && school.hero_image_url && (
@@ -143,6 +144,7 @@ export default async function StatePage({ params }: Props) {
                             src={school.logo_url}
                             alt={`${school.name} logo`}
                             fill
+                            sizes="40px"
                             className="object-contain p-1"
                           />
                         </div>

@@ -91,6 +91,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+        <meta name="theme-color" content="#1D4ED8" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <link rel="icon" href="/nd logo.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/nd logo.jpg" />
         <AdScripts />
       </head>
       <body className="min-h-screen flex flex-col">

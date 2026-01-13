@@ -53,6 +53,18 @@ app.use('/api/', limiter);
 // ============================================
 // HEALTH CHECK
 // ============================================
+
+// Root endpoint
+app.get('/', (req, res) => {
+    res.json({
+        name: 'NigerianDirectory API',
+        version: '1.0.0',
+        status: 'running',
+        documentation: '/api',
+        health: '/health'
+    });
+});
+
 app.get('/health', async (req, res) => {
     try {
         // Check database

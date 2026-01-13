@@ -1,33 +1,77 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { verticals, isLive, buildPath } from '@/config/verticals';
 
-// Top schools links - updated to new URL structure
-const schoolLinks = [
-  { name: 'Lagos Schools', href: '/education/schools/lagos/' },
-  { name: 'Abuja Schools', href: '/education/schools/fct/' },
-  { name: 'Port Harcourt Schools', href: '/education/schools/rivers/' },
-  { name: 'Ibadan Schools', href: '/education/schools/oyo/' },
-  { name: 'Kano Schools', href: '/education/schools/kano/' },
-];
+// Generate category links from verticals config
+const categoryLinks = verticals.map((vertical) => {
+  const isActive = isLive(vertical.status);
+  // For live verticals, link to first category if exists
+  const href = isActive && vertical.categories?.[0] 
+    ? buildPath(vertical.slug, vertical.categories[0].slug)
+    : `/coming-soon/${vertical.slug}/`;
+  
+  return {
+    name: vertical.name,
+    slug: vertical.slug,
+    href,
+    status: vertical.status,
+  };
+});
 
-const resourceLinks = [
-  { name: 'School Guide', href: '/guide/' },
-  { name: 'Admission Tips', href: '/admissions/' },
-  { name: 'Blog', href: '/blog/' },
-  { name: 'FAQ', href: '/faq/' },
-];
+// Helper to detect current vertical from pathname
+function useCurrentVertical(pathname: string) {
+  // Check which vertical matches the current path
+  for (const vertical of verticals) {
+    if (pathname.startsWith(`/${vertical.slug}/`) || pathname.startsWith(`/coming-soon/${vertical.slug}`)) {
+      return vertical;
+    }
+  }
+  
+  // Default to education for school-related paths
+  if (pathname.includes('/schools/') || pathname.includes('/education/')) {
+    return verticals.find(v => v.slug === 'education') || null;
+  }
+  
+  return null;
+}
+
+// Dynamic resource links based on current vertical
+function getResourceLinks(pathname: string) {
+  const currentVertical = useCurrentVertical(pathname);
+  
+  // Build dynamic "All States" link based on current vertical
+  let allStatesLink = '/states/'; // Default
+  let allStatesLabel = 'All States';
+  
+  if (currentVertical && isLive(currentVertical.status)) {
+    // For live verticals with categories, link to first category's state listing
+    const firstCategory = currentVertical.categories?.[0];
+    if (firstCategory) {
+      allStatesLink = `/${currentVertical.slug}/${firstCategory.slug}/`;
+      allStatesLabel = `All ${firstCategory.name}`;
+    }
+  } else if (currentVertical) {
+    // Coming soon vertical - just show generic
+    allStatesLabel = `${currentVertical.name} States`;
+  }
+  
+  return [
+    { name: allStatesLabel, href: allStatesLink },
+    { name: 'Blog', href: '/blog/' },
+  ];
+}
 
 const companyLinks = [
   { name: 'About Us', href: '/about/' },
   { name: 'Contact', href: '/contact/' },
   { name: 'Advertise', href: '/advertise/' },
-  { name: 'Careers', href: '/careers/' },
 ];
 
 const legalLinks = [
-  { name: 'Privacy Policy', href: '/privacy/' },
-  { name: 'Terms of Service', href: '/terms/' },
-  { name: 'Cookie Policy', href: '/cookies/' },
+  { name: 'Privacy Policy', href: '/about/', badge: 'Coming Soon' },
+  { name: 'Terms of Service', href: '/about/', badge: 'Coming Soon' },
 ];
 
 // Badge component for coming soon status
@@ -40,6 +84,9 @@ function ComingSoonBadge() {
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+  const resourceLinks = getResourceLinks(pathname);
+  
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="mx-auto max-w-7xl container-padding py-12 lg:py-16">
@@ -47,64 +94,29 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-display font-bold text-white">
-                Nigerian
-              </span>
-              <span className="text-xl font-display font-bold text-secondary-400">
-                Directory
-              </span>
+            <Link href="/" className="inline-block">
+              <img src="/naijadir.png" alt="NigerianDirectory" className="h-24" />
             </Link>
             <p className="mt-4 text-sm text-gray-400">
               Nigeria&apos;s comprehensive directory platform. Find schools, healthcare, 
               restaurants, services, and more across all 36 states.
             </p>
-            
-            {/* Verticals Grid */}
-            <div className="mt-6">
-              <h4 className="text-xs font-semibold text-gray-500 tracking-wider uppercase mb-3">
-                Browse Categories
-              </h4>
-              <div className="grid grid-cols-2 gap-2">
-                {verticals.map((vertical) => {
-                  const live = isLive(vertical.slug);
-                  const href = live 
-                    ? buildPath(vertical.slug) 
-                    : `/coming-soon/${vertical.slug}`;
-                  
-                  return (
-                    <Link
-                      key={vertical.slug}
-                      href={href}
-                      className={`flex items-center text-xs py-1 ${
-                        live 
-                          ? 'text-gray-300 hover:text-white' 
-                          : 'text-gray-500 hover:text-gray-400'
-                      } transition-colors`}
-                    >
-                      <span className="mr-1.5">{vertical.icon}</span>
-                      <span>{vertical.name}</span>
-                      {!live && <ComingSoonBadge />}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
           </div>
 
-          {/* Top Schools */}
+          {/* Categories / Directory */}
           <div>
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
-              Top Schools
+              Categories
             </h3>
             <ul className="mt-4 space-y-3">
-              {schoolLinks.map((link) => (
+              {categoryLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center"
                   >
                     {link.name}
+                    {link.status === 'coming-soon' && <ComingSoonBadge />}
                   </Link>
                 </li>
               ))}
@@ -157,12 +169,14 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
+                  <span className="text-sm text-gray-500 flex items-center">
                     {link.name}
-                  </Link>
+                    {link.badge && (
+                      <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-900/50 text-amber-300 border border-amber-700/50">
+                        {link.badge}
+                      </span>
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>
