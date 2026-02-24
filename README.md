@@ -42,25 +42,37 @@ A scalable, SEO-first, multi-vertical directory platform starting with 200+ veri
 
 ```
 nigeriandirectory/
-├── frontend/              # Next.js application
-│   ├── pages/            # SSR pages with dynamic routes
-│   ├── components/       # Reusable React components
-│   ├── styles/           # Tailwind CSS configuration
-│   └── public/           # Static assets, sitemap, robots.txt
+├── frontend/              # Next.js 14 application (App Router)
+│   ├── src/
+│   │   ├── app/          # App Router pages (SSR)
+│   │   ├── components/   # Reusable React components
+│   │   ├── config/       # Frontend configuration
+│   │   ├── lib/          # API client & content helpers
+│   │   ├── styles/       # Global CSS / Tailwind
+│   │   └── types/        # Shared TypeScript interfaces
+│   └── public/           # Static assets, logos
 ├── backend/              # Express.js API server
 │   ├── src/
-│   │   ├── controllers/  # Request handlers
-│   │   ├── models/       # Database models
-│   │   ├── routes/       # API routes
-│   │   ├── services/     # Business logic (summary generator, etc.)
-│   │   └── utils/        # Helper functions
+│   │   ├── config/       # Database & Redis config
+│   │   ├── middleware/   # Auth & validation middleware
+│   │   ├── models/       # Database models (7 models)
+│   │   ├── routes/       # API routes (7 route files)
+│   │   ├── services/     # Business logic (summary generator)
+│   │   ├── seeds/        # Location & school seeders
+│   │   ├── database/     # Migration runner
+│   │   └── utils/        # Response, pagination, slug helpers
 │   └── database/         # SQL schemas and migrations
 ├── crawler/              # Python web scraper
 │   ├── seeds/            # Trusted school lists (ministry data)
 │   ├── fetcher.py        # HTTP requests with robots.txt compliance
 │   ├── parser.py         # HTML parsing and fact extraction
 │   ├── enrichment.py     # Template-based summary generation
+│   ├── database.py       # Crawler DB operations
 │   └── scheduler.py      # Batch processing and queue management
+├── scripts/              # Utility scripts
+│   ├── sql/              # Ad-hoc SQL queries
+│   ├── db/               # Backup/restore & DB utilities
+│   └── data/             # Data export & enrichment scripts
 └── docker-compose.yml    # Local development environment
 ```
 
@@ -137,13 +149,15 @@ python scheduler.py --batch initial --count 200
 
 ## 📊 Database Schema
 
-### Core Tables
+### Core Tables (7 tables)
 
-- **schools** - Main school listings with facts, coordinates, claims status
+- **schools** - Main school listings with facts, coordinates, claims status, enriched content
 - **locations** - Nigerian states, cities, areas (50+ cities)
 - **crawl_logs** - Crawler activity, confidence scores, source URLs
 - **claims** - School ownership verification and payment tracking
 - **users** - Admin and school owner accounts
+- **enrichment_queue** - AI enrichment job queue with priority and retry
+- **page_views** - Page view analytics with IP hashing for privacy
 
 ## 🔗 API Endpoints
 

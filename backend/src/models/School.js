@@ -11,7 +11,8 @@ class School {
             social_links, template_summary, established_year,
             principal_name, principal_title, principal_image_url,
             management_info, facilities, achievements, student_life,
-            fee_range, student_count, logo_url, hero_image_url, gallery_images
+            fee_range, student_count, logo_url, hero_image_url, gallery_images,
+            content_sources, meta_title, meta_description
         } = schoolData;
 
         // Generate unique slug
@@ -27,12 +28,12 @@ class School {
                 established_year, principal_name, principal_title, principal_image_url,
                 management_info, facilities, achievements, student_life,
                 fee_range, student_count, logo_url, hero_image_url, gallery_images,
-                meta_title, meta_description
+                content_sources, meta_title, meta_description
             ) VALUES (
                 $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
                 $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
                 $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-                $31, $32, $33, $34, $35
+                $31, $32, $33, $34, $35, $36
             ) RETURNING *`,
             [
                 name, slug, type, state, city, area, address,
@@ -43,8 +44,8 @@ class School {
                 JSON.stringify(management_info || []), JSON.stringify(facilities || []),
                 JSON.stringify(achievements || []), JSON.stringify(student_life || {}),
                 fee_range, student_count, logo_url, hero_image_url, JSON.stringify(gallery_images || []),
-                `${name}, ${area}, ${city} - School Profile | NigerianDirectory`,
-                `Discover ${name} in ${area}, ${city}, ${state}. Learn about programs, fees, facilities, and admissions.`
+                JSON.stringify(content_sources || []),
+                meta_title, meta_description
             ]
         );
 
@@ -77,7 +78,19 @@ class School {
             'SELECT * FROM schools WHERE slug = $1',
             [slug]
         );
-        return result.rows[0] || null;
+        if (!result.rows[0]) return null;
+        const school = result.rows[0];
+        // Parse all JSON fields
+        [
+            'social_links', 'management_info', 'facilities', 'achievements',
+            'student_life', 'gallery_images', 'content_sources',
+            'enriched_notable_alumni', 'enriched_recent_news'
+        ].forEach(field => {
+            if (school[field] && typeof school[field] === 'string') {
+                try { school[field] = JSON.parse(school[field]); } catch { school[field] = []; }
+            }
+        });
+        return school;
     }
 
     // Find by ID
@@ -249,8 +262,11 @@ class School {
             'established_year', 'principal_name', 'principal_title', 'principal_image_url',
             'management_info', 'facilities', 'achievements', 'student_life',
             'fee_range', 'student_count', 'logo_url', 'hero_image_url', 'gallery_images',
-            'claimed', 'verified', 'claimed_by_user_id', 'claimed_at', 'verified_at',
-            'meta_title', 'meta_description'
+            'claimed', 'verified', 'featured', 'claimed_by_user_id', 'claimed_at', 'verified_at',
+            'meta_title', 'meta_description', 'content_sources',
+            'enriched_history', 'enriched_academics', 'enriched_campus_info',
+            'enriched_student_life', 'enriched_notable_alumni', 'enriched_recent_news',
+            'enriched_at', 'enrichment_status'
         ];
 
         const setClause = [];
@@ -275,7 +291,18 @@ class School {
             params
         );
 
-        return result.rows[0] || null;
+        if (!result.rows[0]) return null;
+        const school = result.rows[0];
+        [
+            'social_links', 'management_info', 'facilities', 'achievements',
+            'student_life', 'gallery_images', 'content_sources',
+            'enriched_notable_alumni', 'enriched_recent_news'
+        ].forEach(field => {
+            if (school[field] && typeof school[field] === 'string') {
+                try { school[field] = JSON.parse(school[field]); } catch { school[field] = []; }
+            }
+        });
+        return school;
     }
 
     // Get featured schools

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Claim = require('../models/Claim');
 const School = require('../models/School');
+const emailService = require('../services/emailService');
 const { authenticate, requireAdmin } = require('../middleware/auth');
 const { claimCreateValidation, claimStatusValidation, paginationValidation } = require('../middleware/validators');
 
@@ -101,6 +102,22 @@ router.post('/', authenticate, claimCreateValidation, async (req, res, next) => 
             message: 'Claim submitted successfully. Our team will review your request.',
             claim
         });
+
+        // Send email notifications (fire and forget, don't block response)
+        emailService.sendClaimSubmitted({
+            userEmail: req.user.email,
+            userName: req.user.name,
+            schoolName: school.name,
+            claimId: claim.uuid
+        }).catch(err => console.error('Failed to send claim submitted email:', err.message));
+
+        emailService.sendNewClaimNotification({
+            adminEmail: process.env.ADMIN_EMAIL || 'admin@nigeriandirectory.com',
+            schoolName: school.name,
+            userName: req.user.name,
+            userEmail: req.user.email,
+            claimId: claim.uuid
+        }).catch(err => console.error('Failed to send admin notification email:', err.message));
     } catch (error) {
         if (error.message === 'This school already has an active claim') {
             return res.status(400).json({ error: error.message });
@@ -133,6 +150,24 @@ router.patch('/:id/status', authenticate, requireAdmin, claimStatusValidation, a
             message: `Claim ${status}`,
             claim: updatedClaim
         });
+
+        // Send status notification email (fire and forget)
+        if (status === 'approved') {
+            const school = await School.findById(claim.school_id);
+            emailService.sendClaimApproved({
+                userEmail: claim.user_email,
+                userName: claim.user_name,
+                schoolName: claim.school_name,
+                schoolSlug: school?.slug || claim.school_slug
+            }).catch(err => console.error('Failed to send claim approved email:', err.message));
+        } else if (status === 'rejected') {
+            emailService.sendClaimRejected({
+                userEmail: claim.user_email,
+                userName: claim.user_name,
+                schoolName: claim.school_name,
+                reason: rejection_reason
+            }).catch(err => console.error('Failed to send claim rejected email:', err.message));
+        }
     } catch (error) {
         next(error);
     }

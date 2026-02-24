@@ -23,6 +23,7 @@ from enrichment import (
     generate_summary, generate_meta_title, generate_meta_description,
     generate_blog_meta_title, generate_blog_meta_description
 )
+from deep_research_crawler import DeepResearchCrawler
 
 def generate_slug(name, state, area):
     """Generate URL-friendly slug"""
@@ -116,8 +117,10 @@ def process_seed_school(school_data, conn):
             result['crawled'] = crawl_result.get('success', False)
             
             # Update school with crawled data if successful
-            if crawl_result.get('success') and crawl_result.get('data'):
-                crawled_data = crawl_result['data']
+            if crawl_result.get('success'):
+                from typing import Dict, Any
+                raw_data = crawl_result.get('data')
+                crawled_data: Dict[str, Any] = raw_data if isinstance(raw_data, dict) else {}
                 
                 # Update any missing fields from crawl
                 updates = {}
@@ -137,8 +140,18 @@ def process_seed_school(school_data, conn):
                     updates['facilities'] = json.dumps(list(set(existing + crawled_data['facilities'])))
                 if crawled_data.get('social_links'):
                     updates['social_links'] = json.dumps(crawled_data['social_links'])
+                if crawled_data.get('gallery_images'):
+                    updates['gallery_images'] = json.dumps(crawled_data['gallery_images'])
+                if crawled_data.get('principal_name'):
+                    updates['principal_name'] = crawled_data['principal_name']
+                if crawled_data.get('about_text') and not school_record.get('about_text'):
+                    updates['about_text'] = crawled_data['about_text']
                 
-                # TODO: Apply updates to database
+                # Apply updates to database
+                if updates:
+                    from database import update_school_details
+                    update_school_details(conn, school_id, updates)
+                    print(f"    ✨ Updated school record with {len(updates)} crawled fields")
         else:
             # Log as seed-only entry
             log_data = {
@@ -152,7 +165,22 @@ def process_seed_school(school_data, conn):
                 'error_message': None
             }
             insert_crawl_log(conn, log_data)
-        
+            
+        # 3. Deep Research (Bing, DuckDuckGo, Wikipedia)
+        try:
+            print(f"    🔍 Performing deep research for {school_data['name']}...")
+            researcher = DeepResearchCrawler()
+            research_school = {
+                'id': school_id,
+                'name': school_data['name'],
+                'state': school_data['state'],
+                'city': school_data.get('city', ''),
+                'website': school_data.get('website', '')
+            }
+            researcher.enrich_school(research_school)
+        except Exception as e:
+            print(f"    ⚠️ Deep research failed for {school_data['name']}: {e}")
+            
         result['success'] = True
         
     except Exception as e:
@@ -279,7 +307,8 @@ def run_initial_batch(count=200):
         sys.exit(1)
     
     # Process schools
-    results = {
+    from typing import Dict, Any
+    results: Dict[str, Any] = {
         'success': 0,
         'failed': 0,
         'crawled': 0,

@@ -72,6 +72,19 @@ CREATE TABLE IF NOT EXISTS schools (
     ai_summary TEXT,
     needs_ai_enrichment BOOLEAN DEFAULT TRUE,
     summary_template_id VARCHAR(50),
+
+    -- Content Sources
+    content_sources JSONB DEFAULT '[]',
+    
+    -- Enriched Content (web-sourced / AI-generated)
+    enriched_history TEXT,
+    enriched_academics TEXT,
+    enriched_campus_info TEXT,
+    enriched_student_life TEXT,
+    enriched_notable_alumni JSONB DEFAULT '[]',
+    enriched_recent_news JSONB DEFAULT '[]',
+    enriched_at TIMESTAMP,
+    enrichment_status VARCHAR(20) DEFAULT 'pending' CHECK (enrichment_status IN ('pending', 'processing', 'completed', 'failed')),
     
     -- Additional Info
     established_year INT,
@@ -93,6 +106,7 @@ CREATE TABLE IF NOT EXISTS schools (
     -- Claim & Verification
     claimed BOOLEAN DEFAULT FALSE,
     verified BOOLEAN DEFAULT FALSE,
+    featured BOOLEAN DEFAULT FALSE,
     claimed_by_user_id INT REFERENCES users(id),
     claimed_at TIMESTAMP,
     verified_at TIMESTAMP,
@@ -113,8 +127,11 @@ CREATE INDEX idx_schools_city ON schools(city);
 CREATE INDEX idx_schools_area ON schools(area);
 CREATE INDEX idx_schools_type ON schools(type);
 CREATE INDEX idx_schools_claimed ON schools(claimed);
+CREATE INDEX idx_schools_featured ON schools(featured) WHERE featured = true;
 CREATE INDEX idx_schools_needs_enrichment ON schools(needs_ai_enrichment);
+CREATE INDEX idx_schools_enrichment_status ON schools(enrichment_status);
 CREATE INDEX idx_schools_state_area ON schools(state, area);
+CREATE INDEX idx_schools_enriched ON schools(enriched_history) WHERE enriched_history IS NULL;
 
 -- Full-text search index
 CREATE INDEX idx_schools_name_search ON schools USING gin(to_tsvector('english', name));

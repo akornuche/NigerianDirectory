@@ -144,16 +144,6 @@ function generateSchoolSections(school: School): ContentSection[] {
   return sections;
 }
 
-// Check if school has rich content from database
-function hasEnrichedContent(school: School): boolean {
-  return !!(
-    school.enriched_history || 
-    school.enriched_academics || 
-    school.enriched_campus_info || 
-    school.enriched_student_life
-  );
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const school = await getSchool(resolvedParams.state, resolvedParams.area, resolvedParams.slug);

@@ -119,6 +119,12 @@ const schoolCreateValidation = [
     body('website')
         .optional()
         .isURL().withMessage('Invalid website URL'),
+    body('content_sources')
+        .optional()
+        .isArray().withMessage('content_sources must be an array'),
+    body('content_sources.*')
+        .optional()
+        .isObject().withMessage('Each content_source must be an object'),
     handleValidation
 ];
 
@@ -162,6 +168,12 @@ const schoolUpdateValidation = [
     body('website')
         .optional()
         .isURL().withMessage('Invalid website URL'),
+    body('content_sources')
+        .optional()
+        .isArray().withMessage('content_sources must be an array'),
+    body('content_sources.*')
+        .optional()
+        .isObject().withMessage('Each content_source must be an object'),
     handleValidation
 ];
 

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getNavigationVerticals, verticalColors, type Vertical, type Category } from '@/config/verticals';
 
 // Icon components (using simple SVG icons)
@@ -77,7 +78,6 @@ interface DropdownProps {
 function VerticalDropdown({ vertical, isOpen, onToggle, onClose }: DropdownProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const colors = verticalColors[vertical.color] || verticalColors.primary;
-  const Icon = getIcon(vertical.icon);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -173,7 +173,7 @@ export default function MegaMenu() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
-            <img src="/naijadir.png" alt="NigerianDirectory" className="h-14" />
+            <Image src="/naijadir.png" alt="NigerianDirectory" width={56} height={56} className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

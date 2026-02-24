@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { verticals, isLive, buildPath } from '@/config/verticals';
 
@@ -21,7 +22,7 @@ const categoryLinks = verticals.map((vertical) => {
 });
 
 // Helper to detect current vertical from pathname
-function useCurrentVertical(pathname: string) {
+function getCurrentVertical(pathname: string) {
   // Check which vertical matches the current path
   for (const vertical of verticals) {
     if (pathname.startsWith(`/${vertical.slug}/`) || pathname.startsWith(`/coming-soon/${vertical.slug}`)) {
@@ -39,7 +40,7 @@ function useCurrentVertical(pathname: string) {
 
 // Dynamic resource links based on current vertical
 function getResourceLinks(pathname: string) {
-  const currentVertical = useCurrentVertical(pathname);
+  const currentVertical = getCurrentVertical(pathname);
   
   // Build dynamic "All States" link based on current vertical
   let allStatesLink = '/states/'; // Default
@@ -95,7 +96,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link href="/" className="inline-block">
-              <img src="/naijadir.png" alt="NigerianDirectory" className="h-24" />
+              <Image src="/naijadir.png" alt="NigerianDirectory" width={96} height={96} className="h-24 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-gray-400">
               Nigeria&apos;s comprehensive directory platform. Find schools, healthcare, 

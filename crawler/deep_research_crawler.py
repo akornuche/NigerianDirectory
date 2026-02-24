@@ -29,15 +29,22 @@ try:
     GOOGLE_SEARCH_AVAILABLE = True
 except ImportError:
     GOOGLE_SEARCH_AVAILABLE = False
-    google_search = None
+    def google_search(*args, **kwargs): return []
 
 # DuckDuckGo search with proper API
 try:
-    from duckduckgo_search import DDGS
+    from ddgs import DDGS
     DDG_SEARCH_AVAILABLE = True
 except ImportError:
-    DDG_SEARCH_AVAILABLE = False
-    DDGS = None
+    try:
+        from duckduckgo_search import DDGS
+        DDG_SEARCH_AVAILABLE = True
+    except ImportError:
+        DDG_SEARCH_AVAILABLE = False
+        class DDGS:
+            def __enter__(self): return self
+            def __exit__(self, exc_type, exc_val, exc_tb): pass
+            def text(self, *args, **kwargs): return []
 
 load_dotenv()
 
@@ -144,7 +151,7 @@ class DeepResearchCrawler:
                         })
                 
                 logger.info(f"  DuckDuckGo found {len(results)} results")
-                time.sleep(random.uniform(1, 2))
+                time.sleep(random.uniform(0.1, 0.3))  # Very short delay
                 return results
                 
             except Exception as e:
@@ -215,7 +222,7 @@ class DeepResearchCrawler:
                                 'source': 'bing'
                             })
             
-            time.sleep(random.uniform(1.5, 3))
+            time.sleep(random.uniform(0.1, 0.5))  # Very short delay
             
         except Exception as e:
             logger.warning(f"Bing search error: {e}")
@@ -264,7 +271,7 @@ class DeepResearchCrawler:
         
         return results
 
-    def fetch_page_content(self, url, timeout=15):
+    def fetch_page_content(self, url, timeout=10):
         """Fetch and extract clean text content from a URL"""
         try:
             response = self.session.get(url, timeout=timeout)
@@ -389,11 +396,9 @@ class DeepResearchCrawler:
         all_results.extend(wiki_results)
         
         # 2. Search with multiple queries across engines
-        # Google first (best results), then DuckDuckGo and Bing as fallbacks
-        google_query_count = 0
-        max_google_queries = 3  # Limit Google queries to avoid rate limiting
+        # DuckDuckGo and Bing only (Google removed per requirements)
         
-        for template in self.search_query_templates[:6]:  # Use top 6 queries
+        for template in self.search_query_templates[:3]:  # Use top 3 queries
             query = template.format(
                 school_name=school_name,
                 state=state,
@@ -414,14 +419,12 @@ class DeepResearchCrawler:
                     all_results.append(r)
                     searched_urls.add(r['url'])
             
-            # Google (tertiary - often blocked, but try occasionally)
-            if google_query_count < max_google_queries:
-                google_results = self.search_google_scrape(query, num_results=10)
-                for r in google_results:
-                    if r['url'] not in searched_urls:
-                        all_results.append(r)
-                        searched_urls.add(r['url'])
-                google_query_count += 1
+            # Google (high quality, but rate limited)
+            google_results = self.search_google_scrape(query, num_results=5)
+            for r in google_results:
+                if r['url'] not in searched_urls:
+                    all_results.append(r)
+                    searched_urls.add(r['url'])
         
         # 3. Prioritize and sort results
         def get_priority(result):
@@ -461,10 +464,12 @@ class DeepResearchCrawler:
         
         sources = []
         processed_urls = set()
+        search_engines_used = set()
         
         # Process top results (limit to avoid over-scraping)
-        for result in search_results[:20]:
+        for result in search_results[:10]:
             url = result.get('url', '')
+            result_source = result.get('source', '')
             
             if not url or url in processed_urls:
                 continue
@@ -472,8 +477,30 @@ class DeepResearchCrawler:
             processed_urls.add(url)
             
             try:
-                # Fetch full page content
-                page_data = self.fetch_page_content(url)
+                # Fetch full page content with timeout
+                import threading
+                
+                page_data = None
+                exception = None
+                
+                def fetch_with_timeout():
+                    nonlocal page_data, exception
+                    try:
+                        page_data = self.fetch_page_content(url)
+                    except Exception as e:
+                        exception = e
+                
+                thread = threading.Thread(target=fetch_with_timeout)
+                thread.start()
+                thread.join(timeout=10)  # 10 second timeout
+                
+                if thread.is_alive():
+                    logger.debug(f"Timeout fetching {url}")
+                    continue
+                
+                if exception:
+                    logger.debug(f"Error fetching {url}: {exception}")
+                    continue
                 
                 if not page_data or not page_data.get('text'):
                     # Use snippet if page fetch fails
@@ -490,11 +517,15 @@ class DeepResearchCrawler:
                 if relevance_score < 2:  # Must match at least 2 words from school name
                     continue
                 
-                # Extract meaningful sentences
-                sentences = self._extract_relevant_sentences(text, school_name)
+                # Extract meaningful sentences (limit to avoid processing too much)
+                sentences = self._extract_relevant_sentences(text, school_name)[:5]  # Limit sentences
                 
                 if not sentences:
                     continue
+                
+                # Track search engine if this result contributed content
+                if result_source in ['duckduckgo', 'bing']:
+                    search_engines_used.add(result_source)
                 
                 # Categorize content
                 domain = urlparse(url).netloc
@@ -548,13 +579,13 @@ class DeepResearchCrawler:
                 
                 sources.append(source_info)
                 
-                time.sleep(random.uniform(0.5, 1.5))
+                time.sleep(random.uniform(0.1, 0.3))  # Very short delay
                 
             except Exception as e:
                 logger.debug(f"Error processing {url}: {e}")
                 continue
         
-        return content_pieces, sources
+        return content_pieces, sources, search_engines_used
 
     def _extract_relevant_sentences(self, text, school_name):
         """Extract sentences that are relevant to the school"""
@@ -601,12 +632,14 @@ class DeepResearchCrawler:
         else:
             return 'web'
 
-    def compose_enriched_content(self, school, content_pieces, sources):
+    def compose_enriched_content(self, school, content_pieces, sources, search_engines_used=None):
         """
         Compose rich, cited content from extracted pieces.
         Target: 500-700 words with inline citations.
         NO FALLBACK - returns None if insufficient data.
         """
+        if search_engines_used is None:
+            search_engines_used = set()
         school_name = school['name']
         state = school.get('state', '')
         city = school.get('city', '')
@@ -652,7 +685,27 @@ class DeepResearchCrawler:
             min_sentences=1
         )
         
-        return history_text, academics_text, campus_text, student_life_text, sources
+        # Add search engines as sources if they contributed content
+        final_sources = sources.copy()
+        for engine in search_engines_used:
+            if engine == 'duckduckgo':
+                final_sources.append({
+                    'url': 'https://duckduckgo.com',
+                    'title': 'DuckDuckGo Search',
+                    'domain': 'duckduckgo.com',
+                    'type': 'search_engine',
+                    'accessed_at': datetime.now().isoformat()
+                })
+            elif engine == 'bing':
+                final_sources.append({
+                    'url': 'https://www.bing.com',
+                    'title': 'Bing Search',
+                    'domain': 'bing.com',
+                    'type': 'search_engine',
+                    'accessed_at': datetime.now().isoformat()
+                })
+        
+        return history_text, academics_text, campus_text, student_life_text, final_sources
 
     def _compose_section(self, pieces, school_name, section_type, min_sentences=1):
         """Compose a section from content pieces with citations"""
@@ -727,11 +780,11 @@ class DeepResearchCrawler:
                 return False
             
             # 2. Extract and categorize content
-            content_pieces, sources = self.extract_relevant_content(school, search_results)
+            content_pieces, sources, search_engines_used = self.extract_relevant_content(school, search_results)
             
             # 3. Compose enriched content (NO FALLBACK)
             history, academics, campus, student_life, all_sources = self.compose_enriched_content(
-                school, content_pieces, sources
+                school, content_pieces, sources, search_engines_used
             )
             
             # 4. Check if we have enough content - accept even minimal content (50+ words)
@@ -768,7 +821,7 @@ class DeepResearchCrawler:
                 
                 # Still save sources even if content is sparse
                 if sources:
-                    self._save_sources_only(school_id, sources)
+                    self._save_sources_only(school_id, sources, search_engines_used)
                 
                 return False
             
@@ -816,6 +869,8 @@ class DeepResearchCrawler:
                         enriched_academics = %(academics)s,
                         enriched_campus_info = %(campus)s,
                         enriched_student_life = %(student_life)s,
+                        template_summary = %(main_summary)s,
+                        ai_summary = %(main_summary)s,
                         content_sources = %(sources)s::jsonb,
                         enriched_at = NOW(),
                         needs_ai_enrichment = FALSE
@@ -826,6 +881,7 @@ class DeepResearchCrawler:
                     'academics': academics,
                     'campus': campus,
                     'student_life': student_life,
+                    'main_summary': history[:1000] if history else None, # Use part of history as main summary
                     'sources': sources_json
                 })
                 
@@ -837,8 +893,30 @@ class DeepResearchCrawler:
         finally:
             conn.close()
 
-    def _save_sources_only(self, school_id, sources):
+    def _save_sources_only(self, school_id, sources, search_engines_used=None):
         """Save sources even when content is insufficient"""
+        if search_engines_used is None:
+            search_engines_used = set()
+        
+        # Add search engines as sources
+        final_sources = sources.copy()
+        for engine in search_engines_used:
+            if engine == 'duckduckgo':
+                final_sources.append({
+                    'url': 'https://duckduckgo.com',
+                    'title': 'DuckDuckGo Search',
+                    'domain': 'duckduckgo.com',
+                    'type': 'search_engine',
+                    'accessed_at': datetime.now().isoformat()
+                })
+            elif engine == 'bing':
+                final_sources.append({
+                    'url': 'https://www.bing.com',
+                    'title': 'Bing Search',
+                    'domain': 'bing.com',
+                    'type': 'search_engine',
+                    'accessed_at': datetime.now().isoformat()
+                })
         conn = get_connection()
         try:
             with conn.cursor() as cur:

@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { 
-  MapPinIcon, 
-  PhoneIcon, 
-  EnvelopeIcon, 
-  GlobeAltIcon, 
-  BuildingLibraryIcon, 
+import {
+  MapPinIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  GlobeAltIcon,
+  BuildingLibraryIcon,
   BookOpenIcon,
   AcademicCapIcon,
   UserGroupIcon,
@@ -19,6 +19,12 @@ import {
 } from '@heroicons/react/24/outline';
 import { getSchoolByPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
+
+type ManagementMember = {
+  name: string;
+  title: string;
+  image_url?: string;
+};
 
 // Fetch school data from API
 async function getSchool(state: string, area: string, slug: string): Promise<School | null> {
@@ -53,7 +59,7 @@ interface ContentSection {
 // NO FALLBACK - only shows content that exists in database
 function generateSchoolSections(school: School): ContentSection[] {
   const sections: ContentSection[] = [];
-  
+
   // Section 1: School History & Overview (from database only)
   if (school.enriched_history) {
     sections.push({
@@ -143,16 +149,6 @@ function generateSchoolSections(school: School): ContentSection[] {
   return sections;
 }
 
-// Check if school has rich content from database
-function hasEnrichedContent(school: School): boolean {
-  return !!(
-    school.enriched_history || 
-    school.enriched_academics || 
-    school.enriched_campus_info || 
-    school.enriched_student_life
-  );
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const school = await getSchool(resolvedParams.state, resolvedParams.area, resolvedParams.slug);
@@ -164,7 +160,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   // Enhanced meta description combining profile and blog-style content
-  const metaDescription = school.meta_description || 
+  const metaDescription = school.meta_description ||
     `Discover ${school.name} in ${school.area}, ${school.city}. Explore programs, facilities, student life, achievements, and admissions for this ${school.type} school in ${school.state}.`;
 
   return {
@@ -372,7 +368,7 @@ export default async function SchoolPage({ params }: Props) {
           {/* Subtle bottom gradient for text readability */}
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        
+
         {/* School Info Overlay */}
         <div className="absolute inset-x-0 bottom-0 pb-6">
           <div className="mx-auto max-w-7xl container-padding">
@@ -419,6 +415,17 @@ export default async function SchoolPage({ params }: Props) {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="py-6">
+        <div className="mx-auto max-w-3xl container-padding">
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <p className="text-sm text-yellow-900">
+              <strong>Disclaimer:</strong> While we strive to provide accurate and up-to-date information, some details on this page may contain minor errors or may not reflect the most current status. We recommend visiting the official school website or contacting the school directly to confirm important information.
+            </p>
           </div>
         </div>
       </section>
@@ -572,8 +579,8 @@ export default async function SchoolPage({ params }: Props) {
                       {school.boarding && school.day_school
                         ? 'Boarding & Day'
                         : school.boarding
-                        ? 'Boarding Only'
-                        : 'Day Only'}
+                          ? 'Boarding Only'
+                          : 'Day Only'}
                     </dd>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
@@ -582,6 +589,14 @@ export default async function SchoolPage({ params }: Props) {
                       {school.gender?.replace(/-/g, ' ') || 'Co-ed'}
                     </dd>
                   </div>
+                  {school.student_count && (
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <dt className="text-sm text-gray-500">Student Count</dt>
+                      <dd className="mt-1 font-medium text-gray-900">
+                        {school.student_count}
+                      </dd>
+                    </div>
+                  )}
                   {school.fee_range && (
                     <div className="bg-gray-50 rounded-lg p-4">
                       <dt className="text-sm text-gray-500">Fee Range</dt>
@@ -593,17 +608,73 @@ export default async function SchoolPage({ params }: Props) {
                 </dl>
               </div>
 
+              {/* Management Team */}
+              {school.management_info && school.management_info.length > 0 && (
+                <div className="card p-6 lg:p-8">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                    Management Team
+                  </h2>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {school.management_info.map((member: ManagementMember, idx: number) => (
+                      <div key={idx} className="flex items-center gap-4 bg-gray-50 rounded-lg p-4">
+                        <div className="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center overflow-hidden relative">
+                          {member.image_url ? (
+                            <Image src={member.image_url} alt={member.name} fill className="object-cover" />
+                          ) : (
+                            <span className="text-primary-600 font-semibold text-lg">{member.name?.charAt(0)}</span>
+                          )}
+                        </div>
+                        <div>
+                          <div className="font-medium text-gray-900">{member.name}</div>
+                          <div className="text-sm text-gray-500">{member.title}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Student Life */}
+              {school.student_life && (
+                <div className="card p-6 lg:p-8">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                    Student Life
+                  </h2>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {school.student_life.clubs && (
+                      <div>
+                        <div className="text-sm text-gray-500 mb-1">Clubs & Societies</div>
+                        <div className="font-medium text-gray-900">{school.student_life.clubs}</div>
+                      </div>
+                    )}
+                    {school.student_life.sports && (
+                      <div>
+                        <div className="text-sm text-gray-500 mb-1">Sports</div>
+                        <div className="font-medium text-gray-900">{school.student_life.sports}</div>
+                      </div>
+                    )}
+                    {school.student_life.leadership && (
+                      <div>
+                        <div className="text-sm text-gray-500 mb-1">Leadership</div>
+                        <div className="font-medium text-gray-900">{school.student_life.leadership}</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {/* Facilities */}
               {school.facilities && school.facilities.length > 0 && (
                 <div className="card p-6 lg:p-8">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-6">
                     Facilities & Amenities
                   </h2>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {school.facilities.map((facility) => (
-                      <span key={facility} className="badge-secondary">
-                        {facility}
-                      </span>
+                      <div key={facility} className="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors">
+                        <div className="w-3 h-3 bg-primary-500 rounded-full mr-3 flex-shrink-0"></div>
+                        <span className="text-gray-900 font-medium">{facility}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -624,7 +695,7 @@ export default async function SchoolPage({ params }: Props) {
                     Learn more about {school.name} from these trusted sources:
                   </p>
                   <ul className="space-y-3">
-                    {school.content_sources.map((source: { url: string; title: string; type?: string }, index: number) => (
+                    {school.content_sources.map((source: { url: string; title?: string; name?: string; type?: string }, index: number) => (
                       <li key={index} className="flex items-start">
                         <GlobeAltIcon className="h-5 w-5 text-gray-400 mr-3 flex-shrink-0 mt-0.5" />
                         <div>
@@ -634,7 +705,7 @@ export default async function SchoolPage({ params }: Props) {
                             rel="noopener noreferrer"
                             className="text-primary-600 hover:underline font-medium"
                           >
-                            {source.title}
+                            {source.title || source.name}
                           </a>
                           {source.type && (
                             <span className="ml-2 text-xs text-gray-400 capitalize">
@@ -715,6 +786,33 @@ export default async function SchoolPage({ params }: Props) {
                 </div>
               </div>
 
+              {/* Social Media Card */}
+              {school.social_links && Object.keys(school.social_links).length > 0 && (
+                <div className="card p-6">
+                  <h3 className="font-semibold text-gray-900 mb-4">
+                    Follow {school.name}
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {Object.entries(school.social_links).map(([platform, url]) => (
+                      <a
+                        key={platform}
+                        href={url as string}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-gray-50 hover:bg-primary-50 text-gray-600 hover:text-primary-600 rounded-lg transition-colors border border-gray-200"
+                        title={platform.charAt(0).toUpperCase() + platform.slice(1)}
+                      >
+                        <span className="flex items-center gap-2">
+                          <LinkIcon className="h-4 w-4" />
+                          <span className="text-xs font-medium capitalize">{platform}</span>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+
               {/* Principal Card */}
               {school.principal_name && (
                 <div className="card p-6">
@@ -767,11 +865,21 @@ export default async function SchoolPage({ params }: Props) {
               <AdBanner slot="school-sidebar-skyscraper" size="skyscraper" />
             </div>
           </div>
-          
+
+
           {/* Bottom Billboard Ad */}
           <div className="mt-12 flex justify-center">
             <AdBanner slot="school-bottom-billboard" size="billboard" />
             <AdBanner slot="school-bottom-mobile" size="mobile-large" />
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-8 mx-auto max-w-3xl container-padding">
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+              <p className="text-sm text-yellow-900">
+                <strong>Disclaimer:</strong> While we strive to provide accurate and up-to-date information, some details on this page may contain minor errors or may not reflect the most current status. We recommend visiting the official school website or contacting the school directly to confirm important information.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -16,6 +16,7 @@ const authRoutes = require('./routes/auth');
 const claimsRoutes = require('./routes/claims');
 const adminRoutes = require('./routes/admin');
 const crawlRoutes = require('./routes/crawl');
+const viewsRoutes = require('./routes/views');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -69,10 +70,10 @@ app.get('/health', async (req, res) => {
     try {
         // Check database
         await pool.query('SELECT 1');
-        
+
         // Check Redis
         await redis.ping();
-        
+
         res.json({
             status: 'healthy',
             timestamp: new Date().toISOString(),
@@ -99,6 +100,7 @@ app.use('/api/locations', locationsRoutes);
 app.use('/api/claims', claimsRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/crawl', crawlRoutes);
+app.use('/api/views', viewsRoutes);
 
 // ============================================
 // ROOT ENDPOINT
@@ -114,7 +116,8 @@ app.get('/api', (req, res) => {
             auth: '/api/auth',
             claims: '/api/claims',
             admin: '/api/admin',
-            crawl: '/api/crawl'
+            crawl: '/api/crawl',
+            views: '/api/views'
         }
     });
 });
@@ -134,7 +137,7 @@ app.use((req, res) => {
 // Global error handler
 app.use((err, req, res, next) => {
     console.error('Error:', err);
-    
+
     // Validation errors
     if (err.name === 'ValidationError') {
         return res.status(400).json({
@@ -142,20 +145,20 @@ app.use((err, req, res, next) => {
             details: err.details || err.message
         });
     }
-    
+
     // JWT errors
     if (err.name === 'JsonWebTokenError') {
         return res.status(401).json({
             error: 'Invalid token'
         });
     }
-    
+
     if (err.name === 'TokenExpiredError') {
         return res.status(401).json({
             error: 'Token expired'
         });
     }
-    
+
     // Default error
     res.status(err.status || 500).json({
         error: err.message || 'Internal Server Error',
@@ -171,11 +174,11 @@ async function startServer() {
         // Test database connection
         await testConnection();
         console.log('✅ Database connected successfully');
-        
+
         // Test Redis connection
         await testRedisConnection();
         console.log('✅ Redis connected successfully');
-        
+
         // Start server
         app.listen(PORT, () => {
             console.log(`
