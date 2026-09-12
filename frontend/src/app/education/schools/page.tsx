@@ -80,8 +80,8 @@ export default async function SchoolsPage() {
               Schools in Nigeria
             </h1>
             <p className="mt-6 text-xl text-primary-100">
-              Discover the best primary, secondary, boarding, and international schools 
-              across all 36 states of Nigeria. Our comprehensive directory helps parents 
+              Discover the best primary, secondary, boarding, and international schools
+              across all 36 states of Nigeria. Our comprehensive directory helps parents
               find the perfect educational institution for their children.
             </p>
           </div>
@@ -94,13 +94,13 @@ export default async function SchoolsPage() {
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
             Browse Schools by State
           </h2>
-          
+
           {/* Rectangle Ads */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <AdBanner slot="schools-states-rect-1" size="rectangle" />
             <AdBanner slot="schools-states-rect-2" size="rectangle" className="hidden md:flex" />
           </div>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
             {nigerianStates.map((state) => (
               <Link
@@ -123,14 +123,14 @@ export default async function SchoolsPage() {
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
                 Featured Schools
               </h2>
-              <Link 
-                href="/education/schools/lagos/" 
+              <Link
+                href="/education/schools/lagos/"
                 className="text-primary-600 hover:text-primary-700 font-medium"
               >
                 View All →
               </Link>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {featuredSchools.slice(0, 8).map((school) => (
                 <Link
@@ -169,7 +169,7 @@ export default async function SchoolsPage() {
                 </Link>
               ))}
             </div>
-            
+
             {/* Mid Section Ads */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <AdBanner slot="schools-featured-rect-1" size="large-rectangle" />
@@ -185,7 +185,7 @@ export default async function SchoolsPage() {
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
             Browse by School Type
           </h2>
-          
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link
               href="/education/schools/lagos/?type=primary"
@@ -199,7 +199,7 @@ export default async function SchoolsPage() {
                 Nursery and primary education for children ages 3-11
               </p>
             </Link>
-            
+
             <Link
               href="/education/schools/lagos/?type=secondary"
               className="card p-6 hover:shadow-lg transition-shadow group"
@@ -212,7 +212,7 @@ export default async function SchoolsPage() {
                 Junior and senior secondary schools for ages 11-18
               </p>
             </Link>
-            
+
             <Link
               href="/education/schools/lagos/?type=international"
               className="card p-6 hover:shadow-lg transition-shadow group"
@@ -227,7 +227,7 @@ export default async function SchoolsPage() {
                 British, American, IB, and other international curricula
               </p>
             </Link>
-            
+
             <Link
               href="/education/schools/lagos/?boarding=true"
               className="card p-6 hover:shadow-lg transition-shadow group"
@@ -246,21 +246,45 @@ export default async function SchoolsPage() {
         </div>
       </section>
 
+      {/* Higher Education Mini-Banner */}
+      <section className="py-12 lg:py-16 bg-white border-y">
+        <div className="mx-auto max-w-7xl container-padding">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-2xl text-center md:text-left">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                Looking for Higher Education?
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Explore our comprehensive list of over 200 Universities, Polytechnics, and Colleges across all Nigerian states.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/education/universities" className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all hover:shadow-lg transform active:scale-95">
+                Browse Universities
+              </Link>
+              <Link href="/education/colleges" className="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-all hover:shadow-lg transform active:scale-95">
+                Colleges & Polytechnics
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SEO Content */}
       <section className="py-12 lg:py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl container-padding">
           <div className="max-w-3xl mx-auto prose prose-lg">
             <h2>Finding the Right School in Nigeria</h2>
             <p>
-              Nigeria&apos;s education sector offers a diverse range of schooling options 
-              for children at every level. From traditional public schools to prestigious 
-              private institutions and world-class international schools, parents have 
+              Nigeria&apos;s education sector offers a diverse range of schooling options
+              for children at every level. From traditional public schools to prestigious
+              private institutions and world-class international schools, parents have
               numerous choices when it comes to their children&apos;s education.
             </p>
             <p>
-              Our comprehensive school directory covers all 36 states and the FCT, 
-              featuring detailed profiles of thousands of schools. Each listing includes 
-              essential information such as curriculum offered, facilities available, 
+              Our comprehensive school directory covers all 36 states and the FCT,
+              featuring detailed profiles of thousands of schools. Each listing includes
+              essential information such as curriculum offered, facilities available,
               fee structures, and contact details to help parents make informed decisions.
             </p>
             <h3>What to Consider When Choosing a School</h3>
@@ -272,7 +296,7 @@ export default async function SchoolsPage() {
               <li><strong>Extracurriculars:</strong> Sports, arts, clubs, and activities</li>
             </ul>
           </div>
-          
+
           {/* Bottom Ads */}
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <AdBanner slot="schools-seo-rect-1" size="rectangle" />

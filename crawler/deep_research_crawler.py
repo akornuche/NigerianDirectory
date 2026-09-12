@@ -15,40 +15,40 @@ import json
 import time
 import random
 import hashlib
-import requests
+import requests # type: ignore
 from urllib.parse import quote_plus, urlparse, unquote
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # type: ignore
 from datetime import datetime
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
 
 # Google search library with better anti-detection
 try:
-    from googlesearch import search as google_search
+    from googlesearch import search as google_search # type: ignore
     GOOGLE_SEARCH_AVAILABLE = True
 except ImportError:
     GOOGLE_SEARCH_AVAILABLE = False
-    def google_search(*args, **kwargs): return []
+    def google_search(*args, **kwargs): return [] # type: ignore
 
 # DuckDuckGo search with proper API
 try:
-    from ddgs import DDGS
+    from ddgs import DDGS # type: ignore
     DDG_SEARCH_AVAILABLE = True
 except ImportError:
     try:
-        from duckduckgo_search import DDGS
+        from duckduckgo_search import DDGS # type: ignore
         DDG_SEARCH_AVAILABLE = True
     except ImportError:
         DDG_SEARCH_AVAILABLE = False
-        class DDGS:
-            def __enter__(self): return self
-            def __exit__(self, exc_type, exc_val, exc_tb): pass
-            def text(self, *args, **kwargs): return []
+        class DDGS: # type: ignore
+            def __enter__(self): return self # type: ignore
+            def __exit__(self, exc_type, exc_val, exc_tb): pass # type: ignore
+            def text(self, *args, **kwargs): return [] # type: ignore
 
 load_dotenv()
 
-from database import get_connection
+from database import get_connection # type: ignore
 
 # Configure logging with UTF-8 encoding for Windows compatibility
 logging.basicConfig(
@@ -398,7 +398,7 @@ class DeepResearchCrawler:
         # 2. Search with multiple queries across engines
         # DuckDuckGo and Bing only (Google removed per requirements)
         
-        for template in self.search_query_templates[:3]:  # Use top 3 queries
+        for template in self.search_query_templates[:3]:  # type: ignore # Use top 3 queries
             query = template.format(
                 school_name=school_name,
                 state=state,
@@ -419,12 +419,12 @@ class DeepResearchCrawler:
                     all_results.append(r)
                     searched_urls.add(r['url'])
             
-            # Google (high quality, but rate limited)
-            google_results = self.search_google_scrape(query, num_results=5)
-            for r in google_results:
-                if r['url'] not in searched_urls:
-                    all_results.append(r)
-                    searched_urls.add(r['url'])
+            # Google (disabled due to rate limiting 429s)
+            # google_results = self.search_google_scrape(query, num_results=5)
+            # for r in google_results:
+            #     if r['url'] not in searched_urls:
+            #         all_results.append(r)
+            #         searched_urls.add(r['url'])
         
         # 3. Prioritize and sort results
         def get_priority(result):
@@ -502,13 +502,13 @@ class DeepResearchCrawler:
                     logger.debug(f"Error fetching {url}: {exception}")
                     continue
                 
-                if not page_data or not page_data.get('text'):
+                if not page_data or not page_data.get('text'): # type: ignore
                     # Use snippet if page fetch fails
-                    text = result.get('snippet', '')
+                    text = result.get('snippet', '') # type: ignore
                     if not text:
                         continue
                 else:
-                    text = page_data['text']
+                    text = page_data['text'] # type: ignore
                 
                 # Check if content is relevant to this school
                 text_lower = text.lower()
@@ -518,7 +518,7 @@ class DeepResearchCrawler:
                     continue
                 
                 # Extract meaningful sentences (limit to avoid processing too much)
-                sentences = self._extract_relevant_sentences(text, school_name)[:5]  # Limit sentences
+                sentences = self._extract_relevant_sentences(text, school_name)[:5]  # type: ignore # Limit sentences
                 
                 if not sentences:
                     continue
@@ -542,37 +542,37 @@ class DeepResearchCrawler:
                     sentence_lower = sentence.lower()
                     
                     if any(word in sentence_lower for word in ['founded', 'established', 'history', 'began', 'started', 'origin', 'years ago', 'since']):
-                        content_pieces['history'].append({
+                        content_pieces['history'].append({ # type: ignore
                             'text': sentence,
                             'source': source_info
                         })
                     elif any(word in sentence_lower for word in ['curriculum', 'academic', 'program', 'waec', 'jamb', 'cambridge', 'subjects', 'education', 'teaching', 'learning']):
-                        content_pieces['academics'].append({
+                        content_pieces['academics'].append({ # type: ignore
                             'text': sentence,
                             'source': source_info
                         })
-                    elif any(word in sentence_lower for word in ['campus', 'facilities', 'building', 'library', 'laboratory', 'field', 'hostel', 'dormitory', 'chapel', 'hall']):
-                        content_pieces['campus'].append({
+                    elif any(word in sentence_lower for word in ['campus', 'faculty', 'compound', 'building', 'hostel', 'library', 'sports', 'facilities', 'located', 'area', 'hall']):
+                        content_pieces['campus'].append({ # type: ignore
                             'text': sentence,
                             'source': source_info
                         })
-                    elif any(word in sentence_lower for word in ['student', 'club', 'sport', 'activity', 'competition', 'society', 'house system']):
-                        content_pieces['student_life'].append({
+                    elif any(word in sentence_lower for word in ['student', 'club', 'sport', 'drama', 'music', 'society', 'extracurricular', 'activity', 'societies', 'union']):
+                        content_pieces['student_life'].append({ # type: ignore
                             'text': sentence,
                             'source': source_info
                         })
-                    elif any(word in sentence_lower for word in ['award', 'achievement', 'won', 'champion', 'excellence', 'recognition', 'best']):
-                        content_pieces['achievements'].append({
+                    elif any(word in sentence_lower for word in ['alumni', 'graduate', 'old boy', 'old girl', 'past student', 'notable', 'famous']):
+                        content_pieces['alumni'].append({ # type: ignore
                             'text': sentence,
                             'source': source_info
                         })
-                    elif any(word in sentence_lower for word in ['alumni', 'graduate', 'former student', 'old boy', 'old girl', 'notable']):
-                        content_pieces['alumni'].append({
+                    elif any(word in sentence_lower for word in ['award', 'prize', 'won', 'competition', 'best', 'rank', 'excellence', 'champion']):
+                        content_pieces['achievements'].append({ # type: ignore
                             'text': sentence,
                             'source': source_info
                         })
                     else:
-                        content_pieces['general'].append({
+                        content_pieces['general'].append({ # type: ignore
                             'text': sentence,
                             'source': source_info
                         })
@@ -655,7 +655,8 @@ class DeepResearchCrawler:
         
         # Build history section (min 1 sentence instead of 2)
         history_text = self._compose_section(
-            content_pieces['history'] + [p for p in content_pieces['general'] if 'found' in p['text'].lower() or 'establish' in p['text'].lower()][:3],
+            school,
+            content_pieces['history'] + [p for p in content_pieces['general'] if 'found' in p['text'].lower() or 'establish' in p['text'].lower()][:3], # type: ignore
             school_name,
             'history',
             min_sentences=1
@@ -663,6 +664,7 @@ class DeepResearchCrawler:
         
         # Build academics section (min 1 sentence)
         academics_text = self._compose_section(
+            school,
             content_pieces['academics'] + content_pieces['general'][:2],
             school_name,
             'academics',
@@ -671,6 +673,7 @@ class DeepResearchCrawler:
         
         # Build campus section (min 1 sentence)
         campus_text = self._compose_section(
+            school,
             content_pieces['campus'] + content_pieces['general'][:2],
             school_name,
             'campus',
@@ -679,6 +682,7 @@ class DeepResearchCrawler:
         
         # Build student life section (min 1 sentence)
         student_life_text = self._compose_section(
+            school,
             content_pieces['student_life'] + content_pieces['achievements'] + content_pieces['alumni'],
             school_name,
             'student_life',
@@ -707,7 +711,7 @@ class DeepResearchCrawler:
         
         return history_text, academics_text, campus_text, student_life_text, final_sources
 
-    def _compose_section(self, pieces, school_name, section_type, min_sentences=1):
+    def _compose_section(self, school, pieces, school_name, section_type, min_sentences=1):
         """Compose a section from content pieces with citations"""
         if not pieces or len(pieces) < min_sentences:
             return None
@@ -725,11 +729,15 @@ class DeepResearchCrawler:
         if len(unique_pieces) < min_sentences:
             return None
         
+        
         # Build section with citations
         section_parts = []
         used_sources = []
         
-        for i, piece in enumerate(unique_pieces[:6]):  # Max 6 sentences per section
+        # Use more sentences for universities
+        max_sentences = 25 if school.get('institution_category') == 'university' else 6
+        
+        for i, piece in enumerate(unique_pieces[:max_sentences]):  # type: ignore # Adjust length
             text = piece['text']
             source = piece['source']
             
@@ -740,7 +748,7 @@ class DeepResearchCrawler:
             if not text.endswith(('.', '!', '?')):
                 text += '.'
             
-            section_parts.append(text)
+            section_parts.append(text) # type: ignore
             
             if source not in used_sources:
                 used_sources.append(source)
@@ -753,7 +761,7 @@ class DeepResearchCrawler:
         
         # Add source attribution at end
         if used_sources:
-            source_names = list(set(s['domain'] for s in used_sources[:3]))
+            source_names = list(set(s['domain'] for s in used_sources[:3])) # type: ignore
             # Don't add inline - sources are stored separately
         
         return section_text if len(section_text) > 100 else None
@@ -772,18 +780,18 @@ class DeepResearchCrawler:
         
         try:
             # 1. Deep search across multiple engines
-            search_results = self.deep_search_school(school)
+            search_results = self.deep_search_school(school) # type: ignore
             
-            if not search_results:
+            if not search_results: # type: ignore
                 logger.warning(f"  No search results found for {school_name}")
                 self.stats['insufficient_data'] += 1
                 return False
             
             # 2. Extract and categorize content
-            content_pieces, sources, search_engines_used = self.extract_relevant_content(school, search_results)
+            content_pieces, sources, search_engines_used = self.extract_relevant_content(school, search_results) # type: ignore
             
             # 3. Compose enriched content (NO FALLBACK)
-            history, academics, campus, student_life, all_sources = self.compose_enriched_content(
+            history, academics, campus, student_life, all_sources = self.compose_enriched_content( # type: ignore
                 school, content_pieces, sources, search_engines_used
             )
             
@@ -803,13 +811,13 @@ class DeepResearchCrawler:
                     seen = set()
                     unique_sentences = []
                     for piece in all_pieces:
-                        text = piece.get('text', '').strip()
+                        text = str(piece.get('text', '')).strip() # type: ignore
                         if text and text not in seen:
                             seen.add(text)
                             unique_sentences.append(text)
                     
                     if unique_sentences:
-                        combined_text = ' '.join(unique_sentences[:10])  # Up to 10 sentences
+                        combined_text = ' '.join(unique_sentences[:10])  # type: ignore # Up to 10 sentences
                         if len(combined_text.split()) >= 15:  # At least 15 words
                             history = combined_text
                             has_content = True

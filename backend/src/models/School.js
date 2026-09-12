@@ -12,7 +12,7 @@ class School {
             principal_name, principal_title, principal_image_url,
             management_info, facilities, achievements, student_life,
             fee_range, student_count, logo_url, hero_image_url, gallery_images,
-            content_sources, meta_title, meta_description
+            content_sources, meta_title, meta_description, institution_category
         } = schoolData;
 
         // Generate unique slug
@@ -28,12 +28,12 @@ class School {
                 established_year, principal_name, principal_title, principal_image_url,
                 management_info, facilities, achievements, student_life,
                 fee_range, student_count, logo_url, hero_image_url, gallery_images,
-                content_sources, meta_title, meta_description
+                content_sources, meta_title, meta_description, institution_category
             ) VALUES (
                 $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
                 $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
                 $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-                $31, $32, $33, $34, $35, $36
+                $31, $32, $33, $34, $35, $36, $37
             ) RETURNING *`,
             [
                 name, slug, type, state, city, area, address,
@@ -45,7 +45,7 @@ class School {
                 JSON.stringify(achievements || []), JSON.stringify(student_life || {}),
                 fee_range, student_count, logo_url, hero_image_url, JSON.stringify(gallery_images || []),
                 JSON.stringify(content_sources || []),
-                meta_title, meta_description
+                meta_title, meta_description, institution_category || 'school'
             ]
         );
 
@@ -105,32 +105,32 @@ class School {
     // List schools with filters and pagination
     static async list({
         state, city, area, type, curriculum, gender, boarding,
-        search, page = 1, limit = 20, sortBy = 'name', sortOrder = 'ASC'
+        institution_category, search, page = 1, limit = 20, sortBy = 'name', sortOrder = 'ASC'
     }) {
         const conditions = [];
         const params = [];
         let paramIndex = 1;
 
         if (state) {
-            conditions.push(`LOWER(state) = LOWER($${paramIndex})`);
+            conditions.push(`(LOWER(state) = LOWER($${paramIndex}) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($${paramIndex}))`);
             params.push(state);
             paramIndex++;
         }
 
         if (city) {
-            conditions.push(`LOWER(city) = LOWER($${paramIndex})`);
+            conditions.push(`(LOWER(city) = LOWER($${paramIndex}) OR LOWER(REPLACE(city, ' ', '-')) = LOWER($${paramIndex}))`);
             params.push(city);
             paramIndex++;
         }
 
         if (area) {
-            conditions.push(`LOWER(area) = LOWER($${paramIndex})`);
+            conditions.push(`(LOWER(area) = LOWER($${paramIndex}) OR LOWER(REPLACE(area, ' ', '-')) = LOWER($${paramIndex}))`);
             params.push(area);
             paramIndex++;
         }
 
         if (type) {
-            conditions.push(`type = $${paramIndex}`);
+            conditions.push(`LOWER(type) = LOWER($${paramIndex})`);
             params.push(type);
             paramIndex++;
         }
@@ -142,8 +142,14 @@ class School {
         }
 
         if (gender) {
-            conditions.push(`gender = $${paramIndex}`);
+            conditions.push(`LOWER(gender) = LOWER($${paramIndex})`);
             params.push(gender);
+            paramIndex++;
+        }
+
+        if (institution_category) {
+            conditions.push(`LOWER(institution_category) = LOWER($${paramIndex})`);
+            params.push(institution_category);
             paramIndex++;
         }
 
@@ -159,8 +165,8 @@ class School {
             paramIndex++;
         }
 
-        const whereClause = conditions.length > 0 
-            ? `WHERE ${conditions.join(' AND ')}` 
+        const whereClause = conditions.length > 0
+            ? `WHERE ${conditions.join(' AND ')}`
             : '';
 
         // Validate sort column
@@ -180,7 +186,7 @@ class School {
         // Get schools
         const schoolsResult = await query(
             `SELECT 
-                id, uuid, name, slug, type, state, city, area,
+                id, uuid, name, slug, institution_category, type, state, city, area,
                 curriculum, levels, boarding, gender, 
                 logo_url, hero_image_url, claimed, verified,
                 template_summary, established_year, fee_range
@@ -207,11 +213,11 @@ class School {
     static async getByState(state) {
         const result = await query(
             `SELECT 
-                id, name, slug, type, area, city,
+                id, name, slug, institution_category, type, state, city, area,
                 curriculum, levels, boarding, gender,
-                logo_url, claimed, verified, template_summary
+                logo_url, hero_image_url, claimed, verified, template_summary
             FROM schools 
-            WHERE LOWER(state) = LOWER($1)
+            WHERE LOWER(state) = LOWER($1) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($1)
             ORDER BY area, name`,
             [state]
         );
@@ -222,12 +228,13 @@ class School {
     static async getByArea(state, area) {
         const result = await query(
             `SELECT 
-                id, name, slug, type, city, address,
+                id, name, slug, institution_category, type, state, city, area, address,
                 curriculum, levels, boarding, gender,
                 logo_url, hero_image_url, claimed, verified,
                 template_summary, fee_range
             FROM schools 
-            WHERE LOWER(state) = LOWER($1) AND LOWER(area) = LOWER($2)
+            WHERE (LOWER(state) = LOWER($1) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($1))
+              AND (LOWER(area) = LOWER($2) OR LOWER(REPLACE(area, ' ', '-')) = LOWER($2))
             ORDER BY name`,
             [state, area]
         );

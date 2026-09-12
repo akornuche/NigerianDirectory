@@ -9,6 +9,31 @@ const rateLimit = require('express-rate-limit');
 const { pool, testConnection } = require('./config/database');
 const { redis, testRedisConnection } = require('./config/redis');
 
+// ============================================
+// ENVIRONMENT VALIDATION
+// ============================================
+function validateEnvironment() {
+    const required = ['JWT_SECRET'];
+    const missing = required.filter(v => !process.env[v]);
+    
+    if (missing.length > 0 && process.env.NODE_ENV === 'production') {
+        console.error(
+            `❌ Missing required environment variables: ${missing.join(', ')}\n` +
+            `Set these variables in your production environment.\n` +
+            `See .env.example for configuration instructions.`
+        );
+        process.exit(1);
+    }
+
+    // Warn if using default/weak JWT secret
+    if (process.env.JWT_SECRET === 'your_secure_jwt_secret_minimum_32_chars') {
+        console.error('❌ CRITICAL: JWT_SECRET is not set to a secure value');
+        process.exit(1);
+    }
+}
+
+validateEnvironment();
+
 // Import routes
 const schoolsRoutes = require('./routes/schools');
 const locationsRoutes = require('./routes/locations');
@@ -30,9 +55,18 @@ app.use(helmet({
     crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 
-// CORS configuration
+// CORS configuration - require FRONTEND_URL in production
+const frontendUrl = process.env.FRONTEND_URL;
+if (!frontendUrl && process.env.NODE_ENV === 'production') {
+    console.error('❌ FRONTEND_URL environment variable is required in production');
+    process.exit(1);
+}
+
+const corsOrigin = frontendUrl || 'http://localhost:3000';
+console.log(`📍 CORS origin configured to: ${corsOrigin}`);
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: corsOrigin,
     credentials: true
 }));
 

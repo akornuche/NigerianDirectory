@@ -141,6 +141,7 @@ export interface School {
   claimed: boolean;
   verified: boolean;
   featured: boolean;
+  institution_category: 'school' | 'university' | 'polytechnic' | 'college';
   created_at: string;
   updated_at: string;
 }

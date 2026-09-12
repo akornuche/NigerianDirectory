@@ -1,5 +1,25 @@
 const { Pool } = require('pg');
 
+// Validate required environment variables
+function validateDatabaseEnv() {
+    const required = ['DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_USER', 'DB_PASSWORD'];
+    const missing = required.filter(v => !process.env[v]);
+    
+    if (missing.length > 0) {
+        console.error(
+            `❌ Missing required database environment variables: ${missing.join(', ')}\n` +
+            `Set these variables in your .env file or deployment environment.\n` +
+            `See .env.example for configuration instructions.`
+        );
+        process.exit(1);
+    }
+}
+
+// Only validate in production or when explicitly required
+if (process.env.NODE_ENV === 'production' || process.env.STRICT_ENV_VALIDATION === 'true') {
+    validateDatabaseEnv();
+}
+
 // Create connection pool
 const pool = new Pool({
     host: process.env.DB_HOST || 'localhost',

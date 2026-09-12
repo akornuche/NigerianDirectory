@@ -19,7 +19,7 @@ router.get('/', schoolListValidation, async (req, res, next) => {
 
         // Build cache key
         const cacheKey = `schools:list:${JSON.stringify(req.query)}`;
-        
+
         // Check cache
         const cached = await getCache(cacheKey);
         if (cached) {
@@ -29,6 +29,7 @@ router.get('/', schoolListValidation, async (req, res, next) => {
         // Query database
         const result = await School.list({
             state, city, area, type, curriculum, gender,
+            institution_category: req.query.category || req.query.institution_category,
             boarding: boarding === 'true' ? true : boarding === 'false' ? false : undefined,
             search, page, limit, sortBy, sortOrder
         });
@@ -56,7 +57,7 @@ router.get('/featured', async (req, res, next) => {
         }
 
         const schools = await School.getFeatured(limit);
-        
+
         await setCache(cacheKey, schools, CACHE_TTL.MEDIUM);
         res.json(schools);
     } catch (error) {
@@ -70,14 +71,14 @@ router.get('/featured', async (req, res, next) => {
 router.get('/stats', async (req, res, next) => {
     try {
         const cacheKey = 'schools:stats';
-        
+
         const cached = await getCache(cacheKey);
         if (cached) {
             return res.json(cached);
         }
 
         const stats = await School.getStats();
-        
+
         await setCache(cacheKey, stats, CACHE_TTL.LONG);
         res.json(stats);
     } catch (error) {
@@ -100,7 +101,7 @@ router.get('/state/:state', async (req, res, next) => {
 
         const schools = await School.getByState(state);
         const areas = await Location.getAreasByState(state);
-        
+
         const result = {
             state,
             schoolCount: schools.length,
@@ -130,7 +131,7 @@ router.get('/area/:state/:area', async (req, res, next) => {
         }
 
         const schools = await School.getByArea(state, area);
-        
+
         const result = {
             state,
             area,
@@ -159,16 +160,20 @@ router.get('/:state/:area/:slug', async (req, res, next) => {
         }
 
         const school = await School.findBySlug(slug);
-        
+
         if (!school) {
             return res.status(404).json({ error: 'School not found' });
         }
 
-        // Verify state and area match
+        // Verify state and either area OR city match
         const schoolState = school.state.toLowerCase().replace(/\s+/g, '-');
         const schoolArea = school.area?.toLowerCase().replace(/\s+/g, '-') || '';
-        
-        if (schoolState !== state.toLowerCase() || schoolArea !== area.toLowerCase()) {
+        const schoolCity = school.city?.toLowerCase().replace(/\s+/g, '-') || '';
+
+        const stateMatch = schoolState === state.toLowerCase();
+        const locationMatch = schoolArea === area.toLowerCase() || schoolCity === area.toLowerCase();
+
+        if (!stateMatch || !locationMatch) {
             return res.status(404).json({ error: 'School not found at this location' });
         }
 
@@ -193,14 +198,14 @@ router.get('/:slug', schoolSlugValidation, async (req, res, next) => {
         }
 
         const school = await School.findBySlug(slug);
-        
+
         if (!school) {
             return res.status(404).json({ error: 'School not found' });
         }
 
         // Get nearby schools
         const nearbySchools = await School.getNearby(school.id, school.state, school.area, 5);
-        
+
         // Get location hierarchy for breadcrumbs
         const locationHierarchy = await Location.getHierarchy(school.state, school.city, school.area);
 
@@ -231,14 +236,14 @@ router.get('/:slug/blog', async (req, res, next) => {
         }
 
         const school = await School.findBySlug(slug);
-        
+
         if (!school) {
             return res.status(404).json({ error: 'School not found' });
         }
 
         // Get nearby schools for related section
         const relatedSchools = await School.getNearby(school.id, school.state, school.area, 5);
-        
+
         // Get location hierarchy
         const locationHierarchy = await Location.getHierarchy(school.state, school.city, school.area);
 
@@ -292,7 +297,7 @@ router.post('/', authenticate, requireAdmin, schoolCreateValidation, async (req,
     try {
         // Generate template summary
         const { summary, templateId } = generateSummary(req.body);
-        
+
         const schoolData = {
             ...req.body,
             template_summary: summary,
@@ -301,10 +306,10 @@ router.post('/', authenticate, requireAdmin, schoolCreateValidation, async (req,
         };
 
         const school = await School.create(schoolData);
-        
+
         // Clear relevant caches
         await clearCachePattern('schools:*');
-        
+
         res.status(201).json(school);
     } catch (error) {
         if (error.code === '23505') { // Unique violation
@@ -320,9 +325,9 @@ router.post('/', authenticate, requireAdmin, schoolCreateValidation, async (req,
 router.patch('/:id', authenticate, checkSchoolOwnership, schoolUpdateValidation, async (req, res, next) => {
     try {
         const { id } = req.params;
-        
+
         const school = await School.update(id, req.body);
-        
+
         if (!school) {
             return res.status(404).json({ error: 'School not found' });
         }
@@ -385,14 +390,14 @@ router.post('/:id/claim', authenticate, async (req, res, next) => {
 router.delete('/:id', authenticate, requireAdmin, async (req, res, next) => {
     try {
         const { id } = req.params;
-        
+
         const school = await School.findById(id);
         if (!school) {
             return res.status(404).json({ error: 'School not found' });
         }
 
         await School.delete(id);
-        
+
         // Clear caches
         await deleteCache(`schools:detail:${school.slug}`);
         await deleteCache(`schools:blog:${school.slug}`);

@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS schools (
     uuid UUID DEFAULT uuid_generate_v4() UNIQUE,
     name VARCHAR(255) NOT NULL,
     slug VARCHAR(255) UNIQUE NOT NULL,
+    institution_category VARCHAR(50) DEFAULT 'school',
     type VARCHAR(50) CHECK (type IN ('private', 'public', 'international', 'federal', 'state', 'mission', 'community')),
     state VARCHAR(100) NOT NULL,
     city VARCHAR(100),
@@ -255,9 +256,8 @@ CREATE TRIGGER update_claims_updated_at
     EXECUTE FUNCTION update_updated_at_column();
 
 -- ============================================
--- INITIAL ADMIN USER (change password immediately!)
+-- NOTE: Admin user is created via setup script
 -- ============================================
--- Password: admin123 (bcrypt hash)
-INSERT INTO users (name, email, password_hash, role, email_verified)
-VALUES ('Admin', 'admin@nigeriandirectory.com', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', true)
-ON CONFLICT (email) DO NOTHING;
+-- Do NOT manually insert admin users in this schema file.
+-- Use the setup-admin.js script in src/database/ to create the initial admin.
+-- This ensures secure password generation and prevents hardcoded credentials.

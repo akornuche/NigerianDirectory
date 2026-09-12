@@ -99,25 +99,25 @@ export const verticals: Vertical[] = [
         name: 'Universities',
         slug: 'universities',
         description: 'Federal, state, and private universities',
-        status: 'coming-soon',
+        status: 'live',
         icon: 'AcademicCapIcon',
         color: 'primary',
         subcategories: [
-          { name: 'Federal Universities', slug: 'federal', description: 'Government-owned federal universities', status: 'coming-soon' },
-          { name: 'State Universities', slug: 'state', description: 'State government-owned universities', status: 'coming-soon' },
-          { name: 'Private Universities', slug: 'private', description: 'Privately-owned universities', status: 'coming-soon' },
+          { name: 'Federal Universities', slug: 'federal', description: 'Government-owned federal universities', status: 'live' },
+          { name: 'State Universities', slug: 'state', description: 'State government-owned universities', status: 'live' },
+          { name: 'Private Universities', slug: 'private', description: 'Privately-owned universities', status: 'live' },
         ],
       },
       {
         name: 'Colleges & Polytechnics',
         slug: 'colleges',
         description: 'Polytechnics, colleges of education, and monotechnics',
-        status: 'coming-soon',
+        status: 'live',
         icon: 'BookOpenIcon',
         color: 'primary',
         subcategories: [
-          { name: 'Polytechnics', slug: 'polytechnics', description: 'Technical and vocational polytechnics', status: 'coming-soon' },
-          { name: 'Colleges of Education', slug: 'colleges-of-education', description: 'Teacher training institutions', status: 'coming-soon' },
+          { name: 'Polytechnics', slug: 'polytechnics', description: 'Technical and vocational polytechnics', status: 'live' },
+          { name: 'Colleges of Education', slug: 'colleges-of-education', description: 'Teacher training institutions', status: 'live' },
         ],
       },
       {
@@ -562,8 +562,8 @@ export function getCategoryBySlug(verticalSlug: string, categorySlug: string): C
 }
 
 export function getSubcategoryBySlug(
-  verticalSlug: string, 
-  categorySlug: string, 
+  verticalSlug: string,
+  categorySlug: string,
   subcategorySlug: string
 ): Subcategory | undefined {
   const category = getCategoryBySlug(verticalSlug, categorySlug);
@@ -573,14 +573,14 @@ export function getSubcategoryBySlug(
 export function isLive(verticalSlug: string, categorySlug?: string, subcategorySlug?: string): boolean {
   const vertical = getVerticalBySlug(verticalSlug);
   if (!vertical || vertical.status !== 'live') return false;
-  
+
   if (!categorySlug) return true;
-  
+
   const category = getCategoryBySlug(verticalSlug, categorySlug);
   if (!category || category.status !== 'live') return false;
-  
+
   if (!subcategorySlug) return true;
-  
+
   const subcategory = getSubcategoryBySlug(verticalSlug, categorySlug, subcategorySlug);
   return subcategory?.status === 'live';
 }
