@@ -67,7 +67,37 @@ const logger = new Logger();
 
 // Security headers
 app.use(helmet({
-    crossOriginResourcePolicy: { policy: "cross-origin" }
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "cdn.jsdelivr.net", "maps.googleapis.com"],
+            styleSrc: ["'self'", "'unsafe-inline'", "fonts.googleapis.com", "cdn.jsdelivr.net"],
+            imgSrc: ["'self'", "data:", "https:", "blob:"],
+            connectSrc: ["'self'", "maps.googleapis.com", "*.googleapis.com"],
+            fontSrc: ["'self'", "fonts.gstatic.com", "data:"],
+            frameSrc: ["'self'"],
+            objectSrc: ["'none'"],
+            upgradeInsecureRequests: process.env.NODE_ENV === 'production' ? [] : undefined
+        }
+    },
+    hsts: {
+        maxAge: 31536000, // 1 year
+        includeSubDomains: true,
+        preload: true
+    },
+    frameguard: {
+        action: 'deny'
+    },
+    referrerPolicy: {
+        policy: 'strict-origin-when-cross-origin'
+    },
+    permissionsPolicy: {
+        camera: [],
+        microphone: [],
+        geolocation: ['self'],
+        usb: []
+    }
 }));
 
 // CORS configuration - require FRONTEND_URL in production
@@ -95,20 +125,70 @@ if (process.env.NODE_ENV === 'production') {
 // Structured logging middleware
 app.use(requestLoggingMiddleware);
 
-// Metrics collection
-app.use(metricsMiddleware);
+// ============================================
+// INPUT SANITIZATION & VALIDATION
+// ============================================
+const {
+    sanitizationMiddleware,
+    preventRequestSmuggling
+} = require('./middleware/inputSanitization');
+
+const {
+    csrfProtection,
+    getCsrfToken
+} = require('./middleware/csrf');
+
+app.use(preventRequestSmuggling);
+app.use(sanitizationMiddleware);
+
+// CSRF protection for state-changing requests
+app.use(csrfProtection);
 
 // Body parsing
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// Rate limiting
-const limiter = rateLimit({
+// ============================================
+// RATE LIMITING - Multiple layers for different endpoints
+// ============================================
+
+// Global rate limiter (basic)
+const globalLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // limit each IP to 100 requests per windowMs
     message: { error: 'Too many requests, please try again later.' }
 });
-app.use('/api/', limiter);
+
+// Auth endpoints - strict
+const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // 5 attempts per 15 minutes
+    message: { error: 'Too many login attempts, please try again later' },
+    skip: (req) => req.user && req.user.role === 'admin' // Don't rate limit admins
+});
+
+// Token refresh - very strict
+const refreshLimiter = rateLimit({
+    windowMs: 60 * 1000, // 1 minute
+    max: 10, // 10 attempts per minute
+    message: { error: 'Too many token refresh attempts' }
+});
+
+// Schools endpoint - moderate
+const schoolsLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minute
+    max: 30, // 30 requests per minute
+    message: { error: 'Too many requests to schools endpoint' }
+});
+
+// Claims endpoint - strict (prevents abuse)
+const claimsLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 5, // 5 claims per hour per IP
+    message: { error: 'Too many claim attempts, please try again later' }
+});
+
+app.use('/api/', globalLimiter);
 
 // ============================================
 // HEALTH CHECK & MONITORING
@@ -202,6 +282,15 @@ app.get('/metrics', metricsEndpoint);
 // ============================================
 // API ROUTES
 // ============================================
+
+// CSRF token endpoint (GET - safe method, no token required)
+app.get('/api/csrf-token', (req, res, next) => {
+    // Skip CSRF check for this endpoint
+    csrfProtection.bypass = true;
+    getCsrfToken(req, res);
+    csrfProtection.bypass = false;
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/schools', schoolsRoutes);
 app.use('/api/locations', locationsRoutes);

@@ -6,24 +6,19 @@ const tokenService = require('../services/tokenService');
 const { registerValidation, loginValidation } = require('../middleware/validators');
 const rateLimit = require('express-rate-limit');
 
-// ============================================
-// RATE LIMITING - Stricter limits for auth endpoints
-// ============================================
+// Stricter rate limiting for auth endpoints - get from parent app
+const rateLimit = require('express-rate-limit');
+
 const authLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 5, // 5 attempts per 15 minutes
-    message: { error: 'Too many login attempts, please try again later' },
-    standardHeaders: true,
-    legacyHeaders: false,
-    skip: (req) => req.user && req.user.role === 'admin' // Don't rate limit admins
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    message: { error: 'Too many login attempts' }
 });
 
 const refreshLimiter = rateLimit({
-    windowMs: 60 * 1000, // 1 minute
-    max: 10, // 10 token refresh attempts per minute
-    message: { error: 'Too many refresh token requests' },
-    standardHeaders: true,
-    legacyHeaders: false
+    windowMs: 60 * 1000,
+    max: 10,
+    message: { error: 'Too many refresh attempts' }
 });
 
 // ============================================
