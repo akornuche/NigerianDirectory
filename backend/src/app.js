@@ -10,6 +10,20 @@ const { pool, testConnection } = require('./config/database');
 const { redis, testRedisConnection } = require('./config/redis');
 
 // ============================================
+// LOGGING & MONITORING
+// ============================================
+const { 
+    requestLoggingMiddleware, 
+    errorLoggingMiddleware,
+    Logger
+} = require('./utils/logger');
+const {
+    metricsMiddleware,
+    metricsEndpoint,
+    collector
+} = require('./middleware/metrics');
+
+// ============================================
 // ENVIRONMENT VALIDATION
 // ============================================
 function validateEnvironment() {
@@ -45,6 +59,7 @@ const viewsRoutes = require('./routes/views');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const logger = new Logger();
 
 // ============================================
 // MIDDLEWARE
@@ -63,15 +78,25 @@ if (!frontendUrl && process.env.NODE_ENV === 'production') {
 }
 
 const corsOrigin = frontendUrl || 'http://localhost:3000';
-console.log(`📍 CORS origin configured to: ${corsOrigin}`);
+logger.info(`📍 CORS origin configured to: ${corsOrigin}`);
 
 app.use(cors({
     origin: corsOrigin,
     credentials: true
 }));
 
-// Request logging
-app.use(morgan('combined'));
+// Request logging (morgan for compatibility)
+if (process.env.NODE_ENV === 'production') {
+    app.use(morgan('combined'));
+} else {
+    app.use(morgan('dev'));
+}
+
+// Structured logging middleware
+app.use(requestLoggingMiddleware);
+
+// Metrics collection
+app.use(metricsMiddleware);
 
 // Body parsing
 app.use(express.json({ limit: '10mb' }));
@@ -86,7 +111,7 @@ const limiter = rateLimit({
 app.use('/api/', limiter);
 
 // ============================================
-// HEALTH CHECK
+// HEALTH CHECK & MONITORING
 // ============================================
 
 // Root endpoint
@@ -96,10 +121,56 @@ app.get('/', (req, res) => {
         version: '1.0.0',
         status: 'running',
         documentation: '/api',
-        health: '/health'
+        health: '/health',
+        metrics: '/metrics'
     });
 });
 
+// Liveness probe - is app running?
+app.get('/health/live', (req, res) => {
+    res.json({
+        status: 'alive',
+        timestamp: new Date().toISOString()
+    });
+});
+
+// Readiness probe - can app serve traffic?
+app.get('/health/ready', async (req, res) => {
+    try {
+        // Check database
+        const dbCheck = await pool.query('SELECT 1').catch(e => ({ error: e.message }));
+        
+        // Check Redis
+        const redisCheck = await redis.ping().catch(e => ({ error: e.message }));
+
+        if (dbCheck.error || (typeof redisCheck !== 'string')) {
+            return res.status(503).json({
+                status: 'not_ready',
+                timestamp: new Date().toISOString(),
+                checks: {
+                    database: dbCheck.error ? 'failed' : 'ok',
+                    redis: redisCheck.error ? 'failed' : 'ok'
+                }
+            });
+        }
+
+        res.json({
+            status: 'ready',
+            timestamp: new Date().toISOString(),
+            checks: {
+                database: 'ok',
+                redis: 'ok'
+            }
+        });
+    } catch (error) {
+        res.status(503).json({
+            status: 'not_ready',
+            error: error.message
+        });
+    }
+});
+
+// Combined health check (backwards compatible)
 app.get('/health', async (req, res) => {
     try {
         // Check database
@@ -124,6 +195,9 @@ app.get('/health', async (req, res) => {
         });
     }
 });
+
+// Prometheus metrics endpoint
+app.get('/metrics', metricsEndpoint);
 
 // ============================================
 // API ROUTES
@@ -160,6 +234,9 @@ app.get('/api', (req, res) => {
 // ERROR HANDLING
 // ============================================
 
+// Error logging middleware
+app.use(errorLoggingMiddleware);
+
 // 404 handler
 app.use((req, res) => {
     res.status(404).json({
@@ -168,9 +245,16 @@ app.use((req, res) => {
     });
 });
 
-// Global error handler
+// Global error handler with sensitive data masking
 app.use((err, req, res, next) => {
-    console.error('Error:', err);
+    const requestLogger = req.logger || new Logger({ requestId: req.requestId || 'unknown' });
+
+    // Log full error server-side
+    requestLogger.error('Unhandled error', err, {
+        method: req.method,
+        path: req.path,
+        statusCode: res.statusCode || 500
+    });
 
     // Validation errors
     if (err.name === 'ValidationError') {
@@ -193,10 +277,20 @@ app.use((err, req, res, next) => {
         });
     }
 
-    // Default error
-    res.status(err.status || 500).json({
+    // Database errors
+    if (err.code === 'ECONNREFUSED') {
+        return res.status(503).json({
+            error: 'Database connection failed'
+        });
+    }
+
+    // Generic error response (no sensitive details exposed to client)
+    const statusCode = err.statusCode || err.status || 500;
+    const isDevelopment = process.env.NODE_ENV === 'development';
+
+    res.status(statusCode).json({
         error: err.message || 'Internal Server Error',
-        ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+        ...(isDevelopment && { stack: err.stack })
     });
 });
 
@@ -207,27 +301,29 @@ async function startServer() {
     try {
         // Test database connection
         await testConnection();
-        console.log('✅ Database connected successfully');
+        logger.info('✅ Database connected successfully');
 
         // Test Redis connection
         await testRedisConnection();
-        console.log('✅ Redis connected successfully');
+        logger.info('✅ Redis connected successfully');
 
         // Start server
         app.listen(PORT, () => {
-            console.log(`
+            logger.info(`
 ╔════════════════════════════════════════════════════════════╗
 ║                                                            ║
 ║   🇳🇬 NigerianDirectory.com API Server                     ║
 ║                                                            ║
 ║   Server running on: http://localhost:${PORT}               ║
 ║   Environment: ${process.env.NODE_ENV || 'development'}                            ║
+║   Health: /health                                          ║
+║   Metrics: /metrics                                        ║
 ║                                                            ║
 ╚════════════════════════════════════════════════════════════╝
             `);
         });
     } catch (error) {
-        console.error('❌ Failed to start server:', error);
+        logger.error('❌ Failed to start server', error);
         process.exit(1);
     }
 }
