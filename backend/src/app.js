@@ -27,23 +27,87 @@ const {
 // ENVIRONMENT VALIDATION
 // ============================================
 function validateEnvironment() {
-    const required = ['JWT_SECRET'];
-    const missing = required.filter(v => !process.env[v]);
+    const isProduction = process.env.NODE_ENV === 'production';
+    const isTest = process.env.NODE_ENV === 'test';
     
-    if (missing.length > 0 && process.env.NODE_ENV === 'production') {
+    // Required for all environments
+    const alwaysRequired = ['JWT_SECRET'];
+    
+    // Required only in production
+    const productionRequired = [
+        'DB_HOST',
+        'DB_PORT',
+        'DB_NAME',
+        'DB_USER',
+        'DB_PASSWORD',
+        'REDIS_HOST',
+        'REDIS_PORT',
+        'FRONTEND_URL'
+    ];
+
+    // Check always-required variables
+    let missing = alwaysRequired.filter(v => !process.env[v]);
+    if (missing.length > 0) {
         console.error(
-            `❌ Missing required environment variables: ${missing.join(', ')}\n` +
-            `Set these variables in your production environment.\n` +
+            `❌ CRITICAL: Missing required environment variables: ${missing.join(', ')}\n` +
+            `These are required in all environments.\n` +
             `See .env.example for configuration instructions.`
         );
         process.exit(1);
     }
 
-    // Warn if using default/weak JWT secret
-    if (process.env.JWT_SECRET === 'your_secure_jwt_secret_minimum_32_chars') {
-        console.error('❌ CRITICAL: JWT_SECRET is not set to a secure value');
+    // Check production-required variables
+    if (isProduction) {
+        missing = productionRequired.filter(v => !process.env[v]);
+        if (missing.length > 0) {
+            console.error(
+                `❌ CRITICAL: Missing production environment variables: ${missing.join(', ')}\n` +
+                `These are required for production deployments.\n` +
+                `See .env.example for configuration instructions.`
+            );
+            process.exit(1);
+        }
+    }
+
+    // Validate JWT_SECRET strength
+    if (process.env.JWT_SECRET && process.env.JWT_SECRET.length < 32) {
+        console.error('❌ CRITICAL: JWT_SECRET must be at least 32 characters');
         process.exit(1);
     }
+
+    // Warn if using default/example values
+    const defaults = {
+        'JWT_SECRET': 'your_secure_jwt_secret_minimum_32_chars',
+        'DB_PASSWORD': 'postgres',
+        'REDIS_PORT': '6379'
+    };
+
+    for (const [key, defaultValue] of Object.entries(defaults)) {
+        if (process.env[key] === defaultValue && isProduction) {
+            console.error(`❌ WARNING: ${key} is set to a default/example value`);
+        }
+    }
+
+    // Validate port is valid number
+    if (process.env.PORT) {
+        const port = parseInt(process.env.PORT, 10);
+        if (isNaN(port) || port < 1 || port > 65535) {
+            console.error('❌ CRITICAL: PORT must be a valid port number (1-65535)');
+            process.exit(1);
+        }
+    }
+
+    // Validate FRONTEND_URL format in production
+    if (isProduction && process.env.FRONTEND_URL) {
+        try {
+            new URL(process.env.FRONTEND_URL);
+        } catch (error) {
+            console.error('❌ CRITICAL: FRONTEND_URL is not a valid URL');
+            process.exit(1);
+        }
+    }
+
+    logger.info('✅ Environment validation passed');
 }
 
 validateEnvironment();
@@ -103,16 +167,25 @@ app.use(helmet({
 // CORS configuration - require FRONTEND_URL in production
 const frontendUrl = process.env.FRONTEND_URL;
 if (!frontendUrl && process.env.NODE_ENV === 'production') {
-    console.error('❌ FRONTEND_URL environment variable is required in production');
+    console.error('❌ CRITICAL: FRONTEND_URL environment variable is required in production');
     process.exit(1);
 }
 
-const corsOrigin = frontendUrl || 'http://localhost:3000';
-logger.info(`📍 CORS origin configured to: ${corsOrigin}`);
+// Support multiple CORS origins via environment variable
+let corsOrigin = frontendUrl || 'http://localhost:3000';
+
+// In production, validate and support multiple origins if provided
+if (process.env.NODE_ENV === 'production' && process.env.CORS_ORIGINS) {
+    corsOrigin = process.env.CORS_ORIGINS.split(',').map(url => url.trim());
+    logger.info(`📍 CORS configured for multiple origins: ${corsOrigin.join(', ')}`);
+} else {
+    logger.info(`📍 CORS origin configured to: ${corsOrigin}`);
+}
 
 app.use(cors({
     origin: corsOrigin,
-    credentials: true
+    credentials: true,
+    optionsSuccessStatus: 200
 }));
 
 // Request logging (morgan for compatibility)
