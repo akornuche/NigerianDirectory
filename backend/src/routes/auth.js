@@ -6,9 +6,6 @@ const tokenService = require('../services/tokenService');
 const { registerValidation, loginValidation } = require('../middleware/validators');
 const rateLimit = require('express-rate-limit');
 
-// Stricter rate limiting for auth endpoints - get from parent app
-const rateLimit = require('express-rate-limit');
-
 const authLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 5,
@@ -21,9 +18,60 @@ const refreshLimiter = rateLimit({
     message: { error: 'Too many refresh attempts' }
 });
 
-// ============================================
-// POST /api/auth/register - Register new user
-// ============================================
+/**
+ * @swagger
+ * /api/auth/register:
+ *   post:
+ *     summary: Register a new user
+ *     description: Create a new user account with email and password
+ *     tags:
+ *       - Authentication
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - name
+ *               - email
+ *               - password
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: John Doe
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 example: john@example.com
+ *               password:
+ *                 type: string
+ *                 format: password
+ *                 minLength: 8
+ *                 example: securepassword123
+ *     responses:
+ *       201:
+ *         description: User registered successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                 user:
+ *                   $ref: '#/components/schemas/User'
+ *                 accessToken:
+ *                   type: string
+ *                 refreshToken:
+ *                   type: string
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       409:
+ *         $ref: '#/components/responses/Conflict'
+ *       429:
+ *         $ref: '#/components/responses/TooManyRequests'
+ */
 router.post('/register', registerValidation, authLimiter, async (req, res, next) => {
     try {
         const { name, email, password } = req.body;
@@ -57,9 +105,46 @@ router.post('/register', registerValidation, authLimiter, async (req, res, next)
     }
 });
 
-// ============================================
-// POST /api/auth/login - Login user
-// ============================================
+/**
+ * @swagger
+ * /api/auth/login:
+ *   post:
+ *     summary: Login user
+ *     description: Authenticate user with email and password. Returns access and refresh tokens.
+ *     tags:
+ *       - Authentication
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 example: john@example.com
+ *               password:
+ *                 type: string
+ *                 format: password
+ *                 example: securepassword123
+ *     responses:
+ *       200:
+ *         description: Login successful
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/AuthResponse'
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ *       429:
+ *         $ref: '#/components/responses/TooManyRequests'
+ */
 router.post('/login', loginValidation, authLimiter, async (req, res, next) => {
     try {
         const { email, password } = req.body;
@@ -96,9 +181,47 @@ router.post('/login', loginValidation, authLimiter, async (req, res, next) => {
     }
 });
 
-// ============================================
-// POST /api/auth/refresh - Refresh access token
-// ============================================
+/**
+ * @swagger
+ * /api/auth/refresh:
+ *   post:
+ *     summary: Refresh access token
+ *     description: Get a new access token using a valid refresh token
+ *     tags:
+ *       - Authentication
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - refreshToken
+ *             properties:
+ *               refreshToken:
+ *                 type: string
+ *                 description: Valid refresh token (7 days expiry)
+ *     responses:
+ *       200:
+ *         description: Token refreshed successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                 accessToken:
+ *                   type: string
+ *                 refreshToken:
+ *                   type: string
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ *       429:
+ *         $ref: '#/components/responses/TooManyRequests'
+ */
 router.post('/refresh', refreshLimiter, async (req, res, next) => {
     try {
         const { refreshToken } = req.body;
@@ -141,9 +264,32 @@ router.post('/refresh', refreshLimiter, async (req, res, next) => {
     }
 });
 
-// ============================================
-// POST /api/auth/logout - Logout user (revoke tokens)
-// ============================================
+/**
+ * @swagger
+ * /api/auth/logout:
+ *   post:
+ *     summary: Logout user
+ *     description: Revoke access and refresh tokens. User will need to login again.
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: false
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               refreshToken:
+ *                 type: string
+ *                 description: Optional refresh token to revoke
+ *     responses:
+ *       200:
+ *         description: Logout successful
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ */
 router.post('/logout', authenticate, async (req, res, next) => {
     try {
         const { refreshToken } = req.body;
@@ -161,9 +307,38 @@ router.post('/logout', authenticate, async (req, res, next) => {
     }
 });
 
-// ============================================
-// GET /api/auth/me - Get current user
-// ============================================
+/**
+ * @swagger
+ * /api/auth/me:
+ *   get:
+ *     summary: Get current user profile
+ *     description: Retrieve the authenticated user's profile information and token details
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Current user profile
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 user:
+ *                   $ref: '#/components/schemas/User'
+ *                 token:
+ *                   type: object
+ *                   properties:
+ *                     expiresIn:
+ *                       type: integer
+ *                       example: 900
+ *                     expiresAt:
+ *                       type: string
+ *                       format: date-time
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ */
 router.get('/me', authenticate, async (req, res) => {
     const tokenInfo = tokenService.validateTokenStructure(req.token);
 
@@ -184,9 +359,49 @@ router.get('/me', authenticate, async (req, res) => {
     });
 });
 
-// ============================================
-// PATCH /api/auth/me - Update current user
-// ============================================
+/**
+ * @swagger
+ * /api/auth/me:
+ *   patch:
+ *     summary: Update current user profile
+ *     description: Update name or email of the authenticated user
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: Jane Doe
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 example: jane@example.com
+ *     responses:
+ *       200:
+ *         description: Profile updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                 user:
+ *                   $ref: '#/components/schemas/User'
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ *       409:
+ *         $ref: '#/components/responses/Conflict'
+ */
 router.patch('/me', authenticate, async (req, res, next) => {
     try {
         const { name, email } = req.body;
@@ -220,9 +435,55 @@ router.patch('/me', authenticate, async (req, res, next) => {
     }
 });
 
-// ============================================
-// POST /api/auth/change-password - Change password
-// ============================================
+/**
+ * @swagger
+ * /api/auth/change-password:
+ *   post:
+ *     summary: Change user password
+ *     description: Change password for authenticated user. All tokens will be revoked after password change.
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - currentPassword
+ *               - newPassword
+ *             properties:
+ *               currentPassword:
+ *                 type: string
+ *                 format: password
+ *                 example: oldpassword123
+ *               newPassword:
+ *                 type: string
+ *                 format: password
+ *                 minLength: 8
+ *                 example: newpassword456
+ *     responses:
+ *       200:
+ *         description: Password changed successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                 code:
+ *                   type: string
+ *                   example: PASSWORD_CHANGED
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ *       429:
+ *         $ref: '#/components/responses/TooManyRequests'
+ */
 router.post('/change-password', authenticate, authLimiter, async (req, res, next) => {
     try {
         const { currentPassword, newPassword } = req.body;
@@ -259,9 +520,28 @@ router.post('/change-password', authenticate, authLimiter, async (req, res, next
     }
 });
 
-// ============================================
-// GET /api/auth/my-schools - Get user's claimed schools
-// ============================================
+/**
+ * @swagger
+ * /api/auth/my-schools:
+ *   get:
+ *     summary: Get user's claimed schools
+ *     description: Retrieve list of schools claimed by the authenticated user
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: List of claimed schools
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/School'
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ */
 router.get('/my-schools', authenticate, async (req, res, next) => {
     try {
         const schools = await User.getClaimedSchools(req.user.id);
@@ -271,9 +551,46 @@ router.get('/my-schools', authenticate, async (req, res, next) => {
     }
 });
 
-// ============================================
-// GET /api/auth/token-info - Get current token info (debug endpoint)
-// ============================================
+/**
+ * @swagger
+ * /api/auth/token-info:
+ *   get:
+ *     summary: Get current token information
+ *     description: Debug endpoint to check current token details and expiration
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Current token information
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 token:
+ *                   type: object
+ *                   properties:
+ *                     expiresIn:
+ *                       type: integer
+ *                       example: 900
+ *                     expiresAt:
+ *                       type: string
+ *                       format: date-time
+ *                     type:
+ *                       type: string
+ *                       example: access
+ *                 user:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: integer
+ *                     email:
+ *                       type: string
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ */
 router.get('/token-info', authenticate, (req, res) => {
     const tokenInfo = tokenService.validateTokenStructure(req.token);
 

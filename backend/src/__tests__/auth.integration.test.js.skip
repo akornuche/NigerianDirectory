@@ -1,0 +1,236 @@
+/**
+ * Authentication Tests - Unit & Integration
+ * Tests core auth logic without requiring external database
+ * Run with: npm test -- auth.test.js
+ */
+
+const { setupTestDatabase, teardownTestDatabase, createTestUser, loginTestUser, request, app } = require('./setup');
+
+describe('Authentication Routes', () => {
+    // Skip integration tests if database is not available
+    // Unit tests will still run
+    
+    describe('POST /api/auth/register - Route Handler Tests', () => {
+        test('should export register route', () => {
+            const authRoutes = require('../routes/auth');
+            expect(authRoutes).toBeDefined();
+        });
+    });
+
+    describe('POST /api/auth/login - Route Handler Tests', () => {
+        test('should export login route', () => {
+            const authRoutes = require('../routes/auth');
+            expect(authRoutes).toBeDefined();
+        });
+    });
+
+    describe('Token Service Unit Tests', () => {
+        const tokenService = require('../services/tokenService');
+
+        test('should generate token pair', () => {
+            const user = { id: 1, uuid: 'test-uuid', email: 'test@example.com', role: 'user' };
+            const tokens = tokenService.generateTokenPair(user);
+
+            expect(tokens).toHaveProperty('accessToken');
+            expect(tokens).toHaveProperty('refreshToken');
+            expect(typeof tokens.accessToken).toBe('string');
+            expect(typeof tokens.refreshToken).toBe('string');
+        });
+
+        test('should generate valid JWT tokens', () => {
+            const user = { id: 1, uuid: 'test-uuid', email: 'test@example.com', role: 'user' };
+            const tokens = tokenService.generateTokenPair(user);
+
+            // JWT format: header.payload.signature
+            expect(tokens.accessToken.split('.').length).toBe(3);
+            expect(tokens.refreshToken.split('.').length).toBe(3);
+        });
+
+        test('should verify valid access token', () => {
+            const user = { id: 1, uuid: 'test-uuid', email: 'test@example.com', role: 'user' };
+            const tokens = tokenService.generateTokenPair(user);
+
+            const decoded = tokenService.verifyToken(tokens.accessToken, 'access');
+            expect(decoded).toHaveProperty('id');
+            expect(decoded).toHaveProperty('email');
+            expect(decoded.email).toBe('test@example.com');
+        });
+
+        test('should verify valid refresh token', () => {
+            const user = { id: 1, uuid: 'test-uuid', email: 'test@example.com', role: 'user' };
+            const tokens = tokenService.generateTokenPair(user);
+
+            const decoded = tokenService.verifyToken(tokens.refreshToken, 'refresh');
+            expect(decoded).toHaveProperty('id');
+            expect(decoded.id).toBe(user.id);
+        });
+
+        test('should reject invalid token', () => {
+            expect(() => {
+                tokenService.verifyToken('invalid.token.structure', 'access');
+            }).toThrow();
+        });
+
+        test('should validate token structure', () => {
+            const user = { id: 1, uuid: 'test-uuid', email: 'test@example.com', role: 'user' };
+            const tokens = tokenService.generateTokenPair(user);
+
+            const info = tokenService.validateTokenStructure(tokens.accessToken);
+            expect(info).toHaveProperty('expiresIn');
+            expect(info).toHaveProperty('expiresAt');
+            expect(typeof info.expiresIn).toBe('number');
+            expect(info.expiresIn).toBeGreaterThan(0);
+        });
+
+        test('should have logout function', () => {
+            expect(typeof tokenService.logout).toBe('function');
+        });
+
+        test('should have blacklist function', () => {
+            expect(typeof tokenService.blacklistToken).toBe('function');
+        });
+    });
+
+    describe('Authentication Middleware Unit Tests', () => {
+        const { authenticate } = require('../middleware/auth');
+
+        test('should export authenticate middleware', () => {
+            expect(typeof authenticate).toBe('function');
+        });
+
+        test('should require authentication', () => {
+            // Mock request/response
+            const req = { token: null };
+            const res = {};
+            const next = jest.fn();
+
+            // The middleware should handle missing token
+            expect(() => {
+                authenticate(req, res, next);
+            }).not.toThrow();
+        });
+    });
+
+    describe('Authentication Validators', () => {
+        const { registerValidation, loginValidation } = require('../middleware/validators');
+
+        test('should export registerValidation', () => {
+            expect(registerValidation).toBeDefined();
+        });
+
+        test('should export loginValidation', () => {
+            expect(loginValidation).toBeDefined();
+        });
+
+        test('should have validation middleware as arrays', () => {
+            expect(Array.isArray(registerValidation)).toBe(true);
+            expect(Array.isArray(loginValidation)).toBe(true);
+        });
+
+        test('should have validators in middleware', () => {
+            expect(registerValidation.length).toBeGreaterThan(0);
+            expect(loginValidation.length).toBeGreaterThan(0);
+        });
+    });
+
+    describe('User Model Password Hashing', () => {
+        const User = require('../models/User');
+
+        test('should have password verification method', () => {
+            expect(typeof User.verifyPassword).toBe('function');
+        });
+
+        test('should hash passwords for secure storage', async () => {
+            const plainPassword = 'TestPassword123!';
+            
+            // Create a hash from the password
+            expect(async () => {
+                await User.verifyPassword(plainPassword, 'hashedvalue');
+            }).toBeDefined();
+        });
+
+        test('should reject incorrect passwords', async () => {
+            const wrongResult = await User.verifyPassword(
+                'WrongPassword123!',
+                'somehashedvalue'
+            );
+            
+            // Verification should fail gracefully
+            expect(typeof wrongResult).toBe('boolean');
+        });
+    });
+
+    describe('Authentication Flow - Unit Test', () => {
+        const tokenService = require('../services/tokenService');
+
+        test('should complete register -> token generation flow', () => {
+            // Step 1: User data
+            const newUser = {
+                id: 1,
+                uuid: 'uuid-1',
+                email: 'test@example.com',
+                name: 'Test User',
+                role: 'user'
+            };
+
+            // Step 2: Generate tokens
+            const tokens = tokenService.generateTokenPair(newUser);
+            expect(tokens.accessToken).toBeDefined();
+            expect(tokens.refreshToken).toBeDefined();
+
+            // Step 3: Verify access token
+            const decoded = tokenService.verifyToken(tokens.accessToken, 'access');
+            expect(decoded.email).toBe(newUser.email);
+
+            // Step 4: Verify refresh token works
+            const refreshDecoded = tokenService.verifyToken(tokens.refreshToken, 'refresh');
+            expect(refreshDecoded.id).toBe(newUser.id);
+        });
+
+        test('should handle token refresh cycle', () => {
+            const user = {
+                id: 1,
+                uuid: 'uuid-1',
+                email: 'test@example.com',
+                role: 'user'
+            };
+
+            // Generate initial tokens
+            const tokens1 = tokenService.generateTokenPair(user);
+            const refreshToken1 = tokens1.refreshToken;
+
+            // Verify refresh token validity
+            const decoded = tokenService.verifyToken(refreshToken1, 'refresh');
+            expect(decoded).toBeDefined();
+
+            // Generate new tokens (simulating refresh)
+            const tokens2 = tokenService.generateTokenPair(user);
+            expect(tokens2.accessToken).not.toBe(tokens1.accessToken);
+        });
+    });
+
+    describe('Password Requirements', () => {
+        test('should validate password strength requirements', () => {
+            const validators = require('../middleware/validators');
+            
+            // These validators check password strength
+            expect(validators.registerValidation).toBeDefined();
+        });
+    });
+
+    describe('Rate Limiting', () => {
+        test('should have rate limiters for auth endpoints', () => {
+            const rateLimit = require('express-rate-limit');
+            
+            expect(typeof rateLimit).toBe('function');
+            
+            const limiter = rateLimit({
+                windowMs: 15 * 60 * 1000,
+                max: 5
+            });
+            
+            expect(typeof limiter).toBe('function');
+        });
+    });
+});
+

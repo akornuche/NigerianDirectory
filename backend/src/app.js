@@ -121,6 +121,9 @@ const adminRoutes = require('./routes/admin');
 const crawlRoutes = require('./routes/crawl');
 const viewsRoutes = require('./routes/views');
 
+// Import Swagger/OpenAPI documentation
+const { initializeSwagger } = require('./config/swaggerInit');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const logger = new Logger();
@@ -371,6 +374,15 @@ app.use('/api/claims', claimsRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/crawl', crawlRoutes);
 app.use('/api/views', viewsRoutes);
+
+// ============================================
+// SWAGGER/OPENAPI DOCUMENTATION
+// ============================================
+try {
+    initializeSwagger(app);
+} catch (error) {
+    logger.error('Failed to initialize Swagger UI', error);
+}
 
 // ============================================
 // ROOT ENDPOINT
