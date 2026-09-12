@@ -2,12 +2,34 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const { generateToken, authenticate } = require('../middleware/auth');
+const tokenService = require('../services/tokenService');
 const { registerValidation, loginValidation } = require('../middleware/validators');
+const rateLimit = require('express-rate-limit');
+
+// ============================================
+// RATE LIMITING - Stricter limits for auth endpoints
+// ============================================
+const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // 5 attempts per 15 minutes
+    message: { error: 'Too many login attempts, please try again later' },
+    standardHeaders: true,
+    legacyHeaders: false,
+    skip: (req) => req.user && req.user.role === 'admin' // Don't rate limit admins
+});
+
+const refreshLimiter = rateLimit({
+    windowMs: 60 * 1000, // 1 minute
+    max: 10, // 10 token refresh attempts per minute
+    message: { error: 'Too many refresh token requests' },
+    standardHeaders: true,
+    legacyHeaders: false
+});
 
 // ============================================
 // POST /api/auth/register - Register new user
 // ============================================
-router.post('/register', registerValidation, async (req, res, next) => {
+router.post('/register', registerValidation, authLimiter, async (req, res, next) => {
     try {
         const { name, email, password } = req.body;
 
@@ -20,8 +42,8 @@ router.post('/register', registerValidation, async (req, res, next) => {
         // Create user
         const user = await User.create({ name, email, password });
 
-        // Generate token
-        const token = generateToken(user);
+        // Generate token pair
+        const tokens = tokenService.generateTokenPair(user);
 
         res.status(201).json({
             message: 'Registration successful',
@@ -32,7 +54,8 @@ router.post('/register', registerValidation, async (req, res, next) => {
                 email: user.email,
                 role: user.role
             },
-            token
+            accessToken: tokens.accessToken,
+            refreshToken: tokens.refreshToken
         });
     } catch (error) {
         next(error);
@@ -42,7 +65,7 @@ router.post('/register', registerValidation, async (req, res, next) => {
 // ============================================
 // POST /api/auth/login - Login user
 // ============================================
-router.post('/login', loginValidation, async (req, res, next) => {
+router.post('/login', loginValidation, authLimiter, async (req, res, next) => {
     try {
         const { email, password } = req.body;
 
@@ -58,8 +81,8 @@ router.post('/login', loginValidation, async (req, res, next) => {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
 
-        // Generate token
-        const token = generateToken(user);
+        // Generate token pair
+        const tokens = tokenService.generateTokenPair(user);
 
         res.json({
             message: 'Login successful',
@@ -70,7 +93,73 @@ router.post('/login', loginValidation, async (req, res, next) => {
                 email: user.email,
                 role: user.role
             },
-            token
+            accessToken: tokens.accessToken,
+            refreshToken: tokens.refreshToken
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+// ============================================
+// POST /api/auth/refresh - Refresh access token
+// ============================================
+router.post('/refresh', refreshLimiter, async (req, res, next) => {
+    try {
+        const { refreshToken } = req.body;
+
+        if (!refreshToken) {
+            return res.status(400).json({ error: 'Refresh token required' });
+        }
+
+        // Verify refresh token
+        const decoded = tokenService.verifyToken(refreshToken, 'refresh');
+
+        // Get user
+        const user = await User.findById(decoded.id);
+        if (!user) {
+            return res.status(401).json({ error: 'User not found' });
+        }
+
+        // Generate new token pair
+        const tokens = tokenService.generateTokenPair(user);
+
+        res.json({
+            message: 'Token refreshed successfully',
+            accessToken: tokens.accessToken,
+            refreshToken: tokens.refreshToken
+        });
+    } catch (error) {
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ 
+                error: 'Refresh token expired',
+                code: 'REFRESH_TOKEN_EXPIRED'
+            });
+        }
+        if (error.message.includes('revoked')) {
+            return res.status(401).json({ 
+                error: 'Refresh token has been revoked',
+                code: 'TOKEN_REVOKED'
+            });
+        }
+        next(error);
+    }
+});
+
+// ============================================
+// POST /api/auth/logout - Logout user (revoke tokens)
+// ============================================
+router.post('/logout', authenticate, async (req, res, next) => {
+    try {
+        const { refreshToken } = req.body;
+        const accessToken = req.token;
+
+        // Revoke both tokens
+        const result = await tokenService.logout(accessToken, refreshToken);
+
+        res.json({
+            message: 'Logout successful',
+            ...result
         });
     } catch (error) {
         next(error);
@@ -81,6 +170,8 @@ router.post('/login', loginValidation, async (req, res, next) => {
 // GET /api/auth/me - Get current user
 // ============================================
 router.get('/me', authenticate, async (req, res) => {
+    const tokenInfo = tokenService.validateTokenStructure(req.token);
+
     res.json({
         user: {
             id: req.user.id,
@@ -90,6 +181,10 @@ router.get('/me', authenticate, async (req, res) => {
             role: req.user.role,
             email_verified: req.user.email_verified,
             created_at: req.user.created_at
+        },
+        token: {
+            expiresIn: tokenInfo.expiresIn,
+            expiresAt: tokenInfo.expiresAt
         }
     });
 });
@@ -133,7 +228,7 @@ router.patch('/me', authenticate, async (req, res, next) => {
 // ============================================
 // POST /api/auth/change-password - Change password
 // ============================================
-router.post('/change-password', authenticate, async (req, res, next) => {
+router.post('/change-password', authenticate, authLimiter, async (req, res, next) => {
     try {
         const { currentPassword, newPassword } = req.body;
 
@@ -157,7 +252,13 @@ router.post('/change-password', authenticate, async (req, res, next) => {
         // Update password
         await User.updatePassword(req.user.id, newPassword);
 
-        res.json({ message: 'Password changed successfully' });
+        // Revoke all tokens - user must log in again with new password
+        await tokenService.blacklistToken(req.token);
+
+        res.json({ 
+            message: 'Password changed successfully. Please log in again.',
+            code: 'PASSWORD_CHANGED'
+        });
     } catch (error) {
         next(error);
     }
@@ -173,6 +274,21 @@ router.get('/my-schools', authenticate, async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+});
+
+// ============================================
+// GET /api/auth/token-info - Get current token info (debug endpoint)
+// ============================================
+router.get('/token-info', authenticate, (req, res) => {
+    const tokenInfo = tokenService.validateTokenStructure(req.token);
+
+    res.json({
+        token: tokenInfo,
+        user: {
+            id: req.user.id,
+            email: req.user.email
+        }
+    });
 });
 
 module.exports = router;
