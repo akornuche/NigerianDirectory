@@ -1,104 +1,191 @@
+# ============================================
+# Docker Compose - Local Development
+# ============================================
+# Usage:
+#   docker-compose up              # Start all services
+#   docker-compose down            # Stop all services
+#   docker-compose logs -f         # View logs
+#   docker-compose ps              # View running services
+
 version: '3.8'
 
 services:
+  # PostgreSQL Database
   postgres:
     image: postgres:15-alpine
     container_name: nigerian_directory_db
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-devpassword123}
-      POSTGRES_DB: ${POSTGRES_DB:-nigerian_directory}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-devpassword123}
+      POSTGRES_DB: ${DB_NAME:-nigerian_directory}
     ports:
-      - "5433:5432"
+      - "${DB_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./backend/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - nigerian_directory_network
 
+  # Redis Cache
   redis:
     image: redis:7-alpine
     container_name: nigerian_directory_redis
+    command: redis-server --appendonly yes
     ports:
-      - "6380:6379"
+      - "${REDIS_PORT:-6379}:6379"
     volumes:
       - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - nigerian_directory_network
 
+  # Backend API
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: nigerian_directory_backend
     environment:
-      - NODE_ENV=development
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_NAME=${POSTGRES_DB:-nigerian_directory}
-      - DB_USER=${POSTGRES_USER:-postgres}
-      - DB_PASSWORD=${POSTGRES_PASSWORD:-devpassword123}
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - PORT=5000
+      NODE_ENV: development
+      PORT: 5000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-nigerian_directory}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-devpassword123}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET:-dev-jwt-secret-change-in-production-abc123}
+      FRONTEND_URL: http://localhost:3000
     ports:
       - "5000:5000"
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
     depends_on:
-      - postgres
-      - redis
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src
+      - /app/node_modules
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
     networks:
       - nigerian_directory_network
-    command: npm run dev
 
+  # Frontend
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:5000/api
+        NEXT_PUBLIC_SITE_URL: http://localhost:3000
     container_name: nigerian_directory_frontend
     environment:
-      - NEXT_PUBLIC_API_URL=http://backend:5000/api
-      - NEXT_PUBLIC_SITE_URL=http://localhost:3000
+      NEXT_PUBLIC_API_URL: http://localhost:5000/api
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.next
     depends_on:
       - backend
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+      - /app/node_modules
+      - /app/.next
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
     networks:
       - nigerian_directory_network
-    command: npm run dev
 
+  # Crawler (optional, runs on schedule)
   crawler:
     build:
       context: ./crawler
       dockerfile: Dockerfile
     container_name: nigerian_directory_crawler
     environment:
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_NAME=${POSTGRES_DB:-nigerian_directory}
-      - DB_USER=${POSTGRES_USER:-postgres}
-      - DB_PASSWORD=${POSTGRES_PASSWORD:-devpassword123}
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-nigerian_directory}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-devpassword123}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      PYTHONUNBUFFERED: 1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     volumes:
       - ./crawler:/app
-    depends_on:
-      - postgres
-      - redis
+      - /app/__pycache__
     networks:
       - nigerian_directory_network
-      - default
+    # Don't start automatically (comment out to enable)
+    profiles:
+      - crawler
 
 volumes:
   postgres_data:
+    driver: local
   redis_data:
+    driver: local
 
 networks:
   nigerian_directory_network:
     driver: bridge
+
+# ============================================
+# Service Endpoints
+# ============================================
+# Frontend: http://localhost:3000
+# Backend API: http://localhost:5000/api
+# Database: localhost:5432
+# Redis: localhost:6379
+# 
+# ============================================
+# Common Commands
+# ============================================
+# Start all services:
+#   docker-compose up
+#
+# Start in background:
+#   docker-compose up -d
+#
+# View logs:
+#   docker-compose logs -f backend
+#   docker-compose logs -f frontend
+#
+# Run crawler:
+#   docker-compose --profile crawler up crawler
+#
+# Create admin user:
+#   docker-compose exec backend node src/database/setup-admin.js
+#
+# Connect to database:
+#   docker-compose exec postgres psql -U postgres -d nigerian_directory
+#
+# Stop everything:
+#   docker-compose down
+#
+# Remove volumes (WARNING: deletes data):
+#   docker-compose down -v
