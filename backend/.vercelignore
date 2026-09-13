@@ -1,0 +1,56 @@
+# Vercel Build Configuration - Files to ignore during build
+
+# Testing
+node_modules/.bin
+coverage/
+*.test.js
+*.spec.js
+jest.config.js
+jest.setup.js
+
+# Load tests
+load-tests/
+k6/
+
+# Documentation
+*.md
+docs/
+.github/
+
+# Development
+.env
+.env.local
+.env.*.local
+.venv/
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+.editorconfig
+
+# CI/CD
+.circleci/
+.travis.yml
+
+# Docker (not needed on Vercel)
+Dockerfile
+docker-compose.yml
+docker-compose.test.yml
+docker-compose.prod.yml
+
+# Database migrations (handled separately)
+database/migrations/
+
+# Unnecessary files
+backend_crash.log
+check_values.js
+debug_school_data.js
+SECURITY_HARDENING.md
+DATABASE_OPTIMIZATION.md
+TESTING_GUIDE.md
