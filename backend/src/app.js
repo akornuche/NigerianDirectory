@@ -502,6 +502,9 @@ async function startServer() {
     }
 }
 
-startServer();
+// Only start server if not running in Vercel serverless
+if (process.env.VERCEL !== '1') {
+  startServer();
+}
 
 module.exports = app;
