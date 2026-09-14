@@ -1,6 +1,7 @@
 /**
  * NigerianDirectory Backend Server
  * Entry point for the Express.js API
+ * Handles both local server and Vercel serverless deployment
  */
 
 require('dotenv').config();
@@ -49,26 +50,30 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
-// Start server
-const startServer = async () => {
-  try {
-    // Test database connection
-    await pool.query('SELECT NOW()');
-    console.log('✓ Database connected');
-    
-    // Test Redis connection (if configured)
-    if (process.env.REDIS_URL || process.env.REDIS_HOST) {
-      try {
-        await redis.ping();
-        console.log('✓ Redis connected');
-      } catch (redisError) {
-        console.warn('⚠ Redis not connected (caching disabled):', redisError.message);
+// In Vercel serverless, export the app directly
+if (process.env.VERCEL === '1') {
+  module.exports = app;
+} else {
+  // Start server locally
+  const startServer = async () => {
+    try {
+      // Test database connection
+      await pool.query('SELECT NOW()');
+      console.log('✓ Database connected');
+      
+      // Test Redis connection (if configured)
+      if (process.env.REDIS_URL || process.env.REDIS_HOST) {
+        try {
+          await redis.ping();
+          console.log('✓ Redis connected');
+        } catch (redisError) {
+          console.warn('⚠ Redis not connected (caching disabled):', redisError.message);
+        }
       }
-    }
-    
-    // Start the server
-    app.listen(PORT, () => {
-      console.log(`
+      
+      // Start the server
+      app.listen(PORT, () => {
+        console.log(`
 ╔═══════════════════════════════════════════════════════╗
 ║                                                       ║
 ║   🇳🇬 NigerianDirectory.com API Server                 ║
@@ -78,12 +83,13 @@ const startServer = async () => {
 ║   API URL: http://localhost:${PORT}/api                  ║
 ║                                                       ║
 ╚═══════════════════════════════════════════════════════╝
-      `);
-    });
-  } catch (error) {
-    console.error('Failed to start server:', error);
-    process.exit(1);
-  }
-};
+        `);
+      });
+    } catch (error) {
+      console.error('Failed to start server:', error);
+      process.exit(1);
+    }
+  };
 
-startServer();
+  startServer();
+}
