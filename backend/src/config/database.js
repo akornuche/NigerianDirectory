@@ -6,12 +6,18 @@ function validateDatabaseEnv() {
     const missing = required.filter(v => !process.env[v]);
     
     if (missing.length > 0) {
-        console.error(
-            `❌ Missing required database environment variables: ${missing.join(', ')}\n` +
+        const message = `❌ Missing required database environment variables: ${missing.join(', ')}\n` +
             `Set these variables in your .env file or deployment environment.\n` +
-            `See .env.example for configuration instructions.`
-        );
-        process.exit(1);
+            `See .env.example for configuration instructions.`;
+        
+        // In Vercel serverless, log warning but don't exit
+        if (process.env.VERCEL === '1') {
+            console.warn(message);
+            console.warn('Note: Database will be unavailable until connection succeeds');
+        } else {
+            console.error(message);
+            process.exit(1);
+        }
     }
 }
 

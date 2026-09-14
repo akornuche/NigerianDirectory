@@ -60,12 +60,18 @@ function validateEnvironment() {
     if (isProduction) {
         missing = productionRequired.filter(v => !process.env[v]);
         if (missing.length > 0) {
-            console.error(
-                `❌ CRITICAL: Missing production environment variables: ${missing.join(', ')}\n` +
+            const message = `❌ CRITICAL: Missing production environment variables: ${missing.join(', ')}\n` +
                 `These are required for production deployments.\n` +
-                `See .env.example for configuration instructions.`
-            );
-            process.exit(1);
+                `See .env.example for configuration instructions.`;
+            
+            // In Vercel, log warning but continue (will fail when DB is accessed)
+            if (process.env.VERCEL === '1') {
+                console.warn(message);
+                console.warn('Note: API will respond but database operations will fail');
+            } else {
+                console.error(message);
+                process.exit(1);
+            }
         }
     }
 
