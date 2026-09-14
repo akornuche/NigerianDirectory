@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPinIcon, AcademicCapIcon, BuildingLibraryIcon, BookOpenIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, BookOpenIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 

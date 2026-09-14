@@ -40,9 +40,8 @@ function validateEnvironment() {
         'DB_NAME',
         'DB_USER',
         'DB_PASSWORD',
-        'REDIS_HOST',
-        'REDIS_PORT',
         'FRONTEND_URL'
+        // Note: REDIS_HOST and REDIS_PORT are optional in serverless
     ];
 
     // Check always-required variables
@@ -113,7 +112,7 @@ function validateEnvironment() {
         }
     }
 
-    logger.info('✅ Environment validation passed');
+    console.log('✅ Environment validation passed');
 }
 
 validateEnvironment();

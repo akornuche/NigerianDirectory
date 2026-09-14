@@ -33,7 +33,6 @@ export default function SchoolMap({
     height = '300px',
 }: SchoolMapProps) {
     const mapRef = useRef<HTMLDivElement>(null);
-    const [mapLoaded, setMapLoaded] = useState(false);
     const [error, setError] = useState(false);
 
     const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
@@ -71,7 +70,7 @@ export default function SchoolMap({
         return () => {
             delete (window as any).__initGoogleMap;
         };
-    }, [latitude, longitude, apiKey]);
+    }, [hasCoordinates, apiKey]);
 
     function initMap() {
         if (!mapRef.current || !latitude || !longitude) return;
@@ -114,9 +113,7 @@ export default function SchoolMap({
 
             // Show on click
             map.addListener('click', () => infoWindow.close());
-
-            setMapLoaded(true);
-        } catch (e) {
+        } catch {
             setError(true);
         }
     }

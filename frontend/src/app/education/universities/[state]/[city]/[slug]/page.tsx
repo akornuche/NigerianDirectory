@@ -5,17 +5,15 @@ import { notFound } from 'next/navigation';
 import {
     MapPinIcon,
     PhoneIcon,
-    EnvelopeIcon,
     GlobeAltIcon,
-    BuildingLibraryIcon,
-    BookOpenIcon,
     AcademicCapIcon,
-    UserGroupIcon,
-    TrophyIcon,
     SparklesIcon,
-    NewspaperIcon,
+    BuildingLibraryIcon,
     StarIcon,
-    LinkIcon
+    EnvelopeIcon,
+    BookOpenIcon,
+    UserGroupIcon,
+    TrophyIcon
 } from '@heroicons/react/24/outline';
 import { getSchoolByPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';

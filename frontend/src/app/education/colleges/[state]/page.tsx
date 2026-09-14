@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
-import { MapPinIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
-import AdBanner from '@/components/ads/AdBanner';
 
 async function getCollegesByState(state: string): Promise<{ name: string; schools: School[] } | null> {
     try {

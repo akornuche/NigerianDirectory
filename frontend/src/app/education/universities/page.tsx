@@ -26,7 +26,7 @@ const nigerianStates = [
 // Fetch featured universities
 async function getFeaturedUniversities(type?: string): Promise<School[]> {
     try {
-        const params: any = { category: 'university' };
+        const params: { category: string; type?: string } = { category: 'university' };
         if (type) params.type = type;
         const response = await api.getSchools(1, 12, params);
         return response.schools || [];
