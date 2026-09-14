@@ -1,0 +1,24 @@
+# VERCEL ENVIRONMENT VARIABLES - EDIT AND SAVE
+# =============================================
+# 
+# Instructions:
+# 1. Copy values from your Neon console (https://console.neon.tech)
+# 2. Replace the placeholders below with actual values
+# 3. Remove the # from the beginning of each line
+# 4. Save this file
+# 5. Run: node deploy-with-env.js
+#
+# DO NOT COMMIT THIS FILE - it contains secrets!
+
+# Neon Database Configuration
+DB_HOST=ep-xxxxx.us-east-1.neon.tech
+DB_PORT=5432
+DB_NAME=nigerian_directory
+DB_USER=neon_user
+DB_PASSWORD=your_neon_password_here
+
+# Application Configuration
+JWT_SECRET=your_32_character_secure_random_string_here_min_32_chars
+FRONTEND_URL=https://nigeriandirectory.com
+PORT=3000
+NODE_ENV=production
