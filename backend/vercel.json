@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm install"
+  "framework": "express",
+  "buildCommand": "npm install",
+  "outputDirectory": "."
 }
