@@ -125,6 +125,7 @@ const claimsRoutes = require('./routes/claims');
 const adminRoutes = require('./routes/admin');
 const crawlRoutes = require('./routes/crawl');
 const viewsRoutes = require('./routes/views');
+const aiAgentsRoutes = require('./routes/ai-agents');
 
 // Import Swagger/OpenAPI documentation
 const { initializeSwagger } = require('./config/swaggerInit');
@@ -149,8 +150,7 @@ app.use(helmet({
             connectSrc: ["'self'", "maps.googleapis.com", "*.googleapis.com"],
             fontSrc: ["'self'", "fonts.gstatic.com", "data:"],
             frameSrc: ["'self'"],
-            objectSrc: ["'none'"],
-            upgradeInsecureRequests: process.env.NODE_ENV === 'production' ? [] : undefined
+            objectSrc: ["'none'"]
         }
     },
     hsts: {
@@ -379,12 +379,15 @@ app.use('/api/claims', claimsRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/crawl', crawlRoutes);
 app.use('/api/views', viewsRoutes);
+app.use('/api/ai', aiAgentsRoutes);
+app.use('/api/contact', require('./routes/contact')); // AI Agents & Generative Engine Optimization
 
 // ============================================
 // SWAGGER/OPENAPI DOCUMENTATION
 // ============================================
 try {
-    initializeSwagger(app);
+    // initializeSwagger(app);
+    // Swagger disabled - causing initialization issues in development
 } catch (error) {
     logger.error('Failed to initialize Swagger UI', error);
 }
@@ -507,8 +510,8 @@ async function startServer() {
     }
 }
 
-// Only start server if not running in Vercel serverless
-if (process.env.VERCEL !== '1') {
+// Only start server if this file is run directly (not imported by server.js)
+if (process.env.VERCEL !== '1' && require.main === module) {
   startServer();
 }
 

@@ -74,7 +74,6 @@ services:
       redis:
         condition: service_healthy
     volumes:
-      - ./backend/src:/app/src
       - /app/node_modules
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
@@ -97,15 +96,14 @@ services:
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:5000/api
       NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      # Internal URL used by Next.js SSR to reach the backend inside Docker
+      API_INTERNAL_URL: http://backend:5000/api
     ports:
       - "3000:3000"
     depends_on:
       - backend
     volumes:
-      - ./frontend/src:/app/src
-      - ./frontend/public:/app/public
       - /app/node_modules
-      - /app/.next
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
       interval: 30s

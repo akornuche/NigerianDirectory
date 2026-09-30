@@ -363,6 +363,241 @@ class School {
         );
         return result.rows[0] || null;
     }
+
+    // ============================================
+    // AI AGENTS & GENERATIVE ENGINE OPTIMIZATION
+    // ============================================
+
+    /**
+     * Search schools optimized for AI agents with rich context
+     */
+    static async searchForAI({ location, state, city, type, limit = 50 }) {
+        let whereClause = "WHERE 1=1";
+        const params = [];
+        let paramIndex = 1;
+
+        if (state) {
+            whereClause += ` AND LOWER(state) LIKE LOWER($${paramIndex})`;
+            params.push(`%${state}%`);
+            paramIndex++;
+        }
+
+        if (city) {
+            whereClause += ` AND LOWER(city) LIKE LOWER($${paramIndex})`;
+            params.push(`%${city}%`);
+            paramIndex++;
+        }
+
+        if (location && !state && !city) {
+            // Generic location search across city, state, and area
+            whereClause += ` AND (LOWER(city) LIKE LOWER($${paramIndex}) OR LOWER(state) LIKE LOWER($${paramIndex}) OR LOWER(area) LIKE LOWER($${paramIndex}))`;
+            params.push(`%${location}%`);
+            paramIndex++;
+        }
+
+        if (type) {
+            whereClause += ` AND LOWER(type) LIKE LOWER($${paramIndex})`;
+            params.push(`%${type}%`);
+            paramIndex++;
+        }
+
+        params.push(limit);
+
+        const result = await query(
+            `SELECT 
+                id, name, slug, type, state, city, area, address,
+                latitude, longitude, curriculum, levels,
+                boarding, day_school, gender, phone, email, website,
+                social_links, template_summary, established_year,
+                principal_name, principal_title, management_info,
+                facilities, achievements, student_life,
+                fee_range, student_count, logo_url, hero_image_url,
+                meta_title, meta_description, institution_category,
+                enriched_history, enriched_academics, enriched_campus_info, enriched_student_life,
+                created_at, updated_at
+            FROM schools 
+            ${whereClause}
+            ORDER BY 
+                CASE WHEN enriched_history IS NOT NULL THEN 1 ELSE 2 END,
+                CASE WHEN website IS NOT NULL THEN 1 ELSE 2 END,
+                updated_at DESC
+            LIMIT $${paramIndex}`,
+            params
+        );
+
+        return result.rows;
+    }
+
+    /**
+     * Natural language search for AI agents
+     */
+    static async naturalLanguageSearch(query, limit = 50) {
+        const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 2);
+        const searchPattern = searchTerms.join(' | ');
+
+        const result = await query(
+            `SELECT 
+                id, name, slug, type, state, city, area,
+                phone, email, website, template_summary,
+                enriched_history, enriched_academics, enriched_campus_info, enriched_student_life,
+                meta_title, meta_description, institution_category,
+                ts_rank(
+                    to_tsvector('english', 
+                        COALESCE(name, '') || ' ' || 
+                        COALESCE(city, '') || ' ' || 
+                        COALESCE(state, '') || ' ' || 
+                        COALESCE(type, '') || ' ' ||
+                        COALESCE(enriched_history, '') || ' ' ||
+                        COALESCE(enriched_academics, '') || ' ' ||
+                        COALESCE(template_summary, '')
+                    ),
+                    plainto_tsquery('english', $1)
+                ) AS relevance_score
+            FROM schools 
+            WHERE to_tsvector('english', 
+                COALESCE(name, '') || ' ' || 
+                COALESCE(city, '') || ' ' || 
+                COALESCE(state, '') || ' ' || 
+                COALESCE(type, '') || ' ' ||
+                COALESCE(enriched_history, '') || ' ' ||
+                COALESCE(enriched_academics, '') || ' ' ||
+                COALESCE(template_summary, '')
+            ) @@ plainto_tsquery('english', $1)
+            ORDER BY relevance_score DESC, updated_at DESC
+            LIMIT $2`,
+            [query, limit]
+        );
+
+        return result.rows;
+    }
+
+    /**
+     * Get featured schools optimized for AI agents
+     */
+    static async getFeaturedForAI(limit = 50) {
+        const result = await query(
+            `SELECT 
+                id, name, slug, type, state, city, area,
+                phone, email, website, template_summary, established_year,
+                enriched_history, enriched_academics, enriched_campus_info, enriched_student_life,
+                meta_title, meta_description, institution_category,
+                logo_url, hero_image_url
+            FROM schools 
+            WHERE 
+                enriched_history IS NOT NULL 
+                OR enriched_academics IS NOT NULL 
+                OR website IS NOT NULL
+            ORDER BY 
+                CASE 
+                    WHEN enriched_history IS NOT NULL AND enriched_academics IS NOT NULL THEN 1
+                    WHEN enriched_history IS NOT NULL OR enriched_academics IS NOT NULL THEN 2
+                    WHEN website IS NOT NULL THEN 3
+                    ELSE 4
+                END,
+                LENGTH(COALESCE(enriched_history, '') || COALESCE(enriched_academics, '')) DESC,
+                updated_at DESC
+            LIMIT $1`,
+            [limit]
+        );
+
+        return result.rows;
+    }
+
+    /**
+     * Search schools by location (city, state, or region)
+     */
+    static async searchByLocation(location, limit = 20) {
+        const result = await query(
+            `SELECT 
+                id, name, slug, type, state, city, area,
+                phone, email, website, template_summary,
+                enriched_history, enriched_academics, enriched_campus_info,
+                meta_title, institution_category
+            FROM schools 
+            WHERE 
+                LOWER(city) LIKE LOWER($1) OR 
+                LOWER(state) LIKE LOWER($1) OR 
+                LOWER(area) LIKE LOWER($1) OR
+                LOWER(name) LIKE LOWER($1)
+            ORDER BY 
+                CASE 
+                    WHEN LOWER(city) = LOWER($1) THEN 1
+                    WHEN LOWER(state) = LOWER($1) THEN 2
+                    WHEN LOWER(city) LIKE LOWER($1) THEN 3
+                    WHEN LOWER(state) LIKE LOWER($1) THEN 4
+                    ELSE 5
+                END,
+                LENGTH(COALESCE(enriched_history, '') || COALESCE(enriched_academics, '')) DESC
+            LIMIT $2`,
+            [`%${location}%`, limit]
+        );
+
+        return result.rows;
+    }
+
+    /**
+     * Get AI-optimized school statistics
+     */
+    static async getAIStats() {
+        const result = await query(
+            `SELECT 
+                COUNT(*) as total_schools,
+                COUNT(CASE WHEN enriched_history IS NOT NULL THEN 1 END) as schools_with_history,
+                COUNT(CASE WHEN enriched_academics IS NOT NULL THEN 1 END) as schools_with_academics,
+                COUNT(CASE WHEN website IS NOT NULL THEN 1 END) as schools_with_websites,
+                COUNT(CASE WHEN logo_url IS NOT NULL THEN 1 END) as schools_with_logos,
+                COUNT(DISTINCT state) as states_covered,
+                COUNT(DISTINCT city) as cities_covered,
+                AVG(CASE 
+                    WHEN enriched_history IS NOT NULL AND enriched_academics IS NOT NULL THEN 100
+                    WHEN enriched_history IS NOT NULL OR enriched_academics IS NOT NULL THEN 50
+                    ELSE 0
+                END) as avg_content_completeness
+            FROM schools`
+        );
+
+        return result.rows[0];
+    }
+
+    /**
+     * Get schools by Nigerian region for AI geographic queries
+     */
+    static async getSchoolsByRegion(region, limit = 30) {
+        const regionStates = {
+            'southwest': ['Lagos', 'Ogun', 'Oyo', 'Osun', 'Ondo', 'Ekiti'],
+            'southeast': ['Anambra', 'Abia', 'Imo', 'Enugu', 'Ebonyi'],
+            'south-south': ['Rivers', 'Delta', 'Bayelsa', 'Cross River', 'Akwa Ibom', 'Edo'],
+            'north-central': ['Abuja', 'Plateau', 'Niger', 'Kwara', 'Kogi', 'Benue', 'Nasarawa'],
+            'northeast': ['Borno', 'Yobe', 'Bauchi', 'Gombe', 'Adamawa', 'Taraba'],
+            'northwest': ['Kano', 'Kaduna', 'Katsina', 'Sokoto', 'Zamfara', 'Kebbi', 'Jigawa']
+        };
+
+        const states = regionStates[region.toLowerCase()] || [];
+        
+        if (states.length === 0) {
+            return [];
+        }
+
+        const placeholders = states.map((_, index) => `$${index + 1}`).join(',');
+        states.push(limit);
+
+        const result = await query(
+            `SELECT 
+                id, name, slug, type, state, city, area,
+                phone, email, website, template_summary,
+                enriched_history, enriched_academics,
+                meta_title, institution_category
+            FROM schools 
+            WHERE state = ANY(ARRAY[${placeholders}])
+            ORDER BY 
+                LENGTH(COALESCE(enriched_history, '') || COALESCE(enriched_academics, '')) DESC,
+                updated_at DESC
+            LIMIT $${states.length}`,
+            states
+        );
+
+        return result.rows;
+    }
 }
 
 module.exports = School;

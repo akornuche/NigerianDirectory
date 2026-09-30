@@ -9,6 +9,8 @@ const { authenticate, requireAdmin } = require('../middleware/auth');
 const { clearCachePattern } = require('../config/redis');
 const { generateSummary } = require('../services/summaryGenerator');
 
+const ContactSubmission = require('../models/ContactSubmission');
+
 // All admin routes require authentication and admin role
 router.use(authenticate, requireAdmin);
 
@@ -17,11 +19,12 @@ router.use(authenticate, requireAdmin);
 // ============================================
 router.get('/overview', async (req, res, next) => {
     try {
-        const [schoolStats, locationStats, claimStats, crawlStats] = await Promise.all([
+        const [schoolStats, locationStats, claimStats, crawlStats, contactStats] = await Promise.all([
             School.getStats(),
             Location.getStats(),
             Claim.getStats(),
-            CrawlLog.getStats()
+            CrawlLog.getStats(),
+            ContactSubmission.getStats()
         ]);
 
         res.json({
@@ -29,6 +32,7 @@ router.get('/overview', async (req, res, next) => {
             locations: locationStats,
             claims: claimStats,
             crawls: crawlStats,
+            contact: contactStats,
             timestamp: new Date().toISOString()
         });
     } catch (error) {
@@ -211,6 +215,102 @@ router.post('/bulk-update-schools', async (req, res, next) => {
             message: `Processed ${schoolIds.length} schools`,
             results
         });
+    } catch (error) {
+        next(error);
+    }
+});
+
+// ============================================
+// GET /api/admin/page-health - Enrichment & SEO health per school
+// ============================================
+router.get('/page-health', async (req, res, next) => {
+    try {
+        const { query } = require('../config/database');
+        const page  = parseInt(req.query.page)  || 1;
+        const limit = parseInt(req.query.limit) || 50;
+        const filter = req.query.filter || 'all'; // all | missing_content | missing_images | missing_meta
+        const offset = (page - 1) * limit;
+
+        let whereClause = '1=1';
+        if (filter === 'missing_content') whereClause = 'enriched_history IS NULL';
+        if (filter === 'missing_images')  whereClause = 'hero_image_url IS NULL';
+        if (filter === 'missing_meta')    whereClause = "meta_title IS NULL OR meta_title = ''";
+
+        const [countRes, rowsRes, summaryRes] = await Promise.all([
+            query(`SELECT COUNT(*) FROM schools WHERE ${whereClause}`),
+            query(
+                `SELECT
+                    id, name, slug, state, city, area, type,
+                    enriched_at, enrichment_status,
+                    CASE WHEN enriched_history IS NOT NULL AND enriched_history != '' THEN true ELSE false END AS has_history,
+                    CASE WHEN enriched_academics IS NOT NULL AND enriched_academics != '' THEN true ELSE false END AS has_academics,
+                    CASE WHEN enriched_campus_info IS NOT NULL AND enriched_campus_info != '' THEN true ELSE false END AS has_campus,
+                    CASE WHEN enriched_student_life IS NOT NULL AND enriched_student_life != '' THEN true ELSE false END AS has_student_life,
+                    CASE WHEN meta_title IS NOT NULL AND meta_title != '' THEN true ELSE false END AS has_meta_title,
+                    CASE WHEN meta_description IS NOT NULL AND meta_description != '' THEN true ELSE false END AS has_meta_desc,
+                    CASE WHEN hero_image_url IS NOT NULL THEN true ELSE false END AS has_hero_image,
+                    CASE WHEN logo_url IS NOT NULL THEN true ELSE false END AS has_logo,
+                    CASE WHEN website IS NOT NULL THEN true ELSE false END AS has_website,
+                    -- Content score 0-100
+                    (
+                        CASE WHEN enriched_history IS NOT NULL AND enriched_history != '' THEN 25 ELSE 0 END +
+                        CASE WHEN enriched_academics IS NOT NULL AND enriched_academics != '' THEN 25 ELSE 0 END +
+                        CASE WHEN enriched_campus_info IS NOT NULL AND enriched_campus_info != '' THEN 15 ELSE 0 END +
+                        CASE WHEN enriched_student_life IS NOT NULL AND enriched_student_life != '' THEN 15 ELSE 0 END +
+                        CASE WHEN meta_title IS NOT NULL AND meta_title != '' THEN 10 ELSE 0 END +
+                        CASE WHEN meta_description IS NOT NULL AND meta_description != '' THEN 5 ELSE 0 END +
+                        CASE WHEN hero_image_url IS NOT NULL THEN 5 ELSE 0 END
+                    ) AS page_score
+                 FROM schools
+                 WHERE ${whereClause}
+                 ORDER BY page_score ASC, name ASC
+                 LIMIT $1 OFFSET $2`,
+                [limit, offset]
+            ),
+            query(`
+                SELECT
+                    COUNT(*) as total_schools,
+                    COUNT(*) FILTER (WHERE enriched_history IS NOT NULL AND enriched_history != '') as has_content,
+                    COUNT(*) FILTER (WHERE hero_image_url IS NOT NULL) as has_images,
+                    COUNT(*) FILTER (WHERE meta_title IS NOT NULL AND meta_title != '') as has_meta,
+                    ROUND(AVG(
+                        CASE WHEN enriched_history IS NOT NULL AND enriched_history != '' THEN 25 ELSE 0 END +
+                        CASE WHEN enriched_academics IS NOT NULL AND enriched_academics != '' THEN 25 ELSE 0 END +
+                        CASE WHEN enriched_campus_info IS NOT NULL AND enriched_campus_info != '' THEN 15 ELSE 0 END +
+                        CASE WHEN enriched_student_life IS NOT NULL AND enriched_student_life != '' THEN 15 ELSE 0 END +
+                        CASE WHEN meta_title IS NOT NULL AND meta_title != '' THEN 10 ELSE 0 END +
+                        CASE WHEN meta_description IS NOT NULL AND meta_description != '' THEN 5 ELSE 0 END +
+                        CASE WHEN hero_image_url IS NOT NULL THEN 5 ELSE 0 END
+                    ), 1) as avg_page_score
+                FROM schools
+            `)
+        ]);
+
+        res.json({
+            summary: summaryRes.rows[0],
+            schools: rowsRes.rows,
+            pagination: {
+                page, limit,
+                totalCount: parseInt(countRes.rows[0].count),
+                totalPages: Math.ceil(parseInt(countRes.rows[0].count) / limit)
+            }
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+// ============================================
+// GET /api/admin/contact-submissions — List contact/ownership form submissions
+// ============================================
+router.get('/contact-submissions', async (req, res, next) => {
+    try {
+        const page  = parseInt(req.query.page)  || 1;
+        const limit = parseInt(req.query.limit) || 30;
+        const { status, submission_type } = req.query;
+
+        const result = await ContactSubmission.getAll({ page, limit, status, submission_type });
+        res.json(result);
     } catch (error) {
         next(error);
     }

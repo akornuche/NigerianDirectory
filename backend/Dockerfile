@@ -7,14 +7,14 @@
 FROM node:18-alpine AS dependencies
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --only=production && \
+RUN npm install --omit=dev --legacy-peer-deps && \
     npm cache clean --force
 
 # Stage 2: Build
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
 # Stage 3: Production Runtime
 FROM node:18-alpine

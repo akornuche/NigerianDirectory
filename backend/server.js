@@ -71,8 +71,8 @@ if (process.env.VERCEL === '1') {
         }
       }
       
-      // Start the server
-      app.listen(PORT, () => {
+      // Start the server - bind to 0.0.0.0 only (IPv4 only, not IPv6)
+      app.listen(PORT, '0.0.0.0', () => {
         console.log(`
 ╔═══════════════════════════════════════════════════════╗
 ║                                                       ║

@@ -1,0 +1,65 @@
+{
+  "test_timestamp": "2026-09-28T21:48:46.869763",
+  "summary": {
+    "total_schools": 5,
+    "successful_crawls": 0,
+    "failed_crawls": 5,
+    "success_rate": 0.0
+  },
+  "performance": {
+    "processing_times": [
+      32.42335033416748,
+      28.406914472579956,
+      114.24099040031433,
+      88.61148428916931,
+      85.75960898399353
+    ],
+    "average_time": 69.88846969604492,
+    "estimated_full_time_minutes": 223.64310302734376
+  },
+  "content_metrics": {
+    "content_extracted": 0,
+    "quality_scores": [],
+    "average_quality": 0
+  },
+  "seo_metrics": {
+    "seo_optimized": 0,
+    "seo_scores": [],
+    "average_seo": 0
+  },
+  "image_metrics": {
+    "total_images_found": 0,
+    "average_per_school": 0.0
+  },
+  "features_tested": {
+    "website_extraction": false,
+    "search_fallback": false,
+    "image_discovery": false,
+    "quality_validation": false,
+    "seo_optimization": false,
+    "database_storage": false,
+    "error_handling": true
+  },
+  "errors": [
+    {
+      "school": "American International School Abuja",
+      "error": "Database verification failed - no data found"
+    },
+    {
+      "school": "American International School Lagos",
+      "error": "Database verification failed - no data found"
+    },
+    {
+      "school": "Atlantic Hall",
+      "error": "Database verification failed - no data found"
+    },
+    {
+      "school": "Abeokuta Grammar School",
+      "error": "Database verification failed - no data found"
+    },
+    {
+      "school": "Adesoye College Offa",
+      "error": "Database verification failed - no data found"
+    }
+  ]
+}

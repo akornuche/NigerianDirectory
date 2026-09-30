@@ -2,7 +2,12 @@
  * API client for fetching data from the backend
  */
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+// Browser always uses the public URL (localhost:5000)
+// Server-side rendering inside Docker uses the internal service name
+const API_URL =
+  typeof window === 'undefined'
+    ? (process.env.API_INTERNAL_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api')
+    : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api');
 
 interface FetchOptions extends RequestInit {
   timeout?: number;
@@ -196,9 +201,12 @@ export const api = {
   getFeaturedSchools: () => apiRequest<School[]>('/schools/featured'),
 
   getSchoolsByState: (state: string, page = 1, limit = 20) =>
-    apiRequest<SchoolsResponse>(
-      `/schools/state/${state}?page=${page}&limit=${limit}`
-    ),
+    apiRequest<{
+      state: string;
+      schoolCount: number;
+      areas: string[];
+      schools: School[];
+    }>(`/schools/state/${state}`),
 
   getSchoolsByArea: (state: string, area: string, page = 1, limit = 20) =>
     apiRequest<SchoolsResponse>(
