@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AdScripts from '@/components/ads/AdScripts';
 import { CookieConsent } from '@/components/ads';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
     creator: '@nigeriandir',
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'your-google-verification-code',
   },
   alternates: {
     canonical: process.env.NEXT_PUBLIC_SITE_URL,
@@ -105,6 +106,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <CookieConsent />
+        <GoogleAnalytics />
       </body>
     </html>
   );

@@ -1,0 +1,28 @@
+# Robots.txt for NigerianDirectory.com
+# Controls search engine crawling and indexing
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /account
+Disallow: /search
+Disallow: *.json
+Disallow: *.xml
+
+# Rate limiting for aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemaps
+Sitemap: https://nigeriandirectory.com/sitemap.xml
+Sitemap: https://nigeriandirectory.com/education/schools/sitemap.xml
+Sitemap: https://nigeriandirectory.com/education/universities/sitemap.xml
