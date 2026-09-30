@@ -6,8 +6,8 @@
 // Server-side rendering inside Docker uses the internal service name
 const API_URL =
   typeof window === 'undefined'
-    ? (process.env.API_INTERNAL_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api')
-    : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api');
+    ? (process.env.API_INTERNAL_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api')
+    : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api');
 
 interface FetchOptions extends RequestInit {
   timeout?: number;
@@ -147,6 +147,16 @@ export interface School {
   verified: boolean;
   featured: boolean;
   institution_category: 'school' | 'university' | 'polytechnic' | 'college';
+  // University-specific fields
+  accreditation?: string;
+  faculties?: string[];
+  programmes?: string[];
+  vc_name?: string;
+  vc_title?: string;
+  student_population?: number;
+  postgraduate?: boolean;
+  distance_learning?: boolean;
+  year_chartered?: number;
   created_at: string;
   updated_at: string;
 }
@@ -213,6 +223,20 @@ export const api = {
       `/schools/area/${state}/${area}?page=${page}&limit=${limit}`
     ),
 
+  // Universities — use schools endpoint filtered by institution_category
+  getUniversities: (page = 1, limit = 20, params?: Record<string, string | number>) =>
+    apiRequest<SchoolsResponse>(
+      `/schools?page=${page}&limit=${limit}&institution_category=university${params ? '&' + new URLSearchParams(params as Record<string, string>).toString() : ''}`
+    ),
+
+  getUniversitiesByState: (state: string, limit = 100) =>
+    apiRequest<SchoolsResponse>(
+      `/schools?page=1&limit=${limit}&institution_category=university&state=${encodeURIComponent(state)}`
+    ),
+
+  getUniversityByPath: (state: string, city: string, slug: string) =>
+    apiRequest<School>(`/schools/${state}/${city}/${slug}`),
+
   // Locations
   getStates: () => apiRequest<Location[]>('/locations/states'),
 
@@ -255,5 +279,8 @@ export const getFeaturedSchools = api.getFeaturedSchools;
 export const getSchoolsByState = api.getSchoolsByState;
 export const getSchoolsByArea = api.getSchoolsByArea;
 export const getStates = api.getStates;
+export const getUniversities = api.getUniversities;
+export const getUniversitiesByState = api.getUniversitiesByState;
+export const getUniversityByPath = api.getUniversityByPath;
 
 export default api;

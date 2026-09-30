@@ -15,13 +15,12 @@ import {
     UserGroupIcon,
     TrophyIcon
 } from '@heroicons/react/24/outline';
-import { getSchoolByPath, School } from '@/lib/api';
+import { api, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 
 async function getUniversity(state: string, city: string, slug: string): Promise<School | null> {
     try {
-        // We pass city as the 'area' parameter to the existing API call
-        const university = await getSchoolByPath(state, city, slug);
+        const university = await api.getUniversityByPath(state, city, slug);
         return university;
     } catch (error) {
         console.error('Error fetching university:', error);

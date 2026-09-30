@@ -7,15 +7,10 @@ import AdBanner from '@/components/ads/AdBanner';
 
 async function getUniversitiesByState(state: string): Promise<{ name: string; schools: School[] } | null> {
     try {
-        // Use the generic getSchools to filter by state and category
-        const response = await api.getSchools(1, 100, { state, category: 'university' });
+        const response = await api.getUniversitiesByState(state, 100);
         if (!response.schools || response.schools.length === 0) return null;
-
         const stateName = response.schools[0]?.state || state.replace(/-/g, ' ');
-        return {
-            name: stateName,
-            schools: response.schools,
-        };
+        return { name: stateName, schools: response.schools };
     } catch (error) {
         console.error('Error fetching universities by state:', error);
         return null;
