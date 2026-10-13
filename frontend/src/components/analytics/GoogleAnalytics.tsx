@@ -1,53 +1,97 @@
 'use client';
 
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 /**
- * Google Analytics 4 Component
- * Initializes GA4 for page views and custom event tracking
- * 
- * Usage: Add <GoogleAnalytics /> to your root layout
- * Required: NEXT_PUBLIC_GOOGLE_ANALYTICS_ID env var
+ * Google Analytics 4 (GA4)
+ *
+ * Renders nothing unless NEXT_PUBLIC_GOOGLE_ANALYTICS_ID is set to a real
+ * measurement ID. Page views across client-side navigations are captured by
+ * GA4 enhanced measurement, which listens for History API changes.
  */
+
+const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+const PLACEHOLDER_ID = 'G-XXXXXXXXXX';
 
 declare global {
   interface Window {
-    gtag: Function;
-    dataLayer: any[];
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
   }
 }
 
-export default function GoogleAnalytics() {
-  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+function isConfigured(id: string | undefined): id is string {
+  return typeof id === 'string' && id.length > 0 && id !== PLACEHOLDER_ID;
+}
 
-  if (!gaId || gaId === 'G-XXXXXXXXXX') {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('⚠️  Google Analytics ID not configured. Set NEXT_PUBLIC_GOOGLE_ANALYTICS_ID env var.');
-    }
+export default function GoogleAnalytics() {
+  if (!isConfigured(GA_ID)) {
     return null;
   }
 
-  useEffect(() => {
-    // Track page views when route changes
-    if (typeof window !== 'undefined' && 'gtag' in window) {
-      const gtag = window.gtag;
-      gtag('config', gaId, {
-        page_path: window.location.pathname,
-      });
-    }
-  }, [gaId]);
-
   return (
     <>
-      {/* Load Google Analytics script */}
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
-        async
       />
-      {/* Initialize Google Analytics */}
-      <Script
-        id="google-analytics-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{\n          __html: `\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', '${gaId}', {\n              send_page_view: true,\n              cookie_flags: 'SameSite=None;Secure'\n            });\n          `,\n        }}\n      />\n    </>\n  );\n}\n\n/**\n * Custom event tracking helper\n * Usage: trackEvent('view_school', { school_id: '123', school_name: 'Example School' })\n */\nexport function trackEvent(\n  eventName: string,\n  eventData?: Record<string, string | number | boolean>\n) {\n  if (typeof window !== 'undefined' && 'gtag' in window) {\n    window.gtag('event', eventName, eventData);\n  }\n}\n\n/**\n * Track page view (automatically done, but available manually if needed)\n */\nexport function trackPageView(path: string, title?: string) {\n  if (typeof window !== 'undefined' && 'gtag' in window) {\n    window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, {\n      page_path: path,\n      page_title: title,\n    });\n  }\n}\n\n/**\n * Track search events\n */\nexport function trackSearch(query: string, resultCount?: number) {\n  trackEvent('search', {\n    search_term: query,\n    result_count: resultCount || 0,\n  });\n}\n\n/**\n * Track school/university views\n */\nexport function trackSchoolView(\n  institutionId: string,\n  institutionName: string,\n  institutionType: 'school' | 'university',\n  state?: string\n) {\n  trackEvent(`view_${institutionType}`, {\n    institution_id: institutionId,\n    institution_name: institutionName,\n    institution_type: institutionType,\n    state: state || 'unknown',\n  });\n}\n\n/**\n * Track form submissions\n */\nexport function trackFormSubmission(formType: string, formId?: string) {\n  trackEvent('form_submission', {\n    form_type: formType,\n    form_id: formId || 'unknown',\n  });\n}\n"
+      <Script id="google-analytics-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', { send_page_view: true });
+        `}
+      </Script>
+    </>
+  );
+}
+
+type EventParams = Record<string, string | number | boolean>;
+
+/**
+ * Send a custom GA4 event. Safe to call before gtag.js has loaded or when
+ * analytics is not configured: the call is simply dropped.
+ */
+export function trackEvent(eventName: string, eventData?: EventParams): void {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+  window.gtag('event', eventName, eventData ?? {});
+}
+
+/** Manually record a page view. */
+export function trackPageView(path: string, title?: string): void {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+  window.gtag('config', GA_ID, { page_path: path, page_title: title });
+}
+
+/** Record a site search. */
+export function trackSearch(query: string, resultCount?: number): void {
+  trackEvent('search', { search_term: query, result_count: resultCount ?? 0 });
+}
+
+/** Record a school or university detail view. */
+export function trackInstitutionView(
+  institutionId: string,
+  institutionName: string,
+  institutionType: 'school' | 'university',
+  state?: string
+): void {
+  trackEvent(`view_${institutionType}`, {
+    institution_id: institutionId,
+    institution_name: institutionName,
+    institution_type: institutionType,
+    state: state ?? 'unknown',
+  });
+}
+
+/** Record a form submission. */
+export function trackFormSubmission(formType: string, formId?: string): void {
+  trackEvent('form_submission', {
+    form_type: formType,
+    form_id: formId ?? 'unknown',
+  });
+}
