@@ -481,13 +481,18 @@ app.use((err, req, res, next) => {
 // ============================================
 async function startServer() {
     try {
-        // Test database connection
+        // The database is required: without it there is nothing to serve.
         await testConnection();
         logger.info('✅ Database connected successfully');
 
-        // Test Redis connection
-        await testRedisConnection();
-        logger.info('✅ Redis connected successfully');
+        // Redis is an optional cache. A cache outage must not take the API
+        // down, so failures here are logged and execution continues.
+        try {
+            await testRedisConnection();
+            logger.info('✅ Redis connected successfully');
+        } catch (redisError) {
+            logger.warn(`⚠️  Redis unavailable, continuing without cache: ${redisError.message}`);
+        }
 
         // Start server
         app.listen(PORT, () => {

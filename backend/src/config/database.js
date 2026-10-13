@@ -26,16 +26,77 @@ if (process.env.NODE_ENV === 'production' || process.env.STRICT_ENV_VALIDATION =
     validateDatabaseEnv();
 }
 
+const isServerless = process.env.VERCEL === '1';
+
+/**
+ * Decide whether to use TLS.
+ *
+ * Managed providers such as Neon require TLS and reject plaintext
+ * connections. Local development instances normally have no certificate, so
+ * TLS is disabled for loopback hosts. Set DB_SSL explicitly to override.
+ */
+function resolveSsl() {
+    const explicit = process.env.DB_SSL;
+
+    if (explicit === 'true') {
+        return { rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED !== 'false' };
+    }
+    if (explicit === 'false') {
+        return false;
+    }
+
+    const host = process.env.DB_HOST || 'localhost';
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '::1';
+
+    return isLocal ? false : { rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED !== 'false' };
+}
+
+/**
+ * Build pool configuration.
+ *
+ * A single DATABASE_URL takes precedence when present, since managed
+ * providers hand out connection strings. Otherwise discrete DB_* variables
+ * are used.
+ */
+function buildPoolConfig() {
+    const ssl = resolveSsl();
+
+    // Each serverless invocation gets its own pool, so a large max would
+    // multiply across concurrent instances and exhaust the provider's
+    // connection limit.
+    const max = Number(process.env.DB_POOL_MAX) || (isServerless ? 3 : 20);
+
+    // Managed providers may suspend idle compute and need time to wake, so
+    // the connect timeout must be generous enough to cover a cold start.
+    const connectionTimeoutMillis = Number(process.env.DB_CONNECT_TIMEOUT_MS) || 15000;
+
+    const shared = {
+        max,
+        idleTimeoutMillis: 30000,
+        connectionTimeoutMillis,
+        ssl,
+    };
+
+    if (process.env.DATABASE_URL) {
+        return { connectionString: process.env.DATABASE_URL, ...shared };
+    }
+
+    return {
+        host: process.env.DB_HOST || 'localhost',
+        port: process.env.DB_PORT || 5432,
+        database: process.env.DB_NAME || 'nigerian_directory',
+        user: process.env.DB_USER || 'postgres',
+        password: process.env.DB_PASSWORD || 'postgres',
+        ...shared,
+    };
+}
+
 // Create connection pool
-const pool = new Pool({
-    host: process.env.DB_HOST || 'localhost',
-    port: process.env.DB_PORT || 5432,
-    database: process.env.DB_NAME || 'nigerian_directory',
-    user: process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASSWORD || 'postgres',
-    max: 20, // Maximum number of connections in pool
-    idleTimeoutMillis: 30000, // Close idle connections after 30 seconds
-    connectionTimeoutMillis: 2000, // Return error after 2 seconds if connection can't be established
+const pool = new Pool(buildPoolConfig());
+
+// Surface pool-level failures instead of letting them crash the process.
+pool.on('error', (error) => {
+    console.error('Unexpected database pool error:', error.message);
 });
 
 // Test connection
