@@ -29,7 +29,12 @@ async function fetchWithTimeout(
   url: string,
   options: FetchOptions = {}
 ): Promise<Response> {
-  const { timeout = 10000, ...fetchOptions } = options;
+  // A cold start can chain a serverless wake with a managed-database wake,
+  // which together measured over eleven seconds in production. A ten second
+  // budget aborted those requests, and because callers fall back to empty
+  // results the page rendered as though no records existed. That is
+  // particularly damaging when a search crawler sees the empty version.
+  const { timeout = 30000, ...fetchOptions } = options;
 
   const controller = new AbortController();
   const id = setTimeout(() => controller.abort(), timeout);
