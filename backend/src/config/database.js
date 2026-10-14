@@ -28,12 +28,35 @@ if (process.env.NODE_ENV === 'production' || process.env.STRICT_ENV_VALIDATION =
 
 const isServerless = process.env.VERCEL === '1';
 
+const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '::1']);
+
+/**
+ * Determine the host the pool will actually connect to.
+ *
+ * DATABASE_URL takes precedence over the discrete DB_* variables, so the
+ * host must be read from the URL when one is supplied. Reading DB_HOST in
+ * that case would misreport the target.
+ */
+function resolveEffectiveHost() {
+    if (process.env.DATABASE_URL) {
+        try {
+            return new URL(process.env.DATABASE_URL).hostname;
+        } catch {
+            // An unparseable URL is treated as remote, which fails safe by
+            // keeping TLS enabled.
+            return '';
+        }
+    }
+
+    return process.env.DB_HOST || 'localhost';
+}
+
 /**
  * Decide whether to use TLS.
  *
  * Managed providers such as Neon require TLS and reject plaintext
  * connections. Local development instances normally have no certificate, so
- * TLS is disabled for loopback hosts. Set DB_SSL explicitly to override.
+ * TLS is disabled for loopback hosts only. Set DB_SSL to override.
  */
 function resolveSsl() {
     const explicit = process.env.DB_SSL;
@@ -45,10 +68,11 @@ function resolveSsl() {
         return false;
     }
 
-    const host = process.env.DB_HOST || 'localhost';
-    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '::1';
+    if (LOCAL_HOSTS.has(resolveEffectiveHost())) {
+        return false;
+    }
 
-    return isLocal ? false : { rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED !== 'false' };
+    return { rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED !== 'false' };
 }
 
 /**
