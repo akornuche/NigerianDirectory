@@ -38,9 +38,7 @@ export default function CookieConsent() {
   const enableTracking = (level: ConsentLevel) => {
     if (level === 'all') {
       // Enable Google Analytics, AdSense personalization, etc.
-      // @ts-expect-error - gtag is loaded externally
       if (typeof window.gtag === 'function') {
-        // @ts-expect-error - gtag is loaded externally
         window.gtag('consent', 'update', {
           'analytics_storage': 'granted',
           'ad_storage': 'granted',
@@ -50,9 +48,7 @@ export default function CookieConsent() {
       }
     } else {
       // Minimal consent - no personalization
-      // @ts-expect-error - gtag is loaded externally
       if (typeof window.gtag === 'function') {
-        // @ts-expect-error - gtag is loaded externally
         window.gtag('consent', 'update', {
           'analytics_storage': 'denied',
           'ad_storage': 'granted', // Still show ads, just not personalized

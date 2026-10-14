@@ -7,6 +7,24 @@
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
 
+/**
+ * Shape consumed from /api/ai/schools when building the sitemap.
+ *
+ * Only the fields this route reads are declared. Everything is optional
+ * except name, because the AI endpoint enriches records progressively and
+ * may omit sections for institutions that have not been processed yet.
+ */
+interface AiSitemapSchool {
+  name: string;
+  type?: string;
+  city?: string;
+  state?: string;
+  updated_at?: string;
+  seo?: { url_slug?: string };
+  location?: { full_address?: string; city?: string; state?: string };
+  education?: { type?: string };
+}
+
 export async function GET() {
   try {
     // Fetch school data for AI sitemap
@@ -14,7 +32,7 @@ export async function GET() {
       next: { revalidate: 86400 } // Cache for 24 hours
     });
     
-    let schools = [];
+    let schools: AiSitemapSchool[] = [];
     if (schoolsResponse.ok) {
       const data = await schoolsResponse.json();
       schools = data.schools || [];
@@ -70,7 +88,7 @@ export async function GET() {
     <priority>0.8</priority>
     <edu:name>${escapeXml(school.name)}</edu:name>
     <edu:location>${escapeXml(school.location?.full_address || `${school.city}, ${school.state}, Nigeria`)}</edu:location>
-    <edu:type>${escapeXml(school.education?.type || school.type)}</edu:type>
+    <edu:type>${escapeXml(school.education?.type || school.type || 'school')}</edu:type>
     <ai:context>Nigerian ${school.education?.type || school.type} in ${school.location?.city || school.city}, ${school.location?.state || school.state} State, Nigeria</ai:context>
   </url>`).join('')}
 
