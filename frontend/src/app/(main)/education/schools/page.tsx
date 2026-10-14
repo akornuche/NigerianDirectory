@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPinIcon, AcademicCapIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
+import { toSlugSegment, toLocationSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
@@ -135,7 +136,7 @@ export default async function SchoolsPage() {
               {featuredSchools.slice(0, 8).map((school) => (
                 <Link
                   key={school.slug}
-                  href={`/education/schools/${school.state.toLowerCase().replace(/ /g, '-')}/${school.area.toLowerCase().replace(/ /g, '-')}/${school.slug}/`}
+                  href={`/education/schools/${toSlugSegment(school.state)}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
                   className="card-hover group"
                 >
                   <div className="aspect-[16/9] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPinIcon, AcademicCapIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
+import { toSlugSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
@@ -137,7 +138,7 @@ export default async function UniversitiesPage({
                             {featuredUniversities.map((uni) => (
                                 <Link
                                     key={uni.slug}
-                                    href={`/education/universities/${uni.state.toLowerCase().replace(/ /g, '-')}/${uni.city.toLowerCase().replace(/ /g, '-')}/${uni.slug}/`}
+                                    href={`/education/universities/${toSlugSegment(uni.state)}/${toSlugSegment(uni.city)}/${uni.slug}/`}
                                     className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
                                 >
                                     <div className="aspect-[4/3] relative bg-gray-100">

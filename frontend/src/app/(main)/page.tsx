@@ -9,6 +9,7 @@ import {
   UserGroupIcon
 } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
+import { toSlugSegment, toLocationSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
 
 // Nigerian states for the homepage
@@ -262,7 +263,7 @@ export default async function HomePage() {
             {displaySchools.map((school) => (
               <Link
                 key={school.slug}
-                href={`/schools/${school.state.toLowerCase().replace(/ /g, '-')}/${school.area.toLowerCase().replace(/ /g, '-')}/${school.slug}/`}
+                href={`/schools/${toSlugSegment(school.state)}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
                 className="card-hover group"
               >
                 <div className="aspect-[4/3] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">

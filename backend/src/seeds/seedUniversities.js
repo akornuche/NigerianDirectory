@@ -65,15 +65,16 @@ function resolveConnection() {
 
 const UPSERT = `
     INSERT INTO schools (
-        name, slug, institution_category, type, state, city, address,
+        name, slug, institution_category, type, state, city, area, address,
         website, established_year, principal_name, principal_title,
         levels, boarding, needs_ai_enrichment
-    ) VALUES ($1, $2, 'university', $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, TRUE)
+    ) VALUES ($1, $2, 'university', $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, TRUE)
     ON CONFLICT (slug) DO UPDATE SET
         institution_category = 'university',
         type                 = EXCLUDED.type,
         state                = EXCLUDED.state,
         city                 = EXCLUDED.city,
+        area                 = EXCLUDED.area,
         address              = EXCLUDED.address,
         website              = EXCLUDED.website,
         established_year     = EXCLUDED.established_year,
@@ -107,6 +108,7 @@ async function main() {
                 uni.type,
                 uni.state,
                 uni.city,
+                uni.area ?? null,
                 uni.address ?? null,
                 uni.website ?? null,
                 uni.established_year ?? null,

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
+import { toSlugSegment } from '@/lib/slug';
 
 async function getCollegesByState(state: string): Promise<{ name: string; schools: School[] } | null> {
     try {
@@ -58,7 +59,7 @@ export default async function CollegeStatePage({ params }: Props) {
                     {stateData.schools.map((school) => (
                         <Link
                             key={school.slug}
-                            href={`/education/colleges/${resolvedParams.state}/${school.city.toLowerCase().replace(/ /g, '-')}/${school.slug}/`}
+                            href={`/education/colleges/${resolvedParams.state}/${toSlugSegment(school.city)}/${school.slug}/`}
                             className="bg-white rounded-2xl overflow-hidden border border-gray-100 p-6 hover:shadow-lg transition-shadow"
                         >
                             <h2 className="text-lg font-bold group-hover:text-emerald-600">{school.name}</h2>

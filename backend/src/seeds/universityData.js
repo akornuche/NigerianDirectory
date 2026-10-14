@@ -18,6 +18,9 @@ const universities = [
         type: 'federal',
         state: 'Oyo',
         city: 'Ibadan',
+        // Templates build route segments from area, falling back to city, so
+        // leaving area null produced broken links and crashed state pages.
+        area: 'Ibadan North',
         address: 'Oduduwa Road, Ibadan',
         website: 'https://ui.edu.ng',
         established_year: 1948,
@@ -31,6 +34,7 @@ const universities = [
         type: 'federal',
         state: 'Lagos',
         city: 'Akoka',
+        area: 'Yaba',
         address: 'University Road, Akoka, Yaba',
         website: 'https://unilag.edu.ng',
         established_year: 1962,

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPinIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
+import { toSlugSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
 
 async function getUniversitiesByState(state: string): Promise<{ name: string; schools: School[] } | null> {
@@ -112,7 +113,7 @@ export default async function UniversityStatePage({ params }: Props) {
                     {stateData.schools.map((uni) => (
                         <Link
                             key={uni.slug}
-                            href={`/education/universities/${resolvedParams.state}/${uni.city.toLowerCase().replace(/ /g, '-')}/${uni.slug}/`}
+                            href={`/education/universities/${resolvedParams.state}/${toSlugSegment(uni.city)}/${uni.slug}/`}
                             className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
                         >
                             <div className="aspect-[16/10] relative bg-gray-100">
