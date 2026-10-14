@@ -5,11 +5,9 @@
  * to discover and index Nigerian school information.
  */
 
-import { NextRequest } from 'next';
-
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Fetch school data for AI sitemap
     const schoolsResponse = await fetch(`${baseUrl}/api/ai/schools?limit=200`, {

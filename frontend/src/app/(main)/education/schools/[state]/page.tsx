@@ -10,7 +10,7 @@ async function getSchoolsByState(state: string): Promise<{ name: string; schools
   try {
     // Capitalize the state name for the API call
     const capitalizedState = state.charAt(0).toUpperCase() + state.slice(1).toLowerCase();
-    const response = await api.getSchoolsByState(capitalizedState, 1, 50);
+    const response = await api.getSchoolsByState(capitalizedState);
     if (!response.schools || response.schools.length === 0) return null;
     
     // Get state name from response or first school

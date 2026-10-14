@@ -8,7 +8,7 @@ import AdBanner from '@/components/ads/AdBanner';
 // Fetch schools by state from API
 async function getSchoolsByState(state: string): Promise<{ name: string; schools: School[] } | null> {
   try {
-    const response = await api.getSchoolsByState(state, 1, 50);
+    const response = await api.getSchoolsByState(state);
     if (!response.schools || response.schools.length === 0) return null;
     
     // Get state name from first school

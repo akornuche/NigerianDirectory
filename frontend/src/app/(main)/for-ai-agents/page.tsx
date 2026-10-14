@@ -104,7 +104,7 @@ export default function AIAgentsPage() {
                 Nigerian Education System Context
               </h4>
               <p className="text-gray-600 mb-3">
-                Comprehensive context about Nigeria's educational system for accurate AI responses.
+                Comprehensive context about Nigeria&rsquo;s educational system for accurate AI responses.
               </p>
               <div className="bg-gray-50 p-3 rounded mb-3">
                 <code className="text-sm">GET /api/ai/context/nigeria-education</code>
@@ -207,7 +207,7 @@ export default function AIAgentsPage() {
           <div className="space-y-4">
             
             <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-blue-900 mb-2">User Query: "Schools in Lagos, Nigeria"</h4>
+              <h4 className="font-semibold text-blue-900 mb-2">User Query: &ldquo;Schools in Lagos, Nigeria&rdquo;</h4>
               <p className="text-sm text-blue-800 mb-2">
                 <strong>API Call:</strong> <code>GET /api/ai/schools?state=Lagos</code>
               </p>
@@ -217,7 +217,7 @@ export default function AIAgentsPage() {
             </div>
 
             <div className="bg-green-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-green-900 mb-2">User Query: "Nigerian secondary schools with WAEC preparation"</h4>
+              <h4 className="font-semibold text-green-900 mb-2">User Query: &ldquo;Nigerian secondary schools with WAEC preparation&rdquo;</h4>
               <p className="text-sm text-green-800 mb-2">
                 <strong>API Call:</strong> <code>GET /api/ai/schools?type=secondary&query=WAEC</code>
               </p>
@@ -227,7 +227,7 @@ export default function AIAgentsPage() {
             </div>
 
             <div className="bg-purple-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-purple-900 mb-2">User Query: "What is the Nigerian education system like?"</h4>
+              <h4 className="font-semibold text-purple-900 mb-2">User Query: &ldquo;What is the Nigerian education system like?&rdquo;</h4>
               <p className="text-sm text-purple-800 mb-2">
                 <strong>API Call:</strong> <code>GET /api/ai/context/nigeria-education</code>
               </p>

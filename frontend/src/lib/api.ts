@@ -210,7 +210,9 @@ export const api = {
 
   getFeaturedSchools: () => apiRequest<School[]>('/schools/featured'),
 
-  getSchoolsByState: (state: string, page = 1, limit = 20) =>
+  // The backend route /schools/state/:state returns every school in the
+  // state and accepts no pagination parameters, so none are taken here.
+  getSchoolsByState: (state: string) =>
     apiRequest<{
       state: string;
       schoolCount: number;

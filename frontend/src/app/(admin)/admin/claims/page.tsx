@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function ClaimsPage() {
   return (
     <div className="space-y-6">
