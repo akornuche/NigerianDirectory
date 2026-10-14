@@ -33,30 +33,67 @@ class DatabaseManager:
     
     @retry_on_database_error(max_retries=5)
     def get_connection(self):
-        """Create database connection with proper environment detection"""
-        # Detect if running in Docker container
+        """
+        Create a database connection.
+
+        Resolution order:
+          1. DATABASE_URL, used verbatim. Managed providers such as Neon issue
+             a connection string and require TLS.
+          2. Discrete DB_* variables.
+          3. Local defaults, which differ inside Docker because the container
+             reaches Postgres by service name.
+
+        A connect timeout is always applied. Without one, an unreachable host
+        blocks indefinitely: a previous run sat on a dead socket for seven
+        days while still appearing to be running.
+        """
+        connect_timeout = int(os.getenv('DB_CONNECT_TIMEOUT', '20'))
+
+        database_url = os.getenv('DATABASE_URL')
+        if database_url:
+            safe_host = database_url.split('@')[-1].split('/')[0]
+            logger.info(f"Connecting to database via DATABASE_URL at {safe_host}")
+            try:
+                connection = psycopg2.connect(
+                    database_url,
+                    cursor_factory=psycopg2.extras.RealDictCursor,
+                    connect_timeout=connect_timeout,
+                )
+                connection.set_session(autocommit=False)
+                return connection
+            except Exception as e:
+                logger.error(f"Database connection failed: {e}")
+                raise
+
         is_in_docker = os.path.exists('/.dockerenv')
-        
+
         if is_in_docker:
-            # In Docker, use service names and container ports
             db_host = os.getenv('DB_HOST', 'postgres')
             db_port = os.getenv('DB_PORT', '5432')
         else:
-            # Running on host, use localhost and mapped ports
-            db_host = 'localhost'
-            db_port = '5433'  # Docker mapped port
-        
+            # On the host, honour DB_HOST when supplied so the crawler can be
+            # aimed at a remote database, and fall back to the Docker-mapped
+            # local port otherwise.
+            db_host = os.getenv('DB_HOST', 'localhost')
+            db_port = os.getenv('DB_PORT', '5433')
+
         db_config = {
             'host': db_host,
             'port': int(db_port),
             'database': os.getenv('DB_NAME', 'nigerian_directory'),
             'user': os.getenv('DB_USER', 'postgres'),
             'password': os.getenv('DB_PASSWORD', 'devpassword123'),
-            'cursor_factory': psycopg2.extras.RealDictCursor
+            'cursor_factory': psycopg2.extras.RealDictCursor,
+            'connect_timeout': connect_timeout,
         }
-        
+
+        # Loopback instances normally have no certificate; anything remote is
+        # assumed to require TLS.
+        if db_host not in ('localhost', '127.0.0.1', '::1'):
+            db_config['sslmode'] = os.getenv('DB_SSLMODE', 'require')
+
         logger.info(f"Connecting to database at {db_host}:{db_port}")
-        
+
         try:
             connection = psycopg2.connect(**db_config)
             connection.set_session(autocommit=False)

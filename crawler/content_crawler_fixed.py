@@ -27,16 +27,13 @@ from error_reporter import error_reporter
 from content_quality import ContentQualityManager
 from seo_optimizer import SEOOptimizer
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('content_crawler.log', encoding='utf-8'),
-        logging.StreamHandler()
-    ]
-)
+# This module is imported by crawler entry points, so it must not configure
+# root logging. Calling basicConfig here installed a competing FileHandler at
+# import time and left the entry point's own log file empty: every
+# production_crawl_*.log was zero bytes across eleven runs, destroying the
+# audit trail. Libraries attach a NullHandler and let the application decide.
 logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
 
 class ContentCrawler:
     """

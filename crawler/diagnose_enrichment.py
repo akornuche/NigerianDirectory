@@ -33,19 +33,23 @@ TARGETS = [
 ]
 
 
-def classify(crawler, text):
-    """Replicate the crawler's paragraph classification, exposing ties."""
-    lo = text.lower()
-    scores = {
-        'history': sum(1 for k in crawler.HISTORY_KW if k in lo),
-        'academics': sum(1 for k in crawler.ACADEMIC_KW if k in lo),
-        'campus': sum(1 for k in crawler.CAMPUS_KW if k in lo),
-        'student_life': sum(1 for k in crawler.LIFE_KW if k in lo),
+def classify(crawler, text, totals):
+    """Classify a block using the crawler's live logic, exposing ties."""
+    lowered = text.lower()
+    keyword_sets = {
+        'history': crawler.HISTORY_KW,
+        'academics': crawler.ACADEMIC_KW,
+        'campus': crawler.CAMPUS_KW,
+        'student_life': crawler.LIFE_KW,
     }
-    best = max(scores, key=scores.get)
-    top = scores[best]
-    tied = [k for k, v in scores.items() if v == top and top > 0]
-    return best, scores, tied
+    scores = {
+        section: sum(1 for kw in kws if kw in lowered) / len(kws)
+        for section, kws in keyword_sets.items()
+    }
+    best_score = max(scores.values())
+    tied = [s for s, v in scores.items() if v == best_score and best_score > 0]
+    chosen = crawler._classify(text, totals)
+    return chosen, scores, tied
 
 
 def fetch_paragraphs(crawler, url):
@@ -101,49 +105,54 @@ def main():
 
         page = fetch_paragraphs(crawler, target['website'])
         print(f"  http status        : {page['status']}")
-        print(f"  body text chars    : {page['body_chars']}")
-        print(f"  <p> tags found     : {page['p_total']}")
-        print(f"  <p> over 60 chars  : {page['p_kept']}   <- the only thing harvested")
-        print(f"  <div> over 200 ch  : {page['div_candidates']}   <- ignored entirely")
+        print(f"  homepage text chars: {page['body_chars']}")
+        print(f"  legacy <p> usable  : {page['p_kept']} of {page['p_total']}   (old harvest)")
+        print(f"  <div> over 200 ch  : {page['div_candidates']}   (previously discarded)")
 
         buckets = {s: 0 for s in SECTIONS}
+        running = {s: 0 for s in SECTIONS}
         for para in page['paras']:
-            best, scores, tied = classify(crawler, para)
+            best, scores, tied = classify(crawler, para, running)
+            if best is None:
+                continue
             total_classified += 1
             buckets[best] += 1
             bucket_totals[best] += 1
+            running[best] += len(para)
             if len(tied) > 1:
                 total_tied += 1
                 for loser in tied:
                     if loser != best:
                         tie_losses[loser] += 1
 
-        print(f"  classified         : {buckets}")
+        print(f"  legacy <p> blocks classified : {buckets}")
 
         website_result = crawler._extract_from_website(target['website'], target['name'])
-        web_words = sum(len(website_result.get(k, '').split()) for k in SECTIONS)
-        print(f"  website word total : {web_words}  (search runs only if < 150)")
+        web_words = sum(len((website_result.get(k) or '').split()) for k in SECTIONS)
+        totals = {s: len((website_result.get(s) or '').strip()) for s in SECTIONS}
+        needs_search = crawler._needs_search(totals)
+        print(f"  website words      : {web_words}")
+        print(f"  website chars      : {totals}")
+        print(f"  search needed      : {needs_search}")
 
         search_result = {}
-        if include_search and web_words < 150:
-            search_result = crawler._search_web(target['name'], target['state'], target['city'])
+        if include_search and needs_search:
+            search_result = crawler._search_web(
+                target['name'], target['state'], target['city'], totals
+            )
             got = {k: len(search_result.get(k, [])) for k in SECTIONS}
             print(f"  search paragraphs  : {got}")
             print(f"  search sources     : {len(search_result.get('sources', []))}")
 
         final = crawler._synthesise(website_result, search_result, target['name'])
 
-        print('  final section lengths:')
-        for key, prefix in (
-            ('enriched_history', f"{target['name']} has a rich academic heritage. "),
-            ('enriched_academics', f"Academic offerings at {target['name']} include: "),
-            ('enriched_campus_info', f"The {target['name']} campus provides: "),
-            ('enriched_student_life', f"Student life at {target['name']} encompasses: "),
-        ):
-            value = final.get(key, '')
-            real = max(0, len(value) - len(prefix)) if value else 0
-            flag = 'PASS' if len(value) > 100 else 'fail'
-            print(f"    {key:24} total={len(value):5}  boilerplate={len(prefix):3}  real={real:5}  {flag}")
+        print('  final section lengths (all real content, no boilerplate):')
+        for key in ('enriched_history', 'enriched_academics',
+                    'enriched_campus_info', 'enriched_student_life'):
+            value = final.get(key, '') or ''
+            flag = 'substantive' if len(value) >= crawler.QUALITY_SECTION_CHARS else 'thin'
+            print(f"    {key:24} chars={len(value):5}  {flag}")
+        print(f"    {'TOTAL':24} chars={sum(len(final.get(k) or '') for k in ('enriched_history','enriched_academics','enriched_campus_info','enriched_student_life')):5}")
 
         passed = crawler._meets_quality(final)
         print(f"  _meets_quality     : {'PASS' if passed else 'FAIL (needs 2 sections over 100 chars)'}")
@@ -154,12 +163,11 @@ def main():
     print('=' * 72)
     print(f"  paragraphs classified      : {total_classified}")
     print(f"  destination counts         : {bucket_totals}")
-    print(f"  paragraphs with a tie      : {total_tied}")
+    print(f"  blocks with a tie          : {total_tied}")
     print(f"  sections that lost a tie   : {tie_losses}")
     print()
-    print("  Ties resolve via max() over a dict, which returns the first key")
-    print("  inserted. That key is always 'history', so any tie is awarded to")
-    print("  history regardless of relevance.")
+    print("  Ties are now awarded to whichever tied section holds the least")
+    print("  content, rather than always to history.")
 
 
 if __name__ == '__main__':

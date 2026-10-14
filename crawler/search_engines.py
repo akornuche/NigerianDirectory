@@ -25,7 +25,7 @@ from datetime import datetime
 
 # Import retry handler
 from retry_handler import retry_handler, retry_on_network_error
-from urllib.parse import quote_plus, unquote, urlparse
+from urllib.parse import quote_plus, unquote, urlparse, urljoin
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional, Any
@@ -75,6 +75,27 @@ class RobustSearchEngine:
         self.last_search_time = {}
         self.min_delay = 2.0  # Minimum delay between searches
         self.max_delay = 5.0  # Maximum delay
+
+        # Rotated between attempts. Repeating a single fingerprint from one
+        # address is what triggers the 429 and captcha responses seen in
+        # production logs.
+        self.user_agents = [
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+            '(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 '
+            '(KHTML, like Gecko) Version/17.1 Safari/605.1.15',
+            'Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0',
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
+            '(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+        ]
+
+        # Per-engine backoff applied after throttling, in seconds.
+        self.engine_cooldown_until = {}
+
+        # Retry policy for a single engine within one query.
+        self.max_attempts_per_engine = 3
+        self.backoff_base = 4.0
         
         # Blocked domains (avoid social media, irrelevant sites)
         self.blocked_domains = {
@@ -127,6 +148,19 @@ class RobustSearchEngine:
         
         self.last_search_time[engine] = time.time()
     
+    def _rotate_user_agent(self):
+        """Present a different browser fingerprint on the next request."""
+        self.session.headers['User-Agent'] = random.choice(self.user_agents)
+
+    def _in_cooldown(self, engine: str) -> bool:
+        """Whether an engine is still being rested after throttling."""
+        return time.time() < self.engine_cooldown_until.get(engine, 0)
+
+    def _apply_cooldown(self, engine: str, seconds: float):
+        """Rest an engine so repeated hammering does not deepen a block."""
+        self.engine_cooldown_until[engine] = time.time() + seconds
+        logger.warning(f"{engine} cooling down for {seconds:.0f}s after throttling")
+
     def _is_valid_result(self, result: SearchResult) -> bool:
         """Validate search result quality"""
         if not result.url or not result.title:
@@ -292,10 +326,17 @@ class RobustSearchEngine:
                     snippet_elem = result_elem.select_one('.w-gl__description')
                     
                     if title_elem and snippet_elem:
+                        # Startpage emits relative hrefs. Passing those through
+                        # unchanged meant _is_valid_result rejected every
+                        # result for not starting with http, which is why this
+                        # engine reported "no valid results" indefinitely.
+                        raw_href = title_elem.get('href', '')
+                        absolute_href = urljoin(search_url, raw_href) if raw_href else ''
+
                         result = SearchResult(
                             title=title_elem.get_text(strip=True),
                             snippet=snippet_elem.get_text(strip=True),
-                            url=title_elem.get('href', ''),
+                            url=absolute_href,
                             source='startpage'
                         )
                         
@@ -373,47 +414,87 @@ class RobustSearchEngine:
         Search multiple engines and combine results
         """
         all_results = []
-        
+
         # Try each engine in order of reliability
         engines = [
             ('duckduckgo', 8),
-            ('startpage', 6), 
-            ('bing', 6)
+            ('bing', 6),
+            ('startpage', 6),
         ]
-        
+
+        handlers = {
+            'duckduckgo': self.search_duckduckgo,
+            'bing': self.search_bing,
+            'startpage': self.search_startpage,
+        }
+
         for engine_name, max_per_engine in engines:
-            try:
-                logger.info(f"Searching {engine_name} for: {query[:50]}...")
-                
-                if engine_name == 'duckduckgo':
-                    results = self.search_duckduckgo(query, max_per_engine)
-                elif engine_name == 'startpage':
-                    results = self.search_startpage(query, max_per_engine)
-                elif engine_name == 'bing':
-                    results = self.search_bing(query, max_per_engine)
-                else:
-                    continue
-                
-                all_results.extend(results)
-                
-                # Stop if we have enough good results
-                high_confidence = [r for r in all_results if r.confidence > 0.7]
-                if len(high_confidence) >= max_results // 2:
-                    break
-                
-            except Exception as e:
-                logger.error(f"Engine {engine_name} failed: {e}")
+            if self._in_cooldown(engine_name):
+                logger.info(f"Skipping {engine_name}, still in cooldown")
                 continue
-        
+
+            handler = handlers.get(engine_name)
+            if handler is None:
+                continue
+
+            # Retry the engine a few times with exponential backoff. The
+            # previous implementation made a single attempt and swallowed any
+            # exception, so transient throttling produced a silent empty
+            # result and the caller proceeded with no content at all.
+            for attempt in range(1, self.max_attempts_per_engine + 1):
+                try:
+                    logger.info(
+                        f"Searching {engine_name} (attempt {attempt}) for: {query[:50]}..."
+                    )
+                    self._rotate_user_agent()
+                    results = handler(query, max_per_engine)
+
+                    if results:
+                        all_results.extend(results)
+                        break
+
+                    # An empty result set from a working engine usually means
+                    # throttling or a captcha interstitial rather than a
+                    # genuine absence of matches.
+                    if attempt < self.max_attempts_per_engine:
+                        wait = self.backoff_base * (2 ** (attempt - 1))
+                        wait += random.uniform(0, 2.0)
+                        logger.warning(
+                            f"{engine_name} returned nothing, backing off {wait:.1f}s"
+                        )
+                        time.sleep(wait)
+                    else:
+                        self._apply_cooldown(engine_name, 120)
+
+                except Exception as e:
+                    logger.error(f"Engine {engine_name} attempt {attempt} failed: {e}")
+                    if attempt < self.max_attempts_per_engine:
+                        wait = self.backoff_base * (2 ** (attempt - 1))
+                        time.sleep(wait + random.uniform(0, 2.0))
+                    else:
+                        self._apply_cooldown(engine_name, 180)
+
+            # Stop once there is enough strong material.
+            high_confidence = [r for r in all_results if r.confidence > 0.7]
+            if len(high_confidence) >= max(1, max_results // 2):
+                break
+
         # Deduplicate by URL and sort by confidence
         seen_urls = set()
         unique_results = []
-        
+
         for result in sorted(all_results, key=lambda x: x.confidence, reverse=True):
             if result.url not in seen_urls:
                 seen_urls.add(result.url)
                 unique_results.append(result)
-        
+
+        if not unique_results:
+            # Surface total failure instead of letting callers interpret an
+            # empty list as "no such information exists".
+            logger.error(
+                f"All search engines returned no usable results for: {query[:80]}"
+            )
+
         return unique_results[:max_results]
     
     def get_engine_stats(self) -> Dict[str, Any]:

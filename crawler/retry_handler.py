@@ -17,9 +17,10 @@ from urllib3.util.retry import Retry
 import psycopg2
 from psycopg2 import OperationalError, InterfaceError, DatabaseError
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
+# Imported by crawler entry points, so root logging is left to the
+# application. See the note in content_crawler_fixed.py.
 logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
 
 class RetryConfig:
     """Configuration for retry behavior"""

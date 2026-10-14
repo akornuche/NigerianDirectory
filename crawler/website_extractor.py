@@ -20,9 +20,10 @@ import json
 # Import retry handler
 from retry_handler import retry_handler, retry_on_network_error
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
+# Imported by crawler entry points, so root logging is left to the
+# application. See the note in content_crawler_fixed.py.
 logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
 
 class WebsiteExtractor:
     """

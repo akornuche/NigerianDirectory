@@ -26,6 +26,7 @@ from threading import Event
 import requests
 from bs4 import BeautifulSoup
 from typing import Dict, List, Any, Optional
+from urllib.parse import urljoin, urlparse
 
 # Add crawler directory to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -110,40 +111,324 @@ class UniversityCrawler:
             'quality_rejected': 0, 'insufficient': 0,
         }
 
-    # ── Website extraction ───────────────────────────────────────────────────
-    def _extract_from_website(self, url: str, name: str) -> Dict[str, Any]:
-        """Extract content from the university's own website."""
-        result = {'history': '', 'academics': '', 'campus': '', 'student_life': '', 'sources': []}
+    # ── Tunables ─────────────────────────────────────────────────────────────
+    SECTIONS = ('history', 'academics', 'campus', 'student_life')
+
+    # Maximum stored characters per section. The previous value of 800 capped
+    # every page at roughly 3,200 characters regardless of how much material
+    # was available, which worked against the goal of substantial pages.
+    SECTION_CHAR_CAP = 2600
+
+    # Minimum length for a harvested text block. Lowered from 60 because
+    # headline-style sentences on university sites are frequently shorter.
+    MIN_BLOCK_LEN = 45
+
+    # Longest single block kept, to avoid one enormous block filling a section.
+    MAX_BLOCK_LEN = 700
+
+    MAX_SUBPAGES = 10
+    PAGE_TIMEOUT = 20
+
+    # Minimum keyword matches before a block is assigned to a section.
+    MIN_KEYWORD_HITS = 2
+
+    # URL fragments that indicate which section a subpage is likely to serve.
+    SUBPAGE_HINTS = {
+        'history': [
+            'about', 'about-us', 'aboutus', 'history', 'our-history', 'heritage',
+            'overview', 'background', 'profile', 'vision', 'mission', 'who-we-are',
+        ],
+        'academics': [
+            'academic', 'academics', 'faculty', 'faculties', 'department',
+            'departments', 'programme', 'programmes', 'program', 'programs',
+            'course', 'courses', 'school-of', 'college-of', 'admission',
+            'admissions', 'undergraduate', 'postgraduate', 'research',
+            'accreditation', 'institute',
+        ],
+        'campus': [
+            'campus', 'facility', 'facilities', 'library', 'libraries', 'hostel',
+            'accommodation', 'infrastructure', 'laboratory', 'laboratories',
+            'health', 'clinic', 'sport-facility', 'gallery',
+        ],
+        # Deliberately excludes news and events. Those pages carry dated
+        # announcements such as lecture themes and fair dates, which are not
+        # evergreen descriptions of the institution and read as noise on a
+        # directory page.
+        'student_life': [
+            'student-life', 'studentlife', 'student', 'students',
+            'student-affairs', 'campus-life', 'club', 'clubs', 'society',
+            'societies', 'sport', 'sports', 'alumni', 'convocation',
+        ],
+    }
+
+    # Subpath fragments never worth crawling for descriptive content.
+    SUBPAGE_EXCLUSIONS = (
+        '/news', '/event', '/blog', '/press', '/vacanc', '/career',
+        '/tender', '/notice', '/announcement', '/gallery', '/login',
+        '/portal', '/webmail', '/search', '/tag/', '/category/',
+        '/author/', '/archive', '/feed',
+    )
+
+    # Navigation and boilerplate text that should never become page content.
+    BOILERPLATE_MARKERS = (
+        'cookie', 'javascript', 'all rights reserved', 'copyright',
+        'read more', 'click here', 'sign in', 'log in', 'subscribe',
+        'follow us', 'privacy policy', 'terms of use', 'skip to content',
+    )
+
+    # Encyclopaedia and reference-list artefacts. Wikipedia mirrors are a
+    # frequent search result and their citation blocks were being stored as
+    # institutional history.
+    CITATION_MARKERS = (
+        'archived from the original', 'retrieved ', 'citation needed',
+        'edit source', 'jump to navigation', 'this article',
+        'doi:', 'isbn', 'issn', 'arxiv', 'pmid',
+        'wayback machine', 'archived copy', 'original on',
+    )
+
+    # ── Text harvesting ──────────────────────────────────────────────────────
+    def _text_blocks(self, node) -> List[str]:
+        """
+        Collect readable text blocks from a parsed document.
+
+        The original implementation read only <p> tags. Measurement against
+        live university sites showed that discarded 23 to 56 div elements of
+        over 200 characters per homepage, because these sites place prose in
+        divs, list items and sections.
+
+        Only leaf-level blocks are taken, meaning elements that contain no
+        further block-level element with text. That captures div-based prose
+        without counting the same words once per ancestor.
+        """
+        blocks: List[str] = []
+        block_tags = ['p', 'li', 'div', 'section', 'article', 'blockquote', 'td', 'dd']
+
+        for tag in node.find_all(block_tags):
+            if tag.find(block_tags):
+                continue
+
+            text = tag.get_text(' ', strip=True)
+            if len(text) < self.MIN_BLOCK_LEN:
+                continue
+
+            lowered = text.lower()
+            if any(marker in lowered for marker in self.BOILERPLATE_MARKERS):
+                continue
+
+            if any(marker in lowered for marker in self.CITATION_MARKERS):
+                continue
+
+            # Citation glyphs and bracketed footnote markers.
+            if text.startswith(('↑', '^', '[')) or '↑' in text[:40]:
+                continue
+
+            # Dated event announcements rather than descriptive prose.
+            if lowered.startswith(('theme:', 'date:', 'venue:', 'time:', 'posted on')):
+                continue
+
+            # Require sentence-like content rather than link lists or labels.
+            if text.count(' ') < 6:
+                continue
+
+            # Reference lists are dense with digits and parentheses; prose is
+            # not. Reject blocks that are more than a quarter numeric.
+            digits = sum(1 for ch in text if ch.isdigit())
+            if digits / max(len(text), 1) > 0.25:
+                continue
+
+            blocks.append(text[:self.MAX_BLOCK_LEN])
+
+        # Drop duplicates, which are common across templated pages.
+        seen = set()
+        unique = []
+        for block in blocks:
+            key = block[:120].lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            unique.append(block)
+
+        return unique
+
+    def _classify(self, text: str, totals: Dict[str, int]) -> Optional[str]:
+        """
+        Choose the section a block belongs to.
+
+        Scores are normalised by keyword-list length so that sections with
+        longer vocabularies are not favoured. Ties previously resolved through
+        max() over a dict, which always returned 'history' because it is the
+        first key; measurement found 5 of 51 blocks hitting that path. Ties now
+        go to whichever tied section holds the least content, which both
+        removes the bias and improves section breadth.
+        """
+        lowered = text.lower()
+        keyword_sets = {
+            'history': self.HISTORY_KW,
+            'academics': self.ACADEMIC_KW,
+            'campus': self.CAMPUS_KW,
+            'student_life': self.LIFE_KW,
+        }
+
+        raw = {
+            section: sum(1 for kw in keywords if kw in lowered)
+            for section, keywords in keyword_sets.items()
+        }
+        scores = {
+            section: raw[section] / len(keyword_sets[section])
+            for section in keyword_sets
+        }
+
+        best = max(scores.values())
+        if best <= 0:
+            return None
+
+        contenders = [s for s, v in scores.items() if v == best]
+        if len(contenders) == 1:
+            chosen = contenders[0]
+        else:
+            chosen = min(contenders, key=lambda s: totals.get(s, 0))
+
+        # A single generic keyword is not enough evidence. Requiring two hits
+        # keeps unrelated prose out: research abstracts on a department page
+        # were previously being stored as institutional history because one
+        # broad term such as "background" matched.
+        if raw[chosen] < self.MIN_KEYWORD_HITS:
+            return None
+
+        return chosen
+
+    def _harvest_page(self, url: str, accumulator: Dict[str, List[str]],
+                      totals: Dict[str, int]) -> int:
+        """Fetch one page, classify its blocks, and return characters added."""
+        added = 0
         try:
-            r = self.session.get(url, timeout=15)
-            if r.status_code != 200:
-                return result
-            soup = BeautifulSoup(r.text, 'html.parser')
-            for tag in soup(['script', 'style', 'nav', 'footer', 'header', 'aside', 'menu']):
+            response = self.session.get(url, timeout=self.PAGE_TIMEOUT)
+            if response.status_code != 200:
+                return 0
+
+            soup = BeautifulSoup(response.text, 'html.parser')
+            for tag in soup(['script', 'style', 'nav', 'footer', 'header', 'aside', 'menu', 'form']):
                 tag.decompose()
+
             body = soup.find('main') or soup.find('article') or soup.find('body')
             if not body:
-                return result
-            paras = [
-                p.get_text(' ', strip=True)
-                for p in body.find_all('p')
-                if len(p.get_text(' ', strip=True)) > 60
-            ]
-            for para in paras:
-                lo = para.lower()
-                scores = {
-                    'history':     sum(1 for k in self.HISTORY_KW  if k in lo),
-                    'academics':   sum(1 for k in self.ACADEMIC_KW if k in lo),
-                    'campus':      sum(1 for k in self.CAMPUS_KW   if k in lo),
-                    'student_life':sum(1 for k in self.LIFE_KW     if k in lo),
-                }
-                best = max(scores, key=scores.get)
-                if scores[best] > 0 and len(result[best]) < 800:
-                    result[best] += (' ' + para[:400]).strip()
-            result['sources'].append({'url': url, 'title': name, 'type': 'official_website'})
+                return 0
+
+            for block in self._text_blocks(body):
+                section = self._classify(block, totals)
+                if section is None:
+                    continue
+                if totals[section] >= self.SECTION_CHAR_CAP:
+                    continue
+                accumulator[section].append(block)
+                totals[section] += len(block)
+                added += len(block)
+
+        except Exception as exc:
+            self.logger.debug(f"Harvest failed for {url}: {exc}")
+
+        return added
+
+    def _discover_subpages(self, base_url: str) -> List[str]:
+        """
+        Find internal pages likely to carry section content.
+
+        A university homepage is a landing page; history, faculties and campus
+        detail live on dedicated subpages. Crawling only the root was the
+        single largest source of missing content.
+        """
+        found: List[str] = []
+        try:
+            response = self.session.get(base_url, timeout=self.PAGE_TIMEOUT)
+            if response.status_code != 200:
+                return found
+
+            soup = BeautifulSoup(response.text, 'html.parser')
+            base_domain = urlparse(base_url).netloc.lower().replace('www.', '')
+
+            all_hints = [h for hints in self.SUBPAGE_HINTS.values() for h in hints]
+            scored = []
+
+            for anchor in soup.find_all('a', href=True):
+                href = anchor['href'].strip()
+                if href.startswith(('#', 'mailto:', 'tel:', 'javascript:')):
+                    continue
+
+                absolute = urljoin(base_url, href)
+                parsed = urlparse(absolute)
+
+                if parsed.scheme not in ('http', 'https'):
+                    continue
+
+                # Stay on the institution's own domain.
+                domain = parsed.netloc.lower().replace('www.', '')
+                if domain != base_domain:
+                    continue
+
+                # Skip binaries and media.
+                if any(parsed.path.lower().endswith(ext) for ext in
+                       ('.pdf', '.jpg', '.jpeg', '.png', '.gif', '.zip', '.doc', '.docx', '.xlsx')):
+                    continue
+
+                path = parsed.path.lower().rstrip('/')
+                if path in ('', '/'):
+                    continue
+
+                if any(excluded in path for excluded in self.SUBPAGE_EXCLUSIONS):
+                    continue
+
+                matches = sum(1 for hint in all_hints if hint in path)
+                if matches == 0:
+                    continue
+
+                # Prefer shallower paths, which tend to be overview pages.
+                depth = path.count('/')
+                scored.append((matches, -depth, absolute))
+
+            seen = set()
+            for _, _, link in sorted(scored, reverse=True):
+                normalised = link.rstrip('/')
+                if normalised in seen:
+                    continue
+                seen.add(normalised)
+                found.append(link)
+                if len(found) >= self.MAX_SUBPAGES:
+                    break
+
+        except Exception as exc:
+            self.logger.debug(f"Subpage discovery failed for {base_url}: {exc}")
+
+        return found
+
+    # ── Website extraction ───────────────────────────────────────────────────
+    def _extract_from_website(self, url: str, name: str) -> Dict[str, Any]:
+        """Extract content from the institution's own website and subpages."""
+        accumulator: Dict[str, List[str]] = {s: [] for s in self.SECTIONS}
+        totals: Dict[str, int] = {s: 0 for s in self.SECTIONS}
+        sources: List[Dict[str, Any]] = []
+
+        if not url:
+            return {**{s: '' for s in self.SECTIONS}, 'sources': []}
+
+        if self._harvest_page(url, accumulator, totals) > 0 or any(totals.values()):
+            sources.append({'url': url, 'title': name, 'type': 'official_website'})
+
+        subpages = self._discover_subpages(url)
+        if subpages:
+            self.logger.info(f"🔗 Found {len(subpages)} candidate subpages")
+
+        for link in subpages:
+            if sum(totals.values()) >= self.SECTION_CHAR_CAP * len(self.SECTIONS):
+                break
+            if self._harvest_page(link, accumulator, totals) > 0:
+                sources.append({'url': link, 'title': name, 'type': 'official_website'})
+            time.sleep(random.uniform(0.4, 0.9))
+
+        if any(totals.values()):
             self.stats['website_primary'] += 1
-        except Exception as e:
-            self.logger.debug(f"Website extract error {url}: {e}")
+
+        result = {s: ' '.join(accumulator[s])[:self.SECTION_CHAR_CAP] for s in self.SECTIONS}
+        result['sources'] = sources
         return result
 
     # ── Search engine queries ────────────────────────────────────────────────
@@ -157,9 +442,19 @@ class UniversityCrawler:
             f'{name} {city or state} university Nigeria information',
         ]
 
-    def _search_web(self, name: str, state: str, city: str) -> Dict[str, Any]:
-        """Run search queries and extract content from results."""
-        extracted = {'history': [], 'academics': [], 'campus': [], 'student_life': [], 'sources': []}
+    def _search_web(self, name: str, state: str, city: str,
+                    totals: Optional[Dict[str, int]] = None) -> Dict[str, Any]:
+        """
+        Run search queries and harvest content from the results.
+
+        Accepts the running per-section character totals so that search tops
+        up whichever sections the official website left thin, rather than
+        refilling sections that are already complete.
+        """
+        extracted: Dict[str, Any] = {s: [] for s in self.SECTIONS}
+        extracted['sources'] = []
+        if totals is None:
+            totals = {s: 0 for s in self.SECTIONS}
         seen_urls = set()
 
         for query in self._build_queries(name, state, city):
@@ -170,42 +465,13 @@ class UniversityCrawler:
                     if r.confidence < 0.5 or r.url in seen_urls:
                         continue
                     seen_urls.add(r.url)
-                    # Fetch page
-                    try:
-                        resp = self.session.get(r.url, timeout=10)
-                        if resp.status_code != 200:
-                            continue
-                        s = BeautifulSoup(resp.text, 'html.parser')
-                        for tag in s(['script','style','nav','footer','header','aside']):
-                            tag.decompose()
-                        body = s.find('main') or s.find('article') or s.find('body')
-                        if not body:
-                            continue
-                        paras = [
-                            p.get_text(' ', strip=True)
-                            for p in body.find_all('p')
-                            if len(p.get_text(' ', strip=True)) > 60
-                        ]
-                        for para in paras:
-                            lo = para.lower()
-                            scores = {
-                                'history':     sum(1 for k in self.HISTORY_KW  if k in lo),
-                                'academics':   sum(1 for k in self.ACADEMIC_KW if k in lo),
-                                'campus':      sum(1 for k in self.CAMPUS_KW   if k in lo),
-                                'student_life':sum(1 for k in self.LIFE_KW     if k in lo),
-                            }
-                            best = max(scores, key=scores.get)
-                            if scores[best] > 0:
-                                current = ' '.join(extracted[best])
-                                if len(current) < 800:
-                                    extracted[best].append(para[:400])
+                    added = self._harvest_page(r.url, extracted, totals)
+                    if added > 0:
                         extracted['sources'].append({
                             'url': r.url, 'title': r.title,
                             'type': 'web_search', 'confidence': r.confidence,
                         })
-                        time.sleep(random.uniform(0.5, 1.0))
-                    except Exception:
-                        pass
+                    time.sleep(random.uniform(0.5, 1.0))
                 time.sleep(random.uniform(1.0, 2.0))
             except Exception as e:
                 self.logger.debug(f"Search error: {e}")
@@ -213,35 +479,85 @@ class UniversityCrawler:
         return extracted
 
     # ── Synthesise ───────────────────────────────────────────────────────────
-    def _synthesise(self, web: Dict, search: Dict, name: str) -> Dict[str, Any]:
-        """Merge website and search content, website takes priority."""
-        def join(field_key, search_key, prefix):
-            parts = []
-            if web.get(field_key):
-                parts.append(web[field_key])
-            remaining = 800 - len(' '.join(parts))
-            if remaining > 100 and search.get(search_key):
-                parts.extend(search[search_key][:3])
-            text = ' '.join(parts)[:800]
-            return f"{prefix}{text}" if text else ''
+    FIELD_MAP = {
+        'history': 'enriched_history',
+        'academics': 'enriched_academics',
+        'campus': 'enriched_campus_info',
+        'student_life': 'enriched_student_life',
+    }
 
+    def _synthesise(self, web: Dict, search: Dict, name: str) -> Dict[str, Any]:
+        """
+        Merge website and search content, with the official website first.
+
+        Generated lead-in sentences such as "Academic offerings at X include:"
+        were removed. They were identical across every institution, so they
+        added duplicate boilerplate to each page while inflating the length
+        the quality gate measured: a section could pass a 100-character
+        threshold on roughly 50 characters of real text.
+        """
+        merged: Dict[str, Any] = {}
+
+        for section, field in self.FIELD_MAP.items():
+            parts: List[str] = []
+
+            website_text = (web.get(section) or '').strip()
+            if website_text:
+                parts.append(website_text)
+
+            used = len(' '.join(parts))
+            if used < self.SECTION_CHAR_CAP:
+                for block in search.get(section, []):
+                    if used >= self.SECTION_CHAR_CAP:
+                        break
+                    parts.append(block)
+                    used += len(block)
+
+            merged[field] = ' '.join(parts).strip()[:self.SECTION_CHAR_CAP]
+
+        merged['content_sources'] = (
+            web.get('sources', []) + search.get('sources', [])
+        )[:12]
+
+        return merged
+
+    # A section counts as substantive at this length, and a record needs this
+    # many substantive sections plus an overall minimum. Measured on real
+    # content rather than on generated boilerplate.
+    QUALITY_SECTION_CHARS = 200
+    QUALITY_MIN_SECTIONS = 2
+    QUALITY_TOTAL_CHARS = 600
+
+    def _section_lengths(self, content: Dict) -> Dict[str, int]:
         return {
-            'enriched_history':     join('history',     'history',     f'{name} has a rich academic heritage. '),
-            'enriched_academics':   join('academics',   'academics',   f'Academic offerings at {name} include: '),
-            'enriched_campus_info': join('campus',      'campus',      f'The {name} campus provides: '),
-            'enriched_student_life':join('student_life','student_life',f'Student life at {name} encompasses: '),
-            'content_sources': (web.get('sources', []) + search.get('sources', []))[:10],
+            field: len((content.get(field) or '').strip())
+            for field in self.FIELD_MAP.values()
         }
 
     def _meets_quality(self, content: Dict) -> bool:
-        """At least 2 sections must have >100 chars."""
-        fields = [
-            content.get('enriched_history', ''),
-            content.get('enriched_academics', ''),
-            content.get('enriched_campus_info', ''),
-            content.get('enriched_student_life', ''),
-        ]
-        return sum(1 for f in fields if len(f) > 100) >= 2
+        lengths = self._section_lengths(content)
+        substantive = sum(1 for n in lengths.values() if n >= self.QUALITY_SECTION_CHARS)
+        total = sum(lengths.values())
+        return substantive >= self.QUALITY_MIN_SECTIONS and total >= self.QUALITY_TOTAL_CHARS
+
+    # A site this rich is accepted even with one weaker section, which avoids
+    # spending search budget on pages that are already substantial.
+    SEARCH_SKIP_TOTAL = 6000
+
+    def _needs_search(self, totals: Dict[str, int]) -> bool:
+        """
+        Decide whether to supplement with search results.
+
+        The previous trigger compared a total word count against 150, but the
+        quality gate requires breadth across sections. A site yielding plenty
+        of words concentrated in one section therefore skipped search and then
+        failed the gate. Breadth is now the trigger: search runs until every
+        section is substantive, unless the page is already very rich.
+        """
+        substantive = sum(1 for n in totals.values() if n >= self.QUALITY_SECTION_CHARS)
+        if substantive >= len(self.SECTIONS):
+            return False
+        return sum(totals.values()) < self.SEARCH_SKIP_TOTAL
 
     # ── SEO ──────────────────────────────────────────────────────────────────
     def _build_seo(self, uni: Dict, content: Dict) -> Dict:
@@ -278,19 +594,32 @@ class UniversityCrawler:
         self.stats['total'] += 1
 
         try:
-            web_content    = self._extract_from_website(url, name) if url else {}
-            search_content = {}
+            web_content = self._extract_from_website(url, name) if url else {}
+            search_content: Dict[str, Any] = {}
 
-            # Judge if website was enough
-            web_words = sum(len(web_content.get(k, '').split())
-                            for k in ('history','academics','campus','student_life'))
-            if web_words < 150:
+            totals = {
+                section: len((web_content.get(section) or '').strip())
+                for section in self.SECTIONS
+            }
+            self.logger.info(
+                "📄 Website yield: " +
+                ", ".join(f"{s}={totals[s]}" for s in self.SECTIONS)
+            )
+
+            if self._needs_search(totals):
                 self.logger.info("🔎 Supplementing with search engine content")
-                search_content = self._search_web(name, state, city)
+                search_content = self._search_web(name, state, city, totals)
                 if not url:
                     self.stats['search_only'] += 1
 
             final = self._synthesise(web_content, search_content, name)
+
+            lengths = self._section_lengths(final)
+            self.logger.info(
+                "🧩 Final content: " +
+                ", ".join(f"{k.replace('enriched_', '')}={v}" for k, v in lengths.items()) +
+                f", total={sum(lengths.values())}"
+            )
 
             # Quality check
             quality = self.quality.process_school_content(uid, final)
