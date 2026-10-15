@@ -155,7 +155,7 @@ export interface School {
   claimed: boolean;
   verified: boolean;
   featured: boolean;
-  institution_category: 'school' | 'university' | 'polytechnic' | 'college';
+  institution_category: 'school' | 'university' | 'polytechnic' | 'college' | 'hospital';
   // University-specific fields
   accreditation?: string;
   faculties?: string[];
@@ -248,6 +248,20 @@ export const api = {
   getUniversityByPath: (state: string, city: string, slug: string) =>
     apiRequest<School>(`/schools/${state}/${city}/${slug}`),
 
+  // Hospitals — same pattern as universities, filtered by institution_category
+  getHospitals: (page = 1, limit = 20, params?: Record<string, string | number>) =>
+    apiRequest<SchoolsResponse>(
+      `/schools?page=${page}&limit=${limit}&institution_category=hospital${params ? '&' + new URLSearchParams(params as Record<string, string>).toString() : ''}`
+    ),
+
+  getHospitalsByState: (state: string, limit = 100) =>
+    apiRequest<SchoolsResponse>(
+      `/schools?page=1&limit=${limit}&institution_category=hospital&state=${encodeURIComponent(state)}`
+    ),
+
+  getHospitalByPath: (state: string, city: string, slug: string) =>
+    apiRequest<School>(`/schools/${state}/${city}/${slug}`),
+
   // Locations
   getStates: () => apiRequest<Location[]>('/locations/states'),
 
@@ -293,5 +307,8 @@ export const getStates = api.getStates;
 export const getUniversities = api.getUniversities;
 export const getUniversitiesByState = api.getUniversitiesByState;
 export const getUniversityByPath = api.getUniversityByPath;
+export const getHospitals = api.getHospitals;
+export const getHospitalsByState = api.getHospitalsByState;
+export const getHospitalByPath = api.getHospitalByPath;
 
 export default api;
