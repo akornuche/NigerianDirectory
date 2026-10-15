@@ -22,7 +22,7 @@ FIELDS = (
 
 
 def main():
-    args = [a for a in sys.argv[1:]]
+    args = [a for a in sys.argv[1:] if a != '--ends']
     chars = 320
     if '--chars' in args:
         idx = args.index('--chars')
@@ -68,6 +68,8 @@ def main():
     print(f"meta_desc   : {(record.get('meta_description') or '')[:160]}")
     print()
 
+    show_ends = '--ends' in sys.argv
+
     for field, label in FIELDS:
         value = (record.get(field) or '').strip()
         print('-' * 70)
@@ -75,6 +77,12 @@ def main():
         print('-' * 70)
         if not value:
             print('  (empty)')
+        elif show_ends:
+            # Verifying that stored text closes on a complete sentence.
+            print('  STARTS: ' + value[:140].replace('\n', ' ') + '...')
+            print('  ENDS  : ...' + value[-140:].replace('\n', ' '))
+            closes = value.endswith(('.', '!', '?', '"', ')', '…'))
+            print(f"  CLOSES CLEANLY: {'yes' if closes else 'NO'}")
         else:
             print('  ' + value[:chars].replace('\n', ' ') + ('...' if len(value) > chars else ''))
         print()

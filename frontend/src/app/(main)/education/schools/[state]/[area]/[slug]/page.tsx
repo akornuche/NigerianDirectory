@@ -694,28 +694,51 @@ export default async function SchoolPage({ params }: Props) {
                   <p className="text-gray-600 mb-4">
                     Learn more about {school.name} from these trusted sources:
                   </p>
-                  <ul className="space-y-3">
-                    {school.content_sources.map((source: { url: string; title?: string; name?: string; type?: string }, index: number) => (
-                      <li key={index} className="flex items-start">
-                        <GlobeAltIcon className="h-5 w-5 text-gray-400 mr-3 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <a
-                            href={source.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary-600 hover:underline font-medium"
+                  <ol className="space-y-3">
+                    {school.content_sources.map((source: { url: string; title?: string; name?: string; type?: string }, index: number) => {
+                      // The crawler stores machine labels such as
+                      // 'official_website' and 'web_search'. Rendering those
+                      // raw put strings like "(web_search)" on the page.
+                      const label = source.type === 'official_website'
+                        ? 'Official site'
+                        : source.type === 'web_search'
+                          ? 'Reference'
+                          : null;
+
+                      let host = source.url;
+                      try {
+                        host = new URL(source.url).hostname.replace(/^www\./, '');
+                      } catch {
+                        // Leave the raw value when the URL cannot be parsed.
+                      }
+
+                      return (
+                        <li key={source.url || index} className="flex items-start">
+                          <span
+                            className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center mr-3 mt-0.5"
+                            aria-hidden="true"
                           >
-                            {source.title || source.name}
-                          </a>
-                          {source.type && (
-                            <span className="ml-2 text-xs text-gray-400 capitalize">
-                              ({source.type})
-                            </span>
-                          )}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                            {index + 1}
+                          </span>
+                          <div className="min-w-0">
+                            <a
+                              href={source.url}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              className="text-primary-600 hover:underline font-medium break-words"
+                            >
+                              {source.title || source.name || host}
+                            </a>
+                            <div className="flex items-center gap-2 mt-0.5 text-xs text-gray-400">
+                              <GlobeAltIcon className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+                              <span className="truncate">{host}</span>
+                              {label && <span>· {label}</span>}
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ol>
                 </div>
               )}
 

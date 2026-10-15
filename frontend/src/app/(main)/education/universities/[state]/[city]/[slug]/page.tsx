@@ -17,6 +17,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
+import SourceReferences from '@/components/content/SourceReferences';
 
 async function getUniversity(state: string, city: string, slug: string): Promise<School | null> {
     try {
@@ -217,24 +218,50 @@ export default async function UniversityPage({ params }: Props) {
                     <div className="lg:col-span-2 space-y-16">
 
                         {/* Quick View Stats */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                                <div className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">Category</div>
-                                <div className="text-gray-900 font-bold capitalize">{uni.institution_category}</div>
-                            </div>
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                                <div className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">Funding</div>
-                                <div className="text-gray-900 font-bold capitalize">{uni.type}</div>
-                            </div>
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                                <div className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">Boarding</div>
-                                <div className="text-gray-900 font-bold">{uni.boarding ? 'Available' : 'Day Only'}</div>
-                            </div>
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                                <div className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">Levels</div>
-                                <div className="text-gray-900 font-bold truncate">{uni.levels || 'UG/PG'}</div>
-                            </div>
-                        </div>
+                        {/*
+                          Boarding was removed here. It describes whether a
+                          secondary school offers residential places and is
+                          not a meaningful attribute of a university, where
+                          hall accommodation is near universal. Tiles are
+                          built from fields that actually hold data so the
+                          page never asserts a fact we have not collected.
+                        */}
+                        {(() => {
+                            const facts: { label: string; value: string }[] = [
+                                { label: 'Category', value: uni.institution_category },
+                                { label: 'Funding', value: uni.type },
+                                { label: 'Levels', value: uni.levels || 'Undergraduate, Postgraduate' },
+                            ];
+
+                            if (typeof uni.student_population === 'number' && uni.student_population > 0) {
+                                facts.push({
+                                    label: 'Students',
+                                    value: uni.student_population.toLocaleString('en-NG'),
+                                });
+                            } else if (uni.year_chartered) {
+                                facts.push({ label: 'Chartered', value: String(uni.year_chartered) });
+                            } else if (uni.accreditation) {
+                                facts.push({ label: 'Accreditation', value: uni.accreditation });
+                            }
+
+                            return (
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    {facts.map((fact) => (
+                                        <div
+                                            key={fact.label}
+                                            className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center"
+                                        >
+                                            <div className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">
+                                                {fact.label}
+                                            </div>
+                                            <div className="text-gray-900 font-bold capitalize truncate">
+                                                {fact.value}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            );
+                        })()}
 
                         {/* AI Enriched Dynamic Sections */}
                         {sections.length > 0 ? (
@@ -279,6 +306,13 @@ export default async function UniversityPage({ params }: Props) {
                                 </p>
                             </div>
                         )}
+
+                        {/* Attribution for the pages this content was compiled from */}
+                        <SourceReferences
+                            sources={uni.content_sources}
+                            enrichedAt={uni.enriched_at}
+                            institutionName={uni.name}
+                        />
                     </div>
 
                     {/* Right Column: Sidebar */}

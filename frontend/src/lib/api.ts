@@ -123,11 +123,15 @@ export interface School {
   enriched_recent_news?: string[];
   enriched_campus_info?: string;
   enriched_at?: string;
-  // Content sources for outbound links and attribution
+  // Content sources for outbound links and attribution.
+  // The crawler emits 'official_website' for pages on the institution's own
+  // domain and 'web_search' for anything discovered through search. The
+  // previous union listed values the API never sends.
   content_sources?: Array<{
     url: string;
-    title: string;
-    type: 'official' | 'reference' | 'news';
+    title?: string;
+    type?: 'official_website' | 'web_search' | string;
+    confidence?: number;
   }>;
   established_year?: number;
   principal_name?: string;

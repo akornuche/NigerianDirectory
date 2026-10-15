@@ -130,7 +130,10 @@ class UniversityCrawler:
     PAGE_TIMEOUT = 20
 
     # Minimum keyword matches before a block is assigned to a section.
+    # Third-party pages must clear the higher bar; the institution's own
+    # domain is treated as inherently on-topic.
     MIN_KEYWORD_HITS = 2
+    MIN_KEYWORD_HITS_OFFICIAL = 1
 
     # URL fragments that indicate which section a subpage is likely to serve.
     SUBPAGE_HINTS = {
@@ -186,6 +189,122 @@ class UniversityCrawler:
         'wayback machine', 'archived copy', 'original on',
     )
 
+    # Sentence terminators used when trimming text to a length budget.
+    SENTENCE_ENDINGS = ('. ', '! ', '? ', '." ', '!" ', '?" ', '.\n')
+
+    # Abbreviations that end in a period but do not end a sentence.
+    NON_TERMINAL_ABBREVIATIONS = (
+        'prof.', 'dr.', 'mr.', 'mrs.', 'ms.', 'st.', 'no.', 'vol.', 'ed.',
+        'e.g.', 'i.e.', 'etc.', 'jr.', 'sr.', 'rev.', 'hon.', 'engr.',
+    )
+
+    @classmethod
+    def _truncate_at_sentence(cls, text: str, limit: int) -> str:
+        """
+        Trim text to a budget without cutting a sentence in half.
+
+        Slicing on a raw character count left fragments such as
+        "...report to Council an" and "...have these facilities: Ayodele Fa"
+        on the published page.
+
+        Text already inside the budget is returned untouched. An earlier
+        version also required a trailing terminator here, which silently
+        discarded most harvested prose because web copy frequently omits a
+        final period, and the website yield fell to zero.
+        """
+        text = (text or '').strip()
+        if not text:
+            return ''
+
+        if len(text) <= limit:
+            return text
+
+        window = text[:limit]
+
+        best = -1
+        for ending in cls.SENTENCE_ENDINGS:
+            position = window.rfind(ending)
+            while position != -1:
+                candidate = window[:position + 1]
+                tail = candidate.rsplit(' ', 1)[-1].lower()
+                if tail not in cls.NON_TERMINAL_ABBREVIATIONS:
+                    best = max(best, position + 1)
+                    break
+                position = window.rfind(ending, 0, position)
+
+        if window.endswith(('.', '!', '?')):
+            best = max(best, len(window))
+
+        if best > 0:
+            return window[:best].strip()
+
+        # No sentence boundary inside the budget. Cut on a word boundary and
+        # mark the text as continuing, rather than ending mid-word.
+        trimmed = window.rsplit(' ', 1)[0].strip()
+        if not trimmed:
+            return ''
+        return trimmed.rstrip(',;:') + '…'
+
+    @classmethod
+    def _tidy_ending(cls, text: str) -> str:
+        """
+        Ensure stored text closes on a complete sentence.
+
+        Source pages sometimes end a block mid-word, for example a teaser
+        reading "...have these facilities: Ayodele Fa". Such a block is kept
+        for its useful content but the trailing partial sentence is removed.
+        Text with no sentence boundary at all is returned unchanged, since
+        discarding it entirely would lose real information.
+        """
+        text = (text or '').strip()
+        if not text:
+            return ''
+
+        if text.endswith(('.', '!', '?', '"', ')', '…')):
+            return text
+
+        best = -1
+        for ending in cls.SENTENCE_ENDINGS:
+            position = text.rfind(ending)
+            while position != -1:
+                tail = text[:position + 1].rsplit(' ', 1)[-1].lower()
+                if tail not in cls.NON_TERMINAL_ABBREVIATIONS:
+                    best = max(best, position + 1)
+                    break
+                position = text.rfind(ending, 0, position)
+
+        if best <= 0:
+            return text
+
+        return text[:best].strip()
+
+    @classmethod
+    def _join_blocks(cls, blocks: List[str], limit: int) -> str:
+        """
+        Concatenate whole blocks up to a budget.
+
+        Assembling sections from complete blocks means the stored text is
+        never cut mid-sentence at the section boundary, which is where the
+        "...report to Council an" fragment came from. Blocks that do not fit
+        are skipped rather than sliced.
+        """
+        parts: List[str] = []
+        used = 0
+
+        for block in blocks:
+            block = (block or '').strip()
+            if not block:
+                continue
+
+            addition = len(block) + (1 if parts else 0)
+            if used + addition > limit:
+                continue
+
+            parts.append(block)
+            used += addition
+
+        return cls._tidy_ending(' '.join(parts).strip())
+
     # ── Text harvesting ──────────────────────────────────────────────────────
     def _text_blocks(self, node) -> List[str]:
         """
@@ -236,7 +355,11 @@ class UniversityCrawler:
             if digits / max(len(text), 1) > 0.25:
                 continue
 
-            blocks.append(text[:self.MAX_BLOCK_LEN])
+            trimmed = self._truncate_at_sentence(text, self.MAX_BLOCK_LEN)
+            if not trimmed:
+                continue
+
+            blocks.append(trimmed)
 
         # Drop duplicates, which are common across templated pages.
         seen = set()
@@ -250,7 +373,8 @@ class UniversityCrawler:
 
         return unique
 
-    def _classify(self, text: str, totals: Dict[str, int]) -> Optional[str]:
+    def _classify(self, text: str, totals: Dict[str, int],
+                  min_hits: Optional[int] = None) -> Optional[str]:
         """
         Choose the section a block belongs to.
 
@@ -288,17 +412,21 @@ class UniversityCrawler:
         else:
             chosen = min(contenders, key=lambda s: totals.get(s, 0))
 
-        # A single generic keyword is not enough evidence. Requiring two hits
-        # keeps unrelated prose out: research abstracts on a department page
-        # were previously being stored as institutional history because one
-        # broad term such as "background" matched.
-        if raw[chosen] < self.MIN_KEYWORD_HITS:
+        # Evidence threshold. Third-party pages need two keyword hits, since
+        # one broad term such as "background" was enough to file unrelated
+        # research abstracts as institutional history. Pages on the
+        # institution's own domain are about the institution by definition, so
+        # applying the same bar there discarded nearly all official content:
+        # the website yield for Ibadan fell from about 3,000 characters to 71.
+        threshold = self.MIN_KEYWORD_HITS if min_hits is None else min_hits
+        if raw[chosen] < threshold:
             return None
 
         return chosen
 
     def _harvest_page(self, url: str, accumulator: Dict[str, List[str]],
-                      totals: Dict[str, int]) -> int:
+                      totals: Dict[str, int],
+                      min_hits: Optional[int] = None) -> int:
         """Fetch one page, classify its blocks, and return characters added."""
         added = 0
         try:
@@ -315,7 +443,7 @@ class UniversityCrawler:
                 return 0
 
             for block in self._text_blocks(body):
-                section = self._classify(block, totals)
+                section = self._classify(block, totals, min_hits)
                 if section is None:
                     continue
                 if totals[section] >= self.SECTION_CHAR_CAP:
@@ -410,7 +538,9 @@ class UniversityCrawler:
         if not url:
             return {**{s: '' for s in self.SECTIONS}, 'sources': []}
 
-        if self._harvest_page(url, accumulator, totals) > 0 or any(totals.values()):
+        official_hits = self.MIN_KEYWORD_HITS_OFFICIAL
+
+        if self._harvest_page(url, accumulator, totals, official_hits) > 0 or any(totals.values()):
             sources.append({'url': url, 'title': name, 'type': 'official_website'})
 
         subpages = self._discover_subpages(url)
@@ -420,14 +550,17 @@ class UniversityCrawler:
         for link in subpages:
             if sum(totals.values()) >= self.SECTION_CHAR_CAP * len(self.SECTIONS):
                 break
-            if self._harvest_page(link, accumulator, totals) > 0:
+            if self._harvest_page(link, accumulator, totals, official_hits) > 0:
                 sources.append({'url': link, 'title': name, 'type': 'official_website'})
             time.sleep(random.uniform(0.4, 0.9))
 
         if any(totals.values()):
             self.stats['website_primary'] += 1
 
-        result = {s: ' '.join(accumulator[s])[:self.SECTION_CHAR_CAP] for s in self.SECTIONS}
+        result = {
+            s: self._join_blocks(accumulator[s], self.SECTION_CHAR_CAP)
+            for s in self.SECTIONS
+        }
         result['sources'] = sources
         return result
 
@@ -499,21 +632,16 @@ class UniversityCrawler:
         merged: Dict[str, Any] = {}
 
         for section, field in self.FIELD_MAP.items():
-            parts: List[str] = []
+            candidates: List[str] = []
 
             website_text = (web.get(section) or '').strip()
             if website_text:
-                parts.append(website_text)
+                candidates.append(website_text)
 
-            used = len(' '.join(parts))
-            if used < self.SECTION_CHAR_CAP:
-                for block in search.get(section, []):
-                    if used >= self.SECTION_CHAR_CAP:
-                        break
-                    parts.append(block)
-                    used += len(block)
+            candidates.extend(search.get(section, []) or [])
 
-            merged[field] = ' '.join(parts).strip()[:self.SECTION_CHAR_CAP]
+            # Whole blocks only, so a section never ends mid-sentence.
+            merged[field] = self._join_blocks(candidates, self.SECTION_CHAR_CAP)
 
         merged['content_sources'] = (
             web.get('sources', []) + search.get('sources', [])
