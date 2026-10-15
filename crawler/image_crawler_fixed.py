@@ -23,6 +23,7 @@ from pathlib import Path
 from search_engines import search_web, RobustSearchEngine
 from database import db_manager
 from retry_handler import retry_handler, retry_on_network_error
+from blob_storage import BlobStorage, get_default_client, build_pathname
 
 # Try to import PIL for image validation
 try:
@@ -33,16 +34,16 @@ except ImportError:
     HAS_PIL = False
     Image = None
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('image_crawler.log', encoding='utf-8'),
-        logging.StreamHandler()
-    ]
-)
+# This module is imported by crawler entry points (e.g. a future
+# generic crawl_one.py image pass), so it must not configure root logging
+# itself. Calling basicConfig here installed a competing FileHandler at
+# import time, which conflicts with whatever handler the entry point set up
+# and was the exact cause of production_crawl_*.log files being left at
+# zero bytes elsewhere in this crawler. Libraries attach a NullHandler and
+# let the application decide; running this file directly (see __main__
+# below) still gets a proper file handler.
 logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
 
 class ImageCrawler:
     """
@@ -389,45 +390,85 @@ class ImageCrawler:
         
         return images
     
-    def find_best_images(self, candidates: Dict[str, List[str]], school_name: str) -> Dict[str, Optional[str]]:
-        """Find the best logo and hero images from candidates"""
+    def _pick_best_candidate(self, urls: List[str], image_type: str) -> Optional[Dict[str, Any]]:
+        """
+        Download each candidate once, score it, and return the full info
+        (including the already-downloaded bytes) for the winner.
+
+        The previous version re-ran download_and_validate_image per
+        candidate just to compare scores, kept only the winning *URL*, and
+        discarded every downloaded payload including the winner's — so the
+        winning bytes were downloaded and then thrown away, and the
+        database ended up pointing at the original third-party URL.
+        """
+        best_info = None
+        best_score = -1.0
+
+        for url in urls[:5]:  # Limit to top 5 candidates
+            image_info = self.download_and_validate_image(url, image_type)
+            if image_info and image_info['quality_score'] > best_score:
+                best_info = image_info
+                best_score = image_info['quality_score']
+            time.sleep(0.5)  # Small delay between downloads
+
+        return best_info
+
+    def find_best_images(self, candidates: Dict[str, List[str]], school_name: str,
+                         niche: str, slug: str) -> Dict[str, Optional[str]]:
+        """
+        Find the best logo and hero images from candidates, upload the
+        winners to Vercel Blob, and return the resulting permanent URLs.
+
+        Returning the original source URL (the previous behaviour) means the
+        site hotlinks a third-party server: if that page is restructured,
+        blocks hotlinking, or goes offline, the image breaks on our own site
+        with no action taken on our end. Uploading gives every institution a
+        stable URL under our own storage.
+        """
         result = {'logo_url': None, 'hero_image_url': None}
-        
-        # Process logo candidates
-        if candidates.get('logo'):
-            best_logo = None
-            best_logo_score = 0
-            
-            for url in candidates['logo'][:5]:  # Limit to top 5
-                image_info = self.download_and_validate_image(url, 'logo')
-                if image_info and image_info['quality_score'] > best_logo_score:
-                    best_logo = url
-                    best_logo_score = image_info['quality_score']
-                    
-                time.sleep(0.5)  # Small delay between downloads
-            
-            result['logo_url'] = best_logo
-            if best_logo:
+        blob = get_default_client()
+
+        logo_info = self._pick_best_candidate(candidates.get('logo', []), 'logo')
+        if logo_info:
+            uploaded_url = self._upload_candidate(blob, logo_info, niche, slug, 'logo')
+            if uploaded_url:
+                result['logo_url'] = uploaded_url
                 self.stats['logos_found'] += 1
-        
-        # Process hero candidates  
-        if candidates.get('hero'):
-            best_hero = None
-            best_hero_score = 0
-            
-            for url in candidates['hero'][:5]:  # Limit to top 5
-                image_info = self.download_and_validate_image(url, 'hero')
-                if image_info and image_info['quality_score'] > best_hero_score:
-                    best_hero = url
-                    best_hero_score = image_info['quality_score']
-                    
-                time.sleep(0.5)
-            
-            result['hero_image_url'] = best_hero
-            if best_hero:
+
+        hero_info = self._pick_best_candidate(candidates.get('hero', []), 'hero')
+        if hero_info:
+            uploaded_url = self._upload_candidate(blob, hero_info, niche, slug, 'hero')
+            if uploaded_url:
+                result['hero_image_url'] = uploaded_url
                 self.stats['heroes_found'] += 1
-        
+
         return result
+
+    # Maps PIL's img.format (and the no-PIL 'unknown' sentinel) to a safe
+    # (file extension, MIME type) pair. JPEG is the fallback for any format
+    # not recognised here, which also covers HAS_PIL being False.
+    _FORMAT_MAP = {
+        'JPEG': ('jpg', 'image/jpeg'),
+        'PNG': ('png', 'image/png'),
+        'WEBP': ('webp', 'image/webp'),
+        'GIF': ('gif', 'image/gif'),
+    }
+
+    def _upload_candidate(self, blob: 'BlobStorage', image_info: Dict[str, Any],
+                          niche: str, slug: str, image_type: str) -> Optional[str]:
+        """Upload a winning candidate's already-downloaded bytes to Blob."""
+        extension, content_type = self._FORMAT_MAP.get(
+            (image_info.get('format') or '').upper(), ('jpg', 'image/jpeg')
+        )
+        pathname = build_pathname(niche, slug, image_type, extension)
+
+        upload_result = blob.upload(pathname, image_info['data'], content_type)
+        if not upload_result:
+            logger.warning(f"Failed to upload {image_type} for slug={slug}; keeping no URL")
+            return None
+
+        logger.info(f"📤 Uploaded {image_type} for {slug}: {upload_result['url']}")
+        return upload_result['url']
     
     def crawl_school_images(self, school: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -473,8 +514,11 @@ class ImageCrawler:
                 
                 self.stats['search_images'] += len(search_images.get('logo', [])) + len(search_images.get('hero', []))
             
-            # Find the best images from all candidates
-            best_images = self.find_best_images(all_candidates, school_name)
+            # Find the best images from all candidates and upload the
+            # winners to Blob storage so the database stores a permanent
+            # URL rather than hotlinking the source site.
+            niche = school.get('institution_category', 'school')
+            best_images = self.find_best_images(all_candidates, school_name, niche, school_slug)
             
             if best_images['logo_url'] or best_images['hero_image_url']:
                 result.update(best_images)
@@ -560,7 +604,8 @@ class ImageCrawler:
         
         try:
             query = """
-                SELECT id, name, slug, state, city, area, website, logo_url, hero_image_url
+                SELECT id, name, slug, state, city, area, website, logo_url,
+                       hero_image_url, institution_category
                 FROM schools
                 WHERE logo_url IS NULL OR hero_image_url IS NULL
                 ORDER BY verified DESC, claimed DESC, name
@@ -613,6 +658,19 @@ RobustSearchEngine.search_duckduckgo_images = search_duckduckgo_images
 
 
 if __name__ == "__main__":
+    # Only configure root logging when this file is run directly, not when
+    # it is imported by another entry point.
+    root = logging.getLogger()
+    root.setLevel(logging.INFO)
+    root.handlers.clear()
+    fmt = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler = logging.FileHandler('image_crawler.log', encoding='utf-8')
+    file_handler.setFormatter(fmt)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(fmt)
+    root.addHandler(file_handler)
+    root.addHandler(stream_handler)
+
     # Test the image crawler
     crawler = ImageCrawler()
     
