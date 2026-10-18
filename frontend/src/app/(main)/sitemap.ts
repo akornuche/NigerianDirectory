@@ -33,6 +33,34 @@ async function getAllSchools(): Promise<Array<{ state: string; area: string; slu
   }
 }
 
+// Fetch all universities from database for sitemap
+async function getAllUniversities(): Promise<Array<{ state: string; city: string; slug: string; updated_at: string }>> {
+  try {
+    // Universities can exceed 1000 — fetch in two pages to be safe
+    const fetches = await Promise.all([
+      fetch(`${API_URL}/schools?institution_category=university&limit=500&offset=0`, { next: { revalidate: 3600 } }),
+      fetch(`${API_URL}/schools?institution_category=university&limit=500&offset=500`, { next: { revalidate: 3600 } }),
+    ]);
+    const pages = await Promise.all(
+      fetches.map(async (r) => {
+        if (!r.ok) return [];
+        const d = await r.json();
+        return d.data ?? [];
+      })
+    );
+    const all = pages.flat();
+    return all.map((uni: { state: string; city: string; slug: string; updated_at: string }) => ({
+      state: uni.state.toLowerCase().replace(/ /g, '-'),
+      city: (uni.city ?? uni.state).toLowerCase().replace(/ /g, '-'),
+      slug: uni.slug,
+      updated_at: uni.updated_at,
+    }));
+  } catch (error) {
+    console.error('Error fetching universities for sitemap:', error);
+    return [];
+  }
+}
+
 // Fetch blog posts for sitemap
 async function getBlogPosts(): Promise<Array<{ slug: string; publishedAt: string }>> {
   try {
@@ -51,6 +79,7 @@ async function getBlogPosts(): Promise<Array<{ slug: string; publishedAt: string
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();
   const schools = await getAllSchools();
+  const universities = await getAllUniversities();
   const blogPosts = await getBlogPosts();
 
   // Static pages - only include live pages
@@ -80,6 +109,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/education/universities/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/blog/`,
       lastModified: currentDate,
       changeFrequency: 'daily',
@@ -93,7 +128,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // State listing pages - updated to new URL structure
+  // State listing pages for schools
   const statePages: MetadataRoute.Sitemap = states.map((state) => ({
     url: `${BASE_URL}/education/schools/${state}/`,
     lastModified: currentDate,
@@ -101,7 +136,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // School profile pages - updated to new URL structure
+  // State listing pages for universities
+  const universityStatePages: MetadataRoute.Sitemap = states.map((state) => ({
+    url: `${BASE_URL}/education/universities/${state}/`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  // School profile pages
   const schoolPages: MetadataRoute.Sitemap = schools.map((school) => ({
     url: `${BASE_URL}/education/schools/${school.state}/${school.area}/${school.slug}/`,
     lastModified: school.updated_at ? new Date(school.updated_at) : currentDate,
@@ -109,12 +152,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  // School blog pages - updated to new URL structure
+  // School blog pages
   const schoolBlogPages: MetadataRoute.Sitemap = schools.map((school) => ({
     url: `${BASE_URL}/education/schools/${school.state}/${school.area}/${school.slug}/blog/`,
     lastModified: school.updated_at ? new Date(school.updated_at) : currentDate,
     changeFrequency: 'weekly',
     priority: 0.7,
+  }));
+
+  // University profile pages
+  const universityPages: MetadataRoute.Sitemap = universities.map((uni) => ({
+    url: `${BASE_URL}/education/universities/${uni.state}/${uni.city}/${uni.slug}/`,
+    lastModified: uni.updated_at ? new Date(uni.updated_at) : currentDate,
+    changeFrequency: 'weekly',
+    priority: 0.9,
   }));
 
   // Main blog posts
@@ -126,14 +177,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Note: Coming Soon pages are intentionally excluded from sitemap
-  // Non-live verticals (/health/, /food/, /home-services/, /real-estate/, 
+  // Non-live verticals (/health/, /food/, /home-services/, /real-estate/,
   // /automotive/, /travel/, /business/) are not included
 
   return [
-    ...staticPages, 
-    ...statePages, 
-    ...schoolPages, 
+    ...staticPages,
+    ...statePages,
+    ...universityStatePages,
+    ...schoolPages,
     ...schoolBlogPages,
+    ...universityPages,
     ...blogPostPages,
   ];
 }
