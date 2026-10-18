@@ -39,16 +39,16 @@ export const metadata: Metadata = {
   authors: [{ name: 'NigerianDirectory' }],
   creator: 'NigerianDirectory',
   publisher: 'NigerianDirectory',
-  // TEMPORARILY BLOCK INDEXING - Site under development
-  // TODO: Change to index: true, follow: true when ready to launch
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   openGraph: {
