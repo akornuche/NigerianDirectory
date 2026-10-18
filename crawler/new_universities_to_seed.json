@@ -1,0 +1,1274 @@
+[
+  {
+    "name": "Ahmadu Bello University",
+    "type": "federal",
+    "state": "Kaduna",
+    "city": "Zaria",
+    "website": "https://www.abu.edu.ng",
+    "established_year": 1962
+  },
+  {
+    "name": "National Open University of Nigeria",
+    "type": "federal",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": "https://www.nou.edu.ng",
+    "established_year": 2002
+  },
+  {
+    "name": "Nigeria Police Academy",
+    "type": "federal",
+    "state": "Kano",
+    "city": "Wudil",
+    "website": "https://polac.edu.ng",
+    "established_year": 2013
+  },
+  {
+    "name": "Nigerian Defence Academy",
+    "type": "federal",
+    "state": "Kaduna",
+    "city": "Kaduna",
+    "website": "https://www.nda.edu.ng",
+    "established_year": 1985
+  },
+  {
+    "name": "Obafemi Awolowo University",
+    "type": "federal",
+    "state": "Osun",
+    "city": "Ile-Ife",
+    "website": "https://www.oauife.edu.ng",
+    "established_year": 1962
+  },
+  {
+    "name": "Joseph Sarwuan Tarka University",
+    "type": "federal",
+    "state": "Benue",
+    "city": "Makurdi",
+    "website": "https://www.uam.edu.ng",
+    "established_year": 1988
+  },
+  {
+    "name": "Nigerian Maritime University",
+    "type": "federal",
+    "state": "Delta",
+    "city": "Okerenkoko",
+    "website": "https://www.nmu.edu.ng",
+    "established_year": 2018
+  },
+  {
+    "name": "Nigerian Army University",
+    "type": "federal",
+    "state": "Borno",
+    "city": "Biu",
+    "website": "https://naub.edu.ng",
+    "established_year": 2018
+  },
+  {
+    "name": "Federal University of Health Sciences, Otukpo",
+    "type": "federal",
+    "state": "Benue",
+    "city": "Otukpo",
+    "website": null,
+    "established_year": 2020
+  },
+  {
+    "name": "Federal University of Agriculture, Zuru",
+    "type": "federal",
+    "state": "Kebbi",
+    "city": "Zuru",
+    "website": null,
+    "established_year": 2020
+  },
+  {
+    "name": "Federal University of Technology, Babura",
+    "type": "federal",
+    "state": "Jigawa",
+    "city": "Babura",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Federal University of Technology, Ikot Abasi",
+    "type": "federal",
+    "state": "Akwa Ibom",
+    "city": "Ikot Abasi",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Federal University of Health Sciences, Azare",
+    "type": "federal",
+    "state": "Bauchi",
+    "city": "Azare",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Federal University of Health Sciences, Ila Orangun",
+    "type": "federal",
+    "state": "Osun",
+    "city": "Ila Orangun",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "David Nweze Umahi Federal University of Medical Sciences, Uburu",
+    "type": "federal",
+    "state": "Ebonyi",
+    "city": "Uburu",
+    "website": "https://kdums.edu.ng",
+    "established_year": 2022
+  },
+  {
+    "name": "Admiralty University",
+    "type": "federal",
+    "state": "Delta",
+    "city": "Ibusa",
+    "website": "https://adun.edu.ng",
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Transportation",
+    "type": "federal",
+    "state": "Katsina",
+    "city": "Daura",
+    "website": "https://www.futd.edu.ng",
+    "established_year": 2022
+  },
+  {
+    "name": "African Aviation and Aerospace University",
+    "type": "federal",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": "https://aaau.edu.ng",
+    "established_year": 2023
+  },
+  {
+    "name": "National University of Science and Technology",
+    "type": "federal",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Agriculture, Bassam-Biri",
+    "type": "federal",
+    "state": "Bayelsa",
+    "city": "Bassam-Biri",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Health Sciences, Kwale",
+    "type": "federal",
+    "state": "Delta",
+    "city": "Kwale",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Health Sciences",
+    "type": "federal",
+    "state": "Katsina",
+    "city": "Katsina",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Agriculture, Mubi",
+    "type": "federal",
+    "state": "Adamawa",
+    "city": "Mubi",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Education, Zaria",
+    "type": "federal",
+    "state": "Kaduna",
+    "city": "Zaria",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Alvan Ikoku Federal University of Education",
+    "type": "federal",
+    "state": "Imo",
+    "city": "Owerri",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Yusuf Maitama Sule Federal University of Education",
+    "type": "federal",
+    "state": "Kano",
+    "city": "Kano",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Adeyemi Federal University of Education",
+    "type": "federal",
+    "state": "Ondo",
+    "city": "Ondo",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Allied Health Sciences",
+    "type": "federal",
+    "state": "Enugu",
+    "city": "Enugu",
+    "website": "https://fuahse.edu.ng",
+    "established_year": 2024
+  },
+  {
+    "name": "Federal University of Medicine and Medical Sciences, Abeokuta",
+    "type": "federal",
+    "state": "Ogun",
+    "city": "Abeokuta",
+    "website": "https://fummsa.net",
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Education, Pankshin",
+    "type": "federal",
+    "state": "Plateau",
+    "city": "Pankshin",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Federal University of Education, Kontagora",
+    "type": "federal",
+    "state": "Niger",
+    "city": "Kontagora",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "University of Maritime Studies",
+    "type": "federal",
+    "state": "Akwa Ibom",
+    "city": "Oron",
+    "website": null,
+    "established_year": 2024
+  },
+  {
+    "name": "Federal University of Environment and Technology",
+    "type": "federal",
+    "state": "Rivers",
+    "city": "Tai Town",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Applied Sciences, Kachia",
+    "type": "federal",
+    "state": "Kaduna",
+    "city": "Kachia",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Agriculture and Developmental Studies",
+    "type": "federal",
+    "state": "Osun",
+    "city": "Iragbuji",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Technology and Environmental Studies",
+    "type": "federal",
+    "state": "Ekiti",
+    "city": "Iyin-Ekiti",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Agriculture and Technology, Okeho",
+    "type": "federal",
+    "state": "Oyo",
+    "city": "Okeho",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Health Science and Technology, Tsafe",
+    "type": "federal",
+    "state": "Zamfara",
+    "city": "Tsafe",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Agriculture and Technology, Obio-Akpa",
+    "type": "federal",
+    "state": "Akwa Ibom",
+    "city": "Obio-Akpa",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Science and Technology, Epe",
+    "type": "federal",
+    "state": "Lagos",
+    "city": "Epe",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Federal University of Science and Technology, Kabo",
+    "type": "federal",
+    "state": "Kano",
+    "city": "Kabo",
+    "website": "https://fustkabo.edu.ng",
+    "established_year": 2025
+  },
+  {
+    "name": "Joseph Ayo Babalola University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Ikeji-Arakeji",
+    "website": "https://www.jabu.edu.ng",
+    "established_year": 2006
+  },
+  {
+    "name": "Caleb University",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Lagos",
+    "website": "https://www.calebuniversity.edu.ng",
+    "established_year": 2007
+  },
+  {
+    "name": "Fountain University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Osogbo",
+    "website": "https://www.fuo.edu.ng",
+    "established_year": 2007
+  },
+  {
+    "name": "Obong University",
+    "type": "private",
+    "state": "Akwa Ibom",
+    "city": "Obong Ntak",
+    "website": "https://www.obonguniversity.net",
+    "established_year": 2007
+  },
+  {
+    "name": "Wesley University",
+    "type": "private",
+    "state": "Ondo",
+    "city": "Ondo",
+    "website": "https://www.wesleyuni.edu.ng",
+    "established_year": 2007
+  },
+  {
+    "name": "Afe Babalola University",
+    "type": "private",
+    "state": "Ekiti",
+    "city": "Ado-Ekiti",
+    "website": "https://www.abuad.edu.ng",
+    "established_year": 2009
+  },
+  {
+    "name": "Glorious Vision University",
+    "type": "private",
+    "state": "Edo",
+    "city": "Ogwa",
+    "website": "https://www.sau.edu.ng",
+    "established_year": 2011
+  },
+  {
+    "name": "Southwestern University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Oku Owa",
+    "website": "https://www.southwesternuniversity.edu.ng",
+    "established_year": 2012
+  },
+  {
+    "name": "Edwin Clark University",
+    "type": "private",
+    "state": "Delta",
+    "city": "Kiagbodo",
+    "website": "https://www.edwinclarkuniversity.edu.ng",
+    "established_year": 2015
+  },
+  {
+    "name": "Hezekiah University",
+    "type": "private",
+    "state": "Imo",
+    "city": "Umudi",
+    "website": "https://hezekiah.edu.ng",
+    "established_year": 2015
+  },
+  {
+    "name": "Michael and Cecilia Ibru University",
+    "type": "private",
+    "state": "Delta",
+    "city": "Agbara-Otor",
+    "website": "https://mciu.edu.ng",
+    "established_year": 2015
+  },
+  {
+    "name": "Kola Daisi University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Ibadan",
+    "website": "https://www.koladaisiuniversity.edu.ng",
+    "established_year": 2016
+  },
+  {
+    "name": "Legacy University",
+    "type": "private",
+    "state": "Anambra",
+    "city": "Okija",
+    "website": "https://www.legacyuniversity.edu.ng",
+    "established_year": 2016
+  },
+  {
+    "name": "Ojaja University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Eiyenkorin",
+    "website": "https://www.crownhilluniversity.edu.ng",
+    "established_year": 2016
+  },
+  {
+    "name": "Coal City University",
+    "type": "private",
+    "state": "Enugu",
+    "city": "Enugu",
+    "website": "https://www.ccu.edu.ng",
+    "established_year": 2016
+  },
+  {
+    "name": "Clifford University",
+    "type": "private",
+    "state": "Abia",
+    "city": "Owerrinta",
+    "website": "https://www.clifforduni.edu.ng",
+    "established_year": 2016
+  },
+  {
+    "name": "Spiritan University",
+    "type": "private",
+    "state": "Abia",
+    "city": "Nneochi",
+    "website": "https://www.spiritanuniversity.edu.ng",
+    "established_year": 2017
+  },
+  {
+    "name": "Atiba University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Oyo",
+    "website": null,
+    "established_year": 2017
+  },
+  {
+    "name": "Dominion University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Ibadan",
+    "website": "https://www.dominionuniversity.edu.ng",
+    "established_year": 2019
+  },
+  {
+    "name": "Trinity University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ogun",
+    "website": "https://www.trinityuniversity.edu.ng",
+    "established_year": 2019
+  },
+  {
+    "name": "Westland University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Iwo",
+    "website": null,
+    "established_year": 2019
+  },
+  {
+    "name": "Topfaith University",
+    "type": "private",
+    "state": "Akwa Ibom",
+    "city": "Mkpatak",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Thomas Adewumi University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Oko-Irese",
+    "website": "https://www.tau.edu.ng",
+    "established_year": 2021
+  },
+  {
+    "name": "Maranatha University",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Lagos",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Ave Maria University",
+    "type": "private",
+    "state": "Nasarawa",
+    "city": "Piyanko",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Al-Istiqama University",
+    "type": "private",
+    "state": "Kano",
+    "city": "Sumaila",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Mudiame University",
+    "type": "private",
+    "state": "Edo",
+    "city": "Irrua",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Havilla University",
+    "type": "private",
+    "state": "Cross River",
+    "city": "Nde-Ikom",
+    "website": "https://havillauniversity.edu.ng",
+    "established_year": 2021
+  },
+  {
+    "name": "Claretian University of Nigeria",
+    "type": "private",
+    "state": "Imo",
+    "city": "Nekede",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "James Hope University",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Lagos",
+    "website": "https://www.jhu.edu.ng",
+    "established_year": 2021
+  },
+  {
+    "name": "Maryam Abacha American University of Nigeria",
+    "type": "private",
+    "state": "Kano",
+    "city": "Kano",
+    "website": "https://www.maaun.edu.ng",
+    "established_year": 2021
+  },
+  {
+    "name": "Capital City University",
+    "type": "private",
+    "state": "Kano",
+    "city": "Kano",
+    "website": "https://www.ccuk.edu.ng",
+    "established_year": 2021
+  },
+  {
+    "name": "Ahman Pategi University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Pategi",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "University of Offa",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Offa",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "Mewar International University",
+    "type": "private",
+    "state": "Nasarawa",
+    "city": "Masaka",
+    "website": "https://www.miu.edu.ng",
+    "established_year": 2021
+  },
+  {
+    "name": "Anan University",
+    "type": "private",
+    "state": "Plateau",
+    "city": "Kwall",
+    "website": null,
+    "established_year": 2021
+  },
+  {
+    "name": "North Eastern University",
+    "type": "private",
+    "state": "Gombe",
+    "city": "Gombe",
+    "website": "https://pru.edu.ng",
+    "established_year": 2022
+  },
+  {
+    "name": "Al-Ansar University",
+    "type": "private",
+    "state": "Borno",
+    "city": "Maiduguri",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "Margaret Lawrence University",
+    "type": "private",
+    "state": "Delta",
+    "city": "Umunede",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "Khalifa Isiyaku Rabiu University",
+    "type": "private",
+    "state": "Kano",
+    "city": "Kano",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "Sports University",
+    "type": "private",
+    "state": "Delta",
+    "city": "Idumuje-Ugboko",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "Baba Ahmed University",
+    "type": "private",
+    "state": "Kano",
+    "city": "Kano",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "Saisa University of Medical Sciences and Technology",
+    "type": "private",
+    "state": "Sokoto",
+    "city": "Sokoto",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "Nigerian British University",
+    "type": "private",
+    "state": "Abia",
+    "city": "Asa",
+    "website": "https://nbu.edu.ng",
+    "established_year": 2022
+  },
+  {
+    "name": "Peter University",
+    "type": "private",
+    "state": "Anambra",
+    "city": "Achina-Onneh",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "Newgate University",
+    "type": "private",
+    "state": "Niger",
+    "city": "Minna",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "European University of Nigeria",
+    "type": "private",
+    "state": "FCT",
+    "city": "Duboyi",
+    "website": null,
+    "established_year": 2022
+  },
+  {
+    "name": "NorthWest University",
+    "type": "private",
+    "state": "Sokoto",
+    "city": "Sokoto",
+    "website": "https://nwus.edu.ng",
+    "established_year": 2022
+  },
+  {
+    "name": "Rayhaan University",
+    "type": "private",
+    "state": "Kebbi",
+    "city": "Birnin Kebbi",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Muhammad Kamalud University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Ilorin",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Sam Maris University",
+    "type": "private",
+    "state": "Ondo",
+    "city": "Supare",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Aletheia University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ago-Iwoye",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Lux Mundi University",
+    "type": "private",
+    "state": "Abia",
+    "city": "Umuahia",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Maduka University",
+    "type": "private",
+    "state": "Enugu",
+    "city": "Ekwegbe",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "PeaceLand University",
+    "type": "private",
+    "state": "Enugu",
+    "city": "Enugu",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Amadeus University",
+    "type": "private",
+    "state": "Abia",
+    "city": "Amizi",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Vision University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ikogbo",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Azman University",
+    "type": "private",
+    "state": "Kano",
+    "city": "Kano",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Huda University",
+    "type": "private",
+    "state": "Zamfara",
+    "city": "Gusau",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Franco British International University",
+    "type": "private",
+    "state": "Kaduna",
+    "city": "Kaduna",
+    "website": "https://fbiu.edu.ng",
+    "established_year": 2023
+  },
+  {
+    "name": "Canadian University of Nigeria",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Gerar University of Medical Science",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Imope Ijebu",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "British Canadian University",
+    "type": "private",
+    "state": "Cross River",
+    "city": "Obufu",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Hensard University",
+    "type": "private",
+    "state": "Bayelsa",
+    "city": "Toru-Orua",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Amaj University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Kwali",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Phoenix University",
+    "type": "private",
+    "state": "Nasarawa",
+    "city": "Agwada",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Wigwe University",
+    "type": "private",
+    "state": "Rivers",
+    "city": "Isiokpo",
+    "website": "https://www.wigweuniversity.edu.ng",
+    "established_year": 2023
+  },
+  {
+    "name": "Hillside University of Science and Technology",
+    "type": "private",
+    "state": "Ekiti",
+    "city": "Okemisi",
+    "website": "https://www.hust.edu.ng",
+    "established_year": 2023
+  },
+  {
+    "name": "University on the Niger",
+    "type": "private",
+    "state": "Anambra",
+    "city": "Umunya",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Elrazi Medical University",
+    "type": "private",
+    "state": "Kano",
+    "city": "Yargaya",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Venite University",
+    "type": "private",
+    "state": "Ekiti",
+    "city": "Iloro-Ekiti",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Shanahan University",
+    "type": "private",
+    "state": "Anambra",
+    "city": "Onitsha",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "The Duke Medical University",
+    "type": "private",
+    "state": "Cross River",
+    "city": "Calabar",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Mercy Medical University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Iwo",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Cosmopolitan University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Miva Open University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": "https://miva.university",
+    "established_year": 2023
+  },
+  {
+    "name": "Iconic Open University",
+    "type": "private",
+    "state": "Sokoto",
+    "city": "Sokoto",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "West Midlands Open University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Ibadan",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Al-Muhibbah Open University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "El-Amin University",
+    "type": "private",
+    "state": "Niger",
+    "city": "Minna",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "College of Petroleum and Energy Studies",
+    "type": "private",
+    "state": "Kaduna",
+    "city": "Kaduna",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Jewel University",
+    "type": "private",
+    "state": "Gombe",
+    "city": "Gombe",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Prime University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Kuje",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Nigerian University of Technology and Management",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Apapa",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Al-Bayan University",
+    "type": "private",
+    "state": "Kogi",
+    "city": "Ankpa",
+    "website": null,
+    "established_year": 2023
+  },
+  {
+    "name": "Lighthouse University",
+    "type": "private",
+    "state": "Edo",
+    "city": "Evbobanosa",
+    "website": null,
+    "established_year": 2024
+  },
+  {
+    "name": "African University of Economics",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": null,
+    "established_year": 2024
+  },
+  {
+    "name": "New City University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ayetoro",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Eranova University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": "https://eranova.edu.ng",
+    "established_year": 2025
+  },
+  {
+    "name": "Minaret University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Ikirun",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Abdulrasaq Abubakar Toyin University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Ganmo",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Southern Atlantic University",
+    "type": "private",
+    "state": "Akwa Ibom",
+    "city": "Uyo",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Lens University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Ilemona",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Monarch University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Iyesi-Ota",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Tonine Iredia University of Communication",
+    "type": "private",
+    "state": "Edo",
+    "city": "Benin City",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Isaac Balami University of Aeronautics and Management",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Lagos",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Kevin Eze University",
+    "type": "private",
+    "state": "Enugu",
+    "city": "Mgbowo",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Tazkiyah University",
+    "type": "private",
+    "state": "Kaduna",
+    "city": "Kaduna",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Leadership University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Jimoh Babalola University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Ilorin",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Bridget University Mbaise",
+    "type": "private",
+    "state": "Imo",
+    "city": "Okirika-Nweke",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Greenland University",
+    "type": "private",
+    "state": "Taraba",
+    "city": "Jalingo",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "JEFAP University",
+    "type": "private",
+    "state": "Niger",
+    "city": "Suleja",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Azione Verde University",
+    "type": "private",
+    "state": "Imo",
+    "city": "Amaigbo",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Unique Open University",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Ojo",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "American Open University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Abeokuta",
+    "website": null,
+    "established_year": 2025
+  },
+  {
+    "name": "Abdulkadir Kure University",
+    "type": "state",
+    "state": "Niger",
+    "city": "Minna",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Abiola Ajimobi Technical University",
+    "type": "state",
+    "state": "Oyo",
+    "city": "Ibadan",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Aliko Dangote University of Science and Technology",
+    "type": "state",
+    "state": "Kano",
+    "city": "Wudil",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Bayelsa Medical University",
+    "type": "state",
+    "state": "Bayelsa",
+    "city": "Yenagoa",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Dennis Osadebay University",
+    "type": "state",
+    "state": "Delta",
+    "city": "Asaba",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Emmanuel Ayande University of Education",
+    "type": "state",
+    "state": "Oyo",
+    "city": "Oyo",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Kingsley Ozumba Mbadiwe University",
+    "type": "state",
+    "state": "Imo",
+    "city": "Ideato South",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Prince Abubakar Audu University",
+    "type": "state",
+    "state": "Kogi",
+    "city": "Anyigba",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Olusegun Agagu University of Science and Technology",
+    "type": "state",
+    "state": "Ondo",
+    "city": "Okitipupa",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "Rivers State University",
+    "type": "state",
+    "state": "Rivers",
+    "city": "Port Harcourt",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "University of Cross River State",
+    "type": "state",
+    "state": "Cross River",
+    "city": "Calabar",
+    "website": null,
+    "established_year": null
+  },
+  {
+    "name": "University of Delta",
+    "type": "state",
+    "state": "Delta",
+    "city": "Agbor",
+    "website": null,
+    "established_year": null
+  }
+]

@@ -1,0 +1,1283 @@
+[
+  {
+    "name": "Abia State University",
+    "type": "state",
+    "state": "Abia",
+    "city": "Uturu",
+    "address": "Uturu, Abia",
+    "website": "https://abiastateuniversity.edu.ng",
+    "established_year": 1981,
+    "principal_name": "Prof. Onyemachi Ogbulu",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Abubakar Tafawa Balewa University",
+    "type": "federal",
+    "state": "Bauchi",
+    "city": "Bauchi",
+    "institution_category": "university"
+  },
+  {
+    "name": "Achievers University",
+    "type": "private",
+    "state": "Ondo",
+    "city": "Owo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Adamawa State University",
+    "type": "state",
+    "state": "Adamawa",
+    "city": "Mubi",
+    "institution_category": "university"
+  },
+  {
+    "name": "Adekunle Ajasin University",
+    "type": "state",
+    "state": "Ondo",
+    "city": "Akungba-Akoko",
+    "address": "Akungba-Akoko, Ondo",
+    "website": "https://aaua.edu.ng",
+    "established_year": 1999,
+    "principal_name": "Prof. Olugbenga Ige",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Adeleke University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Ede",
+    "institution_category": "university"
+  },
+  {
+    "name": "African University of Science and Technology",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "institution_category": "university"
+  },
+  {
+    "name": "Air Force Institute of Technology",
+    "type": "federal",
+    "state": "Kaduna",
+    "city": "Kaduna",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ajayi Crowther University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Oyo",
+    "address": "Oyo Town, Oyo",
+    "website": "https://acu.edu.ng",
+    "established_year": 2005,
+    "principal_name": "Prof. Timothy Adebayo",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Akwa Ibom State University",
+    "type": "state",
+    "state": "Akwa Ibom",
+    "city": "Ikot Akpaden",
+    "institution_category": "university"
+  },
+  {
+    "name": "Al-Hikmah University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Ilorin",
+    "institution_category": "university"
+  },
+  {
+    "name": "Al-Qalam University",
+    "type": "private",
+    "state": "Katsina",
+    "city": "Katsina",
+    "institution_category": "university"
+  },
+  {
+    "name": "Alex Ekwueme Federal University, Ndufu-Alike",
+    "type": "federal",
+    "state": "Ebonyi",
+    "city": "Ikwo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ambrose Alli University",
+    "type": "state",
+    "state": "Edo",
+    "city": "Ekpoma",
+    "address": "Ekpoma, Edo",
+    "website": "https://aauekpoma.edu.ng",
+    "established_year": 1981,
+    "principal_name": "Prof. Asomwan Sonnie Adagbonyin",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "American University of Nigeria",
+    "type": "private",
+    "state": "Adamawa",
+    "city": "Yola",
+    "address": "Yola, Adamawa",
+    "website": "https://aun.edu.ng",
+    "established_year": 2003,
+    "principal_name": "Dr. DeWayne Frazier",
+    "principal_title": "President",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Anchor University",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Ipaja",
+    "institution_category": "university"
+  },
+  {
+    "name": "Arthur Jarvis University",
+    "type": "private",
+    "state": "Cross River",
+    "city": "Akpabuyo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Augustine University",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Epe",
+    "institution_category": "university"
+  },
+  {
+    "name": "Babcock University Ilishan",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ilishan-Remo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Bauchi State University",
+    "type": "state",
+    "state": "Bauchi",
+    "city": "Gadau",
+    "institution_category": "university"
+  },
+  {
+    "name": "Bayero University Kano",
+    "type": "federal",
+    "state": "Kano",
+    "city": "Kano",
+    "address": "Gwarzo Road, Kano",
+    "website": "https://buk.edu.ng",
+    "established_year": 1975,
+    "principal_name": "Prof. Sagir Abbas",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Baze University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "address": "Jabi, Abuja",
+    "website": "https://bazeuniversity.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Kathleen Okafor",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Bells University of Technology",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ota",
+    "institution_category": "university"
+  },
+  {
+    "name": "Benson Idahosa University",
+    "type": "private",
+    "state": "Edo",
+    "city": "Benin City",
+    "institution_category": "university"
+  },
+  {
+    "name": "Benue State University",
+    "type": "state",
+    "state": "Benue",
+    "city": "Makurdi",
+    "address": "Makurdi, Benue",
+    "website": "https://bsum.edu.ng",
+    "established_year": 1992,
+    "principal_name": "Prof. Joe Iorapuu",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Bingham University",
+    "type": "private",
+    "state": "Nasarawa",
+    "city": "Karu",
+    "institution_category": "university"
+  },
+  {
+    "name": "Borno State University",
+    "type": "state",
+    "state": "Borno",
+    "city": "Maiduguri",
+    "institution_category": "university"
+  },
+  {
+    "name": "Bowen University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Iwo",
+    "address": "Iwo, Osun",
+    "website": "https://bowen.edu.ng",
+    "established_year": 2001,
+    "principal_name": "Prof. Jonathan Babalola",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Caritas University",
+    "type": "private",
+    "state": "Enugu",
+    "city": "Amorji-Nike",
+    "institution_category": "university"
+  },
+  {
+    "name": "Chrisland University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Abeokuta",
+    "institution_category": "university"
+  },
+  {
+    "name": "Christopher University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Mowe",
+    "institution_category": "university"
+  },
+  {
+    "name": "Chukwuemeka Odumegwu Ojukwu University",
+    "type": "state",
+    "state": "Anambra",
+    "city": "Uli",
+    "institution_category": "university"
+  },
+  {
+    "name": "Confluence University of Science and Technology",
+    "type": "state",
+    "state": "Kogi",
+    "city": "Osara",
+    "institution_category": "university"
+  },
+  {
+    "name": "Covenant University Ota",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ota",
+    "institution_category": "university"
+  },
+  {
+    "name": "Crawford University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Igbesa",
+    "institution_category": "university"
+  },
+  {
+    "name": "Crescent University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Abeokuta",
+    "institution_category": "university"
+  },
+  {
+    "name": "Cross River State University of Technology",
+    "type": "state",
+    "state": "Cross River",
+    "city": "Calabar",
+    "institution_category": "university"
+  },
+  {
+    "name": "Delta State University",
+    "type": "state",
+    "state": "Delta",
+    "city": "Abraka",
+    "address": "Abraka, Delta",
+    "website": "https://delsu.edu.ng",
+    "established_year": 1992,
+    "principal_name": "Prof. Andy Egwunyenga",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Delta State University of Science and Technology",
+    "type": "state",
+    "state": "Delta",
+    "city": "Ozoro",
+    "institution_category": "university"
+  },
+  {
+    "name": "Dominican University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Ibadan",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ebonyi State University",
+    "type": "state",
+    "state": "Ebonyi",
+    "city": "Abakaliki",
+    "address": "Abakaliki, Ebonyi",
+    "website": "https://ebsu.edu.ng",
+    "established_year": 1999,
+    "principal_name": "Prof. Chigozie Ogbu",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Edo State University Uzairue",
+    "type": "state",
+    "state": "Edo",
+    "city": "Iyamho",
+    "institution_category": "university"
+  },
+  {
+    "name": "Edusoko University",
+    "type": "private",
+    "state": "Niger",
+    "city": "Bida",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ekiti State University",
+    "type": "state",
+    "state": "Ekiti",
+    "city": "Ado-Ekiti",
+    "institution_category": "university"
+  },
+  {
+    "name": "Eko University of Medicine and Health Sciences",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Ijanikin",
+    "institution_category": "university"
+  },
+  {
+    "name": "Elizade University",
+    "type": "private",
+    "state": "Ondo",
+    "city": "Ilara-Mokin",
+    "institution_category": "university"
+  },
+  {
+    "name": "Enugu State University of Science and Technology",
+    "type": "state",
+    "state": "Enugu",
+    "city": "Enugu",
+    "address": "Agbani, Enugu",
+    "website": "https://esut.edu.ng",
+    "established_year": 1980,
+    "principal_name": "Prof. Alloysius-Michaels Okolie",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Evangel University, Akaeze",
+    "type": "private",
+    "state": "Ebonyi",
+    "city": "Akaeze",
+    "institution_category": "university"
+  },
+  {
+    "name": "Federal University of Agriculture, Abeokuta",
+    "type": "federal",
+    "state": "Ogun",
+    "city": "Abeokuta",
+    "address": "Alabata Road, Abeokuta",
+    "website": "https://funaab.edu.ng",
+    "established_year": 1988,
+    "principal_name": "Prof. Olusola Babatunde Kehinde",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University of Agriculture, Makurdi",
+    "type": "federal",
+    "state": "Benue",
+    "city": "Makurdi",
+    "institution_category": "university"
+  },
+  {
+    "name": "Federal University of Petroleum Resources Effurun",
+    "type": "federal",
+    "state": "Delta",
+    "city": "Effurun",
+    "institution_category": "university"
+  },
+  {
+    "name": "Federal University of Technology, Akure",
+    "type": "federal",
+    "state": "Ondo",
+    "city": "Akure",
+    "address": "Ilesha Road, Akure",
+    "website": "https://futa.edu.ng",
+    "established_year": 1981,
+    "principal_name": "Prof. Adenike Oladiji",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University of Technology, Minna",
+    "type": "federal",
+    "state": "Niger",
+    "city": "Minna",
+    "address": "Gidan Kwano Campus, Minna",
+    "website": "https://futminna.edu.ng",
+    "established_year": 1982,
+    "principal_name": "Prof. Faruk Adamu Kuta",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University of Technology, Owerri",
+    "type": "federal",
+    "state": "Imo",
+    "city": "Owerri",
+    "address": "Owerri-Aba Road, Owerri",
+    "website": "https://futo.edu.ng",
+    "established_year": 1980,
+    "principal_name": "Prof. Nnenna Oti",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University, Birnin Kebbi",
+    "type": "federal",
+    "state": "Kebbi",
+    "city": "Birnin Kebbi",
+    "institution_category": "university"
+  },
+  {
+    "name": "Federal University, Dutse",
+    "type": "federal",
+    "state": "Jigawa",
+    "city": "Dutse",
+    "address": "Ibrahim Aliyu Way, Dutse",
+    "website": "https://fud.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Abdulkarim Sabo Mohammed",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University, Dutsin-Ma",
+    "type": "federal",
+    "state": "Katsina",
+    "city": "Dutsin-Ma",
+    "address": "Dutsin-Ma, Katsina",
+    "website": "https://fudutsinma.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Armaya'u Hamisu Bichi",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University, Gashua",
+    "type": "federal",
+    "state": "Yobe",
+    "city": "Gashua",
+    "institution_category": "university"
+  },
+  {
+    "name": "Federal University, Gusau",
+    "type": "federal",
+    "state": "Zamfara",
+    "city": "Gusau",
+    "institution_category": "university"
+  },
+  {
+    "name": "Federal University, Kashere",
+    "type": "federal",
+    "state": "Gombe",
+    "city": "Kashere",
+    "address": "Kashere, Gombe",
+    "website": "https://fukashere.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Umaru Pate",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University, Lafia",
+    "type": "federal",
+    "state": "Nasarawa",
+    "city": "Lafia",
+    "address": "Makurdi Road, Lafia",
+    "website": "https://fulafia.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Shehu Abdul Rahman",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University, Lokoja",
+    "type": "federal",
+    "state": "Kogi",
+    "city": "Lokoja",
+    "address": "Lokoja-Okene Road, Lokoja",
+    "website": "https://fulokoja.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Olayemi Akinwumi",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University, Otuoke",
+    "type": "federal",
+    "state": "Bayelsa",
+    "city": "Otuoke",
+    "institution_category": "university"
+  },
+  {
+    "name": "Federal University, Oye-Ekiti",
+    "type": "federal",
+    "state": "Ekiti",
+    "city": "Oye-Ekiti",
+    "address": "Oye-Are Road, Oye-Ekiti",
+    "website": "https://fuoye.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Abayomi Fasina",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Federal University, Wukari",
+    "type": "federal",
+    "state": "Taraba",
+    "city": "Wukari",
+    "address": "Katsina-Ala Road, Wukari",
+    "website": "https://fuwukari.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Jude Rabo",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Godfrey Okoye University",
+    "type": "private",
+    "state": "Enugu",
+    "city": "Enugu",
+    "institution_category": "university"
+  },
+  {
+    "name": "Gombe State University",
+    "type": "state",
+    "state": "Gombe",
+    "city": "Gombe",
+    "institution_category": "university"
+  },
+  {
+    "name": "Greenfield University",
+    "type": "private",
+    "state": "Kaduna",
+    "city": "Kaduna",
+    "institution_category": "university"
+  },
+  {
+    "name": "Gregory University, Uturu",
+    "type": "private",
+    "state": "Abia",
+    "city": "Uturu",
+    "institution_category": "university"
+  },
+  {
+    "name": "Hallmark University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ijebu-Itele",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ibrahim Badamasi Babangida University",
+    "type": "state",
+    "state": "Niger",
+    "city": "Lapai",
+    "institution_category": "university"
+  },
+  {
+    "name": "Igbinedion University OKada",
+    "type": "private",
+    "state": "Edo",
+    "city": "Okada",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ignatius Ajuru University of Education",
+    "type": "state",
+    "state": "Rivers",
+    "city": "Port Harcourt",
+    "institution_category": "university"
+  },
+  {
+    "name": "Imo State University",
+    "type": "state",
+    "state": "Imo",
+    "city": "Owerri",
+    "institution_category": "university"
+  },
+  {
+    "name": "Kaduna State University",
+    "type": "state",
+    "state": "Kaduna",
+    "city": "Kaduna",
+    "institution_category": "university"
+  },
+  {
+    "name": "Kano University of Science and Technology",
+    "type": "state",
+    "state": "Kano",
+    "city": "Wudil",
+    "institution_category": "university"
+  },
+  {
+    "name": "Karl Kumm University",
+    "type": "private",
+    "state": "Plateau",
+    "city": "Vom",
+    "institution_category": "university"
+  },
+  {
+    "name": "Kebbi State University of Science and Technology",
+    "type": "state",
+    "state": "Kebbi",
+    "city": "Aliero",
+    "institution_category": "university"
+  },
+  {
+    "name": "Kings University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Ode-Omu",
+    "institution_category": "university"
+  },
+  {
+    "name": "Kogi State University",
+    "type": "state",
+    "state": "Kogi",
+    "city": "Anyigba",
+    "institution_category": "university"
+  },
+  {
+    "name": "Kwara State University",
+    "type": "state",
+    "state": "Kwara",
+    "city": "Malete",
+    "address": "Malete, Kwara",
+    "website": "https://kwasu.edu.ng",
+    "established_year": 2009,
+    "principal_name": "Prof. Shaykh-Luqman Jimoh",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Kwararafa University, Wukari",
+    "type": "private",
+    "state": "Taraba",
+    "city": "Wukari",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ladoke Akintola University of Technology",
+    "type": "state",
+    "state": "Oyo",
+    "city": "Ogbomoso",
+    "address": "Ogbomoso, Oyo",
+    "website": "https://lautech.edu.ng",
+    "established_year": 1990,
+    "principal_name": "Prof. Seyi Olalekan Shittu",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Lagos State University of Education",
+    "type": "state",
+    "state": "Lagos",
+    "city": "Ijanikin",
+    "institution_category": "university"
+  },
+  {
+    "name": "Lagos State University of Science and Technology",
+    "type": "state",
+    "state": "Lagos",
+    "city": "Ikorodu",
+    "institution_category": "university"
+  },
+  {
+    "name": "Landmark University",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Omu-Aran",
+    "address": "Omu-Aran, Kwara",
+    "website": "https://lmu.edu.ng",
+    "established_year": 2011,
+    "principal_name": "Prof. Charity Aremu",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Lead City University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Ibadan",
+    "address": "Ibadan, Oyo",
+    "website": "https://lcu.edu.ng",
+    "established_year": 2005,
+    "principal_name": "Prof. Kabiru Adeyemo",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Madonna University",
+    "type": "private",
+    "state": "Anambra",
+    "city": "Okija",
+    "institution_category": "university"
+  },
+  {
+    "name": "Maranatha University, Mgbidi",
+    "type": "private",
+    "state": "Imo",
+    "city": "Mgbidi",
+    "institution_category": "university"
+  },
+  {
+    "name": "Mcpherson University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Seriki-Sotayo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Mcpherson University Seriki Sotayo",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Seriki Sotayo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Michael Okpara University of Agriculture",
+    "type": "federal",
+    "state": "Abia",
+    "city": "Umudike",
+    "institution_category": "university"
+  },
+  {
+    "name": "Modibbo Adama University, Yola",
+    "type": "federal",
+    "state": "Adamawa",
+    "city": "Yola",
+    "institution_category": "university"
+  },
+  {
+    "name": "Mountain Top University",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Makogi Oba",
+    "institution_category": "university"
+  },
+  {
+    "name": "Mountain Top University Ibafo",
+    "type": "private",
+    "state": "Ogun",
+    "city": "Ibafo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Nasarawa State University",
+    "type": "state",
+    "state": "Nasarawa",
+    "city": "Keffi",
+    "institution_category": "university"
+  },
+  {
+    "name": "Niger Delta University",
+    "type": "state",
+    "state": "Bayelsa",
+    "city": "Wilberforce Island",
+    "institution_category": "university"
+  },
+  {
+    "name": "Nile University of Nigeria",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "address": "Airport Road, Abuja",
+    "website": "https://nileuniversity.edu.ng",
+    "established_year": 2009,
+    "principal_name": "Prof. Dilli Dogo",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Nnamdi Azikiwe University",
+    "type": "federal",
+    "state": "Anambra",
+    "city": "Awka",
+    "address": "Enugu-Onitsha Expressway, Awka",
+    "website": "https://unizik.edu.ng",
+    "established_year": 1991,
+    "principal_name": "Prof. Charles Esimone",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Novena University",
+    "type": "private",
+    "state": "Delta",
+    "city": "Ogume",
+    "institution_category": "university"
+  },
+  {
+    "name": "Oduduwa University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Ipetumodu",
+    "institution_category": "university"
+  },
+  {
+    "name": "Olabisi Onabanjo University",
+    "type": "state",
+    "state": "Ogun",
+    "city": "Ago-Iwoye",
+    "address": "Ago-Iwoye, Ogun",
+    "website": "https://oouagoiwoye.edu.ng",
+    "established_year": 1982,
+    "principal_name": "Prof. Ayodeji Agboola",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Ondo State University of Science and Technology",
+    "type": "state",
+    "state": "Ondo",
+    "city": "Okitipupa",
+    "institution_category": "university"
+  },
+  {
+    "name": "Osun State University",
+    "type": "state",
+    "state": "Osun",
+    "city": "Osogbo",
+    "institution_category": "university"
+  },
+  {
+    "name": "PAMO University of Medical Sciences",
+    "type": "private",
+    "state": "Rivers",
+    "city": "Iriebe",
+    "institution_category": "university"
+  },
+  {
+    "name": "Pan-Atlantic University",
+    "type": "private",
+    "state": "Lagos",
+    "city": "Ibeju-Lekki",
+    "address": "Km 52, Lekki-Epe Expressway",
+    "website": "https://pau.edu.ng",
+    "established_year": 2002,
+    "principal_name": "Prof. Enase Okonedo",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": false
+  },
+  {
+    "name": "Paul University",
+    "type": "private",
+    "state": "Anambra",
+    "city": "Awka",
+    "institution_category": "university"
+  },
+  {
+    "name": "Philomath University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "institution_category": "university"
+  },
+  {
+    "name": "Plateau State University",
+    "type": "state",
+    "state": "Plateau",
+    "city": "Bokkos",
+    "institution_category": "university"
+  },
+  {
+    "name": "Precious Cornerstone University",
+    "type": "private",
+    "state": "Oyo",
+    "city": "Ibadan",
+    "institution_category": "university"
+  },
+  {
+    "name": "Redeemer's University",
+    "type": "private",
+    "state": "Osun",
+    "city": "Ede",
+    "address": "Ede, Osun",
+    "website": "https://run.edu.ng",
+    "established_year": 2005,
+    "principal_name": "Prof. Shadrach Akindele",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Renaissance University",
+    "type": "private",
+    "state": "Enugu",
+    "city": "Ugbawka",
+    "institution_category": "university"
+  },
+  {
+    "name": "Rhema University",
+    "type": "private",
+    "state": "Abia",
+    "city": "Aba",
+    "institution_category": "university"
+  },
+  {
+    "name": "Ritman University",
+    "type": "private",
+    "state": "Akwa Ibom",
+    "city": "Ikot Ekpene",
+    "institution_category": "university"
+  },
+  {
+    "name": "Salem University",
+    "type": "private",
+    "state": "Kogi",
+    "city": "Lokoja",
+    "institution_category": "university"
+  },
+  {
+    "name": "Samuel Adegboyega University",
+    "type": "private",
+    "state": "Edo",
+    "city": "Ogwa",
+    "institution_category": "university"
+  },
+  {
+    "name": "Skyline University Nigeria",
+    "type": "private",
+    "state": "Kano",
+    "city": "Kano",
+    "institution_category": "university"
+  },
+  {
+    "name": "Sokoto State University",
+    "type": "state",
+    "state": "Sokoto",
+    "city": "Sokoto",
+    "institution_category": "university"
+  },
+  {
+    "name": "Sule Lamido University",
+    "type": "state",
+    "state": "Jigawa",
+    "city": "Kafin Hausa",
+    "institution_category": "university"
+  },
+  {
+    "name": "Summit University, Offa",
+    "type": "private",
+    "state": "Kwara",
+    "city": "Offa",
+    "institution_category": "university"
+  },
+  {
+    "name": "Tai Solarin University of Education",
+    "type": "state",
+    "state": "Ogun",
+    "city": "Ijagun",
+    "institution_category": "university"
+  },
+  {
+    "name": "Tansian University",
+    "type": "private",
+    "state": "Anambra",
+    "city": "Umunya",
+    "institution_category": "university"
+  },
+  {
+    "name": "Taraba State University",
+    "type": "state",
+    "state": "Taraba",
+    "city": "Jalingo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Umaru Musa Yar'Adua University",
+    "type": "state",
+    "state": "Katsina",
+    "city": "Katsina",
+    "institution_category": "university"
+  },
+  {
+    "name": "University of Abuja",
+    "type": "federal",
+    "state": "FCT",
+    "city": "Abuja",
+    "institution_category": "university"
+  },
+  {
+    "name": "University of Africa, Toru-Orua",
+    "type": "state",
+    "state": "Bayelsa",
+    "city": "Toru-Orua",
+    "institution_category": "university"
+  },
+  {
+    "name": "University of Benin",
+    "type": "federal",
+    "state": "Edo",
+    "city": "Benin City",
+    "address": "Ugbowo Campus, Benin City",
+    "website": "https://uniben.edu.ng",
+    "established_year": 1970,
+    "principal_name": "Prof. Lilian Salami",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "University of Calabar",
+    "type": "federal",
+    "state": "Cross River",
+    "city": "Calabar",
+    "address": "Etta Agbo Road, Calabar",
+    "website": "https://unical.edu.ng",
+    "established_year": 1975,
+    "principal_name": "Prof. Florence Obi",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "University of Fortune, Igbotako",
+    "type": "private",
+    "state": "Ondo",
+    "city": "Igbotako",
+    "institution_category": "university"
+  },
+  {
+    "name": "University of Ilorin",
+    "type": "federal",
+    "state": "Kwara",
+    "city": "Ilorin",
+    "address": "Ilorin Road, Ilorin",
+    "website": "https://unilorin.edu.ng",
+    "established_year": 1975,
+    "principal_name": "Prof. Wahab Egbewole",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "University of Jos",
+    "type": "federal",
+    "state": "Plateau",
+    "city": "Jos",
+    "address": "Bauchi Road, Jos",
+    "website": "https://unijos.edu.ng",
+    "established_year": 1971,
+    "principal_name": "Prof. Tanko Ishaya",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "University of Maiduguri",
+    "type": "federal",
+    "state": "Borno",
+    "city": "Maiduguri",
+    "address": "Bama Road, Maiduguri",
+    "website": "https://unimaid.edu.ng",
+    "established_year": 1975,
+    "principal_name": "Prof. Aliyu Shugaba",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "University of Mkar",
+    "type": "private",
+    "state": "Benue",
+    "city": "Mkar",
+    "institution_category": "university"
+  },
+  {
+    "name": "University of Nigeria, Enugu Campus",
+    "type": "federal",
+    "state": "Enugu",
+    "city": "Enugu",
+    "institution_category": "university"
+  },
+  {
+    "name": "University of Port Harcourt",
+    "type": "federal",
+    "state": "Rivers",
+    "city": "Port Harcourt",
+    "address": "East-West Road, Port Harcourt",
+    "website": "https://uniport.edu.ng",
+    "established_year": 1975,
+    "principal_name": "Prof. Georgewill Owunari",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "University of Uyo",
+    "type": "federal",
+    "state": "Akwa Ibom",
+    "city": "Uyo",
+    "institution_category": "university"
+  },
+  {
+    "name": "Usmanu Danfodiyo University",
+    "type": "federal",
+    "state": "Sokoto",
+    "city": "Sokoto",
+    "address": "Sultan Abubakar Road, Sokoto",
+    "website": "https://udusok.edu.ng",
+    "established_year": 1975,
+    "principal_name": "Prof. Lawal Bilbis",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Veritas University",
+    "type": "private",
+    "state": "FCT",
+    "city": "Abuja",
+    "address": "Bwari, Abuja",
+    "website": "https://veritas.edu.ng",
+    "established_year": 2007,
+    "principal_name": "Prof. Hyacinth Ichoku",
+    "principal_title": "Vice-Chancellor",
+    "institution_category": "university",
+    "levels": "Undergraduate, Postgraduate",
+    "boarding": true
+  },
+  {
+    "name": "Wellspring University",
+    "type": "private",
+    "state": "Edo",
+    "city": "Benin City",
+    "institution_category": "university"
+  },
+  {
+    "name": "Western Delta University",
+    "type": "private",
+    "state": "Delta",
+    "city": "Oghara",
+    "institution_category": "university"
+  },
+  {
+    "name": "Yobe State University",
+    "type": "state",
+    "state": "Yobe",
+    "city": "Damaturu",
+    "institution_category": "university"
+  },
+  {
+    "name": "Yusuf Maitama Sule University",
+    "type": "state",
+    "state": "Kano",
+    "city": "Kano",
+    "institution_category": "university"
+  },
+  {
+    "name": "Zamfara State University",
+    "type": "state",
+    "state": "Zamfara",
+    "city": "Talata Mafara",
+    "institution_category": "university"
+  }
+]

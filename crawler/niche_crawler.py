@@ -21,6 +21,7 @@ UniversityCrawler) continue to work unchanged.
 
 import logging
 import random
+import re
 import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional
@@ -596,6 +597,183 @@ class NicheCrawler:
             'meta_description': meta_desc,
         }
 
+    # Suffixes that reliably indicate a Nigerian institutional domain rather
+    # than a news article, Wikipedia mirror, or social profile about the
+    # institution. .gov.ng is deliberately excluded: it matches an
+    # institution's overseeing ministry or state government portal just as
+    # readily as the institution's own site, and did so incorrectly in
+    # testing (University of Abuja resolved to fcta.gov.ng, the Federal
+    # Capital Territory Administration's own site, not uniabuja.edu.ng).
+    OFFICIAL_DOMAIN_HINTS = ('.edu.ng', '.org.ng')
+
+    # Domains that are never an institution's own site even if they rank
+    # first for a query about it.
+    EXCLUDED_DISCOVERY_DOMAINS = (
+        'wikipedia.org', 'facebook.com', 'twitter.com', 'x.com',
+        'instagram.com', 'linkedin.com', 'youtube.com', 'jamb.gov.ng',
+        'legit.ng', 'edurank.org',
+    )
+
+    # Generic words stripped before comparing an institution's name against
+    # a candidate domain, so "University of Abuja" matches "uniabuja" via
+    # its distinctive word rather than requiring an exact substring.
+    GENERIC_NAME_WORDS = frozenset({
+        'university', 'of', 'state', 'federal', 'the', 'and',
+        'college', 'institute', 'technology', 'science', 'sciences',
+        'national', 'nigeria', 'polytechnic',
+    })
+
+    def _domain_matches_name(self, domain: str, name: str) -> bool:
+        """
+        Require some lexical connection between the institution's name and
+        a candidate domain, beyond just carrying an .edu.ng suffix.
+
+        Without this, any .edu.ng result for a loosely-matched query could
+        be accepted as a given institution's site. Nigerian institutional
+        domains follow a few recognisable patterns and this checks for any
+        of them:
+
+          - a distinctive word appears whole in the domain
+            ("ibadan" in "ui.edu.ng" -- actually does not apply here, see
+            acronym case below; "unilag" contains "lag" from "Lagos")
+          - the domain is built from initials of the significant words
+            (University of Ibadan -> ui; Ahmadu Bello University -> abu;
+            Bayero University Kano -> buk; Lagos University Teaching
+            Hospital -> luth)
+          - the domain contracts "uni" + a distinctive word
+            (University of Benin -> uniben; University of Abuja -> uniabuja)
+          - a distinctive word's first few letters appear in the domain
+            (Nnamdi Azikiwe University -> unizik, matched on "azikiwe")
+
+        This is deliberately permissive rather than exact, since Nigerian
+        institutions do not follow one single naming convention, but it
+        still rejects a domain that shares nothing with the name at all.
+        """
+        # The leading label of the registrable domain, e.g. "uniabuja" from
+        # "www.uniabuja.edu.ng". A leading "www" must be dropped first or
+        # every www-prefixed result (the normal case for a search engine)
+        # is compared against "www" instead of the actual institution name,
+        # which rejects correct domains outright -- found when this exact
+        # case caused uniabuja.edu.ng itself to be discarded.
+        domain_lower = domain.lower()
+        if domain_lower.startswith('www.'):
+            domain_lower = domain_lower[4:]
+        domain_core = domain_lower.split('.')[0]
+        words = [w for w in re.split(r'\W+', name.lower()) if w and w not in self.GENERIC_NAME_WORDS]
+
+        if not words:
+            return False
+
+        # Whole-word or short-prefix containment for any distinctive word.
+        for word in words:
+            if word in domain_core:
+                return True
+            if len(word) >= 4 and word[:4] in domain_core:
+                return True
+
+        # Acronym built from the first letter of each word, excluding only
+        # filler words ("of", "and") that institutions themselves drop when
+        # abbreviating, e.g. "Ahmadu Bello University" -> "abu", "Bayero
+        # University Kano" -> "buk", "University of Ibadan" -> "ui".
+        filler = {'of', 'and', 'the'}
+        all_words = [w for w in re.split(r'\W+', name.lower()) if w and w not in filler]
+        acronym = ''.join(w[0] for w in all_words if w)
+        if len(acronym) >= 2 and acronym in domain_core:
+            return True
+
+        # "uni" + some leading portion of a distinctive word, a very common
+        # Nigerian pattern where the word is contracted to 3-6 letters
+        # (University of Lagos -> unilag; University of Benin -> uniben).
+        # Checking a range of prefix lengths rather than one fixed length
+        # avoids guessing exactly how much of the word was kept.
+        significant = [w for w in all_words if w not in self.GENERIC_NAME_WORDS]
+        for word in significant:
+            if not domain_core.startswith('uni'):
+                continue
+            remainder = domain_core[3:]
+            for prefix_len in range(min(3, len(word)), len(word) + 1):
+                if remainder.startswith(word[:prefix_len]):
+                    return True
+
+        # Leading few letters of any significant word appearing anywhere in
+        # the domain, which catches contractions like "Azikiwe" -> "zik" in
+        # "unizik" (the "a" is dropped, so this checks interior substrings
+        # of the word, not just its own prefix).
+        for word in significant:
+            if len(word) < 5:
+                continue
+            for start in range(len(word) - 2):
+                fragment = word[start:start + 3]
+                if fragment in domain_core:
+                    return True
+
+        return False
+
+    def _discover_website(self, name: str, state: str) -> Optional[str]:
+        """
+        Find and verify an institution's official website when none is on
+        record.
+
+        Roughly a third of the seeded university roster had no website at
+        all, which meant those records could only ever go through the
+        weaker, search-only path -- the opposite of what measurement showed
+        works best. A single targeted query plus a liveness check lets most
+        of them use the stronger website-first path instead, and the result
+        is persisted so future re-crawls skip this step entirely.
+        """
+        query = f'"{name}" {state} Nigeria official website'
+        try:
+            results = search_web(query, max_results=5)
+        except Exception as exc:
+            self.logger.debug(f"Website discovery search failed: {exc}")
+            return None
+
+        candidates = [r for r in results if r.confidence >= 0.5 and r.domain]
+        candidates.sort(key=lambda r: r.confidence, reverse=True)
+
+        for result in candidates:
+            domain = result.domain
+            if any(excluded in domain for excluded in self.EXCLUDED_DISCOVERY_DOMAINS):
+                continue
+            if not any(hint in domain for hint in self.OFFICIAL_DOMAIN_HINTS):
+                continue
+            if not self._domain_matches_name(domain, name):
+                self.logger.debug(f"Discarding unrelated domain {domain} for {name}")
+                continue
+
+            # Try both with and without "www.". Some Nigerian institutional
+            # sites issue a TLS certificate covering only one form, found
+            # when uniabuja.edu.ng (bare) failed with a certificate
+            # hostname mismatch while www.uniabuja.edu.ng was valid.
+            bare = domain_lower if (domain_lower := domain.lower().replace('www.', '')) else domain
+            for candidate_url in (f"https://{bare}", f"https://www.{bare}"):
+                try:
+                    response = self.session.get(candidate_url, timeout=self.PAGE_TIMEOUT)
+                    if response.status_code == 200:
+                        self.logger.info(f"🌐 Discovered website: {candidate_url}")
+                        return candidate_url
+                except Exception:
+                    continue
+
+        return None
+
+    def _persist_discovered_website(self, inst_id: int, url: str) -> None:
+        """Save a newly discovered website so future crawls do not repeat
+        the discovery search for the same institution."""
+        conn = db_manager.get_connection()
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "UPDATE schools SET website = %s, updated_at = NOW() WHERE id = %s",
+                    (url, inst_id),
+                )
+                conn.commit()
+        except Exception as exc:
+            conn.rollback()
+            self.logger.warning(f"Could not persist discovered website: {exc}")
+        finally:
+            conn.close()
+
     # ── Main per-institution crawl ───────────────────────────────────────────
     @with_circuit_breaker('network')
     def crawl_institution(self, institution: Dict[str, Any]) -> bool:
@@ -609,6 +787,11 @@ class NicheCrawler:
         self.stats['total'] += 1
 
         try:
+            if not url:
+                url = self._discover_website(name, state) or ''
+                if url:
+                    self._persist_discovered_website(inst_id, url)
+
             web_content = self._extract_from_website(url, name) if url else {}
             search_content: Dict[str, Any] = {}
 
