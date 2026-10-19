@@ -78,6 +78,9 @@ interface DropdownProps {
 function VerticalDropdown({ vertical, isOpen, onToggle, onClose }: DropdownProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const colors = verticalColors[vertical.color] || verticalColors.primary;
+  
+  // Filter to only show live categories
+  const liveCategories = vertical.categories.filter(cat => cat.status === 'live');
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -109,7 +112,7 @@ function VerticalDropdown({ vertical, isOpen, onToggle, onClose }: DropdownProps
           </div>
 
           <div className="py-2">
-            {vertical.categories.map((category) => (
+            {liveCategories.map((category) => (
               <CategoryItem 
                 key={category.slug} 
                 category={category} 
@@ -283,6 +286,9 @@ function MobileVerticalSection({ vertical, onLinkClick }: MobileVerticalSectionP
   const colors = verticalColors[vertical.color] || verticalColors.primary;
   const Icon = getIcon(vertical.icon);
   const isComingSoon = vertical.status === 'coming-soon';
+  
+  // Filter to only show live categories
+  const liveCategories = vertical.categories.filter(cat => cat.status === 'live');
 
   return (
     <div className="border-t border-gray-100 pt-2 mt-2">
@@ -304,7 +310,7 @@ function MobileVerticalSection({ vertical, onLinkClick }: MobileVerticalSectionP
 
       {isExpanded && (
         <div className="ml-6 mt-1 space-y-1">
-          {vertical.categories.map((category) => {
+          {liveCategories.map((category) => {
             const catIsComingSoon = category.status === 'coming-soon';
             const href = catIsComingSoon
               ? `/coming-soon/${vertical.slug}/${category.slug}`

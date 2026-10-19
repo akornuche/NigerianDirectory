@@ -614,9 +614,11 @@ export const navigationOrder = [
 ];
 
 export function getNavigationVerticals(): Vertical[] {
+  // Only return live verticals for public navigation
+  // Coming-soon verticals remain in config but are hidden from menu
   return navigationOrder
     .map(slug => getVerticalBySlug(slug))
-    .filter((v): v is Vertical => v !== undefined);
+    .filter((v): v is Vertical => v !== undefined && v.status === 'live');
 }
 
 // Color mapping for Tailwind classes
