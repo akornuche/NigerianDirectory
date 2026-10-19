@@ -5,21 +5,22 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { verticals, isLive, buildPath } from '@/config/verticals';
 
-// Generate category links from verticals config
-const categoryLinks = verticals.map((vertical) => {
-  const isActive = isLive(vertical.status);
-  // For live verticals, link to first category if exists
-  const href = isActive && vertical.categories?.[0] 
-    ? buildPath(vertical.slug, vertical.categories[0].slug)
-    : `/coming-soon/${vertical.slug}/`;
-  
-  return {
-    name: vertical.name,
-    slug: vertical.slug,
-    href,
-    status: vertical.status,
-  };
-});
+// Generate category links from verticals config — only live verticals
+const categoryLinks = verticals
+  .filter(v => v.status === 'live')
+  .map((vertical) => {
+    // For live verticals, link to first category if exists
+    const href = vertical.categories?.[0] 
+      ? buildPath(vertical.slug, vertical.categories[0].slug)
+      : `/${vertical.slug}/`;
+    
+    return {
+      name: vertical.name,
+      slug: vertical.slug,
+      href,
+      status: vertical.status,
+    };
+  });
 
 // Helper to detect current vertical from pathname
 function getCurrentVertical(pathname: string) {
@@ -71,18 +72,9 @@ const companyLinks = [
 ];
 
 const legalLinks = [
-  { name: 'Privacy Policy', href: '/about/', badge: 'Coming Soon' },
-  { name: 'Terms of Service', href: '/about/', badge: 'Coming Soon' },
+  { name: 'Privacy Policy', href: '/about/' },
+  { name: 'Terms of Service', href: '/about/' },
 ];
-
-// Badge component for coming soon status
-function ComingSoonBadge() {
-  return (
-    <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-900/50 text-amber-300 border border-amber-700/50">
-      Soon
-    </span>
-  );
-}
 
 export default function Footer() {
   const pathname = usePathname();
@@ -114,10 +106,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center"
+                    className="text-sm text-gray-400 hover:text-white transition-colors"
                   >
                     {link.name}
-                    {link.status === 'coming-soon' && <ComingSoonBadge />}
                   </Link>
                 </li>
               ))}
@@ -170,14 +161,12 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.name}>
-                  <span className="text-sm text-gray-500 flex items-center">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                  >
                     {link.name}
-                    {link.badge && (
-                      <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-900/50 text-amber-300 border border-amber-700/50">
-                        {link.badge}
-                      </span>
-                    )}
-                  </span>
+                  </Link>
                 </li>
               ))}
             </ul>
