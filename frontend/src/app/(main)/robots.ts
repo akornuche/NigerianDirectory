@@ -1,29 +1,29 @@
 import { MetadataRoute } from 'next';
 
-export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
 
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // ── Default: all bots ──────────────────────────────────────────────
       {
         userAgent: '*',
         allow: [
           '/',
           '/education/',
           '/education/schools/',
-          '/schools/',
+          '/education/universities/',
           '/blog/',
-          '/api/schools/', // Allow AI agents to access school data
           '/sitemap.xml',
-          '/sitemap-schools.xml',
         ],
         disallow: [
           '/admin/',
           '/dashboard/',
+          '/auth/',
+          '/account/',
           '/_next/',
-          '/private/',
           '/coming-soon/',
-          // Block all non-live verticals
+          // Non-live verticals
           '/health/',
           '/food/',
           '/home-services/',
@@ -33,113 +33,54 @@ export default function robots(): MetadataRoute.Robots {
           '/business/',
         ],
       },
-      // Specific rules for AI agents and generative engines
+      // ── Googlebot ─────────────────────────────────────────────────────
+      {
+        userAgent: 'Googlebot',
+        allow: ['/', '/education/', '/blog/', '/sitemap.xml'],
+        disallow: [
+          '/admin/', '/dashboard/', '/coming-soon/',
+          '/health/', '/food/', '/home-services/',
+          '/real-estate/', '/automotive/', '/travel/', '/business/',
+        ],
+      },
+      // ── AI / generative bots ──────────────────────────────────────────
       {
         userAgent: 'ChatGPT-User',
-        allow: [
-          '/',
-          '/education/',
-          '/education/schools/',
-          '/schools/',
-          '/api/schools/',
-          '/sitemap.xml',
-        ],
+        allow: ['/', '/education/', '/blog/'],
         crawlDelay: 1,
       },
       {
         userAgent: 'Claude-Web',
-        allow: [
-          '/',
-          '/education/',
-          '/education/schools/',
-          '/schools/',
-          '/api/schools/',
-          '/sitemap.xml',
-        ],
+        allow: ['/', '/education/', '/blog/'],
         crawlDelay: 1,
       },
       {
         userAgent: 'Google-Extended',
-        allow: [
-          '/',
-          '/education/',
-          '/education/schools/',
-          '/schools/',
-          '/api/schools/',
-          '/sitemap.xml',
-        ],
+        allow: ['/', '/education/', '/blog/'],
         crawlDelay: 1,
       },
-      {
-        userAgent: 'Bingbot',
-        allow: [
-          '/',
-          '/education/',
-          '/education/schools/',
-          '/schools/',
-          '/api/schools/',
-          '/sitemap.xml',
-        ],
-        crawlDelay: 1,
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: [
-          '/',
-          '/education/',
-          '/education/schools/',
-          '/schools/',
-          '/blog/',
-          '/api/schools/',
-          '/sitemap.xml',
-        ],
-        disallow: [
-          '/admin/',
-          '/dashboard/',
-          '/coming-soon/',
-          '/health/',
-          '/food/',
-          '/home-services/',
-          '/real-estate/',
-          '/automotive/',
-          '/travel/',
-          '/business/',
-        ],
-        crawlDelay: 1,
-      },
-      // AI Research and Training Bots
       {
         userAgent: 'PerplexityBot',
-        allow: [
-          '/',
-          '/education/',
-          '/schools/',
-          '/api/schools/',
-        ],
+        allow: ['/', '/education/', '/blog/'],
         crawlDelay: 2,
       },
+      // ── Rate-limit aggressive SEO crawlers ────────────────────────────
       {
-        userAgent: 'You.com-Bot',
-        allow: [
-          '/',
-          '/education/',
-          '/schools/',
-          '/api/schools/',
-        ],
-        crawlDelay: 2,
+        userAgent: 'AhrefsBot',
+        allow: ['/'],
+        crawlDelay: 10,
       },
-      // Academic and Research Bots
       {
-        userAgent: 'ia_archiver', // Internet Archive
-        allow: [
-          '/',
-          '/education/',
-          '/schools/',
-        ],
-        crawlDelay: 5,
+        userAgent: 'SemrushBot',
+        allow: ['/'],
+        crawlDelay: 10,
+      },
+      {
+        userAgent: 'DotBot',
+        disallow: ['/'],
       },
     ],
-    sitemap: [`${baseUrl}/sitemap.xml`, `${baseUrl}/ai-sitemap.xml`],
-    host: baseUrl,
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }

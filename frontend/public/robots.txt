@@ -1,18 +1,14 @@
-# Robots.txt for NigerianDirectory.com
-# Controls search engine crawling and indexing
+# robots.txt for NigerianDirectory.com.ng
+# This file is a static fallback — the canonical version is generated
+# by Next.js from src/app/(main)/robots.ts
 
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /api
-Disallow: /auth
-Disallow: /dashboard
-Disallow: /account
-Disallow: /search
-Disallow: *.json
-Disallow: *.xml
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /auth/
+Disallow: /coming-soon/
 
-# Rate limiting for aggressive crawlers
 User-agent: AhrefsBot
 Crawl-delay: 10
 
@@ -22,7 +18,4 @@ Crawl-delay: 10
 User-agent: DotBot
 Disallow: /
 
-# Sitemaps
-Sitemap: https://nigeriandirectory.com/sitemap.xml
-Sitemap: https://nigeriandirectory.com/education/schools/sitemap.xml
-Sitemap: https://nigeriandirectory.com/education/universities/sitemap.xml
+Sitemap: https://www.nigeriandirectory.com.ng/sitemap.xml

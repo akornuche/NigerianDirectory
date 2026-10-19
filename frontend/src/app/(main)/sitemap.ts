@@ -1,192 +1,196 @@
 import { MetadataRoute } from 'next';
 import { getContent } from '@/lib/content';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com.ng';
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
 
-// Nigerian states
-const states = [
-  'lagos', 'fct', 'rivers', 'oyo', 'kano', 'kaduna', 'enugu', 'anambra',
-  'delta', 'edo', 'abia', 'imo', 'cross-river', 'ogun', 'osun', 'ondo',
-  'ekiti', 'kwara', 'kogi', 'benue', 'plateau', 'nasarawa', 'niger',
-  'sokoto', 'zamfara', 'kebbi', 'katsina', 'jigawa', 'bauchi', 'gombe',
-  'adamawa', 'taraba', 'borno', 'yobe', 'bayelsa', 'akwa-ibom', 'ebonyi'
+// Last time the site structure changed — update this when adding new static pages
+const SITE_UPDATED = new Date('2026-10-19');
+
+// All 36 states + FCT
+const STATES = [
+  'abia', 'adamawa', 'akwa-ibom', 'anambra', 'bauchi', 'bayelsa',
+  'benue', 'borno', 'cross-river', 'delta', 'ebonyi', 'edo',
+  'ekiti', 'enugu', 'fct', 'gombe', 'imo', 'jigawa',
+  'kaduna', 'kano', 'katsina', 'kebbi', 'kogi', 'kwara',
+  'lagos', 'nasarawa', 'niger', 'ogun', 'ondo', 'osun',
+  'oyo', 'plateau', 'rivers', 'sokoto', 'taraba', 'yobe', 'zamfara',
 ];
 
-// Fetch all schools from database for sitemap
-async function getAllSchools(): Promise<Array<{ state: string; area: string; slug: string; updated_at: string }>> {
-  try {
-    const response = await fetch(`${API_URL}/schools?limit=1000`, {
-      next: { revalidate: 3600 }, // Cache for 1 hour
-    });
-    if (!response.ok) return [];
-    const data = await response.json();
-    return data.data?.map((school: { state: string; area: string; slug: string; updated_at: string }) => ({
-      state: school.state.toLowerCase().replace(/ /g, '-'),
-      area: school.area.toLowerCase().replace(/ /g, '-'),
-      slug: school.slug,
-      updated_at: school.updated_at,
-    })) || [];
-  } catch (error) {
-    console.error('Error fetching schools for sitemap:', error);
-    return [];
-  }
-}
+// ─── Data fetchers ────────────────────────────────────────────────────────────
 
-// Fetch all universities from database for sitemap
-async function getAllUniversities(): Promise<Array<{ state: string; city: string; slug: string; updated_at: string }>> {
+async function getAllSchools(): Promise<
+  Array<{ state: string; area: string; slug: string; updated_at: string }>
+> {
   try {
-    // Universities can exceed 1000 — fetch in two pages to be safe
-    const fetches = await Promise.all([
-      fetch(`${API_URL}/schools?institution_category=university&limit=500&offset=0`, { next: { revalidate: 3600 } }),
-      fetch(`${API_URL}/schools?institution_category=university&limit=500&offset=500`, { next: { revalidate: 3600 } }),
-    ]);
-    const pages = await Promise.all(
-      fetches.map(async (r) => {
-        if (!r.ok) return [];
-        const d = await r.json();
-        return d.data ?? [];
-      })
+    // Schools: 408 records — one request is sufficient
+    const res = await fetch(
+      `${API_URL}/schools?institution_category=school&limit=500`,
+      { next: { revalidate: 3600 } },
     );
-    const all = pages.flat();
-    return all.map((uni: { state: string; city: string; slug: string; updated_at: string }) => ({
-      state: uni.state.toLowerCase().replace(/ /g, '-'),
-      city: (uni.city ?? uni.state).toLowerCase().replace(/ /g, '-'),
-      slug: uni.slug,
-      updated_at: uni.updated_at,
-    }));
-  } catch (error) {
-    console.error('Error fetching universities for sitemap:', error);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return (data.data ?? []).map(
+      (s: { state: string; area: string; slug: string; updated_at: string }) => ({
+        state: s.state.toLowerCase().replace(/ /g, '-'),
+        area: (s.area ?? s.state).toLowerCase().replace(/ /g, '-'),
+        slug: s.slug,
+        updated_at: s.updated_at,
+      }),
+    );
+  } catch {
     return [];
   }
 }
 
-// Fetch blog posts for sitemap
+async function getAllUniversities(): Promise<
+  Array<{ state: string; city: string; slug: string; updated_at: string }>
+> {
+  try {
+    // Universities: 304 records — two parallel requests to be future-proof
+    const [r1, r2] = await Promise.all([
+      fetch(`${API_URL}/schools?institution_category=university&limit=500&offset=0`, {
+        next: { revalidate: 3600 },
+      }),
+      fetch(`${API_URL}/schools?institution_category=university&limit=500&offset=500`, {
+        next: { revalidate: 3600 },
+      }),
+    ]);
+    const [d1, d2] = await Promise.all([
+      r1.ok ? r1.json() : { data: [] },
+      r2.ok ? r2.json() : { data: [] },
+    ]);
+    return [...(d1.data ?? []), ...(d2.data ?? [])].map(
+      (u: { state: string; city: string; slug: string; updated_at: string }) => ({
+        state: u.state.toLowerCase().replace(/ /g, '-'),
+        city: (u.city ?? u.state).toLowerCase().replace(/ /g, '-'),
+        slug: u.slug,
+        updated_at: u.updated_at,
+      }),
+    );
+  } catch {
+    return [];
+  }
+}
+
 async function getBlogPosts(): Promise<Array<{ slug: string; publishedAt: string }>> {
   try {
-    const content = getContent();
-    const posts = await content.getAllPosts();
-    return posts.map((post) => ({
-      slug: post.slug,
-      publishedAt: post.publishedAt,
-    }));
-  } catch (error) {
-    console.error('Error fetching blog posts for sitemap:', error);
+    const posts = await getContent().getAllPosts();
+    return posts.map((p) => ({ slug: p.slug, publishedAt: p.publishedAt }));
+  } catch {
     return [];
   }
 }
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const currentDate = new Date();
-  const schools = await getAllSchools();
-  const universities = await getAllUniversities();
-  const blogPosts = await getBlogPosts();
+// ─── Sitemap ──────────────────────────────────────────────────────────────────
 
-  // Static pages - only include live pages
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [schools, universities, blogPosts] = await Promise.all([
+    getAllSchools(),
+    getAllUniversities(),
+    getBlogPosts(),
+  ]);
+
+  // ── Static pages ──────────────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: BASE_URL,
-      lastModified: currentDate,
+      url: `${BASE_URL}/`,
+      lastModified: SITE_UPDATED,
       changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${BASE_URL}/about/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${BASE_URL}/contact/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      priority: 1.0,
     },
     {
       url: `${BASE_URL}/education/schools/`,
-      lastModified: currentDate,
+      lastModified: SITE_UPDATED,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/education/universities/`,
-      lastModified: currentDate,
+      lastModified: SITE_UPDATED,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/blog/`,
-      lastModified: currentDate,
+      lastModified: SITE_UPDATED,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/claim/`,
-      lastModified: currentDate,
+      url: `${BASE_URL}/about/`,
+      lastModified: SITE_UPDATED,
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/contact/`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/claim/`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
   ];
 
-  // State listing pages for schools
-  const statePages: MetadataRoute.Sitemap = states.map((state) => ({
+  // ── State listing pages ───────────────────────────────────────────────────
+  const schoolStatePages: MetadataRoute.Sitemap = STATES.map((state) => ({
     url: `${BASE_URL}/education/schools/${state}/`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly',
+    lastModified: SITE_UPDATED,
+    changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
 
-  // State listing pages for universities
-  const universityStatePages: MetadataRoute.Sitemap = states.map((state) => ({
+  const universityStatePages: MetadataRoute.Sitemap = STATES.map((state) => ({
     url: `${BASE_URL}/education/universities/${state}/`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly',
+    lastModified: SITE_UPDATED,
+    changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
 
-  // School profile pages
-  const schoolPages: MetadataRoute.Sitemap = schools.map((school) => ({
-    url: `${BASE_URL}/education/schools/${school.state}/${school.area}/${school.slug}/`,
-    lastModified: school.updated_at ? new Date(school.updated_at) : currentDate,
-    changeFrequency: 'weekly',
+  // ── School profile pages (/education/schools/[state]/[area]/[slug]/) ──────
+  const schoolPages: MetadataRoute.Sitemap = schools.map((s) => ({
+    url: `${BASE_URL}/education/schools/${s.state}/${s.area}/${s.slug}/`,
+    lastModified: s.updated_at ? new Date(s.updated_at) : SITE_UPDATED,
+    changeFrequency: 'weekly' as const,
     priority: 0.9,
   }));
 
-  // School blog pages
-  const schoolBlogPages: MetadataRoute.Sitemap = schools.map((school) => ({
-    url: `${BASE_URL}/education/schools/${school.state}/${school.area}/${school.slug}/blog/`,
-    lastModified: school.updated_at ? new Date(school.updated_at) : currentDate,
-    changeFrequency: 'weekly',
+  // ── School blog pages ─────────────────────────────────────────────────────
+  const schoolBlogPages: MetadataRoute.Sitemap = schools.map((s) => ({
+    url: `${BASE_URL}/education/schools/${s.state}/${s.area}/${s.slug}/blog/`,
+    lastModified: s.updated_at ? new Date(s.updated_at) : SITE_UPDATED,
+    changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
 
-  // University profile pages
-  const universityPages: MetadataRoute.Sitemap = universities.map((uni) => ({
-    url: `${BASE_URL}/education/universities/${uni.state}/${uni.city}/${uni.slug}/`,
-    lastModified: uni.updated_at ? new Date(uni.updated_at) : currentDate,
-    changeFrequency: 'weekly',
+  // ── University profile pages (/education/universities/[state]/[city]/[slug]/)
+  const universityPages: MetadataRoute.Sitemap = universities.map((u) => ({
+    url: `${BASE_URL}/education/universities/${u.state}/${u.city}/${u.slug}/`,
+    lastModified: u.updated_at ? new Date(u.updated_at) : SITE_UPDATED,
+    changeFrequency: 'weekly' as const,
     priority: 0.9,
   }));
 
-  // Main blog posts
-  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}/`,
-    lastModified: new Date(post.publishedAt),
-    changeFrequency: 'monthly',
+  // ── Blog post pages ───────────────────────────────────────────────────────
+  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${BASE_URL}/blog/${p.slug}/`,
+    lastModified: new Date(p.publishedAt),
+    changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
-
-  // Note: Coming Soon pages are intentionally excluded from sitemap
-  // Non-live verticals (/health/, /food/, /home-services/, /real-estate/,
-  // /automotive/, /travel/, /business/) are not included
 
   return [
-    ...staticPages,
-    ...statePages,
-    ...universityStatePages,
-    ...schoolPages,
-    ...schoolBlogPages,
-    ...universityPages,
-    ...blogPostPages,
+    ...staticPages,        //   7 pages
+    ...schoolStatePages,   //  37 pages
+    ...universityStatePages, // 37 pages
+    ...schoolPages,        // 408 pages
+    ...schoolBlogPages,    // 408 pages
+    ...universityPages,    // 304 pages
+    ...blogPostPages,      // n  pages
   ];
 }
