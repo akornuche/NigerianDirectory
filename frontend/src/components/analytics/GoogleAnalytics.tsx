@@ -11,6 +11,7 @@ import Script from 'next/script';
  */
 
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+const GA_ID_2 = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID_2;
 const PLACEHOLDER_ID = 'G-XXXXXXXXXX';
 
 declare global {
@@ -25,14 +26,18 @@ function isConfigured(id: string | undefined): id is string {
 }
 
 export default function GoogleAnalytics() {
-  if (!isConfigured(GA_ID)) {
-    return null;
-  }
+  const primary = isConfigured(GA_ID) ? GA_ID : null;
+  const secondary = isConfigured(GA_ID_2) ? GA_ID_2 : null;
+
+  if (!primary && !secondary) return null;
+
+  // Use primary as the gtag.js load target; both get config calls
+  const loadId = primary ?? secondary!;
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${loadId}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics-init" strategy="afterInteractive">
@@ -40,7 +45,8 @@ export default function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', { send_page_view: true });
+          ${primary ? `gtag('config', '${primary}', { send_page_view: true });` : ''}
+          ${secondary ? `gtag('config', '${secondary}', { send_page_view: true });` : ''}
         `}
       </Script>
     </>
