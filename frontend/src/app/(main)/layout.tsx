@@ -79,9 +79,7 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'your-google-verification-code',
   },
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL,
-  },
+  // No global canonical — each page sets its own via generateMetadata
 };
 
 export default function RootLayout({
