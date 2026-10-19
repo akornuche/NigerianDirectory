@@ -2,7 +2,7 @@
  * Header Component
  * 
  * This component now uses the MegaMenu for navigation.
- * The MegaMenu includes all vertical dropdowns with Coming Soon indicators.
+ * The MegaMenu includes live vertical dropdowns only.
  */
 
 import MegaMenu from './MegaMenu';
