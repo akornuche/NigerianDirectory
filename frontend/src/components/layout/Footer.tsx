@@ -91,8 +91,8 @@ export default function Footer() {
               <Image src="/naijadir.png" alt="NigerianDirectory" width={96} height={96} className="h-24 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-gray-400">
-              Nigeria&apos;s comprehensive directory platform. Find schools, healthcare, 
-              restaurants, services, and more across all 36 states.
+              Comprehensive Nigerian directory platform. Find schools, universities, 
+              and more across all 36 states.
             </p>
           </div>
 
