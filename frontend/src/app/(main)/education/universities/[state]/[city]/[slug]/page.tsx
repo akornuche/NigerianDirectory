@@ -128,9 +128,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const metaDescription = uni.meta_description ||
         `Learn about ${uni.name} in ${uni.city}, ${uni.state}. Comprehensive details on academic programs, faculties, campus life, and more.`;
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
+    const uniUrl = `${siteUrl}/education/universities/${resolvedParams.state}/${resolvedParams.city}/${resolvedParams.slug}/`;
+
     return {
         title: uni.meta_title || `${uni.name} - ${uni.city}, ${uni.state} | Higher Education Profile`,
         description: metaDescription,
+        alternates: {
+            canonical: uniUrl,
+        },
+        openGraph: {
+            title: uni.meta_title || `${uni.name} - Complete University Profile`,
+            description: metaDescription,
+            type: 'website',
+            url: uniUrl,
+            images: uni.hero_image_url ? [{ url: uni.hero_image_url }] : undefined,
+        },
     };
 }
 

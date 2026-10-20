@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     creator: '@nigeriandir',
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
   // No global canonical — each page sets its own via generateMetadata
 };

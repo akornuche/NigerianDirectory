@@ -163,14 +163,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metaDescription = school.meta_description ||
     `Discover ${school.name} in ${school.area}, ${school.city}. Explore programs, facilities, student life, achievements, and admissions for this ${school.type} school in ${school.state}.`;
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
+  const schoolUrl = `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/`;
+
   return {
     title: school.meta_title || `${school.name} - ${school.area}, ${school.state} | Profile, Programs & Admissions`,
     description: metaDescription,
+    alternates: {
+      canonical: schoolUrl,
+    },
     openGraph: {
       title: school.meta_title || `${school.name} - Complete School Profile`,
       description: metaDescription,
       type: 'website',
-      url: `/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/`,
+      url: schoolUrl,
       images: school.hero_image_url ? [{ url: school.hero_image_url }] : undefined,
     },
   };
@@ -184,7 +190,7 @@ export default async function SchoolPage({ params }: Props) {
     notFound();
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
   const schoolUrl = `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/`;
 
   // Generate dynamic content sections
