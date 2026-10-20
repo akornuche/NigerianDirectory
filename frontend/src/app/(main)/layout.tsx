@@ -76,9 +76,6 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
     creator: '@nigeriandir',
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  },
   // No global canonical — each page sets its own via generateMetadata
 };
 
