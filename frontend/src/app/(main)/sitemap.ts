@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { neon } from '@neondatabase/serverless';
 import { getContent } from '@/lib/content';
+import { assessContentQuality } from '@/lib/content-quality';
 
 // ISR: generate once, cache for 24 hours
 // Googlebot never triggers a cold DB query
@@ -82,10 +83,13 @@ async function getSchools() {
   try {
     const sql = neon(process.env.DATABASE_URL!);
     const rows = await sql`
-      SELECT slug, state, area, updated_at FROM schools
+      SELECT slug, state, area, updated_at,
+             enriched_history, enriched_academics,
+             enriched_campus_info, enriched_student_life
+      FROM schools
       WHERE institution_category = 'school' ORDER BY state, name
     `;
-    return rows.map((r) => ({
+    return rows.filter((r) => assessContentQuality(r).indexable).map((r) => ({
       slug: r.slug as string,
       state: toSlug(r.state as string),
       area: toSlug((r.area ?? r.state) as string),
@@ -98,10 +102,13 @@ async function getUniversities() {
   try {
     const sql = neon(process.env.DATABASE_URL!);
     const rows = await sql`
-      SELECT slug, state, city, updated_at FROM schools
+      SELECT slug, state, city, updated_at,
+             enriched_history, enriched_academics,
+             enriched_campus_info, enriched_student_life
+      FROM schools
       WHERE institution_category = 'university' ORDER BY state, name
     `;
-    return rows.map((r) => ({
+    return rows.filter((r) => assessContentQuality(r).indexable).map((r) => ({
       slug: r.slug as string,
       state: toSlug(r.state as string),
       city: toSlug((r.city ?? r.state) as string),

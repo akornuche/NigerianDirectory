@@ -537,7 +537,8 @@ class ImageCrawler:
         self.stats['total_processed'] += 1
         return result
     
-    def run_batch_crawl(self, limit: int = None, offset: int = 0) -> Dict[str, int]:
+    def run_batch_crawl(self, limit: int = None, offset: int = 0,
+                        institution_category: str = 'school') -> Dict[str, int]:
         """
         Run image crawling for multiple schools
         """
@@ -545,7 +546,11 @@ class ImageCrawler:
         logger.info("=" * 60)
         
         # Get schools without images
-        schools = self.get_schools_needing_images(limit=limit or 50, offset=offset)
+        schools = self.get_schools_needing_images(
+            limit=limit or 50,
+            offset=offset,
+            institution_category=institution_category,
+        )
         
         if not schools:
             logger.info("✅ All schools have images!")
@@ -598,7 +603,8 @@ class ImageCrawler:
         
         return self.stats
     
-    def get_schools_needing_images(self, limit: int = 50, offset: int = 0) -> List[Dict[str, Any]]:
+    def get_schools_needing_images(self, limit: int = 50, offset: int = 0,
+                                   institution_category: str = 'school') -> List[Dict[str, Any]]:
         """Get schools that need images"""
         conn = db_manager.get_connection()
         
@@ -607,13 +613,14 @@ class ImageCrawler:
                 SELECT id, name, slug, state, city, area, website, logo_url,
                        hero_image_url, institution_category
                 FROM schools
-                WHERE logo_url IS NULL OR hero_image_url IS NULL
+                                WHERE institution_category = %s
+                                    AND (logo_url IS NULL OR hero_image_url IS NULL)
                 ORDER BY verified DESC, claimed DESC, name
                 LIMIT %s OFFSET %s
             """
             
             with conn.cursor() as cursor:
-                cursor.execute(query, (limit, offset))
+                cursor.execute(query, (institution_category, limit, offset))
                 results = cursor.fetchall()
                 
                 return [dict(row) for row in results]
@@ -658,6 +665,14 @@ RobustSearchEngine.search_duckduckgo_images = search_duckduckgo_images
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Crawl images for one institution category")
+    parser.add_argument('--category', default='school', help='Institution category to process')
+    parser.add_argument('--limit', type=int, help='Maximum number of records to process')
+    parser.add_argument('--offset', type=int, default=0, help='Queue offset for resuming a batch')
+    args = parser.parse_args()
+
     # Only configure root logging when this file is run directly, not when
     # it is imported by another entry point.
     root = logging.getLogger()
@@ -674,5 +689,8 @@ if __name__ == "__main__":
     # Test the image crawler
     crawler = ImageCrawler()
     
-    # Test with a few schools
-    crawler.run_batch_crawl(limit=3)
+    crawler.run_batch_crawl(
+        limit=args.limit,
+        offset=args.offset,
+        institution_category=args.category,
+    )

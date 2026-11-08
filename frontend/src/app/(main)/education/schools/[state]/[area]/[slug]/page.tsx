@@ -19,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { getSchoolByPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
+import { assessContentQuality } from '@/lib/content-quality';
 
 type ManagementMember = {
   name: string;
@@ -165,6 +166,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
   const schoolUrl = `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/`;
+  const contentQuality = assessContentQuality(school);
 
   return {
     title: school.meta_title || `${school.name} - ${school.area}, ${school.state} | Profile, Programs & Admissions`,
@@ -172,6 +174,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: schoolUrl,
     },
+    robots: contentQuality.indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     openGraph: {
       title: school.meta_title || `${school.name} - Complete School Profile`,
       description: metaDescription,

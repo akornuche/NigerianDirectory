@@ -5,7 +5,7 @@ This guide explains how to configure Google Analytics 4 (GA4) and Google Search 
 ## Quick Start
 
 1. **Get your GA4 Measurement ID** from Google Analytics
-2. **Add to `.env.local`**: `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX`
+2. **Add to `.env.local`**: `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-6RP3Q0FM2N`
 3. **Get your Search Console verification code**
 4. **Add to `.env.local`**: `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-code-here`
 5. **Restart dev server**
@@ -38,7 +38,7 @@ This guide explains how to configure Google Analytics 4 (GA4) and Google Search 
 Update `frontend/.env.local`:
 
 ```env
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-6RP3Q0FM2N
 ```
 
 Replace `G-XXXXXXXXXX` with your actual Measurement ID.
@@ -266,7 +266,7 @@ NEXT_PUBLIC_SITE_URL=https://nigeriandirectory.com
 NODE_ENV=production
 
 # Google Analytics & Search Console (Production IDs)
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-PROD123XYZ
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-6RP3Q0FM2N
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=prod_verification_code_here
 ```
 

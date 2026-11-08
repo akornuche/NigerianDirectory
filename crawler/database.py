@@ -257,6 +257,15 @@ class DatabaseManager:
         conn = self.get_connection()
         
         try:
+            # Clean NUL characters from all string values
+            cleaned_data = {}
+            for key, value in enrichment_data.items():
+                if isinstance(value, str):
+                    # Remove NUL bytes (0x00) that cause PostgreSQL errors
+                    cleaned_data[key] = value.replace('\x00', '')
+                else:
+                    cleaned_data[key] = value
+            
             # Prepare enrichment data
             allowed_fields = [
                 'enriched_history', 'enriched_academics', 'enriched_campus_info',
@@ -271,21 +280,21 @@ class DatabaseManager:
             values = []
             
             for field in allowed_fields:
-                if field in enrichment_data and enrichment_data[field] is not None:
+                if field in cleaned_data and cleaned_data[field] is not None:
                     updates.append(f"{field} = %s")
                     
                     # Handle JSON fields
                     if field in ['enriched_notable_alumni', 'enriched_recent_news', 'content_sources']:
-                        values.append(self.validate_json_field(enrichment_data[field]))
+                        values.append(self.validate_json_field(cleaned_data[field]))
                     else:
-                        values.append(enrichment_data[field])
+                        values.append(cleaned_data[field])
             
             if not updates:
                 logger.warning("No valid enrichment data to update")
                 return False
             
             # Add enriched_at timestamp
-            if 'enriched_at' not in enrichment_data:
+            if 'enriched_at' not in cleaned_data:
                 updates.append("enriched_at = NOW()")
             
             updates.append("updated_at = NOW()")

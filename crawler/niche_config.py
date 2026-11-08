@@ -283,9 +283,94 @@ HOSPITAL = NicheConfig(
 )
 
 
+SECONDARY_SCHOOL = NicheConfig(
+    key="secondary_school",
+    institution_category="school",
+    display_name="Secondary School",
+    type_label="secondary school",
+
+    section_labels={
+        "history": "School History & Background",
+        "academics": "Academic Programs & Curriculum",
+        "campus": "Facilities & Infrastructure",
+        "student_life": "Student Life & Activities",
+    },
+
+    keywords={
+        "history": [
+            'history', 'founded', 'established', 'began', 'since', 'origin',
+            'background', 'heritage', 'years', 'milestone', 'pioneer',
+            'evolution', 'growth', 'tradition', 'decade', 'legacy',
+            'principal', 'headmaster', 'headmistress', 'founder',
+        ],
+        "academics": [
+            'subject', 'subjects', 'curriculum', 'programme', 'program',
+            'academic', 'academics', 'course', 'courses', 'class',
+            'waec', 'jamb', 'neco', 'examination', 'exam', 'exams',
+            'secondary', 'form', 'ss1', 'ss2', 'ss3', 'jss1', 'jss2', 'jss3',
+            'senior secondary', 'junior secondary', 'science', 'arts',
+            'commercial', 'technical', 'admission', 'cutoff', 'utme',
+        ],
+        "campus": [
+            'facility', 'facilities', 'building', 'buildings', 'campus',
+            'classroom', 'classrooms', 'laboratory', 'laboratories', 'lab',
+            'library', 'libraries', 'hostel', 'accommodation', 'dormitory',
+            'field', 'playground', 'court', 'hall', 'auditorium',
+            'infrastructure', 'equipment', 'clinic', 'healthcare', 'canteen',
+        ],
+        "student_life": [
+            'student', 'students', 'club', 'clubs', 'society', 'societies',
+            'association', 'activities', 'activity', 'sport', 'sports',
+            'cultural', 'festival', 'event', 'events', 'extracurricular',
+            'union', 'fellowship', 'career', 'development', 'counselling',
+            'welfare', 'conduct', 'discipline', 'orientation',
+        ],
+    },
+
+    subpage_hints={
+        "history": [
+            'about', 'about-us', 'aboutus', 'history', 'our-history',
+            'heritage', 'overview', 'background', 'profile', 'vision',
+            'mission', 'who-we-are', 'principals',
+        ],
+        "academics": [
+            'academic', 'academics', 'curriculum', 'programme', 'programmes',
+            'program', 'programs', 'subject', 'subjects', 'course', 'courses',
+            'class', 'classes', 'admission', 'admissions', 'requirements',
+            'examination', 'exam', 'waec', 'jamb', 'neco',
+        ],
+        "campus": [
+            'campus', 'facility', 'facilities', 'library', 'libraries',
+            'hostel', 'accommodation', 'laboratory', 'laboratories',
+            'infrastructure', 'building', 'buildings', 'sports',
+        ],
+        "student_life": [
+            'student-life', 'studentlife', 'student', 'students',
+            'club', 'clubs', 'society', 'societies', 'association',
+            'activities', 'sport', 'sports', 'cultural', 'development',
+        ],
+    },
+
+    query_templates=[
+        '"{name}" {state} Nigeria secondary school history',
+        '"{name}" Nigeria academic curriculum programs',
+        '"{name}" {city_or_state} secondary school facilities',
+        '"{name}" Nigeria student activities clubs',
+        '"{name}" WAEC JAMB NECO exam results',
+        '{name} {city_or_state} secondary school information',
+    ],
+
+    seo_title_template="{name} — Secondary School in {state} | NigerianDirectory",
+    seo_description_template=(
+        "Explore {name}, a secondary school in {city}, {state}. "
+        "Discover academic programs, facilities, admission and student life."
+    ),
+)
+
+
 NICHES: Dict[str, NicheConfig] = {
     config.key: config
-    for config in (UNIVERSITY, HOSPITAL)
+    for config in (SECONDARY_SCHOOL, UNIVERSITY, HOSPITAL)
 }
 
 

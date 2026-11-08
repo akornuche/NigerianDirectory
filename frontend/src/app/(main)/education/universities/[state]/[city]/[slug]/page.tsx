@@ -18,6 +18,7 @@ import {
 import { api, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 import SourceReferences from '@/components/content/SourceReferences';
+import { assessContentQuality } from '@/lib/content-quality';
 
 async function getUniversity(state: string, city: string, slug: string): Promise<School | null> {
     try {
@@ -130,6 +131,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
     const uniUrl = `${siteUrl}/education/universities/${resolvedParams.state}/${resolvedParams.city}/${resolvedParams.slug}/`;
+    const contentQuality = assessContentQuality(uni);
 
     return {
         title: uni.meta_title || `${uni.name} - ${uni.city}, ${uni.state} | Higher Education Profile`,
@@ -137,6 +139,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         alternates: {
             canonical: uniUrl,
         },
+        robots: contentQuality.indexable
+            ? { index: true, follow: true }
+            : { index: false, follow: true },
         openGraph: {
             title: uni.meta_title || `${uni.name} - Complete University Profile`,
             description: metaDescription,

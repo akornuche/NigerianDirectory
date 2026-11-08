@@ -23,7 +23,9 @@ const categoryLinks = verticals
   });
 
 // Helper to detect current vertical from pathname
-function getCurrentVertical(pathname: string) {
+function getCurrentVertical(pathname: string | null) {
+  if (!pathname) return null;
+
   // Check which vertical matches the current path
   for (const vertical of verticals) {
     if (pathname.startsWith(`/${vertical.slug}/`) || pathname.startsWith(`/coming-soon/${vertical.slug}`)) {
@@ -40,7 +42,7 @@ function getCurrentVertical(pathname: string) {
 }
 
 // Dynamic resource links based on current vertical
-function getResourceLinks(pathname: string) {
+function getResourceLinks(pathname: string | null) {
   const currentVertical = getCurrentVertical(pathname);
   
   // Build dynamic "All States" link based on current vertical

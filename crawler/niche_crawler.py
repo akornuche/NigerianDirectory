@@ -825,10 +825,12 @@ class NicheCrawler:
                 self.stats['quality_rejected'] += 1
                 return False
 
+            # NEW POLICY: Save EVERYTHING that passes basic validation
+            # Don't reject based on content length - we can enhance later
+            # Just log if content is sparse
             if not self._meets_quality(final):
-                self.logger.warning(f"❌ Insufficient content: {name}")
+                self.logger.warning(f"⚠️  Sparse content: {name} (will save anyway)")
                 self.stats['insufficient'] += 1
-                return False
 
             seo = self._build_seo(institution, final)
             final.update(seo)
