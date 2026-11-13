@@ -6,7 +6,7 @@
 require('dotenv').config();
 
 // In Vercel serverless, just export the app without trying to listen
-const app = require('./backend/src/app');
+const app = require('../backend/src/app');
 
 // Add a test endpoint to verify serverless function is working
 app.get('/test-serverless', (req, res) => {
@@ -21,4 +21,3 @@ app.get('/test-serverless', (req, res) => {
 });
 
 module.exports = app;
-
