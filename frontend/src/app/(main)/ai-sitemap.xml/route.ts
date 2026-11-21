@@ -66,9 +66,7 @@ export async function GET() {
 
     // Generate AI-optimized sitemap
     const aiSitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:ai="https://schema.org/"
-        xmlns:edu="https://schema.org/EducationalOrganization">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- AI Agents Landing Page -->
   <url>
@@ -76,7 +74,6 @@ export async function GET() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <ai:context>Nigerian Schools Directory - AI Agent Access Point</ai:context>
   </url>
 
   <!-- AI API Endpoints -->
@@ -85,7 +82,6 @@ export async function GET() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-    <ai:context>Nigerian Schools API for AI Agents</ai:context>
   </url>
 
   <url>
@@ -93,7 +89,6 @@ export async function GET() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <ai:context>Nigerian Education System Context for AI Understanding</ai:context>
   </url>
 
   <!-- Nigerian States for Geographic Queries -->
@@ -112,10 +107,6 @@ export async function GET() {
     <lastmod>${new Date(school.updated_at || Date.now()).toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <edu:name>${escapeXml(school.name)}</edu:name>
-    <edu:location>${escapeXml(school.location?.full_address || `${school.city}, ${school.state}, Nigeria`)}</edu:location>
-    <edu:type>${escapeXml(school.education?.type || school.type || 'school')}</edu:type>
-    <ai:context>Nigerian ${school.education?.type || school.type} in ${school.location?.city || school.city}, ${school.location?.state || school.state} State, Nigeria</ai:context>
   </url>`).join('')}
 
   <!-- AI Agent Help Pages -->
@@ -124,7 +115,6 @@ export async function GET() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <ai:context>Guide for AI Agents accessing Nigerian School Information</ai:context>
   </url>
 
 </urlset>`;
@@ -183,7 +173,6 @@ function generateStateUrls() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <ai:context>Schools in ${state} State, Nigeria</ai:context>
   </url>`).join('');
 }
 
@@ -212,7 +201,6 @@ function generateCityUrls() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <ai:context>Schools in ${city.name}, ${city.state} State, Nigeria</ai:context>
   </url>`).join('');
 }
 
@@ -234,7 +222,6 @@ function generateEducationCategoryUrls() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <ai:context>Nigerian ${category.replace('-', ' ')} directory</ai:context>
   </url>`).join('');
 }
 
