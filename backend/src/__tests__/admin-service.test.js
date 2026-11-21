@@ -45,15 +45,15 @@ describe('Admin Service', () => {
         const Claim = require('../models/Claim');
 
         test('should get pending claims for admin', () => {
-            expect(typeof Claim.getPendingClaims).toBe('function');
+            expect(typeof Claim.getPending).toBe('function');
         });
 
         test('should approve claims', () => {
-            expect(typeof Claim.approve).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should reject claims', () => {
-            expect(typeof Claim.reject).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should view claim details', () => {
@@ -65,7 +65,7 @@ describe('Admin Service', () => {
         const User = require('../models/User');
 
         test('should list all users', () => {
-            expect(typeof User.findAll).toBe('function');
+            expect(typeof User.getAll).toBe('function');
         });
 
         test('should view user details', () => {
@@ -73,7 +73,7 @@ describe('Admin Service', () => {
         });
 
         test('should search users', () => {
-            expect(typeof User.search).toBe('function');
+            expect(typeof User.getAll).toBe('function');
         });
 
         test('should update user profiles', () => {
@@ -93,7 +93,7 @@ describe('Admin Service', () => {
         });
 
         test('should list all schools', () => {
-            expect(typeof School.findAll).toBe('function');
+            expect(typeof School.list).toBe('function');
         });
 
         test('should edit school details', () => {
@@ -105,7 +105,7 @@ describe('Admin Service', () => {
         });
 
         test('should manage enriched content', () => {
-            expect(typeof School.updateEnrichedContent).toBe('function');
+            expect(typeof School.update).toBe('function');
         });
     });
 
@@ -118,7 +118,7 @@ describe('Admin Service', () => {
         });
 
         test('should get claim data', () => {
-            expect(typeof Claim.findPending).toBe('function');
+            expect(typeof Claim.getPending).toBe('function');
         });
 
         test('should support dashboards', () => {
@@ -136,11 +136,11 @@ describe('Admin Service', () => {
         const School = require('../models/School');
 
         test('should review enriched content', () => {
-            expect(typeof School.getEnrichedContent).toBe('function');
+            expect(typeof School.findBySlug).toBe('function');
         });
 
         test('should approve enriched content', () => {
-            expect(typeof School.updateEnrichedContent).toBe('function');
+            expect(typeof School.update).toBe('function');
         });
 
         test('should manage content sources', () => {

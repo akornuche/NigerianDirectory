@@ -8,7 +8,6 @@
 const express = require('express');
 const router = express.Router();
 const School = require('../models/School');
-const Location = require('../models/Location');
 const { getCache, setCache, CACHE_TTL } = require('../config/redis');
 
 // ============================================

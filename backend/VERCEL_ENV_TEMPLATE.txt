@@ -20,5 +20,7 @@ DB_PASSWORD=your_neon_password_here
 # Application Configuration
 JWT_SECRET=your_32_character_secure_random_string_here_min_32_chars
 FRONTEND_URL=https://nigeriandirectory.com
+# Same value in the frontend project; exempts server-side renders from rate limits
+INTERNAL_API_KEY=generate_with_openssl_rand_hex_32
 PORT=3000
 NODE_ENV=production

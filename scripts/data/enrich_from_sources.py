@@ -1,3 +1,4 @@
+import os
 import psycopg2
 import requests
 from bs4 import BeautifulSoup
@@ -25,7 +26,7 @@ def enrich_schools():
         port=5433,
         database="nigerian_directory",
         user="postgres",
-        password="devpassword123"
+        password=os.environ["DB_PASSWORD"]  # set DB_PASSWORD; not stored in source
     )
     cur = conn.cursor()
     cur.execute("SELECT id, slug, name, content_sources FROM schools WHERE content_sources IS NOT NULL AND (enriched_history IS NULL OR enriched_history = '')")

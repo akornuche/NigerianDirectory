@@ -63,6 +63,9 @@ services:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
       - PORT=5000
       - JWT_SECRET=${JWT_SECRET}
+      # nginx is the one proxy in front of the API; read the client IP from it
+      - TRUST_PROXY=1
+      - INTERNAL_API_KEY=${INTERNAL_API_KEY}
     depends_on:
       - postgres
       - redis
@@ -79,6 +82,7 @@ services:
     environment:
       - NEXT_PUBLIC_API_URL=https://${DOMAIN}/api
       - NEXT_PUBLIC_SITE_URL=https://${DOMAIN}
+      - INTERNAL_API_KEY=${INTERNAL_API_KEY}
     depends_on:
       - backend
     networks:

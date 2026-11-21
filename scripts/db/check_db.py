@@ -1,3 +1,4 @@
+import os
 import psycopg2
 import json
 
@@ -6,7 +7,7 @@ conn = psycopg2.connect(
     port=5433,
     database="nigerian_directory",
     user="postgres",
-    password="devpassword123"
+    password=os.environ["DB_PASSWORD"]  # set DB_PASSWORD; not stored in source
 )
 
 cur = conn.cursor()

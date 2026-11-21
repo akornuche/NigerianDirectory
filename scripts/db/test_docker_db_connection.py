@@ -1,3 +1,4 @@
+import os
 import psycopg2
 try:
     conn = psycopg2.connect(
@@ -5,7 +6,7 @@ try:
         port=5433,
         database="nigerian_directory",
         user="postgres",
-        password="devpassword123"
+        password=os.environ["DB_PASSWORD"]  # set DB_PASSWORD; not stored in source
     )
     conn.close()
     print("✅ Connection to Docker database successful.")
