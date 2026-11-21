@@ -3,23 +3,32 @@
 Direct database seeder for schools - bypasses npm dependencies
 """
 import json
+import os
 import psycopg2
 from slugify import slugify
 import sys
 
-# Database connection
+# Database connection. Credentials come from the environment rather than the
+# source file; the defaults match the local docker-compose database except
+# for the password, which must be supplied.
+password = os.environ.get("DB_PASSWORD")
+if not password:
+    print("Set DB_PASSWORD (and optionally DB_HOST, DB_PORT, DB_NAME, DB_USER).")
+    sys.exit(1)
+
 conn = psycopg2.connect(
-    host="localhost",
-    port=5433,
-    database="nigerian_directory",
-    user="postgres",
-    password="devpassword123"
+    host=os.environ.get("DB_HOST", "localhost"),
+    port=int(os.environ.get("DB_PORT", "5433")),
+    database=os.environ.get("DB_NAME", "nigerian_directory"),
+    user=os.environ.get("DB_USER", "postgres"),
+    password=password,
 )
 cur = conn.cursor()
 
-# Read seed data
+# Read seed data (path relative to this file, so it works on any machine)
+seed_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "crawler", "seeds", "ministry_schools.json")
 try:
-    with open(r'c:\Git\NigerianDirectory\crawler\seeds\ministry_schools.json', 'r') as f:
+    with open(seed_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 except Exception as e:
     print(f"Error reading seed file: {e}")
