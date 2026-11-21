@@ -94,3 +94,12 @@ refs/original/
 # Vercel configuration with local secrets
 .vercel/
 
+
+# Crawler run output (logs, error reports, debug captures). Generated on
+# every run, so tracking them only produces noisy diffs.
+crawler/crawler_errors.json
+crawler/crawler_log.txt
+crawler/crawler_sources_log.txt
+crawler/google_response.html
+crawler/integration_test_report_*.json
+crawler/*_output.txt

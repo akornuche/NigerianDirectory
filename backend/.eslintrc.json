@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "env": { "node": true, "es2022": true },
+  "parserOptions": { "ecmaVersion": 2022, "sourceType": "script" },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-unused-vars": ["error", { "args": "none", "caughtErrors": "none", "ignoreRestSiblings": true }]
+  },
+  "overrides": [
+    { "files": ["src/__tests__/**/*.js", "jest.setup.js"], "env": { "jest": true } }
+  ]
+}

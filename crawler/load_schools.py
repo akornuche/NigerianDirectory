@@ -88,11 +88,12 @@ def load_schools_from_json(json_file_path):
 
 if __name__ == "__main__":
     # Set database environment variables for Docker
-    os.environ['DB_HOST'] = 'localhost'
-    os.environ['DB_PORT'] = '5433'
-    os.environ['DB_NAME'] = 'nigerian_directory'
-    os.environ['DB_USER'] = 'postgres'
-    os.environ['DB_PASSWORD'] = 'devpassword123'
+    os.environ.setdefault('DB_HOST', 'localhost')
+    # Local defaults that never override values already in the environment.
+    # The password is not defaulted: set DB_PASSWORD before running.
+    os.environ.setdefault('DB_PORT', '5433')
+    os.environ.setdefault('DB_NAME', 'nigerian_directory')
+    os.environ.setdefault('DB_USER', 'postgres')
 
     json_file_path = os.path.join(os.path.dirname(__file__), 'seeds', 'ministry_schools.json')
     load_schools_from_json(json_file_path)

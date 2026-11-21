@@ -14,12 +14,12 @@ describe('Schools Service', () => {
 
         test('should export School model', () => {
             expect(School).toBeDefined();
-            expect(typeof School).toBe('object');
+            expect(typeof School).toBe('function'); // class with static methods
         });
 
         test('should have required CRUD methods', () => {
             expect(typeof School.create).toBe('function');
-            expect(typeof School.findAll).toBe('function');
+            expect(typeof School.list).toBe('function');
             expect(typeof School.findBySlug).toBe('function');
             expect(typeof School.findById).toBe('function');
             expect(typeof School.update).toBe('function');
@@ -29,8 +29,8 @@ describe('Schools Service', () => {
             expect(typeof School.delete).toBe('function');
         });
 
-        test('should have search method', () => {
-            expect(typeof School.search).toBe('function');
+        test('should have naturalLanguageSearch method', () => {
+            expect(typeof School.naturalLanguageSearch).toBe('function');
         });
 
         test('should have stats method', () => {
@@ -102,7 +102,7 @@ describe('Schools Service', () => {
     describe('School Search & Filtering', () => {
         test('should have search utilities', () => {
             const School = require('../models/School');
-            expect(typeof School.search).toBe('function');
+            expect(typeof School.naturalLanguageSearch).toBe('function');
         });
 
         test('should support different search types', () => {
@@ -177,13 +177,13 @@ describe('Schools Service', () => {
     describe('School Enrichment', () => {
         test('should have enrichment queue', () => {
             const EnrichmentQueue = require('../models/EnrichmentQueue');
-            expect(typeof EnrichmentQueue.enqueue).toBe('function');
-            expect(typeof EnrichmentQueue.dequeue).toBe('function');
+            expect(typeof EnrichmentQueue.add).toBe('function');
+            expect(typeof EnrichmentQueue.getNext).toBe('function');
         });
 
         test('should track enrichment status', () => {
             const EnrichmentQueue = require('../models/EnrichmentQueue');
-            expect(typeof EnrichmentQueue.getStatus).toBe('function');
+            expect(typeof EnrichmentQueue.getStats).toBe('function');
         });
 
         test('should support content updates', () => {
@@ -200,7 +200,7 @@ describe('Schools Service', () => {
         });
 
         test('should support read operations', () => {
-            expect(typeof School.findAll).toBe('function');
+            expect(typeof School.list).toBe('function');
             expect(typeof School.findById).toBe('function');
             expect(typeof School.findBySlug).toBe('function');
         });

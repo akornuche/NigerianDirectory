@@ -132,19 +132,18 @@ describe('Middleware', () => {
     });
 
     describe('CSRF Protection', () => {
-        const { csrfProtection, validateCSRFToken } = require('../middleware/csrf');
+        const { csrfProtection, verifyToken } = require('../middleware/csrf');
 
         test('should export csrfProtection', () => {
             expect(typeof csrfProtection).toBe('function');
         });
 
-        test('should export validateCSRFToken', () => {
-            expect(typeof validateCSRFToken).toBe('function');
+        test('should export verifyToken', () => {
+            expect(typeof verifyToken).toBe('function');
         });
 
-        test('should validate CSRF tokens', () => {
-            const result = validateCSRFToken('some-token');
-            expect(typeof result).toBe('boolean');
+        test('should reject a malformed CSRF token', () => {
+            expect(verifyToken('some-token')).toBe(false);
         });
     });
 

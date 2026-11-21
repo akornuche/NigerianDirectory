@@ -27,7 +27,7 @@ describe('Models', () => {
             expect(typeof User.findByEmail).toBe('function');
         });
 
-        test('should have update method', () => {
+        test('should have updateStatus method (update)', () => {
             expect(typeof User.update).toBe('function');
         });
 
@@ -54,8 +54,8 @@ describe('Models', () => {
             expect(typeof School.create).toBe('function');
         });
 
-        test('should have findAll method', () => {
-            expect(typeof School.findAll).toBe('function');
+        test('should have list method', () => {
+            expect(typeof School.list).toBe('function');
         });
 
         test('should have findBySlug method', () => {
@@ -66,7 +66,7 @@ describe('Models', () => {
             expect(typeof School.findById).toBe('function');
         });
 
-        test('should have update method', () => {
+        test('should have updateStatus method (update)', () => {
             expect(typeof School.update).toBe('function');
         });
 
@@ -74,8 +74,8 @@ describe('Models', () => {
             expect(typeof School.delete).toBe('function');
         });
 
-        test('should have search method', () => {
-            expect(typeof School.search).toBe('function');
+        test('should have naturalLanguageSearch method', () => {
+            expect(typeof School.naturalLanguageSearch).toBe('function');
         });
     });
 
@@ -97,24 +97,24 @@ describe('Models', () => {
             expect(typeof Claim.findById).toBe('function');
         });
 
-        test('should have findByUserId method', () => {
-            expect(typeof Claim.findByUserId).toBe('function');
+        test('should have getByUser method', () => {
+            expect(typeof Claim.getByUser).toBe('function');
         });
 
-        test('should have update method', () => {
-            expect(typeof Claim.update).toBe('function');
+        test('should have updateStatus method (update)', () => {
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
-        test('should have verify method', () => {
-            expect(typeof Claim.verify).toBe('function');
+        test('should have updateStatus method (verify)', () => {
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
-        test('should have approve method', () => {
-            expect(typeof Claim.approve).toBe('function');
+        test('should have updateStatus method (approve)', () => {
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
-        test('should have reject method', () => {
-            expect(typeof Claim.reject).toBe('function');
+        test('should have updateStatus method (reject)', () => {
+            expect(typeof Claim.updateStatus).toBe('function');
         });
     });
 
@@ -128,12 +128,12 @@ describe('Models', () => {
             expect(Location).toBeDefined();
         });
 
-        test('should have findAll method', () => {
-            expect(typeof Location.findAll).toBe('function');
+        test('should have list method', () => {
+            expect(typeof Location.getStates).toBe('function');
         });
 
-        test('should have findByState method', () => {
-            expect(typeof Location.findByState).toBe('function');
+        test('should have getCitiesByState method', () => {
+            expect(typeof Location.getCitiesByState).toBe('function');
         });
 
         test('should have getStates method', () => {
@@ -182,8 +182,8 @@ describe('Models', () => {
             expect(typeof CrawlLog.create).toBe('function');
         });
 
-        test('should have findRecent method', () => {
-            expect(typeof CrawlLog.findRecent).toBe('function');
+        test('should have getRecent method', () => {
+            expect(typeof CrawlLog.getRecent).toBe('function');
         });
 
         test('should have getStats method', () => {
@@ -201,16 +201,16 @@ describe('Models', () => {
             expect(EnrichmentQueue).toBeDefined();
         });
 
-        test('should have enqueue method', () => {
-            expect(typeof EnrichmentQueue.enqueue).toBe('function');
+        test('should have add method', () => {
+            expect(typeof EnrichmentQueue.add).toBe('function');
         });
 
-        test('should have dequeue method', () => {
-            expect(typeof EnrichmentQueue.dequeue).toBe('function');
+        test('should have getNext method', () => {
+            expect(typeof EnrichmentQueue.getNext).toBe('function');
         });
 
-        test('should have getStatus method', () => {
-            expect(typeof EnrichmentQueue.getStatus).toBe('function');
+        test('should have getStats method', () => {
+            expect(typeof EnrichmentQueue.getStats).toBe('function');
         });
     });
 

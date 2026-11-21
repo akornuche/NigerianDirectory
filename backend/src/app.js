@@ -7,42 +7,32 @@ const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 
 const { pool, testConnection } = require('./config/database');
-const { redis, testRedisConnection } = require('./config/redis');
+const { redis, isRedisConfigured, testRedisConnection } = require('./config/redis');
 
 // ============================================
 // LOGGING & MONITORING
 // ============================================
-const { 
-    requestLoggingMiddleware, 
+const {
+    requestLoggingMiddleware,
     errorLoggingMiddleware,
     Logger
 } = require('./utils/logger');
-const {
-    metricsMiddleware,
-    metricsEndpoint,
-    collector
-} = require('./middleware/metrics');
+const { metricsEndpoint } = require('./middleware/metrics');
 
 // ============================================
 // ENVIRONMENT VALIDATION
 // ============================================
 function validateEnvironment() {
     const isProduction = process.env.NODE_ENV === 'production';
-    const isTest = process.env.NODE_ENV === 'test';
     
     // Required for all environments
     const alwaysRequired = ['JWT_SECRET'];
     
-    // Required only in production
-    const productionRequired = [
-        'DB_HOST',
-        'DB_PORT',
-        'DB_NAME',
-        'DB_USER',
-        'DB_PASSWORD',
-        'FRONTEND_URL'
-        // Note: REDIS_HOST and REDIS_PORT are optional in serverless
-    ];
+    // Required only in production. A DATABASE_URL connection string (as
+    // Neon provides) replaces the discrete DB_* variables. Redis is optional.
+    const productionRequired = process.env.DATABASE_URL
+        ? ['FRONTEND_URL']
+        : ['DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_USER', 'DB_PASSWORD', 'FRONTEND_URL'];
 
     // Check always-required variables
     let missing = alwaysRequired.filter(v => !process.env[v]);
@@ -127,8 +117,6 @@ const crawlRoutes = require('./routes/crawl');
 const viewsRoutes = require('./routes/views');
 const aiAgentsRoutes = require('./routes/ai-agents');
 
-// Import Swagger/OpenAPI documentation
-const { initializeSwagger } = require('./config/swaggerInit');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -233,43 +221,53 @@ app.use(express.urlencoded({ extended: true }));
 // RATE LIMITING - Multiple layers for different endpoints
 // ============================================
 
-// Global rate limiter (basic)
+// Rate limits are keyed by client IP, so the app must read the client
+// address the proxy reports. Without this, every request behind Vercel or
+// nginx carried the proxy's address and all visitors shared one bucket.
+// TRUST_PROXY overrides the default (a hop count, or a value express
+// accepts); trusting a proxy that is not there lets clients spoof their IP,
+// so it defaults to off outside Vercel.
+const trustProxy = process.env.TRUST_PROXY ?? (process.env.VERCEL === '1' ? '1' : 'false');
+app.set('trust proxy', /^\d+$/.test(trustProxy) ? Number(trustProxy)
+    : trustProxy === 'true' ? true
+    : trustProxy === 'false' ? false
+    : trustProxy);
+
+// The frontend's server-side rendering calls the API from a handful of
+// server IPs, so per-IP limits would throttle every page build and leave
+// pages rendered empty. Those calls send INTERNAL_API_KEY and are exempt.
+// Without the key configured, nothing is exempt.
+const crypto = require('crypto');
+function isInternalRequest(req) {
+    const expected = process.env.INTERNAL_API_KEY;
+    const given = req.get('x-internal-api-key');
+    if (!expected || !given) return false;
+    const a = crypto.createHash('sha256').update(given).digest();
+    const b = crypto.createHash('sha256').update(expected).digest();
+    return crypto.timingSafeEqual(a, b);
+}
+
 const globalLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
+    max: Number(process.env.RATE_LIMIT_MAX) || 100, // per IP per window
+    standardHeaders: true,
+    legacyHeaders: false,
+    skip: isInternalRequest,
     message: { error: 'Too many requests, please try again later.' }
 });
 
-// Auth endpoints - strict
-const authLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 5, // 5 attempts per 15 minutes
-    message: { error: 'Too many login attempts, please try again later' },
-    skip: (req) => req.user && req.user.role === 'admin' // Don't rate limit admins
-});
-
-// Token refresh - very strict
-const refreshLimiter = rateLimit({
-    windowMs: 60 * 1000, // 1 minute
-    max: 10, // 10 attempts per minute
-    message: { error: 'Too many token refresh attempts' }
-});
-
-// Schools endpoint - moderate
-const schoolsLimiter = rateLimit({
-    windowMs: 1 * 60 * 1000, // 1 minute
-    max: 30, // 30 requests per minute
-    message: { error: 'Too many requests to schools endpoint' }
-});
-
-// Claims endpoint - strict (prevents abuse)
+// Claim creation - strict (prevents abuse). Login, registration and token
+// refresh have their own limiters in routes/auth.js.
 const claimsLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour
     max: 5, // 5 claims per hour per IP
+    standardHeaders: true,
+    legacyHeaders: false,
     message: { error: 'Too many claim attempts, please try again later' }
 });
 
 app.use('/api/', globalLimiter);
+app.post('/api/claims', claimsLimiter);
 
 // ============================================
 // HEALTH CHECK & MONITORING
@@ -295,66 +293,50 @@ app.get('/health/live', (req, res) => {
     });
 });
 
+/**
+ * Check dependencies. The database is required; Redis is an optional cache,
+ * so its state is reported but never makes the API unhealthy. Reporting a
+ * cache outage as a 503 would take the service out of rotation for no gain.
+ */
+async function checkDependencies() {
+    const checks = { database: 'ok', redis: 'not_configured' };
+
+    try {
+        await pool.query('SELECT 1');
+    } catch (error) {
+        checks.database = 'failed';
+    }
+
+    if (isRedisConfigured) {
+        try {
+            await redis.ping();
+            checks.redis = 'ok';
+        } catch (error) {
+            checks.redis = 'failed';
+        }
+    }
+
+    return { healthy: checks.database === 'ok', checks };
+}
+
 // Readiness probe - can app serve traffic?
 app.get('/health/ready', async (req, res) => {
-    try {
-        // Check database
-        const dbCheck = await pool.query('SELECT 1').catch(e => ({ error: e.message }));
-        
-        // Check Redis
-        const redisCheck = await redis.ping().catch(e => ({ error: e.message }));
-
-        if (dbCheck.error || (typeof redisCheck !== 'string')) {
-            return res.status(503).json({
-                status: 'not_ready',
-                timestamp: new Date().toISOString(),
-                checks: {
-                    database: dbCheck.error ? 'failed' : 'ok',
-                    redis: redisCheck.error ? 'failed' : 'ok'
-                }
-            });
-        }
-
-        res.json({
-            status: 'ready',
-            timestamp: new Date().toISOString(),
-            checks: {
-                database: 'ok',
-                redis: 'ok'
-            }
-        });
-    } catch (error) {
-        res.status(503).json({
-            status: 'not_ready',
-            error: error.message
-        });
-    }
+    const { healthy, checks } = await checkDependencies();
+    res.status(healthy ? 200 : 503).json({
+        status: healthy ? 'ready' : 'not_ready',
+        timestamp: new Date().toISOString(),
+        checks
+    });
 });
 
 // Combined health check (backwards compatible)
 app.get('/health', async (req, res) => {
-    try {
-        // Check database
-        await pool.query('SELECT 1');
-
-        // Check Redis
-        await redis.ping();
-
-        res.json({
-            status: 'healthy',
-            timestamp: new Date().toISOString(),
-            services: {
-                database: 'connected',
-                redis: 'connected'
-            }
-        });
-    } catch (error) {
-        res.status(503).json({
-            status: 'unhealthy',
-            timestamp: new Date().toISOString(),
-            error: error.message
-        });
-    }
+    const { healthy, checks } = await checkDependencies();
+    res.status(healthy ? 200 : 503).json({
+        status: healthy ? 'healthy' : 'unhealthy',
+        timestamp: new Date().toISOString(),
+        services: checks
+    });
 });
 
 // Prometheus metrics endpoint
@@ -365,12 +347,7 @@ app.get('/metrics', metricsEndpoint);
 // ============================================
 
 // CSRF token endpoint (GET - safe method, no token required)
-app.get('/api/csrf-token', (req, res, next) => {
-    // Skip CSRF check for this endpoint
-    csrfProtection.bypass = true;
-    getCsrfToken(req, res);
-    csrfProtection.bypass = false;
-});
+app.get('/api/csrf-token', getCsrfToken);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/schools', schoolsRoutes);
@@ -385,12 +362,8 @@ app.use('/api/contact', require('./routes/contact')); // AI Agents & Generative 
 // ============================================
 // SWAGGER/OPENAPI DOCUMENTATION
 // ============================================
-try {
-    // initializeSwagger(app);
-    // Swagger disabled - causing initialization issues in development
-} catch (error) {
-    logger.error('Failed to initialize Swagger UI', error);
-}
+// Swagger UI is disabled: it caused initialization failures. To restore
+// it, call initializeSwagger(app) from ./config/swaggerInit here.
 
 // ============================================
 // ROOT ENDPOINT
@@ -489,7 +462,9 @@ async function startServer() {
         // down, so failures here are logged and execution continues.
         try {
             await testRedisConnection();
-            logger.info('✅ Redis connected successfully');
+            logger.info(isRedisConfigured
+                ? '✅ Redis connected successfully'
+                : 'ℹ️  Redis not configured, using in-memory cache');
         } catch (redisError) {
             logger.warn(`⚠️  Redis unavailable, continuing without cache: ${redisError.message}`);
         }

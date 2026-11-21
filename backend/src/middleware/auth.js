@@ -29,40 +29,53 @@ function generateToken(user) {
  * Verify JWT token
  */
 function verifyToken(token) {
-    try {
-        if (!JWT_SECRET) {
-            throw new Error('JWT_SECRET not configured');
-        }
-        return jwt.verify(token, JWT_SECRET);
-    } catch (error) {
-        throw error;
+    if (!JWT_SECRET) {
+        throw new Error('JWT_SECRET not configured');
     }
+    return jwt.verify(token, JWT_SECRET);
 }
 
 /**
- * Authentication middleware - requires valid token
- * Checks if token is blacklisted (for logout)
+ * Authentication middleware - requires a valid, unrevoked access token.
+ *
+ * Only access tokens are accepted. Refresh tokens are signed with the same
+ * secret but live for days, so accepting them here would turn a leaked
+ * refresh token into a long-lived API credential.
  */
 async function authenticate(req, res, next) {
-    try {
-        const authHeader = req.headers.authorization;
-        
-        if (!authHeader || !authHeader.startsWith('Bearer ')) {
-            return res.status(401).json({ error: 'No token provided' });
-        }
+    const authHeader = req.headers.authorization;
 
-        const token = authHeader.substring(7);
-        
-        // Check if token is blacklisted
-        const isBlacklisted = await tokenService.isTokenBlacklisted(token);
-        if (isBlacklisted) {
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: 'No token provided' });
+    }
+
+    const token = authHeader.substring(7);
+
+    let decoded;
+    try {
+        decoded = tokenService.verifyToken(token, 'access');
+    } catch (error) {
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({
+                error: 'Token expired',
+                code: 'TOKEN_EXPIRED'
+            });
+        }
+        return res.status(401).json({ error: 'Invalid token' });
+    }
+
+    try {
+        if (await tokenService.isTokenBlacklisted(token)) {
             return res.status(401).json({ error: 'Token has been revoked' });
         }
+    } catch (error) {
+        // Fail closed: if revocation cannot be checked, a logged-out token
+        // must not be honoured.
+        console.error('Token revocation check failed:', error.message);
+        return res.status(503).json({ error: 'Authentication temporarily unavailable' });
+    }
 
-        // Verify token signature and expiration
-        const decoded = verifyToken(token);
-        
-        // Get fresh user data
+    try {
         const user = await User.findById(decoded.id);
         if (!user) {
             return res.status(401).json({ error: 'User not found' });
@@ -70,17 +83,9 @@ async function authenticate(req, res, next) {
 
         req.user = user;
         req.token = token;
-        next();
+        return next();
     } catch (error) {
-        if (error.name === 'TokenExpiredError') {
-            return res.status(401).json({ 
-                error: 'Token expired',
-                code: 'TOKEN_EXPIRED'
-            });
-        }
-        if (error.name === 'JsonWebTokenError') {
-            return res.status(401).json({ error: 'Invalid token' });
-        }
+        console.error('Authentication lookup failed:', error.message);
         return res.status(500).json({ error: 'Authentication failed' });
     }
 }
@@ -89,32 +94,26 @@ async function authenticate(req, res, next) {
  * Optional authentication - attaches user if token is valid, continues otherwise
  */
 async function optionalAuth(req, res, next) {
-    try {
-        const authHeader = req.headers.authorization;
-        
-        if (authHeader && authHeader.startsWith('Bearer ')) {
-            const token = authHeader.substring(7);
-            
-            // Check blacklist
-            const isBlacklisted = await tokenService.isTokenBlacklisted(token);
-            if (!isBlacklisted) {
-                const decoded = verifyToken(token);
-                const user = await User.findById(decoded.id);
-                req.user = user || null;
-                req.token = token;
-            } else {
-                req.user = null;
-            }
-        } else {
-            req.user = null;
-        }
-        
-        next();
-    } catch (error) {
-        // Token invalid, continue without user
-        req.user = null;
-        next();
+    req.user = null;
+
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return next();
     }
+
+    const token = authHeader.substring(7);
+    try {
+        const decoded = tokenService.verifyToken(token, 'access');
+        if (!(await tokenService.isTokenBlacklisted(token))) {
+            req.user = (await User.findById(decoded.id)) || null;
+            req.token = token;
+        }
+    } catch (error) {
+        // Invalid token or failed check: continue as an anonymous request.
+        req.user = null;
+    }
+
+    return next();
 }
 
 /**

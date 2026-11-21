@@ -1,23 +1,14 @@
 /**
  * Vercel Serverless Function - Main API Entry Point
- * This handles all requests in Vercel's serverless environment
+ *
+ * The root vercel.json routes every request here. Vercel installs packages
+ * from the root package.json (the one nearest this file), which mirrors the
+ * backend's dependencies; `npm run check:deps` verifies the two match.
+ *
+ * Use /health to confirm the function is responding. A route added here
+ * would sit behind the app's 404 handler and never be reached.
  */
 
 require('dotenv').config();
 
-// In Vercel serverless, just export the app without trying to listen
-const app = require('../backend/src/app');
-
-// Add a test endpoint to verify serverless function is working
-app.get('/test-serverless', (req, res) => {
-  res.json({
-    message: 'Serverless function is responding!',
-    environment: {
-      NODE_ENV: process.env.NODE_ENV,
-      VERCEL: process.env.VERCEL,
-      platform: 'vercel-serverless'
-    }
-  });
-});
-
-module.exports = app;
+module.exports = require('../backend/src/app');

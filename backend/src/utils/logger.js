@@ -41,7 +41,7 @@ function redactSensitiveData(obj) {
     
     const redactField = (obj, fields) => {
         for (const key in obj) {
-            if (obj.hasOwnProperty(key)) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 if (fields.some(f => key.toLowerCase().includes(f.toLowerCase()))) {
                     obj[key] = '***REDACTED***';
                 } else if (typeof obj[key] === 'object' && obj[key] !== null) {
@@ -182,6 +182,16 @@ function requestLoggingMiddleware(req, res, next) {
     const startTime = Date.now();
 
     // Log response
+    // Size of a body as express will send it. An empty body (res.send()) has
+    // no size; stringifying undefined and measuring it threw and turned the
+    // response into a 500.
+    const responseSize = (data) => {
+        if (data === undefined || data === null) return 0;
+        if (Buffer.isBuffer(data)) return data.length;
+        if (typeof data === 'string') return Buffer.byteLength(data);
+        return Buffer.byteLength(JSON.stringify(data) || '');
+    };
+
     const originalSend = res.send;
     res.send = function(data) {
         const duration = Date.now() - startTime;
@@ -191,7 +201,7 @@ function requestLoggingMiddleware(req, res, next) {
             statusCode,
             duration,
             durationMs: duration,
-            responseSize: Buffer.byteLength(JSON.stringify(data))
+            responseSize: responseSize(data)
         });
 
         // Call original send

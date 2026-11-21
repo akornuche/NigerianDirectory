@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const { generateToken, authenticate } = require('../middleware/auth');
+const { authenticate } = require('../middleware/auth');
 const tokenService = require('../services/tokenService');
 const { registerValidation, loginValidation } = require('../middleware/validators');
 const rateLimit = require('express-rate-limit');
@@ -233,13 +233,23 @@ router.post('/refresh', refreshLimiter, async (req, res, next) => {
         // Verify refresh token
         const decoded = tokenService.verifyToken(refreshToken, 'refresh');
 
+        // A refresh token revoked at logout must not mint new tokens.
+        if (await tokenService.isTokenBlacklisted(refreshToken)) {
+            return res.status(401).json({
+                error: 'Refresh token has been revoked',
+                code: 'TOKEN_REVOKED'
+            });
+        }
+
         // Get user
         const user = await User.findById(decoded.id);
         if (!user) {
             return res.status(401).json({ error: 'User not found' });
         }
 
-        // Generate new token pair
+        // Rotate: the old refresh token is retired as the new pair is issued,
+        // so a stolen copy stops working once the owner refreshes.
+        await tokenService.blacklistToken(refreshToken);
         const tokens = tokenService.generateTokenPair(user);
 
         res.json({

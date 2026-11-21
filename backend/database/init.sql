@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS schools (
     enriched_recent_news JSONB DEFAULT '[]',
     enriched_at TIMESTAMP,
     enrichment_status VARCHAR(20) DEFAULT 'pending' CHECK (enrichment_status IN ('pending', 'processing', 'completed', 'failed')),
+    last_enriched TIMESTAMP,
     
     -- Additional Info
     established_year INT,
@@ -216,6 +217,17 @@ CREATE INDEX idx_enrichment_queue_priority ON enrichment_queue(priority DESC);
 -- ============================================
 -- PAGE VIEWS / ANALYTICS TABLE
 -- ============================================
+-- ============================================
+-- REVOKED TOKENS (logout; see backend/src/services/tokenService.js)
+-- ============================================
+CREATE TABLE IF NOT EXISTS revoked_tokens (
+    token_hash CHAR(64) PRIMARY KEY,
+    expires_at TIMESTAMPTZ NOT NULL,
+    revoked_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_revoked_tokens_expires_at ON revoked_tokens (expires_at);
+
 CREATE TABLE IF NOT EXISTS page_views (
     id SERIAL PRIMARY KEY,
     school_id INT REFERENCES schools(id) ON DELETE CASCADE,

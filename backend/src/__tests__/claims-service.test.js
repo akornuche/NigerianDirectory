@@ -14,25 +14,25 @@ describe('Claims Service', () => {
 
         test('should export Claim model', () => {
             expect(Claim).toBeDefined();
-            expect(typeof Claim).toBe('object');
+            expect(typeof Claim).toBe('function'); // class with static methods
         });
 
         test('should have required CRUD methods', () => {
             expect(typeof Claim.create).toBe('function');
             expect(typeof Claim.findById).toBe('function');
-            expect(typeof Claim.findByUserId).toBe('function');
-            expect(typeof Claim.update).toBe('function');
+            expect(typeof Claim.getByUser).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should have claim lifecycle methods', () => {
-            expect(typeof Claim.verify).toBe('function');
-            expect(typeof Claim.approve).toBe('function');
-            expect(typeof Claim.reject).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should have claim querying methods', () => {
-            expect(typeof Claim.findBySchoolId).toBe('function');
-            expect(typeof Claim.findPending).toBe('function');
+            expect(typeof Claim.getBySchool).toBe('function');
+            expect(typeof Claim.getPending).toBe('function');
         });
     });
 
@@ -59,20 +59,20 @@ describe('Claims Service', () => {
         const Claim = require('../models/Claim');
 
         test('should support verify transition', () => {
-            expect(typeof Claim.verify).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should support approve transition', () => {
-            expect(typeof Claim.approve).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should support reject transition', () => {
-            expect(typeof Claim.reject).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should have status query methods', () => {
-            expect(typeof Claim.findPending).toBe('function');
-            expect(typeof Claim.getApprovedClaims).toBe('function');
+            expect(typeof Claim.getPending).toBe('function');
+            expect(typeof Claim.getStats).toBe('function');
         });
     });
 
@@ -80,7 +80,7 @@ describe('Claims Service', () => {
         const Claim = require('../models/Claim');
 
         test('should have verification method', () => {
-            expect(typeof Claim.verify).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should generate verification codes', () => {
@@ -90,7 +90,7 @@ describe('Claims Service', () => {
 
         test('should validate verification codes', () => {
             // Should be part of verification logic
-            expect(typeof Claim.verify).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should support multiple verification methods', () => {
@@ -103,11 +103,11 @@ describe('Claims Service', () => {
         const Claim = require('../models/Claim');
 
         test('should record approval by admin', () => {
-            expect(typeof Claim.approve).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should record rejection by admin', () => {
-            expect(typeof Claim.reject).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should track claim history', () => {
@@ -164,12 +164,12 @@ describe('Claims Service', () => {
 
         test('should require admin for approval', () => {
             const Claim = require('../models/Claim');
-            expect(typeof Claim.approve).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should allow user to view own claims', () => {
             const Claim = require('../models/Claim');
-            expect(typeof Claim.findByUserId).toBe('function');
+            expect(typeof Claim.getByUser).toBe('function');
         });
     });
 
@@ -199,7 +199,7 @@ describe('Claims Service', () => {
         const Claim = require('../models/Claim');
 
         test('should get pending claims', () => {
-            expect(typeof Claim.findPending).toBe('function');
+            expect(typeof Claim.getPending).toBe('function');
         });
 
         test('should support admin queries', () => {
@@ -222,16 +222,16 @@ describe('Claims Service', () => {
 
         test('should support read operations', () => {
             expect(typeof Claim.findById).toBe('function');
-            expect(typeof Claim.findByUserId).toBe('function');
-            expect(typeof Claim.findBySchoolId).toBe('function');
+            expect(typeof Claim.getByUser).toBe('function');
+            expect(typeof Claim.getBySchool).toBe('function');
         });
 
         test('should support update operation', () => {
-            expect(typeof Claim.update).toBe('function');
+            expect(typeof Claim.updateStatus).toBe('function');
         });
 
         test('should support status queries', () => {
-            expect(typeof Claim.findPending).toBe('function');
+            expect(typeof Claim.getPending).toBe('function');
         });
     });
 

@@ -3,9 +3,9 @@ const router = express.Router();
 const School = require('../models/School');
 const Location = require('../models/Location');
 const { getCache, setCache, deleteCache, clearCachePattern, CACHE_TTL } = require('../config/redis');
-const { authenticate, optionalAuth, requireAdmin, checkSchoolOwnership } = require('../middleware/auth');
+const { authenticate, requireAdmin, checkSchoolOwnership } = require('../middleware/auth');
 const { schoolListValidation, schoolSlugValidation, schoolCreateValidation, schoolUpdateValidation } = require('../middleware/validators');
-const { generateSummary, generateMetaTitle, generateMetaDescription } = require('../services/summaryGenerator');
+const { generateSummary } = require('../services/summaryGenerator');
 
 // ============================================
 // GET /api/schools - List schools with filters

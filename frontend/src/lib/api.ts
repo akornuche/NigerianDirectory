@@ -58,11 +58,22 @@ async function apiRequest<T>(
 ): Promise<T> {
   const url = `${API_URL}${endpoint}`;
 
+  // Server-side renders come from a few server IPs, so the API's per-IP rate
+  // limit would throttle page builds. They identify themselves with a shared
+  // key. INTERNAL_API_KEY is not exposed to the browser (it is not
+  // NEXT_PUBLIC_ and not listed in next.config.js `env`), and the header is
+  // only added when running on the server.
+  const internalKey =
+    typeof window === 'undefined' ? process.env.INTERNAL_API_KEY : undefined;
+
+  const { headers: extraHeaders, ...rest } = options;
   const defaultOptions: RequestInit = {
+    ...rest,
     headers: {
       'Content-Type': 'application/json',
+      ...(internalKey ? { 'X-Internal-API-Key': internalKey } : {}),
+      ...(extraHeaders as Record<string, string> | undefined),
     },
-    ...options,
   };
 
   try {
