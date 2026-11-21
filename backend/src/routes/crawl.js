@@ -2,8 +2,20 @@ const express = require('express');
 const router = express.Router();
 const { authenticate, requireAdmin } = require('../middleware/auth');
 const CrawlLog = require('../models/CrawlLog');
-const School = require('../models/School');
-const { redis } = require('../config/redis');
+const { redis, isRedisConfigured } = require('../config/redis');
+
+// The crawl queue is shared with the Python crawler through Redis. The
+// in-memory fallback is private to this process, so a job queued there
+// would never run. Refuse clearly instead of accepting work that is lost.
+router.use((req, res, next) => {
+    if (!isRedisConfigured) {
+        return res.status(503).json({
+            error: 'Crawl queue unavailable',
+            message: 'Set REDIS_URL or REDIS_HOST to enable the crawl queue'
+        });
+    }
+    return next();
+});
 
 // ============================================
 // POST /api/crawl/batch - Trigger crawler batch (admin)

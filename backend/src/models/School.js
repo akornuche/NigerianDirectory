@@ -1,6 +1,19 @@
 const { query } = require('../config/database');
 const slugify = require('slugify');
 
+/**
+ * Convert a value for a parameterised UPDATE. Plain objects and arrays are
+ * the JSONB columns and are serialised. null must stay SQL NULL, and Dates
+ * are passed through for pg to format: serialising either produced the text
+ * "null" or a quoted date string that timestamp columns reject.
+ */
+function toColumnValue(value) {
+    if (value === null || value === undefined || value instanceof Date) {
+        return value ?? null;
+    }
+    return typeof value === 'object' ? JSON.stringify(value) : value;
+}
+
 class School {
     // Create a new school
     static async create(schoolData) {
@@ -57,7 +70,7 @@ class School {
         let slug = baseSlug;
         let counter = 1;
 
-        while (true) {
+        for (;;) {
             const existing = await query(
                 'SELECT id FROM schools WHERE slug = $1',
                 [slug]
@@ -273,7 +286,10 @@ class School {
             'meta_title', 'meta_description', 'content_sources',
             'enriched_history', 'enriched_academics', 'enriched_campus_info',
             'enriched_student_life', 'enriched_notable_alumni', 'enriched_recent_news',
-            'enriched_at', 'enrichment_status'
+            'enriched_at', 'enrichment_status', 'last_enriched',
+            // University-specific columns (migration 006)
+            'accreditation', 'faculties', 'programmes', 'vc_name', 'vc_title',
+            'student_population', 'postgraduate', 'distance_learning', 'year_chartered'
         ];
 
         const setClause = [];
@@ -283,7 +299,7 @@ class School {
         for (const [key, value] of Object.entries(updates)) {
             if (allowedFields.includes(key)) {
                 setClause.push(`${key} = $${paramIndex}`);
-                params.push(typeof value === 'object' ? JSON.stringify(value) : value);
+                params.push(toColumnValue(value));
                 paramIndex++;
             }
         }
@@ -431,10 +447,9 @@ class School {
     /**
      * Natural language search for AI agents
      */
-    static async naturalLanguageSearch(query, limit = 50) {
-        const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 2);
-        const searchPattern = searchTerms.join(' | ');
-
+    // The parameter is `searchText`, not `query`: naming it `query` shadowed
+    // the database helper, so every call threw "query is not a function".
+    static async naturalLanguageSearch(searchText, limit = 50) {
         const result = await query(
             `SELECT 
                 id, name, slug, type, state, city, area,
@@ -465,7 +480,7 @@ class School {
             ) @@ plainto_tsquery('english', $1)
             ORDER BY relevance_score DESC, updated_at DESC
             LIMIT $2`,
-            [query, limit]
+            [searchText, limit]
         );
 
         return result.rows;
@@ -601,3 +616,4 @@ class School {
 }
 
 module.exports = School;
+module.exports.toColumnValue = toColumnValue;

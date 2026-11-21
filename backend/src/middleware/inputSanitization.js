@@ -100,7 +100,7 @@ function sanitizeObject(obj, maxDepth = 5, currentDepth = 0) {
     const sanitized = Array.isArray(obj) ? [] : {};
 
     for (const key in obj) {
-        if (obj.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
             // Prevent prototype pollution
             if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
                 continue;
@@ -149,13 +149,6 @@ function sanitizationMiddleware(req, res, next) {
  * Middleware to prevent request smuggling
  */
 function preventRequestSmuggling(req, res, next) {
-    // Check for suspicious headers that could indicate request smuggling
-    const suspiciousPatterns = [
-        req.get('transfer-encoding'),
-        req.get('content-length'),
-        req.headers['x-forwarded-for']
-    ];
-
     // If Transfer-Encoding header is present (especially chunked), be cautious
     if (req.get('transfer-encoding')?.toLowerCase() === 'chunked' && process.env.NODE_ENV === 'production') {
         return res.status(400).json({ error: 'Unsupported request format' });

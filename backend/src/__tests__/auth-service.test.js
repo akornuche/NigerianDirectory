@@ -160,7 +160,7 @@ describe('Authentication Service', () => {
             expect(typeof User.findByEmail).toBe('function');
         });
 
-        test('should have update method', () => {
+        test('should have updateStatus method (update)', () => {
             const User = require('../models/User');
             expect(typeof User.update).toBe('function');
         });

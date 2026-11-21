@@ -2,6 +2,10 @@ const { Pool } = require('pg');
 
 // Validate required environment variables
 function validateDatabaseEnv() {
+    // A connection string carries everything the discrete variables would.
+    if (process.env.DATABASE_URL) {
+        return;
+    }
     const required = ['DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_USER', 'DB_PASSWORD'];
     const missing = required.filter(v => !process.env[v]);
     
