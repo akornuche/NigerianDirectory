@@ -225,17 +225,6 @@ function generateEducationCategoryUrls() {
   </url>`).join('');
 }
 
-function escapeXml(text: string): string {
-  if (!text) return '';
-  
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
-}
-
 function toSlug(value: string | undefined): string {
   return (value || '').toLowerCase().trim().replace(/\s+/g, '-');
 }
