@@ -14,6 +14,10 @@ function toColumnValue(value) {
     return typeof value === 'object' ? JSON.stringify(value) : value;
 }
 
+// Only records verified against an independent source are shown publicly.
+// Admin tooling passes includeUnpublished to see everything.
+const PUBLISHED = "verification_status = 'verified'";
+
 class School {
     // Create a new school
     static async create(schoolData) {
@@ -85,10 +89,10 @@ class School {
         }
     }
 
-    // Find by slug
-    static async findBySlug(slug) {
+    // Find by slug. Unpublished records are hidden unless includeUnpublished.
+    static async findBySlug(slug, { includeUnpublished = false } = {}) {
         const result = await query(
-            'SELECT * FROM schools WHERE slug = $1',
+            `SELECT * FROM schools WHERE slug = $1${includeUnpublished ? '' : ` AND ${PUBLISHED}`}`,
             [slug]
         );
         if (!result.rows[0]) return null;
@@ -106,6 +110,21 @@ class School {
         return school;
     }
 
+    /**
+     * Resolve the slug of a record that was merged or renamed to the slug of
+     * the published record that replaced it, so its old URL can 301.
+     * @returns {Promise<string|null>}
+     */
+    static async resolveSlugAlias(oldSlug) {
+        const result = await query(
+            `SELECT s.slug FROM slug_aliases a
+             JOIN schools s ON s.id = a.school_id
+             WHERE a.old_slug = $1 AND s.${PUBLISHED}`,
+            [oldSlug]
+        );
+        return result.rows[0]?.slug || null;
+    }
+
     // Find by ID
     static async findById(id) {
         const result = await query(
@@ -118,9 +137,10 @@ class School {
     // List schools with filters and pagination
     static async list({
         state, city, area, type, curriculum, gender, boarding,
-        institution_category, search, page = 1, limit = 20, sortBy = 'name', sortOrder = 'ASC'
+        institution_category, search, page = 1, limit = 20, sortBy = 'name', sortOrder = 'ASC',
+        includeUnpublished = false
     }) {
-        const conditions = [];
+        const conditions = includeUnpublished ? [] : [PUBLISHED];
         const params = [];
         let paramIndex = 1;
 
@@ -230,7 +250,8 @@ class School {
                 curriculum, levels, boarding, gender,
                 logo_url, hero_image_url, claimed, verified, template_summary
             FROM schools 
-            WHERE LOWER(state) = LOWER($1) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($1)
+            WHERE (LOWER(state) = LOWER($1) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($1))
+              AND ${PUBLISHED}
             ORDER BY area, name`,
             [state]
         );
@@ -248,6 +269,7 @@ class School {
             FROM schools 
             WHERE (LOWER(state) = LOWER($1) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($1))
               AND (LOWER(area) = LOWER($2) OR LOWER(REPLACE(area, ' ', '-')) = LOWER($2))
+              AND ${PUBLISHED}
             ORDER BY name`,
             [state, area]
         );
@@ -263,6 +285,7 @@ class School {
             FROM schools 
             WHERE id != $1 
                 AND (LOWER(area) = LOWER($2) OR LOWER(state) = LOWER($3))
+                AND ${PUBLISHED}
             ORDER BY 
                 CASE WHEN LOWER(area) = LOWER($2) THEN 0 ELSE 1 END,
                 name
@@ -336,7 +359,7 @@ class School {
                 curriculum, logo_url, hero_image_url, claimed, verified,
                 template_summary
             FROM schools 
-            WHERE verified = true OR claimed = true
+            WHERE (verified = true OR claimed = true) AND ${PUBLISHED}
             ORDER BY verified DESC, claimed DESC, created_at DESC
             LIMIT $1`,
             [limit]
@@ -357,7 +380,7 @@ class School {
     }
 
     // Get stats
-    static async getStats() {
+    static async getStats({ includeUnpublished = false } = {}) {
         const result = await query(`
             SELECT 
                 COUNT(*) as total_schools,
@@ -367,6 +390,7 @@ class School {
                 COUNT(DISTINCT state) as total_states,
                 COUNT(DISTINCT area) as total_areas
             FROM schools
+            ${includeUnpublished ? '' : `WHERE ${PUBLISHED}`}
         `);
         return result.rows[0];
     }
@@ -388,7 +412,7 @@ class School {
      * Search schools optimized for AI agents with rich context
      */
     static async searchForAI({ location, state, city, type, limit = 50 }) {
-        let whereClause = "WHERE 1=1";
+        let whereClause = `WHERE ${PUBLISHED}`;
         const params = [];
         let paramIndex = 1;
 
@@ -478,6 +502,7 @@ class School {
                 COALESCE(enriched_academics, '') || ' ' ||
                 COALESCE(template_summary, '')
             ) @@ plainto_tsquery('english', $1)
+              AND ${PUBLISHED}
             ORDER BY relevance_score DESC, updated_at DESC
             LIMIT $2`,
             [searchText, limit]
@@ -498,10 +523,11 @@ class School {
                 meta_title, meta_description, institution_category,
                 logo_url, hero_image_url
             FROM schools 
-            WHERE 
+            WHERE ${PUBLISHED} AND (
                 enriched_history IS NOT NULL 
                 OR enriched_academics IS NOT NULL 
                 OR website IS NOT NULL
+            )
             ORDER BY 
                 CASE 
                     WHEN enriched_history IS NOT NULL AND enriched_academics IS NOT NULL THEN 1
@@ -529,11 +555,12 @@ class School {
                 enriched_history, enriched_academics, enriched_campus_info,
                 meta_title, institution_category
             FROM schools 
-            WHERE 
+            WHERE ${PUBLISHED} AND (
                 LOWER(city) LIKE LOWER($1) OR 
                 LOWER(state) LIKE LOWER($1) OR 
                 LOWER(area) LIKE LOWER($1) OR
                 LOWER(name) LIKE LOWER($1)
+            )
             ORDER BY 
                 CASE 
                     WHEN LOWER(city) = LOWER($1) THEN 1
@@ -568,7 +595,8 @@ class School {
                     WHEN enriched_history IS NOT NULL OR enriched_academics IS NOT NULL THEN 50
                     ELSE 0
                 END) as avg_content_completeness
-            FROM schools`
+            FROM schools
+            WHERE ${PUBLISHED}`
         );
 
         return result.rows[0];
@@ -582,7 +610,7 @@ class School {
             'southwest': ['Lagos', 'Ogun', 'Oyo', 'Osun', 'Ondo', 'Ekiti'],
             'southeast': ['Anambra', 'Abia', 'Imo', 'Enugu', 'Ebonyi'],
             'south-south': ['Rivers', 'Delta', 'Bayelsa', 'Cross River', 'Akwa Ibom', 'Edo'],
-            'north-central': ['Abuja', 'Plateau', 'Niger', 'Kwara', 'Kogi', 'Benue', 'Nasarawa'],
+            'north-central': ['FCT', 'Plateau', 'Niger', 'Kwara', 'Kogi', 'Benue', 'Nasarawa'],
             'northeast': ['Borno', 'Yobe', 'Bauchi', 'Gombe', 'Adamawa', 'Taraba'],
             'northwest': ['Kano', 'Kaduna', 'Katsina', 'Sokoto', 'Zamfara', 'Kebbi', 'Jigawa']
         };
@@ -603,7 +631,7 @@ class School {
                 enriched_history, enriched_academics,
                 meta_title, institution_category
             FROM schools 
-            WHERE state = ANY(ARRAY[${placeholders}])
+            WHERE state = ANY(ARRAY[${placeholders}]) AND ${PUBLISHED}
             ORDER BY 
                 LENGTH(COALESCE(enriched_history, '') || COALESCE(enriched_academics, '')) DESC,
                 updated_at DESC

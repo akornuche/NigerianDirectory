@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import {
     MapPinIcon,
     PhoneIcon,
@@ -15,19 +15,25 @@ import {
     UserGroupIcon,
     TrophyIcon
 } from '@heroicons/react/24/outline';
-import { api, School } from '@/lib/api';
+import { api, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 import SourceReferences from '@/components/content/SourceReferences';
 import { assessContentQuality } from '@/lib/content-quality';
 
+// A record that was merged, renamed or moved 301-redirects to its canonical URL.
 async function getUniversity(state: string, city: string, slug: string): Promise<School | null> {
+    let redirectTo: string | null = null;
     try {
-        const university = await api.getUniversityByPath(state, city, slug);
-        return university;
+        return await api.getUniversityByPath(state, city, slug);
     } catch (error) {
-        console.error('Error fetching university:', error);
-        return null;
+        redirectTo = movedToPath(error);
+        if (!redirectTo) {
+            console.error('Error fetching university:', error);
+            return null;
+        }
     }
+    // Outside the try: permanentRedirect works by throwing.
+    permanentRedirect(redirectTo);
 }
 
 interface Props {

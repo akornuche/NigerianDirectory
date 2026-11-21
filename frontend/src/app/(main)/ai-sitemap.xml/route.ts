@@ -43,6 +43,7 @@ export async function GET() {
               enriched_campus_info, enriched_student_life
       FROM schools
       WHERE institution_category IN ('school', 'university')
+        AND verification_status = 'verified'
       ORDER BY institution_category, state, name
     `;
     const schools: AiSitemapSchool[] = rows

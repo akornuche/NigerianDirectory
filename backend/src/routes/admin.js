@@ -20,7 +20,7 @@ router.use(authenticate, requireAdmin);
 router.get('/overview', async (req, res, next) => {
     try {
         const [schoolStats, locationStats, claimStats, crawlStats, contactStats] = await Promise.all([
-            School.getStats(),
+            School.getStats({ includeUnpublished: true }),
             Location.getStats(),
             Claim.getStats(),
             CrawlLog.getStats(),

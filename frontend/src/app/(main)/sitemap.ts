@@ -87,7 +87,7 @@ async function getSchools() {
              enriched_history, enriched_academics,
              enriched_campus_info, enriched_student_life
       FROM schools
-      WHERE institution_category = 'school' ORDER BY state, name
+      WHERE institution_category = 'school' AND verification_status = 'verified' ORDER BY state, name
     `;
     return rows.filter((r) => assessContentQuality(r).indexable).map((r) => ({
       slug: r.slug as string,
@@ -106,7 +106,7 @@ async function getUniversities() {
              enriched_history, enriched_academics,
              enriched_campus_info, enriched_student_life
       FROM schools
-      WHERE institution_category = 'university' ORDER BY state, name
+      WHERE institution_category = 'university' AND verification_status = 'verified' ORDER BY state, name
     `;
     return rows.filter((r) => assessContentQuality(r).indexable).map((r) => ({
       slug: r.slug as string,

@@ -93,6 +93,7 @@ class Location {
                 COUNT(DISTINCT s.id) as school_count
              FROM locations l
              LEFT JOIN schools s ON LOWER(s.city) = LOWER(l.city) AND LOWER(s.state) = LOWER(l.state)
+                 AND s.verification_status = 'verified'
              WHERE l.city IS NOT NULL
              GROUP BY l.city, l.state, l.slug
              HAVING COUNT(DISTINCT s.id) > 0

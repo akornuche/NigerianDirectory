@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import {
   MapPinIcon,
   PhoneIcon,
@@ -17,7 +17,7 @@ import {
   StarIcon,
   LinkIcon
 } from '@heroicons/react/24/outline';
-import { getSchoolByPath, School } from '@/lib/api';
+import { getSchoolByPath, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 import { assessContentQuality } from '@/lib/content-quality';
 
@@ -27,15 +27,21 @@ type ManagementMember = {
   image_url?: string;
 };
 
-// Fetch school data from API
+// Fetch school data from API. A record that was merged, renamed or moved to
+// another state/area 301-redirects to its canonical URL.
 async function getSchool(state: string, area: string, slug: string): Promise<School | null> {
+  let redirectTo: string | null = null;
   try {
-    const school = await getSchoolByPath(state, area, slug);
-    return school;
+    return await getSchoolByPath(state, area, slug);
   } catch (error) {
-    console.error('Error fetching school:', error);
-    return null;
+    redirectTo = movedToPath(error);
+    if (!redirectTo) {
+      console.error('Error fetching school:', error);
+      return null;
+    }
   }
+  // Outside the try: permanentRedirect works by throwing.
+  permanentRedirect(redirectTo);
 }
 
 interface Props {
