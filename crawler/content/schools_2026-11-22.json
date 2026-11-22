@@ -361,5 +361,26 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Government_Secondary_School,_Owerri"
     ]
+  },
+  "77": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Federal Government College, Jos was established in 1973 and is one of the federal government's unity schools, owned by the federal government and run by the Federal Ministry of Education. It educates boys and girls on Zaria Road in Jos, the capital of Plateau State.",
+    "academics": "FGC Jos is a co-educational public secondary school. Its former students include Mohammed Umar Bago, Governor of Niger State; Nenadi Usman, former Minister of Finance; Maikanti Kachalla Baru, former Group Managing Director of the NNPC; and the Senior Advocates of Nigeria Abdulkarim Kana and Okey Ajunwa.",
+    "student_life": "Students belong to the Shere, Dilimi, Founders and Nok houses, with Lamingo and Diye houses for girls.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Jos"
+    ]
+  },
+  "79": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Hillcrest School was founded in 1942 by the Church of the Brethren Mission to give a Christian education to missionary children. Its first teacher, Mary Dadisman, a nurse who left the Garkida hospital to teach, welcomed 12 pupils on 22 July 1942; the school's first textbooks were lost when their ship was sunk in the war, and the first delivery arrived in May 1943. Hillcrest moved to its present site in 1946 and admitted pupils without regard to race or colour from the start, which the Nigerian Daily Times reported in March 1947. Other missions joined from 1955, and it is now sponsored by ten Christian mission bodies.",
+    "academics": "Hillcrest is a private, co-educational Christian day school in Jos with about 235 students. Its motto is \"Love God, Love Others\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Hillcrest_School_(Jos,_Nigeria)"
+    ]
   }
 }

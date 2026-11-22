@@ -44,19 +44,19 @@ This plan fixes the current data, sets a **data standard** that every vertical m
   Stop all crawler runs (`resume_crawl_fast.py`, `secondary_school_crawler*.py`, `crawl_images_batch.py`, scheduler) until Phase 3 is complete.
   *Accept:* no `updated_at` changes in `schools` from crawler jobs for the freeze period.
 
-- [ ] **G-2 · P0 · S · Back up production.**
+- [x] **G-2 · P0 · S · Back up production.**
   Create a Neon branch named `pre-remediation-2026-11` from `main` (instant, copy-on-write) and export `schools`, `locations` and `contact_submissions` to CSV.
   *Accept:* the branch exists, and the exported row counts match production (713 schools).
 
-- [ ] **G-3 · P0 · S · Do all fixes on a staging branch first.**
+- [x] **G-3 · P0 · S · Do all fixes on a staging branch first.**
   Create Neon branch `remediation` and point a Vercel **preview** deployment of both projects at it. Apply every Phase 1–2 change there, verify, then apply to `main`.
   *Accept:* every Phase 1–2 change has been run on the staging branch and reviewed before production.
 
-- [ ] **G-4 · P0 · S · Make every data fix reproducible.**
+- [x] **G-4 · P0 · S · Make every data fix reproducible.**
   Each fix is a committed, idempotent SQL migration or script under `backend/database/migrations/` or `crawler/fixes/`, never a manual console edit.
   *Accept:* re-running a fix makes no further changes.
 
-- [ ] **G-5 · P1 · S · Add a URL redirect table.**
+- [x] **G-5 · P1 · S · Add a URL redirect table.**
   Create `slug_redirects(old_path, new_path, status, created_at)` and serve it in `frontend/src/middleware.ts` (301). This is required before any record is merged or renamed.
   *Accept:* a merged record's old URL returns a 301 to the kept record.
 
@@ -68,22 +68,22 @@ This plan fixes the current data, sets a **data standard** that every vertical m
 
 For each pair: merge any useful fields into the **kept** record, delete the duplicate, and add a 301 from the duplicate's URL.
 
-- [ ] **D-1** Drop **244** *Cross River State University of Technology* → keep **508** *University of Cross River State* (renamed).
-- [ ] **D-2** Drop **257** *Federal University of Agriculture, Makurdi* → keep **356** *Joseph Sarwuan Tarka University* (renamed).
-- [ ] **D-3** Drop **283** *Kano University of Science and Technology* → keep **500** *Aliko Dangote University of Science and Technology* (renamed). Move website `kustwudil.edu.ng` onto 500 if it is still the official one.
-- [ ] **D-4** Drop **296** *Maranatha University, Mgbidi* → keep **415** *Maranatha University* (same website; NUC lists one).
-- [ ] **D-5** Drop **297** *Mcpherson University* → keep **298**, renamed to *McPherson University, Seriki Sotayo*.
-- [ ] **D-6** Drop **310** *Ondo State University of Science and Technology* → keep **506** *Olusegun Agagu University of Science and Technology* (renamed).
-- [ ] **D-7** Drop **323** *Samuel Adegboyega University* → keep **398** *Glorious Vision University* (renamed); fix 398's website (see 1D).
+- [x] **D-1** Drop **244** *Cross River State University of Technology* → keep **508** *University of Cross River State* (renamed).
+- [x] **D-2** Drop **257** *Federal University of Agriculture, Makurdi* → keep **356** *Joseph Sarwuan Tarka University* (renamed).
+- [x] **D-3** Drop **283** *Kano University of Science and Technology* → keep **500** *Aliko Dangote University of Science and Technology* (renamed). Move website `kustwudil.edu.ng` onto 500 if it is still the official one.
+- [x] **D-4** Drop **296** *Maranatha University, Mgbidi* → keep **415** *Maranatha University* (same website; NUC lists one).
+- [x] **D-5** Drop **297** *Mcpherson University* → keep **298**, renamed to *McPherson University, Seriki Sotayo*.
+- [x] **D-6** Drop **310** *Ondo State University of Science and Technology* → keep **506** *Olusegun Agagu University of Science and Technology* (renamed).
+- [x] **D-7** Drop **323** *Samuel Adegboyega University* → keep **398** *Glorious Vision University* (renamed); fix 398's website (see 1D).
 
 *Accept:* 297 university rows remain, there are no two rows for one NUC entry, and all seven old URLs return 301.
 
 #### 1B. Universities: names, types and campuses (P0)
 
-- [ ] **N-1** **234** *Borno State University* → rename to *Kashim Ibrahim University* (NUC), with a redirect.
-- [ ] **N-2** **328** *Tai Solarin University of Education* → rename to *Tai Solarin Federal University of Education*; set `type = federal`.
-- [ ] **N-3** **503** *Emmanuel Ayande University of Education* → correct the spelling to *Emanuel Alayande University of Education*; update slug and redirect.
-- [ ] **N-4** **341** *University of Nigeria, Enugu Campus* is a campus, not a university. Either convert it to a campus of UNN (once added in 1C) or remove it with a redirect to UNN.
+- [x] **N-1** **234** *Borno State University* → rename to *Kashim Ibrahim University* (NUC), with a redirect.
+- [x] **N-2** **328** *Tai Solarin University of Education* → rename to *Tai Solarin Federal University of Education*; set `type = federal`.
+- [x] **N-3** **503** *Emmanuel Ayande University of Education* → correct the spelling to *Emanuel Alayande University of Education*; update slug and redirect.
+- [x] **N-4** **341** *University of Nigeria, Enugu Campus* is a campus, not a university. Either convert it to a campus of UNN (once added in 1C) or remove it with a redirect to UNN.
 - [ ] **N-5 · P1** **292** *Lagos State University of Science and Technology*: NUC's live page lists it under federal. Confirm with the institution and NUC before changing the type.
 
 #### 1C. Universities: missing institutions (P0 for the first two, P1 for the rest)
@@ -104,36 +104,36 @@ Add from NUC's live lists with full provenance (see §4). **Priority:** Universi
 
 A wrong website sends users and crawlers to another organisation, and the crawler then imports that organisation's text.
 
-- [ ] **W-1** **282** Kaduna State University: `ssanunational.org.ng` → `https://kasu.edu.ng`.
-- [ ] **W-2** Clear the wrong institution's website on 10 schools (they were given a university's or polytechnic's site): **109**, **111** (uniosun) · **117** (bellsuniversity) · **1162** (abiastateuniversity) · **1142** (fudutsinma) · **1068** (fulafia) · **1083** (tsuniversity) · **1086**, **1087**, **1089** (fedpodam).
-- [ ] **W-3** Fix or clear 13 websites that do not exist in DNS: schools **2, 3, 6, 7, 10, 18, 21**; universities **379, 398, 405, 423, 426, 428**. Find each official site; if none can be confirmed, set the field to `NULL`.
+- [x] **W-1** **282** Kaduna State University: `ssanunational.org.ng` → `https://kasu.edu.ng`.
+- [x] **W-2** Clear the wrong institution's website on 10 schools (they were given a university's or polytechnic's site): **109**, **111** (uniosun) · **117** (bellsuniversity) · **1162** (abiastateuniversity) · **1142** (fudutsinma) · **1068** (fulafia) · **1083** (tsuniversity) · **1086**, **1087**, **1089** (fedpodam).
+- [x] **W-3** Fix or clear 13 websites that do not exist in DNS: schools **2, 3, 6, 7, 10, 18, 21**; universities **379, 398, 405, 423, 426, 428**. Find each official site; if none can be confirmed, set the field to `NULL`.
 - [ ] **W-4 · P1** Staff schools that share their parent university's website (e.g. 1220 *Delta State University Staff School Abraka*) keep it only if the university hosts a page for the school. Otherwise clear the field.
 
 *Accept:* every non-null `website` resolves in DNS, and its home page title or domain matches the institution (see the ownership check in §4).
 
 #### 1E. Secondary schools: identity (P0)
 
-- [ ] **S-1** Resolve 18 records with invented "Federal Government (Girls) College + state name" names. Replace each with the real unity school(s) in that state, named after their towns (e.g. FGC Kebbi → *Federal Government College, Birnin Yauri*; FGGC Abia → *Federal Government Girls College, Umuahia*), or delete it.
+- [x] **S-1** Resolve 18 records with invented "Federal Government (Girls) College + state name" names. Replace each with the real unity school(s) in that state, named after their towns (e.g. FGC Kebbi → *Federal Government College, Birnin Yauri*; FGGC Abia → *Federal Government Girls College, Umuahia*), or delete it.
   IDs: **83, 84, 87, 88, 89, 90, 93, 94, 96, 99, 101, 109, 117, 155, 159, 162, 1061, 1150**.
-- [ ] **S-2** **1139** *Fiwasaye Girls Grammar School*: set state = Ondo, city = Akure.
-- [ ] **S-3** **1243** *Christ School Ado-Ekiti Ondo*: rename to *Christ's School, Ado-Ekiti*; set state = Ekiti, city = Ado-Ekiti.
-- [ ] **S-4** Set `type = federal` on 38 Federal Government Colleges stored as `public`:
+- [x] **S-2** **1139** *Fiwasaye Girls Grammar School*: set state = Ondo, city = Akure.
+- [x] **S-3** **1243** *Christ School Ado-Ekiti Ondo*: rename to *Christ's School, Ado-Ekiti*; set state = Ekiti, city = Ado-Ekiti.
+- [x] **S-4** Set `type = federal` on 38 Federal Government Colleges stored as `public`:
   1033, 1040, 1045, 1052, 1061, 1068, 1071, 1077, 1080, 1086, 1089, 1095, 1098, 1104, 1112, 1114, 1119, 1127, 1137, 1142, 1150, 1153, 1158, 1162, 1165, 1168, 1173, 1179, 1186, 1195, 1201, 1207, 1212, 1217, 1222, 1227, 1234, 1238.
-- [ ] **S-5 · P0 · L** **Verify or remove the 297 unverifiable schools.** Build an authoritative school roster (see §4.1: Federal Ministry of Education unity-school list, state ministry lists, WAEC/NECO centre lists). For each record, mark it `verified` with a source URL, or unpublish it. 216 of these came from an untracked batch added on 2026-09-30; treat that batch as unverified until each record is sourced.
+- [x] **S-5 · P0 · L** **Verify or remove the 297 unverifiable schools.** Build an authoritative school roster (see §4.1: Federal Ministry of Education unity-school list, state ministry lists, WAEC/NECO centre lists). For each record, mark it `verified` with a source URL, or unpublish it. 216 of these came from an untracked batch added on 2026-09-30; treat that batch as unverified until each record is sourced.
 - [ ] **S-6 · P1** Records named after a host institution, such as "<University> Staff School" or "<University> International School" (35 records), must link to a page on the host institution's site that confirms the school exists.
 
 *Accept:* every published school has `verification_status = 'verified'` and a source URL. Anything else is hidden from listings, sitemaps and search.
 
 #### 1F. Universities: field accuracy (P1)
 
-- [ ] **F-1** Update 19 out-of-date vice-chancellors to the names on NUC's live list (IDs: 201, 212, 221, 228, 229, 232, 245, 264, 267, 271, 272, 290, 293, 306, 334, 335, 339, 342, 344). Store `principal_verified_at` so staleness is visible.
-- [ ] **F-2** Resolve 5 founding-year conflicts against each university's own history page (221 Ambrose Alli 1981 vs 1980 · 248 EBSU 1999 vs 2000 · 254 ESUT 1980 vs 1982 · 306 UNIZIK 1991 vs 1992 · 338 UniJos 1971 vs 1975). Where the difference reflects "founded as a campus" versus "became independent", store the independence year and note the other.
-- [ ] **F-3** Fill the 115 universities with no `established_year` and the 85 with no `website` from NUC's live lists, which give both.
+- [x] **F-1** Update 19 out-of-date vice-chancellors to the names on NUC's live list (IDs: 201, 212, 221, 228, 229, 232, 245, 264, 267, 271, 272, 290, 293, 306, 334, 335, 339, 342, 344). Store `principal_verified_at` so staleness is visible.
+- [x] **F-2** Resolve 5 founding-year conflicts against each university's own history page (221 Ambrose Alli 1981 vs 1980 · 248 EBSU 1999 vs 2000 · 254 ESUT 1980 vs 1982 · 306 UNIZIK 1991 vs 1992 · 338 UniJos 1971 vs 1975). Where the difference reflects "founded as a campus" versus "became independent", store the independence year and note the other.
+- [x] **F-3** Fill the 115 universities with no `established_year` and the 85 with no `website` from NUC's live lists, which give both.
 
 #### 1G. Category and vertical hygiene (P1)
 
 - [ ] **V-1** The one `hospital` row (**205**, LUTH) is in an unlaunched vertical and blocked by `robots.txt` (`/health/`). Leave it unpublished until the Health vertical goes through §6.
-- [ ] **V-2** `frontend/src/config/verticals.ts` marks *Colleges & Polytechnics*, *Polytechnics*, *Colleges of Education*, *Primary*, *Boarding* and *Special Needs* as `live`, but the database has no records for them. Set them to `coming-soon` until they have data that meets §4.
+- [x] **V-2** `frontend/src/config/verticals.ts` marks *Colleges & Polytechnics*, *Polytechnics*, *Colleges of Education*, *Primary*, *Boarding* and *Special Needs* as `live`, but the database has no records for them. Set them to `coming-soon` until they have data that meets §4.
 
 ---
 
@@ -141,10 +141,10 @@ A wrong website sends users and crawlers to another organisation, and the crawle
 
 The audit found that content was copied word for word from third-party pages and often isn't about the institution: general essays, other schools, adverts, news headlines, terms-of-service text, and in 38 cases the site citing itself. This is the largest risk to Google rankings and to ad-network approval.
 
-- [ ] **C-1 · P0 · M · Unpublish bad content now.** For the 350 records flagged `content quality` in the CSV, clear the failing sections (or set `content_status = 'rejected'`) so pages fall back to the factual profile and are `noindex` until re-enriched.
+- [x] **C-1 · P0 · M · Unpublish bad content now.** For the 350 records flagged `content quality` in the CSV, clear the failing sections (or set `content_status = 'rejected'`) so pages fall back to the factual profile and are `noindex` until re-enriched.
   *Accept:* no published section opens with text about another subject, and none contains the junk patterns in §4.3.
-- [ ] **C-2 · P0 · S · Remove self-citations.** Delete every `content_sources` entry on `nigeriandirectory.com.ng` (38 records), then re-assess those records.
-- [ ] **C-3 · P0 · S · Rank or exclude low-trust sources.** Block AI-generated sources (e.g. `grokipedia.com`). Treat job boards and aggregators (`joberplanet.com`, `recruitmentmat.com`, `currentaffairs.com.ng`, `myspotfinder.com`, `ng.africabz.com`, `soluap.com`, `nigerianinformer.com` and similar) as low-trust: never the only source of a fact.
+- [x] **C-2 · P0 · S · Remove self-citations.** Delete every `content_sources` entry on `nigeriandirectory.com.ng` (38 records), then re-assess those records.
+- [x] **C-3 · P0 · S · Rank or exclude low-trust sources.** Block AI-generated sources (e.g. `grokipedia.com`). Treat job boards and aggregators (`joberplanet.com`, `recruitmentmat.com`, `currentaffairs.com.ng`, `myspotfinder.com`, `ng.africabz.com`, `soluap.com`, `nigerianinformer.com` and similar) as low-trust: never the only source of a fact.
 - [ ] **C-4 · P0 · M · Stop publishing copied text.** Text taken from another site may be used only as a short attributed quotation. Each section must be written for us from multiple sources, factual and cited. This needs a written content policy (§4.4) and a generation-plus-review step (Phase 3, CR-7).
 - [ ] **C-5 · P1 · L · Re-enrich** the cleared records and the 131 empty records through the new pipeline (Phase 3), starting with the 290 NUC-verified universities, then verified schools.
 - [ ] **C-6 · P1 · M · Image review.** The 636 hero and 580 logo images come from DuckDuckGo image search and have never been checked. Review a random 10% sample by eye. If more than 5% are wrong, remove images that weren't taken from the institution's own domain and re-run with the ownership rule in §4.2.
@@ -159,63 +159,63 @@ This is what makes future verticals right first time. Requirements are in §4. C
 - [ ] **CR-1 · P0 · M · Source registry.** A committed `crawler/sources/<vertical>.yaml` listing the authoritative roster for each vertical (URL, fields provided, licence, refresh frequency). Identity data may only come from a registered roster.
 - [ ] **CR-2 · P0 · M · Committed seed rosters.** Every batch of records comes from a committed, dated roster file with each record's source URL. There must never be another untracked batch like the one on 2026-09-30.
 - [ ] **CR-3 · P0 · M · Provenance columns.** Add `source_url`, `source_name`, `source_fetched_at` and `verification_status` (`verified` / `unverified` / `rejected`) per record, and `field_sources jsonb` mapping each field to its source. Only `verified` records are published.
-- [ ] **CR-4 · P0 · M · Website ownership check.** Replace "persist the top search result" (`niche_crawler._discover_website` / `_persist_discovered_website`) with these rules:
+- [x] **CR-4 · P0 · M · Website ownership check.** Replace "persist the top search result" (`niche_crawler._discover_website` / `_persist_discovered_website`) with these rules:
   - The domain must resolve in DNS.
   - The page `<title>` or `og:site_name` must contain the institution's distinctive name tokens.
   - The domain must not belong to another record.
   - For schools, `.edu.ng` and `.gov.ng` domains need a name match. Never assign a university's domain to a school.
   If the check fails, leave the website `NULL`.
-- [ ] **CR-5 · P0 · M · Content relevance gate.** In `niche_crawler._classify` / `_synthesise`, accept a text block only if:
+- [x] **CR-5 · P0 · M · Content relevance gate.** In `niche_crawler._classify` / `_synthesise`, accept a text block only if:
   - it names the institution (distinctive tokens) or comes from its verified domain;
   - it doesn't match the junk patterns (§4.3);
   - it isn't from a blocked domain or our own domain;
   - it isn't mostly about another institution (another institution's name appears more often than this one's).
-- [ ] **CR-6 · P0 · S · Undo the "save everything" policy.** `crawl_institution` currently saves sparse content anyway (`NEW POLICY: Save EVERYTHING`). Content below the quality gate must be saved as `content_status = 'draft'` and never published.
+- [x] **CR-6 · P0 · S · Undo the "save everything" policy.** `crawl_institution` currently saves sparse content anyway (`NEW POLICY: Save EVERYTHING`). Content below the quality gate must be saved as `content_status = 'draft'` and never published.
 - [ ] **CR-7 · P1 · L · Write from sources instead of pasting them.** Generate each section from facts gathered across at least 2 independent sources. Store citations per sentence or paragraph, and route it to human review before publishing (see the admin review queue, CR-11).
 - [ ] **CR-8 · P0 · S · Location validation.** Validate `state`, `city` and `area` against a committed table of Nigeria's 774 LGAs and their towns. Reject any record whose name or address names a town in another state.
 - [ ] **CR-9 · P0 · S · Duplicate and alias detection.** Keep an `institution_aliases` table of former names, so renamed institutions (as in 1A) map to one record. Block inserts whose normalised name, website or alias matches an existing record.
 - [ ] **CR-10 · P1 · S · Type rules.** Derive `type` from the roster; for example, "Federal Government College" ⇒ `federal`. A record whose name contradicts its type fails validation.
 - [ ] **CR-11 · P1 · M · Admin review queue.** Add an admin page listing `unverified` and `draft` records with their sources, offering approve, edit and reject. Use it for every record a human must sign off.
 - [ ] **CR-12 · P1 · M · Images.** Prefer images from the institution's verified domain (logo from `<link rel=icon>`, `og:image` or the header). For search-engine images, require the source page's domain to match and store `image_source_url`. Store a content hash to catch the same image reused across records.
-- [ ] **CR-13 · P1 · M · Tests and CI.** Unit tests for every gate in §4, using fixtures of known-bad cases from this audit (e.g. the Osogbo record containing *Ebunoluwa International School* text, the *Amazon* headline, the SchoolMata byline). Run in CI and block merges on failure.
-- [ ] **CR-14 · P1 · S · Committed audit script.** Turn the 2026-11-21 audit into `crawler/audit/run_audit.py`. It compares against live rosters, runs a DNS check on websites, scores content and checks the sitemap, and writes a dated CSV. Run it weekly and before every vertical launch.
+- [x] **CR-13 · P1 · M · Tests and CI.** Unit tests for every gate in §4, using fixtures of known-bad cases from this audit (e.g. the Osogbo record containing *Ebunoluwa International School* text, the *Amazon* headline, the SchoolMata byline). Run in CI and block merges on failure.
+- [x] **CR-14 · P1 · S · Committed audit script.** Turn the 2026-11-21 audit into `crawler/audit/run_audit.py`. It compares against live rosters, runs a DNS check on websites, scores content and checks the sitemap, and writes a dated CSV. Run it weekly and before every vertical launch.
 - [ ] **CR-15 · P2 · S · Consolidate scripts.** Remove or archive superseded crawlers (`image_crawler.py` vs `image_crawler_fixed.py`, `content_crawler_fixed.py`, `secondary_school_crawler_remaining.py`, one-off `check_*` and `debug_*` scripts) so there is one supported pipeline.
 
 ---
 
 ### Phase 4 — Technical SEO (Google and Bing)
 
-- [ ] **T-1 · P0 · S · Sitemap lists dead URLs.**
+- [x] **T-1 · P0 · S · Sitemap lists dead URLs.**
   - Remove `/claim/` from `frontend/src/app/(main)/sitemap.ts`; the page doesn't exist.
   - Fix `toSlug()` there, which only replaces spaces, so areas such as "Ado-Odo/Ota" produce 404 URLs. Use the slug function the routes use, and test that every sitemap URL returns 200.
   *Accept:* a sitemap crawl returns 100% 200s.
-- [ ] **T-2 · P0 · S · Fix the AI sitemap** (`frontend/src/app/(main)/ai-sitemap.xml/route.ts`).
+- [x] **T-2 · P0 · S · Fix the AI sitemap** (`frontend/src/app/(main)/ai-sitemap.xml/route.ts`).
   - Remove the 64 dead URLs: `/ai`, `/api/ai/...` on the website domain, and `/education/<type>-schools`.
   - URL-encode or slug the 4 addresses with spaces.
   - Add trailing slashes so URLs don't redirect.
   - Consider merging it into the main sitemap; it duplicates 531 of its URLs.
-- [ ] **T-3 · P0 · S · Return 404 for unknown states and areas.** `/education/schools/atlantis/` currently returns 200 (a soft 404). Call `notFound()` in the `[state]` and `[area]` pages for unknown slugs.
-- [ ] **T-4 · P0 · S · Canonical tags on every indexable page.** Home, the schools and universities listings, state pages, blog index, blog posts, about, contact and advertise have none. Add `alternates.canonical` with the absolute `https://www.` URL and a trailing slash.
+- [x] **T-3 · P0 · S · Return 404 for unknown states and areas.** `/education/schools/atlantis/` currently returns 200 (a soft 404). Call `notFound()` in the `[state]` and `[area]` pages for unknown slugs.
+- [x] **T-4 · P0 · S · Canonical tags on every indexable page.** Home, the schools and universities listings, state pages, blog index, blog posts, about, contact and advertise have none. Add `alternates.canonical` with the absolute `https://www.` URL and a trailing slash.
 - [ ] **T-5 · P0 · S · Turn caching back on.** `frontend/src/app/layout.tsx:24` sets `dynamic = 'force-dynamic'` for the whole site, so every request renders from scratch (`cache-control: no-store`). Remove it, use `revalidate` per page (e.g. 3600 for detail pages, 86400 for listings), and keep only truly dynamic routes dynamic.
   *Accept:* detail pages return `x-vercel-cache: HIT` on repeat requests.
-- [ ] **T-6 · P1 · S · Titles.**
+- [x] **T-6 · P1 · S · Titles.**
   - The template `'%s | NigerianDirectory.com'` (`(main)/layout.tsx:12`) plus titles that already end in the brand gives "… | NigerianDirectory | NigerianDirectory.com".
   - `meta_title` is cut at 60 characters before the template is added, giving "… | NigerianDire".
   - Set one brand suffix and keep the final title ≤ 60 characters.
   - Give the contact page its own title; it is a client component with no metadata, so add a `layout.tsx` with metadata.
-- [ ] **T-7 · P1 · M · Structured data.**
+- [x] **T-7 · P1 · M · Structured data.**
   - Add `CollegeOrUniversity` JSON-LD to university detail pages (currently none).
   - Add `ItemList` + `BreadcrumbList` to listing and state pages, and `WebSite` + `Organization` (with `SearchAction`) to the home page.
   - Omit `null` properties (`streetAddress`, `telephone`, `email` are emitted as null).
   - Validate with Google's Rich Results Test and the Schema.org validator.
-- [ ] **T-8 · P1 · S · Breadcrumbs point at 404s.** `/education/` and `/education/schools/<state>/<area>/` don't exist. Either create those pages or drop them from both visible and JSON-LD breadcrumbs (school detail page, around line 273).
-- [ ] **T-9 · P1 · S · Conflicting robots tags on 404 pages.** The 404 page sends `robots: noindex` together with `googlebot: index, follow`, which comes from the `googleBot` default in `(main)/layout.tsx:27-30`. Make page-level `robots` override both.
+- [x] **T-8 · P1 · S · Breadcrumbs point at 404s.** `/education/` and `/education/schools/<state>/<area>/` don't exist. Either create those pages or drop them from both visible and JSON-LD breadcrumbs (school detail page, around line 273).
+- [x] **T-9 · P1 · S · Conflicting robots tags on 404 pages.** The 404 page sends `robots: noindex` together with `googlebot: index, follow`, which comes from the `googleBot` default in `(main)/layout.tsx:27-30`. Make page-level `robots` override both.
 - [ ] **T-10 · P1 · S · `robots.txt` blocks `/health/`**, which also covers `/health/hospitals/`. Keep it while Health is unlaunched, but list it as a launch task in §6.
-- [ ] **T-11 · P1 · S · Icons and social images.**
+- [x] **T-11 · P1 · S · Icons and social images.**
   - Add `favicon.ico`, PNG icons and a `site.webmanifest`.
   - Rename `public/nd logo.jpg` (it has a space in the name).
   - Add `og:image` to listing pages, which have only 2 Open Graph tags.
-- [ ] **T-12 · P1 · S · Language.** Set `<html lang="en-NG">` and `og:locale = en_NG`.
+- [x] **T-12 · P1 · S · Language.** Set `<html lang="en-NG">` and `og:locale = en_NG`.
 - [ ] **T-13 · P2 · S · Page weight.** The Lagos state page is 423 KB of HTML with 111 images. Paginate state listings (e.g. 24 per page with `rel` links) and lazy-load images below the fold.
 - [ ] **T-14 · P2 · S · Remove the legacy `app/(main)/schools/...` routes.** Middleware already redirects them with a 301, so the pages are dead code that can drift.
 
@@ -235,7 +235,7 @@ This is what makes future verticals right first time. Requirements are in §4. C
 
 ### Phase 6 — GEO (AI assistants and answer engines)
 
-- [ ] **GEO-1 · P1 · S · Add `/llms.txt`.** Summarise the site, link the canonical listing pages and the API docs, and state the data licence and how to cite.
+- [x] **GEO-1 · P1 · S · Add `/llms.txt`.** Summarise the site, link the canonical listing pages and the API docs, and state the data licence and how to cite.
 - [ ] **GEO-2 · P1 · S · Correct the AI agents page** (`/for-ai-agents/`). Point it at the real API base (`https://nigeriandirectory-api.vercel.app/api`, or a custom domain from GEO-4) and document only endpoints that exist (`/api/ai/schools` works; `/api/ai`, `/api/ai/search` and `/api/ai/stats` return 404).
 - [ ] **GEO-3 · P1 · S · Answer-ready facts.** On each detail page, show a short factual summary near the top (type, location, founding year, head, accreditation) with visible "Source: NUC, fetched <date>" citations. AI answer engines favour pages that state facts plainly and show their sources.
 - [ ] **GEO-4 · P2 · S · Custom API domain.** Serve the API at `api.nigeriandirectory.com.ng` (Vercel domain plus DNS CNAME) and update `NEXT_PUBLIC_API_URL`, `API_INTERNAL_URL`, `CORS_ORIGINS` and docs.
@@ -245,26 +245,26 @@ This is what makes future verticals right first time. Requirements are in §4. C
 
 Ad networks review content quality, so apply only after the content clean-up.
 
-- [ ] **AD-1 · P0 · S · Fix the advertise page.**
+- [x] **AD-1 · P0 · S · Fix the advertise page.**
   - The form on `/advertise/` has no submit handler, so enquiries go nowhere. Post it to `/api/contact` with `submission_type = 'advertise'`; the API already supports this.
   - Replace `advertise@nigeriandirectory.com`, which is on a domain that doesn't exist.
-- [ ] **AD-2 · P0 · S · `ads.txt`.** Add `public/ads.txt` with your publisher line, e.g. `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`, plus lines for any other network.
-- [ ] **AD-3 · P0 · M · Map slots to real ad unit IDs.** `AdBanner` sends slot *names* (e.g. `home-top-leaderboard`) as `data-ad-slot`; AdSense needs the numeric ad unit ID. Add a mapping (config or env) from slot name to network unit ID, and don't render a slot that has no mapping.
+- [x] **AD-2 · P0 · S · `ads.txt`.** Add `public/ads.txt` with your publisher line, e.g. `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`, plus lines for any other network.
+- [x] **AD-3 · P0 · M · Map slots to real ad unit IDs.** `AdBanner` sends slot *names* (e.g. `home-top-leaderboard`) as `data-ad-slot`; AdSense needs the numeric ad unit ID. Add a mapping (config or env) from slot name to network unit ID, and don't render a slot that has no mapping.
 - [ ] **AD-4 · P0 · M · Consent.**
   - Use a Google-certified CMP (IAB TCF v2.2) for EEA, UK and Swiss visitors.
   - Set the Consent Mode default **before** any Google tag loads (`beforeInteractive`, ahead of AdSense and GA).
   - Make "Necessary only" deny `ad_storage`; it currently grants it.
-- [ ] **AD-5 · P0 · S · Reduce ad density.** There are 22 slots on the home page, 13 on state pages and 8 on school pages. Start with at most 3 per page on mobile and 4–5 on desktop, never above the main heading, and never more ad space than content. Add more only after approval, based on the data.
-- [ ] **AD-6 · P1 · S · Responsive units.** `AdBanner` sets fixed width and height together with `data-ad-format="auto"` and full-width responsive. Choose one: fixed-size units, or responsive units at `width: 100%`. Reserve the slot's height to avoid layout shift.
+- [x] **AD-5 · P0 · S · Reduce ad density.** There are 22 slots on the home page, 13 on state pages and 8 on school pages. Start with at most 3 per page on mobile and 4–5 on desktop, never above the main heading, and never more ad space than content. Add more only after approval, based on the data.
+- [x] **AD-6 · P1 · S · Responsive units.** `AdBanner` sets fixed width and height together with `data-ad-format="auto"` and full-width responsive. Choose one: fixed-size units, or responsive units at `width: 100%`. Reserve the slot's height to avoid layout shift.
 - [ ] **AD-7 · P1 · S · Configure and verify.** Set `NEXT_PUBLIC_GOOGLE_ADSENSE_ID` (and Media.net IDs if used) in the Vercel project. Confirm `<ins class="adsbygoogle">` renders and that AdSense reports the site as *Ready*.
-- [ ] **AD-8 · P2 · S · Media.net fallback.** `loadTag` is called with slot names, not Media.net crid IDs, and Media.net never renders when AdSense is set. Add a mapping, or remove Media.net until it's used.
+- [x] **AD-8 · P2 · S · Media.net fallback.** `loadTag` is called with slot names, not Media.net crid IDs, and Media.net never renders when AdSense is set. Add a mapping, or remove Media.net until it's used.
 - [ ] **AD-9 · P2 · S · Client-side navigation.** Re-initialise `adsbygoogle` safely on route changes (one `push` per `<ins>`, keyed by path) to avoid "already have ads" errors.
 
 ### Phase 8 — Operations and monitoring
 
 - [ ] **OP-1 · P1 · S · Weekly data audit** (CR-14) with a short report: counts by verification status, website DNS failures, content score distribution and new NUC entries not yet in the database.
 - [ ] **OP-2 · P1 · S · Uptime checks** on the website (`/`), the API (`/health`) and the sitemap.
-- [ ] **OP-3 · P1 · S · Deployment guard.** Add a CI job that builds the frontend (`npm run build`) on every pull request, so lint errors like `escapeXml` (PR #3) fail before reaching `main`.
+- [x] **OP-3 · P1 · S · Deployment guard.** Add a CI job that builds the frontend (`npm run build`) on every pull request, so lint errors like `escapeXml` (PR #3) fail before reaching `main`.
 - [ ] **OP-4 · P2 · S · Credentials.** Rotate or delete the Vercel and Neon API keys used during the audit when they are no longer needed.
 - [ ] **OP-5 · P2 · S · Retire the stale docs.** Archive superseded documents in `documents/` (launch reports, phase summaries) so this plan and the data standard are the single source of truth.
 
@@ -383,3 +383,4 @@ A vertical (e.g. polytechnics, hospitals, churches, hotels) moves from `coming-s
 | Date | Change | By |
 |---|---|---|
 | 2026-11-21 | Plan created from the 2026-11-21 audit | — |
+| 2026-11-22 | Phases 0–4 largely done on branch `claude/youthful-meitner-eko04y` and Neon branch `remediation`; production rollout pending. Universities: 295 verified against NUC, 9 retired. Schools: strict rule (Wikipedia/Wikidata match on name, school, Nigeria and location, reviewed by hand) verified 56 of 408; the rest are unpublished, not deleted. M-1..M-3 deferred (enough universities for now). Remaining university text is still copied and needs rewriting (C-4/C-5). | — |
