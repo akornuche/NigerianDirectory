@@ -25,25 +25,7 @@ export default function AdScripts() {
         />
       )}
 
-      {/* Google Consent Mode (for GDPR compliance) */}
-      {GOOGLE_ADSENSE_ID && (
-        <Script
-          id="google-consent-mode"
-          strategy="afterInteractive"
-        >
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              'analytics_storage': 'denied',
-              'ad_storage': 'denied',
-              'ad_personalization': 'denied',
-              'ad_user_data': 'denied',
-              'wait_for_update': 500
-            });
-          `}
-        </Script>
-      )}
+      {/* Consent Mode defaults are set first thing in app/layout.tsx <head>. */}
 
       {/* Media.net */}
       {MEDIANET_CUSTOMER_ID && MEDIANET_WINDOW_ID && (

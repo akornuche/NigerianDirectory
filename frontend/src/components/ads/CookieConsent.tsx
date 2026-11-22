@@ -47,11 +47,13 @@ export default function CookieConsent() {
         });
       }
     } else {
-      // Minimal consent - no personalization
+      // Necessary only: nothing beyond strictly necessary storage. Granting
+      // ad_storage here contradicted the visitor's choice. Google can still
+      // serve limited, non-personalised ads without it.
       if (typeof window.gtag === 'function') {
         window.gtag('consent', 'update', {
           'analytics_storage': 'denied',
-          'ad_storage': 'granted', // Still show ads, just not personalized
+          'ad_storage': 'denied',
           'ad_personalization': 'denied',
           'ad_user_data': 'denied',
         });

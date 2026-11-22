@@ -1,4 +1,5 @@
 const express = require('express');
+const { urlSegment } = require('../utils/slugify');
 const router = express.Router();
 const School = require('../models/School');
 const Location = require('../models/Location');
@@ -146,6 +147,33 @@ router.get('/area/:state/:area', async (req, res, next) => {
     }
 });
 
+/**
+ * Where a published record lives, for redirecting old or wrong URLs to it.
+ * Path segments use the same transform the frontend routes match against.
+ */
+function canonicalLocation(school) {
+    const seg = urlSegment;
+    const isUniversity = school.institution_category === 'university';
+    return {
+        slug: school.slug,
+        institution_category: school.institution_category,
+        state: seg(school.state),
+        // School URLs use the area; university URLs use the city.
+        locality: seg(isUniversity ? (school.city || school.state) : (school.area || school.state)),
+    };
+}
+
+/**
+ * Look up a slug that is no longer published under that name: a merged or
+ * renamed record. Returns the replacement record's canonical location.
+ */
+async function movedLocation(slug) {
+    const target = await School.resolveSlugAlias(slug);
+    if (!target) return null;
+    const school = await School.findBySlug(target);
+    return school ? canonicalLocation(school) : null;
+}
+
 // ============================================
 // GET /api/schools/:state/:area/:slug - Get school by full path
 // ============================================
@@ -162,19 +190,28 @@ router.get('/:state/:area/:slug', async (req, res, next) => {
         const school = await School.findBySlug(slug);
 
         if (!school) {
-            return res.status(404).json({ error: 'School not found' });
+            const movedTo = await movedLocation(slug);
+            return res.status(404).json(movedTo
+                ? { error: 'School moved', movedTo }
+                : { error: 'School not found' });
         }
 
         // Verify state and either area OR city match
-        const schoolState = school.state.toLowerCase().replace(/\s+/g, '-');
-        const schoolArea = school.area?.toLowerCase().replace(/\s+/g, '-') || '';
-        const schoolCity = school.city?.toLowerCase().replace(/\s+/g, '-') || '';
+        const schoolState = urlSegment(school.state);
+        const schoolArea = urlSegment(school.area);
+        const schoolCity = urlSegment(school.city);
 
-        const stateMatch = schoolState === state.toLowerCase();
-        const locationMatch = schoolArea === area.toLowerCase() || schoolCity === area.toLowerCase();
+        const stateMatch = schoolState === urlSegment(state);
+        const requested = urlSegment(area);
+        const locationMatch = (schoolArea !== '' && schoolArea === requested) || (schoolCity !== '' && schoolCity === requested);
 
         if (!stateMatch || !locationMatch) {
-            return res.status(404).json({ error: 'School not found at this location' });
+            // The record exists under a different path (e.g. its state was
+            // corrected): point the caller at the canonical URL.
+            return res.status(404).json({
+                error: 'School not found at this location',
+                movedTo: canonicalLocation(school),
+            });
         }
 
         await setCache(cacheKey, school, CACHE_TTL.MEDIUM);
@@ -200,7 +237,10 @@ router.get('/:slug', schoolSlugValidation, async (req, res, next) => {
         const school = await School.findBySlug(slug);
 
         if (!school) {
-            return res.status(404).json({ error: 'School not found' });
+            const movedTo = await movedLocation(slug);
+            return res.status(404).json(movedTo
+                ? { error: 'School moved', movedTo }
+                : { error: 'School not found' });
         }
 
         // Get nearby schools
@@ -238,7 +278,10 @@ router.get('/:slug/blog', async (req, res, next) => {
         const school = await School.findBySlug(slug);
 
         if (!school) {
-            return res.status(404).json({ error: 'School not found' });
+            const movedTo = await movedLocation(slug);
+            return res.status(404).json(movedTo
+                ? { error: 'School moved', movedTo }
+                : { error: 'School not found' });
         }
 
         // Get nearby schools for related section

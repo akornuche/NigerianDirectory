@@ -161,7 +161,9 @@ jobs:
 
       - name: Run offline crawler tests
         working-directory: ./crawler
-        run: pytest -q test_seo_fix.py
+        # tests/ holds the data-standard tests (crawler/standards.py), built
+        # from real failures found by the 2026-11-21 audit.
+        run: pytest -q test_seo_fix.py tests/
 
       # The remaining test_*.py files call live search engines, school
       # websites or a database, so their results depend on the network.
@@ -170,7 +172,7 @@ jobs:
         working-directory: ./crawler
         continue-on-error: true
         timeout-minutes: 15
-        run: pytest -q --ignore=test_seo_fix.py
+        run: pytest -q --ignore=test_seo_fix.py --ignore=tests
 
   # Docker build test
   docker-build:

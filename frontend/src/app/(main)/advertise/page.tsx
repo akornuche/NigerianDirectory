@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
+import AdvertiseForm from '@/components/forms/AdvertiseForm';
 import { 
   ChartBarIcon, 
   UserGroupIcon, 
   GlobeAltIcon,
-  EnvelopeIcon,
   CheckCircleIcon
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/advertise/' },
   title: 'Advertise With Us - Reach Nigerian Parents & Schools',
   description: 'Advertise on NigerianDirectory.com and reach thousands of parents searching for schools in Nigeria. Banner ads, sponsored listings, and featured placements available.',
 };
@@ -224,91 +225,19 @@ export default function AdvertisePage() {
           </div>
 
           <div className="bg-white rounded-xl shadow-sm p-8">
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                    placeholder="you@example.com"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                  Company / Organization
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                  placeholder="Your company name"
-                />
-              </div>
-              <div>
-                <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
-                  Interested In
-                </label>
-                <select
-                  id="interest"
-                  name="interest"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                >
-                  <option value="">Select an option</option>
-                  <option value="banner">Banner Advertising</option>
-                  <option value="featured">Featured School Listing</option>
-                  <option value="sponsored">Sponsored Content</option>
-                  <option value="other">Other / Custom Package</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                  placeholder="Tell us about your advertising goals..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full btn-primary py-3"
-              >
-                <EnvelopeIcon className="h-5 w-5 mr-2 inline" />
-                Send Inquiry
-              </button>
-            </form>
+            <AdvertiseForm />
           </div>
 
-          <div className="mt-8 text-center text-gray-600">
-            <p>
-              Or email us directly at{' '}
-              <a href="mailto:advertise@nigeriandirectory.com" className="text-primary-600 hover:underline">
-                advertise@nigeriandirectory.com
-              </a>
-            </p>
-          </div>
+          {process.env.NEXT_PUBLIC_ADVERTISE_EMAIL && (
+            <div className="mt-8 text-center text-gray-600">
+              <p>
+                Or email us directly at{' '}
+                <a href={`mailto:${process.env.NEXT_PUBLIC_ADVERTISE_EMAIL}`} className="text-primary-600 hover:underline">
+                  {process.env.NEXT_PUBLIC_ADVERTISE_EMAIL}
+                </a>
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </>

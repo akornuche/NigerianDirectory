@@ -37,6 +37,7 @@ from content_quality import ContentQualityManager
 from circuit_breaker import with_circuit_breaker
 from error_reporter import error_reporter
 from niche_config import NicheConfig, SECTION_KEYS
+import standards
 
 
 class NicheCrawler:
@@ -337,7 +338,8 @@ class NicheCrawler:
 
     def _harvest_page(self, url: str, accumulator: Dict[str, List[str]],
                       totals: Dict[str, int],
-                      min_hits: Optional[int] = None) -> int:
+                      min_hits: Optional[int] = None,
+                      relevance=None) -> int:
         """Fetch one page, classify its blocks, and return characters added."""
         added = 0
         try:
@@ -354,6 +356,13 @@ class NicheCrawler:
                 return 0
 
             for block in self._text_blocks(body):
+                # Third-party pages: keep only blocks that name this
+                # institution and are not page furniture or adverts
+                # (standards.block_is_relevant). The audit found blocks
+                # about other schools and generic essays published as
+                # profiles because only keywords were checked.
+                if relevance is not None and not relevance(block):
+                    continue
                 section = self._classify(block, totals, min_hits)
                 if section is None:
                     continue
@@ -501,11 +510,17 @@ class NicheCrawler:
             try:
                 self.logger.info(f"🔍 Searching: {query}")
                 results = search_web(query, max_results=5)
+                location = (state, city)
+                relevant = lambda block: standards.block_is_relevant(block, name, location)
                 for r in results:
                     if r.confidence < 0.5 or r.url in seen_urls:
                         continue
+                    # Never harvest this site (circular), AI-generated
+                    # encyclopaedias, or low-trust aggregators/job boards.
+                    if standards.is_blocked_source(r.url) or standards.is_low_trust_source(r.url):
+                        continue
                     seen_urls.add(r.url)
-                    added = self._harvest_page(r.url, extracted, totals)
+                    added = self._harvest_page(r.url, extracted, totals, relevance=relevant)
                     if added > 0:
                         extracted['sources'].append({
                             'url': r.url, 'title': r.title,
@@ -709,7 +724,22 @@ class NicheCrawler:
 
         return False
 
-    def _discover_website(self, name: str, state: str) -> Optional[str]:
+    def _domain_in_use(self, domain: str, inst_id: Optional[int]) -> bool:
+        """True if another record already uses this domain as its website."""
+        conn = db_manager.get_connection()
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT 1 FROM schools WHERE id <> %s AND website ILIKE %s LIMIT 1",
+                    (inst_id or 0, f'%{domain}%'),
+                )
+                return cur.fetchone() is not None
+        except Exception:
+            return True  # fail closed: never assign a possibly-shared domain
+        finally:
+            conn.close()
+
+    def _discover_website(self, name: str, state: str, institution: Optional[Dict[str, Any]] = None) -> Optional[str]:
         """
         Find and verify an institution's official website when none is on
         record.
@@ -750,6 +780,15 @@ class NicheCrawler:
                 try:
                     response = self.session.get(candidate_url, timeout=self.PAGE_TIMEOUT)
                     if response.status_code == 200:
+                        inst = institution or {}
+                        title_tag = BeautifulSoup(response.text, 'html.parser').find('title')
+                        title = title_tag.get_text(' ', strip=True) if title_tag else ''
+                        if not standards.website_plausibly_owned(
+                                candidate_url, name, inst.get('institution_category') or self.niche.institution_category,
+                                (state, inst.get('city'), inst.get('area')), page_title=title,
+                                used_by_other_record=self._domain_in_use(bare, inst.get('id'))):
+                            self.logger.info(f"Rejected {candidate_url} for {name}: fails the ownership check")
+                            break
                         self.logger.info(f"🌐 Discovered website: {candidate_url}")
                         return candidate_url
                 except Exception:
@@ -788,7 +827,7 @@ class NicheCrawler:
 
         try:
             if not url:
-                url = self._discover_website(name, state) or ''
+                url = self._discover_website(name, state, institution) or ''
                 if url:
                     self._persist_discovered_website(inst_id, url)
 
@@ -825,12 +864,21 @@ class NicheCrawler:
                 self.stats['quality_rejected'] += 1
                 return False
 
-            # NEW POLICY: Save EVERYTHING that passes basic validation
-            # Don't reject based on content length - we can enhance later
-            # Just log if content is sparse
+            # Content gate (standards.section_passes): a section that does not
+            # open with this institution, is too short, or contains junk is
+            # dropped. Content below the quality bar is not saved at all; the
+            # earlier "save everything" policy published thin and off-topic
+            # profiles.
+            location = (state, city, institution.get('area'))
+            for field_name in self.FIELD_MAP.values():
+                if not standards.section_passes(final.get(field_name), name, location):
+                    final[field_name] = ''
+            final['content_sources'] = [s for s in final.get('content_sources', [])
+                                        if not standards.is_blocked_source(s.get('url', ''))]
             if not self._meets_quality(final):
-                self.logger.warning(f"⚠️  Sparse content: {name} (will save anyway)")
+                self.logger.warning(f"⚠️  Insufficient content: {name} (not saved)")
                 self.stats['insufficient'] += 1
+                return False
 
             seo = self._build_seo(institution, final)
             final.update(seo)
@@ -867,6 +915,7 @@ def get_institutions_for_enrichment(niche: NicheConfig, limit: int = 500) -> Lis
                        established_year, institution_category
                 FROM schools
                 WHERE institution_category = %s
+                  AND verification_status = 'verified'
                   AND (enriched_history IS NULL OR enriched_history = '')
                   AND (enriched_academics IS NULL OR enriched_academics = '')
                 ORDER BY

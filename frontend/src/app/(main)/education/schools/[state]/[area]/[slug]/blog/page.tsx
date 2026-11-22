@@ -50,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     openGraph: {
+      images: ['/og-image.png'],
       title,
       description,
       type: 'article',
@@ -110,7 +111,7 @@ export default async function SchoolBlogPage({ params }: Props) {
     });
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
   const blogUrl = `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/blog/`;
   const schoolUrl = `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/`;
 

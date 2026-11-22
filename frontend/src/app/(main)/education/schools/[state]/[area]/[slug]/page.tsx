@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import {
   MapPinIcon,
   PhoneIcon,
@@ -17,9 +17,10 @@ import {
   StarIcon,
   LinkIcon
 } from '@heroicons/react/24/outline';
-import { getSchoolByPath, School } from '@/lib/api';
+import { getSchoolByPath, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 import { assessContentQuality } from '@/lib/content-quality';
+import { pageTitle } from '@/lib/seo';
 
 type ManagementMember = {
   name: string;
@@ -27,15 +28,21 @@ type ManagementMember = {
   image_url?: string;
 };
 
-// Fetch school data from API
+// Fetch school data from API. A record that was merged, renamed or moved to
+// another state/area 301-redirects to its canonical URL.
 async function getSchool(state: string, area: string, slug: string): Promise<School | null> {
+  let redirectTo: string | null = null;
   try {
-    const school = await getSchoolByPath(state, area, slug);
-    return school;
+    return await getSchoolByPath(state, area, slug);
   } catch (error) {
-    console.error('Error fetching school:', error);
-    return null;
+    redirectTo = movedToPath(error);
+    if (!redirectTo) {
+      console.error('Error fetching school:', error);
+      return null;
+    }
   }
+  // Outside the try: permanentRedirect works by throwing.
+  permanentRedirect(redirectTo);
 }
 
 interface Props {
@@ -169,7 +176,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const contentQuality = assessContentQuality(school);
 
   return {
-    title: school.meta_title || `${school.name} - ${school.area}, ${school.state} | Profile, Programs & Admissions`,
+    title: pageTitle(school.meta_title, `${school.name}, ${school.area || school.state}`),
     description: metaDescription,
     alternates: {
       canonical: schoolUrl,
@@ -207,13 +214,15 @@ export default async function SchoolPage({ params }: Props) {
     '@type': 'School',
     '@id': schoolUrl,
     name: school.name,
-    description: school.template_summary,
-    image: school.hero_image_url || school.logo_url,
-    logo: school.logo_url,
+    // Omit empty properties instead of publishing null, which structured
+    // data validators report as errors.
+    description: school.template_summary || undefined,
+    image: school.hero_image_url || school.logo_url || undefined,
+    logo: school.logo_url || undefined,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: school.address,
-      addressLocality: school.city,
+      streetAddress: school.address || undefined,
+      addressLocality: school.city || school.area || undefined,
       addressRegion: school.state,
       addressCountry: 'Nigeria',
     },
@@ -222,9 +231,9 @@ export default async function SchoolPage({ params }: Props) {
       latitude: school.latitude,
       longitude: school.longitude,
     } : undefined,
-    telephone: school.phone,
-    email: school.email,
-    url: school.website,
+    telephone: school.phone || undefined,
+    email: school.email || undefined,
+    url: school.website || undefined,
     foundingDate: school.established_year?.toString(),
     sameAs: school.website ? [school.website] : undefined,
   };
@@ -255,47 +264,16 @@ export default async function SchoolPage({ params }: Props) {
     },
   };
 
-  // JSON-LD Breadcrumb schema
+  // JSON-LD Breadcrumb schema. Only levels that are real pages are listed:
+  // there is no /education/ page and no per-area page.
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Education',
-        item: `${siteUrl}/education/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Schools',
-        item: `${siteUrl}/education/schools/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: school.state,
-        item: `${siteUrl}/education/schools/${resolvedParams.state}/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        name: school.area,
-        item: `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 6,
-        name: school.name,
-        item: schoolUrl,
-      },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Schools', item: `${siteUrl}/education/schools/` },
+      { '@type': 'ListItem', position: 3, name: school.state, item: `${siteUrl}/education/schools/${resolvedParams.state}/` },
+      { '@type': 'ListItem', position: 4, name: school.name, item: schoolUrl },
     ],
   };
 
@@ -350,13 +328,8 @@ export default async function SchoolPage({ params }: Props) {
               </Link>
             </li>
             <li className="text-gray-400">/</li>
-            <li>
-              <Link
-                href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/`}
-                className="text-gray-500 hover:text-gray-700 capitalize"
-              >
-                {resolvedParams.area.replace(/-/g, ' ')}
-              </Link>
+            <li className="text-gray-500 capitalize">
+              {school.area || resolvedParams.area.replace(/-/g, ' ')}
             </li>
             <li className="text-gray-400">/</li>
             <li className="text-gray-900 font-medium truncate">{school.name}</li>
@@ -475,7 +448,7 @@ export default async function SchoolPage({ params }: Props) {
               </a>
             )}
             <Link
-              href={`/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
+              href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
               className="inline-flex items-center px-4 py-2 bg-secondary-400 hover:bg-secondary-500 text-gray-900 font-medium rounded-lg transition-colors text-sm"
             >
               Manage This Profile
@@ -772,7 +745,7 @@ export default async function SchoolPage({ params }: Props) {
                   Principals, proprietors and authorised staff can manage this profile, update details and add photos.
                 </p>
                 <Link
-                  href={`/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
+                  href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
                   className="block w-full text-center bg-white text-primary-700 hover:bg-primary-50 font-semibold px-4 py-2.5 rounded-lg transition-colors text-sm"
                 >
                   Manage This School Profile
@@ -936,11 +909,11 @@ export default async function SchoolPage({ params }: Props) {
                 <h3 className="font-semibold text-gray-900 mb-3">Browse More Schools</h3>
                 <div className="space-y-2 text-sm">
                   <Link
-                    href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/`}
+                    href={`/education/schools/${resolvedParams.state}/`}
                     className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
                   >
                     <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
-                    Schools in {school.area}
+                    Schools in {school.state}
                   </Link>
                   <Link
                     href={`/education/schools/${resolvedParams.state}/`}

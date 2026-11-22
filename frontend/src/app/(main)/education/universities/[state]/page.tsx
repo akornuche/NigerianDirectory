@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { MapPinIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
 import { toSlugSegment } from '@/lib/slug';
+import { stateFromSlug } from '@/lib/states';
+import { notFound } from 'next/navigation';
 import AdBanner from '@/components/ads/AdBanner';
 
 async function getUniversitiesByState(state: string): Promise<{ name: string; schools: School[] } | null> {
@@ -26,16 +28,22 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolvedParams = await params;
-    const stateName = resolvedParams.state.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const knownState = stateFromSlug(resolvedParams.state);
+    if (!knownState) notFound();
+    const stateName = knownState;
+    const stateData = await getUniversitiesByState(resolvedParams.state);
 
     return {
-        title: `Best Universities in ${stateName} - Federal, State & Private | NigerianDirectory`,
+        alternates: { canonical: `/education/universities/${toSlugSegment(knownState)}/` },
+        ...(stateData ? {} : { robots: { index: false, follow: true } }),
+        title: `Best Universities in ${stateName} - Federal, State & Private`,
         description: `Browse the top-rated universities in ${stateName}. Find verified information on federal, state, and private institutions, including faculties, admissions, and campus facilities.`,
     };
 }
 
 export default async function UniversityStatePage({ params }: Props) {
     const resolvedParams = await params;
+    if (!stateFromSlug(resolvedParams.state)) notFound();
     const stateData = await getUniversitiesByState(resolvedParams.state);
     const displayStateName = resolvedParams.state.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 

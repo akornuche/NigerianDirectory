@@ -7,6 +7,9 @@ import { toSlugSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/education/colleges/' },
+  // No college records are published yet (plan V-2); keep the page out of the index.
+  robots: { index: false, follow: true },
     title: 'Polytechnics & Colleges in Nigeria - Technical & Vocational Education',
     description: 'Find top polytechnics, colleges of education, and monotechnics across Nigeria. Explore technical programs, admission requirements, and specialized training institutions.',
 };

@@ -1,0 +1,30 @@
+# NigerianDirectory
+
+> A directory of educational institutions in Nigeria: universities and secondary schools, organised by state. Only institutions verified against an independent source are published.
+
+## What is listed
+
+- Universities: every published university is matched to the National Universities Commission (NUC) federal, state or private university list. Type, founding year, vice-chancellor and website come from NUC unless stated otherwise.
+- Secondary schools: published only when an independent source (for example the school's Wikipedia article or Wikidata entry) confirms the school exists and where it is.
+- Each profile names its sources. Facts without a source are not published.
+
+## Main pages
+
+- [Universities in Nigeria](https://www.nigeriandirectory.com.ng/education/universities/): all published universities, by state
+- [Schools in Nigeria](https://www.nigeriandirectory.com.ng/education/schools/): published secondary schools, by state
+- [Guide for AI agents](https://www.nigeriandirectory.com.ng/for-ai-agents/): how to query the data programmatically
+- [Sitemap](https://www.nigeriandirectory.com.ng/sitemap.xml)
+
+## Page structure
+
+- State listings: `/education/universities/{state}/` and `/education/schools/{state}/`
+- University profiles: `/education/universities/{state}/{city}/{slug}/`
+- School profiles: `/education/schools/{state}/{area}/{slug}/`
+
+## Citing
+
+Cite the profile page URL. Where a profile attributes a fact to NUC, Wikipedia or another source, prefer citing that source as well.
+
+## Corrections
+
+Report an error through https://www.nigeriandirectory.com.ng/contact/ (choose "Report Incorrect Information").

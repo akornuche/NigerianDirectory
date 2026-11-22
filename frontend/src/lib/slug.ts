@@ -24,10 +24,15 @@ export function toSlugSegment(
         return fallback;
     }
 
+    // Any run of characters other than letters and digits becomes one
+    // hyphen, so a name such as "Ado-Odo/Ota" cannot add a path segment.
+    // The API matches route segments with the same rule (urlSegment in
+    // backend/src/utils/slugify.js).
     const segment = value
         .trim()
         .toLowerCase()
-        .replace(/\s+/g, '-');
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
 
     return segment === '' ? fallback : segment;
 }

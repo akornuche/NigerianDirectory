@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const stateName = resolvedParams.state.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 
     return {
-        title: `Hospitals in ${stateName} - Federal, State & Private | NigerianDirectory`,
+        title: `Hospitals in ${stateName} - Federal, State & Private`,
         description: `Browse hospitals in ${stateName}. Find verified information on federal, state, and private hospitals, including services, specialists, and facilities.`,
     };
 }

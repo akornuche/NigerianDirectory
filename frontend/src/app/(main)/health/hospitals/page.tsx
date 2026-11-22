@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: 'Hospitals in Nigeria - Find Federal, State & Private Hospitals',
     description: 'Discover hospitals across Nigeria. Browse our directory of federal, state, and private hospitals with verified information on services, specialists, and facilities.',
     openGraph: {
+      images: ['/og-image.png'],
         title: 'Hospitals in Nigeria | NigerianDirectory',
         description: 'Find hospitals across all 36 states of Nigeria. Compare services, departments, and facilities.',
     },

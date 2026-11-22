@@ -1,0 +1,545 @@
+{
+  "_about": "Original profile text for verified secondary schools, written 2026-11-22 from the sources listed per school (Wikipedia article and Wikidata item). Facts only from those sources; wording is our own. Fields map to enriched_history, enriched_academics, enriched_campus_info, enriched_student_life. established_year, where present, overrides the stored year and is sourced to the article. A 'set' object holds field corrections taken from the same sources (null clears a field whose sources conflict).",
+  "2": {
+    "history": "British International School Lagos (BIS) opened in 2001 and marked its 25th year in 2026. Since its founding it has added new teaching blocks and sports facilities: extra science rooms arrived in 2018 to support a growing sixth form, building work on a primary section began in 2019, and a new boarding house was commissioned for the 2025/26 session alongside investment in its five existing boarding houses. The school received an excellent inspection report from the Council of British International Schools (COBIS) in 2018.",
+    "academics": "BIS teaches the National Curriculum for England to day and boarding students aged 11 to 18, leading to IGCSE and A Level courses. The curriculum is adapted for an international school in West Africa: younger students learn Yoruba, and teachers draw on the history, culture, geography and economy of the region. Classes average about 20 pupils, and staff include both expatriate and locally qualified teachers.",
+    "campus_info": "The school sits in Oniru Private Estate, Victoria Island, Lagos. Its teaching buildings are surrounded by playing fields, with a swimming pool, tennis and basketball courts, a multi-purpose hall, a theatre, and suites for computing, music and tutorials. The campus has been adapted so that students with limited mobility can take full part in school life.",
+    "student_life": "Pupils are girls and boys from Nigerian and expatriate families, and a co-curricular programme runs after school every day. Boarding is available alongside day places.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/British_International_School_Lagos"
+    ]
+  },
+  "4": {
+    "history": "Corona School, Ikoyi was established in February 1960 and is governed by the Corona Schools' Trust Council. It has had seven heads since opening, from Mrs Jean Abili, who led the school from 1960 to 1998, to Mrs Funlola Olorunishola, head since 2022.",
+    "academics": "Corona School, Ikoyi is a co-educational independent primary school for children aged 5 to 11. It follows a combined British and Nigerian curriculum and is a member of the Council of British International Schools and the Association of International Schools in Africa.",
+    "student_life": "The school takes part in the Lagos schools rugby league and in Zenith Bank's swimming competitions. Its former pupils include Yemi Osinbajo, Nigeria's 14th Vice President; the politician Udoma Udo Udoma; Yemi Cardoso, Governor of the Central Bank of Nigeria; the neurologist Bruce Ovbiagele; and the environmentalist Desmond Majekodunmi.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Corona_School,_Ikoyi"
+    ],
+    "set": {
+      "area": "Ikoyi",
+      "name": "Corona School, Ikoyi"
+    },
+    "established_year": 1960
+  },
+  "5": {
+    "established_year": 1977,
+    "history": "The first Chrisland School opened at Ikeja on 3 October 1977, founded by the educationist High Chief Dr (Mrs) Winifred Adefolahan Awosika. Chrisland has since grown into a group of nursery, primary and secondary schools, with campuses in Ikeja, Opebi, Lekki, Ladipo Oluwole, Festac, Idimu and Victoria Garden City in Lagos, and at Katampe and elsewhere in Abuja. The group also runs a pre-degree college.",
+    "academics": "Chrisland's secondary schools include Chrisland High School at Ikeja, Lekki, Festac and Victoria Garden City, Chrisland College Idimu, and Chrisland High School and Chrisland College in Abuja. A student of Chrisland College Idimu placed third nationally in the 2016 West African Senior School Certificate Examination, and Chrisland High School, Ikeja won the junior Lagos Zone category of the national history competition the same year.",
+    "student_life": "Chrisland students compete widely. In 2016 the schools won the senior girls' category of the AISEN volleyball competition and the ten-school Loya Milk swimming meet; Chrisland High School VGC placed first of 37 schools in the South West regional round of the International Geography Olympiad; and a student of Chrisland High School, Abuja won the TSL International Schools essay and debate competition in Dubai against entrants from sixteen other countries.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Chrisland_Schools"
+    ]
+  },
+  "6": {
+    "history": "Dowen College is a co-educational secondary school in Lekki, Lagos. In December 2021 the death of a 12-year-old student, Sylvester Oromoni, led the Lagos State Government to close the school pending investigation, amid public concern over allegations of bullying. In April 2024 the Lagos State Coroner concluded that the death was natural but avoidable, caused by sepsis from an untreated ankle injury, and exonerated the college and its staff; the coroner recommended better student monitoring and psychological support in schools.",
+    "academics": "The college admits boarding and day pupils aged 11 to 18 and holds a valedictory service that recognises students' academic results. Former students listed in its record include graduates who achieved eight and nine A1 grades in the West African Senior School Certificate Examination in 2015 and 2017.",
+    "student_life": "Dowen's alumni include the singer Tems and the television presenter and actress Moet Abebe. The music video for Wizkid's \"Holla at Your Boy\" was filmed at the college.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Dowen_College"
+    ]
+  },
+  "7": {
+    "history": "Atlantic Hall opened in 1989 in the Maryland area of Ikeja, Lagos, with dormitories near Eko Hospital, and moved in the mid-1990s to Poka in Epe, about 70 kilometres from central Lagos. Its first principal was Gaynor Williams (1989 to 1992); later heads include Andrew Jedras, who led the school from 2010 to 2020.",
+    "academics": "Atlantic Hall is a private co-educational secondary school with about 300 students. Junior students spend three years taking the Nigerian curriculum, including physical education and computer studies, and sit Cambridge Checkpoint in JSS3. In the three senior years the school combines the Nigerian curriculum, examined by the West African Examinations Council, with Cambridge IGCSE, which replaced the GCE O Level in 2001 and is taken by all SS2 students. Senior students choose science, arts or business streams.",
+    "campus_info": "The Epe campus has laboratories for physics, chemistry, biology and computer science, and a school farm used in agricultural science teaching.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Atlantic_Hall"
+    ]
+  },
+  "8": {
+    "history": "Grange School was founded in 1958 by a group of British expatriates to offer education to the standard of schools in the United Kingdom. A secondary section was added in 1998, the school's 40th anniversary, so that pupils could continue their education without moving schools. The Deputy British High Commissioner to Nigeria is the school's patron.",
+    "academics": "Grange is a co-educational day and boarding school in Ikeja. Its primary section, from Reception to Year 6, prepares pupils for Cambridge Checkpoint at Key Stage 2; the secondary section, Years 7 to 11, leads to Checkpoint at Key Stage 3 and the IGCSE at Key Stage 4, both administered by Cambridge. The school keeps classes between 11 and 19 pupils and is affiliated to AISEN and COBIS.",
+    "student_life": "Pupils are placed in four houses named after Nigerian rivers: Benue, Donga, Niger and Ogun. Activities include chess, arts and crafts, swimming, tennis, football, basketball and charity events. Grange won The Kids' Lit Quiz in Nigeria in February 2020 and took first place overall on its debut at the under-13 World Schools Games in 2020.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Grange_School,_Ikeja"
+    ]
+  },
+  "9": {
+    "history": "Lagos Preparatory School was established in 2002 and is now known as Lagos Preparatory & Secondary School (LPSS). In 2010 it qualified for the Every Child Matters Standards Award, and in February 2011, after an inspection by the Independent Schools Inspectorate, it was recognised by the UK Department for Education as meeting the standards for British schools overseas.",
+    "academics": "LPSS is a private, co-educational, non-denominational day school teaching the UK National Curriculum, with added emphasis on Nigerian history, geography and culture. It educates children from 18 months to age 16 across Early Years, Primary and Secondary. The school is a member of the Independent Association of Preparatory Schools (IAPS), the Council of British International Schools (COBIS) and the Association of International Schools in Africa (AISA).",
+    "campus_info": "The school is at 36–40 Glover Road in Ikoyi, Lagos. Pupils belong to one of four houses: Normans, Saxons, Vikings and Romans.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Lagos_Preparatory_School"
+    ]
+  },
+  "11": {
+    "set": {
+      "gender": "boys-only",
+      "area": "Lagos Island"
+    },
+    "history": "King's College, Lagos opened on 20 September 1909 with ten students on Lagos Island, beside what is now Tafawa Balewa Square. The scheme behind it was proposed in 1908 by Henry Rawlingson Carr, then Acting Director of Education, and the Oba of Lagos, Oba Esugbayi, provided the land. Its first students included Isaac Ladipo Oluwole, the school's first senior prefect, and its stated aim was to prepare young people for the University of London matriculation examination and for professional and public service. Enrolment rose from an average of 16 in 1910 to 67 by 1914.",
+    "academics": "King's College is a boys' secondary school and one of the federal government's unity schools, which bring together students from different regions, ethnic groups and backgrounds. Before Queen's College was founded, it also admitted some girls.",
+    "campus_info": "The college is at 3 Catholic Mission Street on Lagos Island. Its motto is \"Spero Lucem\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/King%27s_College,_Lagos"
+    ]
+  },
+  "12": {
+    "history": "Queen's College, Lagos was founded on 10 October 1927, while Nigeria was a British colony, with 20 students, a principal and eight part-time teachers. Sylvia Leith-Ross, appointed Lady Superintendent of Education in 1925, helped establish it as a girls' boarding school. It is often called the sister college of King's College, Lagos, and is now one of the federal government's unity schools.",
+    "academics": "Queen's College is a government-owned girls' secondary school covering the six years of junior and senior secondary education. It had 3,505 students in the 2022/2023 session, in year groups of about 600 split into several arms, and more than 300 full-time teachers. The school has recorded the best results in the country in the West African Senior School Certificate Examination seven times since 1985.",
+    "student_life": "Queen's College is in Yaba and offers boarding. Students belong to six houses: Dan-Fodio, Obasa, Obi, Emotan, Efunjoke and Obong. The school's motto is \"Pass On The Torch\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Queen%27s_College,_Lagos"
+    ]
+  },
+  "13": {
+    "history": "The Federal Ministry of Education established Federal Government College, Ijanikin in 1975 to give Lagos a co-educational federal high school, as each of the other twelve states of the federation then had. Its first principal, Mrs T. E. Chukuma, served from October 1975 to December 1977, and the college has had at least twelve principals since.",
+    "academics": "The college is a co-educational secondary school and one of more than 100 unity schools owned by the federal government and managed by the Federal Ministry of Education. It is located in Alasia, Ijanikin, in Lagos State.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Ijanikin"
+    ]
+  },
+  "14": {
+    "history": "Meadow Hall was founded in July 2002 by Kehinde Nwani, beginning with an infant and junior school. It has since grown to infant and junior schools on two sites, in Lekki and Ikoyi, and a college in Lekki, with about 1,400 students in total.",
+    "academics": "Meadow Hall is a private co-educational school that combines the English National Curriculum with the Nigerian curriculum. Its sports facilities cater for football, basketball, swimming, tennis and volleyball.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Meadow_Hall_School"
+    ]
+  },
+  "15": {
+    "set": {
+      "state": "Ogun",
+      "area": "Lagos-Ibadan Expressway",
+      "city": null,
+      "established_year": null
+    },
+    "history": "Rainbow College is a co-educational secondary school at kilometre 39 on the Lagos–Ibadan Expressway in Ogun State. It prepares boys and girls of all nationalities for university study in Nigeria and abroad. Published sources give different founding years, so none is shown here.",
+    "academics": "Students spend three years in junior secondary and three in senior secondary school. Senior students are prepared for the West African Senior School Certificate Examination, the NECO Senior School Certificate Examination and the Cambridge IGCSE, as well as TOEFL, the SAT and the JAMB Unified Tertiary Matriculation Examination. Languages offered include English, French, Yoruba and Igbo.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Rainbow_College"
+    ]
+  },
+  "16": {
+    "history": "The American International School of Lagos (AISL) was founded in 1964. Its campus on Victoria Island, on 2.4 hectares of land leased from the government, opened in 1981.",
+    "academics": "AISL is an American international school teaching from preschool to grade 12. Its 600-plus students come from more than 50 countries; about 30% are American, with significant numbers from India, the United Kingdom, Nigeria, Canada, South Africa, Israel, Lebanon and the Netherlands.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/American_International_School_of_Lagos"
+    ]
+  },
+  "17": {
+    "history": "Loyola Jesuit College was founded by the Society of Jesus in Nigeria and opened in October 1996; it is named after Ignatius of Loyola, the founder of the Jesuits. Building began in 1995 with funding from the New York Province of the Society of Jesus and the US Agency for International Development's programme for American Schools and Hospitals Abroad. On 10 December 2005, 61 of the college's students were among those killed when a DC-9 crashed at Port Harcourt Airport as they travelled home for Christmas; one student, Kechi Okwuchi, survived. Jesuit Memorial College in Port Harcourt was later founded in their memory.",
+    "academics": "Loyola Jesuit College is a private Catholic, co-educational secondary school in Abuja. Entry is highly competitive: 101 students were admitted from 400 applicants in its first year, and 120 from about 2,300 candidates in 2005. By 2009 it enrolled about 600 boys and girls on a 70-acre campus, with Nigerian and Ghanaian teaching staff.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Loyola_Jesuit_College"
+    ]
+  },
+  "19": {
+    "history": "The American International School of Abuja (AISA) was founded in 1993 by parents and US Embassy officials who wanted a school that would prepare international and Nigerian students to continue their education under a US curriculum. It moved into a purpose-built campus in August 2006, added a full high school programme as enrolment grew from 150 to about 470, and graduated its first senior class in June 2009.",
+    "academics": "AISA is a co-educational international day school teaching from preschool to grade 12, with a school year running from August to June. At the end of the 2015–2016 year its 470 students came from more than 40 countries. The school is governed by an elected Board of Governors, which appoints the Head of School; the elementary school and the middle and high school each have their own principal and support services, including counselling, English language and learning support.",
+    "student_life": "Community events include a craft sale, an international food fair, a fall carnival, Nigerian Day and an AIDS run and walk.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/American_International_School_of_Abuja"
+    ]
+  },
+  "22": {
+    "history": "Whiteplains British School (WBS) was founded by a group of private individuals, many of them Nigerians in the diaspora, and was incorporated on 2 May 2007. It aimed to give Nigerians and other nationals living in Nigeria qualifications recognised around the world.",
+    "academics": "WBS is a co-educational day and boarding school offering pre-school, primary and secondary education, Cambridge A Levels over one or two years, and university foundation studies. It runs both Nigerian and British curricula, is an Edexcel centre, and is a provisional member of the Council of British International Schools and the New England Association of Schools and Colleges. The school year has three terms, from early September to mid-July.",
+    "campus_info": "The school has two campuses in Jabi, Abuja Municipal Area Council: a primary school and administrative block at Plot 528, Cadastral Zone B4, and a 4.5-hectare secondary and advanced studies campus at Daki Bui. Facilities include separate hostels for boys and girls, sports facilities, libraries and ICT facilities. The school motto is \"Bonitas et Disciplina\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Whiteplains_British_School"
+    ]
+  },
+  "24": {
+    "set": {
+      "gender": "boys-only",
+      "area": "Old Port Harcourt Township"
+    },
+    "history": "Stella Maris College was established in 1948. It began on the grounds of St Mary's Catholic Church on Aggrey Road and moved in October 1948 to its present site at 34 Harbour Road in the Old Port Harcourt Township. Patience Jonathan, later First Lady of Nigeria, began her teaching career at the college.",
+    "academics": "Stella Maris is an all-boys Catholic secondary school in the Roman Catholic Diocese of Port Harcourt, taking both day and boarding students. It is run mainly by the Holy Ghost Fathers. Its former students include the lawyer Chukwunweike Idigbe and the politician Chibudom Nwuche.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Stella_Maris_College,_Port_Harcourt"
+    ]
+  },
+  "25": {
+    "set": {
+      "area": "Mbodo-Aluu"
+    },
+    "history": "Jesuit Memorial College (JMC) was founded in October 2013 by the North-West Africa Province of the Society of Jesus as a memorial to the students of Loyola Jesuit College, Abuja who died in the crash of Sosoliso Airlines Flight 1145 in 2005. Its motto is \"Hope Reborn\".",
+    "academics": "JMC is a private, co-educational Catholic secondary school at 60 Angels Memorial Road, Mbodo-Aluu, Port Harcourt. It has around 600 students and is run by Jesuit priests; its principal is Fr Alexander Irechukwu, SJ. The college has been recognised for its work on environmental issues.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Jesuit_Memorial_College"
+    ]
+  },
+  "28": {
+    "set": {
+      "area": "University of Ibadan"
+    },
+    "history": "International School Ibadan (ISI) was founded on 13 October 1963 by the educator Kurt Hahn, with funding from USAID and the Ford Foundation and land donated by the Western Region government. Many of its first teachers came from Gordonstoun in Scotland, which Hahn had also founded. It was set up mainly for the children of expatriates working in Nigeria and later admitted Nigerian pupils as well. Archdeacon J. A. Iluyomade, principal from 1969 to 1985, was its longest-serving and first Nigerian head, and Esther Adetola Smith, principal from 1991 to 2004, was its first female head.",
+    "academics": "ISI is a co-educational boarding and day school for pupils aged 10 to 16. It originally followed the British pattern of five years leading to Ordinary Level and the West African School Certificate, followed by two years in the sixth form.",
+    "campus_info": "The school is on the campus of the University of Ibadan, Nigeria's oldest university.",
+    "student_life": "Activities include a twice-yearly international soirée, where students and staff of each nationality present the food, dress and crafts of their culture to raise money for those in need, and a charity walk.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/International_School_Ibadan"
+    ]
+  },
+  "30": {
+    "set": {
+      "area": "Molete",
+      "gender": "co-ed"
+    },
+    "history": "Ibadan Grammar School was founded on 31 March 1913 by Bishop Alexander Babatunde Akinyele, who was also its first principal. It was the first secondary school in Ibadan, and in its early years many of the city's educated families sent their children there. It admitted only boys for its first three decades and became co-educational in 1941. In the 1950s and 1960s its sixth form prepared students for the Higher School Certificate.",
+    "academics": "Ibadan Grammar School is a co-educational Anglican secondary school open to students of all faiths. Its subjects span the sciences (physics, chemistry, biology, agricultural science and computing), commercial subjects such as financial accounting and economics, humanities including history, government, geography, literature in English and Christian religious studies, languages (English, French and Yoruba), music, and technical subjects including technical drawing, auto mechanics and animal husbandry.",
+    "campus_info": "The school is in the Molete area of Ibadan, near St David's Grammar School. Its old students' association marks Founder's Day each year; the school's 106th anniversary was celebrated in March 2019.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ibadan_Grammar_School"
+    ]
+  },
+  "31": {
+    "set": {
+      "gender": "girls-only"
+    },
+    "history": "Queen's School, Ibadan grew out of Queen's College, Lagos. It was established in January 1952 and officially opened on 16 February 1952 with about 161 pupils, a principal and four teachers, taking its name in honour of the coronation of Queen Elizabeth II. The school was first located in Ede and moved to Ibadan in April 1967. It shares Queen's College's motto, \"Pass On The Torch\".",
+    "academics": "Queen's School is an all-girls secondary school. From its early years, pupils combined academic study with practical skills such as sewing, cooking and gardening, and took part in dance, music, sport, drama, Girl Guides and literary and debating societies. Its former students have gone on to careers in medicine, engineering, law and the judiciary, and academia.",
+    "campus_info": "The academic buildings are arranged around a grass oval, with an assembly hall, a library, laboratories for physics, chemistry and biology, classrooms, domestic science rooms and geography facilities. In March 2022 the Oyo State Government donated 10 million naira towards ongoing building work at the school.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Queen%27s_School,_Ibadan"
+    ]
+  },
+  "32": {
+    "set": {
+      "gender": "boys-only",
+      "area": "Tukur-Tukur"
+    },
+    "history": "Barewa College was founded in 1921 by Sir Hugh Clifford, the British governor, as Katsina College. Its first building in Katsina, built under Emir Muhammadu Dikko and opened in 1922, is now a national monument and museum. Clifford chose Katsina for its long reputation as a seat of learning. The college later moved and was renamed Kaduna College in 1938 and Government College, Zaria in 1949, before taking the name Barewa College.",
+    "academics": "Barewa College is a boys' secondary school and one of the largest boarding schools in northern Nigeria; until the early 1960s it was the region's most celebrated post-primary school. Its alumni include Sir Abubakar Tafawa Balewa, Prime Minister of Nigeria from 1960 to 1966, and four Nigerian heads of state. The school motto, \"Man Jada Wajada\", means \"he who strives shall succeed\".",
+    "campus_info": "The college stands on Gaskiya Road in the Tukur-Tukur area of Zaria, Kaduna State. Students belong to ten houses: Bello Kagara, Lugard, Clifford, Dan Hausa, Mallam Smith, Nagwamatse, Bienemann, Mort, Jafaru and Suleiman Barau.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Barewa_College"
+    ]
+  },
+  "38": {
+    "set": {
+      "gender": "boys-only",
+      "boarding": false
+    },
+    "history": "Rumfa College was founded in 1927 as Kano Middle School. It was later renamed Kano Province School and then Government College, Kano, before taking its present name from Muhammad Rumfa, the fifteenth-century ruler of Kano. Once one of the largest boarding schools in northern Nigeria, it no longer takes boarders.",
+    "academics": "Rumfa College is a boys' secondary school on BUK Road, Kano. Its alumni include two Nigerian heads of state, Murtala Mohammed and Sani Abacha; Ado Bayero, the late Emir of Kano; the politician Aminu Kano; Mohammed Badaru Abubakar, former Governor of Jigawa State; Mohammed Abdullahi Abubakar, former Governor of Bauchi State; and the banker Nu'uman Barau Danbatta.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Rumfa_College,_Kano"
+    ]
+  },
+  "41": {
+    "history": "Edo College opened in February 1937 as Benin Middle School, with Forms I to III, and is the oldest secondary grammar school in the former Mid-Western Region. In April 1937, with 76 pupils, it moved from the old Government School in Benin City to the site now occupied by Idia College, and in 1973 it moved again to its present site on Murtala Mohammed Way. After the state government took over schools in 1973, the college came under the state Board of Education.",
+    "academics": "Edo College began as a day school, became a boys' boarding school, returned to day schooling in the 1980s and briefly ran day and evening sessions in the mid-1990s; with support from its alumni it is now moving back towards boarding, with about 800 students. Subjects include English, French and Edo, history and geography, English literature, business studies, home economics, religious studies, physics, chemistry, biology, agricultural science, computer science and mathematics, including further mathematics.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Edo_College"
+    ]
+  },
+  "44": {
+    "set": {
+      "area": "Independence Layout"
+    },
+    "history": "Federal Government College, Enugu, known locally as \"Fedi\", was established by the federal government in 1973 as one of the unity schools created to bring together students from all regions of Nigeria. Its motto is \"Pro Unitate\".",
+    "academics": "The college takes boarding and day students from Junior Secondary 1 to Senior Secondary 3, admitted through the Federal Common Entrance Examination, and has about 3,000 students. Its alumni include the forensic pathologist Bennet Omalu, the economist Kingsley Moghalu, former Cross River State governor Liyel Imoke, former Kaduna State governor Ahmed Makarfi, the businesswoman Ndidi Okonkwo Nwuneli and Chikwe Ihekweazu, former head of the Nigeria Centre for Disease Control.",
+    "campus_info": "The college is on a campus in Independence Layout, a residential area of Enugu.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Enugu"
+    ]
+  },
+  "45": {
+    "established_year": 1935,
+    "set": {
+      "gender": "girls-only",
+      "boarding": true
+    },
+    "history": "Holy Rosary College, Enugu was opened on 2 February 1935 by Archbishop Charles Heerey. It was staffed and run at first by Irish nuns of the Missionary Sisters of the Holy Rosary, and it began as a teacher training college for girls before becoming a secondary school.",
+    "academics": "Holy Rosary College is a Catholic mission girls' boarding school in Enugu. Its former students include the ethnomusicologist, choral conductor and soprano Joy Nwosu Lo-Bamijoko.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Holy_Rosary_College,_Enugu"
+    ]
+  },
+  "46": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Christ the King College (CKC) was founded on 2 February 1933 by Archbishop Charles Heerey, with Fredrick Akpali Modebe and his wife Margret, who gave the land and built the first administration block and hostel. Its first principal was Fr Leo Brolly. The college lost much of its infrastructure in the Nigerian Civil War. It was taken over by the East Central State Government in 1973 and renamed Heerey High School, regained its original name in 1976 after representations by its alumni, when Fr Nicholas Tagbo returned to rebuild it, and was handed back to the Catholic Mission on 1 January 2009.",
+    "academics": "CKC, popularly called \"Amaka Boys\", is a Catholic all-boys secondary school on Oguta Road, Onitsha. Its stated mission is to develop leadership among young Nigerians in a Catholic tradition, and its motto is \"Bonitas, Disciplina, Scientia\": goodness, discipline, knowledge.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Christ_the_King_College,_Onitsha"
+    ]
+  },
+  "48": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Government College Umuahia (GCU) was founded in 1929, twenty years after King's College, Lagos, as one of the colonial government's schools modelled on English public schools such as Eton and Harrow; its selectivity earned it the name \"Eton of the East\". Its founding principal, the English educator and Anglican priest Rev. Robert Fisher, acquired about 26 square kilometres of land and opened the school on 29 January 1929 to 25 students from across Nigeria, West Africa and the Southern Cameroons. GCU began as a teacher training institute and became a secondary school in 1930. When Fisher retired in 1939 the school closed and for three years served as a camp for German and Italian prisoners of war, its students moving to King's College, Lagos and mission schools east of the Niger. During the Civil War (1967–1970) it was again closed and used as the General Staff Headquarters of Biafra. On 22 December 2014 the Abia State Government vested ownership, management and funding of the school in the Fisher Educational Trust, set up by its old boys' association.",
+    "academics": "GCU is a boys' secondary school on the Umuahia–Ikot Ekpene Road in Umuahia, drawing students from across Nigeria. All students take core courses in both the arts and the sciences. The artist and archaeologist Kenneth C. Murray, a pioneer of modern art education in Nigeria, taught art at GCU from 1933 to 1939 and founded its art gallery, which held early drawings by Ben Enwonwu; the gallery was destroyed during the Civil War. The school motto is \"In Unum Luceant\", \"may they shine as one\".",
+    "student_life": "Students belong to eleven houses: Cozens, Erekosima, Extension, Fisher, Kent, New, Niger, Nile, School, Simpson and Wareham.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Government_College_Umuahia"
+    ],
+    "campus_info": "The campus has two full-size playing fields, cricket pavilions, seven lawn tennis courts, a basketball court, an Olympic-size athletics track, a nine-hole golf course, a botanical garden and an aquarium. Students play cricket, hockey, handball and football."
+  },
+  "51": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Mayflower School was founded on 27 January 1956 by Tai Solarin, the educator, humanist and civil rights campaigner, who started it in protest against religious persecution. It is named after the Mayflower, the ship that carried the Pilgrims to America.",
+    "academics": "Mayflower is a co-educational school with about 1,000 students on 90 acres in Ikenne, Ogun State. Its philosophy stresses self-reliance, public service and physical toughness, and every student learns basic and mechanised farming. The school motto is \"Knowledge is Light\".",
+    "student_life": "Students follow a disciplined routine that begins with physical exercise at 5am, and boys and girls alike wear a uniform of khaki shorts and short-sleeved shirts modelled on Solarin's own dress. Boarders are not permitted to wear cosmetics.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Mayflower_School"
+    ]
+  },
+  "53": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Methodist Boys' High School, Lagos (MBHS) was formally opened on 14 March 1878, after leaders of the Methodist community, among them Charles Joseph George, met in 1874 to plan a secondary school for their church as an alternative to the CMS Grammar School. Its building was completed in June 1877. The first principal was Rev. W. Terry Coppin, and the first intake in April 1878 had twelve boys, led by the senior foundation scholar George Stone Smith, along with six mission agents in training; by the end of that year there were 23 boys. MBHS was the second secondary school founded in Nigeria, after the CMS Grammar School.",
+    "academics": "MBHS is a boys' secondary school. Together with the CMS Grammar School it supplied the first students for Igbobi College, Yaba, which the Methodist and Anglican churches founded jointly in 1932. Its motto is \"Non Sibi Sed Aliis\", \"not for us, but for others\", and its uniform includes a tie in blue, gold and maroon, with a maroon blazer for ceremonial occasions.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Methodist_Boys%27_High_School,_Lagos"
+    ],
+    "campus_info": "The school stood on Broad Street, Lagos, for more than a century. A 60-hectare site on the Lagos–Badagry road at Ojo, allocated for its expansion, was taken over by the Lagos State Government and became the permanent site of Lagos State University; in 1983 the school was given a 5.7-acre site on Victoria Island, where it operates today. Its old boys' association, first led by the foundation scholar George Stone Smith (later Dr Orishadipe Obasa), built the Centenary Hall and a chapel and donated staff quarters.",
+    "student_life": "Students are divided among four houses for the annual inter-house competition: Didsbury, Handsworth, Kingswood and Westminster. The school won the Zard Cup for secondary schools in 1948 and the Principal's Cup for Lagos State secondary schools in 1961, and the former Nigeria captain Sunday Oliseh is among its athletes."
+  },
+  "54": {
+    "history": "The CMS Grammar School was founded by the Church Missionary Society on 6 June 1859 and is the oldest secondary school in Nigeria. James Pinson Labulo Davies provided the seed funding, giving the scholar and theologian Babington Macaulay £50 in April 1859 to buy books and equipment; Macaulay became the first principal. The school began with six boarders in a small building known as the Cotton House on Broad Street, Lagos, and was modelled on the CMS Grammar School in Freetown, founded in 1848.",
+    "academics": "Its first pupils were trained for the ministry, and the early curriculum covered English, logic, Greek, Latin, arithmetic, geometry, geography, history and Bible knowledge. For decades the school was the main source of African clergy and administrators in the Lagos Colony. Its motto is \"Nisi Dominus Frustra\".",
+    "campus_info": "The school is now on Asani Road in Bariga, a suburb of Lagos.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/CMS_Grammar_School,_Lagos"
+    ]
+  },
+  "55": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "St Gregory's College was established by the Catholic Mission in 1928 and named after Pope Gregory the Great. It began as a mixed school and became a boys' school when its sister school, Holy Child College, was founded nearby. Michael Ibru and his construction company, Ace Jomona, took part in building the school. In September 2026 its old boys' association set up an endowment and infrastructure development fund to support the college over the long term.",
+    "academics": "St Gregory's is a Catholic boys' secondary school with boarding facilities in South-West Ikoyi, near Obalende, about a kilometre from Tafawa Balewa Square. Its motto is \"Pro Fide et Scientia\", and its students are known as \"Gregs\".",
+    "student_life": "Students belong to four houses: St Augustine, St Peter, St Francis and St Benedict. Cricket and football are the school's best-known sports.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/St_Gregory%27s_College,_Lagos"
+    ]
+  },
+  "56": {
+    "set": {
+      "gender": "girls-only"
+    },
+    "history": "Holy Child College was founded on 9 April 1945 by the Society of the Holy Child Jesus, at the invitation of Archbishop Leo Taylor, who wanted a Catholic secondary school for girls in the Archdiocese of Lagos. It opened with two classes of 15 girls each and four nuns as full-time teachers, adding a class each year; by 1950 it had 200 students. Many of its first pupils came from Lagos's Brazilian-returnee Catholic families and other long-established Lagos families.",
+    "academics": "Holy Child College is a Catholic girls' secondary school run by the Roman Catholic Archdiocese of Lagos, offering three years of junior and three years of senior secondary education leading to the West African Senior School Certificate Examination. Its motto is \"Facta non Verba\".",
+    "campus_info": "The college is in South-West Ikoyi, where Obalende meets Keffi, next to its brother school, St Gregory's College.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Holy_Child_College"
+    ]
+  },
+  "57": {
+    "history": "Igbobi College was established in 1932 by the Methodist and Anglican churches in Yaba, Lagos. It remains on its original site, and most of its original buildings still stand. The Lagos State Government returned the school to its founding churches in 2001.",
+    "academics": "Igbobi College's former students include Yemi Osinbajo, former Vice President of Nigeria; Ernest Shonekan, former Head of the Interim National Government; the historian J. F. Ade Ajayi; Babatunde Fashola, former Governor of Lagos State; Femi Gbajabiamila, former Speaker of the House of Representatives; the jurist Taslim Olawale Elias; the musician Femi Kuti; and the industrialist Michael Ibru.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Igbobi_College"
+    ]
+  },
+  "62": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Hussey College was founded on 3 February 1947 as the first secondary school in Warri by three Itsekiri leaders: Chief Ogbemi Newe Rewane, his brother Alfred Rewane, and Chief Elliot Nekapenami Andrew Begho. It is named after Eric Robert James Hussey, Nigeria's first British Director of Education, who competed at the 1908 Olympic Games. The school admitted only boys at first, became co-educational in 1960, and was returned to a boys' school by the Delta State Government in the early 2000s under the name Hussey Boys Model College. Its old students' association marked the school's diamond jubilee in 2007.",
+    "academics": "Hussey College is a public boys' secondary school on Upper Erejuwa Road, Warri, with about 3,000 students. Its motto is \"Citizenship and Education, Labour and Unity\", and its students are known as \"Hussians\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Hussey_College_Warri"
+    ]
+  },
+  "65": {
+    "set": {
+      "gender": "girls-only"
+    },
+    "history": "Federal Government Girls' College, Owerri was established on 14 November 1973 as one of the unity schools founded after the Nigerian Civil War to promote integration among Nigeria's ethnic groups. Its first principal was Ms Sheila Everard, who served from 1973 to 1980. The college was built on land the Federal Ministry of Education acquired from Government College, Owerri.",
+    "academics": "The college is a federal girls' secondary school in Owerri, Imo State, where local languages including Igbo have been taught. Its former students include the novelist and journalist Adaobi Tricia Nwaubani, the lawyer and former beauty queen Ezinne Akudo, and the politician Nnenna Elendu Ukeje, and it has alumnae chapters across Nigeria, the United Kingdom, Europe and the Americas.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_Girls%27_College,_Owerri"
+    ]
+  },
+  "68": {
+    "established_year": 1935,
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Government Secondary School, Owerri, also known as Government College, Owerri, was formally established in 1935. It is a public boys' secondary school at 14 Okigwe Road, Owerri, and is regarded as a model school in the city: applicants sit an additional entrance examination after the general state secondary school entrance examination. Its motto is \"Dirige Nos Domine\".",
+    "academics": "The school runs the six years from JSS 1 to SS 3. Junior students take subjects including English, Igbo, mathematics, agricultural science, introductory technology, social studies and Christian religious knowledge; senior subjects include further mathematics, chemistry, physics, biology, geography, government and literature in English.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Government_Secondary_School,_Owerri"
+    ]
+  },
+  "77": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Federal Government College, Jos was established in 1973 and is one of the federal government's unity schools, owned by the federal government and run by the Federal Ministry of Education. It educates boys and girls on Zaria Road in Jos, the capital of Plateau State.",
+    "academics": "FGC Jos is a co-educational public secondary school. Its former students include Mohammed Umar Bago, Governor of Niger State; Nenadi Usman, former Minister of Finance; Maikanti Kachalla Baru, former Group Managing Director of the NNPC; and the Senior Advocates of Nigeria Abdulkarim Kana and Okey Ajunwa.",
+    "student_life": "Students belong to the Shere, Dilimi, Founders and Nok houses, with Lamingo and Diye houses for girls.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Jos"
+    ]
+  },
+  "79": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Hillcrest School was founded in 1942 by the Church of the Brethren Mission to give a Christian education to missionary children. Its first teacher, Mary Dadisman, a nurse who left the Garkida hospital to teach, welcomed 12 pupils on 22 July 1942; the school's first textbooks were lost when their ship was sunk in the war, and the first delivery arrived in May 1943. Hillcrest moved to its present site in 1946 and admitted pupils without regard to race or colour from the start, which the Nigerian Daily Times reported in March 1947. Other missions joined from 1955, and it is now sponsored by ten Christian mission bodies.",
+    "academics": "Hillcrest is a private, co-educational Christian day school in Jos with about 235 students. Its motto is \"Love God, Love Others\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Hillcrest_School_(Jos,_Nigeria)"
+    ]
+  },
+  "81": {
+    "history": "Federal Government College, Sokoto was founded in 1966 by P. H. Davis. It was the first of Nigeria's first three unity schools to open at the start of 1966, the others being Federal Government College, Okposi and Federal Government College, Warri. These schools were first called Inter-Regional Secondary Schools and later renamed Federal Government Colleges. The first students completed their certificates in 1970; in 1971, 70 students sat the West African School Certificate and 53 the Higher School Certificate. The higher school section later moved to what is now the Federal Science College, Sokoto.",
+    "academics": "The college is a federal unity school whose motto is \"Pro Unitate\". Its former students include the politicians Onyebuchi Chukwu, Donald Duke and Badamasi Maccido, the judge Fati Lami Abubakar, and Air Chief Marshal Oluseyi Petinrin, former Chief of the Defence Staff.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Sokoto"
+    ]
+  },
+  "105": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Christ's School, Ado-Ekiti was founded on 30 June 1933 by the British missionary Archdeacon Henry Dallimore as Ekiti Central School, taking its present name on the recommendation of Sir Bernard Bourdillon, then Governor of Nigeria. It moved in 1936 to its permanent site on the Agidimo Hills and became a full high school in 1942. Besides academic subjects, its early curriculum taught practical trades such as tailoring, brick-making, building and carpentry, with agriculture and cattle-keeping added in 1945; it was funded largely through the Church Missionary Society. In 1966 it merged with its girls' arm, the Ekiti Anglican Girls' Secondary School, but it now runs as a boys' school, opposite the separate girls' school.",
+    "academics": "Christ's School is a government-owned boys' day and boarding secondary school in Ado-Ekiti, Ekiti State. Its motto is \"Christus Victor\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Christ%27s_School,_Ado_Ekiti"
+    ]
+  },
+  "118": {
+    "established_year": 1923,
+    "set": {
+      "gender": "boys-only",
+      "area": "Oke-Saje"
+    },
+    "history": "Baptist Boys' High School was opened on 23 January 1923 by Rev. Samuel George Pinnock of the Southern Baptist mission, with 75 students and four teachers, among them his wife, Madora Pinnock. Pinnock chose the site in 1916 to give pupils from the mission's three primary schools at Ago-Owu, Ago-Ijaye and Oke-Saje a secondary education; building was delayed by the cost of materials during the First World War and began in 1922 with a principal's house, five classrooms, a chapel and a boys' dormitory. The Baptist mission's work in Abeokuta dates from 1850, when its first missionary, Thomas Jefferson Bowen, arrived.",
+    "academics": "BBHS is a boys' secondary school affiliated with the Nigerian Baptist Convention, on its permanent site at Oke-Saje, Abeokuta. It had about 2,000 students in 2022–2023, down from a peak of 2,155 in 1998–1999, partly to relieve overcrowding.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Baptist_Boys%27_High_School"
+    ]
+  },
+  "119": {
+    "set": {
+      "gender": "co-ed",
+      "area": "Idi-Aba"
+    },
+    "history": "Abeokuta Grammar School was founded in 1908 by the Abeokuta District Church Council of the Anglican Church. Its students sat the Royal College of Preceptors examinations in 1909 and the Cambridge Local Examination in 1911; it admitted girls from 1914, presented its first candidates for the Cambridge School Certificate in 1939, and was made a model school by the federal government in 1996.",
+    "academics": "The school is a public, co-educational secondary school on Elite Road, Idi-Aba, Abeokuta. Its former students include the Nobel laureate Wole Soyinka, the activist Funmilayo Ransome-Kuti and her sons Fela Anikulapo-Kuti and Beko Ransome-Kuti, the filmmaker Tunde Kelani, and the musicians Fireboy DML and Kizz Daniel. In 2019 a team of its students won the social innovation category of the national Diamond Challenge pitch event.",
+    "student_life": "Its old students' association, AGSOBA, is described as the oldest in Nigeria and has branches across the country and abroad. The school motto is \"Iberu Oluwa ni Ipile Ogbon\", \"the fear of the Lord is the beginning of wisdom\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Abeokuta_Grammar_School"
+    ]
+  },
+  "132": {
+    "established_year": 1948,
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Federal Science and Technical College, Yaba was founded in 1948. It is a mixed secondary school in Yaba, Lagos, owned by the federal government and run by the Federal Ministry of Education as one of more than 100 unity schools, and it teaches junior and senior secondary students only.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Science_and_Technical_College,_Yaba"
+    ]
+  },
+  "146": {
+    "established_year": 1954,
+    "history": "The Nigerian Military School began on 20 May 1954 as the Boys Company of Nigeria, set up under the Nigerian Regiment Training Centre of the Royal West African Frontier Force and modelled on the British Army's boys' wing; similar schools were founded in the Gambia, the Gold Coast and Sierra Leone. Its aim was to train skilled manpower to replace departing colonial non-commissioned officers, and its first commandant was Captain Wellington Duke Bassey. In 1958 ten of its boys sat the overseas Armed Forces General Certificate Examination, and in 1960 the school took the name Nigerian Military School.",
+    "academics": "NMS Zaria is a military boarding school affiliated with the Armed Forces of Nigeria, combining military and academic training. Its first students sat the West African Examinations Council examination in 1965; it now runs the six-year junior and senior secondary programme under a Board of Governors. Students were organised from the start into companies, now Alpha to Golf.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Nigerian_Military_School"
+    ]
+  },
+  "158": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Dennis Memorial Grammar School (DMGS) was founded on 25 January 1925 and named after Archdeacon Thomas John Dennis, who from 1899 had argued for teaching English and for opening a secondary school in Onitsha. It is described as the oldest grammar school in Igboland. The proposal took years to realise: an earlier plan by Bishop Herbert Tugwell to move the Awka Training College to Onitsha was rejected by the Niger Mission's executive committee in 1911.",
+    "academics": "DMGS is an Anglican boys' boarding secondary school on Oguta Road, Onitsha, founded by the Niger Mission of the Church Missionary Society and affiliated with the Church of Nigeria. Its motto is \"Lux Fiat\", \"let there be light\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Dennis_Memorial_Grammar_School"
+    ]
+  },
+  "170": {
+    "set": {
+      "boarding": true
+    },
+    "history": "Lagos State Model College, Kankon was founded in 1988 as one of five model colleges set up, one in each of Lagos State's then five divisions, under the military governor Captain Okhai Mike Akhigbe; the others were at Igbonla, Badore, Meiran and Igbokuta. The colleges started together at Government College, Ketu, Epe, and Kankon moved to its permanent site on the Owode–Apa road in Badagry on 27 November 1989. Its pioneer principal, Mr B. O. Owoade, served until 2005. Since 2003 the school has been Lagos State Senior Model College, Kankon, with its junior section run separately.",
+    "academics": "The college is a state-owned boarding secondary school in Badagry Local Government Area. Its former students include the playwright Joy Isi Bewaji and the singer Boy Spyce.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Lagos_State_Model_College_Kankon"
+    ]
+  },
+  "171": {
+    "history": "Lagos State Model College, Igbonla was founded in 1988 as one of five state model colleges established under the military governor Captain Okhai Mike Akhigbe, alongside Kankon, Badore, Meiran and Igbokuta. The five began together at Government College, Ketu, Epe; Igbonla's foundation principal, Mr James Akinola Paseda, also coordinated all five at their start in February 1988. The college moved to Igbonla in December 1989, and in 2003 it was divided into autonomous junior and senior schools, the junior school opening on 6 January 2003.",
+    "academics": "The college is a state-owned secondary school in the village of Igbonla, on the outskirts of Epe off the Ijebu-Ode road. Its students won prizes in programmes run by the Directorate of Food, Roads and Rural Infrastructure and the All Nigeria Confederation of Principals of Secondary Schools, including that body's national essay competition in 1992.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Lagos_State_Model_College,_Igbonla"
+    ]
+  },
+  "173": {
+    "set": {
+      "gender": "girls-only"
+    },
+    "history": "Methodist Girls' High School was established in 1879 and is affiliated with the Methodist Church. It is the first girls' secondary school in Nigeria and the third-oldest secondary school in the country, and it is the sister school of Methodist Boys' High School.",
+    "academics": "The school is a girls' secondary school in Yaba, Lagos. Its former students include the businesswoman and politician Chief (Mrs) H. I. D. Awolowo, the lawyer Chief (Mrs) Folake Solanke SAN, the theoretical physicist Professor Ibiyinka Fuwape, the administrator Alhaja Lateefat Okunnu and the actress and journalist Taiwo Ajai-Lycett.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Methodist_Girls%27_High_School_(Lagos)"
+    ]
+  },
+  "190": {
+    "history": "The Federal Government Academy, Suleja, formerly known as Suleja Academy, was founded in 1986 under the Gifted Education Programme set up by Jibril Aminu, then Minister of Education, following a federal committee on the education of gifted children formed in 1982. Its purpose is to give exceptionally gifted Nigerian children of secondary school age the chance to develop at their own pace, in fully funded programmes that were first four and later six years long.",
+    "academics": "Selection for the first students ran over two years: pupils were drawn from their first year at federal secondary schools, placed in gifted centres, and had to complete the three years of junior secondary school in two, reaching a minimum standard in the JS 3 examinations to continue. The academy aims to build cognitive, creative and leadership skills alongside a broad academic education.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_Academy,_Suleja"
+    ]
+  },
+  "191": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Eko Boys' High School was founded on 13 January 1913 by the Reverend William Benjamin Euba, a Methodist minister and educationist, as a privately owned, non-denominational school admitting pupils on merit regardless of religion or ethnicity, in response to the admission practices of some mission schools in colonial Lagos. It operated from several sites on Lagos Island, including Broad Street, Oil Mill Street and Ajele Street, before moving to Mushin. It later came under the Lagos State Government and, unlike several mission schools, was not returned to its founders; land has also been allocated for a second campus at Abijo, Ibeju-Lekki.",
+    "academics": "Eko Boys' High School is a boys' secondary school in Mushin, Lagos. Its motto is \"In Domino Confidimus\", \"in God we trust\", and its former students are known as \"Ekorians\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Eko_Boys%27_High_School"
+    ]
+  },
+  "1131": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Government Secondary School, Afikpo (GSSA) was established in 1952 by Charles W. Low, an Australian who was also its first principal. It is in Afikpo, Ebonyi State, in what was formerly Nigeria's Eastern Region, and was one of the region's leading schools before the Civil War. Its motto is \"Fear God, Honour the King\".",
+    "academics": "GSSA is a boys' secondary school off the Amasiri–Afikpo road. All students take core courses in both the arts and the sciences. Its former students include the philosopher Chinweizu and the curator and scholar Okwui Enwezor.",
+    "student_life": "Students play cricket, hockey, handball, basketball, football and athletics, and an Officer Cadet Corps offers adventure training, camping and drill. Students are assigned on admission to one of nine houses: Afikpo, Akabuogu, Charles Low, Ibiam, Ibi Mboto, Niger, Okpara, Ramat and School.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Government_Secondary_School,_Afikpo"
+    ]
+  },
+  "1173": {
+    "history": "Federal Government Girls' College, Benin City was founded by the federal government on 15 October 1973 with about 72 students, as one of the first thirteen unity schools established that year and one of the schools at the forefront of girls' education in Nigeria. It began at a temporary site at Idia College and moved in September 1975 to its permanent site near the University of Benin Teaching Hospital, on a road since named after it. Its first principal was Miss R. Bokdawala.",
+    "academics": "FGGC Benin, known as \"Fediben\", is a federally funded girls' secondary school with boarding. Its curriculum has followed successive national reforms, from the 6-3-3-4 system to the 9-3-4 structure and back. The college motto is \"Pro Unitate\".",
+    "student_life": "Boarders live in houses, several named after figures from Benin history: Adesuwa, Emotan, Eweka, Omigie and Moremi.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_Girls_College,_Benin_City"
+    ]
+  },
+  "1174": {
+    "established_year": 1954,
+    "history": "Eghosa Anglican Grammar School began in 1954 as Adolor College, founded by Osaze Igbinokpogie on land given by Mr Enaruwa, with help from Oba Akenzua II of Benin. When funds ran short soon afterwards, Igbinokpogie transferred the school to the Anglican Mission to keep it open, and it took its present name. It first entered students for the West African School Certificate in 1963 and, after good results, grew from one to three classes per year group from 1965. The Bendel State Government later took over mission schools, including Eghosa, under Governor Ambrose Alli.",
+    "academics": "The school is on New Lagos Road in Benin City, Edo State. Its 1965 intake graduated in 1969, during the Civil War, and its enrolment grew sharply under the state's free education programme.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Eghosa_Anglican_Grammar_School"
+    ]
+  },
+  "1186": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Federal Government College, Minna is a co-educational federal unity school in Minna, Niger State. It opened in January 1979 at a temporary site now known as the Government Teachers' College.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Minna"
+    ]
+  },
+  "1207": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Federal Government College, Ikot Ekpene was created by the federal government in 1973 as one of the unity schools intended to bring together students from every region of Nigeria. Its first principal was Mr Bryan R. Kimmitt, and its first Nigerian principal was Mr J. T. Udofia.",
+    "academics": "The college takes boys and girls, as boarding and day students, from Junior Secondary 1 to Senior Secondary 3, admitted through the Federal Common Entrance Examination. Its former students include the actress Rita Dominic, Senator Adawari Pepple, the entrepreneur Mark Essien, founder of Hotels.ng, and the musician Obongjayar. The college publishes The GEM Magazine, and its alumni associations are active in Nigeria, the United Kingdom and the United States.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Ikot_Ekpene"
+    ]
+  }
+}

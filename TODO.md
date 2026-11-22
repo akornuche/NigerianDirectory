@@ -1,3 +1,5 @@
+> **Superseded (2026-11-21):** the active plan is [`documents/REMEDIATION_PLAN.md`](documents/REMEDIATION_PLAN.md), based on the 2026-11-21 data, SEO and ads audit. This file is kept for history.
+
 # NigerianDirectory.com — TODO Plan
 
 > **Created:** 2026-02-23  

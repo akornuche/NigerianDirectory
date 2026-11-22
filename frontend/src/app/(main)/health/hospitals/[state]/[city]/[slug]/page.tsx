@@ -135,7 +135,7 @@ export default async function HospitalPage({ params }: Props) {
             {/* Premium Hero Header */}
             <section className="relative h-[60vh] min-h-[400px] overflow-hidden bg-red-900">
                 <Image
-                    src={hospital.hero_image_url || '/placeholder-bridge.jpg'}
+                    src={hospital.hero_image_url || '/placeholder-school.svg'}
                     alt={hospital.name}
                     fill
                     className="object-cover opacity-40 grayscale-[0.3]"
@@ -149,7 +149,7 @@ export default async function HospitalPage({ params }: Props) {
                             {/* Logo Container */}
                             <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-2xl shadow-2xl p-4 flex items-center justify-center relative translate-y-6 z-10 border-4 border-gray-50">
                                 <Image
-                                    src={hospital.logo_url || '/placeholder-shield.svg'}
+                                    src={hospital.logo_url || '/placeholder-logo.svg'}
                                     alt={`${hospital.name} logo`}
                                     width={120}
                                     height={120}

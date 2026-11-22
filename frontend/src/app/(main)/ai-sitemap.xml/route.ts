@@ -6,6 +6,7 @@
  */
 
 import { neon } from '@neondatabase/serverless';
+import { toSlugSegment } from '@/lib/slug';
 import { assessContentQuality } from '@/lib/content-quality';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
@@ -43,6 +44,7 @@ export async function GET() {
               enriched_campus_info, enriched_student_life
       FROM schools
       WHERE institution_category IN ('school', 'university')
+        AND verification_status = 'verified'
       ORDER BY institution_category, state, name
     `;
     const schools: AiSitemapSchool[] = rows
@@ -68,37 +70,18 @@ export async function GET() {
     const aiSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- AI Agents Landing Page -->
+  <!-- Only real pages are listed. Earlier versions listed /ai, /api/ai/*
+       paths on the website domain and category pages, none of which
+       exist, so every one of those URLs returned 404. -->
   <url>
-    <loc>${baseUrl}/ai</loc>
+    <loc>${baseUrl}/for-ai-agents/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
-  <!-- AI API Endpoints -->
-  <url>
-    <loc>${baseUrl}/api/ai/schools</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>${baseUrl}/api/ai/context/nigeria-education</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Nigerian States for Geographic Queries -->
-  ${generateStateUrls()}
-
-  <!-- Major Cities for Location-Based Queries -->
-  ${generateCityUrls()}
-
-  <!-- Educational Categories -->
-  ${generateEducationCategoryUrls()}
+  <!-- State listing pages with at least one published record -->
+  ${stateListingUrls(schools, baseUrl)}
 
   <!-- Individual Schools -->
   ${schools.map(school => `
@@ -108,14 +91,6 @@ export async function GET() {
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>`).join('')}
-
-  <!-- AI Agent Help Pages -->
-  <url>
-    <loc>${baseUrl}/for-ai-agents</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
 </urlset>`;
 
@@ -158,75 +133,24 @@ export async function GET() {
   }
 }
 
-function generateStateUrls() {
-  const nigerianStates = [
-    'Lagos', 'Abuja', 'Kano', 'Rivers', 'Ogun', 'Kaduna', 'Anambra', 'Delta',
-    'Oyo', 'Imo', 'Plateau', 'Cross River', 'Akwa Ibom', 'Edo', 'Kwara',
-    'Borno', 'Bauchi', 'Osun', 'Katsina', 'Niger', 'Ondo', 'Enugu',
-    'Abia', 'Sokoto', 'Kebbi', 'Adamawa', 'Gombe', 'Benue', 'Yobe',
-    'Taraba', 'Ekiti', 'Kogi', 'Jigawa', 'Zamfara', 'Nasarawa', 'Ebonyi', 'Bayelsa'
-  ];
-
-  return nigerianStates.map(state => `
+function stateListingUrls(schools: AiSitemapSchool[], baseUrl: string): string {
+  const today = new Date().toISOString().split('T')[0];
+  const paths = new Set<string>();
+  for (const school of schools) {
+    const section = school.institution_category === 'university' ? 'universities' : 'schools';
+    if (school.state) paths.add(`/education/${section}/${toSlug(school.state)}/`);
+  }
+  return Array.from(paths).sort().map((path) => `
   <url>
-    <loc>${baseUrl}/api/ai/schools/${state.toLowerCase()}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <loc>${baseUrl}${path}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>`).join('');
-}
-
-function generateCityUrls() {
-  const majorCities = [
-    { name: 'Lagos', state: 'Lagos' },
-    { name: 'Abuja', state: 'FCT' },
-    { name: 'Kano', state: 'Kano' },
-    { name: 'Ibadan', state: 'Oyo' },
-    { name: 'Port Harcourt', state: 'Rivers' },
-    { name: 'Benin City', state: 'Edo' },
-    { name: 'Maiduguri', state: 'Borno' },
-    { name: 'Zaria', state: 'Kaduna' },
-    { name: 'Aba', state: 'Abia' },
-    { name: 'Jos', state: 'Plateau' },
-    { name: 'Ilorin', state: 'Kwara' },
-    { name: 'Enugu', state: 'Enugu' },
-    { name: 'Abeokuta', state: 'Ogun' },
-    { name: 'Warri', state: 'Delta' },
-    { name: 'Calabar', state: 'Cross River' }
-  ];
-
-  return majorCities.map(city => `
-  <url>
-    <loc>${baseUrl}/api/ai/schools/${city.name.toLowerCase()}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`).join('');
-}
-
-function generateEducationCategoryUrls() {
-  const categories = [
-    'secondary-schools',
-    'primary-schools', 
-    'international-schools',
-    'private-schools',
-    'public-schools',
-    'technical-schools',
-    'islamic-schools',
-    'christian-schools'
-  ];
-
-  return categories.map(category => `
-  <url>
-    <loc>${baseUrl}/education/${category}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>`).join('');
 }
 
 function toSlug(value: string | undefined): string {
-  return (value || '').toLowerCase().trim().replace(/\s+/g, '-');
+  return toSlugSegment(value || '');
 }
 
 function getCanonicalSchoolUrl(school: AiSitemapSchool): string {

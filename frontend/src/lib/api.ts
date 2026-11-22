@@ -13,7 +13,7 @@ interface FetchOptions extends RequestInit {
   timeout?: number;
 }
 
-class APIError extends Error {
+export class APIError extends Error {
   status: number;
   data: unknown;
 
@@ -323,3 +323,19 @@ export const getHospitalsByState = api.getHospitalsByState;
 export const getHospitalByPath = api.getHospitalByPath;
 
 export default api;
+
+
+/**
+ * Canonical path of a record the API reports as moved: merged into another
+ * record, renamed, or corrected to a different state or locality. Returns
+ * null for an ordinary "not found" or any other error.
+ */
+export function movedToPath(error: unknown): string | null {
+  if (!(error instanceof APIError) || error.status !== 404) return null;
+  const moved = (error.data as { movedTo?: {
+    slug: string; state: string; locality: string; institution_category: string;
+  } } | undefined)?.movedTo;
+  if (!moved?.slug || !moved.state || !moved.locality) return null;
+  const section = moved.institution_category === 'university' ? 'universities' : 'schools';
+  return `/education/${section}/${moved.state}/${moved.locality}/${moved.slug}/`;
+}
