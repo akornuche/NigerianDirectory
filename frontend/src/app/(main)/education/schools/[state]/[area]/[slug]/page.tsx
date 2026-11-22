@@ -20,6 +20,7 @@ import {
 import { getSchoolByPath, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 import { assessContentQuality } from '@/lib/content-quality';
+import { pageTitle } from '@/lib/seo';
 
 type ManagementMember = {
   name: string;
@@ -175,7 +176,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const contentQuality = assessContentQuality(school);
 
   return {
-    title: school.meta_title || `${school.name} - ${school.area}, ${school.state} | Profile, Programs & Admissions`,
+    title: pageTitle(school.meta_title, `${school.name}, ${school.area || school.state}`),
     description: metaDescription,
     alternates: {
       canonical: schoolUrl,

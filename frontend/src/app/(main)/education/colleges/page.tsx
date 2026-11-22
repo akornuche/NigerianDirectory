@@ -7,6 +7,7 @@ import { toSlugSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/education/colleges/' },
     title: 'Polytechnics & Colleges in Nigeria - Technical & Vocational Education',
     description: 'Find top polytechnics, colleges of education, and monotechnics across Nigeria. Explore technical programs, admission requirements, and specialized training institutions.',
 };

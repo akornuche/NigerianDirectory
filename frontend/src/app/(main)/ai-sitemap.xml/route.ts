@@ -6,6 +6,7 @@
  */
 
 import { neon } from '@neondatabase/serverless';
+import { toSlugSegment } from '@/lib/slug';
 import { assessContentQuality } from '@/lib/content-quality';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
@@ -227,7 +228,7 @@ function generateEducationCategoryUrls() {
 }
 
 function toSlug(value: string | undefined): string {
-  return (value || '').toLowerCase().trim().replace(/\s+/g, '-');
+  return toSlugSegment(value || '');
 }
 
 function getCanonicalSchoolUrl(school: AiSitemapSchool): string {

@@ -7,7 +7,8 @@ import { toSlugSegment, toLocationSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
-  title: 'Schools in Nigeria - Find Primary, Secondary & International Schools',
+  alternates: { canonical: '/education/schools/' },
+  title: 'Find Schools in Nigeria',
   description: 'Discover the best schools across Nigeria. Browse our comprehensive directory of primary, secondary, boarding, and international schools with verified information.',
   openGraph: {
     title: 'Schools in Nigeria | NigerianDirectory',

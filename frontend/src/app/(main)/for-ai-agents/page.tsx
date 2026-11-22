@@ -8,6 +8,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/for-ai-agents/' },
   title: 'Nigerian Schools Directory - AI Agent Access Guide',
   description: 'Comprehensive guide for AI agents, chatbots, and generative engines accessing Nigerian school information. APIs, endpoints, and structured data for educational queries about Nigeria.',
   keywords: 'Nigeria schools API, AI agent access, Nigerian education data, school information API, West Africa education, AI-friendly endpoints',

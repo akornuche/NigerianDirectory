@@ -1,4 +1,5 @@
 const { query } = require('../config/database');
+const { urlSegmentSql } = require('../utils/slugify');
 const slugify = require('slugify');
 
 /**
@@ -145,19 +146,19 @@ class School {
         let paramIndex = 1;
 
         if (state) {
-            conditions.push(`(LOWER(state) = LOWER($${paramIndex}) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($${paramIndex}))`);
+            conditions.push(`(LOWER(state) = LOWER($${paramIndex}) OR ${urlSegmentSql('state')} = LOWER($${paramIndex}))`);
             params.push(state);
             paramIndex++;
         }
 
         if (city) {
-            conditions.push(`(LOWER(city) = LOWER($${paramIndex}) OR LOWER(REPLACE(city, ' ', '-')) = LOWER($${paramIndex}))`);
+            conditions.push(`(LOWER(city) = LOWER($${paramIndex}) OR ${urlSegmentSql('city')} = LOWER($${paramIndex}))`);
             params.push(city);
             paramIndex++;
         }
 
         if (area) {
-            conditions.push(`(LOWER(area) = LOWER($${paramIndex}) OR LOWER(REPLACE(area, ' ', '-')) = LOWER($${paramIndex}))`);
+            conditions.push(`(LOWER(area) = LOWER($${paramIndex}) OR ${urlSegmentSql('area')} = LOWER($${paramIndex}))`);
             params.push(area);
             paramIndex++;
         }
@@ -250,7 +251,7 @@ class School {
                 curriculum, levels, boarding, gender,
                 logo_url, hero_image_url, claimed, verified, template_summary
             FROM schools 
-            WHERE (LOWER(state) = LOWER($1) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($1))
+            WHERE (LOWER(state) = LOWER($1) OR ${urlSegmentSql('state')} = LOWER($1))
               AND ${PUBLISHED}
             ORDER BY area, name`,
             [state]
@@ -267,8 +268,8 @@ class School {
                 logo_url, hero_image_url, claimed, verified,
                 template_summary, fee_range
             FROM schools 
-            WHERE (LOWER(state) = LOWER($1) OR LOWER(REPLACE(state, ' ', '-')) = LOWER($1))
-              AND (LOWER(area) = LOWER($2) OR LOWER(REPLACE(area, ' ', '-')) = LOWER($2))
+            WHERE (LOWER(state) = LOWER($1) OR ${urlSegmentSql('state')} = LOWER($1))
+              AND (LOWER(area) = LOWER($2) OR ${urlSegmentSql('area')} = LOWER($2))
               AND ${PUBLISHED}
             ORDER BY name`,
             [state, area]

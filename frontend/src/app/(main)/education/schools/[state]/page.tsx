@@ -3,7 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import { api, School } from '@/lib/api';
-import { toLocationSegment } from '@/lib/slug';
+import { toLocationSegment, toSlugSegment } from '@/lib/slug';
+import { stateFromSlug } from '@/lib/states';
+import { notFound } from 'next/navigation';
 import AdBanner from '@/components/ads/AdBanner';
 
 // Fetch schools by state from API
@@ -34,10 +36,15 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
+  const knownState = stateFromSlug(resolvedParams.state);
+  if (!knownState) notFound();
   const stateData = await getSchoolsByState(resolvedParams.state);
-  const stateName = stateData?.name || resolvedParams.state.replace(/-/g, ' ');
+  const stateName = knownState;
 
   return {
+    alternates: { canonical: `/education/schools/${toSlugSegment(knownState)}/` },
+    // A state with no published schools yet is not worth indexing.
+    ...(stateData ? {} : { robots: { index: false, follow: true } }),
     title: `Schools in ${stateName} - Find Primary & Secondary Schools`,
     description: `Discover the best schools in ${stateName}, Nigeria. Browse verified listings of private, public, and international schools with reviews and contact information.`,
     openGraph: {
@@ -49,6 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function StatePage({ params }: Props) {
   const resolvedParams = await params;
+  if (!stateFromSlug(resolvedParams.state)) notFound();
   const stateData = await getSchoolsByState(resolvedParams.state);
 
   if (!stateData) {

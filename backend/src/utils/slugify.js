@@ -17,6 +17,26 @@ function generateSlug(text) {
 }
 
 /**
+ * Convert a location name into the URL path segment used by the frontend
+ * routes: lowercase, each run of non-alphanumeric characters becomes one
+ * hyphen, no leading or trailing hyphen. "Ado-Odo/Ota" -> "ado-odo-ota".
+ * Must stay identical to toSlugSegment in frontend/src/lib/slug.ts.
+ * @param {string|null|undefined} value
+ * @returns {string}
+ */
+function urlSegment(value) {
+    return (value || '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+/**
+ * The same transform in SQL, for matching a route segment against a column.
+ * @param {string} column - Column name (trusted identifier, never user input)
+ */
+function urlSegmentSql(column) {
+    return `TRIM(BOTH '-' FROM REGEXP_REPLACE(LOWER(${column}), '[^a-z0-9]+', '-', 'g'))`;
+}
+
+/**
  * Generate a school slug with optional location context
  * @param {string} name - School name
  * @param {string} state - State name (optional, for disambiguation)
@@ -42,6 +62,8 @@ function generateLocationSlug(state, city, area) {
 }
 
 module.exports = {
+    urlSegment,
+    urlSegmentSql,
     generateSlug,
     generateSchoolSlug,
     generateLocationSlug

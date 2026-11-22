@@ -19,6 +19,7 @@ import { api, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 import SourceReferences from '@/components/content/SourceReferences';
 import { assessContentQuality } from '@/lib/content-quality';
+import { pageTitle } from '@/lib/seo';
 
 // A record that was merged, renamed or moved 301-redirects to its canonical URL.
 async function getUniversity(state: string, city: string, slug: string): Promise<School | null> {
@@ -140,7 +141,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const contentQuality = assessContentQuality(uni);
 
     return {
-        title: uni.meta_title || `${uni.name} - ${uni.city}, ${uni.state} | Higher Education Profile`,
+        title: pageTitle(uni.meta_title, `${uni.name}, ${uni.city || uni.state}`),
         description: metaDescription,
         alternates: {
             canonical: uniUrl,

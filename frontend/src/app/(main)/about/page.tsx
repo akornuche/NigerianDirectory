@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { AcademicCapIcon, GlobeAltIcon, UserGroupIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'About Us - NigerianDirectory | Nigeria\'s School Directory',
+  alternates: { canonical: '/about/' },
+  title: 'About Us - Nigeria\'s School Directory',
   description: 'Learn about NigerianDirectory.com - Nigeria\'s most comprehensive school directory. Our mission is to help parents find the perfect school for their children.',
 };
 

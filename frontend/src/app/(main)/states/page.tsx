@@ -5,7 +5,7 @@ import { api } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
-  title: 'All States - Find Schools Across Nigeria | NigerianDirectory',
+  title: 'All States - Find Schools Across Nigeria',
   description: 'Browse schools in all 36 Nigerian states and FCT. Find primary, secondary, and international schools in Lagos, Abuja, Kano, Rivers, and more.',
 };
 

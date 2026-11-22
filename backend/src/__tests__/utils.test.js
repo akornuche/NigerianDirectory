@@ -183,3 +183,19 @@ describe('Utilities', () => {
         });
     });
 });
+
+describe('urlSegment', () => {
+    const { urlSegment } = require('../utils/slugify');
+
+    test('turns separators into single hyphens so a name cannot add a path segment', () => {
+        expect(urlSegment('Ado-Odo/Ota')).toBe('ado-odo-ota');
+        expect(urlSegment('Akwa Ibom')).toBe('akwa-ibom');
+        expect(urlSegment('  Port   Harcourt ')).toBe('port-harcourt');
+        expect(urlSegment("St. Gregory's")).toBe('st-gregory-s');
+    });
+
+    test('handles missing values', () => {
+        expect(urlSegment(null)).toBe('');
+        expect(urlSegment(undefined)).toBe('');
+    });
+});

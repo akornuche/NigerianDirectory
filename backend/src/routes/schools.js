@@ -1,4 +1,5 @@
 const express = require('express');
+const { urlSegment } = require('../utils/slugify');
 const router = express.Router();
 const School = require('../models/School');
 const Location = require('../models/Location');
@@ -151,7 +152,7 @@ router.get('/area/:state/:area', async (req, res, next) => {
  * Path segments use the same transform the frontend routes match against.
  */
 function canonicalLocation(school) {
-    const seg = (v) => (v || '').toLowerCase().trim().replace(/\s+/g, '-');
+    const seg = urlSegment;
     const isUniversity = school.institution_category === 'university';
     return {
         slug: school.slug,
@@ -196,12 +197,13 @@ router.get('/:state/:area/:slug', async (req, res, next) => {
         }
 
         // Verify state and either area OR city match
-        const schoolState = school.state.toLowerCase().replace(/\s+/g, '-');
-        const schoolArea = school.area?.toLowerCase().replace(/\s+/g, '-') || '';
-        const schoolCity = school.city?.toLowerCase().replace(/\s+/g, '-') || '';
+        const schoolState = urlSegment(school.state);
+        const schoolArea = urlSegment(school.area);
+        const schoolCity = urlSegment(school.city);
 
-        const stateMatch = schoolState === state.toLowerCase();
-        const locationMatch = schoolArea === area.toLowerCase() || schoolCity === area.toLowerCase();
+        const stateMatch = schoolState === urlSegment(state);
+        const requested = urlSegment(area);
+        const locationMatch = (schoolArea !== '' && schoolArea === requested) || (schoolCity !== '' && schoolCity === requested);
 
         if (!stateMatch || !locationMatch) {
             // The record exists under a different path (e.g. its state was

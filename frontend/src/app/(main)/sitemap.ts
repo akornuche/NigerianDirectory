@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { neon } from '@neondatabase/serverless';
 import { getContent } from '@/lib/content';
 import { assessContentQuality } from '@/lib/content-quality';
+import { toSlugSegment } from '@/lib/slug';
 
 // ISR: generate once, cache for 24 hours
 // Googlebot never triggers a cold DB query
@@ -19,9 +20,8 @@ const STATES = [
   'oyo', 'plateau', 'rivers', 'sokoto', 'taraba', 'yobe', 'zamfara',
 ];
 
-function toSlug(s: string) {
-  return s.toLowerCase().replace(/ /g, '-');
-}
+// Must match the segments the pages link to and the API resolves.
+const toSlug = (s: string) => toSlugSegment(s);
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [schools, universities, blogPosts] = await Promise.all([
@@ -37,7 +37,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/blog/`,                   lastModified: SITE_UPDATED, changeFrequency: 'daily',   priority: 0.8 },
     { url: `${BASE_URL}/about/`,                  lastModified: SITE_UPDATED, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/contact/`,                lastModified: SITE_UPDATED, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE_URL}/claim/`,                  lastModified: SITE_UPDATED, changeFrequency: 'monthly', priority: 0.5 },
   ];
 
   const schoolStatePages = STATES.map((s) => ({

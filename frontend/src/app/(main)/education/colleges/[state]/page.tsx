@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolvedParams = await params;
     const stateName = resolvedParams.state.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     return {
-        title: `Polytechnics & Colleges in ${stateName} | NigerianDirectory`,
+        title: `Polytechnics & Colleges in ${stateName}`,
         description: `Browse list of polytechnics and colleges in ${stateName}, Nigeria.`,
     };
 }

@@ -5,7 +5,8 @@ import { getContent, BlogPostMeta } from '@/lib/content';
 import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
-  title: 'Blog - Education & Directory News | NigerianDirectory',
+  alternates: { canonical: '/blog/' },
+  title: 'Blog - Education & Directory News',
   description: 'Stay informed with the latest articles on education in Nigeria, school selection guides, and updates from NigerianDirectory.',
   openGraph: {
     title: 'Blog | NigerianDirectory',

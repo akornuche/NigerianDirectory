@@ -8,6 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/advertise/' },
   title: 'Advertise With Us - Reach Nigerian Parents & Schools',
   description: 'Advertise on NigerianDirectory.com and reach thousands of parents searching for schools in Nigeria. Banner ads, sponsored listings, and featured placements available.',
 };
