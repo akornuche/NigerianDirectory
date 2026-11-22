@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Find Schools in Nigeria',
   description: 'Discover the best schools across Nigeria. Browse our comprehensive directory of primary, secondary, boarding, and international schools with verified information.',
   openGraph: {
+    images: ['/og-image.png'],
     title: 'Schools in Nigeria | NigerianDirectory',
     description: 'Find top schools across all 36 states of Nigeria. Compare facilities, fees, and programs.',
   },

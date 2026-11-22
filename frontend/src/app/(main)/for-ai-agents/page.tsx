@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   keywords: 'Nigeria schools API, AI agent access, Nigerian education data, school information API, West Africa education, AI-friendly endpoints',
   robots: 'index, follow',
   openGraph: {
+    images: ['/og-image.png'],
     title: 'Nigerian Schools Directory - AI Agent Guide',
     description: 'API access guide for AI agents to retrieve Nigerian school information',
     type: 'website',

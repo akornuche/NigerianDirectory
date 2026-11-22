@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Schools in ${stateName} - Find Primary & Secondary Schools`,
     description: `Discover the best schools in ${stateName}, Nigeria. Browse verified listings of private, public, and international schools with reviews and contact information.`,
     openGraph: {
+      images: ['/og-image.png'],
       title: `Schools in ${stateName} | NigerianDirectory`,
       description: `Find top schools in ${stateName}. Compare facilities, fees, and programs.`,
     },

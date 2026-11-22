@@ -64,7 +64,7 @@ export default async function CollegePage({ params }: Props) {
                         <div className="flex flex-col md:flex-row gap-8 items-end">
                             <div className="w-28 h-28 bg-white rounded-2xl shadow-xl p-3 flex items-center justify-center translate-y-6 z-10 border-4 border-white">
                                 <Image
-                                    src={school.logo_url || '/placeholder-shield-emerald.svg'}
+                                    src={school.logo_url || '/placeholder-logo.svg'}
                                     alt={`${school.name} logo`}
                                     width={100}
                                     height={100}

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: 'Universities in Nigeria: Federal, State & Private',
     description: 'Discover the best universities in Nigeria. Browse our comprehensive directory of Federal, State, and Private universities with verified information on programs, fees, and campus life.',
     openGraph: {
+      images: ['/og-image.png'],
         title: 'Universities in Nigeria | NigerianDirectory',
         description: 'Find top universities across all 36 states of Nigeria. Compare academic programs, facilities, and rankings.',
     },

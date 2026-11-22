@@ -20,6 +20,7 @@ import AdBanner from '@/components/ads/AdBanner';
 import SourceReferences from '@/components/content/SourceReferences';
 import { assessContentQuality } from '@/lib/content-quality';
 import { pageTitle } from '@/lib/seo';
+import { toSlugSegment } from '@/lib/slug';
 
 // A record that was merged, renamed or moved 301-redirects to its canonical URL.
 async function getUniversity(state: string, city: string, slug: string): Promise<School | null> {
@@ -167,12 +168,53 @@ export default async function UniversityPage({ params }: Props) {
 
     const sections = generateUniversitySections(uni);
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
+    const stateSeg = toSlugSegment(uni.state);
+    const uniUrl = `${siteUrl}/education/universities/${stateSeg}/${toSlugSegment(uni.city || uni.state)}/${uni.slug}/`;
+
+    // Structured data from the record's sourced fields only; empty
+    // properties are omitted rather than published as null.
+    const universityJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'CollegeOrUniversity',
+        '@id': uniUrl,
+        name: uni.name,
+        url: uni.website || undefined,
+        sameAs: uni.website ? [uni.website] : undefined,
+        logo: uni.logo_url || undefined,
+        image: uni.hero_image_url || uni.logo_url || undefined,
+        foundingDate: uni.established_year ? String(uni.established_year) : undefined,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: uni.city || undefined,
+            addressRegion: uni.state,
+            addressCountry: 'NG',
+        },
+        employee: uni.principal_name ? {
+            '@type': 'Person',
+            name: uni.principal_name,
+            jobTitle: uni.principal_title || 'Vice-Chancellor',
+        } : undefined,
+    };
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+            { '@type': 'ListItem', position: 2, name: 'Universities', item: `${siteUrl}/education/universities/` },
+            { '@type': 'ListItem', position: 3, name: uni.state, item: `${siteUrl}/education/universities/${stateSeg}/` },
+            { '@type': 'ListItem', position: 4, name: uni.name, item: uniUrl },
+        ],
+    };
+
     return (
         <div className="bg-gray-50 min-h-screen pb-12">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(universityJsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
             {/* Premium Hero Header */}
             <section className="relative h-[60vh] min-h-[400px] overflow-hidden bg-indigo-900">
                 <Image
-                    src={uni.hero_image_url || '/placeholder-bridge.jpg'}
+                    src={uni.hero_image_url || '/placeholder-school.svg'}
                     alt={uni.name}
                     fill
                     className="object-cover opacity-40 grayscale-[0.3]"
@@ -186,7 +228,7 @@ export default async function UniversityPage({ params }: Props) {
                             {/* Logo/Shield Container */}
                             <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-2xl shadow-2xl p-4 flex items-center justify-center relative translate-y-6 z-10 border-4 border-gray-50">
                                 <Image
-                                    src={uni.logo_url || '/placeholder-shield.svg'}
+                                    src={uni.logo_url || '/placeholder-logo.svg'}
                                     alt={`${uni.name} logo`}
                                     width={120}
                                     height={120}
@@ -411,11 +453,11 @@ export default async function UniversityPage({ params }: Props) {
                                     Home
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />
-                                <Link href="/education/universities" className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                                <Link href="/education/universities/" className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     Education / Universities
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />
-                                <Link href={`/education/universities/${uni.state.toLowerCase()}`} className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                                <Link href={`/education/universities/${toSlugSegment(uni.state)}/`} className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     {uni.state} State
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />

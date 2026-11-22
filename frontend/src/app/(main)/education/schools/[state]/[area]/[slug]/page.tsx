@@ -214,13 +214,15 @@ export default async function SchoolPage({ params }: Props) {
     '@type': 'School',
     '@id': schoolUrl,
     name: school.name,
-    description: school.template_summary,
-    image: school.hero_image_url || school.logo_url,
-    logo: school.logo_url,
+    // Omit empty properties instead of publishing null, which structured
+    // data validators report as errors.
+    description: school.template_summary || undefined,
+    image: school.hero_image_url || school.logo_url || undefined,
+    logo: school.logo_url || undefined,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: school.address,
-      addressLocality: school.city,
+      streetAddress: school.address || undefined,
+      addressLocality: school.city || school.area || undefined,
       addressRegion: school.state,
       addressCountry: 'Nigeria',
     },
@@ -229,9 +231,9 @@ export default async function SchoolPage({ params }: Props) {
       latitude: school.latitude,
       longitude: school.longitude,
     } : undefined,
-    telephone: school.phone,
-    email: school.email,
-    url: school.website,
+    telephone: school.phone || undefined,
+    email: school.email || undefined,
+    url: school.website || undefined,
     foundingDate: school.established_year?.toString(),
     sameAs: school.website ? [school.website] : undefined,
   };
@@ -262,47 +264,16 @@ export default async function SchoolPage({ params }: Props) {
     },
   };
 
-  // JSON-LD Breadcrumb schema
+  // JSON-LD Breadcrumb schema. Only levels that are real pages are listed:
+  // there is no /education/ page and no per-area page.
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Education',
-        item: `${siteUrl}/education/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Schools',
-        item: `${siteUrl}/education/schools/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: school.state,
-        item: `${siteUrl}/education/schools/${resolvedParams.state}/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        name: school.area,
-        item: `${siteUrl}/education/schools/${resolvedParams.state}/${resolvedParams.area}/`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 6,
-        name: school.name,
-        item: schoolUrl,
-      },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Schools', item: `${siteUrl}/education/schools/` },
+      { '@type': 'ListItem', position: 3, name: school.state, item: `${siteUrl}/education/schools/${resolvedParams.state}/` },
+      { '@type': 'ListItem', position: 4, name: school.name, item: schoolUrl },
     ],
   };
 
@@ -357,13 +328,8 @@ export default async function SchoolPage({ params }: Props) {
               </Link>
             </li>
             <li className="text-gray-400">/</li>
-            <li>
-              <Link
-                href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/`}
-                className="text-gray-500 hover:text-gray-700 capitalize"
-              >
-                {resolvedParams.area.replace(/-/g, ' ')}
-              </Link>
+            <li className="text-gray-500 capitalize">
+              {school.area || resolvedParams.area.replace(/-/g, ' ')}
             </li>
             <li className="text-gray-400">/</li>
             <li className="text-gray-900 font-medium truncate">{school.name}</li>
@@ -943,11 +909,11 @@ export default async function SchoolPage({ params }: Props) {
                 <h3 className="font-semibold text-gray-900 mb-3">Browse More Schools</h3>
                 <div className="space-y-2 text-sm">
                   <Link
-                    href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/`}
+                    href={`/education/schools/${resolvedParams.state}/`}
                     className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
                   >
                     <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
-                    Schools in {school.area}
+                    Schools in {school.state}
                   </Link>
                   <Link
                     href={`/education/schools/${resolvedParams.state}/`}
