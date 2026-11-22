@@ -3,21 +3,17 @@ const nextConfig = {
   // Enable React Strict Mode
   reactStrictMode: true,
   
-  // Image optimization - allow all external images
+  // Images are served as stored, without Vercel Image Optimization.
+  // Almost every image already lives in Vercel Blob storage, compressed
+  // (hero images are WebP). Optimizing them again, in two formats and at
+  // many widths, with Next's default 60-second cache, used up the Hobby
+  // plan's monthly image-transformation quota; past the quota, new
+  // transformations fail and images can break. Serving them directly uses
+  // no transformations.
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-      {
-        protocol: 'http',
-        hostname: '**',
-      },
-    ],
-    formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
-  
+
   // Environment variables (exposed to client)
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api',
