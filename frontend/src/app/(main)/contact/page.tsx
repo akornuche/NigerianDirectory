@@ -6,10 +6,16 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon, CheckCircleIcon } from '@heroicons
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
 
+// Real contact details only. The previous email was on a domain that does
+// not exist and the phone number was a placeholder. Each detail is shown
+// only when its setting is configured; the form below always works.
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+const CONTACT_PHONE = process.env.NEXT_PUBLIC_CONTACT_PHONE;
+
 const contactInfo = [
-  { icon: EnvelopeIcon, title: 'Email',   value: 'info@nigeriandirectory.com', href: 'mailto:info@nigeriandirectory.com' },
-  { icon: PhoneIcon,   title: 'Phone',   value: '+234 800 123 4567',           href: 'tel:+2348001234567' },
-  { icon: MapPinIcon,  title: 'Address', value: 'Lagos, Nigeria',              href: null },
+  ...(CONTACT_EMAIL ? [{ icon: EnvelopeIcon, title: 'Email', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` }] : []),
+  ...(CONTACT_PHONE ? [{ icon: PhoneIcon, title: 'Phone', value: CONTACT_PHONE, href: `tel:${CONTACT_PHONE.replace(/[^+\d]/g, '')}` }] : []),
+  { icon: MapPinIcon,  title: 'Location', value: 'Lagos, Nigeria', href: null },
 ];
 
 const subjectOptions = [

@@ -11,6 +11,11 @@ import {
 import { api, School } from '@/lib/api';
 import { toSlugSegment, toLocationSegment } from '@/lib/slug';
 import AdBanner from '@/components/ads/AdBanner';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 // Nigerian states for the homepage
 const popularStates = [

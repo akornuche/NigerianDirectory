@@ -24,17 +24,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'NigerianDirectory' }],
   creator: 'NigerianDirectory',
   publisher: 'NigerianDirectory',
+  // Indexing is the default, so the layout does not assert "index, follow":
+  // doing so emitted a second robots tag next to the noindex that 404s and
+  // thin pages set, sending crawlers contradictory instructions. Only the
+  // preview directives are set here; they combine safely with noindex.
   robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    'max-video-preview': -1,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
   },
   openGraph: {
     type: 'website',
