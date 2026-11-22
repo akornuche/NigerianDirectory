@@ -155,6 +155,10 @@ function ContactForm() {
         className="w-full btn-primary py-3 disabled:opacity-50 disabled:cursor-not-allowed">
         {isSubmitting ? 'Sending…' : 'Send Message'}
       </button>
+      <p className="text-xs text-gray-500">
+        We use your details only to respond to your message. See our{' '}
+        <a href="/privacy/" className="underline">privacy policy</a>.
+      </p>
     </form>
   );
 }

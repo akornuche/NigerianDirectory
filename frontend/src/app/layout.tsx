@@ -15,13 +15,24 @@ const poppins = Poppins({
   display: 'swap',
 });
 
+// Search-engine ownership checks. Set the codes from Google Search Console
+// and Bing Webmaster Tools as environment variables; nothing is emitted when
+// they are unset.
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  verification: {
+    ...(googleVerification ? { google: googleVerification } : {}),
+    ...(bingVerification ? { other: { 'msvalidate.01': bingVerification } } : {}),
+  },
 };
 
-// Directory pages depend on the live API/database and client navigation hooks.
-// Render them on request instead of prerendering against localhost during build.
-export const dynamic = 'force-dynamic';
+// Pages are cached at the edge and regenerated in the background at most
+// every 5 minutes (incremental static regeneration; see the revalidate
+// export in app/(main)/layout.tsx). Previously every request rendered from
+// scratch (force-dynamic), so nothing was ever served from cache.
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

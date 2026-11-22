@@ -385,6 +385,8 @@ class School {
         const result = await query(`
             SELECT 
                 COUNT(*) as total_schools,
+                COUNT(*) FILTER (WHERE institution_category = 'university') as universities,
+                COUNT(*) FILTER (WHERE institution_category = 'school') as secondary_schools,
                 COUNT(*) FILTER (WHERE claimed = true) as claimed_schools,
                 COUNT(*) FILTER (WHERE verified = true) as verified_schools,
                 COUNT(*) FILTER (WHERE needs_ai_enrichment = true) as needs_enrichment,

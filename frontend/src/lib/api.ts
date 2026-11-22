@@ -9,6 +9,9 @@ const API_URL =
     ? (process.env.API_INTERNAL_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api')
     : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api');
 
+// Bump after bulk data changes; see apiRequest.
+const DATA_VERSION = '2026-11-22';
+
 interface FetchOptions extends RequestInit {
   timeout?: number;
 }
@@ -68,9 +71,19 @@ async function apiRequest<T>(
 
   const { headers: extraHeaders, ...rest } = options;
   const defaultOptions: RequestInit = {
+    // Next.js caches server-side fetch() responses in the Vercel Data Cache
+    // by default, and that cache survives deployments. Without an explicit
+    // lifetime, pages kept serving API responses stored before records were
+    // unpublished or corrected. Responses may be reused for at most five
+    // minutes; callers can pass their own `cache` or `next` options.
+    next: { revalidate: 300 },
     ...rest,
     headers: {
       'Content-Type': 'application/json',
+      // Part of the Data Cache key. Bump DATA_VERSION after a bulk data
+      // change (verification, corrections) to stop serving older cached
+      // API responses immediately.
+      'X-Data-Version': DATA_VERSION,
       ...(internalKey ? { 'X-Internal-API-Key': internalKey } : {}),
       ...(extraHeaders as Record<string, string> | undefined),
     },
@@ -296,11 +309,14 @@ export const api = {
     }>('/locations/stats'),
 
   // Stats
+  // Counts of published (verified) records. Postgres COUNT values arrive
+  // as strings.
   getStats: () =>
     apiRequest<{
-      totalSchools: number;
-      schoolsByType: Record<string, number>;
-      schoolsByState: Record<string, number>;
+      total_schools: string;
+      universities: string;
+      secondary_schools: string;
+      total_states: string;
     }>('/schools/stats'),
 };
 
