@@ -1,0 +1,176 @@
+{
+  "_about": "Original profile text for verified secondary schools, written 2026-11-22 from the sources listed per school (Wikipedia article and Wikidata item). Facts only from those sources; wording is our own. Fields map to enriched_history, enriched_academics, enriched_campus_info, enriched_student_life. established_year, where present, overrides the stored year and is sourced to the article. A 'set' object holds field corrections taken from the same sources (null clears a field whose sources conflict).",
+  "2": {
+    "history": "British International School Lagos (BIS) opened in 2001 and marked its 25th year in 2026. Since its founding it has added new teaching blocks and sports facilities: extra science rooms arrived in 2018 to support a growing sixth form, building work on a primary section began in 2019, and a new boarding house was commissioned for the 2025/26 session alongside investment in its five existing boarding houses. The school received an excellent inspection report from the Council of British International Schools (COBIS) in 2018.",
+    "academics": "BIS teaches the National Curriculum for England to day and boarding students aged 11 to 18, leading to IGCSE and A Level courses. The curriculum is adapted for an international school in West Africa: younger students learn Yoruba, and teachers draw on the history, culture, geography and economy of the region. Classes average about 20 pupils, and staff include both expatriate and locally qualified teachers.",
+    "campus_info": "The school sits in Oniru Private Estate, Victoria Island, Lagos. Its teaching buildings are surrounded by playing fields, with a swimming pool, tennis and basketball courts, a multi-purpose hall, a theatre, and suites for computing, music and tutorials. The campus has been adapted so that students with limited mobility can take full part in school life.",
+    "student_life": "Pupils are girls and boys from Nigerian and expatriate families, and a co-curricular programme runs after school every day. Boarding is available alongside day places.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/British_International_School_Lagos"
+    ]
+  },
+  "4": {
+    "history": "Corona School, Ikoyi was established in February 1960 and is governed by the Corona Schools' Trust Council. It has had seven heads since opening, from Mrs Jean Abili, who led the school from 1960 to 1998, to Mrs Funlola Olorunishola, head since 2022.",
+    "academics": "Corona School, Ikoyi is a co-educational independent primary school for children aged 5 to 11. It follows a combined British and Nigerian curriculum and is a member of the Council of British International Schools and the Association of International Schools in Africa.",
+    "student_life": "The school takes part in the Lagos schools rugby league and in Zenith Bank's swimming competitions. Its former pupils include Yemi Osinbajo, Nigeria's 14th Vice President; the politician Udoma Udo Udoma; Yemi Cardoso, Governor of the Central Bank of Nigeria; the neurologist Bruce Ovbiagele; and the environmentalist Desmond Majekodunmi.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Corona_School,_Ikoyi"
+    ],
+    "set": {
+      "area": "Ikoyi",
+      "name": "Corona School, Ikoyi"
+    },
+    "established_year": 1960
+  },
+  "5": {
+    "established_year": 1977,
+    "history": "The first Chrisland School opened at Ikeja on 3 October 1977, founded by the educationist High Chief Dr (Mrs) Winifred Adefolahan Awosika. Chrisland has since grown into a group of nursery, primary and secondary schools, with campuses in Ikeja, Opebi, Lekki, Ladipo Oluwole, Festac, Idimu and Victoria Garden City in Lagos, and at Katampe and elsewhere in Abuja. The group also runs a pre-degree college.",
+    "academics": "Chrisland's secondary schools include Chrisland High School at Ikeja, Lekki, Festac and Victoria Garden City, Chrisland College Idimu, and Chrisland High School and Chrisland College in Abuja. A student of Chrisland College Idimu placed third nationally in the 2016 West African Senior School Certificate Examination, and Chrisland High School, Ikeja won the junior Lagos Zone category of the national history competition the same year.",
+    "student_life": "Chrisland students compete widely. In 2016 the schools won the senior girls' category of the AISEN volleyball competition and the ten-school Loya Milk swimming meet; Chrisland High School VGC placed first of 37 schools in the South West regional round of the International Geography Olympiad; and a student of Chrisland High School, Abuja won the TSL International Schools essay and debate competition in Dubai against entrants from sixteen other countries.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Chrisland_Schools"
+    ]
+  },
+  "6": {
+    "history": "Dowen College is a co-educational secondary school in Lekki, Lagos. In December 2021 the death of a 12-year-old student, Sylvester Oromoni, led the Lagos State Government to close the school pending investigation, amid public concern over allegations of bullying. In April 2024 the Lagos State Coroner concluded that the death was natural but avoidable, caused by sepsis from an untreated ankle injury, and exonerated the college and its staff; the coroner recommended better student monitoring and psychological support in schools.",
+    "academics": "The college admits boarding and day pupils aged 11 to 18 and holds a valedictory service that recognises students' academic results. Former students listed in its record include graduates who achieved eight and nine A1 grades in the West African Senior School Certificate Examination in 2015 and 2017.",
+    "student_life": "Dowen's alumni include the singer Tems and the television presenter and actress Moet Abebe. The music video for Wizkid's \"Holla at Your Boy\" was filmed at the college.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Dowen_College"
+    ]
+  },
+  "7": {
+    "history": "Atlantic Hall opened in 1989 in the Maryland area of Ikeja, Lagos, with dormitories near Eko Hospital, and moved in the mid-1990s to Poka in Epe, about 70 kilometres from central Lagos. Its first principal was Gaynor Williams (1989 to 1992); later heads include Andrew Jedras, who led the school from 2010 to 2020.",
+    "academics": "Atlantic Hall is a private co-educational secondary school with about 300 students. Junior students spend three years taking the Nigerian curriculum, including physical education and computer studies, and sit Cambridge Checkpoint in JSS3. In the three senior years the school combines the Nigerian curriculum, examined by the West African Examinations Council, with Cambridge IGCSE, which replaced the GCE O Level in 2001 and is taken by all SS2 students. Senior students choose science, arts or business streams.",
+    "campus_info": "The Epe campus has laboratories for physics, chemistry, biology and computer science, and a school farm used in agricultural science teaching.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Atlantic_Hall"
+    ]
+  },
+  "8": {
+    "history": "Grange School was founded in 1958 by a group of British expatriates to offer education to the standard of schools in the United Kingdom. A secondary section was added in 1998, the school's 40th anniversary, so that pupils could continue their education without moving schools. The Deputy British High Commissioner to Nigeria is the school's patron.",
+    "academics": "Grange is a co-educational day and boarding school in Ikeja. Its primary section, from Reception to Year 6, prepares pupils for Cambridge Checkpoint at Key Stage 2; the secondary section, Years 7 to 11, leads to Checkpoint at Key Stage 3 and the IGCSE at Key Stage 4, both administered by Cambridge. The school keeps classes between 11 and 19 pupils and is affiliated to AISEN and COBIS.",
+    "student_life": "Pupils are placed in four houses named after Nigerian rivers: Benue, Donga, Niger and Ogun. Activities include chess, arts and crafts, swimming, tennis, football, basketball and charity events. Grange won The Kids' Lit Quiz in Nigeria in February 2020 and took first place overall on its debut at the under-13 World Schools Games in 2020.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Grange_School,_Ikeja"
+    ]
+  },
+  "9": {
+    "history": "Lagos Preparatory School was established in 2002 and is now known as Lagos Preparatory & Secondary School (LPSS). In 2010 it qualified for the Every Child Matters Standards Award, and in February 2011, after an inspection by the Independent Schools Inspectorate, it was recognised by the UK Department for Education as meeting the standards for British schools overseas.",
+    "academics": "LPSS is a private, co-educational, non-denominational day school teaching the UK National Curriculum, with added emphasis on Nigerian history, geography and culture. It educates children from 18 months to age 16 across Early Years, Primary and Secondary. The school is a member of the Independent Association of Preparatory Schools (IAPS), the Council of British International Schools (COBIS) and the Association of International Schools in Africa (AISA).",
+    "campus_info": "The school is at 36–40 Glover Road in Ikoyi, Lagos. Pupils belong to one of four houses: Normans, Saxons, Vikings and Romans.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Lagos_Preparatory_School"
+    ]
+  },
+  "11": {
+    "set": {
+      "gender": "boys-only",
+      "area": "Lagos Island"
+    },
+    "history": "King's College, Lagos opened on 20 September 1909 with ten students on Lagos Island, beside what is now Tafawa Balewa Square. The scheme behind it was proposed in 1908 by Henry Rawlingson Carr, then Acting Director of Education, and the Oba of Lagos, Oba Esugbayi, provided the land. Its first students included Isaac Ladipo Oluwole, the school's first senior prefect, and its stated aim was to prepare young people for the University of London matriculation examination and for professional and public service. Enrolment rose from an average of 16 in 1910 to 67 by 1914.",
+    "academics": "King's College is a boys' secondary school and one of the federal government's unity schools, which bring together students from different regions, ethnic groups and backgrounds. Before Queen's College was founded, it also admitted some girls.",
+    "campus_info": "The college is at 3 Catholic Mission Street on Lagos Island. Its motto is \"Spero Lucem\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/King%27s_College,_Lagos"
+    ]
+  },
+  "12": {
+    "history": "Queen's College, Lagos was founded on 10 October 1927, while Nigeria was a British colony, with 20 students, a principal and eight part-time teachers. Sylvia Leith-Ross, appointed Lady Superintendent of Education in 1925, helped establish it as a girls' boarding school. It is often called the sister college of King's College, Lagos, and is now one of the federal government's unity schools.",
+    "academics": "Queen's College is a government-owned girls' secondary school covering the six years of junior and senior secondary education. It had 3,505 students in the 2022/2023 session, in year groups of about 600 split into several arms, and more than 300 full-time teachers. The school has recorded the best results in the country in the West African Senior School Certificate Examination seven times since 1985.",
+    "student_life": "Queen's College is in Yaba and offers boarding. Students belong to six houses: Dan-Fodio, Obasa, Obi, Emotan, Efunjoke and Obong. The school's motto is \"Pass On The Torch\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Queen%27s_College,_Lagos"
+    ]
+  },
+  "13": {
+    "history": "The Federal Ministry of Education established Federal Government College, Ijanikin in 1975 to give Lagos a co-educational federal high school, as each of the other twelve states of the federation then had. Its first principal, Mrs T. E. Chukuma, served from October 1975 to December 1977, and the college has had at least twelve principals since.",
+    "academics": "The college is a co-educational secondary school and one of more than 100 unity schools owned by the federal government and managed by the Federal Ministry of Education. It is located in Alasia, Ijanikin, in Lagos State.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Ijanikin"
+    ]
+  },
+  "14": {
+    "history": "Meadow Hall was founded in July 2002 by Kehinde Nwani, beginning with an infant and junior school. It has since grown to infant and junior schools on two sites, in Lekki and Ikoyi, and a college in Lekki, with about 1,400 students in total.",
+    "academics": "Meadow Hall is a private co-educational school that combines the English National Curriculum with the Nigerian curriculum. Its sports facilities cater for football, basketball, swimming, tennis and volleyball.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Meadow_Hall_School"
+    ]
+  },
+  "15": {
+    "set": {
+      "state": "Ogun",
+      "area": "Lagos-Ibadan Expressway",
+      "city": null,
+      "established_year": null
+    },
+    "history": "Rainbow College is a co-educational secondary school at kilometre 39 on the Lagos–Ibadan Expressway in Ogun State. It prepares boys and girls of all nationalities for university study in Nigeria and abroad. Published sources give different founding years, so none is shown here.",
+    "academics": "Students spend three years in junior secondary and three in senior secondary school. Senior students are prepared for the West African Senior School Certificate Examination, the NECO Senior School Certificate Examination and the Cambridge IGCSE, as well as TOEFL, the SAT and the JAMB Unified Tertiary Matriculation Examination. Languages offered include English, French, Yoruba and Igbo.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Rainbow_College"
+    ]
+  },
+  "16": {
+    "history": "The American International School of Lagos (AISL) was founded in 1964. Its campus on Victoria Island, on 2.4 hectares of land leased from the government, opened in 1981.",
+    "academics": "AISL is an American international school teaching from preschool to grade 12. Its 600-plus students come from more than 50 countries; about 30% are American, with significant numbers from India, the United Kingdom, Nigeria, Canada, South Africa, Israel, Lebanon and the Netherlands.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/American_International_School_of_Lagos"
+    ]
+  },
+  "17": {
+    "history": "Loyola Jesuit College was founded by the Society of Jesus in Nigeria and opened in October 1996; it is named after Ignatius of Loyola, the founder of the Jesuits. Building began in 1995 with funding from the New York Province of the Society of Jesus and the US Agency for International Development's programme for American Schools and Hospitals Abroad. On 10 December 2005, 61 of the college's students were among those killed when a DC-9 crashed at Port Harcourt Airport as they travelled home for Christmas; one student, Kechi Okwuchi, survived. Jesuit Memorial College in Port Harcourt was later founded in their memory.",
+    "academics": "Loyola Jesuit College is a private Catholic, co-educational secondary school in Abuja. Entry is highly competitive: 101 students were admitted from 400 applicants in its first year, and 120 from about 2,300 candidates in 2005. By 2009 it enrolled about 600 boys and girls on a 70-acre campus, with Nigerian and Ghanaian teaching staff.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Loyola_Jesuit_College"
+    ]
+  },
+  "19": {
+    "history": "The American International School of Abuja (AISA) was founded in 1993 by parents and US Embassy officials who wanted a school that would prepare international and Nigerian students to continue their education under a US curriculum. It moved into a purpose-built campus in August 2006, added a full high school programme as enrolment grew from 150 to about 470, and graduated its first senior class in June 2009.",
+    "academics": "AISA is a co-educational international day school teaching from preschool to grade 12, with a school year running from August to June. At the end of the 2015–2016 year its 470 students came from more than 40 countries. The school is governed by an elected Board of Governors, which appoints the Head of School; the elementary school and the middle and high school each have their own principal and support services, including counselling, English language and learning support.",
+    "student_life": "Community events include a craft sale, an international food fair, a fall carnival, Nigerian Day and an AIDS run and walk.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/American_International_School_of_Abuja"
+    ]
+  },
+  "22": {
+    "history": "Whiteplains British School (WBS) was founded by a group of private individuals, many of them Nigerians in the diaspora, and was incorporated on 2 May 2007. It aimed to give Nigerians and other nationals living in Nigeria qualifications recognised around the world.",
+    "academics": "WBS is a co-educational day and boarding school offering pre-school, primary and secondary education, Cambridge A Levels over one or two years, and university foundation studies. It runs both Nigerian and British curricula, is an Edexcel centre, and is a provisional member of the Council of British International Schools and the New England Association of Schools and Colleges. The school year has three terms, from early September to mid-July.",
+    "campus_info": "The school has two campuses in Jabi, Abuja Municipal Area Council: a primary school and administrative block at Plot 528, Cadastral Zone B4, and a 4.5-hectare secondary and advanced studies campus at Daki Bui. Facilities include separate hostels for boys and girls, sports facilities, libraries and ICT facilities. The school motto is \"Bonitas et Disciplina\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Whiteplains_British_School"
+    ]
+  },
+  "24": {
+    "set": {
+      "gender": "boys-only",
+      "area": "Old Port Harcourt Township"
+    },
+    "history": "Stella Maris College was established in 1948. It began on the grounds of St Mary's Catholic Church on Aggrey Road and moved in October 1948 to its present site at 34 Harbour Road in the Old Port Harcourt Township. Patience Jonathan, later First Lady of Nigeria, began her teaching career at the college.",
+    "academics": "Stella Maris is an all-boys Catholic secondary school in the Roman Catholic Diocese of Port Harcourt, taking both day and boarding students. It is run mainly by the Holy Ghost Fathers. Its former students include the lawyer Chukwunweike Idigbe and the politician Chibudom Nwuche.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Stella_Maris_College,_Port_Harcourt"
+    ]
+  },
+  "25": {
+    "set": {
+      "area": "Mbodo-Aluu"
+    },
+    "history": "Jesuit Memorial College (JMC) was founded in October 2013 by the North-West Africa Province of the Society of Jesus as a memorial to the students of Loyola Jesuit College, Abuja who died in the crash of Sosoliso Airlines Flight 1145 in 2005. Its motto is \"Hope Reborn\".",
+    "academics": "JMC is a private, co-educational Catholic secondary school at 60 Angels Memorial Road, Mbodo-Aluu, Port Harcourt. It has around 600 students and is run by Jesuit priests; its principal is Fr Alexander Irechukwu, SJ. The college has been recognised for its work on environmental issues.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Jesuit_Memorial_College"
+    ]
+  },
+  "28": {
+    "set": {
+      "area": "University of Ibadan"
+    },
+    "history": "International School Ibadan (ISI) was founded on 13 October 1963 by the educator Kurt Hahn, with funding from USAID and the Ford Foundation and land donated by the Western Region government. Many of its first teachers came from Gordonstoun in Scotland, which Hahn had also founded. It was set up mainly for the children of expatriates working in Nigeria and later admitted Nigerian pupils as well. Archdeacon J. A. Iluyomade, principal from 1969 to 1985, was its longest-serving and first Nigerian head, and Esther Adetola Smith, principal from 1991 to 2004, was its first female head.",
+    "academics": "ISI is a co-educational boarding and day school for pupils aged 10 to 16. It originally followed the British pattern of five years leading to Ordinary Level and the West African School Certificate, followed by two years in the sixth form.",
+    "campus_info": "The school is on the campus of the University of Ibadan, Nigeria's oldest university.",
+    "student_life": "Activities include a twice-yearly international soirée, where students and staff of each nationality present the food, dress and crafts of their culture to raise money for those in need, and a charity walk.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/International_School_Ibadan"
+    ]
+  }
+}
