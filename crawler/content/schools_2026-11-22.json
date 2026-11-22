@@ -172,5 +172,131 @@
     "sources": [
       "https://en.wikipedia.org/wiki/International_School_Ibadan"
     ]
+  },
+  "30": {
+    "set": {
+      "area": "Molete",
+      "gender": "co-ed"
+    },
+    "history": "Ibadan Grammar School was founded on 31 March 1913 by Bishop Alexander Babatunde Akinyele, who was also its first principal. It was the first secondary school in Ibadan, and in its early years many of the city's educated families sent their children there. It admitted only boys for its first three decades and became co-educational in 1941. In the 1950s and 1960s its sixth form prepared students for the Higher School Certificate.",
+    "academics": "Ibadan Grammar School is a co-educational Anglican secondary school open to students of all faiths. Its subjects span the sciences (physics, chemistry, biology, agricultural science and computing), commercial subjects such as financial accounting and economics, humanities including history, government, geography, literature in English and Christian religious studies, languages (English, French and Yoruba), music, and technical subjects including technical drawing, auto mechanics and animal husbandry.",
+    "campus_info": "The school is in the Molete area of Ibadan, near St David's Grammar School. Its old students' association marks Founder's Day each year; the school's 106th anniversary was celebrated in March 2019.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ibadan_Grammar_School"
+    ]
+  },
+  "31": {
+    "set": {
+      "gender": "girls-only"
+    },
+    "history": "Queen's School, Ibadan grew out of Queen's College, Lagos. It was established in January 1952 and officially opened on 16 February 1952 with about 161 pupils, a principal and four teachers, taking its name in honour of the coronation of Queen Elizabeth II. The school was first located in Ede and moved to Ibadan in April 1967. It shares Queen's College's motto, \"Pass On The Torch\".",
+    "academics": "Queen's School is an all-girls secondary school. From its early years, pupils combined academic study with practical skills such as sewing, cooking and gardening, and took part in dance, music, sport, drama, Girl Guides and literary and debating societies. Its former students have gone on to careers in medicine, engineering, law and the judiciary, and academia.",
+    "campus_info": "The academic buildings are arranged around a grass oval, with an assembly hall, a library, laboratories for physics, chemistry and biology, classrooms, domestic science rooms and geography facilities. In March 2022 the Oyo State Government donated 10 million naira towards ongoing building work at the school.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Queen%27s_School,_Ibadan"
+    ]
+  },
+  "32": {
+    "set": {
+      "gender": "boys-only",
+      "area": "Tukur-Tukur"
+    },
+    "history": "Barewa College was founded in 1921 by Sir Hugh Clifford, the British governor, as Katsina College. Its first building in Katsina, built under Emir Muhammadu Dikko and opened in 1922, is now a national monument and museum. Clifford chose Katsina for its long reputation as a seat of learning. The college later moved and was renamed Kaduna College in 1938 and Government College, Zaria in 1949, before taking the name Barewa College.",
+    "academics": "Barewa College is a boys' secondary school and one of the largest boarding schools in northern Nigeria; until the early 1960s it was the region's most celebrated post-primary school. Its alumni include Sir Abubakar Tafawa Balewa, Prime Minister of Nigeria from 1960 to 1966, and four Nigerian heads of state. The school motto, \"Man Jada Wajada\", means \"he who strives shall succeed\".",
+    "campus_info": "The college stands on Gaskiya Road in the Tukur-Tukur area of Zaria, Kaduna State. Students belong to ten houses: Bello Kagara, Lugard, Clifford, Dan Hausa, Mallam Smith, Nagwamatse, Bienemann, Mort, Jafaru and Suleiman Barau.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Barewa_College"
+    ]
+  },
+  "38": {
+    "set": {
+      "gender": "boys-only",
+      "boarding": false
+    },
+    "history": "Rumfa College was founded in 1927 as Kano Middle School. It was later renamed Kano Province School and then Government College, Kano, before taking its present name from Muhammad Rumfa, the fifteenth-century ruler of Kano. Once one of the largest boarding schools in northern Nigeria, it no longer takes boarders.",
+    "academics": "Rumfa College is a boys' secondary school on BUK Road, Kano. Its alumni include two Nigerian heads of state, Murtala Mohammed and Sani Abacha; Ado Bayero, the late Emir of Kano; the politician Aminu Kano; Mohammed Badaru Abubakar, former Governor of Jigawa State; Mohammed Abdullahi Abubakar, former Governor of Bauchi State; and the banker Nu'uman Barau Danbatta.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Rumfa_College,_Kano"
+    ]
+  },
+  "41": {
+    "history": "Edo College opened in February 1937 as Benin Middle School, with Forms I to III, and is the oldest secondary grammar school in the former Mid-Western Region. In April 1937, with 76 pupils, it moved from the old Government School in Benin City to the site now occupied by Idia College, and in 1973 it moved again to its present site on Murtala Mohammed Way. After the state government took over schools in 1973, the college came under the state Board of Education.",
+    "academics": "Edo College began as a day school, became a boys' boarding school, returned to day schooling in the 1980s and briefly ran day and evening sessions in the mid-1990s; with support from its alumni it is now moving back towards boarding, with about 800 students. Subjects include English, French and Edo, history and geography, English literature, business studies, home economics, religious studies, physics, chemistry, biology, agricultural science, computer science and mathematics, including further mathematics.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Edo_College"
+    ]
+  },
+  "44": {
+    "set": {
+      "area": "Independence Layout"
+    },
+    "history": "Federal Government College, Enugu, known locally as \"Fedi\", was established by the federal government in 1973 as one of the unity schools created to bring together students from all regions of Nigeria. Its motto is \"Pro Unitate\".",
+    "academics": "The college takes boarding and day students from Junior Secondary 1 to Senior Secondary 3, admitted through the Federal Common Entrance Examination, and has about 3,000 students. Its alumni include the forensic pathologist Bennet Omalu, the economist Kingsley Moghalu, former Cross River State governor Liyel Imoke, former Kaduna State governor Ahmed Makarfi, the businesswoman Ndidi Okonkwo Nwuneli and Chikwe Ihekweazu, former head of the Nigeria Centre for Disease Control.",
+    "campus_info": "The college is on a campus in Independence Layout, a residential area of Enugu.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Enugu"
+    ]
+  },
+  "45": {
+    "established_year": 1935,
+    "set": {
+      "gender": "girls-only",
+      "boarding": true
+    },
+    "history": "Holy Rosary College, Enugu was opened on 2 February 1935 by Archbishop Charles Heerey. It was staffed and run at first by Irish nuns of the Missionary Sisters of the Holy Rosary, and it began as a teacher training college for girls before becoming a secondary school.",
+    "academics": "Holy Rosary College is a Catholic mission girls' boarding school in Enugu. Its former students include the ethnomusicologist, choral conductor and soprano Joy Nwosu Lo-Bamijoko.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Holy_Rosary_College,_Enugu"
+    ]
+  },
+  "46": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Christ the King College (CKC) was founded on 2 February 1933 by Archbishop Charles Heerey, with Fredrick Akpali Modebe and his wife Margret, who gave the land and built the first administration block and hostel. Its first principal was Fr Leo Brolly. The college lost much of its infrastructure in the Nigerian Civil War. It was taken over by the East Central State Government in 1973 and renamed Heerey High School, regained its original name in 1976 after representations by its alumni, when Fr Nicholas Tagbo returned to rebuild it, and was handed back to the Catholic Mission on 1 January 2009.",
+    "academics": "CKC, popularly called \"Amaka Boys\", is a Catholic all-boys secondary school on Oguta Road, Onitsha. Its stated mission is to develop leadership among young Nigerians in a Catholic tradition, and its motto is \"Bonitas, Disciplina, Scientia\": goodness, discipline, knowledge.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Christ_the_King_College,_Onitsha"
+    ]
+  },
+  "48": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Government College Umuahia (GCU) was founded in 1929, twenty years after King's College, Lagos, as one of the colonial government's schools modelled on English public schools such as Eton and Harrow; its selectivity earned it the name \"Eton of the East\". Its founding principal was Rev. Robert Fisher. On 22 December 2014 the Abia State Government signed a deed of trust vesting ownership, management and funding of the school in the Fisher Educational Trust, set up by its old boys' association.",
+    "academics": "GCU is a boys' secondary school on the Umuahia–Ikot Ekpene Road in Umuahia. Its motto is \"In Unum Luceant\", \"may they shine as one\".",
+    "student_life": "Students belong to eleven houses: Cozens, Erekosima, Extension, Fisher, Kent, New, Niger, Nile, School, Simpson and Wareham.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Government_College_Umuahia"
+    ]
+  },
+  "51": {
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Mayflower School was founded on 27 January 1956 by Tai Solarin, the educator, humanist and civil rights campaigner, who started it in protest against religious persecution. It is named after the Mayflower, the ship that carried the Pilgrims to America.",
+    "academics": "Mayflower is a co-educational school with about 1,000 students on 90 acres in Ikenne, Ogun State. Its philosophy stresses self-reliance, public service and physical toughness, and every student learns basic and mechanised farming. The school motto is \"Knowledge is Light\".",
+    "student_life": "Students follow a disciplined routine that begins with physical exercise at 5am, and boys and girls alike wear a uniform of khaki shorts and short-sleeved shirts modelled on Solarin's own dress. Boarders are not permitted to wear cosmetics.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Mayflower_School"
+    ]
+  },
+  "53": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Methodist Boys' High School, Lagos (MBHS) was formally opened on 14 March 1878, after leaders of the Methodist community, among them Charles Joseph George, met in 1874 to plan a secondary school for their church as an alternative to the CMS Grammar School. Its building was completed in June 1877. The first principal was Rev. W. Terry Coppin, and the first intake in April 1878 had twelve boys, led by the senior foundation scholar George Stone Smith, along with six mission agents in training; by the end of that year there were 23 boys. MBHS was the second secondary school founded in Nigeria, after the CMS Grammar School.",
+    "academics": "MBHS is a boys' secondary school on Victoria Island, Lagos. Together with the CMS Grammar School it supplied the first students for Igbobi College, Yaba, which the two churches founded jointly.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Methodist_Boys%27_High_School,_Lagos"
+    ]
+  },
+  "54": {
+    "history": "The CMS Grammar School was founded by the Church Missionary Society on 6 June 1859 and is the oldest secondary school in Nigeria. James Pinson Labulo Davies provided the seed funding, giving the scholar and theologian Babington Macaulay £50 in April 1859 to buy books and equipment; Macaulay became the first principal. The school began with six boarders in a small building known as the Cotton House on Broad Street, Lagos, and was modelled on the CMS Grammar School in Freetown, founded in 1848.",
+    "academics": "Its first pupils were trained for the ministry, and the early curriculum covered English, logic, Greek, Latin, arithmetic, geometry, geography, history and Bible knowledge. For decades the school was the main source of African clergy and administrators in the Lagos Colony. Its motto is \"Nisi Dominus Frustra\".",
+    "campus_info": "The school is now on Asani Road in Bariga, a suburb of Lagos.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/CMS_Grammar_School,_Lagos"
+    ]
   }
 }
