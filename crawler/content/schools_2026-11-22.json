@@ -263,12 +263,13 @@
     "set": {
       "gender": "boys-only"
     },
-    "history": "Government College Umuahia (GCU) was founded in 1929, twenty years after King's College, Lagos, as one of the colonial government's schools modelled on English public schools such as Eton and Harrow; its selectivity earned it the name \"Eton of the East\". Its founding principal was Rev. Robert Fisher. On 22 December 2014 the Abia State Government signed a deed of trust vesting ownership, management and funding of the school in the Fisher Educational Trust, set up by its old boys' association.",
-    "academics": "GCU is a boys' secondary school on the Umuahia–Ikot Ekpene Road in Umuahia. Its motto is \"In Unum Luceant\", \"may they shine as one\".",
+    "history": "Government College Umuahia (GCU) was founded in 1929, twenty years after King's College, Lagos, as one of the colonial government's schools modelled on English public schools such as Eton and Harrow; its selectivity earned it the name \"Eton of the East\". Its founding principal, the English educator and Anglican priest Rev. Robert Fisher, acquired about 26 square kilometres of land and opened the school on 29 January 1929 to 25 students from across Nigeria, West Africa and the Southern Cameroons. GCU began as a teacher training institute and became a secondary school in 1930. When Fisher retired in 1939 the school closed and for three years served as a camp for German and Italian prisoners of war, its students moving to King's College, Lagos and mission schools east of the Niger. During the Civil War (1967–1970) it was again closed and used as the General Staff Headquarters of Biafra. On 22 December 2014 the Abia State Government vested ownership, management and funding of the school in the Fisher Educational Trust, set up by its old boys' association.",
+    "academics": "GCU is a boys' secondary school on the Umuahia–Ikot Ekpene Road in Umuahia, drawing students from across Nigeria. All students take core courses in both the arts and the sciences. The artist and archaeologist Kenneth C. Murray, a pioneer of modern art education in Nigeria, taught art at GCU from 1933 to 1939 and founded its art gallery, which held early drawings by Ben Enwonwu; the gallery was destroyed during the Civil War. The school motto is \"In Unum Luceant\", \"may they shine as one\".",
     "student_life": "Students belong to eleven houses: Cozens, Erekosima, Extension, Fisher, Kent, New, Niger, Nile, School, Simpson and Wareham.",
     "sources": [
       "https://en.wikipedia.org/wiki/Government_College_Umuahia"
-    ]
+    ],
+    "campus_info": "The campus has two full-size playing fields, cricket pavilions, seven lawn tennis courts, a basketball court, an Olympic-size athletics track, a nine-hole golf course, a botanical garden and an aquarium. Students play cricket, hockey, handball and football."
   },
   "51": {
     "set": {
@@ -286,10 +287,12 @@
       "gender": "boys-only"
     },
     "history": "Methodist Boys' High School, Lagos (MBHS) was formally opened on 14 March 1878, after leaders of the Methodist community, among them Charles Joseph George, met in 1874 to plan a secondary school for their church as an alternative to the CMS Grammar School. Its building was completed in June 1877. The first principal was Rev. W. Terry Coppin, and the first intake in April 1878 had twelve boys, led by the senior foundation scholar George Stone Smith, along with six mission agents in training; by the end of that year there were 23 boys. MBHS was the second secondary school founded in Nigeria, after the CMS Grammar School.",
-    "academics": "MBHS is a boys' secondary school on Victoria Island, Lagos. Together with the CMS Grammar School it supplied the first students for Igbobi College, Yaba, which the two churches founded jointly.",
+    "academics": "MBHS is a boys' secondary school. Together with the CMS Grammar School it supplied the first students for Igbobi College, Yaba, which the Methodist and Anglican churches founded jointly in 1932. Its motto is \"Non Sibi Sed Aliis\", \"not for us, but for others\", and its uniform includes a tie in blue, gold and maroon, with a maroon blazer for ceremonial occasions.",
     "sources": [
       "https://en.wikipedia.org/wiki/Methodist_Boys%27_High_School,_Lagos"
-    ]
+    ],
+    "campus_info": "The school stood on Broad Street, Lagos, for more than a century. A 60-hectare site on the Lagos–Badagry road at Ojo, allocated for its expansion, was taken over by the Lagos State Government and became the permanent site of Lagos State University; in 1983 the school was given a 5.7-acre site on Victoria Island, where it operates today. Its old boys' association, first led by the foundation scholar George Stone Smith (later Dr Orishadipe Obasa), built the Centenary Hall and a chapel and donated staff quarters.",
+    "student_life": "Students are divided among four houses for the annual inter-house competition: Didsbury, Handsworth, Kingswood and Westminster. The school won the Zard Cup for secondary schools in 1948 and the Principal's Cup for Lagos State secondary schools in 1961, and the former Nigeria captain Sunday Oliseh is among its athletes."
   },
   "54": {
     "history": "The CMS Grammar School was founded by the Church Missionary Society on 6 June 1859 and is the oldest secondary school in Nigeria. James Pinson Labulo Davies provided the seed funding, giving the scholar and theologian Babington Macaulay £50 in April 1859 to buy books and equipment; Macaulay became the first principal. The school began with six boarders in a small building known as the Cotton House on Broad Street, Lagos, and was modelled on the CMS Grammar School in Freetown, founded in 1848.",
@@ -297,6 +300,66 @@
     "campus_info": "The school is now on Asani Road in Bariga, a suburb of Lagos.",
     "sources": [
       "https://en.wikipedia.org/wiki/CMS_Grammar_School,_Lagos"
+    ]
+  },
+  "55": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "St Gregory's College was established by the Catholic Mission in 1928 and named after Pope Gregory the Great. It began as a mixed school and became a boys' school when its sister school, Holy Child College, was founded nearby. Michael Ibru and his construction company, Ace Jomona, took part in building the school. In September 2026 its old boys' association set up an endowment and infrastructure development fund to support the college over the long term.",
+    "academics": "St Gregory's is a Catholic boys' secondary school with boarding facilities in South-West Ikoyi, near Obalende, about a kilometre from Tafawa Balewa Square. Its motto is \"Pro Fide et Scientia\", and its students are known as \"Gregs\".",
+    "student_life": "Students belong to four houses: St Augustine, St Peter, St Francis and St Benedict. Cricket and football are the school's best-known sports.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/St_Gregory%27s_College,_Lagos"
+    ]
+  },
+  "56": {
+    "set": {
+      "gender": "girls-only"
+    },
+    "history": "Holy Child College was founded on 9 April 1945 by the Society of the Holy Child Jesus, at the invitation of Archbishop Leo Taylor, who wanted a Catholic secondary school for girls in the Archdiocese of Lagos. It opened with two classes of 15 girls each and four nuns as full-time teachers, adding a class each year; by 1950 it had 200 students. Many of its first pupils came from Lagos's Brazilian-returnee Catholic families and other long-established Lagos families.",
+    "academics": "Holy Child College is a Catholic girls' secondary school run by the Roman Catholic Archdiocese of Lagos, offering three years of junior and three years of senior secondary education leading to the West African Senior School Certificate Examination. Its motto is \"Facta non Verba\".",
+    "campus_info": "The college is in South-West Ikoyi, where Obalende meets Keffi, next to its brother school, St Gregory's College.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Holy_Child_College"
+    ]
+  },
+  "57": {
+    "history": "Igbobi College was established in 1932 by the Methodist and Anglican churches in Yaba, Lagos. It remains on its original site, and most of its original buildings still stand. The Lagos State Government returned the school to its founding churches in 2001.",
+    "academics": "Igbobi College's former students include Yemi Osinbajo, former Vice President of Nigeria; Ernest Shonekan, former Head of the Interim National Government; the historian J. F. Ade Ajayi; Babatunde Fashola, former Governor of Lagos State; Femi Gbajabiamila, former Speaker of the House of Representatives; the jurist Taslim Olawale Elias; the musician Femi Kuti; and the industrialist Michael Ibru.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Igbobi_College"
+    ]
+  },
+  "62": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Hussey College was founded on 3 February 1947 as the first secondary school in Warri by three Itsekiri leaders: Chief Ogbemi Newe Rewane, his brother Alfred Rewane, and Chief Elliot Nekapenami Andrew Begho. It is named after Eric Robert James Hussey, Nigeria's first British Director of Education, who competed at the 1908 Olympic Games. The school admitted only boys at first, became co-educational in 1960, and was returned to a boys' school by the Delta State Government in the early 2000s under the name Hussey Boys Model College. Its old students' association marked the school's diamond jubilee in 2007.",
+    "academics": "Hussey College is a public boys' secondary school on Upper Erejuwa Road, Warri, with about 3,000 students. Its motto is \"Citizenship and Education, Labour and Unity\", and its students are known as \"Hussians\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Hussey_College_Warri"
+    ]
+  },
+  "65": {
+    "set": {
+      "gender": "girls-only"
+    },
+    "history": "Federal Government Girls' College, Owerri was established on 14 November 1973 as one of the unity schools founded after the Nigerian Civil War to promote integration among Nigeria's ethnic groups. Its first principal was Ms Sheila Everard, who served from 1973 to 1980. The college was built on land the Federal Ministry of Education acquired from Government College, Owerri.",
+    "academics": "The college is a federal girls' secondary school in Owerri, Imo State, where local languages including Igbo have been taught. Its former students include the novelist and journalist Adaobi Tricia Nwaubani, the lawyer and former beauty queen Ezinne Akudo, and the politician Nnenna Elendu Ukeje, and it has alumnae chapters across Nigeria, the United Kingdom, Europe and the Americas.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_Girls%27_College,_Owerri"
+    ]
+  },
+  "68": {
+    "established_year": 1935,
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Government Secondary School, Owerri, also known as Government College, Owerri, was formally established in 1935. It is a public boys' secondary school at 14 Okigwe Road, Owerri, and is regarded as a model school in the city: applicants sit an additional entrance examination after the general state secondary school entrance examination. Its motto is \"Dirige Nos Domine\".",
+    "academics": "The school runs the six years from JSS 1 to SS 3. Junior students take subjects including English, Igbo, mathematics, agricultural science, introductory technology, social studies and Christian religious knowledge; senior subjects include further mathematics, chemistry, physics, biology, geography, government and literature in English.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Government_Secondary_School,_Owerri"
     ]
   }
 }
