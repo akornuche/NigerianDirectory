@@ -37,6 +37,8 @@ class TestJunk:
     def test_legitimate_text_is_not_junk(self):
         assert not st.is_junk('Governors have invested in teacher recruitment and school infrastructure.')
         assert not st.is_junk('The state has remained in the top 3 best performers in school certificate exams.')
+        assert not st.is_junk('The school is now sponsored by ten Christian mission bodies.')
+        assert st.is_junk('Sponsored content: best schools to apply to this year')
 
 
 class TestRelevance:

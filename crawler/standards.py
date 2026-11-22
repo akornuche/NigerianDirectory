@@ -34,7 +34,7 @@ LOW_TRUST_DOMAINS = (
 # in the audit. Kept narrow on purpose: phrases such as "teacher recruitment"
 # or "top 3 best performers" can appear in legitimate text.
 JUNK_PATTERN = re.compile(
-    r"click here|subscribe|cookie|sign up|login credentials|\blog ?in to\b|whatsapp|telegram|sponsored|"
+    r"click here|subscribe|cookie|sign up|login credentials|\blog ?in to\b|whatsapp|telegram|\bsponsored (?:post|content|link|ad)s?\b|"
     r"jamb subject combination|\bby [a-z]+ team\b|amazon sinks|bitcoin|crypto|free training|"
     r"read more|join our|apply now|job vacanc|all rights reserved|privacy policy|terms of (?:use|service)|"
     r"this is not another list|compiled list|list of (?:historic|best|top)|"
