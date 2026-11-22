@@ -121,7 +121,7 @@ export default async function StatesPage() {
               {allStates.filter(s => s.count > 0).map((state) => (
                 <Link
                   key={state.slug}
-                  href={`/schools/${state.slug}/`}
+                  href={`/education/schools/${state.slug}/`}
                   className="group bg-white rounded-lg border border-gray-200 p-4 hover:border-primary-500 hover:shadow-md transition-all"
                 >
                   <div className="flex items-center gap-3">

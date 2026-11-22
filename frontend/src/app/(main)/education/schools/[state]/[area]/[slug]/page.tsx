@@ -448,7 +448,7 @@ export default async function SchoolPage({ params }: Props) {
               </a>
             )}
             <Link
-              href={`/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
+              href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
               className="inline-flex items-center px-4 py-2 bg-secondary-400 hover:bg-secondary-500 text-gray-900 font-medium rounded-lg transition-colors text-sm"
             >
               Manage This Profile
@@ -745,7 +745,7 @@ export default async function SchoolPage({ params }: Props) {
                   Principals, proprietors and authorised staff can manage this profile, update details and add photos.
                 </p>
                 <Link
-                  href={`/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
+                  href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
                   className="block w-full text-center bg-white text-primary-700 hover:bg-primary-50 font-semibold px-4 py-2.5 rounded-lg transition-colors text-sm"
                 >
                   Manage This School Profile

@@ -170,7 +170,7 @@ export default async function HomePage() {
             {popularStates.map((state) => (
               <Link
                 key={state.slug}
-                href={`/schools/${state.slug}/`}
+                href={`/education/schools/${state.slug}/`}
                 className="card-hover p-6 text-center group"
               >
                 <div className="w-12 h-12 mx-auto bg-primary-100 rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors">
@@ -257,7 +257,7 @@ export default async function HomePage() {
               </p>
             </div>
             <Link
-              href="/schools/featured/"
+              href="/education/schools/"
               className="hidden md:inline-flex link text-primary-600"
             >
               View all →
@@ -268,7 +268,7 @@ export default async function HomePage() {
             {displaySchools.map((school) => (
               <Link
                 key={school.slug}
-                href={`/schools/${toSlugSegment(school.state)}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
+                href={`/education/schools/${toSlugSegment(school.state)}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
                 className="card-hover group"
               >
                 <div className="aspect-[4/3] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">

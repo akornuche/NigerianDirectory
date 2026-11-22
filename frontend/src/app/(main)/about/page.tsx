@@ -118,7 +118,7 @@ export default function AboutPage() {
             Start exploring our comprehensive database of Nigerian schools today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/schools/lagos/" className="btn-white">
+            <Link href="/education/schools/lagos/" className="btn-white">
               Browse Schools
             </Link>
             <Link href="/contact/" className="btn-outline-white">
