@@ -382,5 +382,64 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Hillcrest_School_(Jos,_Nigeria)"
     ]
+  },
+  "81": {
+    "history": "Federal Government College, Sokoto was founded in 1966 by P. H. Davis. It was the first of Nigeria's first three unity schools to open at the start of 1966, the others being Federal Government College, Okposi and Federal Government College, Warri. These schools were first called Inter-Regional Secondary Schools and later renamed Federal Government Colleges. The first students completed their certificates in 1970; in 1971, 70 students sat the West African School Certificate and 53 the Higher School Certificate. The higher school section later moved to what is now the Federal Science College, Sokoto.",
+    "academics": "The college is a federal unity school whose motto is \"Pro Unitate\". Its former students include the politicians Onyebuchi Chukwu, Donald Duke and Badamasi Maccido, the judge Fati Lami Abubakar, and Air Chief Marshal Oluseyi Petinrin, former Chief of the Defence Staff.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Government_College,_Sokoto"
+    ]
+  },
+  "105": {
+    "set": {
+      "gender": "boys-only"
+    },
+    "history": "Christ's School, Ado-Ekiti was founded on 30 June 1933 by the British missionary Archdeacon Henry Dallimore as Ekiti Central School, taking its present name on the recommendation of Sir Bernard Bourdillon, then Governor of Nigeria. It moved in 1936 to its permanent site on the Agidimo Hills and became a full high school in 1942. Besides academic subjects, its early curriculum taught practical trades such as tailoring, brick-making, building and carpentry, with agriculture and cattle-keeping added in 1945; it was funded largely through the Church Missionary Society. In 1966 it merged with its girls' arm, the Ekiti Anglican Girls' Secondary School, but it now runs as a boys' school, opposite the separate girls' school.",
+    "academics": "Christ's School is a government-owned boys' day and boarding secondary school in Ado-Ekiti, Ekiti State. Its motto is \"Christus Victor\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Christ%27s_School,_Ado_Ekiti"
+    ]
+  },
+  "118": {
+    "established_year": 1923,
+    "set": {
+      "gender": "boys-only",
+      "area": "Oke-Saje"
+    },
+    "history": "Baptist Boys' High School was opened on 23 January 1923 by Rev. Samuel George Pinnock of the Southern Baptist mission, with 75 students and four teachers, among them his wife, Madora Pinnock. Pinnock chose the site in 1916 to give pupils from the mission's three primary schools at Ago-Owu, Ago-Ijaye and Oke-Saje a secondary education; building was delayed by the cost of materials during the First World War and began in 1922 with a principal's house, five classrooms, a chapel and a boys' dormitory. The Baptist mission's work in Abeokuta dates from 1850, when its first missionary, Thomas Jefferson Bowen, arrived.",
+    "academics": "BBHS is a boys' secondary school affiliated with the Nigerian Baptist Convention, on its permanent site at Oke-Saje, Abeokuta. It had about 2,000 students in 2022–2023, down from a peak of 2,155 in 1998–1999, partly to relieve overcrowding.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Baptist_Boys%27_High_School"
+    ]
+  },
+  "119": {
+    "set": {
+      "gender": "co-ed",
+      "area": "Idi-Aba"
+    },
+    "history": "Abeokuta Grammar School was founded in 1908 by the Abeokuta District Church Council of the Anglican Church. Its students sat the Royal College of Preceptors examinations in 1909 and the Cambridge Local Examination in 1911; it admitted girls from 1914, presented its first candidates for the Cambridge School Certificate in 1939, and was made a model school by the federal government in 1996.",
+    "academics": "The school is a public, co-educational secondary school on Elite Road, Idi-Aba, Abeokuta. Its former students include the Nobel laureate Wole Soyinka, the activist Funmilayo Ransome-Kuti and her sons Fela Anikulapo-Kuti and Beko Ransome-Kuti, the filmmaker Tunde Kelani, and the musicians Fireboy DML and Kizz Daniel. In 2019 a team of its students won the social innovation category of the national Diamond Challenge pitch event.",
+    "student_life": "Its old students' association, AGSOBA, is described as the oldest in Nigeria and has branches across the country and abroad. The school motto is \"Iberu Oluwa ni Ipile Ogbon\", \"the fear of the Lord is the beginning of wisdom\".",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Abeokuta_Grammar_School"
+    ]
+  },
+  "132": {
+    "established_year": 1948,
+    "set": {
+      "gender": "co-ed"
+    },
+    "history": "Federal Science and Technical College, Yaba was founded in 1948. It is a mixed secondary school in Yaba, Lagos, owned by the federal government and run by the Federal Ministry of Education as one of more than 100 unity schools, and it teaches junior and senior secondary students only.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Federal_Science_and_Technical_College,_Yaba"
+    ]
+  },
+  "146": {
+    "established_year": 1954,
+    "history": "The Nigerian Military School began on 20 May 1954 as the Boys Company of Nigeria, set up under the Nigerian Regiment Training Centre of the Royal West African Frontier Force and modelled on the British Army's boys' wing; similar schools were founded in the Gambia, the Gold Coast and Sierra Leone. Its aim was to train skilled manpower to replace departing colonial non-commissioned officers, and its first commandant was Captain Wellington Duke Bassey. In 1958 ten of its boys sat the overseas Armed Forces General Certificate Examination, and in 1960 the school took the name Nigerian Military School.",
+    "academics": "NMS Zaria is a military boarding school affiliated with the Armed Forces of Nigeria, combining military and academic training. Its first students sat the West African Examinations Council examination in 1965; it now runs the six-year junior and senior secondary programme under a Board of Governors. Students were organised from the start into companies, now Alpha to Golf.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Nigerian_Military_School"
+    ]
   }
 }
