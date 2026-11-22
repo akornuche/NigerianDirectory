@@ -50,6 +50,27 @@ const GOOGLE_ADSENSE_ID = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID;
 const MEDIANET_CUSTOMER_ID = process.env.NEXT_PUBLIC_MEDIANET_CUSTOMER_ID;
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
+/**
+ * Slot names in the templates ("home-top-leaderboard") are not ad unit IDs.
+ * AdSense needs the numeric unit ID it issues and Media.net its crid, so
+ * each network gets a JSON map from slot name to unit ID, e.g.
+ *   NEXT_PUBLIC_ADSENSE_SLOTS={"home-top-leaderboard":"1234567890"}
+ * A slot renders only if it is mapped. This also sets ad density: map at
+ * most 3 slots per page on mobile and 4-5 on desktop (REMEDIATION_PLAN.md
+ * AD-5); unmapped slots render nothing.
+ */
+function parseSlotMap(raw: string | undefined): Record<string, string> {
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+const ADSENSE_SLOTS = parseSlotMap(process.env.NEXT_PUBLIC_ADSENSE_SLOTS);
+const MEDIANET_SLOTS = parseSlotMap(process.env.NEXT_PUBLIC_MEDIANET_SLOTS);
+
 export default function AdBanner({ 
   slot, 
   size = 'rectangle', 
@@ -59,6 +80,10 @@ export default function AdBanner({
 }: AdBannerProps) {
   const adRef = useRef<HTMLDivElement>(null);
   const adConfig = AD_SIZES[size];
+  const adsenseUnit = GOOGLE_ADSENSE_ID ? ADSENSE_SLOTS[slot] : undefined;
+  const medianetUnit = MEDIANET_CUSTOMER_ID ? MEDIANET_SLOTS[slot] : undefined;
+  const useGoogle = Boolean(adsenseUnit) && (provider === 'google' || provider === 'auto');
+  const useMedianet = !useGoogle && Boolean(medianetUnit) && (provider === 'medianet' || provider === 'auto');
 
   useEffect(() => {
     // Don't initialize ads in development
@@ -66,8 +91,8 @@ export default function AdBanner({
       return;
     }
 
-    // Initialize ads based on provider
-    if (provider === 'google' || provider === 'auto') {
+    // Initialize only the network this slot is mapped to.
+    if (useGoogle) {
       try {
         // @ts-expect-error - adsbygoogle is loaded externally
         (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -76,21 +101,21 @@ export default function AdBanner({
       }
     }
 
-    if (provider === 'medianet' || provider === 'auto') {
+    if (useMedianet) {
       try {
         // @ts-expect-error - _mNHandle is loaded externally
         if (window._mNHandle) {
           // @ts-expect-error - _mNHandle is loaded externally
           window._mNHandle.queue.push(function() {
             // @ts-expect-error - _mNDetails is loaded externally
-            window._mNDetails.loadTag(slot, adConfig.width + 'x' + adConfig.height, slot);
+            window._mNDetails.loadTag(`medianet-${slot}`, adConfig.width + 'x' + adConfig.height, medianetUnit);
           });
         }
       } catch (error) {
         console.error('Media.net error:', error);
       }
     }
-  }, [slot, provider, adConfig]);
+  }, [slot, adConfig, useGoogle, useMedianet, medianetUnit]);
 
   // Show placeholder boxes in development for visualization
   if (IS_DEVELOPMENT) {
@@ -106,33 +131,32 @@ export default function AdBanner({
     );
   }
 
-  // Don't render in production if no ad networks configured
-  if (!GOOGLE_ADSENSE_ID && !MEDIANET_CUSTOMER_ID) {
+  // Nothing renders unless this slot is mapped to a real unit ID.
+  if (!useGoogle && !useMedianet) {
     return null;
   }
 
   return (
-    <div 
+    <div
       ref={adRef}
-      className={`ad-container overflow-hidden ${adConfig.class} ${className}`}
-      style={{ minWidth: adConfig.width, minHeight: adConfig.height }}
+      className={`ad-container w-full overflow-hidden ${adConfig.class} ${className}`}
+      // Reserve the slot's height so the page does not shift when the ad loads.
+      style={{ maxWidth: adConfig.width, minHeight: adConfig.height }}
     >
-      {/* Google AdSense */}
-      {GOOGLE_ADSENSE_ID && (provider === 'google' || provider === 'auto') && (
+      {useGoogle && (
+        // Responsive unit: full container width, height chosen by AdSense.
+        // Fixed pixel sizes combined with data-ad-format="auto" conflicted.
         <ins
           className="adsbygoogle"
-          style={{ display: 'block', width: adConfig.width, height: adConfig.height }}
+          style={{ display: 'block', width: '100%' }}
           data-ad-client={GOOGLE_ADSENSE_ID}
-          data-ad-slot={slot}
+          data-ad-slot={adsenseUnit}
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
       )}
 
-      {/* Media.net */}
-      {MEDIANET_CUSTOMER_ID && (provider === 'medianet' || provider === 'auto') && !GOOGLE_ADSENSE_ID && (
-        <div id={`medianet-${slot}`} />
-      )}
+      {useMedianet && <div id={`medianet-${slot}`} />}
     </div>
   );
 }
