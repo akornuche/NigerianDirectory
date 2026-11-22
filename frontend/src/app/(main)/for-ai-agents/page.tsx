@@ -22,6 +22,9 @@ export const metadata: Metadata = {
 };
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
+// The API is served from its own domain (NEXT_PUBLIC_API_URL ends in /api);
+// the website domain does not serve /api routes.
+const apiBase = (process.env.NEXT_PUBLIC_API_URL || `${baseUrl}/api`).replace(/\/$/, '');
 
 export default function AIAgentsPage() {
   return (
@@ -49,13 +52,13 @@ export default function AIAgentsPage() {
             <div className="bg-blue-50 p-4 rounded-lg">
               <h4 className="font-semibold text-blue-900 mb-2">Schools API</h4>
               <code className="text-sm bg-white px-2 py-1 rounded border">
-                GET {baseUrl}/api/ai/schools
+                GET {apiBase}/ai/schools
               </code>
             </div>
             <div className="bg-green-50 p-4 rounded-lg">
               <h4 className="font-semibold text-green-900 mb-2">Education Context</h4>
               <code className="text-sm bg-white px-2 py-1 rounded border">
-                GET {baseUrl}/api/ai/context/nigeria-education
+                GET {apiBase}/ai/context/nigeria-education
               </code>
             </div>
           </div>
@@ -75,7 +78,7 @@ export default function AIAgentsPage() {
                 Retrieve comprehensive Nigerian school information with geographic and educational context.
               </p>
               <div className="bg-gray-50 p-3 rounded mb-3">
-                <code className="text-sm">GET /api/ai/schools</code>
+                <code className="text-sm">GET {apiBase}/ai/schools</code>
               </div>
               <div className="text-sm text-gray-600">
                 <strong>Parameters:</strong> location, state, city, type, query, limit<br/>
@@ -92,7 +95,7 @@ export default function AIAgentsPage() {
                 Search schools by Nigerian state, city, or region with geographic context.
               </p>
               <div className="bg-gray-50 p-3 rounded mb-3">
-                <code className="text-sm">GET /api/ai/schools/{'{location}'}</code>
+                <code className="text-sm">GET {apiBase}/ai/schools/{'{location}'}</code>
               </div>
               <div className="text-sm text-gray-600">
                 <strong>Examples:</strong> /lagos, /abuja, /kano, /southwest<br/>
@@ -109,7 +112,7 @@ export default function AIAgentsPage() {
                 Comprehensive context about Nigeria&rsquo;s educational system for accurate AI responses.
               </p>
               <div className="bg-gray-50 p-3 rounded mb-3">
-                <code className="text-sm">GET /api/ai/context/nigeria-education</code>
+                <code className="text-sm">GET {apiBase}/ai/context/nigeria-education</code>
               </div>
               <div className="text-sm text-gray-600">
                 <strong>Includes:</strong> Educational structure, examination systems, regional information<br/>
@@ -211,7 +214,7 @@ export default function AIAgentsPage() {
             <div className="bg-blue-50 p-4 rounded-lg">
               <h4 className="font-semibold text-blue-900 mb-2">User Query: &ldquo;Schools in Lagos, Nigeria&rdquo;</h4>
               <p className="text-sm text-blue-800 mb-2">
-                <strong>API Call:</strong> <code>GET /api/ai/schools?state=Lagos</code>
+                <strong>API Call:</strong> <code>GET {apiBase}/ai/schools?state=Lagos</code>
               </p>
               <p className="text-sm text-blue-700">
                 Returns Lagos State schools with geographic context (Southwest Nigeria, commercial capital)
@@ -221,7 +224,7 @@ export default function AIAgentsPage() {
             <div className="bg-green-50 p-4 rounded-lg">
               <h4 className="font-semibold text-green-900 mb-2">User Query: &ldquo;Nigerian secondary schools with WAEC preparation&rdquo;</h4>
               <p className="text-sm text-green-800 mb-2">
-                <strong>API Call:</strong> <code>GET /api/ai/schools?type=secondary&query=WAEC</code>
+                <strong>API Call:</strong> <code>GET {apiBase}/ai/schools?type=secondary&query=WAEC</code>
               </p>
               <p className="text-sm text-green-700">
                 Returns secondary schools with WAEC exam preparation context
@@ -231,7 +234,7 @@ export default function AIAgentsPage() {
             <div className="bg-purple-50 p-4 rounded-lg">
               <h4 className="font-semibold text-purple-900 mb-2">User Query: &ldquo;What is the Nigerian education system like?&rdquo;</h4>
               <p className="text-sm text-purple-800 mb-2">
-                <strong>API Call:</strong> <code>GET /api/ai/context/nigeria-education</code>
+                <strong>API Call:</strong> <code>GET {apiBase}/ai/context/nigeria-education</code>
               </p>
               <p className="text-sm text-purple-700">
                 Returns comprehensive educational system context for accurate responses
@@ -288,7 +291,7 @@ export default function AIAgentsPage() {
               "@type": "WebAPI",
               "name": "Nigerian Schools Directory API",
               "description": "API for AI agents to access Nigerian school information",
-              "url": `${baseUrl}/api/ai/schools`,
+              "url": `${apiBase}/ai/schools`,
               "provider": {
                 "@type": "Organization",
                 "name": "Nigerian Directory",
