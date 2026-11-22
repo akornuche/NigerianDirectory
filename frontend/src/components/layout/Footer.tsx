@@ -74,8 +74,7 @@ const companyLinks = [
 ];
 
 const legalLinks = [
-  { name: 'Privacy Policy', href: '/about/' },
-  { name: 'Terms of Service', href: '/about/' },
+  { name: 'Privacy Policy', href: '/privacy/' },
 ];
 
 export default function Footer() {

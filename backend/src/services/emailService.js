@@ -9,7 +9,7 @@ class EmailService {
     constructor() {
         this.transporter = null;
         this.from = process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@nigeriandirectory.com';
-        this.siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nigeriandirectory.com';
+        this.siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
     }
 
     /**
@@ -40,7 +40,7 @@ class EmailService {
     /**
      * Send an email (or log it if SMTP is not configured)
      */
-    async send({ to, subject, html, text }) {
+    async send({ to, subject, html, text, replyTo }) {
         const transporter = this.getTransporter();
 
         const mailOptions = {
@@ -49,6 +49,7 @@ class EmailService {
             subject,
             html,
             text: text || html.replace(/<[^>]*>/g, ''),
+            ...(replyTo ? { replyTo } : {}),
         };
 
         if (!transporter) {

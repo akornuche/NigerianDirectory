@@ -37,6 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/blog/`,                   lastModified: SITE_UPDATED, changeFrequency: 'daily',   priority: 0.8 },
     { url: `${BASE_URL}/about/`,                  lastModified: SITE_UPDATED, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/contact/`,                lastModified: SITE_UPDATED, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/privacy/`,                lastModified: SITE_UPDATED, changeFrequency: 'yearly',  priority: 0.3 },
   ];
 
   const schoolStatePages = STATES.map((s) => ({

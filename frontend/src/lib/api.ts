@@ -309,11 +309,14 @@ export const api = {
     }>('/locations/stats'),
 
   // Stats
+  // Counts of published (verified) records. Postgres COUNT values arrive
+  // as strings.
   getStats: () =>
     apiRequest<{
-      totalSchools: number;
-      schoolsByType: Record<string, number>;
-      schoolsByState: Record<string, number>;
+      total_schools: string;
+      universities: string;
+      secondary_schools: string;
+      total_states: string;
     }>('/schools/stats'),
 };
 
