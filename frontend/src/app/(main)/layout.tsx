@@ -5,6 +5,10 @@ import AdScripts from '@/components/ads/AdScripts';
 import { CookieConsent } from '@/components/ads';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 
+// Regenerate cached pages at most every 5 minutes. Directory data comes
+// from the API, whose responses also revalidate every 5 minutes.
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
@@ -72,7 +76,10 @@ export default function RootLayout({
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />
-      <CookieConsent />
+      {/* When Google's certified consent message (AdSense > Privacy &
+          messaging) is switched on, it asks EEA/UK visitors for consent and
+          updates Consent Mode itself, so our own banner is not shown. */}
+      {process.env.NEXT_PUBLIC_USE_GOOGLE_CMP !== 'true' && <CookieConsent />}
       <GoogleAnalytics />
     </>
   );
