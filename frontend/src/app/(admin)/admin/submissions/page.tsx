@@ -14,6 +14,7 @@ interface Submission {
   subject: string;
   message: string;
   submission_type: string;
+  school_id?: number;
   school_name?: string;
   requester_role?: string;
   organisation_name?: string;
@@ -213,6 +214,10 @@ export default function SubmissionsPage() {
               {selected.requester_role   && <div className="flex gap-2"><span className="text-gray-400 w-24 flex-shrink-0">Role</span><span>{selected.requester_role}</span></div>}
               {selected.organisation_name && <div className="flex gap-2"><span className="text-gray-400 w-24 flex-shrink-0">Organisation</span><span>{selected.organisation_name}</span></div>}
               {selected.school_name      && <div className="flex gap-2"><span className="text-gray-400 w-24 flex-shrink-0">School</span><span className="text-green-700 font-medium">{selected.school_name}</span></div>}
+              {selected.school_id && (
+                <div className="flex gap-2"><span className="text-gray-400 w-24 flex-shrink-0">Listing</span>
+                  <a href={`/admin/schools/${selected.school_id}`} className="text-green-700 hover:underline font-medium">Open in editor</a></div>
+              )}
               <div className="flex gap-2"><span className="text-gray-400 w-24 flex-shrink-0">Subject</span><span>{selected.subject}</span></div>
               <div className="flex gap-2"><span className="text-gray-400 w-24 flex-shrink-0">Received</span><span>{new Date(selected.created_at).toLocaleString()}</span></div>
             </div>

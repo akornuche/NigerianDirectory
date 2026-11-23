@@ -70,7 +70,7 @@ function generateUniversitySections(uni: School): ContentSection[] {
     if (uni.enriched_academics) {
         sections.push({
             id: 'academics',
-            title: 'Academic Programs & Research',
+            title: 'Academics and Admission',
             icon: AcademicCapIcon,
             content: uni.enriched_academics,
         });
@@ -79,7 +79,7 @@ function generateUniversitySections(uni: School): ContentSection[] {
     if (uni.enriched_campus_info) {
         sections.push({
             id: 'campus',
-            title: 'Campus Life & Facilities',
+            title: 'Campus and Location',
             icon: SparklesIcon,
             content: uni.enriched_campus_info,
         });
@@ -121,7 +121,7 @@ function generateUniversitySections(uni: School): ContentSection[] {
             id: 'administration',
             title: 'University Administration',
             icon: BookOpenIcon,
-            content: `Led by ${uni.principal_title || 'Vice-Chancellor'} ${uni.principal_name}, the institution continues to advance its mission of academic excellence.`,
+            content: `The ${(uni.principal_title || 'Vice-Chancellor').toLowerCase()} on record is ${uni.principal_name}. Appointments change, so check the university's official website for its current principal officers.`,
         });
     }
 

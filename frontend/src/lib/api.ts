@@ -10,7 +10,7 @@ const API_URL =
     : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api');
 
 // Bump after bulk data changes; see apiRequest.
-const DATA_VERSION = '2026-11-22';
+const DATA_VERSION = '2026-11-23';
 
 interface FetchOptions extends RequestInit {
   timeout?: number;
