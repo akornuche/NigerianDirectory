@@ -4,7 +4,7 @@
 
 echo "Setting Neon PostgreSQL credentials in Vercel..."
 
-vercel env add DB_HOST production <<< "ep-sweet-fire-are7bve1.c-4.us-west-2.aws.neon.tech"
+vercel env add DB_HOST production <<< "<your-neon-host>"
 vercel env add DB_PORT production <<< "5432"
 vercel env add DB_NAME production <<< "neondb"
 vercel env add DB_USER production <<< "neondb_owner"

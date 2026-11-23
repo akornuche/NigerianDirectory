@@ -78,7 +78,7 @@ The NigerianDirectory backend API has been successfully deployed to production u
 | **Database** | neondb |
 | **User** | neondb_owner |
 | **Region** | AWS US West 2 |
-| **Hostname** | `ep-sweet-fire-are7bve1.c-4.us-west-2.aws.neon.tech` |
+| **Hostname** | `<your-neon-host>` |
 | **Port** | 5432 |
 | **Connection** | ✅ Active |
 
@@ -258,7 +258,7 @@ vercel rollback
 All environment variables are securely stored in Vercel:
 
 ```
-DB_HOST=ep-sweet-fire-are7bve1.c-4.us-west-2.aws.neon.tech
+DB_HOST=<your-neon-host>
 DB_PORT=5432
 DB_NAME=neondb
 DB_USER=neondb_owner
@@ -313,10 +313,10 @@ This will:
 
 ```bash
 # Export database
-pg_dump postgresql://neondb_owner:npg_8TgZsh1GDMeB@ep-sweet-fire-are7bve1.c-4.us-west-2.aws.neon.tech/neondb > backup.sql
+pg_dump "$DATABASE_URL" > backup.sql
 
 # Import backup
-psql postgresql://neondb_owner:npg_8TgZsh1GDMeB@ep-sweet-fire-are7bve1.c-4.us-west-2.aws.neon.tech/neondb < backup.sql
+psql "$DATABASE_URL" < backup.sql
 ```
 
 ---

@@ -28,7 +28,7 @@ Please include:
 Database passwords and JWT secrets were committed to the git repository history in commits related to Vercel deployment setup (commits `5b10e24`, `7a9550d`, etc.). These credentials were exposed in PowerShell scripts and JSON configuration files that were accidentally tracked by git.
 
 **Compromised Credentials:**
-- PostgreSQL password: `npg_8TgZsh1GDMeB` (REVOKED)
+- PostgreSQL password: `<redacted>` (REVOKED)
 - JWT secret: `nigerian-directory-production-jwt-secret-2026-secure-32chars-min` (REVOKED)
 
 #### Immediate Actions Taken
@@ -99,7 +99,7 @@ To verify the incident is resolved:
 
 ```bash
 # 1. Check that secrets are no longer in git history
-git log --all -S "npg_8TgZsh1GDMeB" --oneline
+git log --all -S "<redacted>" --oneline
 # Should return: (no results)
 
 git log --all -S "nigerian-directory-production-jwt-secret" --oneline
@@ -134,7 +134,7 @@ curl https://nigeriandirectory-*.vercel.app/api/health
    const password = process.env.DB_PASSWORD;
    
    // ❌ BAD
-   const password = "npg_8TgZsh1GDMeB";
+   const password = "<redacted>";
    ```
 
 3. **Use .env files locally**:
