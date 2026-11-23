@@ -103,3 +103,4 @@ crawler/crawler_sources_log.txt
 crawler/google_response.html
 crawler/integration_test_report_*.json
 crawler/*_output.txt
+.claude/settings.local.json
