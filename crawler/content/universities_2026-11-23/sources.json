@@ -1,0 +1,1281 @@
+{
+ "_about": "Sources for each university profile in this folder: Wikipedia article (where the profile drew on one), official website, and the National Universities Commission list the record was verified against.",
+ "201": [
+  "https://en.wikipedia.org/wiki/University_of_Ibadan",
+  "https://ui.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "202": [
+  "https://en.wikipedia.org/wiki/University_of_Lagos",
+  "https://unilag.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "208": [
+  "https://en.wikipedia.org/wiki/Abia_State_University",
+  "https://abiastateuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "209": [
+  "https://en.wikipedia.org/wiki/Abubakar_Tafawa_Balewa_University",
+  "https://atbu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "210": [
+  "https://en.wikipedia.org/wiki/Achievers_University",
+  "https://achievers.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "211": [
+  "https://en.wikipedia.org/wiki/Adamawa_State_University",
+  "https://www.adsu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "212": [
+  "https://en.wikipedia.org/wiki/Adekunle_Ajasin_University",
+  "https://aaua.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "213": [
+  "https://en.wikipedia.org/wiki/Adeleke_University",
+  "https://adelekeuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "214": [
+  "https://en.wikipedia.org/wiki/African_University_of_Science_and_Technology",
+  "https://aust.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "215": [
+  "https://afit.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "216": [
+  "https://en.wikipedia.org/wiki/Ajayi_Crowther_University",
+  "https://acu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "217": [
+  "https://en.wikipedia.org/wiki/Akwa_Ibom_State_University",
+  "https://www.aksu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "218": [
+  "https://en.wikipedia.org/wiki/Al-Hikmah_University",
+  "https://alhikmahuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "219": [
+  "https://en.wikipedia.org/wiki/Al-Qalam_University",
+  "https://www.auk.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "220": [
+  "https://www.funai.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "221": [
+  "https://en.wikipedia.org/wiki/Ambrose_Alli_University",
+  "https://aauekpoma.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "222": [
+  "https://en.wikipedia.org/wiki/American_University_of_Nigeria",
+  "https://aun.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "223": [
+  "https://en.wikipedia.org/wiki/Anchor_University",
+  "https://aul.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "224": [
+  "https://en.wikipedia.org/wiki/Arthur_Jarvis_University",
+  "https://arthurjarvisuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "225": [
+  "https://augustineuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "226": [
+  "https://babcock.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "227": [
+  "https://en.wikipedia.org/wiki/Bauchi_State_University",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "228": [
+  "https://en.wikipedia.org/wiki/Bayero_University_Kano",
+  "https://buk.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "229": [
+  "https://en.wikipedia.org/wiki/Baze_University",
+  "https://bazeuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "230": [
+  "https://en.wikipedia.org/wiki/Bells_University_of_Technology",
+  "https://bellsuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "231": [
+  "https://en.wikipedia.org/wiki/Benson_Idahosa_University",
+  "https://biu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "232": [
+  "https://en.wikipedia.org/wiki/Benue_State_University",
+  "https://bsum.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "233": [
+  "https://en.wikipedia.org/wiki/Bingham_University",
+  "https://binghamuni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "234": [
+  "https://en.wikipedia.org/wiki/Kashim_Ibrahim_University",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "235": [
+  "https://en.wikipedia.org/wiki/Bowen_University",
+  "https://bowen.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "236": [
+  "https://en.wikipedia.org/wiki/Caritas_University",
+  "https://caritasuni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "237": [
+  "https://en.wikipedia.org/wiki/Chrisland_University",
+  "https://chrislanduniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "238": [
+  "https://en.wikipedia.org/wiki/Christopher_University",
+  "https://christopheruniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "239": [
+  "https://en.wikipedia.org/wiki/Chukwuemeka_Odumegwu_Ojukwu_University",
+  "https://coou.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "240": [
+  "https://en.wikipedia.org/wiki/Confluence_University_of_Science_and_Technology",
+  "https://custech.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "241": [
+  "https://www.covenantuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "242": [
+  "https://en.wikipedia.org/wiki/Crawford_University",
+  "https://crawforduniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "243": [
+  "https://en.wikipedia.org/wiki/Crescent_University",
+  "https://www.crescent-university.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "245": [
+  "https://delsu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "246": [
+  "https://en.wikipedia.org/wiki/Southern_Delta_University",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "247": [
+  "https://dui.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "248": [
+  "https://en.wikipedia.org/wiki/Ebonyi_State_University",
+  "https://ebsu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "249": [
+  "https://www.edouniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "250": [
+  "https://edusokouniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "251": [
+  "https://en.wikipedia.org/wiki/Ekiti_State_University",
+  "https://www.eksu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "252": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "253": [
+  "https://en.wikipedia.org/wiki/Elizade_University",
+  "https://elizadeuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "254": [
+  "https://en.wikipedia.org/wiki/Enugu_State_University_of_Science_and_Technology",
+  "https://esut.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "255": [
+  "https://www.evangeluniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "256": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Agriculture%2C_Abeokuta",
+  "https://funaab.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "258": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Petroleum_Resources%2C_Effurun",
+  "https://fupre.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "259": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Technology_Akure",
+  "https://futa.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "260": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Technology%2C_Minna",
+  "https://futminna.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "261": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Technology_Owerri",
+  "https://futo.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "262": [
+  "https://en.wikipedia.org/wiki/Federal_University%2C_Birnin_Kebbi",
+  "https://www.fubk.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "263": [
+  "https://fud.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "264": [
+  "https://en.wikipedia.org/wiki/Federal_University%2C_Dutsin-Ma",
+  "https://fudutsinma.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "265": [
+  "https://en.wikipedia.org/wiki/Federal_University%2C_Gashua",
+  "https://www.fugashua.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "266": [
+  "https://en.wikipedia.org/wiki/Federal_University%2C_Gusau",
+  "https://fugusau.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "267": [
+  "https://fukashere.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "268": [
+  "https://fulafia.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "269": [
+  "https://en.wikipedia.org/wiki/Federal_University%2C_Lokoja",
+  "https://fulokoja.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "270": [
+  "https://en.wikipedia.org/wiki/Federal_University%2C_Otuoke",
+  "https://fuotuoke.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "271": [
+  "https://fuoye.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "272": [
+  "https://en.wikipedia.org/wiki/Federal_University%2C_Wukari",
+  "https://fuwukari.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "273": [
+  "https://en.wikipedia.org/wiki/Godfrey_Okoye_University",
+  "https://gouni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "274": [
+  "https://en.wikipedia.org/wiki/Gombe_State_University",
+  "https://gsu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "275": [
+  "https://en.wikipedia.org/wiki/Greenfield_University",
+  "https://www.gfu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "276": [
+  "https://en.wikipedia.org/wiki/Gregory_University",
+  "https://www.gregoryuniversity.com",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "277": [
+  "https://hallmarkuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "278": [
+  "https://en.wikipedia.org/wiki/Ibrahim_Badamasi_Babangida_University",
+  "https://www.ibbu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "279": [
+  "https://iuokada.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "280": [
+  "https://en.wikipedia.org/wiki/Ignatius_Ajuru_University_of_Education",
+  "https://iaue.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "281": [
+  "https://en.wikipedia.org/wiki/Imo_State_University",
+  "https://www.imsu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "282": [
+  "https://en.wikipedia.org/wiki/Kaduna_State_University",
+  "https://www.kasu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "284": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "285": [
+  "https://en.wikipedia.org/wiki/Kebbi_State_University_of_Science_and_Technology",
+  "https://ksusta.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "286": [
+  "https://en.wikipedia.org/wiki/Kings_University",
+  "https://www.kingsuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "287": [
+  "https://en.wikipedia.org/wiki/Prince_Abubakar_Audu_University",
+  "https://ksukabba.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "288": [
+  "https://en.wikipedia.org/wiki/Kwara_State_University",
+  "https://kwasu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "289": [
+  "https://en.wikipedia.org/wiki/Kwararafa_University",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "290": [
+  "https://en.wikipedia.org/wiki/Ladoke_Akintola_University_of_Technology",
+  "https://lautech.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "291": [
+  "https://admission.lasued.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "292": [
+  "https://en.wikipedia.org/wiki/Lagos_State_University_of_Science_and_Technology",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "293": [
+  "https://en.wikipedia.org/wiki/Landmark_University",
+  "https://lmu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "294": [
+  "https://en.wikipedia.org/wiki/Lead_City_University",
+  "https://lcu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "295": [
+  "https://madonnauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "298": [
+  "https://en.wikipedia.org/wiki/McPherson_University",
+  "https://www.mcu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "299": [
+  "https://en.wikipedia.org/wiki/Michael_Okpara_University_of_Agriculture",
+  "https://www.mouau.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "300": [
+  "https://en.wikipedia.org/wiki/Modibbo_Adama_Federal_University_of_Technology%2C_Yola",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "301": [
+  "https://en.wikipedia.org/wiki/Mountain_Top_University",
+  "https://mtu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "303": [
+  "https://en.wikipedia.org/wiki/Nasarawa_State_University",
+  "https://www.nsuk.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "304": [
+  "https://en.wikipedia.org/wiki/Niger_Delta_University",
+  "https://ndu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "305": [
+  "https://en.wikipedia.org/wiki/Nile_University_of_Nigeria",
+  "https://nileuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "306": [
+  "https://en.wikipedia.org/wiki/Nnamdi_Azikiwe_University",
+  "https://unizik.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "307": [
+  "https://en.wikipedia.org/wiki/Novena_University",
+  "https://novenauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "308": [
+  "https://en.wikipedia.org/wiki/Oduduwa_University",
+  "https://www.oduduwauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "309": [
+  "https://en.wikipedia.org/wiki/Olabisi_Onabanjo_University",
+  "https://oouagoiwoye.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "311": [
+  "https://en.wikipedia.org/wiki/Osun_State_University",
+  "https://www.uniosun.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "312": [
+  "https://en.wikipedia.org/wiki/PAMO_University_of_Medical_Sciences",
+  "https://www.pums.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "313": [
+  "https://en.wikipedia.org/wiki/Pan-Atlantic_University",
+  "https://pau.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "314": [
+  "https://en.wikipedia.org/wiki/Paul_University",
+  "https://pauluniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "315": [
+  "https://en.wikipedia.org/wiki/Philomath_University",
+  "https://philomath.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "316": [
+  "https://en.wikipedia.org/wiki/Plateau_State_University",
+  "https://plasu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "317": [
+  "https://en.wikipedia.org/wiki/Precious_Cornerstone_University",
+  "https://www.pcu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "318": [
+  "https://en.wikipedia.org/wiki/Redeemer%27s_University",
+  "https://run.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "319": [
+  "https://en.wikipedia.org/wiki/Renaissance_University",
+  "https://www.rnu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "320": [
+  "https://en.wikipedia.org/wiki/Rhema_University",
+  "https://rhemauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "321": [
+  "https://en.wikipedia.org/wiki/Ritman_University",
+  "https://ritmanuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "322": [
+  "https://salemuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "324": [
+  "https://en.wikipedia.org/wiki/Skyline_University",
+  "https://sun.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "325": [
+  "https://en.wikipedia.org/wiki/Sokoto_State_University",
+  "https://ssu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "326": [
+  "https://en.wikipedia.org/wiki/Sule_Lamido_University",
+  "https://slu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "327": [
+  "https://en.wikipedia.org/wiki/Summit_University%2C_Offa",
+  "https://www.summituniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "328": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "329": [
+  "https://en.wikipedia.org/wiki/Tansian_University",
+  "https://tansianuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "330": [
+  "https://en.wikipedia.org/wiki/Taraba_State_University",
+  "https://tsuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "331": [
+  "https://www.umyu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "332": [
+  "https://en.wikipedia.org/wiki/University_of_Abuja",
+  "https://www.uniabuja.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "333": [
+  "https://www.uat.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "334": [
+  "https://uniben.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "335": [
+  "https://en.wikipedia.org/wiki/University_of_Calabar",
+  "https://unical.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "336": [
+  "https://fortune.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "337": [
+  "https://en.wikipedia.org/wiki/University_of_Ilorin",
+  "https://unilorin.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "338": [
+  "https://en.wikipedia.org/wiki/University_of_Jos",
+  "https://unijos.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "339": [
+  "https://en.wikipedia.org/wiki/University_of_Maiduguri",
+  "https://unimaid.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "340": [
+  "https://umm.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "342": [
+  "https://en.wikipedia.org/wiki/University_of_Port_Harcourt",
+  "https://uniport.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "343": [
+  "https://en.wikipedia.org/wiki/University_of_Uyo",
+  "https://uniuyo.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "344": [
+  "https://en.wikipedia.org/wiki/Usmanu_Danfodiyo_University",
+  "https://udusok.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "345": [
+  "https://en.wikipedia.org/wiki/Veritas_University",
+  "https://veritas.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "346": [
+  "https://en.wikipedia.org/wiki/Wellspring_University",
+  "https://wellspringuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "347": [
+  "https://en.wikipedia.org/wiki/Western_Delta_University",
+  "https://wdu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "348": [
+  "https://en.wikipedia.org/wiki/Yobe_State_University",
+  "https://ysu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "349": [
+  "https://www.nwu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "350": [
+  "https://en.wikipedia.org/wiki/Zamfara_State_University",
+  "https://zamsut.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "351": [
+  "https://en.wikipedia.org/wiki/Ahmadu_Bello_University",
+  "https://www.abu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "352": [
+  "https://en.wikipedia.org/wiki/National_Open_University_of_Nigeria",
+  "https://www.nou.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "353": [
+  "https://en.wikipedia.org/wiki/Nigeria_Police_Academy_Wudil",
+  "https://polac.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "354": [
+  "https://en.wikipedia.org/wiki/Nigerian_Defence_Academy",
+  "https://www.nda.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "355": [
+  "https://en.wikipedia.org/wiki/Obafemi_Awolowo_University",
+  "https://www.oauife.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "356": [
+  "https://en.wikipedia.org/wiki/University_of_Agriculture%2C_Makurdi",
+  "https://www.uam.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "357": [
+  "https://www.nmu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "358": [
+  "https://naub.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "359": [
+  "https://fuhso.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "360": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Agriculture%2C_Zuru",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "361": [
+  "https://futb.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "362": [
+  "https://futia.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "363": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Health_Sciences%2C_Azare",
+  "https://fuhsa.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "364": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "365": [
+  "https://kdums.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "366": [
+  "https://adun.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "367": [
+  "https://www.futd.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "368": [
+  "https://en.wikipedia.org/wiki/African_Aviation_and_Aerospace_University",
+  "https://aaau.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "369": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "370": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "371": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "372": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "373": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Agriculture%2C_Mubi",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "374": [
+  "https://fcezaria.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "375": [
+  "https://www.alvanikoku.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "376": [
+  "https://ymsfuek.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "377": [
+  "https://afued.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "378": [
+  "https://fuahse.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "379": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "380": [
+  "https://en.wikipedia.org/wiki/Federal_University_of_Education%2C_Pankshin",
+  "https://fuep.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "381": [
+  "https://fuek.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "382": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "383": [
+  "https://fuet.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "384": [
+  "https://fuask.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "385": [
+  "https://fuadsi.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "386": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "387": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "388": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "389": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "390": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "391": [
+  "https://fustkabo.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+ ],
+ "392": [
+  "https://en.wikipedia.org/wiki/Joseph_Ayo_Babalola_University",
+  "https://www.jabu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "393": [
+  "https://en.wikipedia.org/wiki/Caleb_University",
+  "https://www.calebuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "394": [
+  "https://en.wikipedia.org/wiki/Fountain_University",
+  "https://www.fuo.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "395": [
+  "https://en.wikipedia.org/wiki/Obong_University",
+  "https://www.obonguniversity.net",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "396": [
+  "https://en.wikipedia.org/wiki/Wesley_University",
+  "https://www.wesleyuni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "397": [
+  "https://en.wikipedia.org/wiki/Afe_Babalola_University",
+  "https://www.abuad.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "398": [
+  "https://en.wikipedia.org/wiki/Glorious_Vision_University",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "399": [
+  "https://www.southwesternuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "400": [
+  "https://en.wikipedia.org/wiki/Edwin_Clark_University",
+  "https://www.edwinclarkuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "401": [
+  "https://en.wikipedia.org/wiki/Hezekiah_University",
+  "https://hezekiah.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "402": [
+  "https://en.wikipedia.org/wiki/Michael_and_Cecilia_Ibru_University",
+  "https://mciu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "403": [
+  "https://www.koladaisiuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "404": [
+  "https://en.wikipedia.org/wiki/Legacy_University_Okija",
+  "https://www.legacyuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "405": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "406": [
+  "https://en.wikipedia.org/wiki/Coal_City_University",
+  "https://www.ccu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "407": [
+  "https://en.wikipedia.org/wiki/Clifford_University",
+  "https://www.clifforduni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "408": [
+  "https://www.spiritanuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "409": [
+  "https://atibauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "410": [
+  "https://www.dominionuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "411": [
+  "https://www.trinityuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "412": [
+  "https://westland.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "413": [
+  "https://topfaith.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "414": [
+  "https://www.tau.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "415": [
+  "https://maranathauniversitylagos.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "416": [
+  "https://avemariauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "417": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "418": [
+  "https://en.wikipedia.org/wiki/Mudiame_University",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "419": [
+  "https://havillauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "420": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "421": [
+  "https://www.jhu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "422": [
+  "https://www.maaun.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "423": [
+  "https://en.wikipedia.org/wiki/Capital_City_University",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "424": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "425": [
+  "https://en.wikipedia.org/wiki/University_of_Offa",
+  "https://unioffa.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "426": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "427": [
+  "https://ananuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "428": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "429": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "430": [
+  "https://mlugalilee.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "431": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "432": [
+  "https://sportsuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "433": [
+  "https://bauk.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "434": [
+  "https://saisa.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "435": [
+  "https://en.wikipedia.org/wiki/Nigerian_British_University",
+  "https://nbu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "436": [
+  "https://puni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "437": [
+  "https://newgateuniversityminna.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "438": [
+  "https://eun.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "439": [
+  "https://nwus.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "440": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "441": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "442": [
+  "https://en.wikipedia.org/wiki/Sam_Maris_University",
+  "https://smu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "443": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "444": [
+  "https://luxmundiuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "445": [
+  "https://en.wikipedia.org/wiki/Maduka_University",
+  "https://madukauniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "446": [
+  "https://peacelanduni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "447": [
+  "https://en.wikipedia.org/wiki/Amadeus_University%2C_Amizi%2C_Abia_State",
+  "https://amadeus.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "448": [
+  "https://visionuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "449": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "450": [
+  "https://hug.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "451": [
+  "https://fbiu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "452": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "453": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "454": [
+  "https://bcu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "455": [
+  "https://www.hensarduniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "456": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "457": [
+  "https://phoenixuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "458": [
+  "https://www.wigweuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "459": [
+  "https://www.hust.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "460": [
+  "https://en.wikipedia.org/wiki/University_on_the_Niger",
+  "https://uniniger.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "461": [
+  "https://elrazi.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "462": [
+  "https://veniteuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "463": [
+  "https://en.wikipedia.org/wiki/Shanahan_University",
+  "https://shanahanuni.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "464": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "465": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "466": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "467": [
+  "https://en.wikipedia.org/wiki/Miva_Open_University",
+  "https://miva.university",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "468": [
+  "https://iconicuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "469": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "470": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "471": [
+  "https://el-aminuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "472": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "473": [
+  "https://jeweluniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "474": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "475": [
+  "https://en.wikipedia.org/wiki/Nigerian_University_of_Technology_and_Management",
+  "https://nutm.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "476": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "477": [
+  "https://lighthouseuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "478": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "479": [
+  "https://newcity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "480": [
+  "https://eranova.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "481": [
+  "https://minaretuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "482": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "483": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "484": [
+  "https://en.wikipedia.org/wiki/Lens_University",
+  "https://lens.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "485": [
+  "https://monarchuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "486": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "487": [
+  "https://www.ibuam.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "488": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "489": [
+  "https://tazkiyah.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "490": [
+  "https://leadershipuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "491": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "492": [
+  "https://bum.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "493": [
+  "https://greenlanduniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "494": [
+  "https://jefapuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "495": [
+  "https://azioneverdeuniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "496": [
+  "https://uou.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "497": [
+  "https://aouniversity.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+ ],
+ "498": [
+  "https://en.wikipedia.org/wiki/Abdulkadir_Kure_University",
+  "https://akum.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "499": [
+  "https://en.wikipedia.org/wiki/Abiola_Ajimobi_Technical_University",
+  "https://tech-u.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "500": [
+  "https://en.wikipedia.org/wiki/Kano_University_of_Science_and_Technology",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "501": [
+  "https://en.wikipedia.org/wiki/Bayelsa_Medical_University",
+  "https://bmu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "502": [
+  "https://en.wikipedia.org/wiki/Dennis_Osadebay_University",
+  "https://dou.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "503": [
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "504": [
+  "https://en.wikipedia.org/wiki/Kingsley_Ozumba_Mbadiwe_University",
+  "https://www.komu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "505": [
+  "https://en.wikipedia.org/wiki/Prince_Abubakar_Audu_University",
+  "https://paau.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "506": [
+  "https://en.wikipedia.org/wiki/Olusegun_Agagu_University_of_Science_and_Technology",
+  "https://oaustech.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "507": [
+  "https://en.wikipedia.org/wiki/Rivers_State_University",
+  "https://www.rsu.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "508": [
+  "https://en.wikipedia.org/wiki/University_of_Cross_River_State",
+  "https://unicross.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ],
+ "509": [
+  "https://en.wikipedia.org/wiki/University_of_Delta",
+  "https://unidel.edu.ng",
+  "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+ ]
+}

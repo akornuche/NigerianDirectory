@@ -316,4 +316,17 @@ router.get('/contact-submissions', async (req, res, next) => {
     }
 });
 
+// ============================================
+// GET /api/admin/claims - Pending ownership claims (account-based)
+// ============================================
+router.get('/claims', async (req, res, next) => {
+    try {
+        const page  = parseInt(req.query.page)  || 1;
+        const limit = Math.min(100, parseInt(req.query.limit) || 30);
+        res.json(await Claim.getPending(page, limit));
+    } catch (error) {
+        next(error);
+    }
+});
+
 module.exports = router;

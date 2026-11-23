@@ -19,7 +19,7 @@ const navItems = [
   { href: '/admin',             label: 'Overview',           icon: ChartBarIcon },
   { href: '/admin/page-health', label: 'Page Health',        icon: DocumentTextIcon },
   { href: '/admin/submissions', label: 'Form Submissions',   icon: EnvelopeIcon },
-  { href: '/admin/schools',     label: 'Schools',            icon: AcademicCapIcon },
+  { href: '/admin/schools',     label: 'Records & queue',    icon: AcademicCapIcon },
   { href: '/admin/claims',      label: 'Ownership Requests', icon: ClipboardDocumentListIcon },
 ];
 
