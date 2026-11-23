@@ -80,6 +80,8 @@ def check(rec):
     pages = (d.get('query') or {}).get('pages', [])
     for p in sorted(pages, key=lambda p: p.get('index', 99)):
         title = p['title']
+        if 'disambiguation' in (p.get('pageprops') or {}):
+            continue  # a list of same-named places is not evidence about this school
         if not name_matches(rec['name'], title, loc_tokens):
             continue
         text = ' '.join([p.get('description', ''), p.get('extract', ''),

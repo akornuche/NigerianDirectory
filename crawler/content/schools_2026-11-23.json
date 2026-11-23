@@ -1,0 +1,62 @@
+{
+ "_about": "Second verification pass (2026-11-23): original profiles for four schools confirmed against their Wikipedia articles (crawler/verify/second_pass.py, then reviewed by hand). Facts only from those articles; wording is our own.",
+ "52": {
+  "history": "Lagos Baptist Academy is one of the oldest schools in Nigeria. Its roots go back to Rev. Joseph M. Harden, a Black American Baptist missionary who moved to Lagos from Liberia in 1851. After Oba Dosunmu gave the mission land on Broad Street, Harden built the First Baptist Church and in 1855 opened an elementary school there with 18 pupils, 11 boys and 7 girls. A secondary section followed on the same compound in 1886. For about a century the Academy taught boys and girls together; when the separate Reagan Memorial Baptist Girls' School opened in Yaba, the Baptist mission moved to a model of twin institutions. In 1954 Rev. Dr. Joseph Adejumobi Adegbite became the first African principal and led the school until 1975.",
+  "academics": "The early secondary curriculum combined the liberal arts and sciences with English, Latin and Greek, and the school was known for the distinctive cursive handwriting it taught. Under Principal Adegbite, character training was built into the timetable: the first period on Fridays was given to the Baptist Training Union, where prefects led study and public speaking on themes such as courage, service and truth. Today it is a secondary school within the Baptist Mission Schools owned by the Nigerian Baptist Convention.",
+  "campus_info": "By its centenary in 1955 the Academy had outgrown Broad Street. The mission bought a 46-acre site at Mile 7, Ikorodu Road, Obanikoro, on the Lagos mainland, named Shepherdhill, and the secondary school moved there between 1957 and January 1959; the primary school stayed on Broad Street. A school bus bought in 1958 to bring students from Lagos Island is often remembered as the first school-owned bus in Lagos.",
+  "student_life": "Sport has long been part of the school's identity. In its centenary year the Academy won the Zard Cup, later the Principal's Cup, and its 4×220 yards relay team set a Nigerian national record. It counts Reagan Memorial Baptist Girls' Secondary School, Yaba, and Baptist Girls' Academy, Obanikoro, as sister schools.",
+  "established_year": 1855,
+  "set": {
+   "name": "Lagos Baptist Academy"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lagos_Baptist_Academy",
+   "https://www.wikidata.org/wiki/Q23073795"
+  ]
+ },
+ "72": {
+  "history": "Hope Waddell Training Institution, known as HOWAD, was founded in Calabar by missionaries of the United Presbyterian Church of Scotland and is named after the Reverend Hope Masterton Waddell. The Scottish missionary Mary Slessor, who worked among the Efik people around Calabar, pressed for an industrial training school, and the church modelled it on its institutions at Lovedale in South Africa and Livingstonia in present-day Malawi. Its first classroom, a prefabricated block of corrugated iron and pitch pine made by a Glasgow firm, was shipped out and assembled in 1894, and teaching began by March 1895. The expense of machinery for industrial training led the mission to accept government funding from 1902.",
+  "academics": "The school began as a vocational institution. Boys trained in carpentry, masonry, blacksmithing, coopering, marine engineering, brickmaking and bricklaying, and from 1898 in tailoring and baking, with products sold in the city's markets. Girls studied dressmaking, domestic science and accountancy. It became the largest vocational training institution in West Africa, and its graduates were in demand as clerks and craftsmen with the government, the mission and local businesses.",
+  "campus_info": "The school is in Calabar, Cross River State. It kept a vessel, The Diamond, on the Calabar River for students of maritime subjects, and the Diamond Hill area of the city takes its name from it. Agricultural students helped maintain Calabar's botanical gardens and parks, where they showed that crops such as mango, banana, coffee and citrus could grow well in the area.",
+  "student_life": "Students came from across West Africa, including Sierra Leone, Liberia, Ghana, Dahomey, the Cameroons and Fernando Po. In 1902 Rev. James Luke added football to the timetable despite parents' objections, and Hope Waddell graduates who later took jobs in Lagos helped spread the game there.",
+  "established_year": 1895,
+  "set": {
+   "name": "Hope Waddell Training Institution"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hope_Waddell_Training_Institution",
+   "https://www.wikidata.org/wiki/Q17109029"
+  ]
+ },
+ "165": {
+  "history": "Holy Family College, Abak, often called HOFACO, is a Catholic boys' secondary school founded in 1942 by Bishop James Moynagh, then Catholic Bishop of Calabar. It was the first secondary school in Annang land. The college is now owned and run by the Catholic Diocese of Ikot Ekpene, whose bishop is its proprietor.",
+  "academics": "The college began as a grammar school and now teaches the core science, commercial and technical subjects of the Nigerian secondary school curriculum, across both junior and senior secondary levels.",
+  "campus_info": "The college is at Oku Abak on the Ikot Abasi road, opposite Government Technical College, Oku Abak, along the Abak-Ekparakwa highway. It can be reached from the Ikot Ekpene, Uyo-Etinan and Ukanafun directions. The campus has boarding, academic, social and chapel facilities.",
+  "student_life": "Holy Family College admits boys only and is mainly a boarding school, although a small number of students are allowed to attend as day students from home.",
+  "established_year": 1942,
+  "set": {
+   "name": "Holy Family College, Abak",
+   "gender": "boys-only",
+   "boarding": true
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Holy_Family_College,_Abak",
+   "https://www.wikidata.org/wiki/Q30593587"
+  ]
+ },
+ "10": {
+  "history": "Vivian Fowler Memorial College for Girls is an independent girls' school founded on 8 January 1991 by Chief Mrs Leila Fowler, who named it after her late daughter, Vivian. It opened in Surulere, first on Bola Shadipe Street and later off Bode Thomas Street, before moving to its permanent site in January 2000.",
+  "academics": "Secondary education at the college lasts six years: three years of junior and three of senior secondary school. Students learn English, French, Yoruba and Igbo. In the senior school they prepare for the West African Senior School Certificate Examination (WASSCE) and the IGCSE, and the school also prepares students for the TOEFL and SAT, which are used for study abroad.",
+  "campus_info": "The college's permanent site is on Balogun Street, Billingsway, Oregun, in the Ikeja area of Lagos.",
+  "established_year": 1991,
+  "set": {
+   "name": "Vivian Fowler Memorial College for Girls",
+   "gender": "girls-only",
+   "website": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Vivian_Fowler_Memorial_College_for_Girls",
+   "https://www.wikidata.org/wiki/Q7937706"
+  ]
+ }
+}
