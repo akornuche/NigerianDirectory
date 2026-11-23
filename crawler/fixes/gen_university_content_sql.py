@@ -86,8 +86,11 @@ def meta_description(name, utype, city, state, year):
 
 def main(folder):
     content = {}
-    for path in sorted(glob.glob(os.path.join(folder, 'batch*.json'))):
-        content.update(json.load(open(path)))
+    # batchNN files hold the first rewrite; expandNN files (written later
+    # from the full Wikipedia articles) replace entries for the same ids.
+    for pattern in ('batch*.json', 'expand*.json'):
+        for path in sorted(glob.glob(os.path.join(folder, pattern))):
+            content.update(json.load(open(path)))
     sources = {k: v for k, v in json.load(open(os.path.join(folder, 'sources.json'))).items() if not k.startswith('_')}
     facts = json.load(open(os.path.join(folder, 'facts.json')))
 
