@@ -10,10 +10,10 @@ const slugify = require('slugify');
 
 // Neon database connection
 const client = new Client({
-  host: 'ep-sweet-fire-are7bve1.c-4.us-west-2.aws.neon.tech',
+  host: process.env.DB_HOST,
   database: 'neondb',
   user: 'neondb_owner',
-  password: process.env.DB_PASSWORD || 'npg_8TgZsh1GDMeB',
+  password: process.env.DB_PASSWORD, // required: set DB_PASSWORD; never commit it
   port: 5432,
   ssl: true
 });
