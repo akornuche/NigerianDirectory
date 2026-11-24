@@ -23,7 +23,7 @@ SECTION_FIELDS = {
     'campus_info': 'enriched_campus_info',
     'student_life': 'enriched_student_life',
 }
-SETTABLE = {'name', 'state', 'city', 'area', 'established_year', 'gender', 'type', 'website', 'boarding'}
+SETTABLE = {'name', 'state', 'city', 'area', 'established_year', 'gender', 'type', 'website', 'boarding', 'levels'}
 
 
 def q(value):

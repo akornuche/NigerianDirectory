@@ -1,0 +1,228 @@
+{
+ "_about": "Step 1 school verification, 2026-11-24. Unity Colleges confirmed by exact name and town on the List of Unity Schools (Wikipedia) or in the Federal Ministry of Education Unity Spotlight 2022; private and university schools confirmed on their own official websites. Facts only from those sources; wording is our own.",
+ "1112": {
+  "history": "Federal Government College, Azare is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Azare, Bauchi State.",
+  "set": {
+   "type": "federal"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "1222": {
+  "history": "Federal Government College, Ilorin is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Ilorin, Kwara State.",
+  "set": {
+   "type": "federal"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "33": {
+  "history": "Federal Government College, Kaduna is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Kaduna, Kaduna State.",
+  "set": {
+   "type": "federal"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "36": {
+  "history": "Federal Government College, Kano is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Kano, Kano State.",
+  "set": {
+   "type": "federal"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "73": {
+  "history": "Federal Government College, Maiduguri is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Maiduguri, Borno State.",
+  "set": {
+   "type": "federal"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "60": {
+  "history": "Federal Government College, Warri is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Warri, Delta State.",
+  "set": {
+   "type": "federal"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "75": {
+  "history": "Federal Government Girls' College, Bauchi is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Bauchi, Bauchi State.",
+  "set": {
+   "type": "federal",
+   "gender": "girls-only"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "71": {
+  "history": "Federal Government Girls' College, Calabar is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Calabar, Cross River State.",
+  "set": {
+   "type": "federal",
+   "gender": "girls-only"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "1095": {
+  "history": "Federal Government Girls' College, Gusau is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Gusau, Zamfara State.",
+  "set": {
+   "type": "federal",
+   "gender": "girls-only"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "1077": {
+  "history": "Federal Government Girls' College, Jalingo is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Jalingo, Taraba State.",
+  "set": {
+   "type": "federal",
+   "gender": "girls-only"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "1158": {
+  "history": "Federal Government Girls' College, Umuahia is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Umuahia, Abia State.",
+  "set": {
+   "type": "federal",
+   "gender": "girls-only"
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_unity_schools_in_Nigeria",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "27": {
+  "history": "Federal Government College, Port Harcourt is one of Nigeria's Federal Unity Colleges, the federal government's network of secondary schools in every state. The Federal Ministry of Education oversees 83 conventional Unity Colleges through its Department of Senior Secondary Education. The system dates back to 1909, when King's College, Lagos, was founded. Unity Colleges were expanded after independence to bring together students from different parts of the country. The Federal Ministry of Education's Unity Spotlight magazine of 2022 reported on the college's Commonwealth Day celebrations.",
+  "academics": "Like other Unity Colleges, it teaches the national junior and senior secondary curriculum, leading to the WAEC and NECO examinations. New students enter Junior Secondary School 1 through the National Common Entrance Examination conducted by NECO, and places are allocated partly on merit and partly by state of origin, so that every state is represented.",
+  "campus_info": "The college is in Port Harcourt, Rivers State.",
+  "set": {
+   "type": "federal"
+  },
+  "sources": [
+   "https://education.gov.ng/fme-resources/unity-spotlight-history-of-unity-schools-2022/",
+   "https://education.gov.ng/senior-school-education-department/"
+  ]
+ },
+ "1": {
+  "history": "Greensprings School is a private British international school in Lagos. It describes itself as one of the leading British international schools in Nigeria, and it offers a broad education that combines academic study with life skills.",
+  "academics": "Greensprings follows a British international curriculum. Its sixth form offers the International Baccalaureate (IB) Diploma, and IB students take part in the programme's Creativity, Activity, Service (CAS) projects.",
+  "campus_info": "The school operates three campuses in Lagos: Anthony, Lekki and Ikoyi.",
+  "student_life": "Students take part in the Duke of Edinburgh International Award, including expeditions abroad, leadership trips and international competitions.",
+  "set": {
+   "name": "Greensprings School",
+   "website": "https://www.greenspringsschool.com",
+   "type": "international"
+  },
+  "sources": [
+   "https://www.greenspringsschool.com/",
+   "https://www.greenspringsschool.com/about-our-school/"
+  ]
+ },
+ "124": {
+  "history": "Whitesands School is a private Catholic secondary school for boys in Lekki, Lagos. It was founded by the Ikota Educational Foundation, set up by a group of Catholic parents in Lagos who wanted a school where their sons' formation in the faith would be taken seriously. The foundation bought a two-hectare plot in Lekki in 1996, before the area was developed, and the school opened in October 2000 with a pioneer class of 75 boys.",
+  "academics": "Whitesands prepares boys for university study at home and abroad. Its graduates have gone on to Nigerian universities such as the University of Lagos, the University of Ibadan and Pan-Atlantic University, and to universities overseas.",
+  "campus_info": "The campus is in Lekki, Lagos, and its chapel stands at the centre of the campus and of the school day.",
+  "student_life": "The school sees itself as a partnership of parents, teachers and students, in that order. More than a thousand boys have graduated from Whitesands since it opened.",
+  "established_year": 2000,
+  "set": {
+   "name": "Whitesands School",
+   "gender": "boys-only",
+   "website": "https://www.whitesands.org.ng",
+   "type": "private"
+  },
+  "sources": [
+   "https://www.whitesands.org.ng/about",
+   "https://www.whitesands.org.ng/"
+  ]
+ },
+ "125": {
+  "history": "Day Waterman College is a private international secondary school founded by the banker Tayo Aderinokun. It admitted its first students in September 2008. Its founders wanted Nigerian children to get a high-quality secondary education without leaving their home environment, so they could keep their cultural values and family ties.",
+  "academics": "The college follows a high-performance learning approach, built on the belief that every student can become a high achiever with practice and persistence. It runs a scholarship fund for students from poor families.",
+  "campus_info": "The college stands on extensive grounds outside the city in Abeokuta, Ogun State.",
+  "established_year": 2008,
+  "set": {
+   "website": "https://dwc.org.ng",
+   "type": "private"
+  },
+  "sources": [
+   "https://dwc.org.ng/",
+   "https://dwc.org.ng/founders-message/"
+  ]
+ },
+ "137": {
+  "history": "The International School, University of Ibadan (ISI) is a secondary school on the campus of the University of Ibadan, which runs it.",
+  "academics": "ISI teaches Nigeria's national junior and senior secondary curricula, and also offers the British curriculum for students taking IGCSE examinations. It runs a one-year accelerated A-level programme and prepares students for the standardised tests used for admission to universities in the United States and Canada. New students are admitted through the school's entrance examination.",
+  "campus_info": "The school is inside the University of Ibadan campus in Ibadan, Oyo State.",
+  "established_year": null,
+  "set": {
+   "name": "The International School, University of Ibadan",
+   "website": "https://isi.ui.edu.ng",
+   "type": "public"
+  },
+  "sources": [
+   "https://isi.ui.edu.ng/",
+   "https://admissions.isi.ui.edu.ng/"
+  ]
+ },
+ "1135": {
+  "history": "The Ekiti State University Staff School is a school run by Ekiti State University (EKSU) in Ado-Ekiti. Several of its senior teachers have served it since the 1990s.",
+  "academics": "The school is organised into a preparatory section, a lower basic section and an upper primary section, each led by a head of section.",
+  "campus_info": "The school is in Ado-Ekiti, Ekiti State, and is part of Ekiti State University.",
+  "set": {
+   "name": "Ekiti State University Staff School",
+   "website": "https://staffschool.eksu.edu.ng",
+   "type": "public",
+   "levels": "Nursery, Primary"
+  },
+  "sources": [
+   "https://staffschool.eksu.edu.ng/",
+   "https://staffschool.eksu.edu.ng/profile-of-the-head-teacher/"
+  ]
+ }
+}
