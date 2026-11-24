@@ -1,0 +1,310 @@
+group,id,name,state,area,reason
+DELETE,1164,Abia State University Demonstration School,Abia,Isuikwuato,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1162,Federal Government College Aba,Abia,Aba North,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1160,Government Girls Secondary School Umuahia,Abia,Umuahia North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1159,Government Science Secondary School Umuahia,Abia,Umuahia North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1163,Government Secondary School Arochukwu,Abia,Arochukwu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1110,Adamawa State University Staff School,Adamawa,Mubi North,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1104,Federal Government College Yola,Adamawa,Yola North,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1106,Government Girls Secondary School Yola,Adamawa,Yola North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1105,Government Science Secondary School Yola,Adamawa,Yola North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1108,Government Secondary School Ganye,Adamawa,Ganye,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1107,Government Secondary School Mubi,Adamawa,Mubi North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1109,Government Technical College Yola,Adamawa,Yola North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1111,Modibbo Adama University Demonstration School,Adamawa,Yola North,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,164,Federal Government Girls College Akwa Ibom,Akwa Ibom,Uyo,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1209,Government Girls Secondary School Uyo,Akwa Ibom,Uyo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1208,Government Science Secondary School Uyo,Akwa Ibom,Uyo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1210,University of Uyo Staff School,Akwa Ibom,Uyo,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1227,Federal Government College Awka,Anambra,Awka South,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1230,Government Girls Secondary School Awka,Anambra,Awka South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1228,Government Science Secondary School Awka,Anambra,Awka South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1229,Nnamdi Azikiwe University Staff School,Anambra,Awka South,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1118,Abubakar Tafawa Balewa University Staff School,Bauchi,Bauchi,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1114,Federal Government Girls College Azare,Bauchi,Katagum,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1113,Government Girls Secondary School Bauchi,Bauchi,Bauchi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,76,Government Science Secondary School Bauchi,Bauchi,Bauchi Local Government,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1116,Government Secondary School Alkaleri,Bauchi,Alkaleri,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1115,Government Secondary School Misau,Bauchi,Misau,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1247,Government Secondary School Ningi,Bauchi,Ningi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1117,Government Technical College Bauchi,Bauchi,Bauchi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1035,Community Secondary School Yenagoa,Bayelsa,Yenagoa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1040,Federal Government College Yenagoa,Bayelsa,Yenagoa,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1033,Federal Government Girls College Yenagoa,Bayelsa,Yenagoa,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1034,Government Science Secondary School Yenagoa,Bayelsa,Yenagoa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1038,Government Secondary School Brass,Bayelsa,Brass,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1165,Federal Government College Otukpo,Benue,Otukpo,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1168,Federal Government Girls College Makurdi,Benue,Makurdi,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1167,Government Girls Secondary School Makurdi,Benue,Makurdi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1166,Government Science Secondary School Makurdi,Benue,Makurdi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1170,Government Secondary School Gboko,Benue,Gboko,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1171,Government Technical College Makurdi,Benue,Makurdi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1169,University of Agriculture Makurdi Staff School,Benue,Makurdi,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1126,Community Secondary School Dikwa,Borno,Dikwa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1119,Federal Government Girls College Maiduguri,Borno,Maiduguri,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1121,Government Girls Secondary School Maiduguri,Borno,Maiduguri,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1120,Government Science Secondary School Maiduguri,Borno,Maiduguri,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1123,Government Secondary School Bama,Borno,Bama,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1122,Government Secondary School Biu,Borno,Biu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1124,Government Technical College Maiduguri,Borno,Maiduguri,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1125,University of Maiduguri Staff School,Borno,Maiduguri,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1212,Federal Government College Ogoja,Cross River,Ogoja,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1215,Government Girls Secondary School Calabar,Cross River,Calabar Municipal,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1213,Government Science Secondary School Calabar,Cross River,Calabar Municipal,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1214,University of Calabar Staff School,Cross River,Calabar Municipal,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1220,Delta State University Staff School Abraka,Delta,Ethiope East,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1217,Federal Government College Asaba,Delta,Oshimili South,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,40,Federal Government Girls College Warri,Delta,Warri,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1219,Government Girls Secondary School Asaba,Delta,Oshimili South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1218,Government Science Secondary School Asaba,Delta,Oshimili South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1245,Community Secondary School Ezza,Ebonyi,Ezza North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1130,Community Secondary School Onueke,Ebonyi,Ezza South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1132,Ebonyi State University Staff School,Ebonyi,Abakaliki,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1127,Federal Government Girls College Abakaliki,Ebonyi,Abakaliki,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1129,Government Girls Secondary School Abakaliki,Ebonyi,Abakaliki,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1128,Government Science Secondary School Abakaliki,Ebonyi,Abakaliki,Generic public-school name (many towns have several); no source identifies this one
+DELETE,163,Government Technical College Abakaliki,Ebonyi,Abakaliki,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1177,Government Secondary School Auchi,Edo,Etsako West,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1176,Government Technical College Benin City,Edo,Oredo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1141,Community Secondary School Emure,Ekiti,Emure,Generic public-school name (many towns have several); no source identifies this one
+DELETE,104,Federal Government College Ekiti,Ekiti,Ado-Ekiti,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1137,Federal Government Girls College Ekiti,Ekiti,Ado-Ekiti,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1136,Government Girls Secondary School Ado-Ekiti,Ekiti,Ado-Ekiti,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1138,Government Science Secondary School Ikere,Ekiti,Ikere,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1140,Government Secondary School Ijero,Ekiti,Ijero,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1238,Federal Government College Enugu North,Enugu,Enugu North,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,151,Federal Government Girls College Enugu,Enugu,Enugu East,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1240,Government Girls Secondary School Enugu,Enugu,Enugu North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1239,Government Science Secondary School Enugu,Enugu,Enugu North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,23,Federal Government Girls College Abuja,FCT,Bwari,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,178,Nigerian Turkish International College,FCT,Jabi,"Duplicate or misplaced copy of ""Nigerian Turkish International College Abuja"", which stays in the queue"
+DELETE,1049,Billiri Government Secondary School,Gombe,Billiri,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1044,Community Secondary School Gombe,Gombe,Gombe,Generic public-school name (many towns have several); no source identifies this one
+DELETE,92,Federal Government College Gombe,Gombe,Gombe Local Government,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1045,Federal Government Girls College Gombe,Gombe,Gombe,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1043,Gombe State University Staff School,Gombe,Gombe,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1042,Government Girls Secondary School Gombe,Gombe,Gombe,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1041,Government Science Secondary School Gombe,Gombe,Gombe,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1048,Government Secondary School Kwami,Gombe,Kwami,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1046,Government Technical College Gombe,Gombe,Gombe,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1184,Community Secondary School Orlu,Imo,Orlu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1179,Federal Government College Owerri,Imo,Owerri Municipal,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1181,Government Girls Secondary School Owerri,Imo,Owerri Municipal,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1183,Government Secondary School Okigwe,Imo,Okigwe,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1180,Imo State University Demonstration School,Imo,Owerri Municipal,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1055,Community Secondary School Birnin Kudu,Jigawa,Birnin Kudu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1052,Federal Government Girls College Dutse,Jigawa,Dutse,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1050,Government Girls Secondary School Dutse,Jigawa,Dutse,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1051,Government Science Secondary School Dutse,Jigawa,Dutse,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1054,Government Secondary School Gumel,Jigawa,Gumel,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1053,Government Secondary School Hadejia,Jigawa,Hadejia,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1058,Government Secondary School Kazaure,Jigawa,Kazaure,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1056,Government Technical College Dutse,Jigawa,Dutse,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1057,Jigawa State Science Secondary School,Jigawa,Dutse,Generic public-school name (many towns have several); no source identifies this one
+DELETE,35,Capital Science Academy,Kaduna,Barnawa,"Duplicate or misplaced copy of ""Capital Science Academy Abuja"", which stays in the queue"
+DELETE,145,Government Girls Secondary School Kaduna,Kaduna,Kaduna South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1244,Kaduna State University Staff School,Kaduna,Kaduna North,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1231,Bayero University Kano Staff School,Kano,Nassarawa,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1232,Government Girls Secondary School Hotoro,Kano,Nassarawa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,198,Government Girls Secondary School Kano,Kano,Fagge,Generic public-school name (many towns have several); no source identifies this one
+DELETE,197,Government Science Secondary School Kano,Kano,Kano Municipal,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1246,Government Secondary School Fagge,Kano,Fagge,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1233,Government Technical College Kano,Kano,Nassarawa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,85,Federal Government College Katsina,Katsina,Katsina Local Government,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1142,Federal Government Girls College Katsina,Katsina,Katsina,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1144,Government Girls Secondary School Katsina,Katsina,Katsina,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1143,Government Science Secondary School Katsina,Katsina,Katsina,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1149,Government Secondary School Daura,Katsina,Daura,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1145,Government Secondary School Funtua,Katsina,Funtua,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1146,Government Secondary School Malumfashi,Katsina,Malumfashi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1147,Government Technical College Katsina,Katsina,Katsina,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1148,Umaru Musa Yaradua University Staff School,Katsina,Katsina,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1067,Community Secondary School Zuru,Kebbi,Zuru,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1059,Government Girls Secondary School Birnin Kebbi,Kebbi,Birnin Kebbi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1060,Government Science Secondary School Kebbi,Kebbi,Birnin Kebbi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1062,Government Secondary School Argungu,Kebbi,Argungu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1063,Government Secondary School Kamba,Kebbi,Kamba,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1066,Government Secondary School Yauri,Kebbi,Yauri,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1064,Government Technical College Birnin Kebbi,Kebbi,Birnin Kebbi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1065,Kebbi State Science Secondary School,Kebbi,Birnin Kebbi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1153,Federal Government College Okene,Kogi,Okene,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1152,Government Girls Secondary School Lokoja,Kogi,Lokoja,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1151,Government Science Secondary School Lokoja,Kogi,Lokoja,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1155,Government Secondary School Ankpa,Kogi,Ankpa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1154,Government Secondary School Kabba,Kogi,Kabba-Bunu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,100,Government Secondary School Lokoja,Kogi,Lokoja,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1157,Government Technical College Lokoja,Kogi,Lokoja,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1156,Kogi State University Staff School,Kogi,Dekina,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1225,Government Girls Secondary School Ilorin,Kwara,Ilorin West,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1223,Government Science Secondary School Ilorin,Kwara,Ilorin West,Generic public-school name (many towns have several); no source identifies this one
+DELETE,97,Government Secondary School Ilorin,Kwara,Ilorin East,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1226,Government Secondary School Offa,Kwara,Offa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,129,Government Technical College Ilorin,Kwara,Ilorin West,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1224,University of Ilorin Staff School,Kwara,Ilorin West,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1072,Community Secondary School Keffi,Nasarawa,Keffi,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1071,Federal Government College Lafia,Nasarawa,Lafia,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1068,Federal Government Girls College Lafia,Nasarawa,Lafia,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1070,Government Girls Secondary School Lafia,Nasarawa,Lafia,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1069,Government Science Secondary School Lafia,Nasarawa,Lafia,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1073,Government Secondary School Akwanga,Nasarawa,Akwanga,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1076,Government Secondary School Nasarawa,Nasarawa,Nasarawa,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1075,Government Technical College Lafia,Nasarawa,Lafia,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1074,Nasarawa State University Staff School,Nasarawa,Keffi,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,95,Government Day Secondary School Minna,Niger,Minna,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1185,Government Girls Secondary School Minna,Niger,Chanchaga,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1187,Government Science Secondary School Minna,Niger,Chanchaga,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1189,Government Secondary School Bida,Niger,Bida,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1190,Government Secondary School Kontagora,Niger,Kontagora,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1188,IBB University Lapai Staff School,Niger,Lapai,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,50,Government Technical College Abeokuta,Ogun,Abeokuta,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1191,Adeyemi Federal University Staff School,Ondo,Ondo West,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,106,Federal Government Girls College Ondo,Ondo,Akure South,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,130,Federal Government Technical College Akure,Ondo,Akure North,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,108,Government Girls College Akure,Ondo,Akure South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1193,Government Girls Secondary School Akure,Ondo,Akure South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1194,Government Science Secondary School Akure,Ondo,Akure South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1242,Government Secondary School Akure,Ondo,Akure South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,138,Federal Government College Ile-Ife,Osun,Ife Central,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1234,Federal Government College Ilesha,Osun,Ilesa West,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1237,Government Girls Secondary School Osogbo,Osun,Osogbo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1235,Government Science Secondary School Osogbo,Osun,Osogbo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1236,Obafemi Awolowo University International School,Osun,Ife Central,"Duplicate or misplaced copy of ""International School Obafemi Awolowo University"", which stays in the queue"
+DELETE,111,Osun State Government College,Osun,Oshogbo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,112,Lead British International School,Oyo,Ibadan North,"Duplicate or misplaced copy of ""Lead British International School Abuja"", which stays in the queue"
+DELETE,1200,Community Secondary School Shendam,Plateau,Shendam,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1195,Federal Government Girls College Jos,Plateau,Jos North,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1197,Government Girls Secondary School Jos,Plateau,Jos North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1196,Government Science Secondary School Jos,Plateau,Jos North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1199,Government Secondary School Pankshin,Plateau,Pankshin,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1198,University of Jos Staff School,Plateau,Jos North,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,186,Community Secondary School Rumuokwurushi,Rivers,Obio-Akpor,Generic public-school name (many towns have several); no source identifies this one
+DELETE,187,Government Comprehensive Secondary School Borikiri,Rivers,Port Harcourt City,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1201,Federal Government Girls College Sokoto,Sokoto,Sokoto North,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,141,Government Girls College Sokoto,Sokoto,Sokoto South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1203,Government Girls Secondary School Sokoto,Sokoto,Sokoto North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1202,Government Science Secondary School Sokoto,Sokoto,Sokoto North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,82,Government Secondary School Sokoto,Sokoto,Sokoto South,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1205,Government Secondary School Wurno,Sokoto,Wurno,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1206,Government Technical College Sokoto,Sokoto,Sokoto North,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1204,Usmanu Danfodio University Staff School,Sokoto,Sokoto North,Pattern-generated staff/demonstration school; parent institution does not list it
+DELETE,1084,Community Secondary School Zing,Taraba,Zing,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1080,Federal Government College Jalingo,Taraba,Jalingo,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1079,Government Girls Secondary School Jalingo,Taraba,Jalingo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1078,Government Science Secondary School Jalingo,Taraba,Jalingo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1082,Government Secondary School Bali,Taraba,Bali,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1081,Government Secondary School Wukari,Taraba,Wukari,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1083,Government Technical College Jalingo,Taraba,Jalingo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1085,Taraba State Government Secondary School,Taraba,Jalingo,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1093,Community Secondary School Geidam,Yobe,Geidam,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1089,Federal Government College Damaturu,Yobe,Damaturu,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1086,Federal Government Girls College Damaturu,Yobe,Damaturu,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1088,Government Girls Secondary School Damaturu,Yobe,Damaturu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1087,Government Science Secondary School Damaturu,Yobe,Damaturu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1094,Government Secondary School Gashua,Yobe,Gashua,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1091,Government Secondary School Nguru,Yobe,Nguru,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1090,Government Secondary School Potiskum,Yobe,Potiskum,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1092,Government Technical College Damaturu,Yobe,Damaturu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1102,Community Secondary School Bungudu,Zamfara,Bungudu,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1098,Federal Government College Gusau,Zamfara,Gusau,Not on the Unity Schools list or in Ministry sources by this name and town
+DELETE,1097,Government Girls Secondary School Gusau,Zamfara,Gusau,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1096,Government Science Secondary School Gusau,Zamfara,Gusau,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1103,Government Secondary School Anka,Zamfara,Anka,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1099,Government Secondary School Kaura Namoda,Zamfara,Kaura Namoda,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1100,Government Secondary School Talata Mafara,Zamfara,Talata Mafara,Generic public-school name (many towns have several); no source identifies this one
+DELETE,1101,Government Technical College Gusau,Zamfara,Gusau,Generic public-school name (many towns have several); no source identifies this one
+REVIEW,91,American University of Nigeria Secondary School,Adamawa,Yola North,University-linked school not confirmed on the parent institution site
+REVIEW,64,Niger Delta University Staff School,Bayelsa,Yenagoa,University-linked school not confirmed on the parent institution site
+REVIEW,74,Government College Maiduguri,Borno,Maiduguri Metropolitan,"Could be a historic ""Government College"" (several are real) but no source confirmed it"
+REVIEW,148,Navy Secondary School Calabar,Cross River,Calabar South,Military/police school: real ones exist but this name and location were not confirmed
+REVIEW,61,College of Education Demonstration School Warri,Delta,Warri South,University-linked school not confirmed on the parent institution site
+REVIEW,1172,Government College Benin City,Edo,Oredo,"Could be a historic ""Government College"" (several are real) but no source confirmed it"
+REVIEW,1134,Government College Ado-Ekiti,Ekiti,Ado-Ekiti,"Could be a historic ""Government College"" (several are real) but no source confirmed it"
+REVIEW,154,University of Nigeria Secondary School,Enugu,Nsukka,University-linked school not confirmed on the parent institution site
+REVIEW,67,Government College Owerri,Imo,Owerri Municipal,"Could be a historic ""Government College"" (several are real) but no source confirmed it"
+REVIEW,143,Ahmadu Bello University Demonstration Secondary School,Kaduna,Zaria,University-linked school not confirmed on the parent institution site
+REVIEW,147,Air Force Secondary School Kaduna,Kaduna,Kaduna North,Military/police school: real ones exist but this name and location were not confirmed
+REVIEW,144,Command Secondary School Kaduna,Kaduna,Kaduna North,Military/police school: real ones exist but this name and location were not confirmed
+REVIEW,86,Government College Katsina,Katsina,Katsina Local Government,"Could be a historic ""Government College"" (several are real) but no source confirmed it"
+REVIEW,168,Command Day Secondary School Ojo,Lagos,Ojo,Military/police school: real ones exist but this name and location were not confirmed
+REVIEW,167,Nigerian Navy Secondary School Ojo,Lagos,Ojo,Military/police school: real ones exist but this name and location were not confirmed
+REVIEW,131,Government Science College Kagara,Niger,Rafi,"Likely real (the school in the 2021 Kagara kidnapping, widely reported) but not yet confirmed from a source here"
+REVIEW,116,Babcock University High School,Ogun,Ikenne,University-linked school not confirmed on the parent institution site
+REVIEW,115,Covenant University Secondary School,Ogun,Ado-Odo/Ota,University-linked school not confirmed on the parent institution site
+REVIEW,1192,Government College Owo,Ondo,Owo,"Could be a historic ""Government College"" (several are real) but no source confirmed it"
+REVIEW,29,The Polytechnic Ibadan Staff School,Oyo,Bodija,University-linked school not confirmed on the parent institution site
+REVIEW,78,Government College Jos,Plateau,Jos North,"Could be a historic ""Government College"" (several are real) but no source confirmed it"
+REVIEW,149,Air Force Secondary School Port Harcourt,Rivers,Port Harcourt,Military/police school: real ones exist but this name and location were not confirmed
+KEEP,1161,Holy Ghost Secondary School Umuahia,Abia,Umuahia North,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,161,Marist Comprehensive Academy Uturu,Abia,Isuikwuato,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,166,Cornelia Connelly College Uyo,Akwa Ibom,Uyo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,195,Lantana International School Uyo,Akwa Ibom,Uyo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1211,Mary Immaculate Secondary School Uyo,Akwa Ibom,Uyo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,196,Nigerian Christian Institute Oron,Akwa Ibom,Oron,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,157,Our Lady of Lourdes Secondary School Onitsha,Anambra,Onitsha South,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,177,Rojenny Sports Academy,Anambra,Idemili South,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,47,St. Charles Borromeo College Onitsha,Anambra,Onitsha,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1036,Gloryland International School Yenagoa,Bayelsa,Yenagoa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1037,Heritage International School Bayelsa,Bayelsa,Yenagoa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1032,Ijaw National High School,Bayelsa,Yenagoa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1039,Stella Maris College Yenagoa,Bayelsa,Yenagoa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,102,Mount Saint Gabriel Secondary School,Benue,Makurdi,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,103,Mount Saint Michael Secondary School,Benue,Makurdi,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,70,Holy Child Secondary School Calabar,Cross River,Calabar Municipal,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1216,Idem Memorial Secondary School Calabar,Cross River,Calabar Municipal,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,63,Nana College Warri,Delta,Warri South,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1221,Sapele Grammar School,Delta,Sapele,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1133,Our Lady of Apostles Secondary School Abakaliki,Ebonyi,Abakaliki,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1178,Idia College Benin City,Edo,Oredo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,43,Igbinedion Education Centre,Edo,Ugbowo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1175,Institute of Continuing Education Benin,Edo,Oredo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,42,Notre Dame Girls College,Edo,Ring Road,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1139,Fiwasaye Girls Grammar School Akure,Ekiti,Ado-Ekiti,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,153,College of the Immaculate Conception Enugu,Enugu,Enugu North,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,176,Nigerian Model High School Enugu,Enugu,Enugu North,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,152,Queen of the Rosary College Enugu,Enugu,Enugu South,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,18,British International School Abuja,FCT,Jabi,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,180,Capital Science Academy Abuja,FCT,Kubwa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,21,Lead British International School Abuja,FCT,Gwarinpa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,20,Nigerian Turkish International College Abuja,FCT,Wuse,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,179,Premiere Academy Lugbe,FCT,Lugbe,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1047,Nairobi International School Gombe,Gombe,Gombe,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,49,Holy Ghost College Owerri,Imo,Owerri Municipal,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,1182,Seat of Wisdom Seminary Owerri,Imo,Owerri Municipal,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,34,Nigerian Turkish International College Kaduna,Kaduna,Kaduna South,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,37,Nigerian Turkish International College Kano,Kano,Nassarawa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,128,Adesoye College Offa,Kwara,Offa,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,98,Baptist Academy Ilorin,Kwara,Ilorin South,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,175,Ansar-Ud-Deen College Isolo,Lagos,Isolo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,172,Arch Bishop Aggey Memorial School,Lagos,Lagos Island,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,133,Caleb International College,Lagos,Lekki,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,59,Christland College Lekki,Lagos,Lekki,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,135,Dansol High School,Lagos,Ikeja,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,123,Deeper Life High School Lagos,Lagos,Gbagada,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,192,Eko Girls High School,Lagos,Mushin,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,126,Greenoak International School,Lagos,Lekki,Real school found elsewhere: record location needs correcting before it can be published
+KEEP,194,Ikeja Girls High School,Lagos,Ikeja,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,193,Ikeja Grammar School,Lagos,Ikeja,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,169,Lagos State Model College Meiran,Lagos,Agege,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,3,Lekki British International School,Lagos,Lekki,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,122,MFM International School Lagos,Lagos,Yaba,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,189,Pacelli School of the Blind,Lagos,Surulere,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,58,Providence Heights School Lekki,Lagos,Lekki,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,134,Temple School Lagos,Lagos,Ajah,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,114,Bells Secondary School,Ogun,Ado-Odo/Ota,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,121,RCCG International School,Ogun,Obafemi Owode,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,127,Rainbow College Mowe,Ogun,Obafemi Owode,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,113,The Ambassadors College Ota,Ogun,Ado-Odo/Ota,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,107,Aquinas College Akure,Ondo,Akure South,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,140,International School Obafemi Awolowo University,Osun,Ife Central,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,139,Oduduwa College Ile-Ife,Osun,Ife Central,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,110,Wesley College Oshogbo,Osun,Oshogbo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,182,Fountain Heights School Ibadan,Oyo,Ibadan South-West,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,181,Lead City International School Ibadan,Oyo,Ibadan North-West,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,136,Lifeforte International School,Oyo,Ibadan South-West,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,80,Nigerian Christian Institute Jos,Plateau,Jos North,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,188,Bishop Crowther Memorial Girls School,Rivers,Elelenwo,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,26,British International School Port Harcourt,Rivers,Trans Amadi,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,184,Grace of God Mission Schools,Rivers,Old GRA,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,183,Heritage Heights School,Rivers,Woji,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,185,International Primary and Secondary School Port Harcourt,Rivers,Trans Amadi,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
+KEEP,142,Sultan Bello Secondary School Sokoto,Sokoto,Sokoto North,Distinctive name: may be real; keep hidden in the queue for a source or an owner claim
