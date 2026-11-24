@@ -16,11 +16,14 @@ gen_university_content_sql.py. Inserts are idempotent: a slug that already
 exists is left untouched (ON CONFLICT DO NOTHING).
 
 Usage: python crawler/fixes/gen_new_records_sql.py crawler/content/new_records_2026-11-24.json > out.sql
+       add --update to refresh the profile text of records that already exist
+       (matched by slug) instead of inserting them.
 """
 import json
 import os
 import re
 import sys
+import unicodedata
 
 sys.path.insert(0, os.path.dirname(__file__))
 from gen_university_content_sql import admission_note, meta_description, meta_title  # noqa: E402
@@ -37,7 +40,8 @@ def q(v):
 
 
 def slugify(name):
-    s = name.lower().replace('&', ' and ').replace("'", '')
+    s = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower()
+    s = s.replace('&', ' and ').replace("'", '')
     return re.sub(r'[^a-z0-9]+', '-', s).strip('-')
 
 
@@ -79,10 +83,17 @@ def main(path):
         }
         names = list(cols) + ['content_sources', 'field_sources', 'data_verified_at', 'enriched_at', 'enrichment_status', 'needs_ai_enrichment']
         vals = [q(v) for v in cols.values()] + [q(json.dumps(cs)) + '::jsonb', q(json.dumps(fs)) + '::jsonb', 'NOW()', 'NOW()', "'completed'", 'false']
-        out.append(f"INSERT INTO schools ({', '.join(names)}) VALUES ({', '.join(vals)}) ON CONFLICT (slug) DO NOTHING;")
+        if UPDATE:
+            keep = ['enriched_history', 'enriched_academics', 'enriched_campus_info', 'enriched_student_life', 'meta_title', 'meta_description']
+            sets = ', '.join(f"{c} = {q(cols[c])}" for c in keep)
+            out.append(f"UPDATE schools SET {sets}, content_sources = {q(json.dumps(cs))}::jsonb, updated_at = NOW() WHERE slug = {q(cols['slug'])};")
+        else:
+            out.append(f"INSERT INTO schools ({', '.join(names)}) VALUES ({', '.join(vals)}) ON CONFLICT (slug) DO NOTHING;")
     out.append('COMMIT;')
     print('\n'.join(out))
 
+
+UPDATE = '--update' in sys.argv
 
 if __name__ == '__main__':
     main(sys.argv[1])
