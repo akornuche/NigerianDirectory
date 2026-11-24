@@ -1,0 +1,1081 @@
+{
+ "_about": "New verified records, 2026-11-24. Universities: on the NUC list of approved universities (existence and type); full profiles for three from Wikipedia. Schools: confirmed by their Wikipedia articles. Wording is our own.",
+ "u00": {
+  "category": "university",
+  "name": "University of Nigeria, Nsukka",
+  "type": "federal",
+  "state": "Enugu",
+  "city": "Nsukka",
+  "website": "https://www.unn.edu.ng",
+  "established_year": 1960,
+  "source_name": "NUC list of federal universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/",
+  "h": "The University of Nigeria, Nsukka (UNN) is a federal university and the first indigenous, autonomous university in Nigeria. A law to set it up in the old Eastern Region was passed on 18 May 1955, championed by Nnamdi Azikiwe, who later became Nigeria's first president. Planners from the University of Exeter and Michigan State University surveyed the Nsukka site in 1958, and a provisional council chaired by Azikiwe was appointed in April 1959. The university formally opened on 7 October 1960, days after independence, as one of Nigeria's first-generation universities. It was modelled on the American system and was the first land-grant university in Africa, built around service to the country's practical needs.",
+  "a": "UNN is a public research university with 17 faculties and 102 academic departments, offering more than 108 undergraduate and 211 postgraduate programmes, including medicine, law, engineering, agriculture and the arts and sciences. It is regularly counted among the most respected universities in Nigeria.",
+  "c": "The main campus is in Nsukka, Enugu State. The university also has campuses in Enugu city and at Ituku-Ozalla in Enugu State, the site of its teaching hospital, and in Aba, Abia State.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/University_of_Nigeria",
+   "https://www.unn.edu.ng",
+   "https://www.nuc.edu.ng/nigerian-univerisities/federal-univeristies/"
+  ]
+ },
+ "u01": {
+  "category": "university",
+  "name": "Lagos State University",
+  "type": "state",
+  "state": "Lagos",
+  "city": "Ojo",
+  "website": "https://www.lasu.edu.ng",
+  "established_year": 1983,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Lagos State University (LASU) is a public university owned by the Lagos State Government. It was established in 1983 during the administration of Governor Lateef Jakande, 'for the advancement of learning and establishment of academic excellence'. It was first conceived as a multi-campus, non-residential university, and it began with three faculties: Commerce and Business Administration, Law, and Medicine.",
+  "a": "LASU now serves more than 35,000 students and offers diploma, degree and postgraduate programmes, including an MBA. Faculties added over time include Arts, Education, Engineering, Social Sciences, Management Sciences, Science, and Communication and Media Studies, together with a School of Transport and a College of Medicine. It has hosted a World Bank Africa Centre of Excellence in science, technology, engineering and mathematics. Times Higher Education placed it among the world's top 600 universities in its 2020 rankings, and in 2021 named it the best young university in Nigeria.",
+  "c": "The main campus is at Ojo, on the Lagos-Badagry Expressway. The College of Medicine is at Ikeja, and the Epe campus, on the north side of the Lekki Lagoon, houses engineering, agriculture, environmental sciences and pre-degree studies.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lagos_State_University",
+   "https://www.lasu.edu.ng",
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u02": {
+  "category": "university",
+  "name": "University of Medical Sciences, Ondo",
+  "type": "state",
+  "state": "Ondo",
+  "city": "Ondo",
+  "website": "https://www.unimed.edu.ng",
+  "established_year": 2015,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "The University of Medical Sciences, Ondo (UNIMED) is a specialised public university owned by the Ondo State Government. It was created by a law signed in 2014 by Governor Olusegun Mimiko and approved by the National Universities Commission in 2015. It is described as the third specialised medical university in Africa, and it was the first specialised medical university in Nigeria to be accredited by the National Universities Commission. Its pioneer vice-chancellor was Professor Friday Okonofua, a gynaecologist and the founder of the Women's Health and Action Research Centre.",
+  "a": "UNIMED concentrates on medicine and the health sciences. It also runs an Institute of Community Health Innovation and Development.",
+  "c": "The university is in Ondo City, Ondo State, in south-western Nigeria.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/University_of_Medical_Sciences,_Ondo",
+   "https://www.unimed.edu.ng",
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u03": {
+  "category": "university",
+  "name": "Moshood Abiola University of Science and Technology",
+  "type": "state",
+  "state": "Ogun",
+  "city": "Abeokuta",
+  "website": null,
+  "established_year": 2017,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Moshood Abiola University of Science and Technology is a public university owned by the Ogun State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2017.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Abeokuta, Ogun State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u04": {
+  "category": "university",
+  "name": "University of Agriculture and Environmental Sciences, Umuagwo",
+  "type": "state",
+  "state": "Imo",
+  "city": "Umuagwo",
+  "website": "https://www.uaes.edu.ng/",
+  "established_year": 2019,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "University of Agriculture and Environmental Sciences, Umuagwo is a public university owned by the Imo State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2019.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Umuagwo, Imo State.",
+  "sources": [
+   "https://www.uaes.edu.ng/",
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u05": {
+  "category": "university",
+  "name": "Bamidele Olumilua University of Education, Science and Technology",
+  "type": "state",
+  "state": "Ekiti",
+  "city": "Ikere-Ekiti",
+  "website": "https://bouesti.edu.ng/",
+  "established_year": 2020,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Bamidele Olumilua University of Education, Science and Technology is a public university owned by the Ekiti State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2020.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Ikere-Ekiti, Ekiti State.",
+  "sources": [
+   "https://bouesti.edu.ng/",
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u06": {
+  "category": "university",
+  "name": "Shehu Shagari University of Education",
+  "type": "state",
+  "state": "Sokoto",
+  "city": "Sokoto",
+  "website": null,
+  "established_year": 2022,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Shehu Shagari University of Education is a public university owned by the Sokoto State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2022.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Sokoto, Sokoto State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u07": {
+  "category": "university",
+  "name": "State University of Medical and Applied Sciences, Igbo-Eno",
+  "type": "state",
+  "state": "Enugu",
+  "city": "Igbo-Eno",
+  "website": null,
+  "established_year": 2022,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "State University of Medical and Applied Sciences, Igbo-Eno is a public university owned by the Enugu State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2022.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Igbo-Eno, Enugu State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u08": {
+  "category": "university",
+  "name": "University of Ilesa",
+  "type": "state",
+  "state": "Osun",
+  "city": "Ilesa",
+  "website": null,
+  "established_year": 2022,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "University of Ilesa is a public university owned by the Osun State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2022.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Ilesa, Osun State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u09": {
+  "category": "university",
+  "name": "Kogi State University, Kabba",
+  "type": "state",
+  "state": "Kogi",
+  "city": "Kabba",
+  "website": null,
+  "established_year": 2023,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Kogi State University, Kabba is a public university owned by the Kogi State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2023. It is a separate institution from Prince Abubakar Audu University in Anyigba, which was formerly called Kogi State University.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Kabba, Kogi State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u10": {
+  "category": "university",
+  "name": "Kwara State University of Education",
+  "type": "state",
+  "state": "Kwara",
+  "city": "Ilorin",
+  "website": null,
+  "established_year": 2024,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Kwara State University of Education is a public university owned by the Kwara State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2024.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Ilorin, Kwara State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u11": {
+  "category": "university",
+  "name": "Abdulsalam Abubakar University of Agriculture and Climate Action",
+  "type": "state",
+  "state": "Niger",
+  "city": "Mokwa",
+  "website": null,
+  "established_year": 2025,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Abdulsalam Abubakar University of Agriculture and Climate Action is a public university owned by the Niger State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2025.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Mokwa, Niger State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u12": {
+  "category": "university",
+  "name": "Ebonyi State University of ICT, Science and Technology",
+  "type": "state",
+  "state": "Ebonyi",
+  "city": "Oferekpe",
+  "website": null,
+  "established_year": 2025,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Ebonyi State University of ICT, Science and Technology is a public university owned by the Ebonyi State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2025.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Oferekpe, Ebonyi State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u13": {
+  "category": "university",
+  "name": "Cross River University of Education and Entrepreneurship",
+  "type": "state",
+  "state": "Cross River",
+  "city": "Akamkpa",
+  "website": null,
+  "established_year": 2025,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Cross River University of Education and Entrepreneurship is a public university owned by the Cross River State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2025.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Akamkpa, Cross River State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u14": {
+  "category": "university",
+  "name": "Benue State University of Agriculture, Science and Technology",
+  "type": "state",
+  "state": "Benue",
+  "city": "Ihugh",
+  "website": null,
+  "established_year": 2025,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Benue State University of Agriculture, Science and Technology is a public university owned by the Benue State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2025.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Ihugh, Benue State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u15": {
+  "category": "university",
+  "name": "University of Aeronautics and Aerospace Engineering, Ezza",
+  "type": "state",
+  "state": "Ebonyi",
+  "city": "Ezza",
+  "website": null,
+  "established_year": 2025,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "University of Aeronautics and Aerospace Engineering, Ezza is a public university owned by the Ebonyi State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2025.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Ezza, Ebonyi State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u16": {
+  "category": "university",
+  "name": "University of Innovation, Science and Technology, Omuma",
+  "type": "state",
+  "state": "Imo",
+  "city": "Omuma",
+  "website": null,
+  "established_year": 2025,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "University of Innovation, Science and Technology, Omuma is a public university owned by the Imo State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2025.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Omuma, Imo State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u17": {
+  "category": "university",
+  "name": "Taraba State University of Tropical Agriculture, Science, Technology and Climate Action",
+  "type": "state",
+  "state": "Taraba",
+  "city": "Gembu",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Taraba State University of Tropical Agriculture, Science, Technology and Climate Action is a public university owned by the Taraba State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Gembu, Taraba State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u18": {
+  "category": "university",
+  "name": "Jigawa State University of Medical and Allied Health Sciences",
+  "type": "state",
+  "state": "Jigawa",
+  "city": "Majia",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of state universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/",
+  "h": "Jigawa State University of Medical and Allied Health Sciences is a public university owned by the Jigawa State Government. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Majia, Jigawa State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/state-univerisity/"
+  ]
+ },
+ "u19": {
+  "category": "university",
+  "name": "Millennium Crest University",
+  "type": "private",
+  "state": "Ondo",
+  "city": "Ikare-Akoko",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Millennium Crest University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Ikare-Akoko, Ondo State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u20": {
+  "category": "university",
+  "name": "Abdulfattah Durojaiye University",
+  "type": "private",
+  "state": "Ogun",
+  "city": "Abeokuta",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Abdulfattah Durojaiye University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Abeokuta, Ogun State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u21": {
+  "category": "university",
+  "name": "Euston University",
+  "type": "private",
+  "state": "Ebonyi",
+  "city": "Abakaliki",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Euston University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Abakaliki, Ebonyi State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u22": {
+  "category": "university",
+  "name": "Adeche Momoh University",
+  "type": "private",
+  "state": "Edo",
+  "city": "Igarra",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Adeche Momoh University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Igarra, Edo State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u23": {
+  "category": "university",
+  "name": "Sani Bello University",
+  "type": "private",
+  "state": "Niger",
+  "city": "Kontagora",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Sani Bello University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Kontagora, Niger State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u24": {
+  "category": "university",
+  "name": "Godday Erewa University",
+  "type": "private",
+  "state": "Delta",
+  "city": "Sapele",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Godday Erewa University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Sapele, Delta State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u25": {
+  "category": "university",
+  "name": "Owolabi University",
+  "type": "private",
+  "state": "Osun",
+  "city": "Oke-Ila Orangun",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Owolabi University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Oke-Ila Orangun, Osun State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u26": {
+  "category": "university",
+  "name": "Regnum Medical University",
+  "type": "private",
+  "state": "Lagos",
+  "city": "Anthony",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Regnum Medical University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Anthony, Lagos State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u27": {
+  "category": "university",
+  "name": "City University, Abuja",
+  "type": "private",
+  "state": "FCT",
+  "city": "Abuja",
+  "website": "https://www.cityuniversity.edu.ng/",
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "City University, Abuja is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Abuja, in the Federal Capital Territory.",
+  "sources": [
+   "https://www.cityuniversity.edu.ng/",
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u28": {
+  "category": "university",
+  "name": "Transatlantic University of Medicine and Health Sciences",
+  "type": "private",
+  "state": "Anambra",
+  "city": "Umuchukwu",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Transatlantic University of Medicine and Health Sciences is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Umuchukwu, Anambra State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u29": {
+  "category": "university",
+  "name": "Maria Assumpta University",
+  "type": "private",
+  "state": "Imo",
+  "city": "Owerri",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Maria Assumpta University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Owerri, Imo State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u30": {
+  "category": "university",
+  "name": "High Flyers University",
+  "type": "private",
+  "state": "Ekiti",
+  "city": "Ikere-Ekiti",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "High Flyers University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Ikere-Ekiti, Ekiti State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u31": {
+  "category": "university",
+  "name": "Ummah University of Nigeria",
+  "type": "private",
+  "state": "FCT",
+  "city": "Abuja",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Ummah University of Nigeria is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Abuja, in the Federal Capital Territory.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u32": {
+  "category": "university",
+  "name": "Pearl University",
+  "type": "private",
+  "state": "Cross River",
+  "city": "Calabar",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Pearl University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Calabar, Cross River State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "u33": {
+  "category": "university",
+  "name": "Omega University",
+  "type": "private",
+  "state": "Kaduna",
+  "city": "Kaduna",
+  "website": null,
+  "established_year": 2026,
+  "source_name": "NUC list of private universities",
+  "source_url": "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/",
+  "h": "Omega University is a private university. It appears on the National Universities Commission's list of approved universities, which records its establishment in 2026.",
+  "a": "As a recently licensed university, it is still developing its range of programmes. Check the university's official channels and JAMB for the courses currently on offer.",
+  "c": "The university is located in Kaduna, Kaduna State.",
+  "sources": [
+   "https://www.nuc.edu.ng/nigerian-univerisities/private-univeristies/"
+  ]
+ },
+ "s000": {
+  "name": "American International School of Lagos",
+  "type": "international",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Victoria Island",
+  "established_year": 1964,
+  "h": "The American International School of Lagos (AISL) is an international school that follows an American curriculum, founded in 1964. It moved to its present campus on Victoria Island in 1981, on about 2.4 hectares (6 acres) of land leased from the government.",
+  "a": "AISL teaches students from preschool to grade 12, following the American system of education.",
+  "c": "The campus is on Victoria Island, Lagos.",
+  "s": "The school has more than 600 students. About 30 per cent are American, and the rest come from over 50 countries, with large groups from India, the United Kingdom, Nigeria, Canada, South Africa, Israel, Lebanon and the Netherlands.",
+  "category": "school",
+  "source_name": "Wikipedia: American International School of Lagos",
+  "source_url": "https://en.wikipedia.org/wiki/American_International_School_of_Lagos",
+  "sources": [
+   "https://en.wikipedia.org/wiki/American_International_School_of_Lagos"
+  ]
+ },
+ "s001": {
+  "name": "Apata Memorial High School",
+  "type": "private",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Lagos",
+  "established_year": 1980,
+  "gender": "co-ed",
+  "boarding": true,
+  "h": "Apata Memorial High School is a privately owned school in Lagos run on military lines. It was founded in 1980 by S. O. Apata, a retired brigadier-general of the Nigerian Army.",
+  "a": "The school has about 1,550 pupils and 150 teachers, which gives it relatively small classes for a Lagos school of its size.",
+  "c": "The school is in Lagos.",
+  "s": "It takes both boarding and day students, and its military-style discipline is part of daily life for boys and girls alike.",
+  "category": "school",
+  "source_name": "Wikipedia: Apata Memorial High School",
+  "source_url": "https://en.wikipedia.org/wiki/Apata_Memorial_High_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Apata_Memorial_High_School"
+  ]
+ },
+ "s002": {
+  "name": "Essence International School",
+  "type": "international",
+  "state": "Kaduna",
+  "city": "Kaduna",
+  "area": "Ungwan Rimi",
+  "established_year": 1982,
+  "h": "Essence International School (EIS) is an international school in Kaduna, founded in 1982.",
+  "a": "The school covers every stage of schooling: pre-nursery, nursery, primary and secondary education.",
+  "c": "It is on Kashim Ibrahim Road, near Sultan Road, in the Ungwan Rimi area of Kaduna.",
+  "category": "school",
+  "source_name": "Wikipedia: Essence International School",
+  "source_url": "https://en.wikipedia.org/wiki/Essence_International_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Essence_International_School"
+  ]
+ },
+ "s003": {
+  "name": "Air Force Military School, Jos",
+  "type": "federal",
+  "state": "Plateau",
+  "city": "Jos",
+  "area": "Jos",
+  "established_year": 1980,
+  "gender": "boys-only",
+  "boarding": true,
+  "h": "Air Force Military School, Jos (AFMS) is a secondary school run by the Nigerian Air Force, established on 18 September 1980. By August 2022 it had graduated more than 3,794 'junior airmen', and many of its graduates have gone on to be commissioned officers in the army, air force and navy.",
+  "a": "AFMS combines a normal secondary curriculum, including subjects such as mathematics, physics, geography and French, with military training. Boys aged roughly 11 to 17 learn drill, map reading and interpretation, fieldcraft, compass and route marches, obstacle crossing, abseiling and weapons handling, as well as taking part in range practice, mock exercises and bush camps.",
+  "c": "The school is in Jos, Plateau State.",
+  "s": "Students are known as junior airmen, and the daily routine follows military discipline.",
+  "category": "school",
+  "source_name": "Wikipedia: Air Force Military School, Jos",
+  "source_url": "https://en.wikipedia.org/wiki/Air_Force_Military_School%2C_Jos",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Air_Force_Military_School%2C_Jos"
+  ]
+ },
+ "s004": {
+  "name": "Nigerian Navy Secondary School, Abeokuta",
+  "type": "federal",
+  "state": "Ogun",
+  "city": "Abeokuta",
+  "area": "Ibara",
+  "established_year": 1990,
+  "gender": "boys-only",
+  "boarding": true,
+  "h": "The Nigerian Navy Secondary School, Abeokuta is an all-boys boarding school opened by the Nigerian Navy in 1990. By then, the Navy's only other secondary school, at Ojo in Lagos, could no longer take all the children of naval personnel who wanted places. The governor of Ogun State, Captain Mohammed Lawal, suggested the site of the defunct St Leo's Teachers' Training College at Ibara, Abeokuta, and the Navy appointed the school's first staff on 20 November 1990.",
+  "a": "The school offers academic secondary education together with military-style training. Admiral Murtala Nyako directed that, although it is a civilian school, it should be run as the equivalent of a military school.",
+  "c": "The campus is on the hilly Onikolobo site at Ibara, Abeokuta, Ogun State.",
+  "category": "school",
+  "source_name": "Wikipedia: Nigerian Navy Secondary School, Abeokuta",
+  "source_url": "https://en.wikipedia.org/wiki/Nigerian_Navy_Secondary_School%2C_Abeokuta",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Nigerian_Navy_Secondary_School%2C_Abeokuta"
+  ]
+ },
+ "s005": {
+  "name": "Indian Language School",
+  "type": "private",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Ilupeju",
+  "established_year": 1982,
+  "h": "The Indian Language School is a school in Lagos founded in 1982 to serve the city's growing Indian community. It comes under the High Commission of India in Nigeria and is managed by a board of trustees of business people. It began in converted houses at 11 Johnson Street, Ilupeju, and has since expanded by acquiring neighbouring properties. It is the only Indian school in Lagos.",
+  "a": "The school teaches from lower kindergarten to the 12th standard, and has entered students for the Indian CBSE board examinations for grades 10 and 12 since the late 1980s.",
+  "c": "The school is at Johnson Street, Ilupeju, Lagos, with a playground and football, basketball and volleyball courts.",
+  "category": "school",
+  "source_name": "Wikipedia: Indian Language School",
+  "source_url": "https://en.wikipedia.org/wiki/Indian_Language_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Indian_Language_School"
+  ]
+ },
+ "s006": {
+  "name": "Loyola College, Ibadan",
+  "type": "public",
+  "state": "Oyo",
+  "city": "Ibadan",
+  "area": "Agodi",
+  "established_year": 1954,
+  "gender": "boys-only",
+  "h": "Loyola College, Ibadan (LCI) is a boys' secondary school founded by Catholic missionaries in 1954 and now owned by the Oyo State Government. It has produced alumni in medicine, engineering, law, politics and the media.",
+  "a": "Students sit the West African Senior School Certificate Examination (WASSCE) at the end of senior secondary school. Old students support the school: in October 2023, for example, an alumnus paid the WAEC fees of six final-year students and sponsored UTME candidates.",
+  "c": "The college is on Old Ife Road in the Agodi area of Ibadan, Oyo State.",
+  "category": "school",
+  "source_name": "Wikipedia: Loyola College, Ibadan",
+  "source_url": "https://en.wikipedia.org/wiki/Loyola_College%2C_Ibadan",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Loyola_College%2C_Ibadan"
+  ]
+ },
+ "s007": {
+  "name": "St Anne's School, Ibadan",
+  "type": "public",
+  "state": "Oyo",
+  "city": "Ibadan",
+  "area": "Ibadan",
+  "established_year": 1869,
+  "gender": "girls-only",
+  "h": "St Anne's School, Ibadan is a girls' secondary school that can claim to be the oldest girls' secondary school in Nigeria. It traces its history to the CMS Female Institution, founded in Lagos on 1 May 1869 at the urging of Abigail Macaulay, daughter of Bishop Samuel Ajayi Crowther, so that Lagos families need not send their daughters abroad to study. That school, later the CMS Girls School, merged in 1950 with Kudeti Girls School in Ibadan, founded in 1899. The combined school was renamed St Anne's in honour of the missionary Anna Hinderer.",
+  "a": "The school started with sixteen pupils on what is now Broad Street, Lagos, under its first principal, Mrs Roper, and today provides secondary education for girls.",
+  "c": "The school is in Ibadan, Oyo State.",
+  "category": "school",
+  "source_name": "Wikipedia: St Anne's School, Ibadan",
+  "source_url": "https://en.wikipedia.org/wiki/St_Anne%27s_School%2C_Ibadan",
+  "sources": [
+   "https://en.wikipedia.org/wiki/St_Anne%27s_School%2C_Ibadan"
+  ]
+ },
+ "s008": {
+  "name": "Ijebu Ode Grammar School",
+  "type": "public",
+  "state": "Ogun",
+  "city": "Ijebu-Ode",
+  "area": "Ijebu-Ode",
+  "established_year": 1913,
+  "gender": "boys-only",
+  "h": "Ijebu Ode Grammar School (JOGS) is a boys' secondary school founded on 20 January 1913, which makes it one of the oldest secondary schools in Nigeria. The educationist Israel Oludotun Ransome-Kuti is among the figures associated with its history.",
+  "a": "The school provides junior and senior secondary education for boys.",
+  "c": "It is in Ijebu-Ode local government area of Ogun State, south-western Nigeria.",
+  "s": "Students belong to six houses: Gansallo (blue), Johnson (red), Kuti (grey), Odumosu (green), Phillips (yellow) and School (purple).",
+  "category": "school",
+  "source_name": "Wikipedia: Ijebu Ode Grammar School",
+  "source_url": "https://en.wikipedia.org/wiki/Ijebu_Ode_Grammar_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ijebu_Ode_Grammar_School"
+  ]
+ },
+ "s009": {
+  "name": "Olivet Baptist High School",
+  "type": "mission",
+  "state": "Oyo",
+  "city": "Oyo",
+  "area": "Oyo",
+  "established_year": 1945,
+  "h": "Olivet Baptist High School, formerly Oyo Baptist Boys' High School, is a Baptist secondary school affiliated with the Nigerian Baptist Convention. American Baptist missionaries founded it on 29 January 1945 in the old Baptist mission house at Oke-Isokun, Oyo, where the first Baptist missionary to Oyo had set up a mission post; that site is now the Baptist College of Theology. The school was widely known in the 1960s for excellence in both academics and sport.",
+  "a": "Olivet once prepared students for both O-level and A-level (Higher School Certificate) examinations; the A-level programme ended in 1989. It was one of the few schools outside Lagos with laboratories for the sciences, home economics, fine arts and music, and workshops for metalwork, woodwork and technical drawing.",
+  "c": "The school stands on a hilltop known as Olivet Heights in Oyo town, Oyo State, with hostels and staff quarters on campus.",
+  "category": "school",
+  "source_name": "Wikipedia: Olivet Baptist High School",
+  "source_url": "https://en.wikipedia.org/wiki/Olivet_Baptist_High_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Olivet_Baptist_High_School"
+  ]
+ },
+ "s010": {
+  "name": "Lagos State Model Junior College Meiran",
+  "type": "state",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Meiran",
+  "established_year": 2003,
+  "boarding": true,
+  "h": "Lagos State Model Junior College, Meiran is a state-owned junior secondary school. It was formed on 6 January 2003, when the Lagos State Ministry of Education split every secondary school in the state into separate junior (JSS1–3) and senior (SS1–3) schools. It came from Lagos State Model College, Meiran, founded on 19 February 1988; the same reform created junior model colleges at Badore, Igbonla, Kankon and Igbokuta. Its first principal, Mrs T. D. Kuti, led it until 2009.",
+  "a": "As a junior college it teaches the first three years of secondary school (JSS1 to JSS3), after which students move to senior secondary school.",
+  "c": "The school is at Oke-Odo, Meiran, in the north of Lagos.",
+  "category": "school",
+  "source_name": "Wikipedia: Lagos State Model Junior College Meiran",
+  "source_url": "https://en.wikipedia.org/wiki/Lagos_State_Model_Junior_College_Meiran",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lagos_State_Model_Junior_College_Meiran"
+  ]
+ },
+ "s011": {
+  "name": "American International School of Abuja",
+  "type": "international",
+  "state": "FCT",
+  "city": "Abuja",
+  "area": "Abuja",
+  "established_year": 1993,
+  "gender": "co-ed",
+  "h": "The American International School of Abuja (AISA) is a co-educational international day school founded in 1993 by a group of parents and US Embassy officials. They wanted a school that would prepare international and Nigerian students to continue their education under an American curriculum. In August 2006 it moved into a new purpose-built campus with room to grow.",
+  "a": "AISA teaches from preschool to grade 12, following a US-based curriculum, over a school year that runs from August to June with 180 teaching days. As enrolment grew from about 150 students in 2005 to about 470, it added a full high school programme.",
+  "c": "The school is in Abuja, the Federal Capital Territory.",
+  "s": "Its students come from more than 40 countries.",
+  "category": "school",
+  "source_name": "Wikipedia: American International School of Abuja",
+  "source_url": "https://en.wikipedia.org/wiki/American_International_School_of_Abuja",
+  "sources": [
+   "https://en.wikipedia.org/wiki/American_International_School_of_Abuja"
+  ]
+ },
+ "s012": {
+  "name": "Binta International School",
+  "type": "private",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Isolo",
+  "established_year": 1994,
+  "h": "Binta International School is part of a group of schools founded by Mrs Ehi Adenuga in Lagos. It opened in Ejigbo in 1994 and later moved to Ajao Estate, Isolo. Its name stands for 'Best In Nurturing Talents and Academics', its motto is 'excellence and discipline', and it gave its name to the school in the national television series Binta and Friends.",
+  "a": "The group runs a crèche, nursery, basic school and high school, and awards scholarships to deserving students each year. Its students have won competitions including the AIT Whizkid competition (1995), the 12th Unilever essay competition and the AIT debate competition (both 2000), and placed second in the Cowbell Lagos secondary school mathematics competition.",
+  "c": "The school is in Ajao Estate, Isolo, Lagos.",
+  "category": "school",
+  "source_name": "Wikipedia: Binta International School",
+  "source_url": "https://en.wikipedia.org/wiki/Binta_International_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Binta_International_School"
+  ]
+ },
+ "s013": {
+  "name": "A.D.R.A.O. International School",
+  "type": "international",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Victoria Island",
+  "established_year": 1963,
+  "gender": "co-ed",
+  "h": "A.D.R.A.O. International School is a co-educational international school founded in 1963 by Chief Abimbola Omololu-Mulele. It is one of the oldest independent schools in Nigeria.",
+  "a": "The school provides independent, international-style education for boys and girls.",
+  "c": "The school is on Victoria Island, Lagos.",
+  "category": "school",
+  "source_name": "Wikipedia: A.D.R.A.O. International School",
+  "source_url": "https://en.wikipedia.org/wiki/A.D.R.A.O._International_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/A.D.R.A.O._International_School"
+  ]
+ },
+ "s014": {
+  "name": "Comprehensive High School, Aiyetoro",
+  "type": "public",
+  "state": "Ogun",
+  "city": "Ayetoro",
+  "area": "Ayetoro",
+  "established_year": 1963,
+  "h": "Comprehensive High School, Aiyetoro was founded in February 1963 by the government of the old Western Region, as an experiment in linking secondary education to the country's manpower needs after independence. It was set up with American support: Harvard University staff came through USAID, and the Ford Foundation funded the school until 1973. Similar comprehensive schools were proposed for Nigeria and Kenya at the same time.",
+  "a": "The school was designed to combine academic and practical education, giving priority to sixth-form science and adding technical streams at school-certificate level, unlike the purely academic grammar schools of the time.",
+  "c": "It is in Ayetoro, in the Egbado (Yewa) area of Ogun State, south-western Nigeria.",
+  "category": "school",
+  "source_name": "Wikipedia: Comprehensive High School, Aiyetoro",
+  "source_url": "https://en.wikipedia.org/wiki/Comprehensive_High_School%2C_Aiyetoro",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Comprehensive_High_School%2C_Aiyetoro"
+  ]
+ },
+ "s015": {
+  "name": "Lycée Français Louis Pasteur de Lagos",
+  "type": "international",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Victoria Island",
+  "established_year": 1958,
+  "h": "The Lycée Français Louis Pasteur de Lagos (LFLP) is a French international school established in 1958 by the Association Française du Nigeria. It operated from several sites in Ikoyi and Victoria Island before moving in 1987 into purpose-built premises funded with support from the French Ministry of Foreign Affairs, and it took the name Lycée Français in 1997.",
+  "a": "The school teaches the French national curriculum from primary through secondary school. It belongs to the Agency for French Education Abroad (AEFE), the worldwide network of French schools.",
+  "c": "The school is on Victoria Island, Lagos.",
+  "category": "school",
+  "source_name": "Wikipedia: Lycée Français Louis Pasteur de Lagos",
+  "source_url": "https://en.wikipedia.org/wiki/Lyc%C3%A9e_Fran%C3%A7ais_Louis_Pasteur_de_Lagos",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lyc%C3%A9e_Fran%C3%A7ais_Louis_Pasteur_de_Lagos"
+  ]
+ },
+ "s016": {
+  "name": "Wesley College of Science, Ibadan",
+  "type": "public",
+  "state": "Oyo",
+  "city": "Ibadan",
+  "area": "Ibadan",
+  "established_year": 1905,
+  "gender": "co-ed",
+  "h": "Wesley College of Science, Ibadan was founded as Wesley College on 5 November 1905. It was originally a teacher-training institution, and one of its best-known students was Chief Obafemi Awolowo, the first premier of the Western Region. It is often described as one of the oldest secondary schools in Nigeria.",
+  "a": "Today it is a government-controlled, co-educational senior secondary school that prepares science students for the Senior School Certificate Examination.",
+  "c": "The college is in Ibadan, Oyo State.",
+  "category": "school",
+  "source_name": "Wikipedia: Wesley College of Science, Ibadan",
+  "source_url": "https://en.wikipedia.org/wiki/Wesley_College%2C_Ibadan",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Wesley_College%2C_Ibadan"
+  ]
+ },
+ "s017": {
+  "name": "School for the Gifted, Gwagwalada",
+  "type": "public",
+  "state": "FCT",
+  "city": "Gwagwalada",
+  "area": "Gwagwalada",
+  "established_year": 1993,
+  "h": "The School for the Gifted, Gwagwalada, formerly Government Gifted Secondary School, is a public secondary school established in 1993 to meet the educational needs of gifted students in the Federal Capital Territory. It began operating in 1994, and its motto is 'Knowledge for Excellence'.",
+  "a": "The school offers science, humanities and business streams at senior secondary level.",
+  "c": "It is in Gwagwalada, in the Federal Capital Territory.",
+  "category": "school",
+  "source_name": "Wikipedia: School for the Gifted, Gwagwalada",
+  "source_url": "https://en.wikipedia.org/wiki/School_for_the_Gifted_%28Gwagwalada%29",
+  "sources": [
+   "https://en.wikipedia.org/wiki/School_for_the_Gifted_%28Gwagwalada%29"
+  ]
+ },
+ "s018": {
+  "name": "Mount Saint Gabriel's Secondary School",
+  "type": "mission",
+  "state": "Benue",
+  "city": "Makurdi",
+  "area": "Makurdi",
+  "established_year": 1964,
+  "gender": "boys-only",
+  "boarding": true,
+  "h": "Mount Saint Gabriel's Secondary School (MSG) is a Catholic boys' boarding school founded on 14 January 1964 by Bishop James Hagan of the Catholic Diocese of Makurdi. It was the first secondary school in Makurdi. It opened as a day school with 63 boys from Tiv, Idoma, Igbo, Hausa and other communities, in temporary classrooms at Holy Ghost Parish, and moved to its permanent site in 1966. The Nigerian Civil War slowed its growth, but it recovered and expanded in the 1970s.",
+  "a": "MSG follows the national curriculum and prepares students for WAEC and NECO examinations, and it is known for academic excellence in Benue State.",
+  "c": "The school is in Makurdi, the capital of Benue State, near Government College.",
+  "category": "school",
+  "source_name": "Wikipedia: Mount Saint Gabriel's Secondary School",
+  "source_url": "https://en.wikipedia.org/wiki/Mount_Saint_Gabriel%27s_Secondary_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mount_Saint_Gabriel%27s_Secondary_School"
+  ]
+ },
+ "s019": {
+  "name": "Grundtvig International Secondary School",
+  "type": "private",
+  "state": "Anambra",
+  "city": "Oba",
+  "area": "Oba",
+  "established_year": 1998,
+  "gender": "co-ed",
+  "boarding": true,
+  "h": "Grundtvig International Secondary School is an independent boarding school founded in 1998 by Dr Kachi E. Ozumba (1942–2011). It is named after the Danish philosopher N. F. S. Grundtvig and is built on his 'education for life' folk high school ideas.",
+  "a": "The school educates boys and girls aged 12 to 18. It has repeatedly been among the top ten schools in Nigeria by WAEC results, ranking fifth in 2014. On 5 October 2020 it received the Presidential Award as the overall best private secondary school in Nigeria, in the President's Teachers' and Schools Excellence Awards.",
+  "c": "The school is in Oba, Anambra State, about twenty minutes' drive from Asaba Airport.",
+  "category": "school",
+  "source_name": "Wikipedia: Grundtvig International Secondary School",
+  "source_url": "https://en.wikipedia.org/wiki/Grundtvig_International_Secondary_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Grundtvig_International_Secondary_School"
+  ]
+ },
+ "s020": {
+  "name": "Charles Dale Memorial International School",
+  "type": "private",
+  "state": "Rivers",
+  "city": "Port Harcourt",
+  "area": "Igwuruta-Eneka",
+  "established_year": 2006,
+  "boarding": true,
+  "h": "Charles Dale Memorial International School (CDMIS) is a secondary boarding school affiliated with Bereton Montessori School. Bereton's leadership decided, at its 25th anniversary in 2003, to open a secondary school so that pupils could continue their education there. Ground was broken in 2004, and the school opened on 30 September 2006. It is named in memory of Charles Dale for his contribution to education in Nigeria.",
+  "a": "The school has about 400 students and more than 45 teaching staff.",
+  "c": "The campus is at 12 Army Range Road, Igwuruta-Eneka, Port Harcourt, Rivers State. It has science and computer laboratories, a library, sports fields, and housing for students and staff.",
+  "category": "school",
+  "source_name": "Wikipedia: Charles Dale Memorial International School",
+  "source_url": "https://en.wikipedia.org/wiki/Charles_Dale_Memorial_International_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Charles_Dale_Memorial_International_School"
+  ]
+ },
+ "s022": {
+  "name": "Olashore International School",
+  "type": "private",
+  "state": "Osun",
+  "city": "Iloko-Ijesa",
+  "area": "Iloko-Ijesa",
+  "established_year": 1994,
+  "gender": "co-ed",
+  "boarding": true,
+  "h": "Olashore International School is a private, co-educational boarding secondary school founded in 1994 by the late Oba Olashore. In January 2022 its board of trustees set up a five-member panel to investigate allegations about how the school handled a 2004 case of sexual assault involving its students; no findings had been published at the time the source was written.",
+  "a": "The school teaches both the Nigerian and British curricula, preparing students for examinations including the Cambridge IGCSE and the West African Senior School Certificate Examination.",
+  "c": "The school occupies a 60-hectare campus at Iloko-Ijesa, Osun State, about three hours' drive from Lagos.",
+  "category": "school",
+  "source_name": "Wikipedia: Olashore International School",
+  "source_url": "https://en.wikipedia.org/wiki/Olashore_International_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Olashore_International_School"
+  ]
+ },
+ "s023": {
+  "name": "Mater Amabilis Secondary School",
+  "type": "mission",
+  "state": "Anambra",
+  "city": "Umuoji",
+  "area": "Umuoji",
+  "established_year": 1962,
+  "boarding": true,
+  "h": "Mater Amabilis Secondary School is a Catholic boarding high school run by the Roman Catholic Archdiocese of Onitsha. It was founded on 15 January 1962 by Archbishop Charles Heerey. Its roots go back to 1905, when the traditional ruler of Umuoji, Igwe Okafor Ugwumba, invited Irish Catholic missionaries to the town. Bishop Joseph Shanahan sent the catechist Jacob Chukwuemeka Odiakosa, who built the Umuoji parish, and in the 1950s the parish priest, Father John Jordan, founded Our Lady's Teacher Training College there.",
+  "a": "The school provides Catholic secondary education with boarding.",
+  "c": "It is in Umuoji, Anambra State.",
+  "category": "school",
+  "source_name": "Wikipedia: Mater Amabilis Secondary School",
+  "source_url": "https://en.wikipedia.org/wiki/Mater_Amabilis_Secondary_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mater_Amabilis_Secondary_School"
+  ]
+ },
+ "s024": {
+  "name": "Lumen Christi International High School",
+  "type": "mission",
+  "state": "Edo",
+  "city": "Irrua",
+  "area": "Irrua",
+  "established_year": 1986,
+  "gender": "boys-only",
+  "boarding": true,
+  "h": "Lumen Christi International High School is a Catholic boys' boarding school founded on 5 October 1986 by Patrick Ekpu, later Archbishop Emeritus of Benin. It is owned and run by the Catholic Diocese of Uromi.",
+  "a": "The school has a record in competitions and examinations. It won the Edo State Governorship Debate Award on 30 September 2015, and that year one of its graduates was named the overall best NECO candidate in Edo State. It has also won the LAPO science quiz competition.",
+  "c": "The school is at Ivue, Irrua, in Esan Central local government area, in the Esan heartland of Edo State.",
+  "category": "school",
+  "source_name": "Wikipedia: Lumen Christi International High School",
+  "source_url": "https://en.wikipedia.org/wiki/Lumen_Christi_International_High_School%2C_Uromi",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lumen_Christi_International_High_School%2C_Uromi"
+  ]
+ },
+ "s025": {
+  "name": "Government College Ikorodu",
+  "type": "state",
+  "state": "Lagos",
+  "city": "Ikorodu",
+  "area": "Ikorodu",
+  "established_year": 1974,
+  "gender": "co-ed",
+  "h": "Government College Ikorodu is a co-educational public secondary school founded on 21 September 1974 and formally opened two days later by Brigadier Mobolaji Johnson, then governor of Lagos State. About 200 pioneer students were transferred from other Lagos secondary schools on the basis of that year's common entrance examination, and the school first used a temporary site on Obafemi Awolowo Way (then Agbowa Road). Its first principal was Olatunde Balogun.",
+  "a": "The college did well in its first years: in 1975 it was among five colleges whose students received scholarships from the commissioner for education, Chief Adeniran Ogunsanya.",
+  "c": "The college is in Ikorodu, Lagos State.",
+  "category": "school",
+  "source_name": "Wikipedia: Government College Ikorodu",
+  "source_url": "https://en.wikipedia.org/wiki/Government_College_Ikorodu",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Government_College_Ikorodu"
+  ]
+ },
+ "s027": {
+  "name": "Bridge House College",
+  "type": "private",
+  "state": "Lagos",
+  "city": "Lagos",
+  "area": "Ikoyi",
+  "established_year": 2004,
+  "gender": "co-ed",
+  "h": "Bridge House College (BHC) is an independent, co-educational sixth-form college established in 2004 to prepare school leavers aged 15 to 19 for university. It started with eight students who wanted to study in the United Kingdom. From 2007 it began preparing students for universities in other countries as well, including the US, Canada, the UAE, Ireland, Ghana and Nigeria.",
+  "a": "The college teaches Cambridge A levels, with a one-year AS route and a two-year A2 route. It is an accredited Cambridge examination centre and offers Cambridge teacher training. It has educated more than 2,500 students, including the children of expatriates living in Nigeria.",
+  "c": "The college began on Olagunsoye Oyinlola Street, 2nd Avenue, Ikoyi, Lagos, and moved to its permanent campus in 2014.",
+  "category": "school",
+  "source_name": "Wikipedia: Bridge House College",
+  "source_url": "https://en.wikipedia.org/wiki/Bridge_House_College",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bridge_House_College"
+  ]
+ },
+ "s028": {
+  "name": "Marygold International School",
+  "type": "private",
+  "state": "Rivers",
+  "city": "Port Harcourt",
+  "area": "Elelenwo",
+  "established_year": 2002,
+  "gender": "co-ed",
+  "boarding": true,
+  "h": "Marygold International School is a private, co-educational boarding and day school founded in 2002 by Obinna and Janeth Weli.",
+  "a": "The school covers every stage from crèche, toddler, pre-nursery and nursery through primary to secondary school, with departments for science, music, ICT, phonics and vocational studies.",
+  "c": "Its main building is at 58 Station Road, Elelenwo, Port Harcourt, Rivers State.",
+  "category": "school",
+  "source_name": "Wikipedia: Marygold International School",
+  "source_url": "https://en.wikipedia.org/wiki/Marygold_International_School",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Marygold_International_School"
+  ]
+ }
+}
