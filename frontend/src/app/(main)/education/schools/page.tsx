@@ -258,15 +258,12 @@ export default async function SchoolsPage() {
                 Looking for Higher Education?
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Explore our comprehensive list of over 200 Universities, Polytechnics, and Colleges across all Nigerian states.
+                Browse every university in the directory, federal, state and private, each confirmed against an independent source. Polytechnics and colleges will follow once their records are checked.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/education/universities" className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all hover:shadow-lg transform active:scale-95">
                 Browse Universities
-              </Link>
-              <Link href="/education/colleges" className="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-all hover:shadow-lg transform active:scale-95">
-                Colleges & Polytechnics
               </Link>
             </div>
           </div>

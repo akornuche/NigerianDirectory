@@ -333,15 +333,16 @@ export default async function HomePage() {
             </p>
           </div>
           <ol className="lg:col-span-8">
-            {sections.map((s, i) => (
-              <li key={s.name}>
-                <Link
-                  href={s.href}
-                  className={`group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-4 py-5 sm:grid-cols-[3.5rem_1fr_auto] ${i ? 'border-t border-rule' : ''}`}
-                >
+            {sections.map((s, i) => {
+              // Only open sections link anywhere; sections still in
+              // preparation are listed as plain text, not linked to
+              // placeholder pages.
+              const row = `group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-4 py-5 sm:grid-cols-[3.5rem_1fr_auto] ${i ? 'border-t border-rule' : ''}`;
+              const body = (
+                <>
                   <span className="tabular text-sm font-medium text-ink-muted">{String(i + 1).padStart(2, '0')}</span>
                   <span>
-                    <span className={`block font-display text-2xl font-bold tracking-display transition-colors group-hover:text-secondary-500 sm:text-3xl ${s.open ? '' : 'text-ink-2'}`}>
+                    <span className={`block font-display text-2xl font-bold tracking-display sm:text-3xl ${s.open ? 'transition-colors group-hover:text-secondary-500' : 'text-ink-2'}`}>
                       {s.name}
                     </span>
                     <span className="mt-1 block text-ink-muted">{s.description}</span>
@@ -349,9 +350,14 @@ export default async function HomePage() {
                   <span className={`whitespace-nowrap text-sm font-medium ${s.open ? 'text-secondary-500' : 'text-ink-muted'}`}>
                     {s.status}
                   </span>
-                </Link>
-              </li>
-            ))}
+                </>
+              );
+              return (
+                <li key={s.name}>
+                  {s.open ? <Link href={s.href} className={row}>{body}</Link> : <div className={row}>{body}</div>}
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>

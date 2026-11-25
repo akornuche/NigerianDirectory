@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'How NigerianDirectory collects, uses and protects personal data, the cookies it uses, and your rights under the Nigeria Data Protection Act 2023.',
 };
 
-const LAST_UPDATED = '22 November 2026';
+const LAST_UPDATED = '25 November 2026';
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
@@ -126,6 +126,17 @@ export default function PrivacyPage() {
             Choosing &ldquo;Necessary only&rdquo; turns analytics and advertising storage off. To change your choice
             later, clear this site&apos;s data in your browser settings and you will be asked again. You can also
             block cookies in your browser, and Google lets you opt out of Analytics with its browser add-on.
+          </p>
+          <p>
+            <strong>About advertising cookies.</strong> When advertising is enabled, third-party vendors,
+            including Google, use cookies to serve ads based on your previous visits to this and other
+            websites. Google&apos;s use of advertising cookies enables it and its partners to serve ads to you
+            based on those visits. You can opt out of personalised advertising in{' '}
+            <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="link">Google&apos;s Ads Settings</a>,
+            and opt out of some third-party vendors&apos; use of cookies for personalised advertising at{' '}
+            <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="link">aboutads.info</a>.
+            Google explains how it uses information from sites that use its services at{' '}
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="link">policies.google.com/technologies/partner-sites</a>.
           </p>
         </Section>
 
