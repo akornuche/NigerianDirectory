@@ -1,11 +1,12 @@
 'use client';
 
+import { adminFetch } from '@/lib/adminApi';
+
 import { useEffect, useState, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { CheckCircleIcon, XCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
 
 interface SchoolHealth {
   id: number;
@@ -63,11 +64,7 @@ export default function PageHealthPage() {
   const fetchData = useCallback(() => {
     setLoading(true);
     setError('');
-    const token = localStorage.getItem('auth_token');
-    fetch(`${API_URL}/admin/page-health?filter=${filter}&page=${page}&limit=50`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : {},
-    })
-      .then(r => { if (!r.ok) throw new Error(`Server error ${r.status}`); return r.json(); })
+    adminFetch<typeof data>(`/admin/page-health?filter=${filter}&page=${page}&limit=50`)
       .then(d => { setData(d); setLoading(false); })
       .catch(e => { setError(e.message); setLoading(false); });
   }, [filter, page]);
