@@ -1,0 +1,335 @@
+{
+ "lead": "The Dangote refinery's share sale, billed as Africa's largest, opened on Monday, with investment apps buckling under demand and Forbes estimating Aliko Dangote's wealth at $51.3 billion. President Tinubu ordered the timely release of N1.3 trillion to the regional development commissions, and a FIFA-CAF delegation arrived to examine the NFF crisis. Ondo police arrested 14 people over the poisoned drink deaths, and the federal unity college in Benin stayed shut amid reports that King's College and others had been concessioned.",
+ "items": [
+  {
+   "i": [
+    0,
+    49,
+    7,
+    45
+   ],
+   "h": "Dangote refinery IPO opens to heavy demand",
+   "s": "The refinery's initial public offering opened on 14 September, and investment apps Bamboo and Cowrywise suffered outages as investors rushed to subscribe. The NGX said subscription figures it posted earlier on X were wrong.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    11,
+    51
+   ],
+   "h": "Dangote's fortune put at $51.3bn as refinery lists",
+   "s": "Forbes estimated Aliko Dangote's net worth at $51.3 billion as the IPO opened. Dangote companies will make up an equity cluster worth about N83.5 trillion on the exchange.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "Tinubu orders timely release of N1.3trn to regional commissions",
+   "s": "The President directed prompt funding of the Regional Development Commissions and warned their boards against corruption, waste and projects that do not benefit communities.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "FIFA-CAF delegation arrives over NFF leadership crisis",
+   "s": "A joint FIFA and CAF mission arrived to assess the crisis at the Nigeria Football Federation, as the Gombe FA chairman said the NFF Congress can resolve it.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    14,
+    48
+   ],
+   "h": "Ondo police arrest 14 over poisoned drink deaths",
+   "s": "Police arrested 14 people, including a suspect known as Meko, over deaths in Araromi-Obu, Odigbo, linked to a local alcoholic drink.",
+   "c": "security",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Federal Government College Benin stays shut amid unity college concession reports",
+   "s": "The school remained locked on resumption day following reports that King's College, Lagos, and other federal unity colleges had been concessioned.",
+   "c": "education",
+   "st": [
+    "Edo",
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Nigeria and India aim to restore $15bn in trade",
+   "s": "Vice President Shettima and Prime Minister Narendra Modi agreed to rebuild bilateral trade towards its former peak, with India seeking new crude purchases.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    3
+   ],
+   "h": "EFCC warns lawyers against billing in foreign currency",
+   "s": "The EFCC's Lagos zone said lawyers who charge clients in foreign currencies could be prosecuted.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    5,
+    28
+   ],
+   "h": "Labour Party disowns Arabambi's suit over Obi's credentials",
+   "s": "Abayomi Arabambi sued NYSC, WAEC and the University of Nigeria over Peter Obi's records, and the Labour Party distanced itself from the case.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "Zamfara governor pledges full support for Tinubu",
+   "s": "Governor Dauda Lawal said Zamfara will back the President's second-term bid, speaking as he received a campaign delegation.",
+   "c": "politics",
+   "st": [
+    "Zamfara"
+   ]
+  },
+  {
+   "i": [
+    13,
+    10
+   ],
+   "h": "600 northern academics endorse Tinubu; ADC warns INEC",
+   "s": "More than 600 senior lecturers from northern public universities endorsed President Tinubu. The ADC asked INEC not to use partisan lecturers as returning officers.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    18
+   ],
+   "h": "SERAP gives INEC seven days to explain N126bn spending",
+   "s": "The rights group SERAP set a seven-day deadline for INEC to explain how it spent N126.46 billion that the Auditor-General's report questioned.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    23,
+    31,
+    47
+   ],
+   "h": "Gunmen disrupt PDP and NDC meetings in Enugu",
+   "s": "Hoodlums attacked separate meetings of the NDC and PDP in Nkanu West on 12 September. Police ordered an investigation, and the NDC accused the APC of sponsoring thugs.",
+   "c": "politics",
+   "st": [
+    "Enugu"
+   ]
+  },
+  {
+   "i": [
+    26
+   ],
+   "h": "Lone survivor recounts Plateau bus attack",
+   "s": "Nasiru Garba described how he survived an attack on a commercial bus near Dungus Junction in Kuru, Jos South.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    16
+   ],
+   "h": "Police say Asaba airport 'attack' was a security drill",
+   "s": "Delta police dismissed reports of a terrorist attack at Asaba airport, saying it was a planned ONSA simulation exercise.",
+   "c": "security",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    20
+   ],
+   "h": "Boy kidnapped in Enugu found abandoned in Anambra",
+   "s": "Anambra police rescued 16-year-old Favour Ayogu, who was abducted in Igboeze South and later left in Anambra.",
+   "c": "security",
+   "st": [
+    "Enugu",
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "Troops rescue two kidnap victims in Kaduna and Sokoto",
+   "s": "Operation Fansan Yamma foiled an attack, freed two kidnapped people and arrested a drug dealer.",
+   "c": "security",
+   "st": [
+    "Kaduna",
+    "Sokoto"
+   ]
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "MDAs must submit establishment laws with 2027 personnel budgets",
+   "s": "After the fake agency scandal, the government required ministries and agencies to submit their founding acts and personnel proposals by 18 September.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    27
+   ],
+   "h": "NCAA says 60% of August domestic flights were delayed",
+   "s": "Airlines delayed 4,765 domestic flights and cancelled 36 in August, about 59.9 per cent of the total, the regulator said.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "Banks closed 476 branches between 2022 and 2025",
+   "s": "CBN data showed banks reduced branches and cash centres by 476 over the period.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    30,
+    46
+   ],
+   "h": "Dangote says jet fuel sold out to Europe; expansion depends on crude supply",
+   "s": "Aliko Dangote said the refinery's jet fuel was sold out in Europe for August and September. The company said its 1.4 million-barrel expansion depends on reliable crude supply.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "Donald Duke says domestic crude should be priced at production cost",
+   "s": "The PRP candidate said crude for local refineries should be sold at cost rather than international prices.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "Anambra says it is still repaying loans from Obi era",
+   "s": "Finance Commissioner Izuchukwu Okafor said deductions continue for loans taken by past administrations, including Peter Obi's.",
+   "c": "politics",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    40,
+    21
+   ],
+   "h": "FG plans 200 telecom sites by December",
+   "s": "The government aims to activate 200 telecom sites to reach 20 million unconnected Nigerians, and Hotspot Network won a World Bank-backed deal for 500 communities.",
+   "c": "technology",
+   "st": []
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "600 volunteer pharmacists join NAFDAC fight against fake drugs",
+   "s": "About 600 pharmacists enrolled in a new NAFDAC volunteer scheme against substandard medicines.",
+   "c": "health",
+   "st": []
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "Desmond Elliot criticised for kneeling before Gbajabiamila",
+   "s": "A viral video of the actor-politician kneeling to ask forgiveness from the President's chief of staff drew criticism.",
+   "c": "politics",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "Obasanjo mourns Bamanga Tukur",
+   "s": "Former President Olusegun Obasanjo paid tribute to the former PDP chairman, who died shortly before turning 91.",
+   "c": "politics",
+   "st": [
+    "Adamawa"
+   ]
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "New British high commissioner arrives in Abuja",
+   "s": "Pete Vowles, the UK's high commissioner-designate, arrived to succeed Richard Montgomery.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Nigeria and China agree to share migration intelligence",
+   "s": "The immigration services of both countries discussed intelligence sharing and technical cooperation on border security.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    50
+   ],
+   "h": "Alleged SunTrust Bank hacker granted N150m bail",
+   "s": "A Lagos Federal High Court judge granted bail to Ugochukwu Eze, accused of hacking the bank's server and diverting over N800 million.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    42
+   ],
+   "h": "4,500 South-East women receive business support",
+   "s": "The SDGs office and the Renewed Hope Initiative gave equipment to vulnerable women in the five South-East states.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "Northern governors' chairman seeks research-led solutions",
+   "s": "Gombe Governor Inuwa Yahaya urged closer work with academics on insecurity, out-of-school children and food security.",
+   "c": "politics",
+   "st": [
+    "Gombe"
+   ]
+  }
+ ]
+}

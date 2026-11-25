@@ -1,0 +1,340 @@
+{
+ "lead": "The Central Bank cut its benchmark interest rate by 350 basis points to 23 per cent, and Governor Olayemi Cardoso said foreign reserves had passed $55 billion, the highest in over 18 years. Parents in Borno gave the government six days to rescue 78 schoolchildren held by Boko Haram for 130 days, and hoodlums attacked female students at Taraba's nursing college. Lagos ordered flood-prone communities to evacuate, public workers set a 30 September ultimatum over hardship, and former SGF Babachir Lawal joined the NDC.",
+ "items": [
+  {
+   "i": [
+    0
+   ],
+   "h": "CBN cuts benchmark rate by 350 basis points to 23%",
+   "s": "Governor Olayemi Cardoso announced after the 307th Monetary Policy Committee meeting that the policy rate had been lowered to 23 per cent.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    40
+   ],
+   "h": "Foreign reserves pass $55bn, highest in over 18 years",
+   "s": "Cardoso, marking three years in office, said reserves had crossed $55 billion and the FX backlog he inherited had been cleared.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Borno parents give six-day ultimatum over 78 abducted children",
+   "s": "Families in Mussa and Lassa, Askira/Uba, said the schoolchildren have spent 130 days with Boko Haram and asked the government to rescue them.",
+   "c": "security",
+   "st": [
+    "Borno"
+   ]
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Hoodlums attack and rape students at Taraba nursing college",
+   "s": "Students of the College of Nursing Sciences, Jalingo, protested after a Sunday night attack on female hostels in which some were raped and others injured.",
+   "c": "security",
+   "st": [
+    "Taraba"
+   ]
+  },
+  {
+   "i": [
+    27
+   ],
+   "h": "Lagos orders evacuation of flood-prone communities",
+   "s": "Residents of low-lying areas including parts of Eti-Osa, Lagos Island, Ajah, Kirikiri and Ilaje waterfront were told to move to higher ground.",
+   "c": "environment",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "Public workers give FG 30 September ultimatum on hardship",
+   "s": "Public sector unions demanded action on the cost of living affecting workers and their families.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "Babachir Lawal joins NDC",
+   "s": "The former Secretary to the Government of the Federation joined the Nigeria Democratic Congress three months after leaving the ADC.",
+   "c": "politics",
+   "st": [
+    "Adamawa"
+   ]
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Panel on mining suspects' deaths inaugurated",
+   "s": "Interior Minister Olubunmi Tunji-Ojo inaugurated the ten-member committee and warned members to be thorough and impartial.",
+   "c": "security",
+   "st": [
+    "Niger"
+   ]
+  },
+  {
+   "i": [
+    16
+   ],
+   "h": "Tinubu tells police to stay politically neutral",
+   "s": "The President charged the force to maintain neutrality and professionalism ahead of 2027.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "ADC warns violence may mar 2027 elections",
+   "s": "The party cited repeated attacks on opposition members and political intimidation.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "DSS and vigilantes foil mass kidnap in Katsina",
+   "s": "Bandits were shot dead as they tried to attack Gidan Iyado, Bakori.",
+   "c": "security",
+   "st": [
+    "Katsina"
+   ]
+  },
+  {
+   "i": [
+    21
+   ],
+   "h": "Troops rescue kidnapped female students and driver in Katsina",
+   "s": "Operation Fansan Yamma freed seven captives and recovered rustled cattle in Sokoto.",
+   "c": "security",
+   "st": [
+    "Katsina",
+    "Sokoto"
+   ]
+  },
+  {
+   "i": [
+    42,
+    41
+   ],
+   "h": "Malami denies corrupt deal over Mambilla",
+   "s": "Former AGF Abubakar Malami rejected allegations of an arrangement with Sunrise's Leno Adesanya. AGF Lateef Fagbemi said Nigeria will not be a soft target for predatory arbitration.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "Wike says Rainbow Coalition noise is about Uzodinma's Senate bid",
+   "s": "The FCT minister said the coalition was not meant to destabilise the APC.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    2,
+    26
+   ],
+   "h": "Yari leads APC delegation to northern clerics",
+   "s": "The campaign shifted to town halls and visits to religious leaders across the North.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    20
+   ],
+   "h": "Atiku cites SBM survey rejecting Tinubu's fuel policy",
+   "s": "Atiku said the poll shows Nigerians want immediate relief from fuel costs.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    18
+   ],
+   "h": "Makinde predicts landslide for APM",
+   "s": "The Oyo governor welcomed APC defectors.",
+   "c": "politics",
+   "st": [
+    "Oyo"
+   ]
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "NMDPRA threatens to revoke licences for pump tampering",
+   "s": "Stations found under-dispensing fuel risk losing their licences.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "Dangote plans fertiliser IPO in 2028",
+   "s": "Aliko Dangote said IPO proceeds will fund doubling refinery capacity to 1.4 million barrels a day.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "$300m renewable energy fund launched",
+   "s": "The NSIA, Africa50 and SEforALL began commercial operations of the Nigeria Distributed Renewable Energy Fund.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Air passengers rise to 18.8 million in 2025",
+   "s": "The airports authority said traffic grew 11.9 per cent, making Nigeria Africa's fourth-largest market.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "NCAA orders Air Peace to compensate delayed passengers",
+   "s": "A preliminary probe found fault over a delayed Lagos-Enugu flight.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "NEPZA tightens checks on imports into free zones",
+   "s": "Operators involved in illegal container imports face penalties.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "UK removes Nigeria from teacher qualification list",
+   "s": "Nigerian and Ghanaian-trained teachers can no longer apply directly for Qualified Teacher Status.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "JAMB sets controlled process for changing contact details",
+   "s": "Candidates who lost access to registered numbers or emails can update them after verification.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    30
+   ],
+   "h": "NIS enrols 8,552 for passports in four countries",
+   "s": "Interventions ran in the US, Canada, Qatar and the UK.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    28
+   ],
+   "h": "Court to rule on El-Rufai's no-case submission on 26 October",
+   "s": "The phone-tapping case was adjourned at the Federal High Court in Abuja.",
+   "c": "politics",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    32
+   ],
+   "h": "NSCIA sets 30 September national prayer",
+   "s": "The Islamic council will pray for peace and security in Abuja.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "NSCDC uncovers fake juice factory in Badagry",
+   "s": "Two women were arrested.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "Kaduna approves N3.66bn for retirees",
+   "s": "The state said it has paid N21.455 billion in pensions in three years.",
+   "c": "economy",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "Gombe governor appoints three commissioners",
+   "s": "Inuwa Yahaya also named six aides.",
+   "c": "politics",
+   "st": [
+    "Gombe"
+   ]
+  },
+  {
+   "i": [
+    46
+   ],
+   "h": "Seven rapid test kits approved",
+   "s": "Locally made kits for HIV, malaria, hepatitis and pregnancy were registered.",
+   "c": "health",
+   "st": []
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "Super Eagles gather in Uyo for Madagascar qualifier",
+   "s": "Twenty players arrived in camp before Friday's AFCON qualifier.",
+   "c": "sports",
+   "st": [
+    "Akwa Ibom"
+   ]
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "White House launches 'Trump TV'",
+   "s": "The 24-hour channel debuted as US media protested a ban on CNN and others.",
+   "c": "world",
+   "st": []
+  }
+ ]
+}

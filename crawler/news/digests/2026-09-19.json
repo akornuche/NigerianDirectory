@@ -1,0 +1,355 @@
+{
+ "lead": "The government suspended 20 Civil Defence officers over the deaths of 37 mining suspects in custody in Niger State, and NAFDAC found high levels of methanol in the drinks blamed for 48 deaths in Ondo. Gunmen killed three people in a Mangu market, and the Red Cross said more than 17,000 people are still missing from the Boko Haram conflict. The regulator said it does not set petrol prices and opened channels to report exploitative pricing, while President Tinubu urged faster use of CNG.",
+ "items": [
+  {
+   "i": [
+    0,
+    3,
+    13
+   ],
+   "h": "20 NSCDC officers suspended over deaths of mining suspects",
+   "s": "The Federal Government suspended 20 Civil Defence officers and replaced the Niger commandant over the deaths of 37 suspected illegal miners in custody. Rights groups called for a transparent inquiry, and Atiku Abubakar said the President and two ministers owe Nigerians answers.",
+   "c": "security",
+   "st": [
+    "Niger"
+   ]
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "NAFDAC finds methanol in drinks linked to 48 Ondo deaths",
+   "s": "The agency confirmed high concentrations of methanol in locally made alcoholic and herbal mixtures blamed for the deaths in Odigbo.",
+   "c": "health",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "Gunmen kill three in Mangu market",
+   "s": "Attackers opened fire at a busy cash-crop market in Mangu town at about 8.30pm on Friday, killing three people and injuring many.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    26
+   ],
+   "h": "Red Cross says 17,000 people still missing in the North-East",
+   "s": "The ICRC said more than 17,000 people separated by the Boko Haram conflict have not been found.",
+   "c": "security",
+   "st": [
+    "Borno",
+    "Adamawa",
+    "Yobe"
+   ]
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Regulator says it does not fix petrol prices",
+   "s": "The NMDPRA said the Petroleum Industry Act does not let it set pump prices, and opened channels for the public to report exploitative pricing and smuggling.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    32,
+    34
+   ],
+   "h": "Tinubu urges CNG rollout as petrol tops N1,400",
+   "s": "The President said exposure to global price shocks makes alternative fuels necessary, as pump prices passed N1,400 in parts of Abuja.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "Atiku calls on Tinubu to cut fuel prices",
+   "s": "Atiku Abubakar asked the President to reduce petrol prices urgently to ease hardship.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Mining pit collapse kills five in Taraba",
+   "s": "Community sources put the death toll from the collapse at Mayo Kam, Bali, at five, fewer than earlier reports of over 20.",
+   "c": "society",
+   "st": [
+    "Taraba"
+   ]
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "Benue police arrest 17 over mob attack on officers",
+   "s": "Police said 17 people were arrested over an attack on officers at Adagi, Jato-Aka, in Kwande, and eight people were rescued.",
+   "c": "security",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Military says 50 kidnap victims rescued in a week",
+   "s": "Defence Headquarters said troops across all theatres freed at least 50 people and arrested scores of terrorists and collaborators.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "Bandits kill local security commander in Kwara",
+   "s": "Agbeniga Taye, a local security commander in Idofin-Ayekale, Oke-Ero, was killed and two people abducted.",
+   "c": "security",
+   "st": [
+    "Kwara"
+   ]
+  },
+  {
+   "i": [
+    39
+   ],
+   "h": "Village head abducted in Kano",
+   "s": "Gunmen kidnapped Alhaji Ahmad Yakubu Ahmad, village head of Aujarawar Alkali in Gezawa.",
+   "c": "security",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Presidency and SEC plan to channel savings into capital market",
+   "s": "They outlined steps to deepen the market and mobilise domestic savings for the $1 trillion economy target.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "NUPRC sets 31 October deadline for idle oil licences",
+   "s": "The regulator said holders of non-performing licences risk losing them if they miss work commitments.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "Falconets face Colombia in quarter-final",
+   "s": "Coach Moses Aduku warned against complacency before Sunday's match.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Nigerian lecturer found dead in South Africa",
+   "s": "Ayodele Odularu, 51, a researcher at the University of Fort Hare, was found dead at home in the Eastern Cape, her brother said.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "Unity college teachers suspend King's College strike",
+   "s": "Senior civil servants in the 117 federal unity colleges called off their action over the proposed concession.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    28
+   ],
+   "h": "30 children rescued from illegal orphanage in Ilorin",
+   "s": "Operators' association ASOHON distanced itself from the home.",
+   "c": "security",
+   "st": [
+    "Kwara"
+   ]
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "Native doctor 'Eke Hit' jailed 12 years over money rituals",
+   "s": "An Anambra High Court in Awka sentenced Ekene Igboekweze.",
+   "c": "security",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    24
+   ],
+   "h": "Kano TikToker remanded over alleged defamation",
+   "s": "Khadija Muhammad, known as Yar Lele, was remanded after arraignment over remarks about a politician.",
+   "c": "politics",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "Barau sacks aide over 'Abba Must Go' post",
+   "s": "The Deputy Senate President dismissed Umar Alhassan after a post targeting Governor Abba Yusuf.",
+   "c": "politics",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "Police arrest suspected cult leader after Calabar shooting video",
+   "s": "The arrest followed a viral video of a man firing from a moving car.",
+   "c": "security",
+   "st": [
+    "Cross River"
+   ]
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Delta police arrest seven suspected cultists",
+   "s": "Officers recovered a gun and drugs in the Ghana quarters area.",
+   "c": "security",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Police commands pay insurance benefits to families of fallen officers",
+   "s": "Lagos police presented N89.2 million to 157 families, and the Oyo command gave cheques to 48 families.",
+   "c": "security",
+   "st": [
+    "Lagos",
+    "Oyo"
+   ]
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "Police chiefs meet in Owerri on 2027 election security",
+   "s": "The CARSPO 2026 conference will shape strategies for the elections.",
+   "c": "security",
+   "st": [
+    "Imo"
+   ]
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "Ikeja Electric begins refunds for meters",
+   "s": "Customers who paid under the meter asset provider scheme will be reimbursed.",
+   "c": "economy",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "Reps intervene in NOUN law graduates' Law School admission",
+   "s": "The House stepped in over the impasse blocking Open University law graduates.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    43
+   ],
+   "h": "Olawepo-Hashim calls for INEC to be disbanded",
+   "s": "The Accord candidate criticised INEC for appealing against the Electoral Act judgment.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Hamzat tells APC to campaign on facts",
+   "s": "The Lagos deputy governor and governorship candidate urged members to cite the party's record.",
+   "c": "politics",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "Women's group starts nationwide drive for Tinubu",
+   "s": "Women of Influence for Tinubu 2027 began mobilising support.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Buratai launches book on his tenure",
+   "s": "The former army chief thanked the President and service chiefs who attended.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    42
+   ],
+   "h": "Professor and daughter die in Sokoto gas explosion",
+   "s": "Daily Trust recounted the 9 September explosion that killed Professor Hassan Maishanu and his daughter.",
+   "c": "society",
+   "st": [
+    "Sokoto"
+   ]
+  },
+  {
+   "i": [
+    23
+   ],
+   "h": "Jehovah's Witnesses relax blood rules",
+   "s": "The church's governing body said each member can now choose whether to receive or give four main parts of blood, ending a strict ban.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "Trump bars CNN, Politico and MS NOW from White House",
+   "s": "MS NOW reporters were turned away on Saturday.",
+   "c": "world",
+   "st": []
+  }
+ ]
+}
