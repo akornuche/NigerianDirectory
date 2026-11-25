@@ -1,5 +1,5 @@
 {
- "lead": "Petrol rose to about N1,430 a litre in Abuja as marketers passed on the Dangote refinery's latest increase and crude stayed above $100. Bamanga Tukur was buried in Yola, and Nigeria used the BRICS summit to call for reform of the UN and global lenders. Gunmen abducted six imams in Zamfara and attacked farmers in Birnin Gwari, an ally of Governor Adeleke was shot dead in Ile-Ife, and the Falconets beat New Caledonia 10-1 to reach the last 16.",
+ "lead": "Petrol rose to about N1,430 a litre in Abuja as filling stations passed on the Dangote refinery's latest N85 increase, with crude oil trading above $100 a barrel.\n\nThe day in brief: prices in major cities ranged from N1,400 to N1,450, and the Centre for the Promotion of Private Enterprise urged targeted relief for households and businesses. Former PDP chairman Bamanga Tukur was buried in Yola after his death at 90, mourned by Vice President Shettima as a patriot. At the BRICS summit in New Delhi, Nigeria called for a more representative UN and an overhaul of global lenders, while President Tinubu moved from London to Paris for the second leg of his vacation. Gunmen abducted six imams in Zamfara and attacked farmers in Birnin Gwari, an ally of Osun Governor Ademola Adeleke was shot dead in Ile-Ife, and three teenage herders killed in Mangu were buried. INEC published a final list of 18 presidential candidates, and Miyetti Allah in Kaduna said 200,000 cattle had been lost this year. In Poland, the Falconets beat New Caledonia 10-1 to reach the last 16 of the U20 Women's World Cup.",
  "items": [
   {
    "i": [
@@ -10,7 +10,7 @@
     33
    ],
    "h": "Petrol reaches N1,430 a litre in Abuja",
-   "s": "Filling stations in the FCT raised pump prices to as much as N1,430 after the Dangote refinery's N85 increase to N1,350 at the gantry. Prices in major cities ranged from N1,400 to N1,450 as crude stayed above $100.",
+   "s": "Filling stations in the FCT raised pump prices to as much as N1,430 a litre after the Dangote refinery lifted its gantry price by N85, or 6.7 per cent, from N1,265 to N1,350, taking it above the estimated landing cost of imported petrol. Checks showed prices of N1,400 to N1,430 in Lagos, where MRS sold at N1,395, and up to N1,450 in Abuja, as global crude stayed above $100.",
    "c": "economy",
    "st": [
     "FCT"
@@ -22,7 +22,7 @@
     12
    ],
    "h": "Bamanga Tukur buried in Yola",
-   "s": "Former PDP national chairman Bamanga Tukur was buried in his hometown after Islamic funeral prayers. Vice President Shettima called him a global star.",
+   "s": "Bamanga Tukur, former governor of old Gongola State and former national chairman of the PDP, who died on 12 September at 90, was buried in his family compound in Yola on Sunday after Islamic funeral prayers led by the Chief Imam of Modibbo Adama Central Mosque. Vice President Kashim Shettima called his death a huge loss and described him as a true patriot and a global star.",
    "c": "politics",
    "st": [
     "Adamawa"
@@ -34,7 +34,7 @@
     16
    ],
    "h": "Nigeria calls for reform of UN and global lenders at BRICS",
-   "s": "Nigeria's message to the BRICS summit, delivered in President Tinubu's name, called for a more representative UN and an overhaul of international financial institutions. Shettima said Nigeria will not isolate itself from global trade.",
+   "s": "In an address delivered in President Tinubu's name at the BRICS summit in New Delhi, Nigeria called for a more representative, equitable and responsive system of global governance and an overhaul of international financial institutions to reflect today's economic and demographic realities. Vice President Shettima said no country can prosper in isolation and reaffirmed Nigeria's support for the WTO.",
    "c": "world",
    "st": []
   },
@@ -43,7 +43,7 @@
     2
    ],
    "h": "Tinubu moves from UK to Paris on annual leave",
-   "s": "President Tinubu arrived in Paris on Sunday for the second leg of a three-week vacation in Europe.",
+   "s": "President Tinubu arrived in Paris on Sunday for the second leg of his three-week annual leave in Europe and was received by Nigeria's ambassador to France, Ayodele Oke. He left Abuja on 30 August and spent the first part of the holiday in London.",
    "c": "politics",
    "st": []
   },
@@ -52,7 +52,7 @@
     26
    ],
    "h": "Gunmen abduct six imams in Zamfara",
-   "s": "Police and the army confirmed that gunmen kidnapped six imams in Zamfara State, Premium Times reported.",
+   "s": "Gunmen kidnapped six imams in Zamfara State, police and an army spokesperson confirmed, in another attack on community and religious leaders in the state.",
    "c": "security",
    "st": [
     "Zamfara"
@@ -63,7 +63,7 @@
     31
    ],
    "h": "Bandits attack farmers in Birnin Gwari",
-   "s": "Gunmen raided farmland around Dunya and Shado in Birnin Gwari's Kuyello Ward, killing a number of farmers and wounding or kidnapping others.",
+   "s": "Armed bandits attacked farmers working on their fields around Dunya and Shado communities in Kuyello Ward, Birnin Gwari, Kaduna State, killing several and wounding or abducting others. A local source said the attacks forced farmers to flee for fear of further raids; the exact numbers could not be confirmed.",
    "c": "security",
    "st": [
     "Kaduna"
@@ -74,7 +74,7 @@
     10
    ],
    "h": "Adeleke ally shot dead in Ile-Ife",
-   "s": "Olalekan Oyeyemi, known as Ajagungbade Emir, was killed by suspected hoodlums on Sunday in a dispute over control of a garage, raising tension in Ile-Ife.",
+   "s": "Olalekan Oyeyemi, known as Ajagungbade Emir, an ally of Osun Governor Ademola Adeleke, was shot dead on Sunday after he was reportedly lured to a meeting at a motor park in Ile-Ife, amid a struggle for control of the state's parks. The killing raised tension in the town, and Adeleke ordered the arrest of everyone involved.",
    "c": "security",
    "st": [
     "Osun"
@@ -85,7 +85,7 @@
     6
    ],
    "h": "Falconets beat New Caledonia 10-1 to reach last 16",
-   "s": "Nigeria's under-20 women thrashed New Caledonia in Poland to qualify for the round of 16, where they will face England.",
+   "s": "Nigeria's Falconets beat New Caledonia 10-1 at the ŁKS Stadium in Łódź to finish second in Group F of the FIFA U20 Women's World Cup with four points, after an earlier 2-0 loss to Spain. They face Group E winners England in the round of 16 on Thursday.",
    "c": "sports",
    "st": []
   },
@@ -94,7 +94,7 @@
     0
    ],
    "h": "Eighteen candidates on INEC's final presidential list",
-   "s": "Tinubu, Atiku and Obi are among 18 candidates on INEC's final list. Accord's Gbenga Olawepo-Hashim said no administrative action can remove his candidacy.",
+   "s": "INEC's final list of 18 presidential candidates includes President Tinubu of the APC, Atiku Abubakar of the ADC, Peter Obi of the NDC and Oyo Governor Seyi Makinde of the APM; more than 4,860 candidates are contesting 469 National Assembly seats. Accord's Gbenga Olawepo-Hashim, left off the list, said no administrative action by INEC can extinguish his candidacy.",
    "c": "politics",
    "st": []
   },
@@ -103,7 +103,7 @@
     11
    ],
    "h": "Miyetti Allah says 200,000 cattle lost in Kaduna this year",
-   "s": "The Kaduna chapter of the cattle breeders' association said more than 50 members were killed and over 200,000 cattle lost to banditry, clashes and rustling in 2026.",
+   "s": "The Kaduna chapter of the Miyetti Allah Cattle Breeders Association said more than 200,000 cattle have been lost to banditry, communal clashes and rustling in the state since January, and that over 50 of its members were killed in the same period, calling rustling a major threat to pastoralists' livelihoods.",
    "c": "security",
    "st": [
     "Kaduna"
@@ -114,7 +114,7 @@
     39
    ],
    "h": "Soldiers arrest three after killing of 17-year-old in Plateau",
-   "s": "Troops arrested three suspects after raiding a settlement believed to have been used by attackers who killed a teenager.",
+   "s": "Troops arrested three suspects in Plateau after raiding a settlement believed to have been used by attackers who killed a 17-year-old, in an operation on Saturday that followed intelligence on the killing.",
    "c": "security",
    "st": [
     "Plateau"
@@ -125,7 +125,7 @@
     20
    ],
    "h": "Three slain herders buried in Mangu",
-   "s": "Herders killed near Aloghom, including 18-year-old Garzali Shaibu, were buried in Mangu town.",
+   "s": "Three young herders, Garzali Shaibu, 18, Bashiru Yakubu, 14, and Salim Abubakar, 15, killed on Saturday while tending cattle around Aloghom in Mangu, were buried after funeral prayers at Mangu Central Mosque on Sunday. About 50 cattle were also shot dead, and the attack came a day after a herder was killed in Barkin Ladi.",
    "c": "security",
    "st": [
     "Plateau"
@@ -136,7 +136,7 @@
     15
    ],
    "h": "NDLEA intercepts synthetic cannabis from the UK hidden in bread",
-   "s": "The NDLEA seized two shipments of 'Colorado' concealed in consolidated cargo from the United Kingdom, some hidden in bread and speakers.",
+   "s": "The NDLEA intercepted two shipments of synthetic cannabis, known as Colorado or “Colos”, hidden in consolidated cargo from the United Kingdom, and found drugs concealed in music speakers and loaves of bread. It recovered more than 2.3 tonnes of drugs in operations across several states and arrested suspects including an estate agent and a 70-year-old woman.",
    "c": "security",
    "st": []
   },
@@ -145,7 +145,7 @@
     7
    ],
    "h": "Atiku says ASUU strike threat exposes subsidy savings claim",
-   "s": "Atiku Abubakar said the lecturers' fresh strike threat undermines the government's case for removing the fuel subsidy.",
+   "s": "Atiku Abubakar said ASUU's fresh strike threat exposes what he called the “fraud” behind the government's case for removing the fuel subsidy, since it promised the savings would transform education and other services. He asked the administration to account for the money it says it saved.",
    "c": "politics",
    "st": []
   },
@@ -154,7 +154,7 @@
     8
    ],
    "h": "Festus Okoye says cyberattacks hit INEC platforms in 2023",
-   "s": "Former INEC commissioner Festus Okoye said the commission faced cyberattacks and problems uploading presidential results during the 2023 election.",
+   "s": "Former INEC national commissioner Festus Okoye said on the Deep Insights podcast that the commission's platforms faced “all sorts of cyberattacks” during the 2023 presidential election, and that a technical problem uploading polling-unit results to the IReV portal became a crisis in which some electoral officers were beaten.",
    "c": "politics",
    "st": []
   },
@@ -163,7 +163,7 @@
     18
    ],
    "h": "Presidency defers sale of NNPC oil blocks",
-   "s": "ThisDay reported that the Presidency halted Project Delta, a planned sale of oil blocks held by NNPC, ahead of the election.",
+   "s": "The Presidency has quietly stalled Project Delta, a planned sale of oil blocks held by NNPC, since June amid political negotiations ahead of the 16 January 2027 election, ThisDay reported, with lobbying inside the Villa intensifying.",
    "c": "economy",
    "st": []
   },
@@ -172,7 +172,7 @@
     36
    ],
    "h": "Nigeria meets OPEC quota but trails budget output",
-   "s": "Nigeria complied with its OPEC quota for a fourth month in August, but crude production remained below the budget benchmark.",
+   "s": "NUPRC data show Nigeria met its OPEC quota for a fourth month running in August, producing an average of 1,677,777 barrels a day of crude and condensate, up 0.4 per cent from July, but output remained below the budget benchmark.",
    "c": "economy",
    "st": []
   },
@@ -181,7 +181,7 @@
     37
    ],
    "h": "CPPE urges relief as petrol prices rise",
-   "s": "The Centre for the Promotion of Private Enterprise asked the government to cushion households and businesses from higher fuel costs.",
+   "s": "In a policy brief, CPPE chief executive Muda Yusuf urged the government to adopt socially sensitive, targeted measures to cushion households and businesses from rising petrol prices, arguing they would be more effective and fiscally sustainable than restoring a general subsidy.",
    "c": "economy",
    "st": []
   },
@@ -190,7 +190,7 @@
     5
    ],
    "h": "Uba Sani says women Islamic scholars back Tinubu for his record",
-   "s": "The Kaduna governor said Northern women ulama endorsed the President's re-election because of his achievements and inclusive style.",
+   "s": "Kaduna Governor Uba Sani said women Islamic scholars from the 19 northern states endorsed President Tinubu's re-election because of his record and inclusive style of government. He spoke at a stakeholders' meeting with their delegates at the Umaru Musa Yar'Adua Conference Centre on Sunday.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -201,7 +201,7 @@
     30
    ],
    "h": "Matawalle mobilises Zamfara for Tinubu",
-   "s": "Minister of State for Defence Bello Matawalle urged his supporters in Zamfara to work for the President's re-election.",
+   "s": "Minister of State for Defence Bello Matawalle, a former Zamfara governor, urged his political associates, former lawmakers and appointees to mobilise support across the state for President Tinubu's re-election, at a meeting in Kaduna at the weekend.",
    "c": "politics",
    "st": [
     "Zamfara"
@@ -212,7 +212,7 @@
     24
    ],
    "h": "Alia tells Ortom to stop distracting him",
-   "s": "Benue Governor Hyacinth Alia said he is focused on rebuilding the state and accused former governor Samuel Ortom of distractions.",
+   "s": "Benue Governor Hyacinth Alia accused his predecessor Samuel Ortom of trying to distract him and said his infrastructure and industrial projects will speak for him in 2027. Ortom had accused Alia of running the state on “lies, deceit and hypocrisy” in a dispute centred on the state's debt service.",
    "c": "politics",
    "st": [
     "Benue"
@@ -223,7 +223,7 @@
     47
    ],
    "h": "Akwa Ibom governor denies seizing predecessor's house",
-   "s": "Governor Umo Eno denied any rift with former governor Udom Emmanuel and rejected claims that he used the EFCC to take his house.",
+   "s": "Akwa Ibom Governor Umo Eno denied any rift with his predecessor Udom Emmanuel and rejected claims by the ADC's governorship candidate, John James Akpanudoedehe, that he used the EFCC to take over his predecessor's house.",
    "c": "politics",
    "st": [
     "Akwa Ibom"
@@ -234,7 +234,7 @@
     29
    ],
    "h": "ADC says it can beat APC in a free and fair election",
-   "s": "ADC spokesman Bolaji Abdullahi said the party will defeat the APC if the 2027 vote is credible.",
+   "s": "ADC spokesman Bolaji Abdullahi told the Naija Unfiltered podcast that the party can defeat the APC if the 2027 election is free and fair, despite the number of opposition groups in the race.",
    "c": "politics",
    "st": []
   },
@@ -243,7 +243,7 @@
     44
    ],
    "h": "Utomi's Big Tent targets grassroots and vote protection",
-   "s": "Pat Utomi's political group said it will focus on mobilising voters and protecting votes in 2027.",
+   "s": "Pat Utomi's political group, the Big Tent, said it is restructuring around grassroots problem-solving, voter mobilisation and protecting votes in 2027, moving away from what it called the traditional model of parties focused only on elections.",
    "c": "politics",
    "st": []
   },
@@ -252,7 +252,7 @@
     14
    ],
    "h": "Group asks Atiku, Obi and Kwankwaso to step aside for Adebayo",
-   "s": "The Forum for Democratic Patriots urged the three opposition figures to drop their ambitions and back the SDP candidate.",
+   "s": "The Forum for Democratic Patriots urged Atiku Abubakar, Peter Obi and Rabiu Kwankwaso to shelve their ambitions, saying the wrangling over a joint opposition ticket showed none could win. The SDP campaign separately argued that Tinubu, Atiku and Obi lack what it takes to move the country forward, and urged Nigerians to turn out and vote.",
    "c": "politics",
    "st": []
   },
@@ -261,7 +261,7 @@
     38
    ],
    "h": "Police deny officers died in checkpoint crash",
-   "s": "A police spokesperson said no officer was killed or injured in the crash, contrary to reports.",
+   "s": "Police in Akwa Ibom denied reports that officers died in a crash at a checkpoint. “No police officer lost his or her life, and no police personnel were injured in the incident,” said spokeswoman Timfon John.",
    "c": "security",
    "st": []
   },
@@ -270,7 +270,7 @@
     28
    ],
    "h": "Mowe residents 18 months without power appeal to minister",
-   "s": "A community near Mowe in Obafemi Owode asked the Power Minister and NERC to restore electricity after 18 months.",
+   "s": "Residents of the Itesiwaju Omu Arogun community near Mowe, Obafemi Owode, Ogun State, appealed to Power Minister Joseph Tegbe and NERC to restore electricity after more than 18 months without supply, which they said has forced some people to move away.",
    "c": "economy",
    "st": [
     "Ogun"
@@ -281,7 +281,7 @@
     23
    ],
    "h": "Oyo restates commitment to education as schools resume",
-   "s": "The Oyo government outlined its education plans as the 2026/2027 session began on Monday.",
+   "s": "Oyo's commissioner for education, science and technology, Olusegun Olayiwola, welcomed pupils back for the first term of 2026/2027 on Governor Seyi Makinde's behalf, saying the state will keep pursuing policies that lift learning in both state-run and private schools.",
    "c": "education",
    "st": [
     "Oyo"
@@ -292,7 +292,7 @@
     21
    ],
    "h": "Hausa community in Europe names Gwarzo chancellor",
-   "s": "Professor Adamu Abubakar Gwarzo was appointed chancellor of the Hausa Community in Europe.",
+   "s": "The Hausa Community in Europe appointed Professor Adamu Abubakar Gwarzo as its chancellor for his work promoting Hausa culture and language and supporting Hausa communities abroad, at an International Hausa Day celebration in Paris.",
    "c": "society",
    "st": []
   }

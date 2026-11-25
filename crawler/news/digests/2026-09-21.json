@@ -1,37 +1,327 @@
 {
-"lead": "Plateau imposed curfews on three local government areas as killings spread, and the names of the 37 mining suspects who died in Civil Defence custody were published. President Tinubu extended his European vacation and confirmed he would miss the UN General Assembly for a third year, sending Vice President Shettima to New York. The APC won four of five weekend by-elections, the Dangote refinery cut its petrol price by N25 and said it plans a New York listing after expanding, and the APC campaign asked Peter Obi to quit the race over Anambra debts.",
-"items": [
-{"i": [1], "h": "Plateau imposes curfew on three LGAs as killings spread", "s": "The state imposed curfews after at least nine people, five of them bus passengers, were killed in Barkin Ladi, Riyom and nearby communities over the weekend.", "c": "security", "st": ["Plateau"]},
-{"i": [0], "h": "Names of 37 mining suspects who died in custody published", "s": "A civil society coalition released the names and opposed calls to remove NSCDC Commandant-General Ahmed Audi over the deaths in Niger State.", "c": "security", "st": ["Niger"]},
-{"i": [4, 26], "h": "Tinubu extends vacation and misses UNGA for third year", "s": "Presidential spokesman Bayo Onanuga said the President extended his annual leave in Europe. He will not attend the 81st UN General Assembly, the third year in a row he has stayed away.", "c": "politics", "st": []},
-{"i": [13], "h": "Shettima leads Nigeria's delegation to UN General Assembly", "s": "The Vice President arrived in New York and said Nigeria will be guided by its national interest.", "c": "world", "st": []},
-{"i": [11], "h": "APC wins four of five by-elections; APM takes one seat", "s": "President Tinubu congratulated the winners of the weekend by-elections in Gombe, Kano, Bauchi and Delta.", "c": "politics", "st": ["Gombe", "Kano", "Bauchi", "Delta"]},
-{"i": [24], "h": "Dangote cuts petrol price by N25 as crude eases", "s": "The refinery lowered its gantry price nine days after raising it.", "c": "economy", "st": []},
-{"i": [19, 21], "h": "Dangote plans NYSE listing after expansion and $10bn power investment", "s": "The refinery plans to list in New York once capacity doubles to 1.4 million barrels a day, and Aliko Dangote said he intends to invest over $10 billion in African power.", "c": "business", "st": []},
-{"i": [15], "h": "APC campaign tells Obi to quit over Anambra debts", "s": "The APC presidential campaign council demanded Peter Obi's withdrawal over debts it said were incurred while he was Anambra governor.", "c": "politics", "st": ["Anambra"]},
-{"i": [2], "h": "Wike tells Obi to forget 2027", "s": "The FCT minister defended his Rainbow Coalition for Tinubu and told Peter Obi to prepare for 2031.", "c": "politics", "st": []},
-{"i": [33, 48], "h": "APC calls Atiku's subsidy plan uncosted", "s": "The APC campaign said the proposed production subsidy lacks a legal and operational framework.", "c": "politics", "st": []},
-{"i": [9], "h": "IGP warns police against bias as ADC demands accountability", "s": "Inspector-General Disu told officers at CARSPO 2026 to stay neutral, and the ADC demanded accountability for attacks on opposition gatherings.", "c": "security", "st": []},
-{"i": [7], "h": "Troops rescue 23 kidnap victims in Sokoto", "s": "Operation Fansan Yamma foiled several attacks and arrested four suspected terrorists.", "c": "security", "st": ["Sokoto"]},
-{"i": [25], "h": "PoS operator arrested over links to bandit leader", "s": "Security operatives in Katsina arrested Isiyaku Nasiru over a financial network tied to Kachalla Muhammadu Filani.", "c": "security", "st": ["Katsina"]},
-{"i": [10], "h": "JAMB allows one-time change of phone numbers and emails", "s": "The board lifted its ban on candidates changing registered SIM numbers and email addresses, subject to verification.", "c": "education", "st": []},
-{"i": [35], "h": "FG threatens to shut Lagos section of coastal highway", "s": "Officials said the stretch will close within two weeks unless motorists obey safety rules and construction restrictions.", "c": "economy", "st": ["Lagos"]},
-{"i": [42], "h": "FDI rises 11.7% but portfolio flows dominate", "s": "Short-term portfolio money made up most foreign capital in the second quarter.", "c": "economy", "st": []},
-{"i": [34], "h": "Cash outside banks rises to N4.87trn", "s": "CBN data showed the first increase in four months.", "c": "economy", "st": []},
-{"i": [44], "h": "Health insurance enrolment passes 23 million", "s": "The NHIA widened cover for cancer, HIV, tuberculosis and maternal care.", "c": "health", "st": []},
-{"i": [16], "h": "CPPE urges review of permits for foreign traders", "s": "The think tank called for tighter rules on foreign participation in retail trade.", "c": "economy", "st": []},
-{"i": [12], "h": "Dangote Cement hosts London investors before LSE listing", "s": "The company held its capital markets day on 21 September.", "c": "business", "st": []},
-{"i": [29], "h": "Access Bank repays $500m Eurobond", "s": "The bank redeemed its 2021 five-year bond at maturity.", "c": "business", "st": []},
-{"i": [14], "h": "Indonesia's Pertamina eyes Nigerian licensing round", "s": "The state oil firm signalled interest in the 2026 round.", "c": "economy", "st": []},
-{"i": [47], "h": "Court postpones El-Rufai's N1bn rights suit", "s": "El-Rufai is challenging the search of his Abuja residence on 19 February.", "c": "politics", "st": ["FCT"]},
-{"i": [40], "h": "Kano says North should not interrupt southern presidency", "s": "Commissioner Ibrahim Waiya also said the state is open to reconciling with Kwankwaso.", "c": "politics", "st": ["Kano"]},
-{"i": [6], "h": "APM to begin zonal town halls in Katsina", "s": "Makinde's campaign will hold meetings across the six zones.", "c": "politics", "st": ["Katsina"]},
-{"i": [28], "h": "Lulu explains refusal to sign ex-NFF leaders' paper to FIFA", "s": "Former NFF president Sani Lulu said he disagreed with the position paper.", "c": "sports", "st": []},
-{"i": [17], "h": "Flamingos beat Burkina Faso 2-0", "s": "Nigeria kept a perfect run at the WAFU B U17 Girls Cup in Yamoussoukro.", "c": "sports", "st": []},
-{"i": [38], "h": "Zamfara and XEJet start Abuja-Gusau flights", "s": "The state signed an air route agreement for scheduled services.", "c": "business", "st": ["Zamfara"]},
-{"i": [46], "h": "Kwara begins artificial insemination of cattle", "s": "The programme aims to improve breeds and dairy output.", "c": "economy", "st": ["Kwara"]},
-{"i": [36], "h": "Local factory starts producing new mosquito nets", "s": "Harvestfield Healthcare began commercial production of next-generation insecticide-treated nets.", "c": "health", "st": []},
-{"i": [5], "h": "Shettima to open editors' conference in Enugu", "s": "More than 500 editors will discuss democracy and elections.", "c": "society", "st": ["Enugu"]},
-{"i": [41], "h": "AGF's outreach treats 1,500 in Kwara", "s": "Lateef Fagbemi organised free medical and surgical care in Ijagbo.", "c": "health", "st": ["Kwara"]}
-]
+ "lead": "Plateau imposed dusk-to-dawn curfews on three local government areas after a weekend of killings, and the Presidency said President Tinubu had extended his European vacation and would again miss the UN General Assembly.\n\nThe day in brief: more than 20 people were reported killed in two days in Mangu, Barkin Ladi, Bokkos and Riyom, among them bus passengers and a pastor on his way to church. The Civil Defence Corps said it had detained 24 of its personnel over the deaths of 37 mining suspects in Niger State, as a civil society coalition published their names and defended the Commandant-General. Vice President Shettima arrived in New York to lead Nigeria's UN delegation. The APC won four of five weekend by-elections, and its campaign council told Peter Obi to quit the race over Anambra debts and called Atiku Abubakar's subsidy plan uncosted. Dangote cut petrol by N25 a litre as crude eased and said the refinery will list in New York after doubling capacity. Access Bank repaid a $500 million Eurobond, and the Flamingos kept their perfect run in Yamoussoukro.",
+ "items": [
+  {
+   "i": [
+    1
+   ],
+   "h": "Plateau imposes curfew on three LGAs as killings spread",
+   "s": "Plateau ordered a dusk-to-dawn curfew in Barkin Ladi, Bokkos and Mangu after attacks that reports said left more than 20 people dead, women and children among them, and many homes burned over two days. Between Saturday night and Sunday morning at least nine were killed in Barkin Ladi, Riyom and neighbouring villages, including five bus passengers headed for Gana-Ropp and a pastor going to church.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "Names of 37 mining suspects who died in custody published",
+   "s": "The Civil Defence Corps said it has arrested and detained 24 of its personnel found culpable in the deaths of 37 suspected illegal miners in Niger State, with three more suspended in addition to the first 21, spokesman Babawale Afolabi said. A civil society coalition published the names of the dead and called demands to remove Commandant-General Ahmed Audi misguided and a distraction from the investigations.",
+   "c": "security",
+   "st": [
+    "Niger"
+   ]
+  },
+  {
+   "i": [
+    4,
+    26
+   ],
+   "h": "Tinubu extends vacation and misses UNGA for third year",
+   "s": "Presidential spokesman Bayo Onanuga said President Tinubu had extended his working vacation “by a few days” and would return at the weekend, without giving a reason. Tinubu left for London on 30 August, then moved to Paris, where he met President Emmanuel Macron. He will miss the UN General Assembly for the third year in a row.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "Shettima leads Nigeria's delegation to UN General Assembly",
+   "s": "Vice President Kashim Shettima arrived in New York to lead Nigeria's delegation to the 81st UN General Assembly on the President's behalf, with Governors Siminalayi Fubara and Babajide Sanwo-Olu and several ministers in the team. Information Minister Mohammed Idris said Tinubu had mandated Shettima to represent him, rejecting criticism from Atiku Abubakar and a US lobbying firm working for him.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "APC wins four of five by-elections; APM takes one seat",
+   "s": "The APC won four of the five by-elections held at the weekend in Gombe, Kano, Bauchi and Delta, and the APM took the other, a seat in the Bauchi State House of Assembly. Usman Maijama'a Kallamu won the Gombe/Kwami/Funakaye federal constituency and Husseini Datti the Dawakin Kudu state seat in Kano. President Tinubu congratulated all the winners.",
+   "c": "politics",
+   "st": [
+    "Gombe",
+    "Kano",
+    "Bauchi",
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    24
+   ],
+   "h": "Dangote cuts petrol price by N25 as crude eases",
+   "s": "The Dangote refinery cut its ex-gantry petrol price by N25, from N1,350 to N1,325 a litre, nine days after raising it by N85. The reduction came as international crude prices fell, with Brent trading around $100 a barrel, down more than 3 per cent, and West Texas Intermediate near $92.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    19,
+    21
+   ],
+   "h": "Dangote plans NYSE listing after expansion and $10bn power investment",
+   "s": "Aliko Dangote said the refinery will list on the New York Stock Exchange once an expansion doubles its capacity to 1.4 million barrels a day, expected by early 2029. He told Bloomberg he plans to invest more than $10 billion in African power and over $3.5 billion in a 2,650-kilometre fuel pipeline linking Namibia, Botswana and South Africa.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "APC campaign tells Obi to quit over Anambra debts",
+   "s": "The APC presidential campaign council called on Peter Obi, the NDC candidate, to withdraw from the 2027 race over debts it said his government incurred in Anambra. Its spokesman Dele Alake accused Obi of misrepresenting his financial record as governor, saying the image his supporters built over four years had been “torn to shreds”.",
+   "c": "politics",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "Wike tells Obi to forget 2027",
+   "s": "On TVC's Journalists' Hangout, FCT Minister Nyesom Wike told Peter Obi to forget 2027 and prepare for 2031, saying the conditions behind his strong 2023 showing had changed. Inspecting road projects in Lugbe, Wike also told APC governors that his Rainbow Coalition for President Tinubu was not set up to weaken their party.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    33,
+    48
+   ],
+   "h": "APC calls Atiku's subsidy plan uncosted",
+   "s": "The APC campaign council described Atiku Abubakar's proposed “production subsidy” for locally refined petrol as an uncosted promise with no clear legal or operational framework, and asked him to explain how it would lower pump prices and comply with the Petroleum Industry Act. It said the cost could reach N21 trillion a year.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "IGP warns police against bias as ADC demands accountability",
+   "s": "At the 2026 senior police officers' conference, Inspector-General Olatunji Disu warned officers to remain neutral before the elections. In Abuja the ADC's Bolaji Abdullahi demanded that the police account for attacks on opposition members and gatherings, and warned that the planned state police must not become a political weapon against the opposition.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "Troops rescue 23 kidnap victims in Sokoto",
+   "s": "Troops of Operation Fansan Yamma rescued 23 kidnap victims, foiled several terrorist attacks in Wurno, Sabon Birni and Isa, and arrested four suspected members of the Lakurawa group in separate operations in Sokoto, the task force's media officer, Lieutenant Colonel Aliyu Danja, said.",
+   "c": "security",
+   "st": [
+    "Sokoto"
+   ]
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "PoS operator arrested over links to bandit leader",
+   "s": "The Katsina State Security Watch Corps arrested Isiyaku Nasiru, a point-of-sale operator and motorcycle parts dealer in Matazu, accused of processing cash transactions worth millions of naira for bandit leader Kachalla Muhammadu. Three others, Abubakar Sayaya, Nura Baka Sati and Ubale Mai Cange, were held in related operations.",
+   "c": "security",
+   "st": [
+    "Katsina"
+   ]
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "JAMB allows one-time change of phone numbers and emails",
+   "s": "JAMB lifted its long-standing ban on changing registered phone numbers and email addresses, allowing a one-time update from 21 September for candidates who have genuinely lost access to them. Updates will be made only after strict verification, the board said on X.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "FG threatens to shut Lagos section of coastal highway",
+   "s": "Olufemi Dare, federal controller of works in Lagos, warned that the Lagos section of the Lagos-Calabar coastal highway could be shut within two weeks if motorists keep ignoring safety rules and construction restrictions. He said Works Minister David Umahi directed him to brief journalists during an inspection of the road.",
+   "c": "economy",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    42
+   ],
+   "h": "FDI rises 11.7% but portfolio flows dominate",
+   "s": "CBN balance of payments data show foreign direct investment rose 11.7 per cent to $1.15 billion in the second quarter, but short-term portfolio money was more than six times larger. The Alliance for Economic Research and Ethics said portfolio flows made up about 95 per cent of the $10.37 billion that came in during the first quarter, leaving Nigeria dependent on mobile funds.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Cash outside banks rises to N4.87trn",
+   "s": "Cash held outside banks rose to N4.87 trillion in August, up N70.9 billion or 1.48 per cent from July, the first increase after three months of decline, CBN data show. Credit to the private sector rose for a third month to N84.55 trillion while lending to government fell to N32.70 trillion.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "Health insurance enrolment passes 23 million",
+   "s": "Enrolment in health insurance has passed 23 million, NHIA director-general Kelechi Ohiri said, as the authority widens cover for cancer, HIV and tuberculosis and maternal and newborn care. He said the real test of the system is not how many people hold insurance records but whether they are protected when illness strikes.",
+   "c": "health",
+   "st": []
+  },
+  {
+   "i": [
+    16
+   ],
+   "h": "CPPE urges review of permits for foreign traders",
+   "s": "The Centre for the Promotion of Private Enterprise urged the government to review the rules on foreign participation in retail and distributive trade, amid concern about foreign nationals, particularly Chinese traders, entering segments long run by Nigerian businesses. Its chief executive, Muda Yusuf, said the trend has implications for jobs and fair competition.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Dangote Cement hosts London investors before LSE listing",
+   "s": "Dangote Cement held a capital markets day in London on 21 September, presenting its expansion strategy, capacity, African growth plans and profitability outlook to international investors as part of preparations for its planned London Stock Exchange listing.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "Access Bank repays $500m Eurobond",
+   "s": "Access Bank redeemed its $500 million senior unsecured Eurobond at maturity on 21 September, ending the five-year issue launched in 2021. The bank said the repayment was funded entirely from its own foreign currency liquidity and had no adverse effect on its operations or regulatory ratios.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Indonesia's Pertamina eyes Nigerian licensing round",
+   "s": "Indonesia's state oil company Pertamina signalled interest in Nigeria's 2026 licensing round at a meeting between NUPRC chief executive Oritsemeyiwa Eyesan, Indonesia's deputy foreign minister Arif Havas Oegroseno and Pertamina's Toriq Abdat. The regulator is counting on the round to raise output.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    47
+   ],
+   "h": "Court postpones El-Rufai's N1bn rights suit",
+   "s": "The Federal High Court in Abuja postponed hearing in Nasir El-Rufai's N1 billion fundamental rights suit, in which he asks the court to declare that the search of his home on Mambilla Street, Aso Drive, on 19 February grossly violated his rights.",
+   "c": "politics",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    40
+   ],
+   "h": "Kano says North should not interrupt southern presidency",
+   "s": "Kano's information commissioner, Ibrahim Waiya, said it would be unfair for the North to deny the South its full eight years in the Presidency and urged northerners to let President Tinubu finish. He also said the state government is open to reconciling with former governor Rabiu Kwankwaso, who recently said his door remained open.",
+   "c": "politics",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "APM to begin zonal town halls in Katsina",
+   "s": "The Makinde/Daura campaign of the APM announced zonal town hall meetings across the six geopolitical zones, starting in Katsina. Separately, Governor Seyi Makinde and the APM went to court against Abia State, Governor Alex Otti and others over a N200 million campaign fee.",
+   "c": "politics",
+   "st": [
+    "Katsina"
+   ]
+  },
+  {
+   "i": [
+    28
+   ],
+   "h": "Lulu explains refusal to sign ex-NFF leaders' paper to FIFA",
+   "s": "Former NFF president Sani Lulu said he refused to sign the position paper that former federation leaders gave the visiting FIFA and CAF governance delegation in Abuja because he was not allowed to scrutinise it or contribute to its recommendations.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "Flamingos beat Burkina Faso 2-0",
+   "s": "The Flamingos beat Burkina Faso 2-0 at the Charles Konan Banny Stadium in Yamoussoukro with two late goals after being held for more than 80 minutes, making it nine points from three matches at the WAFU B U17 Girls Cup. Nigeria were runners-up at the first edition in Ghana two years ago.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Zamfara and XEJet start Abuja-Gusau flights",
+   "s": "Zamfara signed an air route development agreement with XEJet for scheduled commercial flights between Gusau International Airport and Abuja. The state said the service will improve connectivity and help business, investment and tourism.",
+   "c": "business",
+   "st": [
+    "Zamfara"
+   ]
+  },
+  {
+   "i": [
+    46
+   ],
+   "h": "Kwara begins artificial insemination of cattle",
+   "s": "Kwara began artificial insemination of cattle with the American firm Genex URUS to improve local breeds and raise milk and dairy output. Livestock Commissioner Oloruntoyosi Thomas said the programme will cover thousands of animals, starting with 500 cattle.",
+   "c": "economy",
+   "st": [
+    "Kwara"
+   ]
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "Local factory starts producing new mosquito nets",
+   "s": "Harvestfield Healthcare began commercial production of Synera DuoForte, a next-generation insecticide-treated mosquito net, at its plant in the Harvestfield Free Trade Zone in Ogun State on 13 September. The factory is already supplying a World Bank-funded programme, a step towards making malaria prevention tools locally.",
+   "c": "health",
+   "st": []
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Shettima to open editors' conference in Enugu",
+   "s": "Vice President Shettima was due to open the 22nd All Nigeria Editors Conference of the Nigerian Guild of Editors at The Dome in Enugu on 24 September. More than 500 editors were expected to discuss democracy, elections and AI-driven disinformation, NGE president Eze Anaba said.",
+   "c": "society",
+   "st": [
+    "Enugu"
+   ]
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "AGF's outreach treats 1,500 in Kwara",
+   "s": "About 1,500 residents of Ijagbo and nearby communities in Oyun, Kwara, received free medical consultations, laboratory tests, drugs and surgery at a two-day outreach organised by Attorney-General Lateef Fagbemi with the Ijagbo Descendants Union. He said healthcare must be brought closer to the grassroots.",
+   "c": "health",
+   "st": [
+    "Kwara"
+   ]
+  }
+ ]
 }

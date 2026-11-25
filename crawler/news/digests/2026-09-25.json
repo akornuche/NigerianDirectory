@@ -1,12 +1,12 @@
 {
- "lead": "Nigeria demanded two permanent UN Security Council seats for Africa and signed a deal with the United States to draw American investment into its mineral sector, estimated at $700 billion. Communities in Borgu, Niger State, published the names of 547 worshippers they say were abducted, against the governor's figure of 33. The Super Eagles survived a scare to beat Madagascar 2-1 in Uyo, a Bungudu council chairman escaped after two months in captivity, and Atiku gave N20 million to families of the 37 miners who died in custody.",
+ "lead": "At the United Nations, Nigeria demanded at least two permanent Security Council seats for Africa and signed an agreement with the United States to bring American money into its mining sector.\n\nThe day in brief: in the President's address, read by Vice President Shettima, Nigeria said Africa can no longer sit on the margins of global decision-making and asked for the veto for as long as it exists. Dele Alake and US Deputy Secretary of State Christopher Landau signed the minerals framework in New York. In Niger State, Borgu communities published the names of 547 people they say were abducted from mosques in Dekara, far above the governor's figure of 33, and Atiku Abubakar gave N20 million to families of the 37 miners who died in Civil Defence custody. The Bungudu council chairman escaped after 61 days with bandits. In business, an Ardova-led group agreed to buy Powergas, Sterling Financial consolidated its shares and UAC agreed to sell its logistics stake to TGI. NECO results showed fewer candidates passing English and mathematics, and the Super Eagles beat Madagascar 2-1 in Uyo.",
  "items": [
   {
    "i": [
     2
    ],
    "h": "Nigeria demands two permanent Security Council seats for Africa",
-   "s": "President Tinubu's address to the UN General Assembly said Africa can no longer remain on the margins of global decision-making.",
+   "s": "In his address to the general debate of the 81st UN General Assembly, delivered by Vice President Kashim Shettima, President Tinubu demanded at least two permanent seats for Africa on the Security Council, with all the rights of permanent members, including the veto for as long as it exists. He said the world of 2026 cannot stay bound to the arrangements of the past and that Africa can no longer remain on the margins of global decisions.",
    "c": "world",
    "st": []
   },
@@ -15,7 +15,7 @@
     3
    ],
    "h": "Nigeria and US sign minerals investment framework",
-   "s": "Signed in New York, the framework is meant to bring US capital into solid minerals, which the government values at about $700 billion.",
+   "s": "Solid Minerals Minister Dele Alake and US Deputy Secretary of State Christopher Landau signed a framework at the Nigeria Mission in New York to attract American investment into exploration, processing, infrastructure and technical skills in the mining sector. The government values the country's mineral resources at about $700 billion and hopes the deal will move more of them into production.",
    "c": "economy",
    "st": []
   },
@@ -24,7 +24,7 @@
     34
    ],
    "h": "Niger communities list 547 abducted worshippers, disputing governor's 33",
-   "s": "Communities in Borgu released names of people they say were taken in mosque attacks in Dekara District, contradicting Governor Mohammed Bago.",
+   "s": "Communities in Borgu local government area published the names of 547 people they say were abducted in attacks on mosques and surrounding settlements in Dekara district on 21 August. The list contradicts Governor Mohammed Bago, who had put the number at 33 while receiving his predecessor, Abubakar Sani Bello, and has deepened questions about the true scale of the abduction.",
    "c": "security",
    "st": [
     "Niger"
@@ -35,7 +35,7 @@
     5
    ],
    "h": "Super Eagles beat Madagascar 2-1 in Uyo",
-   "s": "Nigeria survived a scare to win their opening 2027 AFCON qualifier.",
+   "s": "The Super Eagles came from behind to beat Madagascar 2-1 in Uyo in their first 2027 AFCON qualifier. They fell behind in the 16th minute to a header that appeared to come from an offside position, before pressing for an equaliser and turning the game around. Nigeria went into the campaign after finishing third at the 2025 AFCON and travel to Guinea-Bissau next.",
    "c": "sports",
    "st": [
     "Akwa Ibom"
@@ -46,7 +46,7 @@
     32
    ],
    "h": "Bungudu council chairman escapes after two months in captivity",
-   "s": "Nura Umar Abdullahi and four other kidnap victims escaped and were received by troops in Zamfara.",
+   "s": "Nura Umar Abdullahi, chairman of Bungudu local government in Zamfara, escaped from a bandits' camp in the early hours of Thursday with four other captives after 61 days. Gunmen seized him from his home in Bungudu town on 25 July. The Joint Task Force North West said troops of Operation Fansan Yamma received the five in the Kaura Namoda area.",
    "c": "security",
    "st": [
     "Zamfara"
@@ -57,7 +57,7 @@
     31
    ],
    "h": "Atiku gives N20m to families of miners who died in custody",
-   "s": "Atiku Abubakar gave N20 million to the bereaved families of the mining suspects who died while held by the Civil Defence Corps in Niger State.",
+   "s": "Visiting Minna, the ADC presidential candidate donated N20 million to relatives of the 37 men, suspected illegal miners, who died while held by the Civil Defence Corps in Niger State. Atiku paid a condolence call on the Emir of Minna, Umar Farouk Bahago, sat with bereaved families and survivors, and called on former military ruler Ibrahim Babangida.",
    "c": "politics",
    "st": [
     "Niger"
@@ -68,7 +68,7 @@
     12
    ],
    "h": "Ardova-led consortium to buy Powergas, Africa's largest CNG producer",
-   "s": "A.P. Moller Capital's infrastructure fund and Impala agreed to sell 100 per cent of the company.",
+   "s": "A.P. Moller Capital's Africa Infrastructure Fund I and Impala Energy Holdings agreed to sell Powergas, one of Africa's largest producers and “virtual pipeline” distributors of compressed natural gas, to a consortium led by Ardova Plc with Diadem Energy. The deal covers 100 per cent of Powergas Global Investments Nigeria and Powergas Ebedei.",
    "c": "business",
    "st": []
   },
@@ -77,7 +77,7 @@
     4
    ],
    "h": "Gas fund says N671bn public capital drew N1.6trn private investment",
-   "s": "The Midstream and Downstream Gas Infrastructure Fund described the leverage achieved across projects.",
+   "s": "The Midstream and Downstream Gas Infrastructure Fund said N671 billion of public money has drawn N1.6 trillion of private investment into gas infrastructure. The money supports 31 projects and 205 assets that could deliver about 475 million standard cubic feet of gas a day to the domestic market when complete, executive director Oluwole Adama told an energy correspondents' conference in Abuja.",
    "c": "economy",
    "st": []
   },
@@ -86,7 +86,7 @@
     11
    ],
    "h": "DisCos collected N1.41trn in seven months but missed N45bn in July",
-   "s": "Collection efficiency improved over last year, but uncollected bills remain large.",
+   "s": "NERC data show the 11 electricity distribution companies collected N1.41 trillion in the first seven months of 2026, with average collection efficiency above last year's level. In July alone they billed N250.79 billion but collected N205.53 billion, leaving N45.26 billion, or 18 per cent, unpaid. Analysts warned that weaker dry-season supply in the last quarter could erode the gains.",
    "c": "economy",
    "st": []
   },
@@ -95,7 +95,7 @@
     0
    ],
    "h": "Sterling Financial consolidates shares ten-to-one",
-   "s": "The holding company began its approved share capital reconstruction.",
+   "s": "Sterling Financial Holdings began its approved share capital reconstruction, merging every ten existing ordinary shares into one new share. The group said the exercise follows the growth of its equity base and balance sheet, will not change total shareholders' funds, and is meant to make its capital structure more efficient and appeal more to institutional and retail investors.",
    "c": "business",
    "st": []
   },
@@ -104,7 +104,7 @@
     6
    ],
    "h": "Gombe PDP clears Pantami and two others for fresh primary",
-   "s": "Isa Pantami, Khamisu Mailantarki and Usman Garry will contest after the court voided the earlier vote.",
+   "s": "The Gombe PDP cleared Isa Ali Pantami, Khamisu Mailantarki and Usman Aliyu Garry to run in a fresh governorship primary on Tuesday, 29 September, the party's publicity secretary Abdulkadir Dukku said. The rerun comes five days after a Federal High Court in Gombe annulled the process that had produced Pantami as candidate.",
    "c": "politics",
    "st": [
     "Gombe"
@@ -115,7 +115,7 @@
     7
    ],
    "h": "El-Rufai is deputy chairman of Atiku's campaign council",
-   "s": "ADC chieftain Dele Momodu defended the appointment.",
+   "s": "Atiku Abubakar named former Kaduna governor Nasir El-Rufai deputy chairman of his ADC presidential campaign council, with Kashim Ibrahim-Imam as chairman and Senator Austin Akobundu as director-general. El-Rufai, currently in detention, now sits at the centre of the opposition campaign; ADC chieftain Dele Momodu defended the choice against criticism.",
    "c": "politics",
    "st": []
   },
@@ -124,7 +124,7 @@
     41
    ],
    "h": "Moghalu rejects inclusion in Atiku's policy team",
-   "s": "The former CBN deputy governor said he was not consulted.",
+   "s": "Kingsley Moghalu, a former CBN deputy governor, rejected his inclusion in the policy team of Atiku's 2027 campaign, saying he was neither consulted nor asked for his consent before his name was published. The team was unveiled as part of the ADC campaign structure on Thursday.",
    "c": "politics",
    "st": []
   },
@@ -133,7 +133,7 @@
     1
    ],
    "h": "Zamfara governor tells Wike to join APC or stay out",
-   "s": "The row over Wike's Rainbow Coalition continued as he tied APC prospects to FCT projects.",
+   "s": "Zamfara Governor Dauda Lawal told FCT Minister Nyesom Wike to make his allegiance clear, saying he cannot support President Tinubu's re-election while backing other parties' candidates, and that APC governors' position on his Rainbow Coalition has not changed. Wike, inspecting the Apo-Karshi and Bwari-Kubwa roads, said residents of satellite towns would judge the APC by the infrastructure they can see.",
    "c": "politics",
    "st": [
     "Zamfara",
@@ -146,7 +146,7 @@
     29
    ],
    "h": "Makinde and Olawepo-Hashim agree on national unity government",
-   "s": "The APM and Accord candidates met, and the APM accused Tinubu of abdicating to a cabal.",
+   "s": "Accord Party candidate Gbenga Olawepo-Hashim met Oyo Governor Seyi Makinde, the APM's candidate, in Ibadan and said they agreed on forming a government of national unity after defeating President Tinubu. Separately, the APM accused Tinubu of handing his duties to a “cabal” of family members, aides and unelected people, and called his government lethargic.",
    "c": "politics",
    "st": []
   },
@@ -155,7 +155,7 @@
     16
    ],
    "h": "ADC dares APC to produce any judgment convicting Atiku",
-   "s": "The campaign responded to insults from APC spokesman Felix Morka.",
+   "s": "Atiku's campaign council challenged the APC to produce any court judgment convicting him of corruption, in reply to party spokesman Felix Morka, who said Atiku's record made him unfit for office. Phrank Shaibu called Morka's comments a “trial by insult” that could not explain why food, fuel, transport and electricity have become so hard to afford.",
    "c": "politics",
    "st": []
   },
@@ -164,7 +164,7 @@
     26
    ],
    "h": "Rivers ADC governorship candidate Ibraye quits",
-   "s": "Tonte Ibraye resigned from the party with a warning about its 2027 prospects.",
+   "s": "Tonte Ibraye, the ADC's former governorship candidate in Rivers, resigned from the party in a letter dated 24 September to his ward chairman in Degema Ward 16, Bille, citing a leadership crisis and doubts about the legitimacy of its 2027 tickets. He warned that the party's candidates are standing on “quicksand”.",
    "c": "politics",
    "st": [
     "Rivers"
@@ -175,7 +175,7 @@
     33
    ],
    "h": "Three remanded over murder of Kano social media commentator",
-   "s": "A Shari'a court ordered three men held over the killing of Ibrahim Khalil Dan Shagamu.",
+   "s": "The Upper Shari'a Court at Kofar Kudu in Kano remanded Aliyu Adamu, Salihu Haruna and Sani Muhammad until 17 November on charges of conspiracy and culpable homicide over the killing of popular social media commentator Ibrahim Khalil Dan Shagamu. Police said the incident happened at his home in Gaida Quarters, Kumbotso.",
    "c": "security",
    "st": [
     "Kano"
@@ -186,7 +186,7 @@
     30
    ],
    "h": "KC Luxury remanded over 184.5kg cocaine",
-   "s": "A Lagos Federal High Court remanded the socialite and two others in NDLEA custody.",
+   "s": "Justice Musa Kakaki of the Federal High Court in Lagos remanded socialite Afolabi Kazeem Michael, known as KC Luxury, and co-defendants Boniface Sule and Ikechukwu Patriarch in NDLEA custody pending their bail applications. The NDLEA charged them on 22 counts of drug trafficking and money laundering, alleging they exported 184.5kg of cocaine to the United Kingdom.",
    "c": "security",
    "st": [
     "Lagos"
@@ -197,7 +197,7 @@
     17
    ],
    "h": "Bauchi police detain 27 over murder and rape",
-   "s": "Arrests came in operations over three weeks.",
+   "s": "Bauchi police said they detained 27 suspects over murder, rape, robbery, kidnapping, vandalism, drug trafficking and counterfeit currency in three weeks of operations. Among them were four men arrested over the killing of Garba Abdullahi, 45, in Dunari village, Itas/Gadau, whom they accused of causing another resident's illness.",
    "c": "security",
    "st": [
     "Bauchi"
@@ -208,7 +208,7 @@
     15
    ],
    "h": "Nasarawa police foil kidnap plot",
-   "s": "Four suspects allegedly planned to kill their victim after collecting ransom.",
+   "s": "Police in Nasarawa said detectives stopped a planned kidnapping and arrested four men who allegedly meant to kill their target once ransom was paid. The command's spokesman, Superintendent Ramhan Nansel, added that two other people were held over a killing in Lafia linked to cult rivalry.",
    "c": "security",
    "st": [
     "Nasarawa"
@@ -219,7 +219,7 @@
     40
    ],
    "h": "Plateau assures travellers on Jos-Barkin Ladi road",
-   "s": "The government promised safe passage after an attack.",
+   "s": "The Plateau government condemned an attack in Kassa, Barkin Ladi, that killed three vigilantes, and assured motorists of safe passage on the Jos-Barkin Ladi highway after women and young people blocked the road in protest. It appealed for calm and said security agencies were working to find those responsible.",
    "c": "security",
    "st": [
     "Plateau"
@@ -230,7 +230,7 @@
     23
    ],
    "h": "Kano tops NECO results as English and maths passes fall",
-   "s": "Kano had the best results in NECO's 2026 internal exam, while the share of candidates with five credits including English and mathematics slipped from 61.60 to 58.67 per cent.",
+   "s": "NECO's 2026 internal SSCE results showed 804,948 of the candidates, 58.67 per cent, obtained five credits or more including English and mathematics, down from 61.60 per cent in 2023, and Kano had the best results. Registrar Dantani Wushishi announced the figures in Minna, saying 1,378,048 candidates registered.",
    "c": "education",
    "st": [
     "Kano"
@@ -241,7 +241,7 @@
     36
    ],
    "h": "Suleja protest over plan to turn university land into market",
-   "s": "Residents and students objected to converting land meant for IBB University.",
+   "s": "Community leaders, student union members and the NLC protested in Suleja against a reported plan to turn land allocated for the Suleja campus of Ibrahim Badamasi Babangida University into a market. The Suleja Development Association asked Governor Mohammed Bago to drop the plan, insisting the land was acquired for education.",
    "c": "education",
    "st": [
     "Niger"
@@ -252,7 +252,7 @@
     25
    ],
    "h": "Scrap dealers to halt supplies to steel firms from 1 October",
-   "s": "The association protested sudden changes in metal trading.",
+   "s": "The National Association of Scrap and Waste Dealers Employers of Nigeria told members to stop supplying scrap metal to iron and steel companies from 1 October, accusing them of sudden, unannounced price cuts. The action is set to run until 15 October but could become indefinite without an agreement, which could affect the supply of iron rods for construction.",
    "c": "economy",
    "st": []
   },
@@ -261,7 +261,7 @@
     13
    ],
    "h": "Ondo launches AI system for payroll and pensions",
-   "s": "Governor Aiyedatiwa unveiled Ondo AI for personnel records.",
+   "s": "Governor Lucky Aiyedatiwa launched “Ondo AI”, an artificial intelligence-based human resource system to automate personnel records, retirement and pension processing in the civil service and give the government up-to-date workforce data for decisions. “We cannot run 21st-century service on analogue system,” he said at the launch in Akure.",
    "c": "technology",
    "st": [
     "Ondo"
@@ -272,7 +272,7 @@
     10
    ],
    "h": "Victoria Island power plant targeted for December",
-   "s": "Elektron Energy's 40MW plant was inspected by the Lagos regulator.",
+   "s": "The Lagos State Electricity Regulatory Commission inspected Elektron Energy's 40-megawatt Victoria Island power plant, which recently received a generation licence and is designed to give dedicated supply to businesses in the district. The company said it aims to begin commercial operation in December.",
    "c": "economy",
    "st": [
     "Lagos"
@@ -283,7 +283,7 @@
     8
    ],
    "h": "Dangote's $660m pipeline links Ethiopia and Djibouti",
-   "s": "Leaders of both countries praised the Damarjog-Dewele project.",
+   "s": "Ethiopian Prime Minister Abiy Ahmed and Djibouti's President Ismaïl Omar Guelleh praised Dangote Group's $660 million Damerjog-Dewele oil terminal and pipeline at its groundbreaking in the Damerjog free trade zone. They said the project will strengthen regional trade, energy security and jobs across the Horn of Africa.",
    "c": "business",
    "st": []
   },
@@ -292,7 +292,7 @@
     37
    ],
    "h": "UAC to sell 43% of DP World Logistics to TGI",
-   "s": "The stake goes to 22 Plus Invest.",
+   "s": "UAC of Nigeria agreed to sell its 43 per cent stake in DP World Logistics, formerly MDS Logistics, to 22 Plus Invest, part of the Tropical General Investments Group, subject to regulatory approval. The company disclosed the deal in a filing dated 24 September signed by its company secretary, Ayomipo Wey.",
    "c": "business",
    "st": []
   },
@@ -301,7 +301,7 @@
     47
    ],
    "h": "SAN warns against revoking Benin-Asaba concession",
-   "s": "Abiodun Olatunji said the FG must follow the contract.",
+   "s": "Abiodun Olatunji SAN warned the federal government against cancelling the 25-year concession for the Benin-Asaba Expressway without following the contract's terms, as the works ministry ordered an immediate intervention on the road and talked of re-concessioning it. He spoke in Lagos on the dispute with the Benin-Asaba Expressway Concession Company.",
    "c": "economy",
    "st": [
     "Edo",
@@ -313,7 +313,7 @@
     22
    ],
    "h": "NNPC-Seplat JV offers free eye care to 6,000",
-   "s": "The project includes sight restoration surgery.",
+   "s": "The NNPC-Seplat joint venture launched a week-long free eye care programme, Eye Can See, in Uyo, Eket and Ibeno, Akwa Ibom, aiming to treat more than 6,000 people, including sight-restoring surgery. Seplat chairman Udoma Udo Udoma launched it in Uyo as part of the partners' support for host communities.",
    "c": "health",
    "st": []
   },
@@ -322,7 +322,7 @@
     14
    ],
    "h": "Delegates walk out on Netanyahu at UNGA",
-   "s": "Dozens left as he defended Israel's military campaigns.",
+   "s": "Dozens of delegates walked out of the UN General Assembly hall as Israeli Prime Minister Benjamin Netanyahu began his speech, in which he defended Israel's military campaigns in Gaza, Iran and elsewhere. “We're going to win. We have no other choice,” he said, as protests took place inside and outside the UN headquarters.",
    "c": "world",
    "st": []
   },
@@ -331,7 +331,7 @@
     42
    ],
    "h": "Man City reportedly guilty of 114 Premier League charges",
-   "s": "Sanctions loom after the long investigation.",
+   "s": "An independent commission has reportedly found Manchester City guilty of 114 of the 115 Premier League charges over alleged breaches of financial rules between 2009 and 2018, The Athletic reported. Sanctions have yet to be set, and the club is expected to appeal the verdict.",
    "c": "sports",
    "st": []
   }
