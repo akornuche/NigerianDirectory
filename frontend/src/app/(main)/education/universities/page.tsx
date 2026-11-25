@@ -99,7 +99,7 @@ export default async function UniversitiesPage({
             </section>
 
             {/* Browse by State */}
-            <section className="py-12 lg:py-16">
+            <section id="states" className="scroll-mt-24 py-12 lg:py-16">
                 <div className="shell">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                         <div className="w-1 h-8 bg-indigo-600 rounded-full"></div>
@@ -129,10 +129,10 @@ export default async function UniversitiesPage({
                                 {params.type ? `${params.type} Universities` : 'Top Universities'}
                             </h2>
                             <Link
-                                href="/education/universities/search"
+                                href="#states"
                                 className="text-indigo-600 hover:text-indigo-700 font-bold flex items-center transition-transform hover:translate-x-1"
                             >
-                                Find More <span className="ml-1">→</span>
+                                Browse by state <span className="ml-1">→</span>
                             </Link>
                         </div>
 

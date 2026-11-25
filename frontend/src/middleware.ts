@@ -24,10 +24,11 @@ export function middleware(request: NextRequest) {
     });
   }
 
-  // Handle /states redirect to education/schools (states page now goes to schools)
+  // /states has no page of its own: send it to the state list on the universities page
   if (pathname === '/states' || pathname === '/states/') {
     const url = request.nextUrl.clone();
-    url.pathname = '/education/schools';
+    url.pathname = '/education/universities/';
+    url.hash = 'states';
     return NextResponse.redirect(url, { status: 301 });
   }
 
