@@ -368,7 +368,7 @@ export default async function HomePage() {
           <h2 className="text-5xl lg:col-span-4 lg:text-[3.25rem]">About Nigerian Directory</h2>
           <div className="space-y-5 text-lg text-ink-2 lg:col-span-7 lg:col-start-6">
             <p>
-              NigerianDirectory.com is a directory of institutions in Nigeria. Its first section covers
+              Nigerian Directory is a directory of institutions in Nigeria. Its first section covers
               education: universities and secondary schools across the 36 states and the Federal
               Capital Territory.
             </p>
