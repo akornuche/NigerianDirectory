@@ -85,6 +85,8 @@ def main(path):
         vals = [q(v) for v in cols.values()] + [q(json.dumps(cs)) + '::jsonb', q(json.dumps(fs)) + '::jsonb', 'NOW()', 'NOW()', "'completed'", 'false']
         if UPDATE:
             keep = ['enriched_history', 'enriched_academics', 'enriched_campus_info', 'enriched_student_life', 'meta_title', 'meta_description']
+            if cols['website']:
+                keep.append('website')
             sets = ', '.join(f"{c} = {q(cols[c])}" for c in keep)
             out.append(f"UPDATE schools SET {sets}, content_sources = {q(json.dumps(cs))}::jsonb, updated_at = NOW() WHERE slug = {q(cols['slug'])};")
         else:
