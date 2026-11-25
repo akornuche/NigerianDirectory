@@ -21,6 +21,7 @@ import { getSchoolByPath, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
 import { assessContentQuality } from '@/lib/content-quality';
 import { pageTitle } from '@/lib/seo';
+import { recordPath } from '@/lib/slug';
 
 type ManagementMember = {
   name: string;
@@ -33,7 +34,12 @@ type ManagementMember = {
 async function getSchool(state: string, area: string, slug: string): Promise<School | null> {
   let redirectTo: string | null = null;
   try {
-    return await getSchoolByPath(state, area, slug);
+    const school = await getSchoolByPath(state, area, slug);
+    // One address per record: a university, or a school reached through the
+    // wrong locality, moves to its canonical URL instead of being duplicated.
+    const canonical = recordPath(school);
+    if (canonical !== `/education/schools/${state}/${area}/${slug}/`) redirectTo = canonical;
+    else return school;
   } catch (error) {
     redirectTo = movedToPath(error);
     if (!redirectTo) {
@@ -940,7 +946,8 @@ export default async function SchoolPage({ params }: Props) {
               <div className="card p-5 border-dashed border-2 border-gray-200 text-center">
                 <p className="text-xs text-gray-500 mb-2">Spotted incorrect information?</p>
                 <Link
-                  href={`/contact?subject=report_error&school=${encodeURIComponent(school.name)}`}
+                  href={`/contact/?subject=report_error&school=${encodeURIComponent(school.name)}`}
+                  rel="nofollow"
                   className="text-xs text-primary-600 hover:underline font-medium"
                 >
                   Report an error →

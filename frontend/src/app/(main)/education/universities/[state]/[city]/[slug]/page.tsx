@@ -20,13 +20,18 @@ import AdBanner from '@/components/ads/AdBanner';
 import SourceReferences from '@/components/content/SourceReferences';
 import { assessContentQuality } from '@/lib/content-quality';
 import { pageTitle } from '@/lib/seo';
-import { toSlugSegment } from '@/lib/slug';
+import { recordPath, toSlugSegment } from '@/lib/slug';
 
 // A record that was merged, renamed or moved 301-redirects to its canonical URL.
 async function getUniversity(state: string, city: string, slug: string): Promise<School | null> {
     let redirectTo: string | null = null;
     try {
-        return await api.getUniversityByPath(state, city, slug);
+        const uni = await api.getUniversityByPath(state, city, slug);
+        // One address per record: a school, or a university reached through
+        // the wrong city, moves to its canonical URL instead of being duplicated.
+        const canonical = recordPath(uni);
+        if (canonical !== `/education/universities/${state}/${city}/${slug}/`) redirectTo = canonical;
+        else return uni;
     } catch (error) {
         redirectTo = movedToPath(error);
         if (!redirectTo) {
@@ -436,7 +441,8 @@ export default async function UniversityPage({ params }: Props) {
 
                             <div className="mt-10 pt-8 border-t border-white/5">
                                 <Link
-                                    href={`/contact?school=${uni.slug}`}
+                                    href={`/contact/?school=${encodeURIComponent(uni.slug)}`}
+                                    rel="nofollow"
                                     className="block w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl text-center transition-all duration-300 transform active:scale-95"
                                 >
                                     Request Official Info

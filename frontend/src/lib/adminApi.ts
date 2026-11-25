@@ -9,7 +9,7 @@
  * the refresh fails too, the stored session is cleared and the browser goes
  * back to the login page.
  */
-import { toLocationSegment, toSlugSegment } from './slug';
+import { recordPath } from './slug';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
 
@@ -90,8 +90,4 @@ export function wordCount(...texts: Array<string | null | undefined>): number {
 }
 
 /** Public URL of a record, built with the same rules as the directory pages. */
-export function publicPath(r: { institution_category: string; state: string; city?: string | null; area?: string | null; slug: string }) {
-  const section = r.institution_category === 'university' ? 'universities' : 'schools';
-  const locality = r.institution_category === 'university' ? toSlugSegment(r.city) : toLocationSegment(r.area, r.city);
-  return `/education/${section}/${toSlugSegment(r.state)}/${locality}/${r.slug}/`;
-}
+export const publicPath = recordPath;

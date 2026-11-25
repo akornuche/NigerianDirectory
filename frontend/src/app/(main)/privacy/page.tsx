@@ -190,7 +190,7 @@ export default function PrivacyPage() {
             Our listings describe institutions, not private individuals. Some profiles name people in public
             roles, such as a vice-chancellor or a founder, based on public sources that each profile lists. If
             you are named and believe the information is wrong, please{' '}
-            <Link href="/contact/?subject=report_error" className="text-primary-600 underline">tell us</Link> and we
+            <Link href="/contact/?subject=report_error" rel="nofollow" className="text-primary-600 underline">tell us</Link> and we
             will review it.
           </p>
         </Section>

@@ -110,7 +110,7 @@ export default async function UniversitiesPage({
                         {nigerianStates.map((state) => (
                             <Link
                                 key={state}
-                                href={`/education/universities/${state.toLowerCase().replace(/ /g, '-')}/`}
+                                href={`/education/universities/${toSlugSegment(state)}/`}
                                 className="group p-4 bg-white border border-gray-100 rounded-xl text-center shadow-sm hover:shadow-md hover:border-indigo-200 hover:bg-indigo-50/30 transition-all duration-200"
                             >
                                 <span className="text-sm font-semibold text-gray-700 group-hover:text-indigo-600">{state}</span>

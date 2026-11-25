@@ -333,7 +333,8 @@ export default async function HospitalPage({ params }: Props) {
 
                             <div className="mt-10 pt-8 border-t border-white/5">
                                 <Link
-                                    href={`/contact?school=${hospital.slug}`}
+                                    href={`/contact/?school=${encodeURIComponent(hospital.slug)}`}
+                                    rel="nofollow"
                                     className="block w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl text-center transition-all duration-300 transform active:scale-95"
                                 >
                                     Request Official Info

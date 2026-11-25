@@ -50,3 +50,21 @@ export function toLocationSegment(
     }
     return toSlugSegment(city);
 }
+
+/**
+ * The one public URL of a directory record. Universities live under
+ * /education/universities/{state}/{city}/, everything else under
+ * /education/schools/{state}/{area or city}/. Detail pages 301 any other
+ * path to this one, so a record is never served at two addresses.
+ */
+export function recordPath(r: {
+    institution_category?: string | null;
+    state: string;
+    city?: string | null;
+    area?: string | null;
+    slug: string;
+}): string {
+    const university = r.institution_category === 'university';
+    const locality = university ? toSlugSegment(r.city || r.state) : toLocationSegment(r.area, r.city || r.state);
+    return `/education/${university ? 'universities' : 'schools'}/${toSlugSegment(r.state)}/${locality}/${r.slug}/`;
+}
