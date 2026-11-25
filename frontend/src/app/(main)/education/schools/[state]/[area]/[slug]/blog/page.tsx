@@ -209,7 +209,7 @@ export default async function SchoolBlogPage({ params }: Props) {
 
       {/* Breadcrumb */}
       <nav className="bg-gray-50 border-b">
-        <div className="mx-auto max-w-7xl container-padding py-3">
+        <div className="shell py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
               <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -247,7 +247,7 @@ export default async function SchoolBlogPage({ params }: Props) {
       </nav>
 
       {/* Hero Section with Image */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section className="field">
         {/* Hero Image Banner */}
         <div className="relative h-48 md:h-64 lg:h-80 overflow-hidden">
           <Image
@@ -260,7 +260,7 @@ export default async function SchoolBlogPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary-800/90" />
         </div>
 
-        <div className="mx-auto max-w-7xl container-padding py-8 lg:py-12 -mt-24 relative z-10">
+        <div className="shell py-8 lg:py-12 -mt-24 relative z-10">
           <div className="flex flex-col lg:flex-row gap-6 items-start">
             {/* School Logo */}
             <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white rounded-xl flex items-center justify-center shadow-lg overflow-hidden relative flex-shrink-0">
@@ -274,7 +274,7 @@ export default async function SchoolBlogPage({ params }: Props) {
 
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-3">
-                <span className="badge bg-secondary-400 text-gray-900 capitalize">
+                <span className="badge bg-paper text-ink capitalize">
                   {school.type} School
                 </span>
                 <span className="badge bg-white/20 text-white">Blog</span>
@@ -312,7 +312,7 @@ export default async function SchoolBlogPage({ params }: Props) {
 
       {/* Blog Content */}
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
@@ -416,7 +416,7 @@ export default async function SchoolBlogPage({ params }: Props) {
               )}
 
               {/* CTA */}
-              <div className="card p-6 bg-secondary-50 border-secondary-100">
+              <div className="card p-6 bg-paper-2">
                 <h3 className="font-semibold text-gray-900 mb-2">
                   Interested in {school.name}?
                 </h3>

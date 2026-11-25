@@ -57,7 +57,7 @@ export default async function HospitalsPage({
 
             {/* Breadcrumb */}
             <nav className="bg-gray-50 border-b">
-                <div className="mx-auto max-w-7xl container-padding py-3">
+                <div className="shell py-3">
                     <ol className="flex items-center space-x-2 text-sm">
                         <li>
                             <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -71,12 +71,12 @@ export default async function HospitalsPage({
             </nav>
 
             {/* Hero */}
-            <section className="bg-gradient-to-br from-red-600 to-red-800 text-white py-16 lg:py-24">
-                <div className="mx-auto max-w-7xl container-padding">
+            <section className="field py-16 lg:py-24">
+                <div className="shell">
                     <div className="max-w-3xl">
                         <div className="flex items-center gap-2 mb-4">
                             <BuildingOffice2Icon className="h-8 w-8" />
-                            <span className="badge bg-secondary-400 text-gray-900 font-bold uppercase tracking-wider">Health & Wellness</span>
+                            <span className="badge bg-paper text-ink font-medium">Health & Wellness</span>
                         </div>
                         <h1 className="text-4xl lg:text-5xl font-display font-bold leading-tight">
                             Hospitals in Nigeria
@@ -91,7 +91,7 @@ export default async function HospitalsPage({
 
             {/* Browse by State */}
             <section className="py-12 lg:py-16">
-                <div className="mx-auto max-w-7xl container-padding">
+                <div className="shell">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                         <div className="w-1 h-8 bg-red-600 rounded-full"></div>
                         Browse by State
@@ -113,8 +113,8 @@ export default async function HospitalsPage({
 
             {/* Featured Hospitals */}
             {featuredHospitals.length > 0 && (
-                <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
-                    <div className="mx-auto max-w-7xl container-padding">
+                <section className="py-12 lg:py-16 bg-paper">
+                    <div className="shell">
                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 capitalize">
                                 {params.type ? `${params.type} Hospitals` : 'Featured Hospitals'}

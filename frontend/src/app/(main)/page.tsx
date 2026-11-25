@@ -1,398 +1,392 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { 
-  AcademicCapIcon, 
-  MapPinIcon, 
-  MagnifyingGlassIcon,
-  BuildingLibraryIcon,
-  GlobeAltIcon,
-  UserGroupIcon
-} from '@heroicons/react/24/outline';
-import { api, School } from '@/lib/api';
-import { toSlugSegment, toLocationSegment } from '@/lib/slug';
-import AdBanner from '@/components/ads/AdBanner';
 import type { Metadata } from 'next';
+import { api, School } from '@/lib/api';
+import { toSlugSegment } from '@/lib/slug';
+import { verticals } from '@/config/verticals';
+import AdBanner from '@/components/ads/AdBanner';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-// Nigerian states for the homepage
-const popularStates = [
-  { name: 'Lagos', slug: 'lagos', count: 45 },
-  { name: 'FCT Abuja', slug: 'fct', count: 28 },
-  { name: 'Rivers', slug: 'rivers', count: 18 },
-  { name: 'Oyo', slug: 'oyo', count: 15 },
-  { name: 'Kano', slug: 'kano', count: 12 },
-  { name: 'Kaduna', slug: 'kaduna', count: 10 },
-  { name: 'Enugu', slug: 'enugu', count: 8 },
-  { name: 'Anambra', slug: 'anambra', count: 7 },
-];
+type StateCount = { state: string; schools: string; universities: string };
 
-const schoolTypes = [
-  { name: 'Private Schools', icon: BuildingLibraryIcon, count: 85 },
-  { name: 'Federal Schools', icon: AcademicCapIcon, count: 42 },
-  { name: 'International Schools', icon: GlobeAltIcon, count: 28 },
-  { name: 'Mission Schools', icon: UserGroupIcon, count: 25 },
-];
-
-// Fetch featured schools from API
-async function getFeaturedSchools(): Promise<School[]> {
-  try {
-    const schools = await api.getFeaturedSchools();
-    return schools.slice(0, 4); // Get top 4
-  } catch (error) {
-    console.error('Error fetching featured schools:', error);
-    // Return empty array, will show fallback
-    return [];
-  }
+interface HomeData {
+  total: number;
+  universities: number;
+  schools: number;
+  states: number;
+  byState: StateCount[];
+  byType: { federal: number; state: number; private: number } | null;
+  oldest: School[];
 }
 
-// Fallback featured schools if API fails
-const fallbackFeaturedSchools = [
-  {
-    name: 'Green Springs School',
-    type: 'private',
-    area: 'Lekki',
-    city: 'Lagos',
-    state: 'Lagos',
-    slug: 'green-springs-school',
-  },
-  {
-    name: 'British International School Lagos',
-    type: 'private',
-    area: 'Victoria Island',
-    city: 'Lagos',
-    state: 'Lagos',
-    slug: 'british-international-school-lagos',
-  },
-  {
-    name: "King's College Lagos",
-    type: 'federal',
-    area: 'Victoria Island',
-    city: 'Lagos',
-    state: 'Lagos',
-    slug: 'kings-college-lagos',
-  },
-  {
-    name: 'Loyola Jesuit College',
-    type: 'private',
-    area: 'Gwarimpa',
-    city: 'Abuja',
-    state: 'FCT',
-    slug: 'loyola-jesuit-college',
-  },
-];
+const num = (v: unknown) => Number(v) || 0;
+
+// Every figure on this page is read from the published records. When the
+// API cannot be reached the page still renders, without the figures.
+async function getHomeData(): Promise<HomeData> {
+  const [stats, federal, stateUnis, privateUnis] = await Promise.all([
+    api.getStats().catch(() => null),
+    api.getUniversities(1, 100, { type: 'federal' }).catch(() => null),
+    api.getUniversities(1, 1, { type: 'state' }).catch(() => null),
+    api.getUniversities(1, 1, { type: 'private' }).catch(() => null),
+  ]);
+  const s = stats as (typeof stats & { by_state?: StateCount[] }) | null;
+  const oldest = (federal?.schools || [])
+    .filter((u) => u.established_year)
+    .sort((a, b) => (a.established_year || 0) - (b.established_year || 0) || a.name.localeCompare(b.name))
+    .slice(0, 6);
+  return {
+    total: num(s?.total_schools),
+    universities: num(s?.universities),
+    schools: num(s?.secondary_schools),
+    states: num(s?.total_states),
+    byState: s?.by_state || [],
+    byType: federal && stateUnis && privateUnis
+      ? {
+          federal: federal.pagination.totalCount,
+          state: stateUnis.pagination.totalCount,
+          private: privateUnis.pagination.totalCount,
+        }
+      : null,
+    oldest,
+  };
+}
+
+const universityPath = (u: School) =>
+  `/education/universities/${toSlugSegment(u.state)}/${toSlugSegment(u.city)}/${u.slug}/`;
+
+const statePath = (row: StateCount) =>
+  num(row.schools) > 0
+    ? `/education/schools/${toSlugSegment(row.state)}/`
+    : `/education/universities/${toSlugSegment(row.state)}/`;
+
+const fmt = (n: number) => n.toLocaleString('en-NG');
 
 export default async function HomePage() {
-  // Fetch featured schools from database
-  const featuredSchools = await getFeaturedSchools();
-  const displaySchools = featuredSchools.length > 0 
-    ? featuredSchools 
-    : fallbackFeaturedSchools;
+  const d = await getHomeData();
+  const lead = d.oldest[0];
+  const sections = verticals.map((v) => ({
+    name: v.name,
+    description: v.description,
+    open: v.status === 'live',
+    href: v.status === 'live' ? `/${v.slug}/${v.categories[0]?.slug || ''}/` : `/coming-soon/${v.slug}/`,
+  }));
+  const comingCount = sections.filter((s) => !s.open).length;
 
   return (
     <>
-      {/* Top Leaderboard Ad */}
-      <div className="bg-gray-100 py-2">
-        <div className="mx-auto max-w-7xl flex justify-center">
-          <AdBanner slot="home-top-leaderboard" size="large-leaderboard" />
-          <AdBanner slot="home-top-mobile" size="mobile-banner" />
+      {/* ── Hero: the overprint sheet. The head hangs from column 1 and runs
+             onto a green field that starts on column 8; where it crosses,
+             its letters print in paper. ───────────────────────────────── */}
+      <section className="relative overflow-hidden">
+        <div className="shell">
+          <div className="relative">
+          <div
+            aria-hidden="true"
+            className="field absolute inset-y-0 hidden lg:block"
+            style={{ left: 'calc(7 * (100% + 2rem) / 12)', right: 'calc((100% - 100vw) / 2)' }}
+          />
+          <div className="relative grid min-h-[calc(100svh-72px)] grid-cols-1 lg:grid-cols-12 lg:gap-x-8">
+            <div className="relative col-span-full pt-14 lg:pt-24">
+              <h1 className="text-poster font-bold text-ink">
+                Nigeria, listed
+                <br />
+                and checked.
+              </h1>
+              {/* The overprint: the same head in paper, shown only over the field */}
+              <p
+                aria-hidden="true"
+                className="text-poster pointer-events-none absolute inset-x-0 top-14 hidden select-none font-display font-bold text-paper lg:top-24 lg:block"
+                style={{ clipPath: 'inset(0 0 0 calc(7 * (100% + 2rem) / 12))' }}
+              >
+                Nigeria, listed
+                <br />
+                and checked.
+              </p>
+            </div>
+
+            <div className="col-span-full pb-16 pt-10 lg:col-span-6 lg:pb-24 lg:pt-0">
+              <p className="max-w-xl text-xl leading-snug text-ink-2 lg:text-[21px]">
+                A national directory of Nigerian institutions, released one section at a time.
+                Education is open: each university and secondary school here is confirmed
+                against an independent source before it is published.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+                <Link href="/education/universities/" className="btn-primary">
+                  Browse universities
+                </Link>
+                <Link href="/education/schools/" className="btn-secondary">
+                  Secondary schools
+                </Link>
+              </div>
+            </div>
+
+            {/* The figure at the field's foot */}
+            <div className="field -mx-4 px-4 py-10 sm:-mx-8 sm:px-8 lg:col-span-4 lg:col-start-9 lg:mx-0 lg:self-end lg:bg-transparent lg:px-0 lg:pb-24 lg:pt-0">
+              {d.total > 0 && (
+                <>
+                  <p className="font-display text-[5.5rem] font-bold leading-none tracking-poster tabular lg:text-[8rem]">
+                    {fmt(d.total)}
+                  </p>
+                  <p className="mt-3 text-[17px] font-medium">
+                    published records: {fmt(d.universities)} universities and {fmt(d.schools)} secondary
+                    schools, in {d.states} states and the FCT
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+          </div>
         </div>
+      </section>
+
+      <div className="shell flex justify-center py-6">
+        <AdBanner slot="home-top-leaderboard" size="large-leaderboard" />
+        <AdBanner slot="home-top-mobile" size="mobile-banner" />
       </div>
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-        <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
-        <div className="relative mx-auto max-w-7xl container-padding py-20 lg:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
-              Find the Best Schools in{' '}
-              <span className="text-secondary-400">Nigeria</span>
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl">
-              Discover over 200 verified schools across Nigeria. Compare
-              facilities, read reviews, and find the perfect school for your
-              children.
-            </p>
-
-            {/* Search Box */}
-            <div className="mt-8 bg-white rounded-xl shadow-xl p-2 max-w-xl">
-              <div className="flex items-center">
-                <div className="flex-1 flex items-center px-4">
-                  <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search schools by name or location..."
-                    className="flex-1 px-3 py-3 text-gray-900 placeholder-gray-500 focus:outline-none"
-                  />
-                </div>
-                <button className="btn-primary">Search</button>
-              </div>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="mt-10 flex flex-wrap gap-8">
-              <div>
-                <div className="text-3xl font-bold">200+</div>
-                <div className="text-primary-200">Schools Listed</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">36+</div>
-                <div className="text-primary-200">States Covered</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">100%</div>
-                <div className="text-primary-200">Verified Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Popular States */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="mx-auto max-w-7xl container-padding">
-          {/* Billboard Ad above section */}
-          <div className="flex justify-center mb-8">
-            <AdBanner slot="home-states-billboard" size="billboard" />
-            <AdBanner slot="home-states-mobile" size="mobile-large" />
-          </div>
-          
-          <div className="text-center">
-            <h2 className="section-title">Browse Schools by State</h2>
-            <p className="section-subtitle mx-auto">
-              Explore schools across Nigeria&apos;s major states and cities
+      {/* ── Open now: education, by category ─────────────────────────── */}
+      <section className="py-24 lg:py-36">
+        <div className="shell grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h2 className="text-5xl lg:text-[3.25rem]">Education is open</h2>
+            <p className="mt-5 max-w-sm text-lg text-ink-muted">
+              The first section of the directory. Choose a category, then a state.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
-            {popularStates.map((state) => (
-              <Link
-                key={state.slug}
-                href={`/education/schools/${state.slug}/`}
-                className="card-hover p-6 text-center group"
-              >
-                <div className="w-12 h-12 mx-auto bg-primary-100 rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-                  <MapPinIcon className="h-6 w-6 text-primary-600 group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="mt-4 font-semibold text-gray-900">{state.name}</h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  {state.count} schools
-                </p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link href="/states/" className="btn-outline">
-              View All States
+          <div className="lg:col-span-8">
+            <Link
+              href="/education/universities/"
+              className="group grid grid-cols-[1fr_auto] items-end gap-x-6 border-b border-rule pb-8"
+            >
+              <span>
+                <span className="block font-display text-4xl font-bold tracking-display transition-colors group-hover:text-secondary-500 lg:text-5xl">
+                  Universities
+                </span>
+                {d.byType && (
+                  <span className="mt-3 block text-ink-muted">
+                    {fmt(d.byType.federal)} federal · {fmt(d.byType.state)} state · {fmt(d.byType.private)} private
+                  </span>
+                )}
+              </span>
+              <span className="font-display text-6xl font-bold leading-none tracking-poster tabular text-primary-700 lg:text-[5.5rem]">
+                {d.universities ? fmt(d.universities) : '→'}
+              </span>
             </Link>
-          </div>
-          
-          {/* Rectangle Ads Row */}
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <AdBanner slot="home-states-rect-1" size="rectangle" />
-            <AdBanner slot="home-states-rect-2" size="rectangle" className="hidden md:flex" />
-            <AdBanner slot="home-states-rect-3" size="rectangle" className="hidden lg:flex" />
-          </div>
-        </div>
-      </section>
-
-      {/* School Types */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="mx-auto max-w-7xl container-padding">
-          <div className="flex gap-8">
-            {/* Left Skyscraper Ad */}
-            <div className="hidden xl:block flex-shrink-0">
-              <AdBanner slot="home-types-left-sky" size="wide-skyscraper" />
-            </div>
-            
-            <div className="flex-1">
-              <div className="text-center">
-            <h2 className="section-title">Types of Schools</h2>
-            <p className="section-subtitle mx-auto">
-              From private academies to federal unity schools, find the right
-              fit
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {schoolTypes.map((type) => (
-              <div key={type.name} className="card p-6 text-center">
-                <div className="w-14 h-14 mx-auto bg-secondary-100 rounded-xl flex items-center justify-center">
-                  <type.icon className="h-7 w-7 text-secondary-600" />
-                </div>
-                <h3 className="mt-4 font-semibold text-gray-900">{type.name}</h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  {type.count} schools
-                </p>
-              </div>
-            ))}
-          </div>
-            </div>
-            
-            {/* Right Skyscraper Ad */}
-            <div className="hidden xl:block flex-shrink-0">
-              <AdBanner slot="home-types-right-sky" size="wide-skyscraper" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Schools */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="mx-auto max-w-7xl container-padding">
-          {/* Leaderboard Ad */}
-          <div className="flex justify-center mb-8">
-            <AdBanner slot="home-featured-leaderboard" size="leaderboard" />
-            <AdBanner slot="home-featured-mobile" size="mobile-banner" />
-          </div>
-          
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="section-title">Featured Schools</h2>
-              <p className="section-subtitle">
-                Top-rated schools recommended by parents
-              </p>
-            </div>
             <Link
               href="/education/schools/"
-              className="hidden md:inline-flex link text-primary-600"
+              className="group grid grid-cols-[1fr_auto] items-end gap-x-6 border-b border-rule py-8"
             >
-              View all →
+              <span>
+                <span className="block font-display text-4xl font-bold tracking-display transition-colors group-hover:text-secondary-500 lg:text-5xl">
+                  Secondary schools
+                </span>
+                <span className="mt-3 block text-ink-muted">
+                  Federal unity colleges, state, mission, private and international schools
+                </span>
+              </span>
+              <span className="font-display text-6xl font-bold leading-none tracking-poster tabular text-primary-700 lg:text-[5.5rem]">
+                {d.schools ? fmt(d.schools) : '→'}
+              </span>
             </Link>
+            <div className="grid grid-cols-[1fr_auto] items-end gap-x-6 py-8 text-ink-muted">
+              <span>
+                <span className="block font-display text-4xl font-bold tracking-display lg:text-5xl">
+                  Polytechnics and colleges
+                </span>
+                <span className="mt-3 block">Being checked now; published when every record is confirmed</span>
+              </span>
+              <span className="text-sm font-medium">Coming soon</span>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {displaySchools.map((school) => (
-              <Link
-                key={school.slug}
-                href={`/education/schools/${toSlugSegment(school.state)}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
-                className="card-hover group"
-              >
-                <div className="aspect-[4/3] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
-                  <Image
-                    src={(school as School).hero_image_url || (school as School).logo_url || '/placeholder-school.svg'}
-                    alt={school.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+      {/* ── The oldest universities on record: years as a specimen ──── */}
+      {d.oldest.length > 0 && (
+        <section className="bg-paper-2 py-24 lg:py-32">
+          <div className="shell grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <h2 className="text-5xl lg:text-[3.25rem]">The first generation</h2>
+              <p className="mt-5 max-w-md text-lg text-ink-muted">
+                The oldest federal universities in the directory, by the year each was founded.
+              </p>
+              {lead?.hero_image_url && (
+                <Link href={universityPath(lead)} className="duotone-well mt-12 block aspect-square max-w-[416px] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={lead.hero_image_url}
+                    alt={lead.name}
+                    loading="lazy"
+                    className="duotone h-full w-full object-cover"
                   />
-                  {/* Logo overlay */}
-                  {(school as School).logo_url && (
-                    <div className="absolute bottom-2 right-2 w-12 h-12 bg-white rounded-lg shadow-md overflow-hidden">
-                      <Image
-                        src={(school as School).logo_url!}
-                        alt={`${school.name} logo`}
-                        fill
-                        className="object-contain p-1"
-                      />
-                    </div>
-                  )}
-                </div>
-                <div className="p-4">
-                  <span className="badge-primary capitalize">{school.type}</span>
-                  <h3 className="mt-2 font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                    {school.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500 flex items-center">
-                    <MapPinIcon className="h-4 w-4 mr-1" />
-                    {school.area}, {school.city}
-                  </p>
-                </div>
+                </Link>
+              )}
+            </div>
+            <ol className="lg:col-span-7">
+              {d.oldest.map((u, i) => (
+                <li key={u.slug}>
+                  <Link
+                    href={universityPath(u)}
+                    className={`group grid grid-cols-[7rem_1fr] items-baseline gap-x-6 py-6 sm:grid-cols-[10rem_1fr] ${i ? 'border-t border-rule' : ''}`}
+                  >
+                    <span
+                      className={`font-display font-bold leading-none tracking-poster tabular transition-colors group-hover:text-secondary-500 ${i === 0 ? 'text-5xl sm:text-7xl text-primary-700' : 'text-4xl sm:text-6xl'}`}
+                    >
+                      {u.established_year}
+                    </span>
+                    <span>
+                      <span className="block text-xl font-medium sm:text-2xl">{u.name}</span>
+                      <span className="mt-1 block text-ink-muted">
+                        {[u.city, u.state].filter(Boolean).join(', ')}
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      {/* ── By state: the index as a specimen ───────────────────────── */}
+      {d.byState.length > 0 && (
+        <section className="py-24 lg:py-36">
+          <div className="shell">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-4 lg:grid-cols-12">
+              <h2 className="text-5xl lg:col-span-5 lg:text-[3.25rem]">By state</h2>
+              <p className="max-w-xl text-lg text-ink-muted lg:col-span-6 lg:col-start-7 lg:self-end">
+                Every state with a published record, the largest first. The figure is the number of
+                records in that state.
+              </p>
+            </div>
+            <ul className="mt-14 flex flex-wrap items-baseline gap-x-7 gap-y-3 lg:gap-x-9">
+              {d.byState.map((row) => {
+                const total = num(row.schools) + num(row.universities);
+                return (
+                  <li key={row.state}>
+                    <Link
+                      href={statePath(row)}
+                      className="font-display text-[2rem] font-bold leading-tight tracking-display transition-colors hover:text-secondary-500 sm:text-[2.6rem] lg:text-5xl"
+                    >
+                      {row.state}
+                      <sup className="ml-1 font-sans text-sm font-medium tracking-normal text-ink-muted sm:text-base">
+                        {total}
+                      </sup>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <p className="mt-12">
+              <Link href="/states/" className="btn-secondary">
+                All 36 states and the FCT
               </Link>
-            ))}
+            </p>
           </div>
-          
-          {/* In-feed Ad Row */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <AdBanner slot="home-featured-infeed-1" size="large-rectangle" />
-            <AdBanner slot="home-featured-infeed-2" size="large-rectangle" className="hidden md:flex" />
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Mid-page Ad Section */}
-      <section className="py-8 bg-gray-100">
-        <div className="mx-auto max-w-7xl container-padding">
-          <div className="flex flex-wrap justify-center gap-4 items-center">
-            <AdBanner slot="home-mid-square-1" size="square" />
-            <AdBanner slot="home-mid-rect" size="rectangle" className="hidden sm:flex" />
-            <AdBanner slot="home-mid-square-2" size="square" className="hidden lg:flex" />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 lg:py-24 gradient-bg">
-        <div className="mx-auto max-w-7xl container-padding text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
-            Are You a School Administrator?
-          </h2>
-          <p className="mt-4 text-lg text-primary-100 max-w-2xl mx-auto">
-            Claim your school profile today and connect with thousands of
-            parents looking for quality education in Nigeria.
+      {/* ── A statement, hung from column 4 ─────────────────────────── */}
+      <section className="pb-24 lg:pb-36">
+        <div className="shell grid grid-cols-1 lg:grid-cols-12 lg:gap-x-8">
+          <p className="font-display text-4xl font-bold leading-[1.05] tracking-display lg:col-span-9 lg:col-start-4 lg:text-[3.75rem]">
+            Nothing is listed until an independent source confirms it exists, and every page{' '}
+            <Link href="/about/" className="text-primary-700 underline decoration-2 underline-offset-[0.12em] transition-colors hover:text-secondary-500">
+              names its sources
+            </Link>
+            .
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/claim/" className="btn-secondary">
-              Claim Your School
+        </div>
+      </section>
+
+      <div className="shell flex justify-center pb-16">
+        <AdBanner slot="home-featured-infeed-1" size="large-rectangle" />
+      </div>
+
+      {/* ── The whole directory, section by section ─────────────────── */}
+      <section className="bg-paper-2 py-24 lg:py-32">
+        <div className="shell grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h2 className="text-5xl lg:text-[3.25rem]">One section at a time</h2>
+            <p className="mt-5 max-w-sm text-lg text-ink-muted">
+              The directory opens a section only when its records are checked. One is open;{' '}
+              {comingCount} are in preparation.
+            </p>
+          </div>
+          <ol className="lg:col-span-8">
+            {sections.map((s, i) => (
+              <li key={s.name}>
+                <Link
+                  href={s.href}
+                  className={`group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-4 py-5 sm:grid-cols-[3.5rem_1fr_auto] ${i ? 'border-t border-rule' : ''}`}
+                >
+                  <span className="tabular text-sm font-medium text-ink-muted">{String(i + 1).padStart(2, '0')}</span>
+                  <span>
+                    <span className={`block font-display text-2xl font-bold tracking-display transition-colors group-hover:text-secondary-500 sm:text-3xl ${s.open ? '' : 'text-ink-2'}`}>
+                      {s.name}
+                    </span>
+                    <span className="mt-1 block text-ink-muted">{s.description}</span>
+                  </span>
+                  <span className={`whitespace-nowrap text-sm font-medium ${s.open ? 'text-secondary-500' : 'text-ink-muted'}`}>
+                    {s.open ? (d.total ? `Open · ${fmt(d.total)}` : 'Open') : 'In preparation'}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ── For institutions: the one red field ─────────────────────── */}
+      <section className="field--mark py-20 lg:py-28">
+        <div className="shell grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <h2 className="text-5xl lg:text-[3.25rem]">Run a school or university?</h2>
+            <p className="mt-5 max-w-xl text-lg">
+              Ask to manage your institution&apos;s page, send a correction with your source, or
+              reach parents and students with an advertisement.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-3 lg:col-span-5 lg:justify-end">
+            <Link href="/contact/" className="btn-primary">
+              Contact the editors
             </Link>
-            <Link
-              href="/advertise/"
-              className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors"
-            >
-              Advertise With Us
+            <Link href="/advertise/" className="btn-secondary">
+              Advertise with us
             </Link>
           </div>
         </div>
       </section>
 
-      {/* SEO Content */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="mx-auto max-w-7xl container-padding">
-          <div className="flex gap-8">
-            {/* Left Ad Column */}
-            <div className="hidden lg:flex flex-col gap-4 flex-shrink-0">
-              <AdBanner slot="home-seo-left-1" size="rectangle" />
-              <AdBanner slot="home-seo-left-2" size="rectangle" />
-            </div>
-            
-            <div className="flex-1 max-w-3xl mx-auto prose prose-lg">
-              <h2 className="section-title text-center">
-                About NigerianDirectory.com
-              </h2>
-              <p className="text-gray-600 mt-6">
-                NigerianDirectory.com is Nigeria&apos;s most comprehensive school
-                directory, helping parents find the best educational institutions
-                for their children. We provide verified information on over 200
-                schools across all 36 states and the Federal Capital Territory.
-              </p>
-              <p className="text-gray-600">
-                Whether you&apos;re looking for a private school in Lagos, a federal
-                unity school in Abuja, or an international school in Port
-                Harcourt, our directory makes it easy to compare options, read
-                about facilities, and make informed decisions about your child&apos;s
-                education.
-              </p>
-              <p className="text-gray-600">
-                Our mission is to improve educational outcomes in Nigeria by
-                connecting families with quality schools and providing schools
-                with a platform to showcase their unique offerings.
-              </p>
-            </div>
-            
-            {/* Right Ad Column */}
-            <div className="hidden lg:flex flex-col gap-4 flex-shrink-0">
-              <AdBanner slot="home-seo-right-1" size="rectangle" />
-              <AdBanner slot="home-seo-right-2" size="rectangle" />
-            </div>
+      {/* ── About ───────────────────────────────────────────────────── */}
+      <section className="py-24 lg:py-32">
+        <div className="shell grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-12">
+          <h2 className="text-5xl lg:col-span-4 lg:text-[3.25rem]">About Nigerian<wbr />Directory<wbr />.com</h2>
+          <div className="space-y-5 text-lg text-ink-2 lg:col-span-7 lg:col-start-6">
+            <p>
+              NigerianDirectory.com is a directory of institutions in Nigeria. Its first section covers
+              education: universities and secondary schools across the 36 states and the Federal
+              Capital Territory.
+            </p>
+            <p>
+              Whether you are looking for a federal university in the north, a private university in
+              Ogun State, or a unity college or mission school near home, each page gives the
+              institution&apos;s history, what it teaches, where it is, and the sources the
+              information came from.
+            </p>
+            <p>
+              More sections, from health to business services, will open as their records are
+              checked. Schools and universities can contact us to correct or manage their pages.
+            </p>
           </div>
-          
-          {/* Bottom Leaderboard */}
-          <div className="mt-12 flex justify-center">
-            <AdBanner slot="home-bottom-billboard" size="billboard" />
-            <AdBanner slot="home-bottom-mobile" size="mobile-large" />
-          </div>
+        </div>
+        <div className="shell mt-20 flex justify-center">
+          <AdBanner slot="home-bottom-billboard" size="billboard" />
+          <AdBanner slot="home-bottom-mobile" size="mobile-large" />
         </div>
       </section>
     </>

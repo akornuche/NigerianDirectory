@@ -1,17 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Radio_Canada } from 'next/font/google';
 import '@/styles/globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const poppins = Poppins({
-  weight: ['500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
+// Body face. The display face, Radio Canada Big, is self-hosted from
+// /public/fonts (see styles/globals.css): this Next.js release does not list
+// it in next/font/google.
+const radioCanada = Radio_Canada({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-body',
   display: 'swap',
 });
 
@@ -36,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-NG" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en-NG" className={radioCanada.variable}>
       <head>
         {/* Google Consent Mode defaults. Must run before any Google tag
             (AdSense, GA), so it is the first script in <head>. Everything
@@ -51,7 +47,8 @@ if(c==='all'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'grante
           }}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
-        <meta name="theme-color" content="#1D4ED8" />
+        <meta name="theme-color" content="#006A40" />
+        <link rel="preload" href="/fonts/radio-canada-big-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

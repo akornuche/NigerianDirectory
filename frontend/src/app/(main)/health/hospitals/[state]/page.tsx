@@ -73,8 +73,8 @@ export default async function HospitalStatePage({ params }: Props) {
             </div>
 
             {/* Breadcrumb */}
-            <nav className="mx-auto max-w-7xl container-padding py-6">
-                <ol className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-gray-400">
+            <nav className="shell py-6">
+                <ol className="flex items-center space-x-2 text-xs font-bold text-gray-400">
                     <li><Link href="/" className="hover:text-red-600 transition-colors">Home</Link></li>
                     <li>/</li>
                     <li><Link href="/health/hospitals" className="hover:text-red-600 transition-colors">Hospitals</Link></li>
@@ -85,10 +85,10 @@ export default async function HospitalStatePage({ params }: Props) {
 
             {/* Hero Header */}
             <header className="bg-white border-y border-gray-100 py-12 lg:py-16 mb-12">
-                <div className="mx-auto max-w-7xl container-padding">
+                <div className="shell">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                         <div className="max-w-2xl">
-                            <span className="inline-block px-3 py-1 bg-red-50 text-red-600 text-xs font-black rounded-full uppercase tracking-widest mb-4">
+                            <span className="inline-block px-3 py-1 bg-red-50 text-red-600 text-xs font-black rounded-full mb-4">
                                 Regional Hub
                             </span>
                             <h1 className="text-4xl lg:text-5xl font-display font-black text-gray-900 leading-tight">
@@ -108,7 +108,7 @@ export default async function HospitalStatePage({ params }: Props) {
             </header>
 
             {/* Grid Content */}
-            <main className="mx-auto max-w-7xl container-padding pb-24">
+            <main className="shell pb-24">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {stateData.schools.map((hospital) => (
                         <Link
@@ -126,7 +126,7 @@ export default async function HospitalStatePage({ params }: Props) {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                                 <div className="absolute top-4 left-4">
-                                    <span className="px-3 py-1 bg-white/90 backdrop-blur text-red-700 text-[10px] font-black rounded-full shadow-sm uppercase tracking-tighter">
+                                    <span className="px-3 py-1 bg-white/90 backdrop-blur text-red-700 text-[10px] font-black rounded-full shadow-sm tracking-tighter">
                                         {hospital.type}
                                     </span>
                                 </div>
@@ -147,7 +147,7 @@ export default async function HospitalStatePage({ params }: Props) {
                                 </div>
 
                                 <div className="mt-6 pt-6 border-t border-gray-50 flex items-center justify-between">
-                                    <div className="flex items-center text-xs text-gray-400 font-bold uppercase tracking-wider">
+                                    <div className="flex items-center text-xs text-gray-400 font-bold ">
                                         More Detail <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                                     </div>
                                     {hospital.established_year && (

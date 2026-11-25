@@ -305,7 +305,7 @@ export default async function SchoolPage({ params }: Props) {
 
       {/* Breadcrumb */}
       <nav className="bg-gray-50 border-b">
-        <div className="mx-auto max-w-7xl container-padding py-3">
+        <div className="shell py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
               <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -337,68 +337,72 @@ export default async function SchoolPage({ params }: Props) {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative">
-        {/* Hero Image Banner - Full clear image */}
-        <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
-          <Image
-            src={school.hero_image_url || '/placeholder-school.svg'}
-            alt={`${school.name} campus`}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-          {/* Subtle bottom gradient for text readability */}
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
-
-        {/* School Info Overlay */}
-        <div className="absolute inset-x-0 bottom-0 pb-6">
-          <div className="mx-auto max-w-7xl container-padding">
-            <div className="flex flex-col lg:flex-row gap-4 items-end lg:items-center">
-              {/* School Logo */}
-              <div className="w-20 h-20 lg:w-28 lg:h-28 bg-white rounded-xl flex items-center justify-center shadow-lg overflow-hidden relative flex-shrink-0">
+      {/* Hero: the name large on paper beside the photograph, printed in one
+          colour; the founding year on a green field when there is none. */}
+      <section className="bg-paper">
+        <div className="shell grid grid-cols-1 gap-x-8 gap-y-10 pb-14 pt-10 lg:grid-cols-12 lg:pb-20 lg:pt-16">
+          <div className="lg:col-span-7 lg:self-end">
+            <div className="flex items-center gap-5">
+              <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden bg-white lg:h-24 lg:w-24">
                 <Image
                   src={school.logo_url || '/placeholder-logo.svg'}
                   alt={`${school.name} logo`}
                   fill
-                  sizes="(max-width: 1024px) 80px, 112px"
+                  sizes="96px"
                   className="object-contain p-2"
                 />
               </div>
-
-              <div className="flex-1 text-white">
-                <div className="flex flex-wrap gap-2 mb-2">
-                  <span className="badge bg-secondary-400 text-gray-900 capitalize">
-                    {school.type}
-                  </span>
-                  {school.verified && (
-                    <span className="badge bg-accent-500 text-white">Verified</span>
-                  )}
-                  {school.featured && (
-                    <span className="badge bg-white/20 text-white">Featured</span>
-                  )}
-                </div>
-
-                <h1 className="text-2xl lg:text-4xl font-display font-bold drop-shadow-lg">
-                  {school.name}
-                </h1>
-
-                <div className="mt-2 flex flex-wrap gap-4 text-white/90 text-sm lg:text-base">
-                  <span className="flex items-center drop-shadow">
-                    <MapPinIcon className="h-4 w-4 lg:h-5 lg:w-5 mr-1" />
-                    {school.area}, {school.city}, {school.state}
-                  </span>
-                  {school.established_year && (
-                    <span className="flex items-center drop-shadow">
-                      <BuildingLibraryIcon className="h-4 w-4 lg:h-5 lg:w-5 mr-1" />
-                      Est. {school.established_year}
-                    </span>
-                  )}
-                </div>
-              </div>
+              <p className="text-[15px] font-medium text-ink-muted">
+                <span className="capitalize">{school.type}</span> school
+                {school.verified && <span className="text-primary-700"> · Verified</span>}
+                {school.featured && <span> · Featured</span>}
+              </p>
             </div>
+
+            <h1 className="mt-8 text-[2.75rem] leading-[0.95] tracking-poster sm:text-6xl lg:text-[5.25rem]">
+              {school.name}
+            </h1>
+
+            <p className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-lg text-ink-2">
+              <span className="flex items-center">
+                <MapPinIcon className="mr-1.5 h-5 w-5 text-primary-700" />
+                {[school.area, school.city, school.state].filter(Boolean).join(', ')}
+              </span>
+              {school.established_year && (
+                <span className="flex items-center">
+                  <BuildingLibraryIcon className="mr-1.5 h-5 w-5 text-primary-700" />
+                  Est. {school.established_year}
+                </span>
+              )}
+            </p>
+          </div>
+
+          <div className="lg:col-span-5">
+            {school.hero_image_url ? (
+              <div className="duotone-well relative aspect-[4/3] overflow-hidden lg:aspect-square">
+                <Image
+                  src={school.hero_image_url}
+                  alt={`${school.name} campus`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="duotone object-cover"
+                  priority
+                />
+              </div>
+            ) : (
+              <div className="field flex aspect-[4/3] flex-col justify-end p-8 lg:aspect-square">
+                {school.established_year ? (
+                  <>
+                    <p className="font-display text-[6rem] font-bold leading-none tracking-poster tabular lg:text-[8.5rem]">
+                      {school.established_year}
+                    </p>
+                    <p className="mt-2 font-medium">Year founded</p>
+                  </>
+                ) : (
+                  <p className="font-display text-4xl font-bold tracking-display">{school.state}</p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -406,8 +410,8 @@ export default async function SchoolPage({ params }: Props) {
       {/* Disclaimer */}
       <section className="py-6">
         <div className="mx-auto max-w-3xl container-padding">
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-            <p className="text-sm text-yellow-900">
+          <div className="bg-paper-2 p-5">
+            <p className="text-sm text-ink-2">
               <strong>Disclaimer:</strong> While we strive to provide accurate and up-to-date information, some details on this page may contain minor errors or may not reflect the most current status. We recommend visiting the official school website or contacting the school directly to confirm important information.
             </p>
           </div>
@@ -415,13 +419,13 @@ export default async function SchoolPage({ params }: Props) {
       </section>
 
       {/* Quick Actions Bar */}
-      <section className="bg-primary-600 text-white py-4">
-        <div className="mx-auto max-w-7xl container-padding">
-          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+      <section className="field py-3">
+        <div className="shell">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
             {school.phone && (
               <a
                 href={`tel:${school.phone}`}
-                className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
+                className="inline-flex items-center py-2 text-[15px] font-medium underline decoration-1 underline-offset-4 hover:no-underline"
               >
                 <PhoneIcon className="h-4 w-4 mr-2" />
                 {school.phone}
@@ -430,7 +434,7 @@ export default async function SchoolPage({ params }: Props) {
             {school.email && (
               <a
                 href={`mailto:${school.email}`}
-                className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
+                className="inline-flex items-center py-2 text-[15px] font-medium underline decoration-1 underline-offset-4 hover:no-underline"
               >
                 <EnvelopeIcon className="h-4 w-4 mr-2" />
                 Email School
@@ -441,7 +445,7 @@ export default async function SchoolPage({ params }: Props) {
                 href={school.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
+                className="inline-flex items-center py-2 text-[15px] font-medium underline decoration-1 underline-offset-4 hover:no-underline"
               >
                 <GlobeAltIcon className="h-4 w-4 mr-2" />
                 Visit Website
@@ -449,7 +453,7 @@ export default async function SchoolPage({ params }: Props) {
             )}
             <Link
               href={`/education/schools/${resolvedParams.state}/${resolvedParams.area}/${school.slug}/register/`}
-              className="inline-flex items-center px-4 py-2 bg-secondary-400 hover:bg-secondary-500 text-gray-900 font-medium rounded-lg transition-colors text-sm"
+              className="inline-flex items-center min-h-[44px] px-5 bg-ink hover:bg-ink-2 text-paper font-medium transition-colors text-[15px] sm:ml-auto"
             >
               Manage This Profile
             </Link>
@@ -459,7 +463,7 @@ export default async function SchoolPage({ params }: Props) {
 
       {/* Main Content */}
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Main Column */}
             <div className="lg:col-span-2 space-y-8">
@@ -954,8 +958,8 @@ export default async function SchoolPage({ params }: Props) {
 
           {/* Disclaimer */}
           <div className="mt-8 mx-auto max-w-3xl container-padding">
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-              <p className="text-sm text-yellow-900">
+            <div className="bg-paper-2 p-5">
+              <p className="text-sm text-ink-2">
                 <strong>Disclaimer:</strong> While we strive to provide accurate and up-to-date information, some details on this page may contain minor errors or may not reflect the most current status. We recommend visiting the official school website or contacting the school directly to confirm important information.
               </p>
             </div>

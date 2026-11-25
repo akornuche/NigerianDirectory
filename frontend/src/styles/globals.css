@@ -2,112 +2,184 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+/*
+ * Hallmark "Grid" material, in Nigerian green.
+ * Paper: warm off-white. Ink: blue-black. Field: deep flag green, flooded
+ * edge to edge or from a column line. Mark: one red for the chosen or
+ * current thing. Square corners, no shadows, no strokes between sections.
+ * Display: Radio Canada Big 700 in sentence case; body: Radio Canada.
+ */
 
-/* Base styles */
+/* Radio Canada Big (SIL Open Font License), self-hosted. */
+@font-face {
+  font-family: 'Radio Canada Big';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/radio-canada-big-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Radio Canada Big';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/radio-canada-big-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --color-paper: #F8F7F3;
+  --color-paper-2: #EFEEE8;
+  --color-ink: #121826;
+  --color-ink-2: #283041;
+  --color-muted: #5C6577;
+  --color-rule: #DCDAD3;
+  --color-field: #006A40;
+  --color-field-ink: #F8F7F3;
+  --color-mark: #D52B1E;
+  --color-focus: #006A40;
+  --dur-short: 160ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    @apply bg-background text-gray-900 antialiased;
+    @apply bg-paper text-ink antialiased font-sans;
+    font-size: 17px;
+    line-height: 1.5;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold;
+    @apply font-display font-bold tracking-display;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-mark);
+    color: var(--color-paper);
   }
 }
 
-/* Component styles */
 @layer components {
+  /* Wrapper: 1312px of content at 1440, 16px gutters on a phone. */
+  .shell {
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-16;
+  }
+
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 
-           bg-primary-600 text-white font-medium rounded-lg
-           hover:bg-primary-700 focus:outline-none focus:ring-2 
-           focus:ring-primary-500 focus:ring-offset-2
-           transition-colors duration-200
-           disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center min-h-[52px] px-6
+           bg-ink text-paper font-medium
+           hover:bg-ink-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    transition: background-color var(--dur-short) var(--ease-out);
   }
-  
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 
-           bg-secondary-400 text-gray-900 font-medium rounded-lg
-           hover:bg-secondary-500 focus:outline-none focus:ring-2 
-           focus:ring-secondary-400 focus:ring-offset-2
-           transition-colors duration-200;
-  }
-  
+
+  /* Secondary: text with a hairline underline that turns mark red. */
+  .btn-secondary,
   .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 
-           border-2 border-primary-600 text-primary-600 font-medium rounded-lg
-           hover:bg-primary-600 hover:text-white focus:outline-none focus:ring-2 
-           focus:ring-primary-500 focus:ring-offset-2
-           transition-colors duration-200;
+    @apply inline-flex items-center min-h-[52px] font-medium underline decoration-1 underline-offset-[0.32em];
+    transition: color var(--dur-short) var(--ease-out);
   }
-  
+  .btn-secondary:hover,
+  .btn-outline:hover {
+    color: var(--color-mark);
+  }
+
+  /* A card is a well: a step of paper, no border, no shadow. */
   .card {
-    @apply bg-white rounded-xl shadow-sm border border-gray-100 
-           overflow-hidden transition-shadow duration-200
-           hover:shadow-md;
+    @apply bg-white overflow-hidden;
   }
-  
   .card-hover {
-    @apply card hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+    @apply card;
+    transition: background-color var(--dur-short) var(--ease-out);
   }
-  
+  .card-hover:hover {
+    @apply bg-paper-2;
+  }
+
   .section-title {
-    @apply text-3xl md:text-4xl font-display font-bold text-gray-900;
+    @apply font-display font-bold tracking-display text-ink text-4xl md:text-5xl;
   }
-  
   .section-subtitle {
-    @apply text-lg text-gray-600 mt-4 max-w-2xl;
+    @apply text-lg text-ink-muted mt-4 max-w-2xl;
   }
-  
+
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-4 sm:px-8 lg:px-16;
   }
-  
+
   .link {
-    @apply text-primary-600 hover:text-primary-700 
-           underline-offset-2 hover:underline transition-colors;
+    @apply text-primary-700 underline decoration-1 underline-offset-2;
+    transition: color var(--dur-short) var(--ease-out);
   }
-  
+  .link:hover {
+    color: var(--color-mark);
+  }
+
   .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full 
-           text-xs font-medium;
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium;
   }
-  
   .badge-primary {
-    @apply badge bg-primary-100 text-primary-800;
+    @apply badge bg-primary-50 text-primary-800;
   }
-  
   .badge-secondary {
-    @apply badge bg-secondary-100 text-secondary-800;
+    @apply badge bg-secondary-50 text-secondary-800;
   }
-  
   .badge-accent {
-    @apply badge bg-accent-100 text-accent-800;
+    @apply badge bg-primary-50 text-primary-800;
   }
-  
+
+  /* Inputs: square, no box, a hairline beneath. */
   .input {
-    @apply block w-full rounded-lg border-gray-300 
-           shadow-sm focus:border-primary-500 focus:ring-primary-500
-           sm:text-sm transition-colors;
+    @apply block w-full border-0 border-b border-ink-muted bg-transparent px-0 py-3
+           focus:border-primary-700 focus:ring-0 sm:text-sm;
   }
-  
   .input-error {
-    @apply border-red-300 focus:border-red-500 focus:ring-red-500;
+    @apply border-secondary-500 focus:border-secondary-600;
+  }
+
+  /* Flat fields. Green floods; red marks at most once a page. */
+  .field {
+    background: var(--color-field);
+    color: var(--color-field-ink);
+    --color-focus: var(--color-field-ink);
+  }
+  .field--mark {
+    background: var(--color-mark);
+    color: var(--color-paper);
+    --color-focus: var(--color-ink);
+  }
+
+  /* Photographs print as one-colour duotones on a paper well. */
+  .duotone {
+    filter: grayscale(1) contrast(1.12);
+    mix-blend-mode: multiply;
+  }
+  .duotone-well {
+    background: var(--color-paper-2);
+  }
+
+  /* Wordmark: the name in two lines beside a mark-red square. */
+  .wordmark {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    column-gap: 0.55rem;
+    align-items: center;
+    font-family: 'Radio Canada Big', var(--font-body), sans-serif;
+    line-height: 0.92;
   }
 }
 
-/* Utility styles */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -115,7 +187,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -123,39 +195,41 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Kept for pages that still use them; all are flat now. */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-accent-500;
+    @apply text-primary-700;
   }
-  
   .gradient-bg {
-    @apply bg-gradient-to-r from-primary-600 to-primary-700;
+    @apply field;
   }
-  
   .gradient-bg-light {
-    @apply bg-gradient-to-r from-primary-50 to-accent-50;
+    @apply bg-paper-2;
+  }
+
+  .text-poster {
+    font-size: clamp(3.25rem, 10.2vw, 10rem);
+    letter-spacing: -0.045em;
+    line-height: 0.9;
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-gray-100;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400;
-}
-
-/* Focus visible for accessibility */
+/* Focus: a 2px ring in the focus colour of the surface it sits on. */
 :focus-visible {
-  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

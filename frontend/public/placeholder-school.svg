@@ -1,25 +1,16 @@
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="schoolBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e0f2fe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#bae6fd;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#schoolBg)"/>
-  <!-- Building -->
-  <rect x="200" y="250" width="400" height="250" fill="#0369a1" rx="5"/>
-  <!-- Roof -->
-  <polygon points="150,250 400,100 650,250" fill="#0c4a6e"/>
-  <!-- Door -->
-  <rect x="350" y="380" width="100" height="120" fill="#fbbf24" rx="5"/>
-  <!-- Windows row 1 -->
-  <rect x="230" y="280" width="60" height="60" fill="#fff" rx="3"/>
-  <rect x="320" y="280" width="60" height="60" fill="#fff" rx="3"/>
-  <rect x="420" y="280" width="60" height="60" fill="#fff" rx="3"/>
-  <rect x="510" y="280" width="60" height="60" fill="#fff" rx="3"/>
-  <!-- Flag -->
-  <rect x="395" y="80" width="10" height="80" fill="#52525b"/>
-  <rect x="405" y="80" width="60" height="40" fill="#22c55e"/>
-  <!-- Text placeholder -->
-  <text x="400" y="550" font-family="Arial, sans-serif" font-size="24" fill="#0369a1" text-anchor="middle">School Image</text>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No photograph yet">
+  <rect width="800" height="600" fill="#EFEEE8"/>
+  <!-- A flat building elevation in paper tones: no photograph yet -->
+  <rect x="160" y="250" width="480" height="230" fill="#E2E0D8"/>
+  <polygon points="130,250 400,130 670,250" fill="#D8D5CC"/>
+  <rect x="360" y="380" width="80" height="100" fill="#CFCBC1"/>
+  <rect x="200" y="290" width="56" height="56" fill="#EFEEE8"/>
+  <rect x="284" y="290" width="56" height="56" fill="#EFEEE8"/>
+  <rect x="460" y="290" width="56" height="56" fill="#EFEEE8"/>
+  <rect x="544" y="290" width="56" height="56" fill="#EFEEE8"/>
+  <rect x="396" y="70" width="6" height="80" fill="#CFCBC1"/>
+  <rect x="402" y="70" width="22" height="34" fill="#006A40"/>
+  <rect x="424" y="70" width="22" height="34" fill="#F8F7F3"/>
+  <rect x="446" y="70" width="22" height="34" fill="#006A40"/>
+  <rect y="480" width="800" height="120" fill="#E5E3DC"/>
 </svg>

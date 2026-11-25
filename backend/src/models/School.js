@@ -395,7 +395,18 @@ class School {
             FROM schools
             ${includeUnpublished ? '' : `WHERE ${PUBLISHED}`}
         `);
-        return result.rows[0];
+        // Published records per state, split by category, for the homepage's
+        // state index. Counts arrive as strings, like the totals above.
+        const byState = await query(`
+            SELECT state,
+                COUNT(*) FILTER (WHERE institution_category = 'school') as schools,
+                COUNT(*) FILTER (WHERE institution_category = 'university') as universities
+            FROM schools
+            ${includeUnpublished ? '' : `WHERE ${PUBLISHED}`}
+            GROUP BY state
+            ORDER BY COUNT(*) DESC, state
+        `);
+        return { ...result.rows[0], by_state: byState.rows };
     }
 
     // Delete school

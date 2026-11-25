@@ -622,13 +622,17 @@ export function getNavigationVerticals(): Vertical[] {
 }
 
 // Color mapping for Tailwind classes
+// Every section shares the directory's one palette (Hallmark Grid): green
+// tints for wells and text, ink for actions. The keys stay so each vertical's
+// colour name still resolves.
+const sectionColors = { bg: 'bg-primary-50', text: 'text-primary-700', hover: 'hover:bg-primary-50', badge: 'bg-ink' };
 export const verticalColors: Record<string, { bg: string; text: string; hover: string; badge: string }> = {
-  primary: { bg: 'bg-primary-100', text: 'text-primary-600', hover: 'hover:bg-primary-50', badge: 'bg-primary-500' },
-  red: { bg: 'bg-red-100', text: 'text-red-600', hover: 'hover:bg-red-50', badge: 'bg-red-500' },
-  orange: { bg: 'bg-orange-100', text: 'text-orange-600', hover: 'hover:bg-orange-50', badge: 'bg-orange-500' },
-  blue: { bg: 'bg-blue-100', text: 'text-blue-600', hover: 'hover:bg-blue-50', badge: 'bg-blue-500' },
-  emerald: { bg: 'bg-emerald-100', text: 'text-emerald-600', hover: 'hover:bg-emerald-50', badge: 'bg-emerald-500' },
-  slate: { bg: 'bg-slate-100', text: 'text-slate-600', hover: 'hover:bg-slate-50', badge: 'bg-slate-500' },
-  cyan: { bg: 'bg-cyan-100', text: 'text-cyan-600', hover: 'hover:bg-cyan-50', badge: 'bg-cyan-500' },
-  violet: { bg: 'bg-violet-100', text: 'text-violet-600', hover: 'hover:bg-violet-50', badge: 'bg-violet-500' },
+  primary: sectionColors,
+  red: sectionColors,
+  orange: sectionColors,
+  blue: sectionColors,
+  emerald: sectionColors,
+  slate: sectionColors,
+  cyan: sectionColors,
+  violet: sectionColors,
 };

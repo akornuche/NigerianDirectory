@@ -115,7 +115,7 @@ export default function RegisterSchoolPage() {
               <BuildingLibraryIcon className="h-6 w-6" />
             </div>
             <div>
-              <p className="text-primary-200 text-sm font-medium uppercase tracking-wide">
+              <p className="text-primary-200 text-sm font-medium ">
                 School Profile Management
               </p>
               <h1 className="text-2xl font-bold">Register as School Administrator</h1>

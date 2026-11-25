@@ -71,8 +71,8 @@ export default function AdvertisePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl container-padding">
+      <section className="field py-16 lg:py-24">
+        <div className="shell">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-display font-bold">
               Advertise on NigerianDirectory
@@ -84,7 +84,7 @@ export default function AdvertisePage() {
             <div className="mt-8">
               <a 
                 href="#contact" 
-                className="inline-flex items-center px-6 py-3 bg-secondary-400 hover:bg-secondary-500 text-gray-900 font-semibold rounded-lg transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-ink hover:bg-ink-2 text-paper font-medium transition-colors"
               >
                 Get Started
               </a>
@@ -95,7 +95,7 @@ export default function AdvertisePage() {
 
       {/* Stats Section */}
       <section className="py-12 bg-white border-b">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="grid grid-cols-3 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -112,7 +112,7 @@ export default function AdvertisePage() {
 
       {/* Ad Options */}
       <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-display font-bold text-gray-900">
               Advertising Options
@@ -156,7 +156,7 @@ export default function AdvertisePage() {
 
       {/* Target Audience */}
       <section className="py-16 lg:py-24 bg-white">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-display font-bold text-gray-900">

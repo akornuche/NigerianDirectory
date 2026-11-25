@@ -1,3 +1,20 @@
+/** Nigerian green, from the flag (#008751) at 500; 700 is the field. */
+function green() {
+  return {
+    50: '#EEF7F1',
+    100: '#D6EDDF',
+    200: '#AFDBC2',
+    300: '#7EC39E',
+    400: '#3FA16F',
+    500: '#008751',
+    600: '#007849',
+    700: '#006A40',
+    800: '#0B5233',
+    900: '#0B3E28',
+    950: '#062A1A',
+  };
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,49 +24,73 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Hallmark "Grid" material in Nigerian green. One field colour (green)
+      // floods sections, one mark colour (red) marks the chosen or current
+      // thing, and blue-black ink carries the type. The old blue, indigo,
+      // violet and purple utilities are mapped onto the green scale so every
+      // page takes the new palette without a second blue.
       colors: {
-        // NigerianDirectory Brand Colors
-        primary: {
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA',
-          500: '#3B82F6',
-          600: '#1D4ED8', // Primary brand color
-          700: '#1E40AF',
-          800: '#1E3A8A',
-          900: '#1E3A8A',
-        },
+        primary: green(),
+        accent: green(),
+        blue: green(),
+        indigo: green(),
+        violet: green(),
+        purple: green(),
         secondary: {
-          50: '#FFFBEB',
-          100: '#FEF3C7',
-          200: '#FDE68A',
-          300: '#FCD34D',
-          400: '#FBBF24', // Secondary brand color
-          500: '#F59E0B',
-          600: '#D97706',
-          700: '#B45309',
-          800: '#92400E',
-          900: '#78350F',
+          50: '#FDF1EF',
+          100: '#FADCD8',
+          200: '#F4B8B0',
+          300: '#EC8B7F',
+          400: '#E2584A',
+          500: '#D52B1E', // mark
+          600: '#BC2219',
+          700: '#9C1C15',
+          800: '#7C1712',
+          900: '#62130F',
         },
-        accent: {
-          50: '#ECFDF5',
-          100: '#D1FAE5',
-          200: '#A7F3D0',
-          300: '#6EE7B7',
-          400: '#34D399',
-          500: '#10B981', // Accent brand color
-          600: '#059669',
-          700: '#047857',
-          800: '#065F46',
-          900: '#064E3B',
+        ink: {
+          DEFAULT: '#121826',
+          2: '#283041',
+          muted: '#5C6577',
         },
-        background: '#F9FAFB', // Background color
+        paper: {
+          DEFAULT: '#F8F7F3',
+          2: '#EFEEE8',
+          3: '#E5E3DC',
+        },
+        rule: '#DCDAD3',
+        background: '#F8F7F3',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Poppins', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Radio Canada Big"', 'var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      // Square corners and no shadows: depth comes from scale and colour.
+      // "full" stays round for dots and avatars.
+      borderRadius: {
+        none: '0',
+        sm: '0',
+        DEFAULT: '0',
+        md: '0',
+        lg: '0',
+        xl: '0',
+        '2xl': '0',
+        '3xl': '0',
+        full: '9999px',
+      },
+      boxShadow: {
+        sm: 'none',
+        DEFAULT: 'none',
+        md: 'none',
+        lg: 'none',
+        xl: 'none',
+        '2xl': 'none',
+        inner: 'none',
+        none: 'none',
+      },
+      letterSpacing: {
+        display: '-0.035em',
+        poster: '-0.045em',
       },
       fontSize: {
         '2xs': ['0.625rem', { lineHeight: '0.75rem' }],

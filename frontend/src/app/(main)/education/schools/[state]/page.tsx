@@ -91,7 +91,7 @@ export default async function StatePage({ params }: Props) {
 
       {/* Breadcrumb */}
       <nav className="bg-gray-50 border-b">
-        <div className="mx-auto max-w-7xl container-padding py-3">
+        <div className="shell py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
               <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -111,8 +111,8 @@ export default async function StatePage({ params }: Props) {
       </nav>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+      <section className="field py-12 lg:py-16">
+        <div className="shell">
           <h1 className="text-3xl lg:text-4xl font-display font-bold">
             Schools in {stateData.name}
           </h1>
@@ -125,7 +125,7 @@ export default async function StatePage({ params }: Props) {
 
       {/* Schools Grid */}
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="flex gap-8">
             {/* Left Skyscraper */}
             <div className="hidden xl:block flex-shrink-0">
@@ -148,7 +148,7 @@ export default async function StatePage({ params }: Props) {
                     href={`/education/schools/${resolvedParams.state}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
                     className="card-hover group"
                   >
-                    <div className="aspect-[16/9] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
+                    <div className="aspect-[16/9] relative duotone-well overflow-hidden">
                       <Image
                         src={school.hero_image_url || school.logo_url || '/placeholder-school.svg'}
                         alt={school.name}
@@ -197,7 +197,7 @@ export default async function StatePage({ params }: Props) {
                         href={`/education/schools/${resolvedParams.state}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
                         className="card-hover group"
                       >
-                        <div className="aspect-[16/9] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
+                        <div className="aspect-[16/9] relative duotone-well overflow-hidden">
                           <Image
                             src={school.hero_image_url || school.logo_url || '/placeholder-school.svg'}
                             alt={school.name}
@@ -244,7 +244,7 @@ export default async function StatePage({ params }: Props) {
 
       {/* SEO Content */}
       <section className="py-12 lg:py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           {/* Billboard Ad */}
           <div className="flex justify-center mb-8">
             <AdBanner slot="state-seo-billboard" size="billboard" />
