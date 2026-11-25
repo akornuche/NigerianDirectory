@@ -67,13 +67,28 @@ const fmt = (n: number) => n.toLocaleString('en-NG');
 export default async function HomePage() {
   const d = await getHomeData();
   const lead = d.oldest[0];
-  const sections = verticals.map((v) => ({
+  const directory = verticals.map((v) => ({
     name: v.name,
     description: v.description,
     open: v.status === 'live',
     href: v.status === 'live' ? `/${v.slug}/${v.categories[0]?.slug || ''}/` : `/coming-soon/${v.slug}/`,
+    status: v.status === 'live' ? (d.total ? `Open · ${fmt(d.total)}` : 'Open') : 'In preparation',
   }));
-  const comingCount = sections.filter((s) => !s.open).length;
+  // News is the second section to open, after Education.
+  const sections = [
+    directory[0],
+    {
+      name: 'News',
+      description: "The day's most reported Nigerian stories, summarised with links to the full reports",
+      open: true,
+      href: '/news/',
+      status: 'Daily',
+    },
+    ...directory.slice(1),
+  ];
+  const openCount = sections.filter((s) => s.open).length;
+  const comingCount = sections.length - openCount;
+  const words = ['None', 'One', 'Two', 'Three', 'Four', 'Five'];
 
   return (
     <>
@@ -313,8 +328,8 @@ export default async function HomePage() {
           <div className="lg:col-span-4">
             <h2 className="text-5xl lg:text-[3.25rem]">One section at a time</h2>
             <p className="mt-5 max-w-sm text-lg text-ink-muted">
-              The directory opens a section only when its records are checked. One is open;{' '}
-              {comingCount} are in preparation.
+              The directory opens a section only when its records are checked. {words[openCount] || openCount}{' '}
+              {openCount === 1 ? 'is' : 'are'} open; {comingCount} are in preparation.
             </p>
           </div>
           <ol className="lg:col-span-8">
@@ -332,7 +347,7 @@ export default async function HomePage() {
                     <span className="mt-1 block text-ink-muted">{s.description}</span>
                   </span>
                   <span className={`whitespace-nowrap text-sm font-medium ${s.open ? 'text-secondary-500' : 'text-ink-muted'}`}>
-                    {s.open ? (d.total ? `Open · ${fmt(d.total)}` : 'Open') : 'In preparation'}
+                    {s.status}
                   </span>
                 </Link>
               </li>
