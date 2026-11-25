@@ -1,5 +1,7 @@
 'use client';
 
+import { adminFetch } from '@/lib/adminApi';
+
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
@@ -10,7 +12,6 @@ import {
   ArrowTrendingUpIcon,
 } from '@heroicons/react/24/outline';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
 
 interface Overview {
   schools: {
@@ -75,11 +76,7 @@ export default function AdminOverview() {
   const [error, setError]   = useState('');
 
   useEffect(() => {
-    const token = localStorage.getItem('auth_token');
-    fetch(`${API_URL}/admin/overview`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : {},
-    })
-      .then(r => { if (!r.ok) throw new Error(`Server error ${r.status}`); return r.json(); })
+    adminFetch<Overview>('/admin/overview')
       .then(d => { setData(d); setLoading(false); })
       .catch(e => { setError(e.message); setLoading(false); });
   }, []);

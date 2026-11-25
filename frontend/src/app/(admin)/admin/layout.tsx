@@ -1,5 +1,7 @@
 'use client';
 
+import { clearSession } from '@/lib/adminApi';
+
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -55,13 +57,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const handleLogout = async () => {
     const token = localStorage.getItem('auth_token');
+    const refreshToken = localStorage.getItem('auth_refresh');
     try {
       await fetch(`${API_URL}/auth/logout`, {
         method: 'POST',
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ refreshToken }),
       });
     } catch { /* ignore */ }
-    ['auth_token', 'auth_role', 'auth_name', 'auth_email'].forEach(k => localStorage.removeItem(k));
+    clearSession();
     router.replace('/admin/login');
   };
 

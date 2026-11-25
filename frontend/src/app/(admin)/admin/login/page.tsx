@@ -1,5 +1,7 @@
 'use client';
 
+import { saveSession } from '@/lib/adminApi';
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
@@ -13,6 +15,13 @@ export default function AdminLoginPage() {
   const [loading, setLoading]   = useState(false);
   const [error, setError]       = useState('');
   const [showPw, setShowPw]     = useState(false);
+
+  // Explain why the admin was sent here after a session ran out.
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('expired')) {
+      setError('Your session has ended. Please sign in again.');
+    }
+  }, []);
 
   // If already logged in as admin, redirect
   useEffect(() => {
@@ -54,7 +63,7 @@ export default function AdminLoginPage() {
       }
 
       // Store token and user info
-      localStorage.setItem('auth_token', data.accessToken);
+      saveSession(data.accessToken, data.refreshToken);
       localStorage.setItem('auth_role', data.user.role);
       localStorage.setItem('auth_name', data.user.name);
       localStorage.setItem('auth_email', data.user.email);

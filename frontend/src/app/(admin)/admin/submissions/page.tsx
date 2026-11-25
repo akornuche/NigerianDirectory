@@ -1,9 +1,10 @@
 'use client';
 
+import { adminFetch } from '@/lib/adminApi';
+
 import { useEffect, useState, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
 
 interface Submission {
   id: number;
@@ -71,15 +72,11 @@ export default function SubmissionsPage() {
 
   const fetchData = useCallback(() => {
     setLoading(true);
-    const token = localStorage.getItem('auth_token');
     const qs = new URLSearchParams({ page: String(page), limit: '30' });
     if (statusFilter) qs.set('status', statusFilter);
     if (typeFilter)   qs.set('submission_type', typeFilter);
-    fetch(`${API_URL}/admin/contact-submissions?${qs}`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : {},
-    })
-      .then(r => r.json())
-      .then(d => { setSubmissions(d.submissions || []); setPagination(d.pagination || {}); setLoading(false); })
+    adminFetch<{ submissions?: Submission[]; pagination?: typeof pagination }>(`/admin/contact-submissions?${qs}`)
+      .then(d => { setSubmissions(d.submissions || []); setPagination(d.pagination || { page: 1, totalCount: 0, totalPages: 1 }); setLoading(false); })
       .catch(() => setLoading(false));
   }, [page, statusFilter, typeFilter]);
 
@@ -87,15 +84,10 @@ export default function SubmissionsPage() {
 
   const updateStatus = async (id: number, status: string) => {
     setUpdatingId(id);
-    const token = localStorage.getItem('auth_token');
-    await fetch(`${API_URL}/contact/${id}/status`, {
+    await adminFetch(`/contact/${id}/status`, {
       method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      },
       body: JSON.stringify({ status }),
-    });
+    }).catch(() => {});
     setUpdatingId(null);
     fetchData();
     if (selected?.id === id) setSelected(prev => prev ? { ...prev, status } : null);
