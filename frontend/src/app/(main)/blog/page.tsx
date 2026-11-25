@@ -30,7 +30,7 @@ function PostCard({ post, featured = false }: { post: BlogPostMeta; featured?: b
       href={`/blog/${post.slug}`}
       className={`card-hover group ${featured ? 'lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-6' : ''}`}
     >
-      <div className={`aspect-[16/9] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden ${featured ? 'lg:aspect-auto lg:h-full' : ''}`}>
+      <div className={`aspect-[16/9] relative duotone-well overflow-hidden ${featured ? 'lg:aspect-auto lg:h-full' : ''}`}>
         {post.coverImage ? (
           <Image
             src={post.coverImage}
@@ -102,7 +102,7 @@ export default async function BlogPage() {
 
       {/* Breadcrumb */}
       <nav className="bg-gray-50 border-b">
-        <div className="mx-auto max-w-7xl container-padding py-3">
+        <div className="shell py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
               <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -116,8 +116,8 @@ export default async function BlogPage() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+      <section className="field py-12 lg:py-16">
+        <div className="shell">
           <h1 className="text-3xl lg:text-4xl font-display font-bold">
             NigerianDirectory Blog
           </h1>
@@ -130,7 +130,7 @@ export default async function BlogPage() {
 
       {/* Blog Posts */}
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           {allPosts.length === 0 ? (
             <div className="text-center py-12">
               <svg className="mx-auto w-16 h-16 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">

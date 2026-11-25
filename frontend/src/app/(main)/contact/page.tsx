@@ -167,9 +167,9 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+      <section className="field py-16">
+        <div className="shell">
+          <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-primary-100">
               Have questions? Send us a message and we&apos;ll get back to you shortly.

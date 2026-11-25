@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Breadcrumb */}
       <nav className="bg-gray-50 border-b">
-        <div className="mx-auto max-w-7xl container-padding py-3">
+        <div className="shell py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
               <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Article */}
       <article className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2">

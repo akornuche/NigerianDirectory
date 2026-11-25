@@ -111,7 +111,7 @@ export default async function ComingSoonPage({ params }: ComingSoonPageProps) {
         </div>
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-800 text-sm font-medium mb-6">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
           </svg>

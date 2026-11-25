@@ -52,7 +52,7 @@ export default async function SchoolsPage() {
 
       {/* Breadcrumb */}
       <nav className="bg-gray-50 border-b">
-        <div className="mx-auto max-w-7xl container-padding py-3">
+        <div className="shell py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
               <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -72,12 +72,12 @@ export default async function SchoolsPage() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl container-padding">
+      <section className="field py-16 lg:py-24">
+        <div className="shell">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
               <AcademicCapIcon className="h-8 w-8" />
-              <span className="badge bg-secondary-400 text-gray-900">Education</span>
+              <span className="badge bg-paper text-ink">Education</span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-display font-bold">
               Schools in Nigeria
@@ -93,7 +93,7 @@ export default async function SchoolsPage() {
 
       {/* Browse by State */}
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
             Browse Schools by State
           </h2>
@@ -121,7 +121,7 @@ export default async function SchoolsPage() {
       {/* Featured Schools */}
       {featuredSchools.length > 0 && (
         <section className="py-12 lg:py-16 bg-gray-50">
-          <div className="mx-auto max-w-7xl container-padding">
+          <div className="shell">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
                 Featured Schools
@@ -141,7 +141,7 @@ export default async function SchoolsPage() {
                   href={`/education/schools/${toSlugSegment(school.state)}/${toLocationSegment(school.area, school.city)}/${school.slug}/`}
                   className="card-hover group"
                 >
-                  <div className="aspect-[16/9] relative bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
+                  <div className="aspect-[16/9] relative duotone-well overflow-hidden">
                     <Image
                       src={school.hero_image_url || school.logo_url || '/placeholder-school.svg'}
                       alt={school.name}
@@ -184,7 +184,7 @@ export default async function SchoolsPage() {
 
       {/* School Types */}
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
             Browse by School Type
           </h2>
@@ -207,8 +207,8 @@ export default async function SchoolsPage() {
               href="/education/schools/lagos/?type=secondary"
               className="card p-6 hover:shadow-lg transition-shadow group"
             >
-              <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary-200 transition-colors">
-                <AcademicCapIcon className="h-6 w-6 text-secondary-600" />
+              <div className="w-12 h-12 bg-primary-50 flex items-center justify-center mb-4 group-hover:bg-primary-100 transition-colors">
+                <AcademicCapIcon className="h-6 w-6 text-primary-700" />
               </div>
               <h3 className="font-semibold text-gray-900">Secondary Schools</h3>
               <p className="mt-2 text-sm text-gray-600">
@@ -251,7 +251,7 @@ export default async function SchoolsPage() {
 
       {/* Higher Education Mini-Banner */}
       <section className="py-12 lg:py-16 bg-white border-y">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl text-center md:text-left">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
@@ -275,7 +275,7 @@ export default async function SchoolsPage() {
 
       {/* SEO Content */}
       <section className="py-12 lg:py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl container-padding">
+        <div className="shell">
           <div className="max-w-3xl mx-auto prose prose-lg">
             <h2>Finding the Right School in Nigeria</h2>
             <p>

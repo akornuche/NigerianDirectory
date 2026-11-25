@@ -159,20 +159,20 @@ export default async function HospitalPage({ params }: Props) {
 
                             <div className="flex-1 text-white md:pb-6">
                                 <div className="flex flex-wrap gap-3 mb-4">
-                                    <span className="px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full uppercase tracking-widest bg-opacity-80 backdrop-blur-sm">
+                                    <span className="px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full bg-opacity-80 backdrop-blur-sm">
                                         {hospital.institution_category}
                                     </span>
-                                    <span className="px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full uppercase tracking-widest backdrop-blur-sm">
+                                    <span className="px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full backdrop-blur-sm">
                                         {hospital.type}
                                     </span>
                                     {hospital.verified && (
-                                        <span className="px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full uppercase tracking-widest bg-opacity-80 backdrop-blur-sm flex items-center gap-1">
+                                        <span className="px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full bg-opacity-80 backdrop-blur-sm flex items-center gap-1">
                                             <svg className="h-3 w-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                                             Verified
                                         </span>
                                     )}
                                     {hospital.claimed && (
-                                        <span className="px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full uppercase tracking-widest bg-opacity-80 backdrop-blur-sm">
+                                        <span className="px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full bg-opacity-80 backdrop-blur-sm">
                                             Claimed
                                         </span>
                                     )}
@@ -187,7 +187,7 @@ export default async function HospitalPage({ params }: Props) {
                                     </span>
                                     {hospital.established_year && (
                                         <span className="flex items-center gap-1.5 opacity-80">
-                                            <StarIcon className="h-5 w-5 text-yellow-400" />
+                                            <StarIcon className="h-5 w-5 text-primary-300" />
                                             Founded {hospital.established_year}
                                         </span>
                                     )}
@@ -199,7 +199,7 @@ export default async function HospitalPage({ params }: Props) {
             </section>
 
             {/* Main Content Layout */}
-            <div className="mx-auto max-w-7xl container-padding mt-16 lg:mt-24">
+            <div className="shell mt-16 lg:mt-24">
                 <div className="grid lg:grid-cols-3 gap-12">
 
                     {/* Left Column: Detailed Info Sections */}
@@ -228,7 +228,7 @@ export default async function HospitalPage({ params }: Props) {
                                             key={fact.label}
                                             className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center"
                                         >
-                                            <div className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">
+                                            <div className="text-gray-400 text-xs font-bold mb-2">
                                                 {fact.label}
                                             </div>
                                             <div className="text-gray-900 font-bold capitalize truncate">
@@ -300,7 +300,7 @@ export default async function HospitalPage({ params }: Props) {
                                             <GlobeAltIcon className="h-5 w-5" />
                                         </div>
                                         <div>
-                                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Official Website</div>
+                                            <div className="text-xs font-bold text-gray-500 mb-1">Official Website</div>
                                             <div className="font-medium truncate max-w-[180px]">{hospital.website.replace('https://', '')}</div>
                                         </div>
                                     </Link>
@@ -312,7 +312,7 @@ export default async function HospitalPage({ params }: Props) {
                                             <PhoneIcon className="h-5 w-5" />
                                         </div>
                                         <div>
-                                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Appointment Line</div>
+                                            <div className="text-xs font-bold text-gray-500 mb-1">Appointment Line</div>
                                             <div className="font-medium">{hospital.phone}</div>
                                         </div>
                                     </div>
@@ -324,7 +324,7 @@ export default async function HospitalPage({ params }: Props) {
                                             <EnvelopeIcon className="h-5 w-5" />
                                         </div>
                                         <div>
-                                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Email</div>
+                                            <div className="text-xs font-bold text-gray-500 mb-1">Email</div>
                                             <div className="font-medium truncate max-w-[180px]">{hospital.email}</div>
                                         </div>
                                     </div>
@@ -370,7 +370,7 @@ export default async function HospitalPage({ params }: Props) {
             </div>
 
             {/* Bottom Ad */}
-            <div className="mx-auto max-w-7xl container-padding mt-24">
+            <div className="shell mt-24">
                 <AdBanner slot="hospital-footer-leaderboard" size="leaderboard" className="mx-auto" />
             </div>
         </div>

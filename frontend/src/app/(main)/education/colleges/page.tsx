@@ -44,7 +44,7 @@ export default async function CollegesPage() {
             </div>
 
             <nav className="bg-white border-b">
-                <div className="mx-auto max-w-7xl container-padding py-3">
+                <div className="shell py-3">
                     <ol className="flex items-center space-x-2 text-sm text-gray-500">
                         <li><Link href="/">Home</Link></li>
                         <li>/</li>
@@ -55,12 +55,12 @@ export default async function CollegesPage() {
                 </div>
             </nav>
 
-            <section className="bg-gradient-to-br from-emerald-600 to-emerald-800 text-white py-16 lg:py-24">
-                <div className="mx-auto max-w-7xl container-padding">
+            <section className="field py-16 lg:py-24">
+                <div className="shell">
                     <div className="max-w-3xl">
                         <div className="flex items-center gap-2 mb-4">
                             <BookOpenIcon className="h-8 w-8" />
-                            <span className="badge bg-emerald-400 text-gray-900 font-bold uppercase tracking-wider">Vocational Excellence</span>
+                            <span className="badge bg-emerald-400 text-gray-900 font-bold ">Vocational Excellence</span>
                         </div>
                         <h1 className="text-4xl lg:text-5xl font-display font-bold leading-tight">
                             Polytechnics & Colleges in Nigeria
@@ -75,7 +75,7 @@ export default async function CollegesPage() {
             </section>
 
             <section className="py-12 lg:py-16">
-                <div className="mx-auto max-w-7xl container-padding">
+                <div className="shell">
                     <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                         <div className="w-1 h-8 bg-emerald-600 rounded-full"></div>
                         Browse by State
@@ -96,7 +96,7 @@ export default async function CollegesPage() {
 
             {featuredSchools.length > 0 && (
                 <section className="py-12 lg:py-16 bg-gray-50">
-                    <div className="mx-auto max-w-7xl container-padding">
+                    <div className="shell">
                         <h2 className="text-2xl font-bold text-gray-900 mb-12">Top Rated Polytechnics</h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {featuredSchools.map((school) => (
@@ -113,7 +113,7 @@ export default async function CollegesPage() {
                                             className="object-cover"
                                         />
                                         <div className="absolute top-4 left-4">
-                                            <span className="px-3 py-1 bg-white/90 text-emerald-700 text-[10px] font-black rounded-full uppercase">
+                                            <span className="px-3 py-1 bg-white/90 text-emerald-700 text-[10px] font-black rounded-full ">
                                                 {school.type}
                                             </span>
                                         </div>

@@ -59,7 +59,7 @@ export default async function UniversitiesPage({
 
             {/* Breadcrumb */}
             <nav className="bg-gray-50 border-b">
-                <div className="mx-auto max-w-7xl container-padding py-3">
+                <div className="shell py-3">
                     <ol className="flex items-center space-x-2 text-sm">
                         <li>
                             <Link href="/" className="text-gray-500 hover:text-gray-700">
@@ -79,12 +79,12 @@ export default async function UniversitiesPage({
             </nav>
 
             {/* Hero */}
-            <section className="bg-gradient-to-br from-indigo-600 to-indigo-800 text-white py-16 lg:py-24">
-                <div className="mx-auto max-w-7xl container-padding">
+            <section className="field py-16 lg:py-24">
+                <div className="shell">
                     <div className="max-w-3xl">
                         <div className="flex items-center gap-2 mb-4">
                             <BuildingLibraryIcon className="h-8 w-8" />
-                            <span className="badge bg-secondary-400 text-gray-900 font-bold uppercase tracking-wider">Higher Education</span>
+                            <span className="badge bg-paper text-ink font-medium">Higher Education</span>
                         </div>
                         <h1 className="text-4xl lg:text-5xl font-display font-bold leading-tight">
                             Universities in Nigeria
@@ -100,7 +100,7 @@ export default async function UniversitiesPage({
 
             {/* Browse by State */}
             <section className="py-12 lg:py-16">
-                <div className="mx-auto max-w-7xl container-padding">
+                <div className="shell">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                         <div className="w-1 h-8 bg-indigo-600 rounded-full"></div>
                         Browse by State
@@ -122,8 +122,8 @@ export default async function UniversitiesPage({
 
             {/* Featured Universities */}
             {featuredUniversities.length > 0 && (
-                <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
-                    <div className="mx-auto max-w-7xl container-padding">
+                <section className="py-12 lg:py-16 bg-paper">
+                    <div className="shell">
                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 capitalize">
                                 {params.type ? `${params.type} Universities` : 'Top Universities'}
@@ -181,7 +181,7 @@ export default async function UniversitiesPage({
 
             {/* Higher Ed Types */}
             <section className="py-12 lg:py-16">
-                <div className="mx-auto max-w-7xl container-padding">
+                <div className="shell">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-12 text-center">
                         Higher Education in Nigeria
                     </h2>
@@ -234,10 +234,10 @@ export default async function UniversitiesPage({
 
             {/* SEO Information */}
             <section className="py-16 lg:py-24 bg-gray-900 text-white">
-                <div className="mx-auto max-w-7xl container-padding">
+                <div className="shell">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="prose prose-invert lg:prose-xl">
-                            <h2 className="text-indigo-400 font-bold uppercase tracking-widest text-sm mb-4">Educational Hub</h2>
+                            <h2 className="text-indigo-400 font-bold text-sm mb-4">Educational Hub</h2>
                             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-8">Navigating Tertiary Education in Nigeria</h3>
                             <p className="text-gray-400">
                                 With over 200 recognized universities and hundreds of specialized institutions,

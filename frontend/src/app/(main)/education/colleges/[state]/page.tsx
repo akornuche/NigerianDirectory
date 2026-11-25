@@ -48,13 +48,13 @@ export default async function CollegeStatePage({ params }: Props) {
     return (
         <div className="bg-gray-50 min-h-screen">
             <header className="bg-emerald-600 text-white py-12">
-                <div className="mx-auto max-w-7xl container-padding">
+                <div className="shell">
                     <h1 className="text-3xl font-display font-black">Polytechnics in {stateData.name} State</h1>
                     <p className="mt-4 opacity-80">Discover {stateData.schools.length} technical institutions.</p>
                 </div>
             </header>
 
-            <main className="mx-auto max-w-7xl container-padding py-12">
+            <main className="shell py-12">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {stateData.schools.map((school) => (
                         <Link

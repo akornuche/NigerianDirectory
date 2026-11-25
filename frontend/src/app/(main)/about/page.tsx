@@ -64,14 +64,14 @@ export default async function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 lg:py-20">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
+      <section className="field py-16 lg:py-20">
+        <div className="shell"><div className="max-w-3xl">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">About NigerianDirectory</h1>
           <p className="text-xl text-primary-100">
             A directory of universities and secondary schools in Nigeria, built on one rule: we only
             publish what we can verify.
           </p>
-        </div>
+        </div></div>
       </section>
 
       <section className="py-14">
@@ -175,7 +175,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="py-14 bg-primary-600 text-white">
+      <section className="py-14 field">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <EnvelopeIcon className="h-10 w-10 mx-auto mb-4" aria-hidden="true" />
           <h2 className="text-3xl font-bold mb-4">Get in touch</h2>

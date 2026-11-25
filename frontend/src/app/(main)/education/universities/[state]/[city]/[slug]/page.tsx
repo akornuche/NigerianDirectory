@@ -208,77 +208,76 @@ export default async function UniversityPage({ params }: Props) {
     };
 
     return (
-        <div className="bg-gray-50 min-h-screen pb-12">
+        <div className="bg-paper min-h-screen pb-12">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(universityJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-            {/* Premium Hero Header */}
-            <section className="relative h-[60vh] min-h-[400px] overflow-hidden bg-indigo-900">
-                <Image
-                    src={uni.hero_image_url || '/placeholder-school.svg'}
-                    alt={uni.name}
-                    fill
-                    className="object-cover opacity-40 grayscale-[0.3]"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/40 via-indigo-900/60 to-gray-50" />
-
-                <div className="absolute inset-0 flex flex-col justify-end">
-                    <div className="mx-auto max-w-7xl w-full container-padding pb-12">
-                        <div className="flex flex-col md:flex-row gap-8 items-end md:items-center">
-                            {/* Logo/Shield Container */}
-                            <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-2xl shadow-2xl p-4 flex items-center justify-center relative translate-y-6 z-10 border-4 border-gray-50">
+            {/* Hero: the name large on paper, beside the photograph printed in
+                one colour, or the founding year on a green field when the
+                record has no photograph. */}
+            <section className="bg-paper">
+                <div className="shell grid grid-cols-1 gap-x-8 gap-y-10 pb-16 pt-12 lg:grid-cols-12 lg:pb-20 lg:pt-20">
+                    <div className="lg:col-span-7 lg:self-end">
+                        <div className="flex items-center gap-5">
+                            <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center bg-white p-2 lg:h-24 lg:w-24">
                                 <Image
                                     src={uni.logo_url || '/placeholder-logo.svg'}
                                     alt={`${uni.name} logo`}
-                                    width={120}
-                                    height={120}
+                                    width={88}
+                                    height={88}
                                     className="object-contain"
                                 />
                             </div>
-
-                            <div className="flex-1 text-white md:pb-6">
-                                <div className="flex flex-wrap gap-3 mb-4">
-                                    <span className="px-3 py-1 bg-indigo-500 text-white text-xs font-bold rounded-full uppercase tracking-widest bg-opacity-80 backdrop-blur-sm">
-                                        {uni.institution_category}
-                                    </span>
-                                    <span className="px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full uppercase tracking-widest backdrop-blur-sm">
-                                        {uni.type}
-                                    </span>
-                                    {uni.verified && (
-                                        <span className="px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full uppercase tracking-widest bg-opacity-80 backdrop-blur-sm flex items-center gap-1">
-                                            <svg className="h-3 w-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                                            Verified
-                                        </span>
-                                    )}
-                                    {uni.claimed && (
-                                        <span className="px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full uppercase tracking-widest bg-opacity-80 backdrop-blur-sm">
-                                            Claimed
-                                        </span>
-                                    )}
-                                </div>
-                                <h1 className="text-4xl lg:text-5xl font-display font-black leading-tight drop-shadow-sm">
-                                    {uni.name}
-                                </h1>
-                                <div className="flex items-center gap-4 mt-4 text-indigo-100 font-medium">
-                                    <span className="flex items-center gap-1.5">
-                                        <MapPinIcon className="h-5 w-5" />
-                                        {uni.city}, {uni.state}
-                                    </span>
-                                    {uni.established_year && (
-                                        <span className="flex items-center gap-1.5 opacity-80">
-                                            <StarIcon className="h-5 w-5 text-yellow-400" />
-                                            Founded {uni.established_year}
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
+                            <p className="text-[15px] font-medium text-ink-muted">
+                                <span className="capitalize">{uni.type}</span> {uni.institution_category}
+                                {uni.verified && <span className="text-primary-700"> · Verified</span>}
+                                {uni.claimed && <span> · Claimed</span>}
+                            </p>
                         </div>
+                        <h1 className="mt-8 text-[2.75rem] leading-[0.95] tracking-poster sm:text-6xl lg:text-[5.25rem]">
+                            {uni.name}
+                        </h1>
+                        <p className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-lg text-ink-2">
+                            <span className="flex items-center gap-1.5">
+                                <MapPinIcon className="h-5 w-5 text-primary-700" />
+                                {uni.city}, {uni.state}
+                            </span>
+                            {uni.established_year && (
+                                <span className="flex items-center gap-1.5">
+                                    <StarIcon className="h-5 w-5 text-primary-700" />
+                                    Founded {uni.established_year}
+                                </span>
+                            )}
+                        </p>
+                    </div>
+                    <div className="lg:col-span-5">
+                        {uni.hero_image_url ? (
+                            <div className="duotone-well relative aspect-[4/3] overflow-hidden lg:aspect-square">
+                                <Image
+                                    src={uni.hero_image_url}
+                                    alt={uni.name}
+                                    fill
+                                    className="duotone object-cover"
+                                    priority
+                                />
+                            </div>
+                        ) : (
+                            <div className="field flex aspect-[4/3] flex-col justify-end p-8 lg:aspect-square">
+                                {uni.established_year && (
+                                    <>
+                                        <p className="font-display text-[6rem] font-bold leading-none tracking-poster tabular lg:text-[8.5rem]">
+                                            {uni.established_year}
+                                        </p>
+                                        <p className="mt-2 font-medium">Year founded</p>
+                                    </>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
 
             {/* Main Content Layout */}
-            <div className="mx-auto max-w-7xl container-padding mt-16 lg:mt-24">
+            <div className="shell mt-16 lg:mt-24">
                 <div className="grid lg:grid-cols-3 gap-12">
 
                     {/* Left Column: Detailed Info Sections */}
@@ -318,7 +317,7 @@ export default async function UniversityPage({ params }: Props) {
                                             key={fact.label}
                                             className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center"
                                         >
-                                            <div className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">
+                                            <div className="text-gray-400 text-xs font-bold mb-2">
                                                 {fact.label}
                                             </div>
                                             <div className="text-gray-900 font-bold capitalize truncate">
@@ -404,7 +403,7 @@ export default async function UniversityPage({ params }: Props) {
                                             <GlobeAltIcon className="h-5 w-5" />
                                         </div>
                                         <div>
-                                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Official Website</div>
+                                            <div className="text-xs font-bold text-gray-500 mb-1">Official Website</div>
                                             <div className="font-medium truncate max-w-[180px]">{uni.website.replace('https://', '')}</div>
                                         </div>
                                     </Link>
@@ -416,7 +415,7 @@ export default async function UniversityPage({ params }: Props) {
                                             <PhoneIcon className="h-5 w-5" />
                                         </div>
                                         <div>
-                                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Admission Line</div>
+                                            <div className="text-xs font-bold text-gray-500 mb-1">Admission Line</div>
                                             <div className="font-medium">{uni.phone}</div>
                                         </div>
                                     </div>
@@ -428,7 +427,7 @@ export default async function UniversityPage({ params }: Props) {
                                             <EnvelopeIcon className="h-5 w-5" />
                                         </div>
                                         <div>
-                                            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Email Registry</div>
+                                            <div className="text-xs font-bold text-gray-500 mb-1">Email Registry</div>
                                             <div className="font-medium truncate max-w-[180px]">{uni.email}</div>
                                         </div>
                                     </div>
@@ -474,7 +473,7 @@ export default async function UniversityPage({ params }: Props) {
             </div>
 
             {/* Bottom Ad */}
-            <div className="mx-auto max-w-7xl container-padding mt-24">
+            <div className="shell mt-24">
                 <AdBanner slot="university-footer-leaderboard" size="leaderboard" className="mx-auto" />
             </div>
         </div>

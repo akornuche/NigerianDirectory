@@ -74,7 +74,7 @@ export default async function CollegePage({ params }: Props) {
 
                             <div className="flex-1 text-white md:pb-6">
                                 <div className="flex gap-2 mb-3">
-                                    <span className="px-3 py-1 bg-emerald-500 text-white text-[10px] font-black rounded-full uppercase tracking-widest">
+                                    <span className="px-3 py-1 bg-emerald-500 text-white text-[10px] font-black rounded-full ">
                                         {school.institution_category}
                                     </span>
                                 </div>
@@ -90,7 +90,7 @@ export default async function CollegePage({ params }: Props) {
                 </div>
             </section>
 
-            <div className="mx-auto max-w-7xl container-padding mt-20">
+            <div className="shell mt-20">
                 <div className="grid lg:grid-cols-3 gap-12">
                     <div className="lg:col-span-2 space-y-12">
                         {/* Dynamic Content Sections */}

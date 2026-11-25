@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getNavigationVerticals, verticalColors, type Vertical, type Category } from '@/config/verticals';
+import { usePathname } from 'next/navigation';
+import { getNavigationVerticals, type Vertical, type Category } from '@/config/verticals';
 
 // Icon components (using simple SVG icons)
 const Icons: Record<string, React.FC<{ className?: string }>> = {
@@ -64,9 +65,6 @@ const Icons: Record<string, React.FC<{ className?: string }>> = {
   ),
 };
 
-function getIcon(iconName: string) {
-  return Icons[iconName] || Icons.AcademicCapIcon;
-}
 
 interface DropdownProps {
   vertical: Vertical;
@@ -77,8 +75,7 @@ interface DropdownProps {
 
 function VerticalDropdown({ vertical, isOpen, onToggle, onClose }: DropdownProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const colors = verticalColors[vertical.color] || verticalColors.primary;
-  
+
   // Filter to only show live categories
   const liveCategories = vertical.categories.filter(cat => cat.status === 'live');
 
@@ -98,26 +95,25 @@ function VerticalDropdown({ vertical, isOpen, onToggle, onClose }: DropdownProps
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={onToggle}
-        className={`flex items-center gap-1 px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors ${isOpen ? 'bg-gray-100' : ''}`}
+        aria-expanded={isOpen}
+        className={`flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors hover:text-secondary-500 ${isOpen ? 'text-secondary-500' : 'text-ink'}`}
       >
         <span>{vertical.name}</span>
-        <Icons.ChevronDownIcon className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <Icons.ChevronDownIcon className={`w-3.5 h-3.5 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-full mt-1 w-72 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-          <div className={`px-4 py-2 border-b border-gray-100 ${colors.bg}`}>
-            <p className={`text-sm font-semibold ${colors.text}`}>{vertical.name}</p>
-            <p className="text-xs text-gray-600 mt-0.5">{vertical.description}</p>
+        <div className="field absolute right-0 top-full mt-3 w-80 z-50">
+          <div className="px-6 pt-6 pb-4">
+            <p className="font-display text-2xl font-bold tracking-display">{vertical.name}</p>
+            <p className="mt-1 text-sm opacity-80">{vertical.description}</p>
           </div>
-
-          <div className="py-2">
+          <div className="pb-4">
             {liveCategories.map((category) => (
-              <CategoryItem 
-                key={category.slug} 
-                category={category} 
+              <CategoryItem
+                key={category.slug}
+                category={category}
                 verticalSlug={vertical.slug}
-                colors={colors}
                 onClose={onClose}
               />
             ))}
@@ -131,13 +127,12 @@ function VerticalDropdown({ vertical, isOpen, onToggle, onClose }: DropdownProps
 interface CategoryItemProps {
   category: Category;
   verticalSlug: string;
-  colors: { bg: string; text: string; hover: string; badge: string };
   onClose: () => void;
 }
 
-function CategoryItem({ category, verticalSlug, colors, onClose }: CategoryItemProps) {
+function CategoryItem({ category, verticalSlug, onClose }: CategoryItemProps) {
   const isComingSoon = category.status === 'coming-soon';
-  const href = isComingSoon 
+  const href = isComingSoon
     ? `/coming-soon/${verticalSlug}/${category.slug}`
     : `/${verticalSlug}/${category.slug}`;
 
@@ -145,22 +140,22 @@ function CategoryItem({ category, verticalSlug, colors, onClose }: CategoryItemP
     <Link
       href={href}
       onClick={onClose}
-      className={`flex items-center justify-between px-4 py-2 text-sm text-gray-700 ${colors.hover} transition-colors`}
+      className="flex items-center justify-between px-6 py-2.5 text-[15px] font-medium hover:bg-primary-800 transition-colors"
     >
       <span>{category.name}</span>
-      {isComingSoon && (
-        <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-gray-100 text-gray-500 rounded">
-          Coming Soon
-        </span>
-      )}
+      {isComingSoon ? <span className="text-xs opacity-70">Coming soon</span> : <span aria-hidden="true">→</span>}
     </Link>
   );
 }
+
+const linkClass = (active: boolean) =>
+  `px-3 py-2 text-[15px] font-medium transition-colors hover:text-secondary-500 ${active ? 'text-secondary-500' : 'text-ink'}`;
 
 export default function MegaMenu() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const verticals = getNavigationVerticals();
+  const pathname = usePathname() || '/';
 
   const handleToggle = (slug: string) => {
     setOpenDropdown(openDropdown === slug ? null : slug);
@@ -171,20 +166,19 @@ export default function MegaMenu() {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0">
-            <Image src="/naijadir.png" alt="NigerianDirectory" width={56} height={56} className="h-14 w-auto" />
+    <nav className="bg-paper sticky top-0 z-40" aria-label="Main">
+      <div className="shell">
+        <div className="flex items-center justify-between h-[72px]">
+          {/* Wordmark: the flag-map emblem and the name in two lines */}
+          <Link href="/" className="wordmark text-ink flex-shrink-0" aria-label="NigerianDirectory home">
+            <Image src="/naijadir-mark.png" alt="" width={57} height={40} className="h-10 w-auto row-span-2" priority />
+            <span className="text-[19px] font-bold tracking-display">Nigerian</span>
+            <span className="text-[19px] font-normal tracking-display">Directory</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-0">
-            <Link 
-              href="/" 
-              className="px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
-            >
+          <div className="hidden lg:flex items-center">
+            <Link href="/" className={linkClass(pathname === '/')}>
               Home
             </Link>
 
@@ -199,48 +193,47 @@ export default function MegaMenu() {
               />
             ))}
 
-            <Link 
-              href="/blog" 
-              className="px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
-            >
+            <Link href="/blog" className={linkClass(pathname.startsWith('/blog'))}>
               Blog
             </Link>
-            <Link 
-              href="/contact" 
-              className="px-2 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md transition-colors"
-            >
+            <Link href="/contact" className={linkClass(pathname.startsWith('/contact'))}>
               Contact
+            </Link>
+            <Link href="/education/universities/" className="btn-primary ml-4 min-h-[44px] px-5 text-[15px]">
+              Browse the directory
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            className="lg:hidden p-2 -mr-2 text-ink"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <Icons.XMarkIcon className="w-6 h-6" />
+              <Icons.XMarkIcon className="w-7 h-7" />
             ) : (
-              <Icons.Bars3Icon className="w-6 h-6" />
+              <Icons.Bars3Icon className="w-7 h-7" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation: a green field under the bar */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white">
-          <div className="px-4 py-3 space-y-1">
-            <Link 
-              href="/" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md"
+        <div className="lg:hidden field">
+          <div className="shell py-4">
+            <Link
+              href="/"
+              className="block py-3 font-display text-2xl font-bold tracking-display"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
-            <Link 
-              href="/about" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md"
+            <Link
+              href="/about"
+              className="block py-3 font-display text-2xl font-bold tracking-display"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
@@ -255,16 +248,16 @@ export default function MegaMenu() {
               />
             ))}
 
-            <Link 
-              href="/blog" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md"
+            <Link
+              href="/blog"
+              className="block py-3 font-display text-2xl font-bold tracking-display"
               onClick={() => setMobileMenuOpen(false)}
             >
               Blog
             </Link>
-            <Link 
-              href="/contact" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md"
+            <Link
+              href="/contact"
+              className="block py-3 font-display text-2xl font-bold tracking-display"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
@@ -283,33 +276,27 @@ interface MobileVerticalSectionProps {
 
 function MobileVerticalSection({ vertical, onLinkClick }: MobileVerticalSectionProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const colors = verticalColors[vertical.color] || verticalColors.primary;
-  const Icon = getIcon(vertical.icon);
   const isComingSoon = vertical.status === 'coming-soon';
-  
+
   // Filter to only show live categories
   const liveCategories = vertical.categories.filter(cat => cat.status === 'live');
 
   return (
-    <div className="border-t border-gray-100 pt-2 mt-2">
+    <div>
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md"
+        aria-expanded={isExpanded}
+        className="flex items-center justify-between w-full py-3 font-display text-2xl font-bold tracking-display text-left"
       >
-        <div className="flex items-center gap-2">
-          <Icon className={`w-5 h-5 ${colors.text}`} />
-          <span>{vertical.name}</span>
-          {isComingSoon && (
-            <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-amber-100 text-amber-700 rounded">
-              Soon
-            </span>
-          )}
-        </div>
+        <span>
+          {vertical.name}
+          {isComingSoon && <span className="ml-2 font-sans text-sm font-medium opacity-70">Soon</span>}
+        </span>
         <Icons.ChevronDownIcon className={`w-5 h-5 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
       </button>
 
       {isExpanded && (
-        <div className="ml-6 mt-1 space-y-1">
+        <div className="pb-2">
           {liveCategories.map((category) => {
             const catIsComingSoon = category.status === 'coming-soon';
             const href = catIsComingSoon
@@ -321,14 +308,10 @@ function MobileVerticalSection({ vertical, onLinkClick }: MobileVerticalSectionP
                 key={category.slug}
                 href={href}
                 onClick={onLinkClick}
-                className="flex items-center justify-between px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
+                className="flex items-center justify-between py-2 pl-4 text-base font-medium"
               >
                 <span>{category.name}</span>
-                {catIsComingSoon && (
-                  <span className="px-1.5 py-0.5 text-[10px] font-medium bg-gray-100 text-gray-500 rounded">
-                    Soon
-                  </span>
-                )}
+                {catIsComingSoon ? <span className="text-xs opacity-70">Soon</span> : <span aria-hidden="true">→</span>}
               </Link>
             );
           })}
