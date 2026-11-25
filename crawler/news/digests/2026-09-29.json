@@ -1,37 +1,325 @@
 {
-"lead": "President Tinubu returned to Lagos after his working vacation in France, saying he had enjoyed himself, as the National Assembly resumed with the state police bill and the 2027 budget on its agenda. NNPC reported a N7.2 trillion profit for 2025, the government warned of flood risk in 24 states and the FCT, and Abia police found 28 human skulls in forest camps. Guinea-Bissau beat the Super Eagles 3-0 in Bissau, Isa Pantami won the rerun Gombe PDP primary, and troops rescued 41 abducted travellers in Zamfara.",
-"items": [
-{"i": [1, 2], "h": "Tinubu returns to Lagos after European vacation", "s": "The President arrived at the presidential wing of Murtala Muhammed Airport after leaving Paris, and said he enjoyed the break.", "c": "politics", "st": ["Lagos"]},
-{"i": [0], "h": "NNPC posts N7.2trn profit for 2025", "s": "Group chief executive Bashir Ojulari presented the 2025 audited accounts on Tuesday.", "c": "economy", "st": []},
-{"i": [39, 20], "h": "National Assembly resumes with state police bill and 2027 budget", "s": "Senate President Akpabio also urged security agencies to step up efforts to rescue people held captive.", "c": "politics", "st": []},
-{"i": [11], "h": "Flood alert for 24 states and FCT", "s": "The government warned of possible flooding between 27 September and 10 October.", "c": "environment", "st": []},
-{"i": [34], "h": "Abia police find 28 human skulls in forest camps", "s": "Officers recovered skulls and bones from two suspected criminal camps in the Isuochi forests, Umunneochi.", "c": "security", "st": ["Abia"]},
-{"i": [5], "h": "Guinea-Bissau beat Super Eagles 3-0", "s": "Nigeria suffered a heavy defeat in their second 2027 AFCON qualifier in Bissau.", "c": "sports", "st": []},
-{"i": [17], "h": "Pantami wins rerun Gombe PDP governorship primary", "s": "The Wike-backed faction held the court-ordered primary on Tuesday.", "c": "politics", "st": ["Gombe"]},
-{"i": [14], "h": "Troops rescue 41 abducted travellers in Zamfara", "s": "Bandits had seized the travellers on the highway in Tsafe.", "c": "security", "st": ["Zamfara"]},
-{"i": [6], "h": "Reps extend 2025 capital budget to 31 December", "s": "It is the fourth extension of the 2025 Appropriation Act.", "c": "politics", "st": []},
-{"i": [9], "h": "Three more Nigerians killed in South Africa", "s": "The consulate in Johannesburg asked authorities to investigate the deaths.", "c": "world", "st": []},
-{"i": [7, 15], "h": "Dangote shrugs off Kenyan court halt on Lamu refinery", "s": "He called the order normal in Africa and said the group is ready for trouble-makers.", "c": "business", "st": []},
-{"i": [10], "h": "Atiku demands publication of Nigeria-US health deal", "s": "He cited Ghana's rejection of a similar agreement.", "c": "politics", "st": []},
-{"i": [36, 16, 24], "h": "Atiku and APM oppose new $1.5bn World Bank loan", "s": "The APM asked lenders to reject the request, and Atiku said past borrowing must be accounted for.", "c": "politics", "st": []},
-{"i": [8], "h": "ADC promises Atiku will not be an absentee president", "s": "The campaign contrasted its candidate with Tinubu's long absence.", "c": "politics", "st": []},
-{"i": [21, 26], "h": "Otedola praises Tinubu's reforms after Paris dinner", "s": "The First HoldCo chairman called them bold and forward-thinking.", "c": "economy", "st": []},
-{"i": [41], "h": "Emir Sanusi questions El-Rufai's prolonged detention", "s": "He asked whether it is a political battle.", "c": "politics", "st": ["Kaduna"]},
-{"i": [32], "h": "Rivers Assembly endorses state police amendment", "s": "Lawmakers voted unanimously.", "c": "politics", "st": ["Rivers"]},
-{"i": [42], "h": "Four kidnappers sentenced to death in Edo", "s": "A special court in Benin City convicted the syndicate.", "c": "security", "st": ["Edo"]},
-{"i": [18], "h": "Nine-hour downpour floods Makurdi homes", "s": "Residents were left stranded on Monday.", "c": "environment", "st": ["Benue"]},
-{"i": [29], "h": "Three women killed at Plateau mining site", "s": "Gunmen attacked Rakum community in Barkin Ladi.", "c": "security", "st": ["Plateau"]},
-{"i": [37], "h": "Anambra to prosecute those who deny women inheritance", "s": "Offenders risk four years in jail.", "c": "society", "st": ["Anambra"]},
-{"i": [4], "h": "FG releases approved textbook list for 2026-2028", "s": "Approved titles carry QR tracking codes.", "c": "education", "st": []},
-{"i": [44], "h": "UBEC adopts whole-school approach in 10-year plan", "s": "Implementation begins in October.", "c": "education", "st": []},
-{"i": [3], "h": "Laws to be translated into indigenous languages", "s": "The National Assembly will publish them in Hausa, Igbo, Yoruba and others.", "c": "politics", "st": []},
-{"i": [13], "h": "NEDC projects in North-East reach N1.5trn", "s": "The commission said ongoing and planned works have grown.", "c": "economy", "st": []},
-{"i": [25], "h": "NNPC says no date for IPO", "s": "The decision rests with shareholders.", "c": "business", "st": []},
-{"i": [23], "h": "Group urges NASS to pass reserved seats bill", "s": "Centre LSD said lawmakers should not close shop without it.", "c": "politics", "st": []},
-{"i": [22], "h": "Barau sacks another aide", "s": "Rashida Adamu was dismissed over alleged anti-APC activities.", "c": "politics", "st": ["Kano"]},
-{"i": [31, 12], "h": "Makinde and Hamzat set out agendas", "s": "Makinde said Nigeria can be reset in four years; Hamzat outlined investment plans for Lagos.", "c": "politics", "st": ["Oyo", "Lagos"]},
-{"i": [30], "h": "NGX and Nairobi exchange plan closer ties", "s": "Stakeholders met in Nairobi.", "c": "economy", "st": []},
-{"i": [33], "h": "Eguavoen names Super Falcons squad for Comoros", "s": "28 players were called up for the Olympic qualifier.", "c": "sports", "st": []},
-{"i": [45], "h": "FirstBank says its mobile app is secure", "s": "It dismissed a WhatsApp claim of a breach.", "c": "business", "st": []}
-]
+ "lead": "President Tinubu flew home to Lagos after four weeks abroad, the National Assembly came back from recess with security and the state police bill at the top of its agenda, and NNPC unveiled a N7.2 trillion profit for 2025.\n\nThe day in brief: the President landed at the presidential wing of the Lagos airport on Tuesday evening, and his spokesman said he chose Lagos first to honour MKO Abiola ahead of Independence Day. In the Senate, Godswill Akpabio told agencies to do more for Nigerians held by kidnappers, while both chambers stretched the 2025 capital budget to the end of December for the fourth time. NNPC's audited accounts showed profit up by about a third even as revenue fell, and its chief executive said the company had no date yet for a public listing. Flood forecasters warned of risk in 24 states and the FCT until 10 October, just as a nine-hour downpour submerged homes in Makurdi. Abia police said they found 28 human skulls in two forest camps, Edo judges sentenced four kidnappers to death, and troops freed 41 travellers in Zamfara. In Bissau the Super Eagles lost 3-0, a heavy blow to their 2027 AFCON hopes.",
+ "items": [
+  {
+   "i": [
+    1,
+    2
+   ],
+   "h": "Tinubu returns to Lagos after European vacation",
+   "s": "The President landed at the presidential wing of Murtala Muhammed Airport in Ikeja at about 6.22pm on Tuesday, aboard the presidential jet from Paris, and was met by Governor Sanwo-Olu, Speaker Abbas and other officials. Asked by reporters about the break, he replied: “I enjoyed myself.” His spokesman Bayo Onanuga said he came to Lagos first to honour MKO Abiola and would attend the premiere of a film about him on Independence Day.",
+   "c": "politics",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "NNPC posts N7.2trn profit for 2025",
+   "s": "NNPC's audited 2025 accounts put profit after tax at N7.2 trillion, roughly a third higher than 2024, although revenue fell by about a quarter to N34.5 trillion as crude prices and product volumes dropped after deregulation. Group chief executive Bayo Ojulari presented the results in Abuja after the annual general meeting, crediting better efficiency and cost discipline, and said the company paid about N22.3 trillion in taxes, royalties and remittances to the federation.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    39,
+    20
+   ],
+   "h": "National Assembly resumes with state police bill and 2027 budget",
+   "s": "Opening the new session, Senate President Godswill Akpabio told security agencies to do more to free Nigerians held by armed groups, citing recent abductions in Niger and Zamfara, and said parliament could not call itself free while citizens remained captive. His speech set out an agenda of security, flood relief, economic relief and political decorum before 2027, with the state police amendment and the 2027 budget among the items awaiting lawmakers.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Flood alert for 24 states and FCT",
+   "s": "The National Flood Early Warning Systems Centre, under the environment ministry, said communities in 24 states and the FCT could flood between 27 September and 10 October, grading them as critical, high or moderate risk. It pointed to saturated soil, heavy rain, fast runoff, overloaded drains and rising rivers. In Abuja the Federal Fire Service urged people in low-lying areas and on riverbanks to stay alert and keep drainage channels clear.",
+   "c": "environment",
+   "st": []
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Abia police find 28 human skulls in forest camps",
+   "s": "Police in Abia said a raid on Saturday on two suspected criminal hideouts at Umuaku and Nneato, in the Isuochi forests of Umunneochi, turned up 28 human skulls and other bones believed to belong to kidnap victims. Several tactical units, including the anti-kidnapping and anti-cultism squads, took part in the operation, which the command said followed intelligence and was part of its campaign to deny criminals hiding places in the state.",
+   "c": "security",
+   "st": [
+    "Abia"
+   ]
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Guinea-Bissau beat Super Eagles 3-0",
+   "s": "Guinea-Bissau beat Nigeria 3-0 in Tuesday's Group L qualifier in Bissau, leaving the Super Eagles' hopes of reaching the 2027 Africa Cup of Nations badly damaged. Franculino scored in the 15th minute, Mama Baldé's shot went in off the post in the 66th, and Álvaro Djaló added a third. With co-host Tanzania already qualified, only one place is open from the group, and Guinea-Bissau have now won both their games.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "Pantami wins rerun Gombe PDP governorship primary",
+   "s": "Former communications minister Isa Ali Pantami again emerged as the PDP's 2027 governorship candidate in Gombe after a fresh primary across the state's 114 wards. A Federal High Court had voided his earlier win last Thursday and ordered the rerun, which the Wike-backed faction of the party organised on Tuesday. The committee chairman said Pantami comfortably beat two other aspirants, Khamisu Mailantarki and Usman Aliyu Garry, though reports gave different vote totals.",
+   "c": "politics",
+   "st": [
+    "Gombe"
+   ]
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Troops rescue 41 abducted travellers in Zamfara",
+   "s": "Soldiers of Operation Fansan Yamma's Sector 2 freed 41 travellers, among them 10 women and seven children, who were seized when their commercial vehicle broke down on a highway in Tsafe, Zamfara. The army said the bus was travelling from Senegal to Kano when the bandits struck the stranded passengers and tried to march them into the bush, and that troops engaged the gunmen and forced them to abandon their captives.",
+   "c": "security",
+   "st": [
+    "Zamfara"
+   ]
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "Reps extend 2025 capital budget to 31 December",
+   "s": "Both chambers approved moving the deadline for the capital part of the 2025 budget from 30 September to 31 December 2026, the fourth such extension. The budget was first due to lapse at the end of 2025 and has since been carried to March, June and September. Senate Leader Opeyemi Bamidele said ministries and agencies needed the extra time to finish projects for which money had already been appropriated and released.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Three more Nigerians killed in South Africa",
+   "s": "Nigeria's Consulate-General in Johannesburg asked South African authorities to establish how Kenechukwu Igwemmadu, Olaniyi Olatunde and Christian Nnaemeka died in separate incidents between 18 and 21 September, and to bring anyone responsible before the courts. Consul-General Ninikanwa Okey-Uche made the call in a statement on Monday, as concern over the safety and treatment of Nigerians in South Africa grew again.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    7,
+    15
+   ],
+   "h": "Dangote shrugs off Kenyan court halt on Lamu refinery",
+   "s": "A court in Malindi, Kenya, ordered that the status quo be kept on land for Dangote's planned 700,000-barrel-a-day Lamu refinery until a hearing on 14 October, after 133 residents of Chandavai said the site is their ancestral farmland. Aliko Dangote called such orders “normal for us in Africa” and said his group was ready to confront anyone trying to frustrate the project, while the company said the groundbreaking would go ahead.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "Atiku demands publication of Nigeria-US health deal",
+   "s": "Atiku Abubakar, the ADC presidential candidate, asked the government to publish the five-year health agreement Nigeria signed with the United States in December 2025, after Ghana's President John Mahama said his country turned down a similar compact over medical records, pathogen samples, funding terms and medicine inspections. Washington is expected to give Nigeria close to $2 billion in grants under the deal, which covers disease surveillance and health data.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    36,
+    16,
+    24
+   ],
+   "h": "Atiku and APM oppose new $1.5bn World Bank loan",
+   "s": "Atiku urged the government to account for earlier loans before taking a proposed $1.5 billion World Bank facility, noting that public debt stood at N166.79 trillion at the end of June according to the Debt Management Office. The Allied Peoples Movement went further, asking the World Bank and other lenders to refuse new credit to what it called a “squandermaniac” government with no clear plan to repay what it already owes.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "ADC promises Atiku will not be an absentee president",
+   "s": "The ADC campaign council said Atiku would run a “physically present and responsive Presidency” if elected in 2027, drawing a contrast with President Tinubu's month-long stay abroad. Kola Ologbondiyan, the council's media director, made the pledge in Abuja while receiving leaders of the Atiku Unity Movement, saying Nigerians should not have a president who is unavailable when crises demand attention.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    21,
+    26
+   ],
+   "h": "Otedola praises Tinubu's reforms after Paris dinner",
+   "s": "Femi Otedola, who chairs First HoldCo and Geregu Power, said in a post on X after a private dinner with the President in Paris on Monday that his “bold and forward-thinking reforms” had put the economy on a path of sustainable growth. He pointed to gains on the Nigerian Exchange, the stronger foreign exchange market, higher reserves, rising investment and the entry of Nigerian firms into the FTSE Russell Frontier 50 index.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Emir Sanusi questions El-Rufai's prolonged detention",
+   "s": "The Emir of Kano, Muhammadu Sanusi II, told Channels Television that political connections sometimes decide how corruption cases are handled, and asked whether the long detention of former Kaduna governor Nasir El-Rufai is truly about graft or a political fight. Speaking at the Lagos launch of a book on unexplained wealth by Wahab Shittu, he said laws alone are not enough unless investigators, prosecutors and courts enforce them properly.",
+   "c": "politics",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    32
+   ],
+   "h": "Rivers Assembly endorses state police amendment",
+   "s": "The Rivers State House of Assembly unanimously backed the Sixth Alteration Bill, the constitutional amendment that would allow states to set up their own police services alongside the Nigeria Police Force. Speaker Martin Amaewhule presided over Monday's vote after reading the National Assembly's cover letter; the bill was sent to all 36 state assemblies on 16 September and needs the approval of at least 24 of them.",
+   "c": "politics",
+   "st": [
+    "Rivers"
+   ]
+  },
+  {
+   "i": [
+    42
+   ],
+   "h": "Four kidnappers sentenced to death in Edo",
+   "s": "A special court for kidnapping and cultism in Benin City sentenced Marvelous Isaac, Wisdom Michael, Rufus Michael and Gift Raphael, a 27-year-old woman, to death after convicting them on an 11-count charge that included kidnapping, conspiracy, armed robbery and illegal possession of firearms. Justice T. A. Momodu said in a judgment lasting more than three hours that the prosecution had proved its case beyond reasonable doubt.",
+   "c": "security",
+   "st": [
+    "Edo"
+   ]
+  },
+  {
+   "i": [
+    18
+   ],
+   "h": "Nine-hour downpour floods Makurdi homes",
+   "s": "Rain that fell for more than nine hours on Monday flooded houses across Makurdi, including Achusa, Wadata, Wurukum, North Bank, Ankpa Quarters and the New GRA, destroying belongings and food and leaving commuters stuck on flooded roads. One tenant in Logo said he woke at midnight to find water in his flat: “My books and some of my certificates were all dancing on the water.”",
+   "c": "environment",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "Three women killed at Plateau mining site",
+   "s": "Gunmen opened fire on workers at a mining site in Rakum, Barkin Ladi local government area of Plateau State, at about 4.30pm on Monday, killing three women and wounding another person before escaping. Rwang Tengwong, spokesman of the Berom Youth Moulders Association, confirmed the attack and described it as another in a series of killings of people trying to earn a living in the area.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "Anambra to prosecute those who deny women inheritance",
+   "s": "Anambra's Attorney-General, Tobechukwu Nweke, directed the police to investigate complaints of women and girls being denied inheritance because of their sex and to send the case files to his office for prosecution. In a letter made public on Tuesday he said many such cases had been reported; offenders risk up to four years in prison.",
+   "c": "society",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "FG releases approved textbook list for 2026-2028",
+   "s": "The Federal Ministry of Education published its final list of ranked and approved textbooks for 2026 to 2028, covering Primary 1, Primary 4, JSS 1 and SS 1, and said each approved title now carries a unique QR tracking code to improve monitoring of instructional materials. The release comes while the Nigerian Publishers Association pursues a suit at the Federal High Court in Ibadan against the ranking policy, which it has called burdensome.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "UBEC adopts whole-school approach in 10-year plan",
+   "s": "UBEC will begin carrying out its 10-year Universal Basic Education roadmap for 2026 to 2035 in the first week of October, executive secretary Aisha Garba told state SUBEB chairmen in Abuja. Under a “whole school approach”, a state must assess everything a school lacks before it receives money for repairs. She also launched an online system for planning and tracking basic education projects across the country.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    3
+   ],
+   "h": "Laws to be translated into indigenous languages",
+   "s": "The National Assembly Library Trust Fund said it plans to translate federal laws into Hausa, Igbo, Yoruba and other Nigerian languages so that more citizens can read the rules that govern them. Its executive secretary, Henry Nwawuba, announced the plan at the opening of the 2026 Library Week in Abuja, alongside electronic archives of parliamentary records, a mobile app and an online tracker for bills.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "NEDC projects in North-East reach N1.5trn",
+   "s": "The North East Development Commission said the value of its completed, ongoing and planned projects in the six north-eastern states has passed N1.5 trillion, with about N800 billion in physical works such as roads and bridges now under way. Its managing director, Mohammed Goni Alkali, gave the figures at a management retreat in Abuja, and said the commission is also investing in electric transport and renewable energy.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "NNPC says no date for IPO",
+   "s": "Bayo Ojulari, NNPC's group chief executive, said the company has not fixed a date for its planned initial public offering and that the decision to list belongs to its shareholders rather than management. “We don't have a date for the IPO at this time,” he said at the results briefing, adding that consultants are checking whether all the gaps identified in the company's readiness have been closed.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    23
+   ],
+   "h": "Group urges NASS to pass reserved seats bill",
+   "s": "The African Centre for Leadership, Strategy and Development urged the 10th National Assembly to pass the Reserved Seats Bill, which would create additional legislative seats for women, before its tenure ends in less than nine months. The group said a constitutional change is needed to correct the low number of women in political office, and it launched a Women Can Lead project to train and support female candidates.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Barau sacks another aide",
+   "s": "Deputy Senate President Barau Jibrin ended the appointment of Rashida Adamu, known as Rashida Mai Sa'a, as a special assistant, with immediate effect. His media aide said she was accused of anti-party conduct and of statements that could stir up supporters and harm the senator's political interests in Kano. It is the second aide he has dropped recently, after Umar Alhassan was removed over a post attacking Governor Abba Yusuf.",
+   "c": "politics",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    31,
+    12
+   ],
+   "h": "Makinde and Hamzat set out agendas",
+   "s": "Oyo governor Seyi Makinde said Nigeria could be reset within four years with the right leadership. In Lagos, Deputy Governor Obafemi Hamzat, the APC's 2027 governorship candidate, told about 150 young executives in Ikoyi that he wants to draw investment, widen opportunities for businesses and young people, and make Lagos Africa's safest megacity, and presented a “Digital Lagos 2.0” plan built on artificial intelligence and smart-city technology.",
+   "c": "politics",
+   "st": [
+    "Oyo",
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    30
+   ],
+   "h": "NGX and Nairobi exchange plan closer ties",
+   "s": "The Nigerian Exchange Group and the Nairobi Securities Exchange said they would work more closely on cross-border investment and listings, after Nigerian and Kenyan market leaders met in Nairobi on Tuesday. The meeting was held at an investor event for the planned Dangote refinery IPO hosted by the Kenyan exchange, where Aliko Dangote praised NGX chairman Umaru Kwairanga and chief executive Temi Popoola for promoting links between African markets.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "Eguavoen names Super Falcons squad for Comoros",
+   "s": "Interim coach Augustine Eguavoen called up 28 players for the Super Falcons' second-round 2028 Olympic qualifier against Comoros next month. Captain Rasheedat Ajibade, goalkeeper Chiamaka Nnadozie, Michelle Alozie, Ashley Plumptre, Jennifer Echegini and Asisat Oshoala lead the list, which also brings in younger players such as Favour Nkwocha, Shakirat Moshood and Janet Akekoromowei.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "FirstBank says its mobile app is secure",
+   "s": "FirstBank said a voice note circulating on WhatsApp, claiming its FirstMobile app had been hacked, was “false and misleading”. The bank said the app is secure and working normally, that customers' money is safe, and that it keeps investing in cybersecurity across its digital channels.",
+   "c": "business",
+   "st": []
+  }
+ ]
 }

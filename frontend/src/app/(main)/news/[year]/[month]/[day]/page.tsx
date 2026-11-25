@@ -35,6 +35,7 @@ export default async function NewsDayPage({ params }: { params: Params }) {
     return acc;
   }, {});
   const ym = date.slice(0, 7);
+  const leadParas = (data.lead || '').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -73,8 +74,14 @@ export default async function NewsDayPage({ params }: { params: Params }) {
             <p className="mt-2 font-medium">most reported stories</p>
           </div>
         </div>
-        {data.lead && (
-          <p className="mt-12 max-w-4xl text-xl leading-snug text-ink-2 lg:text-[1.75rem]">{data.lead}</p>
+        {/* The lead: a short standfirst, then "the day in brief" paragraphs. */}
+        {leadParas.length > 0 && (
+          <div className="mt-12 max-w-4xl">
+            <p className="text-xl leading-snug text-ink-2 lg:text-[1.75rem]">{leadParas[0]}</p>
+            {leadParas.slice(1).map((para, i) => (
+              <p key={i} className="mt-5 max-w-[68ch] text-[17px] leading-relaxed text-ink-2 lg:text-lg">{para}</p>
+            ))}
+          </div>
         )}
         <p className="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-[15px] text-ink-muted">
           {Object.entries(counts)
@@ -97,10 +104,35 @@ export default async function NewsDayPage({ params }: { params: Params }) {
               <div className="lg:col-span-8">
                 <p className="text-sm font-medium text-primary-700">
                   {CATEGORY_LABELS[item.category] || item.category}
-                  {item.states.length > 0 && <span className="text-ink-muted"> · {item.states.join(', ')}</span>}
+                  {item.states.length > 0 && (
+                    <span className="text-ink-muted">
+                      {' · '}
+                      {(item.state_links || item.states.map((name) => ({ name, path: '' }))).map((st, i) => (
+                        <Fragment key={st.name}>
+                          {i > 0 && ', '}
+                          {st.path ? (
+                            <Link href={st.path} title={`Universities in ${st.name}`} className="hover:text-secondary-500 hover:underline">{st.name}</Link>
+                          ) : st.name}
+                        </Fragment>
+                      ))}
+                    </span>
+                  )}
                 </p>
                 <h2 className="mt-2 text-2xl leading-tight lg:text-[1.9rem]">{item.headline}</h2>
-                <p className="mt-3 text-[17px] text-ink-2">{item.summary}</p>
+                <p className="mt-3 max-w-[68ch] text-[17px] leading-relaxed text-ink-2">{item.summary}</p>
+                {item.links && item.links.length > 0 && (
+                  <p className="mt-4 text-[15px] text-ink-muted">
+                    In the directory:{' '}
+                    {item.links.map((l, i) => (
+                      <Fragment key={l.path}>
+                        {i > 0 && ' · '}
+                        <Link href={l.path} className="font-medium text-primary-700 underline decoration-1 underline-offset-4 hover:text-secondary-500">
+                          {l.name}
+                        </Link>
+                      </Fragment>
+                    ))}
+                  </p>
+                )}
                 <p className="mt-4 text-[15px] text-ink-muted">
                   Reported by{' '}
                   {item.sources.map((s, i) => (

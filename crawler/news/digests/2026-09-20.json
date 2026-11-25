@@ -1,35 +1,312 @@
 {
-"lead": "Former Kogi governor Ibrahim Idris died in the United Kingdom, and Governor Usman Ododo declared three days of mourning. The government set up a ten-member independent committee on the deaths of 37 mining suspects in Civil Defence custody, and nine people were killed in fresh attacks in Plateau. The APC won the Gombe federal constituency by-election, the Falconets lost 1-0 to Colombia in the U20 World Cup quarter-final, and Victor Osimhen was ruled out of the AFCON qualifiers.",
-"items": [
-{"i": [2], "h": "Former Kogi governor Ibrahim Idris dies in UK", "s": "Alhaji Ibrahim Idris, known as Ibro and a leading PDP figure, died in the United Kingdom. Governor Usman Ododo declared three days of mourning, and Senator Natasha Akpoti-Uduaghan paid tribute.", "c": "politics", "st": ["Kogi"]},
-{"i": [5, 16, 25], "h": "Independent committee to probe deaths of 37 mining suspects", "s": "The government set up a ten-member committee and the NSCDC paraded its suspended Niger commandant and arrested more personnel. Former senator Shehu Sani described his own experience of a congested cell as hell on earth.", "c": "security", "st": ["Niger"]},
-{"i": [13], "h": "Nine killed in fresh Plateau attacks", "s": "At least nine people were killed in Barkin Ladi, Riyom and nearby communities between Saturday night and Sunday morning.", "c": "security", "st": ["Plateau"]},
-{"i": [6, 42, 20], "h": "APC's Kallamu wins Gombe federal by-election", "s": "INEC declared Usman Maijama'a Kallamu winner of the Gombe/Kwami/Funakaye seat with 41,121 votes. INEC chairman Joash Amupitan said Saturday's by-elections in four states were benchmarks for 2027.", "c": "politics", "st": ["Gombe"]},
-{"i": [0], "h": "Falconets knocked out by Colombia", "s": "Nigeria lost 1-0 to Colombia in the quarter-finals of the FIFA U20 Women's World Cup after a late goal by Valentina Loboa.", "c": "sports", "st": []},
-{"i": [3, 44], "h": "Osimhen ruled out of AFCON qualifiers", "s": "The Super Eagles said Victor Osimhen will miss the games against Madagascar and Guinea-Bissau with a muscle injury.", "c": "sports", "st": []},
-{"i": [1], "h": "Atiku demands explanation for Tinubu's UNGA absence", "s": "Atiku Abubakar asked President Tinubu to explain why he keeps missing the UN General Assembly.", "c": "politics", "st": []},
-{"i": [8, 40], "h": "APC asks Atiku to spell out how his fuel subsidy would work", "s": "The APC campaign council asked him to state the subsidy rate, spending ceiling, volumes, funding and safeguards against fraud.", "c": "politics", "st": []},
-{"i": [7], "h": "NMDPRA steps up surveillance against petrol price gouging", "s": "The regulator repeated that it cannot fix pump prices but said it will watch for exploitative practices.", "c": "economy", "st": []},
-{"i": [4], "h": "NDC disowns Obi-Kwankwaso Movement's campaign council", "s": "The party distanced itself from the 59-member council, raising the prospect of an internal crisis.", "c": "politics", "st": []},
-{"i": [10, 23], "h": "APC moves to end Wike's feud with its governors", "s": "Party chairman Nentawe Yilwatda returned to Abuja as the APC sought to reconcile the governors and the FCT minister.", "c": "politics", "st": []},
-{"i": [11], "h": "NDLEA officer drowns chasing suspect in Delta", "s": "An officer died after jumping into the River Ethiope at Obiaruku, Ukwuani, in pursuit of fleeing suspects.", "c": "security", "st": ["Delta"]},
-{"i": [41, 43], "h": "NDLEA seizes N3.4bn of drugs and arrests man posing as police officer", "s": "The agency said the suspect used a forged police ID to pass checkpoints while moving drugs.", "c": "security", "st": []},
-{"i": [14], "h": "Tinubu praises Kaduna's free CNG bus scheme", "s": "The President urged other governors to copy Governor Uba Sani's free mass transit scheme.", "c": "economy", "st": ["Kaduna"]},
-{"i": [9], "h": "CPPE warns foreign traders are displacing local retailers", "s": "The think tank said the growing presence of foreign, especially Chinese, traders threatens jobs.", "c": "economy", "st": []},
-{"i": [39], "h": "Edible oil tanker drivers threaten strike from 22 September", "s": "They accused the petroleum tanker drivers' union of interfering in their operations.", "c": "economy", "st": []},
-{"i": [21], "h": "NAHCON denies diverting 5,000 Hajj slots", "s": "The commission called the reports baseless.", "c": "society", "st": []},
-{"i": [45], "h": "SERAP sues INEC over political donation limits", "s": "The group wants INEC to disclose donation limits and party finances.", "c": "politics", "st": []},
-{"i": [18], "h": "Aiyedatiwa to buy Dangote shares for 500 young entrepreneurs", "s": "The Ondo governor said the purchase will expose youths to investment.", "c": "business", "st": ["Ondo"]},
-{"i": [33], "h": "Woman, 22, arrested over alleged self-kidnap in Anambra", "s": "Police said she collected a N3 million ransom.", "c": "security", "st": ["Anambra"]},
-{"i": [12], "h": "Man found dead hours after leaving home in Jos", "s": "Saleh Gambazi, 34, of Rikkos community left home on Friday evening and was found dead.", "c": "security", "st": ["Plateau"]},
-{"i": [37], "h": "Fire guts Gombe Media Corporation", "s": "Staff and NYSC members lost belongings in the blaze.", "c": "society", "st": ["Gombe"]},
-{"i": [15], "h": "Bauchi Assembly chief whip withdraws from 2027 race", "s": "Musa Wakili Nakwada of Bogoro announced he will not run.", "c": "politics", "st": ["Bauchi"]},
-{"i": [36], "h": "ADC candidate vows to unseat Ahmad Lawan", "s": "Imamudeen Talba is running for Yobe North.", "c": "politics", "st": ["Yobe"]},
-{"i": [32], "h": "Mimiko launches coalition to rally non-APC voters for Tinubu", "s": "Abass Mimiko unveiled the One Love Coalition.", "c": "politics", "st": ["Ondo"]},
-{"i": [17], "h": "Ogun PDP deputy candidate rallies Odeda communities", "s": "Yemi Kolapo drew crowds in Obantoko for Ladi Adebutu's campaign.", "c": "politics", "st": ["Ogun"]},
-{"i": [38, 19], "h": "Tax Ombud warns against revenue-first reforms", "s": "John Nwabueze said building taxpayer trust matters more than targets, and asked journalists to promote tax literacy.", "c": "economy", "st": []},
-{"i": [28], "h": "NUPRC courts Indonesia ahead of licensing round", "s": "Pertamina signalled interest in the 2026 round.", "c": "economy", "st": []},
-{"i": [26], "h": "S&P rates BOI subsidiary LECON Finance B", "s": "The agency assigned a stable outlook.", "c": "business", "st": []},
-{"i": [35], "h": "Health groups push sugar-based tax on soft drinks", "s": "Advocates said the excise should depend on sugar content.", "c": "health", "st": []}
-]
+ "lead": "Former Kogi governor Ibrahim Idris, known as Ibro, died in the United Kingdom, and Governor Usman Ododo declared three days of mourning across the state.\n\nThe day in brief: the federal government set up a ten-member independent committee to investigate the deaths of 37 suspected illegal miners found dead in a Civil Defence cell in Minna, some of them reportedly minors. In Plateau, at least nine people were killed in attacks in Barkin Ladi, Riyom and Mangu between Saturday night and Sunday morning. INEC declared the APC's Usman Maijama'a Kallamu winner of the Gombe/Kwami/Funakaye by-election, and its chairman called the weekend polls a test for 2027. Atiku Abubakar demanded to know why President Tinubu keeps missing the UN General Assembly, and the APC asked him to explain how his proposed fuel subsidy would work, as petrol prices rose and the regulator promised to watch for price gouging. In sport, the Falconets went out of the U20 Women's World Cup to a stoppage-time goal against Colombia, and the Super Eagles lost Victor Osimhen to injury before the AFCON qualifiers.",
+ "items": [
+  {
+   "i": [
+    2
+   ],
+   "h": "Former Kogi governor Ibrahim Idris dies in UK",
+   "s": "Alhaji Ibrahim Idris, a former governor of Kogi State and a leading figure in the PDP, died in the United Kingdom on Sunday, 20 September. Governor Usman Ododo described his death as a profound loss to the state and the country and declared three days of mourning, information commissioner Kingsley Fanwo said. Senator Natasha Akpoti-Uduaghan of Kogi Central also mourned him.",
+   "c": "politics",
+   "st": [
+    "Kogi"
+   ]
+  },
+  {
+   "i": [
+    5,
+    16,
+    25
+   ],
+   "h": "Independent committee to probe deaths of 37 mining suspects",
+   "s": "Interior Minister Olubunmi Tunji-Ojo said a ten-member independent committee will investigate the deaths of 37 suspected illegal miners held by the Civil Defence Corps in Minna, following President Tinubu's order for a full and transparent inquiry. Officers found dozens of the men, arrested two days earlier, dead in their cell; minors were reportedly among them. Former senator Shehu Sani described his own experience of a congested cell as hell on earth.",
+   "c": "security",
+   "st": [
+    "Niger"
+   ]
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "Nine killed in fresh Plateau attacks",
+   "s": "At least nine people were killed in separate attacks in Barkin Ladi, Riyom and Mangu between Saturday night and Sunday morning, and security personnel were deployed as tension rose. Five of the dead were passengers attacked on the road around Gana-Ropp in Barkin Ladi on Saturday night, while two others, including a pastor, were killed on their way to church.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    6,
+    42,
+    20
+   ],
+   "h": "APC's Kallamu wins Gombe federal by-election",
+   "s": "INEC declared the APC's Usman Maijama'a Kallamu winner of the Gombe/Kwami/Funakaye federal constituency by-election with 41,121 votes. Presiding over the commission's national situation room in Abuja, INEC chairman Joash Amupitan said Saturday's by-elections in Gombe, Kano, Bauchi and Delta were important benchmarks for testing the electoral system before 2027.",
+   "c": "politics",
+   "st": [
+    "Gombe"
+   ]
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "Falconets knocked out by Colombia",
+   "s": "Nigeria's Falconets were knocked out of the FIFA U20 Women's World Cup in the quarter-finals, losing 1-0 to Colombia. The game was goalless for most of the match, and Nigeria had the better chances, but after they were reduced to ten players late on, Valentina Loboa scored in the second minute of stoppage time to send Colombia into the semi-finals.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    3,
+    44
+   ],
+   "h": "Osimhen ruled out of AFCON qualifiers",
+   "s": "Victor Osimhen will miss Nigeria's AFCON qualifiers against Madagascar and Guinea-Bissau because of a muscle strain suffered in Galatasaray's 3-2 win at Istanbul Basaksehir. Team media officer Promise Efoghe confirmed the 27-year-old striker's absence after he was unable to play for the Turkish champions on Saturday.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "Atiku demands explanation for Tinubu's UNGA absence",
+   "s": "Atiku Abubakar demanded a full explanation from President Tinubu for repeatedly missing the UN General Assembly, asking through his aide Phrank Shaibu whether the President's history with US law-enforcement agencies had become a burden on Nigeria's foreign relations. Nigeria's UN ambassador, Jimoh Ibrahim, said the country would keep its front-row seat, with Vice President Shettima leading the delegation.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    8,
+    40
+   ],
+   "h": "APC asks Atiku to spell out how his fuel subsidy would work",
+   "s": "The APC campaign council, through spokesman Dele Alake, asked Atiku to set out the legal, fiscal and operational framework of his proposed fuel subsidy, including the rate, spending ceiling, volumes, funding and safeguards against fraud. Atiku had proposed a transparent “production subsidy” that would apply only to petroleum products refined and sold in Nigeria, excluding imports.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "NMDPRA steps up surveillance against petrol price gouging",
+   "s": "The NMDPRA said it cannot fix petrol pump prices under the deregulated market created by the Petroleum Industry Act, but will step up surveillance against price gouging and other exploitative practices. Its statement on 19 September came as pump prices continued to climb, reaching N1,430 a litre in some places.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "NDC disowns Obi-Kwankwaso Movement's campaign council",
+   "s": "The Nigeria Democratic Congress dissociated itself from a 59-member presidential campaign council announced by the Obidient-Kwankwaso (OK) Movement, saying only its national working committee can set up such a council and warning support groups against parallel structures. The movement's national secretary, Saadatu Sani, replied that it does not need any individual's approval to carry out its functions.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    10,
+    23
+   ],
+   "h": "APC moves to end Wike's feud with its governors",
+   "s": "APC governors vowed not to support any alliance that could undermine President Tinubu's re-election or weaken the party's candidates, in a growing feud with FCT Minister Nyesom Wike over his backing of PDP candidates in some states. Party chairman Nentawe Yilwatda returned to Abuja as the APC moved to reconcile the two sides, and a party group warned that Wike must not destroy the APC as it said he destroyed the PDP.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "NDLEA officer drowns chasing suspect in Delta",
+   "s": "An NDLEA officer drowned in the River Ethiope at Obiaruku, Ukwuani local government area, Delta State, after jumping into the water in pursuit of fleeing suspects on Saturday. The operation had begun with the arrest of a suspect allegedly carrying drugs, and the officer's body was later recovered from the river.",
+   "c": "security",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    41,
+    43
+   ],
+   "h": "NDLEA seizes N3.4bn of drugs and arrests man posing as police officer",
+   "s": "The NDLEA said it seized drugs worth more than N3.4 billion in recent operations and arrested a man who allegedly used a forged police identity card to pass through checkpoints while moving narcotics.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Tinubu praises Kaduna's free CNG bus scheme",
+   "s": "President Tinubu praised Kaduna's free CNG mass transit scheme in a post on X, describing it as a people-focused intervention and urging other state governments to follow Governor Uba Sani's example to cut transport costs and ease pressure on households.",
+   "c": "economy",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "CPPE warns foreign traders are displacing local retailers",
+   "s": "In a policy brief, Muda Yusuf of the Centre for the Promotion of Private Enterprise warned that the growing presence of foreign nationals, particularly Chinese traders, in Nigeria's retail and distributive trade is displacing local businesses and threatening jobs. He said the trend raises questions about employment protection, fair competition and investment policy.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    39
+   ],
+   "h": "Edible oil tanker drivers threaten strike from 22 September",
+   "s": "The National Union of Edible Oil Tanker Drivers threatened to start a strike on 22 September, accusing the petroleum tanker drivers' branch of NUPENG of interfering in their operations. Its general secretary, Tajudeen Usman, announced the plan at a news conference in Lagos.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    21
+   ],
+   "h": "NAHCON denies diverting 5,000 Hajj slots",
+   "s": "The National Hajj Commission of Nigeria rejected reports that 5,000 slots for the 2027 pilgrimage were diverted, calling the claims baseless. It was responding to a newspaper report in which private tour operators demanded an investigation, and urged stakeholders to separate verifiable facts from speculation.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "SERAP sues INEC over political donation limits",
+   "s": "SERAP filed a suit asking the court to compel INEC to disclose limits on political donations and parties' finances, arguing that “greater transparency in political financing is essential to ensuring that the 2027 elections are conducted on a level playing field.”",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    18
+   ],
+   "h": "Aiyedatiwa to buy Dangote shares for 500 young entrepreneurs",
+   "s": "Ondo Governor Lucky Aiyedatiwa said his government will buy Dangote refinery shares for 500 young entrepreneurs to introduce them to investing and wealth creation. He announced the plan at the 2026 Ondo entrepreneurs' summit at The Dome in Akure, attended by more than 8,000 entrepreneurs.",
+   "c": "business",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "Woman, 22, arrested over alleged self-kidnap in Anambra",
+   "s": "Anambra police arrested Nwachukwu Chidubem Blessing, 22, accused of faking her own kidnapping and collecting a N3 million ransom from her family. Police spokesman Tochukwu Ikenga said she faces allegations of fraud, conspiracy and self-kidnapping.",
+   "c": "security",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Man found dead hours after leaving home in Jos",
+   "s": "Saleh Gambazi, 34, known as Saeed, of Rikkos community in Jos North, left home on Friday evening and was found dead hours later, abandoned near Bauchi Ring Road. His body was taken to the old Jos University Teaching Hospital mortuary; his family said they did not know why he was killed.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "Fire guts Gombe Media Corporation",
+   "s": "Fire broke out at about 3.50pm on Saturday at the Gombe Media Corporation, damaging the old television studio, maintenance section, radio library, the news director's office and the hostel for NYSC members serving there, and destroying staff and corps members' belongings.",
+   "c": "society",
+   "st": [
+    "Gombe"
+   ]
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Bauchi Assembly chief whip withdraws from 2027 race",
+   "s": "Musa Wakili Nakwada, chief whip of the Bauchi State House of Assembly and a second-term member for Bogoro, announced that he is voluntarily withdrawing as his party's candidate for the 2027 election, in a letter he signed and gave to journalists in Bauchi.",
+   "c": "politics",
+   "st": [
+    "Bauchi"
+   ]
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "ADC candidate vows to unseat Ahmad Lawan",
+   "s": "Imamudeen Ahmed Talba, the ADC's candidate for Yobe North senatorial district, vowed to unseat former Senate President Ahmad Lawan. He spoke at the inauguration of the party's campaign council and new secretariat in Damaturu, saying people of the district persuaded him to run.",
+   "c": "politics",
+   "st": [
+    "Yobe"
+   ]
+  },
+  {
+   "i": [
+    32
+   ],
+   "h": "Mimiko launches coalition to rally non-APC voters for Tinubu",
+   "s": "Abass Mimiko, a former ZLP governorship candidate in Ondo and younger brother of ex-governor Olusegun Mimiko, launched a “One Love Coalition” to rally Nigerians across parties, including non-APC voters, behind President Tinubu's re-election.",
+   "c": "politics",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "Ogun PDP deputy candidate rallies Odeda communities",
+   "s": "Yemi Sowunmi-Kolapo, running mate to Ladi Adebutu, the PDP's 2027 governorship candidate in Ogun, rallied hundreds of residents in Obantoko, Odeda local government, where community leaders from areas such as Asalu, Akete and Kangudu declared their support for the party.",
+   "c": "politics",
+   "st": [
+    "Ogun"
+   ]
+  },
+  {
+   "i": [
+    38,
+    19
+   ],
+   "h": "Tax Ombud warns against revenue-first reforms",
+   "s": "Nigeria's first Tax Ombud, John Nwabueze, warned that pursuing revenue targets without building taxpayers' trust could undermine the tax reforms. In a speech read for him at the finance correspondents' 36th anniversary conference in Lagos, he urged journalists to promote tax literacy and understanding of the new laws.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    28
+   ],
+   "h": "NUPRC courts Indonesia ahead of licensing round",
+   "s": "NUPRC chief executive Oritsemeyiwa Eyesan held investment talks with Indonesia's deputy foreign minister Arif Havas Oegroseno and Pertamina's upstream executive Toriq Abdat, as the state oil company signalled interest in Nigeria's 2026 licensing round.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    26
+   ],
+   "h": "S&P rates BOI subsidiary LECON Finance B",
+   "s": "S&P Global Ratings assigned LECON Finance, the Bank of Industry's leasing subsidiary, 'B' long- and short-term issuer credit ratings with a stable outlook. The agency said it expects LECON to remain a core subsidiary of BOI and receive support when needed.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "Health groups push sugar-based tax on soft drinks",
+   "s": "As the National Assembly works on the Customs, Excise and Tariff amendment bill, a ThinkBusiness Africa report proposed that any tax on sugar-sweetened drinks be based on their sugar content, warning that “a much higher tax on sugar-sweetened beverages is not the same thing as an effective health policy.”",
+   "c": "health",
+   "st": []
+  }
+ ]
 }

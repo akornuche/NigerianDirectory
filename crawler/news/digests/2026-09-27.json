@@ -1,5 +1,5 @@
 {
- "lead": "Questions over President Tinubu's whereabouts grew, with the ADC and Peter Obi demanding answers six days after his announced leave ended, as reports said he was expected home on Tuesday. A car rammed a gas shop in Kubwa, Abuja, causing an explosion and fire, and gunmen killed five miners in Barkin Ladi. Resident doctors gave the government 14 days to avert a strike, Ekiti's governor dissolved all boards and political appointments, and Nollywood film Black Market set a Guinness record for a screening attended by 51,000 people.",
+ "lead": "Six days after President Tinubu's announced leave ended, the opposition demanded to know where he was, while a car crash set off a gas explosion in Kubwa and gunmen killed five miners in Plateau.\n\nThe day in brief: the ADC campaign and Peter Obi asked the Presidency to explain the President's long stay abroad, and reports said he would return on Tuesday. In Abuja, a vehicle rammed a gas shop at Liberty Junction at dawn on Sunday, and the fire spread to at least nine shops and a police traffic post. Resident doctors, meeting in Calabar, gave the government 14 days to settle their grievances or face a nationwide strike. Debt Management Office figures showed public debt has risen 90.9 per cent since May 2023, to N166.79 trillion. Ekiti's governor dissolved boards and sacked political aides ahead of his second term, Kano suspended durbar processions, and Kano topped the NECO results for a second year. In Lagos, 51,000 people watched Black Market at Tafawa Balewa Square, a Guinness world record, and the Flamingos won the WAFU B U17 Girls Cup.",
  "items": [
   {
    "i": [
@@ -9,7 +9,7 @@
     1
    ],
    "h": "ADC and Obi demand to know where Tinubu is",
-   "s": "The ADC campaign asked the Presidency to explain the President's prolonged stay abroad six days after his announced leave ended, and Peter Obi asked the same question. Reports said Tinubu's return, after four weeks in London and Paris, is now expected on Tuesday.",
+   "s": "The ADC presidential campaign council said it was deeply concerned that, as of Sunday, President Tinubu had not returned six days after his announced three-week vacation ended, and asked the Presidency for full disclosure. Peter Obi raised the same question. Reports said the President, who spent about four weeks between London and Paris, was now expected home on Tuesday.",
    "c": "politics",
    "st": []
   },
@@ -18,7 +18,7 @@
     0
    ],
    "h": "Explosion as car rams gas shop in Kubwa",
-   "s": "An early morning blast at Liberty Junction on Sunday injured the driver and started a fire that spread to nearby shops and a police vehicle.",
+   "s": "A car crashed into a gas retail shop at Liberty Junction on Arab Road, Kubwa, at about 6.15am on Sunday, setting off an explosion that injured the driver and started a fire that spread to at least nine shops, containers and a police traffic post. Residents of Dantata Estate, about two kilometres away, said their buildings shook. “The explosion was loud enough to wake people from their sleep,” one said.",
    "c": "society",
    "st": [
     "FCT"
@@ -29,7 +29,7 @@
     10
    ],
    "h": "Gunmen kill five miners in Barkin Ladi",
-   "s": "Attackers ambushed miners at Marit village at about 1pm on Saturday; two others were injured before troops and hunters drove them off.",
+   "s": "Gunmen ambushed miners at a site in Marit village, Barkin Ladi, Plateau State, at about 1pm on Saturday, killing five and wounding two before troops and local hunters drove them off. Rwang Tengwong, spokesman of the Berom Youth Moulders Association, confirmed the attack, which left the community in mourning and deepened fears for people working the area's mines.",
    "c": "security",
    "st": [
     "Plateau"
@@ -40,7 +40,7 @@
     15
    ],
    "h": "Resident doctors give FG 14 days to avert strike",
-   "s": "The National Association of Resident Doctors threatened a nationwide strike if its demands are not met.",
+   "s": "The National Association of Resident Doctors gave the federal government 14 days to resolve outstanding welfare and professional issues or face a nationwide strike. The ultimatum was in a communiqué read by its new president, Emmanuel Ogar, at the end of its 46th annual general meeting in Calabar, which said several agreements reached with the government had not been implemented despite repeated meetings.",
    "c": "health",
    "st": []
   },
@@ -49,7 +49,7 @@
     5
    ],
    "h": "Ekiti governor dissolves boards and sacks political appointees",
-   "s": "Governor Biodun Oyebanji dissolved every state board, commission and agency council and ended the appointments of all his political aides with immediate effect.",
+   "s": "Governor Biodun Oyebanji dissolved all boards, commissions and parastatals in Ekiti and ended the appointments of all political appointees, including special, senior special and technical assistants, with immediate effect. His media adviser, Yinka Oyebode, said the step was needed as the first term winds down ahead of the second-term inauguration on 16 October.",
    "c": "politics",
    "st": [
     "Ekiti"
@@ -60,7 +60,7 @@
     25
    ],
    "h": "Nollywood's Black Market sets Guinness screening record",
-   "s": "51,000 people watched the film at Tafawa Balewa Square, Lagos, the largest attendance at a single-venue screening.",
+   "s": "Nollywood crime thriller Black Market entered Guinness World Records for the largest attendance at a film screening in a single venue, after 51,000 people watched it at Tafawa Balewa Square in Lagos on Saturday. Long queues formed from early afternoon. The figure beat the previous record of 43,624, set in 2015 at a screening of a Filipino biographical film.",
    "c": "entertainment",
    "st": [
     "Lagos"
@@ -71,7 +71,7 @@
     7
    ],
    "h": "Public debt up 90.9% since May 2023",
-   "s": "Debt rose from N87.38 trillion to N166.79 trillion, with the Federal Government accounting for N152.77 trillion.",
+   "s": "Debt Management Office figures show Nigeria's total public debt rose 90.9 per cent since President Tinubu took office in May 2023, from N87.38 trillion to N166.79 trillion at the end of June 2026. The federal government holds about N152.77 trillion of it and states and the FCT the rest. Debt rose N7.44 trillion in the second quarter alone, while interest took more than half of external debt service.",
    "c": "economy",
    "st": []
   },
@@ -80,7 +80,7 @@
     3
    ],
    "h": "Atiku asks Tinubu to raise minimum wage",
-   "s": "The ADC candidate said workers need a pay rise.",
+   "s": "Atiku Abubakar called on President Tinubu to raise the national minimum wage, saying fuel subsidy removal had pushed up the prices of essential goods and plunged many Nigerians into hardship. He promised that if elected in 2027 he would start work on raising the wage floor from his first day in office, arguing that the N70,000 minimum had been eroded by the cost of petrol, food, transport and rent.",
    "c": "politics",
    "st": []
   },
@@ -89,7 +89,7 @@
     4
    ],
    "h": "Shettima says Africa's exclusion undermines UN legitimacy",
-   "s": "The Vice President restated Nigeria's call for permanent African Security Council seats.",
+   "s": "Vice President Kashim Shettima told UN Deputy Secretary-General Amina Mohammed in New York that Africa's continued exclusion from permanent membership of the Security Council undermines the fairness and legitimacy of the global system. His spokesman, Stanley Nkwocha, said Shettima pledged that Nigeria would remain a dependable partner in reforming the UN, defending international law and fighting hunger and exclusion.",
    "c": "world",
    "st": []
   },
@@ -99,7 +99,7 @@
     39
    ],
    "h": "APC passes vote of confidence in Tinubu and Shettima",
-   "s": "Party chairman Nentawe Yilwatda said the APC is ready for 2027.",
+   "s": "The APC's National Working Committee passed a vote of confidence in President Tinubu, Vice President Shettima and all candidates who emerged from its primaries, at the end of a three-day retreat. National chairman Nentawe Yilwatda told journalists that labourers, market women and other Nigerians benefiting from the government's policies will back the President's bid for a second term.",
    "c": "politics",
    "st": []
   },
@@ -108,7 +108,7 @@
     13
    ],
    "h": "Aondoakaa urges calm after campaign materials burnt in Benue",
-   "s": "The PDP governorship candidate told supporters not to retaliate.",
+   "s": "Michael Aondoakaa, the PDP's governorship candidate in Benue, condemned the burning of campaign materials belonging to his Benue First movement, which he blamed on an opposing politician, but told supporters in all 23 local government areas not to retaliate. He said his campaign stands for peace, security, justice, tolerance and the rule of law.",
    "c": "politics",
    "st": [
     "Benue"
@@ -119,7 +119,7 @@
     23
    ],
    "h": "Kano restricts durbar and horse riding",
-   "s": "The government cited security concerns and the risk of clashes.",
+   "s": "The Kano State Government suspended all durbar processions and horse-riding in the metropolis after an emergency meeting of the State Security Council at Government House. It said security assessments showed significant mobilisation of supporters around the planned events, raising the risk of clashes and a breakdown of law and order.",
    "c": "security",
    "st": [
     "Kano"
@@ -130,7 +130,7 @@
     32
    ],
    "h": "Correctional service says two died in Kano cholera outbreak",
-   "s": "It disputed Amnesty International's figure of six.",
+   "s": "The Nigerian Correctional Service said two inmates, not six as Amnesty International had reported, died in a suspected cholera outbreak at the Kurmawa custodial centre in Kano. Its spokeswoman, Jane Osuji, said the outbreak had been contained and no further deaths had been recorded since the diagnosis.",
    "c": "health",
    "st": [
     "Kano"
@@ -141,7 +141,7 @@
     12
    ],
    "h": "Adamawa approves N169.1bn supplementary budget",
-   "s": "The council approved projects in roads, health, power and education.",
+   "s": "Adamawa's Executive Council, chaired by Governor Ahmadu Fintiri in Yola, approved a N169.106 billion supplementary budget for 2026, along with projects covering roads, drainage, healthcare, electricity and education across the state, information commissioner Leader Leneke told journalists after the council's 16th meeting.",
    "c": "politics",
    "st": [
     "Adamawa"
@@ -153,7 +153,7 @@
     40
    ],
    "h": "Kano best-performing state in NECO for second year",
-   "s": "74,413 Kano candidates obtained five credits including English and maths, ahead of Lagos and Oyo.",
+   "s": "Kano topped the 2026 NECO results for a second year in a row, with 74,413 candidates obtaining at least five credits including English and mathematics. Lagos came second with 72,496 candidates and Oyo third with 55,543, according to the council's ranking of states by the number of candidates who met the benchmark.",
    "c": "education",
    "st": [
     "Kano"
@@ -164,7 +164,7 @@
     21
    ],
    "h": "FG approves upgrade of four eastern ports",
-   "s": "Onne, Rivers, Delta and Calabar ports will be modernised.",
+   "s": "The federal government approved the full modernisation and upgrade of Onne, Rivers, Delta and Calabar ports, Marine and Blue Economy Minister Adegboyega Oyetola said on X. The approval adds to the earlier plan for Apapa and Tin Can Island in Lagos and is meant to expand capacity and ease the concentration of cargo traffic around Lagos.",
    "c": "economy",
    "st": [
     "Rivers",
@@ -177,7 +177,7 @@
     24
    ],
    "h": "Air Peace blames Jet A1 shortage for disruptions",
-   "s": "The airline also cited a restriction at Maiduguri airport.",
+   "s": "Air Peace said delays and cancellations at Abuja's Nnamdi Azikiwe airport were caused at first by a widespread scarcity of Jet A1 fuel that hit several airlines, and that its Abuja-Maiduguri service was also affected by an operating restriction at Maiduguri airport. The airline responded after videos of stranded passengers spread on social media.",
    "c": "business",
    "st": []
   },
@@ -186,7 +186,7 @@
     19
    ],
    "h": "Ex-lawmaker petitions Trump over 2006 Atiku probe",
-   "s": "Ehiozuwa Agbonayinma asked for a review of the US investigation.",
+   "s": "Ehiozuwa Agbonayinma, a former member of the House of Representatives and former commissioner of the Code of Conduct Bureau, petitioned US President Donald Trump to have American authorities review the past US financial-crime investigation involving Atiku Abubakar and related transactions. The petition is dated 24 September.",
    "c": "politics",
    "st": []
   },
@@ -195,7 +195,7 @@
     30
    ],
    "h": "Pantami supporters say Supreme Court ruling does not affect him",
-   "s": "They insisted he can still contest the Gombe PDP primary.",
+   "s": "Supporters of Isa Ali Pantami said Thursday's Supreme Court judgment, which restored provisions of the Electoral Act 2026 on party membership registers and candidate nominations, does not affect his bid for the Gombe governorship on the PDP platform.",
    "c": "politics",
    "st": [
     "Gombe"
@@ -206,7 +206,7 @@
     34
    ],
    "h": "Zulum declares Borno APC territory",
-   "s": "He urged losing aspirants to rally behind the party.",
+   "s": "Returning to Maiduguri from Canada and the United States, where he received a pan-African leadership award, Governor Babagana Zulum urged aspirants who lost party primaries to set aside their grievances and rally behind the APC before 2027. He was welcomed at the airport by party officials, lawmakers and government officials.",
    "c": "politics",
    "st": [
     "Borno"
@@ -217,7 +217,7 @@
     22
    ],
    "h": "200 APC and LP members join PDP in Ebonyi",
-   "s": "The party said it is gaining ground.",
+   "s": "More than 200 members of the APC and the Labour Party, led by John Ekpoma, defected to the PDP at Abina Amegu in Ikwo, Ebonyi State. They joined during the declaration of Goodluck Chidiebere Egwu as the party's candidate for the Ikwo/Ezza South federal constituency, which the PDP presented as a sign it is gaining ground.",
    "c": "politics",
    "st": [
     "Ebonyi"
@@ -228,7 +228,7 @@
     18
    ],
    "h": "Naval chief tells personnel to stay apolitical",
-   "s": "Vice Admiral Idi Abbas warned ahead of 2027.",
+   "s": "The Chief of the Naval Staff, Vice Admiral Idi Abbas, told naval and other military personnel to remain apolitical, non-partisan and professional ahead of the 2027 elections. He spoke through Rear Admiral Kolawole Oguntuga, director of manning, at the navy's third-quarter route march in Abuja, where he also stressed physical and mental fitness.",
    "c": "security",
    "st": []
   },
@@ -238,7 +238,7 @@
     38
    ],
    "h": "Troops kill terrorist and rescue six in Sokoto and Zamfara",
-   "s": "An AK-47 and a motorcycle were recovered.",
+   "s": "Troops of Operation Fansan Yamma said that in separate operations on 26 September they raided a suspected terrorist camp in Gudu, Sokoto, killing one terrorist, and rescued six kidnap victims in Zamfara. They recovered an AK-47 rifle with live ammunition, a motorcycle, camouflage uniforms and other supplies.",
    "c": "security",
    "st": [
     "Sokoto",
@@ -250,7 +250,7 @@
     20
    ],
    "h": "NDLEA signs anti-drug pact with UAE",
-   "s": "The MoU with the National Drug Enforcement Authority deepens cooperation.",
+   "s": "The NDLEA signed a memorandum of understanding with the UAE's National Drug Enforcement Authority on the sidelines of the 15th UN Congress on Crime Prevention and Criminal Justice in Abu Dhabi. The agency said the agreement opens a new chapter in cooperation between the two countries against drug trafficking.",
    "c": "security",
    "st": []
   },
@@ -259,7 +259,7 @@
     37
    ],
    "h": "Man arrested over killing linked to N500 gift",
-   "s": "Police said a dispute over the money led to a fatal stabbing.",
+   "s": "Police arrested a man over a fatal stabbing that followed a quarrel with another man over N500 they had reportedly been given as a gift.",
    "c": "security",
    "st": []
   },
@@ -268,7 +268,7 @@
     26
    ],
    "h": "Flamingos win WAFU B U17 Girls Cup",
-   "s": "Nigeria beat Togo 4-0 and won all five matches.",
+   "s": "Nigeria's Flamingos won the 2026 WAFU B U17 Girls Cup in Yamoussoukro, Côte d'Ivoire, beating Togo 4-0 in Sunday's final to finish with five wins from five, including victories over Ghana and the hosts. Captain Harmony Chidi scored two first-half penalties, and Oluebube Umejiaku and Oluwakemi Adegbuyi added late goals for Akeem Busari's side.",
    "c": "sports",
    "st": []
   },
@@ -277,7 +277,7 @@
     8
    ],
    "h": "Super Eagles fly to Bissau for Tuesday qualifier",
-   "s": "The team left Uyo after beating Madagascar.",
+   "s": "The Super Eagles left Uyo for Bissau on Sunday afternoon after a closed-door training session at the Godswill Akpabio Stadium, where they beat Madagascar 2-1 on Friday. Guinea-Bissau, who won 2-0 against Tanzania in their opener, lead Group L on goal difference before Tuesday's meeting.",
    "c": "sports",
    "st": []
   },
@@ -286,7 +286,7 @@
     16
    ],
    "h": "10th AFRIMA set for Lagos in May 2027",
-   "s": "The awards run from 18 to 23 May.",
+   "s": "The 10th All Africa Music Awards will be held in Lagos from 18 to 23 May 2027, ending with the awards ceremony on 23 May, the African Union and the AFRIMA committee announced at an event in Beverly Hills, Los Angeles. The programme includes a showcase, conferences and industry events, and entries open worldwide on 11 October.",
    "c": "entertainment",
    "st": [
     "Lagos"
@@ -297,7 +297,7 @@
     6
    ],
    "h": "Trump rejects Iran's offer to reopen Hormuz",
-   "s": "US pressure is hitting Iranian banks and airlines.",
+   "s": "US President Donald Trump said he had rejected an Iranian offer, relayed through Qatari mediators, to reopen the Strait of Hormuz and end the fighting in the region within seven days. “I reject their proposal,” he told reporters at the White House, as Washington stepped up pressure on Iran's banks and airlines.",
    "c": "world",
    "st": []
   }

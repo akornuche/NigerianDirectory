@@ -1,41 +1,375 @@
 {
-"lead": "Former PDP national chairman and Gongola governor Bamanga Tukur died, and northern governors mourned him. INEC published the final list of presidential candidates and running mates for January 2027, and objected to Atiku Abubakar's bid to amend his suit against President Tinubu. Diphtheria reached Abuja with two deaths, Nigeria's envoy-designate said more than 30 Nigerians had been killed by South African police since 2022, and Kayinsola Ajayi ran 9.93 seconds to finish fourth in Budapest.",
-"items": [
-{"i": [0], "h": "Bamanga Tukur, former PDP chairman and Gongola governor, dies", "s": "Alhaji Bamanga Tukur, the third civilian governor of the old Gongola State, former PDP national chairman and businessman, has died. Northern governors paid tribute to him.", "c": "politics", "st": ["Adamawa", "Taraba"]},
-{"i": [2], "h": "INEC publishes final list of presidential candidates", "s": "INEC released the final list of presidential candidates and running mates for the January 2027 general election.", "c": "politics", "st": []},
-{"i": [5, 13], "h": "INEC opposes Atiku's request to amend suit against Tinubu", "s": "INEC objected to Atiku Abubakar's application to amend his suit seeking to disqualify President Tinubu and the APC, and asked the court to dismiss the case over Tinubu's certificates. The ADC warned INEC against delays in issuing voter cards in the North-West.", "c": "politics", "st": []},
-{"i": [9], "h": "Diphtheria kills two in Abuja", "s": "The FCT Administration confirmed two deaths and five laboratory-confirmed diphtheria cases out of 15 investigated in the capital.", "c": "health", "st": ["FCT"]},
-{"i": [39, 23], "h": "Envoy says South African police have killed over 30 Nigerians since 2022", "s": "Femi Fani-Kayode, Nigeria's ambassador-designate to South Africa, demanded justice for murdered Nigerians and said the country's patience is running thin.", "c": "world", "st": []},
-{"i": [6], "h": "Tinubu and Atiku clash over Dangote's caution on subsidy", "s": "President Tinubu and Atiku Abubakar gave opposing readings of the Dangote refinery's warning about reintroducing a fuel subsidy.", "c": "politics", "st": []},
-{"i": [32, 47], "h": "Dangote says refinery shares could rise from N525 to N10,000", "s": "Aliko Dangote projected that shares offered at N525 could one day reach N10,000. Stockbrokers' bodies urged investors to buy through registered brokers.", "c": "business", "st": []},
-{"i": [10], "h": "Air strikes kill more than 18 terrorists in Borno", "s": "The air component of Operation Hadin Kai said strikes killed over 18 terrorists and destroyed logistics hubs in Borno.", "c": "security", "st": ["Borno"]},
-{"i": [19], "h": "DSS arrests three over Ayilamo attack in Benue", "s": "Governor Hyacinth Alia praised the DSS for arresting three suspects linked to Thursday's attack on Ayilamo in Logo, which killed police officers and villagers.", "c": "security", "st": ["Benue"]},
-{"i": [33], "h": "Gunmen kill three herders and 50 cattle in Plateau", "s": "Three herders and about 50 cows were killed near Aloghom in Mangu, a day after another herder was killed nearby.", "c": "security", "st": ["Plateau"]},
-{"i": [30], "h": "Kwara monarch dies days after rescue from kidnappers", "s": "The Onigbesi of Igbesi, Oba Moses Oyinloye Iwedunmoye I, died in hospital after being rescued from kidnappers who took him on 22 August.", "c": "security", "st": ["Kwara"]},
-{"i": [15], "h": "Sokoto police appeal for calm after cleric is stabbed", "s": "Police warned against reprisals after Malam Musa Lukuwa survived a stabbing after Friday prayers and the alleged attacker was killed by a mob.", "c": "security", "st": ["Sokoto"]},
-{"i": [7, 24], "h": "Ortom explains lending Obi a vehicle and faults Alia", "s": "Former Benue governor Samuel Ortom said he gave Peter Obi a vehicle for his aborted condolence visit to Yelewata, and accused Governor Alia of attacking opponents to divert attention from his record.", "c": "politics", "st": ["Benue"]},
-{"i": [12], "h": "FCCPC and NMDPRA team up against oil price fixing", "s": "The competition commission and the downstream regulator agreed to tackle cartels, price fixing and market abuse in petroleum products.", "c": "economy", "st": []},
-{"i": [8], "h": "NCAA fines RwandAir N15m over baggage complaint", "s": "The aviation regulator fined RwandAir for failing to resolve a passenger's damaged-baggage complaint within the required time.", "c": "business", "st": []},
-{"i": [4], "h": "Ajayi fourth in 100m final in Budapest", "s": "Kayinsola Ajayi ran 9.93 seconds to finish fourth, as the fastest African, in the men's 100m at the World Athletics Ultimate Championship, winning $25,000.", "c": "sports", "st": []},
-{"i": [16, 18], "h": "Shettima meets Okonjo-Iweala at BRICS summit", "s": "At the BRICS summit in New Delhi, Vice President Kashim Shettima reaffirmed Nigeria's support for the World Trade Organization in talks with its director-general, Ngozi Okonjo-Iweala.", "c": "world", "st": []},
-{"i": [37, 36], "h": "CBN survey: low earners feel inflation most", "s": "About 68.4 per cent of Nigerians earning under N70,000 said inflation was high in August. Firms expect business confidence to rise to 36.1 points by February 2027.", "c": "economy", "st": []},
-{"i": [14], "h": "Candidate substitution claims hit Bauchi APC", "s": "Some Bauchi APC Assembly candidates said their names were replaced after they won primaries, and reconciliation led by Yakubu Dogara stalled.", "c": "politics", "st": ["Bauchi"]},
-{"i": [25], "h": "PRP rejects claims linking Bauchi candidate to banditry", "s": "The Peoples Redemption Party defended its Bauchi governorship candidate, Senator Shehu Buba, against allegations of links to banditry and kidnapping.", "c": "politics", "st": ["Bauchi"]},
-{"i": [46], "h": "Haske leaves APC to run for Adamawa governor on APM ticket", "s": "Businessman Abdulrahman Haske resigned from the APC and became the Allied Peoples Movement's governorship candidate in Adamawa.", "c": "politics", "st": ["Adamawa"]},
-{"i": [49], "h": "APC mocks opposition after Kwankwaso asks Atiku to step down", "s": "The APC ridiculed the opposition after NDC vice-presidential candidate Rabiu Kwankwaso urged Atiku Abubakar to withdraw.", "c": "politics", "st": []},
-{"i": [31], "h": "Christian group asks Tinubu to drop re-election bid", "s": "The Christian Social Movement of Nigeria cited insecurity and hardship in urging President Tinubu not to seek a second term.", "c": "politics", "st": []},
-{"i": [22], "h": "Tinubu's daughter mobilises market leaders for re-election", "s": "Iyaloja-General Folashade Tinubu-Ojo is building a grassroots campaign network across trading hubs for her father.", "c": "politics", "st": []},
-{"i": [17], "h": "ADC chieftain urges South to back Atiku", "s": "Kenneth Imansuagbon said Nigeria needs a unifier and asked southern voters to support Atiku Abubakar.", "c": "politics", "st": []},
-{"i": [29], "h": "Prophet El-Buba endorses SDP's Adebayo", "s": "Cleric Isa El-Buba backed Adewole Adebayo's presidential bid and his 2027-2031 policy blueprint.", "c": "politics", "st": []},
-{"i": [48], "h": "Defence minister rallies support for Tinubu and Uba Sani", "s": "Christopher Musa urged Nigerians to back President Tinubu and Kaduna Governor Uba Sani in 2027.", "c": "politics", "st": ["Kaduna"]},
-{"i": [11], "h": "Former military intelligence chief backs power rotation in Kogi", "s": "Vice-Admiral Joseph Ajayi (retd) said rotating the governorship would promote equity and unity in Kogi.", "c": "politics", "st": ["Kogi"]},
-{"i": [41], "h": "Rivers ADC says police disrupted meeting and arrested members", "s": "The ADC accused police and a local security committee of breaking up its meeting in Rivers.", "c": "politics", "st": ["Rivers"]},
-{"i": [40], "h": "Interior minister orders probe of second passport for Abuja realtor", "s": "The interior minister ordered an inquiry after lawyers alleged that a realtor obtained another passport after reporting hers missing.", "c": "society", "st": ["FCT"]},
-{"i": [51], "h": "Lagos police arrest seven over N24m extortion of traders", "s": "Lagos police arrested seven suspects from two fraud rings that allegedly targeted successful market traders and kept a list of 125 targets.", "c": "security", "st": ["Lagos"]},
-{"i": [35], "h": "Anambra police arrest woman filmed assaulting a child", "s": "Police arrested a 36-year-old woman seen in a video assaulting a minor.", "c": "security", "st": ["Anambra"]},
-{"i": [34], "h": "Police recover vehicle stolen from Edo ADC chairman's home", "s": "Edo police recovered one of two Toyota Highlanders taken in a robbery at the residence of state ADC chairman Kennedy Odion.", "c": "security", "st": ["Edo"]},
-{"i": [42], "h": "Abia invites public input on 2027 budget", "s": "The Abia government asked citizens and stakeholders to contribute to its 2027 budget proposal.", "c": "politics", "st": ["Abia"]},
-{"i": [44], "h": "FMCG revenue stalls as inflation boost fades", "s": "Consumer goods firms' total revenue was nearly flat in the first half of the year as price increases slowed.", "c": "business", "st": []},
-{"i": [43, 50], "h": "Trump hints US-Iran war may end; IEA counts 2.8bn barrels lost", "s": "President Trump signalled the conflict could be nearing an end, while the IEA estimated 2.8 billion barrels of exports lost through the Strait of Hormuz.", "c": "world", "st": []}
-]
+ "lead": "Bamanga Tukur, the former PDP national chairman and governor of old Gongola State, died after a brief illness, and leaders across the North paid tribute.\n\nThe day in brief: INEC published its final list of presidential candidates and running mates from 18 parties for the 16 January 2027 election, and asked the Federal High Court to dismiss Atiku Abubakar's suit challenging President Tinubu's eligibility as an abuse of process. Diphtheria reached Abuja, with two deaths and five laboratory-confirmed cases. Femi Fani-Kayode, Nigeria's ambassador-designate to South Africa, demanded justice after more killings of Nigerians there. Tinubu and Atiku clashed over the Dangote refinery's warning against reviving fuel subsidies, and Aliko Dangote predicted his N525 shares could one day be worth N10,000. Air strikes killed more than 18 terrorists in Borno, the DSS arrested three suspects over the attack on Ayilamo in Benue, and gunmen killed three herders and 50 cattle in Mangu. In Budapest, Kayinsola Ajayi ran 9.93 seconds for fourth in the 100m, and Tobi Amusan took silver in the hurdles.",
+ "items": [
+  {
+   "i": [
+    0
+   ],
+   "h": "Bamanga Tukur, former PDP chairman and Gongola governor, dies",
+   "s": "Alhaji Bamanga Tukur, the third civilian governor of the defunct Gongola State, former PDP national chairman and businessman, died on Saturday after a brief illness. Adamawa Governor Ahmadu Fintiri called his death a monumental loss, and both PDP factions, the one backed by Nyesom Wike and the interim committee led by Kabiru Turaki, mourned him as a committed party man.",
+   "c": "politics",
+   "st": [
+    "Adamawa",
+    "Taraba"
+   ]
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "INEC publishes final list of presidential candidates",
+   "s": "INEC published the final list of presidential candidates and running mates from 18 parties for the general election on 16 January 2027, signed by the commission's secretary, Rose Oriaran-Anthony. It also released the final list for the National Assembly elections, which hold on the same day.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    5,
+    13
+   ],
+   "h": "INEC opposes Atiku's request to amend suit against Tinubu",
+   "s": "INEC asked the Federal High Court in Abuja to dismiss Atiku Abubakar and the ADC's suit challenging President Tinubu's eligibility, including over his certificates, calling it an abuse of court process, and objected to Atiku's request to amend it. The ADC separately warned INEC against delays in issuing voter cards in the North-West.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Diphtheria kills two in Abuja",
+   "s": "The FCT Administration confirmed two deaths from diphtheria in Abuja, with five laboratory-confirmed cases out of 15 investigated. Health secretary Adedolapo Fasawe announced the figures at a community sensitisation event in Karshi and said a multidisciplinary incident management team would be activated to contain the outbreak.",
+   "c": "health",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    39,
+    23
+   ],
+   "h": "Envoy says South African police have killed over 30 Nigerians since 2022",
+   "s": "Femi Fani-Kayode, Nigeria's ambassador-designate to South Africa, said more than 30 Nigerians have been killed by South African police since 2022 and that the country's patience is running thin. He demanded justice after Bishop Michael Taiwo Fakunle was shot dead at home in Johannesburg on 4 September and James Uchechukwu Nwankwo was also killed; the foreign ministry asked for an investigation.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "Tinubu and Atiku clash over Dangote's caution on subsidy",
+   "s": "President Tinubu and Atiku Abubakar gave opposing readings of the Dangote refinery's warning that government price controls or a return of subsidies could hurt its refining margins. Atiku accused the Presidency of distorting the refinery's concerns to discredit his “production subsidy” proposal, arguing that the warning actually exposed the government's argument.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    32,
+    47
+   ],
+   "h": "Dangote says refinery shares could rise from N525 to N10,000",
+   "s": "Speaking in Hausa in an interview, Aliko Dangote said the refinery's shares, offered at N525 in the IPO, could one day be worth as much as N10,000, and assured small investors they would get priority in allocation. Stockbrokers' associations urged investors to buy only through registered brokers.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "Air strikes kill more than 18 terrorists in Borno",
+   "s": "The air component of Operation Hadin Kai, working with ground troops of Sector 1, struck terrorist enclaves at Tumbunma Baba in the Tumbuns area of Borno, killing more than 18 fighters and destroying logistics hubs, the military said.",
+   "c": "security",
+   "st": [
+    "Borno"
+   ]
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "DSS arrests three over Ayilamo attack in Benue",
+   "s": "Benue Governor Hyacinth Alia commended the DSS for arresting three suspects linked to Thursday's attack on Ayilamo in Logo local government, which killed innocent people including four police officers, and called the operation prompt and professional.",
+   "c": "security",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "Gunmen kill three herders and 50 cattle in Plateau",
+   "s": "Gunmen killed three herders and about 50 cows around Aloghom in Mangu, Plateau, a day after another herder, Yakubu Ishaku, was killed near Nyerwe in Barkin Ladi. Hashimu Yahaya, coordinator of the Fulbe Fulani Development Association in Mangu, described the attack as brutal.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    30
+   ],
+   "h": "Kwara monarch dies days after rescue from kidnappers",
+   "s": "Oba Moses Oyinloye Iwedunmoye I, the Onigbesi of Igbesi in Isin, Kwara, died in hospital days after police rescued him. Gunmen kidnapped him when they invaded the community on 22 August; he was freed five days later with two other victims in an operation around the Elerin/Ijomu-Oro axis.",
+   "c": "security",
+   "st": [
+    "Kwara"
+   ]
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Sokoto police appeal for calm after cleric is stabbed",
+   "s": "Sokoto police appealed for calm and warned against reprisals after the cleric Malam Musa Lukuwa was stabbed twice in the neck at about 1.50pm on Friday, shortly after leading Juma'at prayers at his mosque in Mabera, by a young man seated in the front rows. The cleric survived and was discharged from hospital; the alleged attacker was killed by a mob.",
+   "c": "security",
+   "st": [
+    "Sokoto"
+   ]
+  },
+  {
+   "i": [
+    7,
+    24
+   ],
+   "h": "Ortom explains lending Obi a vehicle and faults Alia",
+   "s": "Former Benue governor Samuel Ortom confirmed he lent Peter Obi a vehicle for his aborted condolence visit to Yelewata, where victims of the June 2025 massacre live, before thugs attacked Obi's convoy on the Gboko-Makurdi road. Through his former aide Terver Akase, Ortom accused Governor Alia of attacking opponents to divert attention from the state's problems.",
+   "c": "politics",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "FCCPC and NMDPRA team up against oil price fixing",
+   "s": "The Federal Competition and Consumer Protection Commission and the NMDPRA signed a memorandum of understanding to tackle cartels, price fixing and other anti-competitive conduct in the petroleum products market, with closer information sharing and joint enforcement, FCCPC chief Tunji Bello said.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "NCAA fines RwandAir N15m over baggage complaint",
+   "s": "The NCAA fined RwandAir N15 million for failing to resolve a passenger's damaged-baggage complaint within the period set by aviation regulations, its consumer protection director Michael Achimugu said on X.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "Ajayi fourth in 100m final in Budapest",
+   "s": "Kayinsola Ajayi ran 9.93 seconds to finish fourth, and fastest African, in the men's 100m at the inaugural World Athletics Ultimate Championship in Budapest, earning $25,000. Tobi Amusan won silver and $75,000 in the 100m hurdles in 12.34 seconds behind America's Masai Russell.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    16,
+    18
+   ],
+   "h": "Shettima meets Okonjo-Iweala at BRICS summit",
+   "s": "Representing President Tinubu at the 18th BRICS summit in New Delhi, Vice President Kashim Shettima met WTO director-general Ngozi Okonjo-Iweala and reaffirmed Nigeria's support for the multilateral trading system, saying no country can prosper in isolation. He also sought to deepen Nigeria's roughly $14 billion trade relationship with India.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    37,
+    36
+   ],
+   "h": "CBN survey: low earners feel inflation most",
+   "s": "A CBN survey found 68.4 per cent of Nigerians earning under N70,000 saw inflation as high in August, against 30.8 per cent of households earning more than N450,000. Businesses expect their confidence index to rise to 36.1 points by February 2027.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Candidate substitution claims hit Bauchi APC",
+   "s": "Some APC candidates for the Bauchi State House of Assembly alleged their names were replaced after they won the party's primaries, deepening a crisis marked by resignations and complaints of imposition. Reconciliation efforts led by former House Speaker Yakubu Dogara have faltered.",
+   "c": "politics",
+   "st": [
+    "Bauchi"
+   ]
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "PRP rejects claims linking Bauchi candidate to banditry",
+   "s": "The Peoples Redemption Party rejected allegations linking its Bauchi governorship candidate, Senator Shehu Buba, to banditry and kidnapping, calling them “tissues of lies and unrestrained mischief” by detractors threatened by his popularity, spokesman Muhammed Ishaq said.",
+   "c": "politics",
+   "st": [
+    "Bauchi"
+   ]
+  },
+  {
+   "i": [
+    46
+   ],
+   "h": "Haske leaves APC to run for Adamawa governor on APM ticket",
+   "s": "Businessman Abdulrahman Haske resigned from the APC and became the Allied Peoples Movement's candidate for the 2027 Adamawa governorship election, at an event attended by party leaders, traditional rulers and supporters from the state's 21 local governments.",
+   "c": "politics",
+   "st": [
+    "Adamawa"
+   ]
+  },
+  {
+   "i": [
+    49
+   ],
+   "h": "APC mocks opposition after Kwankwaso asks Atiku to step down",
+   "s": "The APC ridiculed the opposition after Rabiu Kwankwaso, the NDC's vice-presidential candidate, urged Atiku Abubakar to withdraw from the race during a meeting with the Fulani Farmers Association at his Abuja home.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "Christian group asks Tinubu to drop re-election bid",
+   "s": "The Christian Social Movement of Nigeria urged President Tinubu to drop his bid for a second term, citing worsening insecurity and hardship, and to use the rest of his tenure to secure the country, strengthen institutions and support constitutional reform.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Tinubu's daughter mobilises market leaders for re-election",
+   "s": "Iyaloja-General Folashade Tinubu-Ojo, the President's daughter, is building a grassroots network of market women and men across trading hubs to campaign for her father's re-election, with a formal rollout planned this month.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "ADC chieftain urges South to back Atiku",
+   "s": "ADC stalwart and former Edo governorship aspirant Kenneth Imansuagbon urged voters in the South to back Atiku Abubakar in 2027, saying Nigeria needs a leader able to unite the country and correct imbalances in governance.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "Prophet El-Buba endorses SDP's Adebayo",
+   "s": "Prophet Isa El-Buba backed the SDP's presidential candidate, Adewole Adebayo, at the launch of his blueprint, “Farewell to Poverty and Insecurity”, saying Nigeria can only break its cycle of underdevelopment by taking a new political direction.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    48
+   ],
+   "h": "Defence minister rallies support for Tinubu and Uba Sani",
+   "s": "Defence Minister Christopher Musa urged Nigerians to support President Tinubu and Kaduna Governor Uba Sani in 2027, speaking in Kaduna to local coordinators of a group mobilising for their re-election.",
+   "c": "politics",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Former military intelligence chief backs power rotation in Kogi",
+   "s": "Former Chief of Defence Intelligence Vice Admiral Joseph Ajayi backed rotating the Kogi governorship among the state's districts, saying it would promote equity and unity. A power rotation summit is planned in Lokoja on 30 September.",
+   "c": "politics",
+   "st": [
+    "Kogi"
+   ]
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Rivers ADC says police disrupted meeting and arrested members",
+   "s": "The Rivers ADC accused police and a local security committee of breaking up its meeting and arresting members, and said it was particularly worried about Isaiah Thomas, whose house in Omuoko, Aluu, was allegedly attacked, looted and burned in August after a political meeting.",
+   "c": "politics",
+   "st": [
+    "Rivers"
+   ]
+  },
+  {
+   "i": [
+    40
+   ],
+   "h": "Interior minister orders probe of second passport for Abuja realtor",
+   "s": "The Interior Minister ordered an inquiry after lawyers alleged that Abuja realtor Rebecca Godwin-Isaac, facing trial, reported her passport missing or stolen and later obtained another one.",
+   "c": "society",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    51
+   ],
+   "h": "Lagos police arrest seven over N24m extortion of traders",
+   "s": "Lagos police arrested seven members of two fraud rings who called themselves “local 419” and allegedly defrauded successful market traders of N24 million with fake deals, bogus investments and dollar-washing tricks. Police said they kept a list of 125 targets.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "Anambra police arrest woman filmed assaulting a child",
+   "s": "Anambra police arrested Anulika Onyeanusia, 36, seen in a disturbing video assaulting a child, and rescued four children from her, spokesman Tochukwu Ikenga said.",
+   "c": "security",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Police recover vehicle stolen from Edo ADC chairman's home",
+   "s": "Edo police recovered one of two Toyota Highlanders stolen when armed robbers raided the home of state ADC chairman Kennedy Odion off Winners Road, Ihie, on 6 September and also took phones and valuables.",
+   "c": "security",
+   "st": [
+    "Edo"
+   ]
+  },
+  {
+   "i": [
+    42
+   ],
+   "h": "Abia invites public input on 2027 budget",
+   "s": "The Abia government invited citizens and stakeholders to contribute to its 2027 budget. “We do not want to go into a room and build a budget that does not speak to the needs of the people we serve,” an official said.",
+   "c": "politics",
+   "st": [
+    "Abia"
+   ]
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "FMCG revenue stalls as inflation boost fades",
+   "s": "The combined revenue of ten listed consumer goods companies was almost flat at N3.276 trillion in the first half, against N3.275 trillion a year earlier, a BusinessDay analysis found, as slowing inflation reduced the lift from price increases.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    43,
+    50
+   ],
+   "h": "Trump hints US-Iran war may end; IEA counts 2.8bn barrels lost",
+   "s": "US President Donald Trump, speaking in Ireland, said the war with Iran could end soon and predicted lower oil prices. The IEA estimated that about 2.8 billion barrels of exports have been lost through the Strait of Hormuz, where August flows were some 13 million barrels a day below pre-war levels.",
+   "c": "world",
+   "st": []
+  }
+ ]
 }

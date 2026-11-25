@@ -1,12 +1,12 @@
 {
- "lead": "The Central Bank cut its benchmark interest rate by 350 basis points to 23 per cent, and Governor Olayemi Cardoso said foreign reserves had passed $55 billion, the highest in over 18 years. Parents in Borno gave the government six days to rescue 78 schoolchildren held by Boko Haram for 130 days, and hoodlums attacked female students at Taraba's nursing college. Lagos ordered flood-prone communities to evacuate, public workers set a 30 September ultimatum over hardship, and former SGF Babachir Lawal joined the NDC.",
+ "lead": "The Central Bank cut its benchmark rate by 350 basis points to 23 per cent, its second cut this year, and Governor Olayemi Cardoso said foreign reserves had passed $55 billion, the highest in more than 18 years.\n\nThe day in brief: Cardoso, marking three years in office, said the foreign exchange backlog he inherited had been cleared, and the stock market gained N298 billion on the decision. In Borno, parents of 78 schoolchildren held by Boko Haram for 130 days threatened to march on the Presidential Villa within six days. Students at Taraba's College of Nursing Sciences protested after hoodlums attacked a female hostel, raping some students. Lagos told residents of low-lying areas to move to higher ground under a new seven-day flood alert, and public sector unions gave the government until 30 September to act on hardship, including a demand for petrol at N500 a litre. Babachir Lawal joined the NDC, the Interior Minister inaugurated the panel on the 37 deaths in Civil Defence custody, and President Tinubu told senior police officers they must never be seen as a political tool.",
  "items": [
   {
    "i": [
     0
    ],
    "h": "CBN cuts benchmark rate by 350 basis points to 23%",
-   "s": "Governor Olayemi Cardoso announced after the 307th Monetary Policy Committee meeting that the policy rate had been lowered to 23 per cent.",
+   "s": "After the 307th meeting of the Monetary Policy Committee, attended by all 11 members, CBN Governor Olayemi Cardoso announced a 350-basis-point cut in the monetary policy rate from 26.5 to 23 per cent, the second reduction this year. Investors welcomed it: the Nigerian Exchange gained N298 billion in market value on Tuesday as the All-Share Index rose on bets of cheaper borrowing for listed companies.",
    "c": "economy",
    "st": []
   },
@@ -15,7 +15,7 @@
     40
    ],
    "h": "Foreign reserves pass $55bn, highest in over 18 years",
-   "s": "Cardoso, marking three years in office, said reserves had crossed $55 billion and the FX backlog he inherited had been cleared.",
+   "s": "Cardoso said Nigeria's foreign reserves have crossed $55 billion, the highest in more than 18 years, crediting consistency and discipline in the bank's approach and stronger diaspora inflows. He took office on 22 September 2023 facing a backlog of dollar obligations, multiple exchange rates and severe scarcity; three years on, he said, the inherited backlog has been cleared.",
    "c": "economy",
    "st": []
   },
@@ -24,7 +24,7 @@
     38
    ],
    "h": "Borno parents give six-day ultimatum over 78 abducted children",
-   "s": "Families in Mussa and Lassa, Askira/Uba, said the schoolchildren have spent 130 days with Boko Haram and asked the government to rescue them.",
+   "s": "Parents and community members of Mussa and Lassa in Askira/Uba, Borno, gave the federal government six days to rescue 78 schoolchildren held by Boko Haram, or they would protest at the Presidential Villa. The captives are 42 pupils taken from Mussa Primary and Junior Secondary School on 15 May and 36 students and a teacher from a school in Lassa; they have now spent more than 130 days in captivity.",
    "c": "security",
    "st": [
     "Borno"
@@ -35,7 +35,7 @@
     11
    ],
    "h": "Hoodlums attack and rape students at Taraba nursing college",
-   "s": "Students of the College of Nursing Sciences, Jalingo, protested after a Sunday night attack on female hostels in which some were raped and others injured.",
+   "s": "Students of the Taraba State College of Nursing Sciences in Jalingo protested after hoodlums attacked off-campus female hostels on Sunday night, raping some students, injuring others and stealing phones and valuables. One victim was taken to hospital. Students said it was the latest of several attacks on them because the hostels lie outside the college.",
    "c": "security",
    "st": [
     "Taraba"
@@ -46,7 +46,7 @@
     27
    ],
    "h": "Lagos orders evacuation of flood-prone communities",
-   "s": "Residents of low-lying areas including parts of Eti-Osa, Lagos Island, Ajah, Kirikiri and Ilaje waterfront were told to move to higher ground.",
+   "s": "The Lagos government ordered residents of low-lying, flood-prone communities to move immediately to higher ground after the Nigerian Hydrological Services Agency issued a seven-day flood alert for Lagos and 14 other states. Parts of Eti-Osa, Lagos Island, Ajah, Kirikiri and the Ilaje waterfront are among the areas at risk, as are schools such as Odokekere Community Secondary School.",
    "c": "environment",
    "st": [
     "Lagos"
@@ -57,7 +57,7 @@
     37
    ],
    "h": "Public workers give FG 30 September ultimatum on hardship",
-   "s": "Public sector unions demanded action on the cost of living affecting workers and their families.",
+   "s": "The trade union side of the Joint National Public Service Negotiating Council gave the government until 30 September to intervene in the worsening hardship facing workers and their families. Among its demands is that the pump price of petrol be cut and fixed at N500 a litre.",
    "c": "economy",
    "st": []
   },
@@ -66,7 +66,7 @@
     4
    ],
    "h": "Babachir Lawal joins NDC",
-   "s": "The former Secretary to the Government of the Federation joined the Nigeria Democratic Congress three months after leaving the ADC.",
+   "s": "Former SGF Babachir Lawal formally joined the Nigeria Democratic Congress, about three months after leaving the ADC, which he accused of rigging its presidential primary for Atiku Abubakar. He said worsening insecurity, hunger and poverty compelled him to return to active politics.",
    "c": "politics",
    "st": [
     "Adamawa"
@@ -77,7 +77,7 @@
     9
    ],
    "h": "Panel on mining suspects' deaths inaugurated",
-   "s": "Interior Minister Olubunmi Tunji-Ojo inaugurated the ten-member committee and warned members to be thorough and impartial.",
+   "s": "Interior Minister Olubunmi Tunji-Ojo inaugurated a ten-member independent committee to investigate the deaths of 37 suspected illegal miners in Civil Defence custody in Niger State, and warned members against any cover-up or outside influence. He said the deaths raise urgent questions about detention conditions, the treatment of suspects and accountability in the security system.",
    "c": "security",
    "st": [
     "Niger"
@@ -88,7 +88,7 @@
     16
    ],
    "h": "Tinubu tells police to stay politically neutral",
-   "s": "The President charged the force to maintain neutrality and professionalism ahead of 2027.",
+   "s": "President Tinubu, in a speech read on his behalf to senior police officers gathered in Owerri for their annual conference and retreat, said the force must be professional and even-handed through the 2027 elections. Officers must never appear to serve any party or politician, he said.",
    "c": "security",
    "st": []
   },
@@ -97,7 +97,7 @@
     5
    ],
    "h": "ADC warns violence may mar 2027 elections",
-   "s": "The party cited repeated attacks on opposition members and political intimidation.",
+   "s": "ADC spokesman Bolaji Abdullahi told a press conference in Abuja that persistent attacks on opposition members, rising violence and systematic intimidation could undermine the credibility of the 2027 elections. He demanded that the police account for their investigations into attacks on ADC members and meetings across the country.",
    "c": "politics",
    "st": []
   },
@@ -106,7 +106,7 @@
     8
    ],
    "h": "DSS and vigilantes foil mass kidnap in Katsina",
-   "s": "Bandits were shot dead as they tried to attack Gidan Iyado, Bakori.",
+   "s": "Bandits who tried to raid Gidan Iyado, in Kakumi Ward of Bakori, Katsina, were repelled by soldiers, DSS operatives and vigilantes acting on intelligence on Monday, according to the state's internal security commissioner, Nasir Mua'zu. He said 18 attackers were killed and several guns recovered, and Governor Dikko Radda commended the forces.",
    "c": "security",
    "st": [
     "Katsina"
@@ -117,7 +117,7 @@
     21
    ],
    "h": "Troops rescue kidnapped female students and driver in Katsina",
-   "s": "Operation Fansan Yamma freed seven captives and recovered rustled cattle in Sokoto.",
+   "s": "Operation Fansan Yamma troops rescued seven people kidnapped on the Daye-Malumfashi road in Danmusa, Katsina, on the evening of 21 September: six female students of the Federal University, Dutsin-Ma, and a commercial driver. The army said troops also recovered a large herd of rustled cattle in Sokoto.",
    "c": "security",
    "st": [
     "Katsina",
@@ -130,7 +130,7 @@
     41
    ],
    "h": "Malami denies corrupt deal over Mambilla",
-   "s": "Former AGF Abubakar Malami rejected allegations of an arrangement with Sunrise's Leno Adesanya. AGF Lateef Fagbemi said Nigeria will not be a soft target for predatory arbitration.",
+   "s": "Former Attorney-General Abubakar Malami, through his aide, rejected allegations of a corrupt arrangement with Sunrise Power's promoter Leno Adesanya over the Mambilla settlement talks, and welcomed Nigeria's win in the arbitration. Attorney-General Lateef Fagbemi said the verdict was a complete vindication and that Nigeria will not be a soft target for predatory litigation and arbitration.",
    "c": "politics",
    "st": []
   },
@@ -139,7 +139,7 @@
     7
    ],
    "h": "Wike says Rainbow Coalition noise is about Uzodinma's Senate bid",
-   "s": "The FCT minister said the coalition was not meant to destabilise the APC.",
+   "s": "Speaking on TVC's Journalists' Hangout, FCT Minister Nyesom Wike said opposition to his Rainbow Coalition comes from APC governors who want to shape the National Assembly's leadership after 2027, and in particular from Imo Governor Hope Uzodimma's ambition to become Senate President. He also dismissed Peter Obi's claim that he won the 2023 election.",
    "c": "politics",
    "st": []
   },
@@ -149,7 +149,7 @@
     26
    ],
    "h": "Yari leads APC delegation to northern clerics",
-   "s": "The campaign shifted to town halls and visits to religious leaders across the North.",
+   "s": "Senator AbdulAziz Yari, director-general of the APC presidential campaign council, said the campaign would open with town halls and visits to religious leaders across the North. In Kano he met Sheikh Qaribullah Nasiru Kabara, the Qadiriyya leader, saying the council wanted first to hear from Nigerians before presenting President Tinubu's second-term case.",
    "c": "politics",
    "st": []
   },
@@ -158,7 +158,7 @@
     20
    ],
    "h": "Atiku cites SBM survey rejecting Tinubu's fuel policy",
-   "s": "Atiku said the poll shows Nigerians want immediate relief from fuel costs.",
+   "s": "Atiku Abubakar said an SBM Intelligence survey finding that 67.4 per cent of respondents want the petrol subsidy restored is a damning public verdict on President Tinubu's fuel policy. His spokesman Phrank Shaibu said Nigerians are demanding immediate relief from the crushing cost of living.",
    "c": "politics",
    "st": []
   },
@@ -167,7 +167,7 @@
     18
    ],
    "h": "Makinde predicts landslide for APM",
-   "s": "The Oyo governor welcomed APC defectors.",
+   "s": "Governor Seyi Makinde said the APM is assured of victory in 2027 because God, the people of Oyo and Nigerians are behind it. He spoke at the Boye Nation/JAF Movement concert at the Lekan Salami Sports Complex in Ibadan, where he received members of the movement who left the APC for his party.",
    "c": "politics",
    "st": [
     "Oyo"
@@ -178,7 +178,7 @@
     10
    ],
    "h": "NMDPRA threatens to revoke licences for pump tampering",
-   "s": "Stations found under-dispensing fuel risk losing their licences.",
+   "s": "The NMDPRA warned filling stations that persistent or serious under-dispensing of fuel could cost them their licences, calling the practice a serious breach of consumer trust. In a circular from Abuja it announced stepped-up inspections and enforcement across the country.",
    "c": "economy",
    "st": []
   },
@@ -187,7 +187,7 @@
     17
    ],
    "h": "Dangote plans fertiliser IPO in 2028",
-   "s": "Aliko Dangote said IPO proceeds will fund doubling refinery capacity to 1.4 million barrels a day.",
+   "s": "Aliko Dangote told Bloomberg that proceeds from the refinery IPO will help double its capacity from 700,000 to 1.4 million barrels a day, after which the refinery plans to list in New York, and that the group's fertiliser business could go public in 2028. In an interview with Al Jazeera he said he plans to invest more than $10 billion in power to help close Africa's electricity gap.",
    "c": "business",
    "st": []
   },
@@ -196,7 +196,7 @@
     19
    ],
    "h": "$300m renewable energy fund launched",
-   "s": "The NSIA, Africa50 and SEforALL began commercial operations of the Nigeria Distributed Renewable Energy Fund.",
+   "s": "A $300 million fund for off-grid and mini-grid power, the Nigeria Distributed Renewable Energy Fund, started investing after its sponsors, the sovereign wealth fund NSIA, Africa50 and Sustainable Energy for All, announced its commercial launch in New York during the UN General Assembly, ending years of preparation.",
    "c": "economy",
    "st": []
   },
@@ -205,7 +205,7 @@
     15
    ],
    "h": "Air passengers rise to 18.8 million in 2025",
-   "s": "The airports authority said traffic grew 11.9 per cent, making Nigeria Africa's fourth-largest market.",
+   "s": "Nigeria recorded more than 18.8 million domestic and international air passengers in 2025, up 11.9 per cent, making it Africa's fourth-largest aviation market, FAAN managing director Olubunmi Onabanjo-Kuku said. She is also vice-president of Airports Council International Africa.",
    "c": "business",
    "st": []
   },
@@ -214,7 +214,7 @@
     12
    ],
    "h": "NCAA orders Air Peace to compensate delayed passengers",
-   "s": "A preliminary probe found fault over a delayed Lagos-Enugu flight.",
+   "s": "The Nigerian Civil Aviation Authority ordered Air Peace to draw up compensation for passengers on a Lagos-Enugu flight delayed until evening on Monday, after a preliminary investigation found the airline sent them the wrong notification. Lawyer and activist Inibehe Effiong, one of the passengers, had accused the airline of impunity.",
    "c": "business",
    "st": []
   },
@@ -223,7 +223,7 @@
     13
    ],
    "h": "NEPZA tightens checks on imports into free zones",
-   "s": "Operators involved in illegal container imports face penalties.",
+   "s": "The Nigeria Export Processing Zones Authority ordered tighter checks on imports into free trade zones to curb illegal container imports and other breaches. Managing director Olufemi Ogunyemi said the measures include more inspections, closer scrutiny of documents and joint enforcement with other agencies, with penalties for offenders.",
    "c": "economy",
    "st": []
   },
@@ -232,7 +232,7 @@
     45
    ],
    "h": "UK removes Nigeria from teacher qualification list",
-   "s": "Nigerian and Ghanaian-trained teachers can no longer apply directly for Qualified Teacher Status.",
+   "s": "The UK Department for Education removed teachers trained in Nigeria and Ghana from the list of countries whose teachers can apply directly for Qualified Teacher Status, the route required for teaching in state-funded schools in England. The change took effect on 9 September after a review of national regulators and qualification verification.",
    "c": "world",
    "st": []
   },
@@ -241,7 +241,7 @@
     6
    ],
    "h": "JAMB sets controlled process for changing contact details",
-   "s": "Candidates who lost access to registered numbers or emails can update them after verification.",
+   "s": "JAMB introduced a controlled process for candidates who have lost the phone numbers or email accounts registered with it, allowing them to update the details after strict verification. The change, which took effect on Monday, relaxes the board's earlier ban on SIM swaps and email changes.",
    "c": "education",
    "st": []
   },
@@ -250,7 +250,7 @@
     30
    ],
    "h": "NIS enrols 8,552 for passports in four countries",
-   "s": "Interventions ran in the US, Canada, Qatar and the UK.",
+   "s": "The Nigeria Immigration Service said it has enrolled 8,552 Nigerians in special passport exercises in the United States, Canada, Qatar and the United Kingdom, part of efforts to address complaints about delays and poor access to passport services in the diaspora.",
    "c": "society",
    "st": []
   },
@@ -259,7 +259,7 @@
     28
    ],
    "h": "Court to rule on El-Rufai's no-case submission on 26 October",
-   "s": "The phone-tapping case was adjourned at the Federal High Court in Abuja.",
+   "s": "Justice Joyce Abdulmalik of the Federal High Court in Abuja fixed 26 October to rule on Nasir El-Rufai's no-case submission in the DSS's phone-tapping case against him. The former Kaduna governor is charged with breaching national security over his alleged admission that he intercepted calls of the National Security Adviser.",
    "c": "politics",
    "st": [
     "FCT"
@@ -270,7 +270,7 @@
     32
    ],
    "h": "NSCIA sets 30 September national prayer",
-   "s": "The Islamic council will pray for peace and security in Abuja.",
+   "s": "The Nigerian Supreme Council for Islamic Affairs, led by the Sultan of Sokoto, Muhammad Sa'ad Abubakar, will hold a special national prayer for peace, security and stability in Abuja on 30 September. Muslim governors, lawmakers, ministers, emirs and representatives of Islamic organisations are expected to attend.",
    "c": "society",
    "st": []
   },
@@ -279,7 +279,7 @@
     34
    ],
    "h": "NSCDC uncovers fake juice factory in Badagry",
-   "s": "Two women were arrested.",
+   "s": "Civil Defence officers in Lagos raided a factory in Onilegbale, Badagry, allegedly producing adulterated “Barkas Juice”, and arrested two women aged 48 and 50 after about five days of surveillance carried out with a nearby army unit.",
    "c": "security",
    "st": [
     "Lagos"
@@ -290,7 +290,7 @@
     35
    ],
    "h": "Kaduna approves N3.66bn for retirees",
-   "s": "The state said it has paid N21.455 billion in pensions in three years.",
+   "s": "Governor Uba Sani approved N3.659 billion for pensions, gratuities and death benefits for 1,339 retirees and families of deceased workers in the Kaduna state and local government services. Information Commissioner Ahmed Maiyaki said this brings the administration's pension payments since May 2023 to N21.455 billion for 9,683 beneficiaries.",
    "c": "economy",
    "st": [
     "Kaduna"
@@ -301,7 +301,7 @@
     31
    ],
    "h": "Gombe governor appoints three commissioners",
-   "s": "Inuwa Yahaya also named six aides.",
+   "s": "Gombe Governor Muhammadu Inuwa Yahaya approved three commissioners-designate along with a group of special advisers and senior special assistants, the Secretary to the State Government, Ibrahim Abubakar Njodi, said. He described the appointments as part of efforts to strengthen governance and coordinate the state's development plan.",
    "c": "politics",
    "st": [
     "Gombe"
@@ -312,7 +312,7 @@
     46
    ],
    "h": "Seven rapid test kits approved",
-   "s": "Locally made kits for HIV, malaria, hepatitis and pregnancy were registered.",
+   "s": "NAFDAC registered seven rapid diagnostic products made in Nigeria by Ash Biomedical Diagnostics for HIV, malaria, hepatitis and pregnancy: HIVChek, MalChek, MalChek Plus, HepaQuik, HepaQuik Duo, PregSure and FlaviQuik. They come in 12 stock-keeping units and are now available for use in the country.",
    "c": "health",
    "st": []
   },
@@ -321,7 +321,7 @@
     1
    ],
    "h": "Super Eagles gather in Uyo for Madagascar qualifier",
-   "s": "Twenty players arrived in camp before Friday's AFCON qualifier.",
+   "s": "Super Eagles players streamed into camp in Akwa Ibom for the first training session before Friday's AFCON qualifier against Madagascar in Uyo and next week's trip to Guinea-Bissau, team media officer Promise Efoghe said. A pitch technician, Ebi Egbe, urged the NFF to make the state of the playing surface part of match preparation.",
    "c": "sports",
    "st": [
     "Akwa Ibom"
@@ -332,7 +332,7 @@
     36
    ],
    "h": "White House launches 'Trump TV'",
-   "s": "The 24-hour channel debuted as US media protested a ban on CNN and others.",
+   "s": "The White House launched “Trump TV: The Essentials Station”, a 24-hour stream of presidential speeches and administration announcements on its website and YouTube, amid a dispute with major US news organisations over media access, including a ban affecting CNN and others.",
    "c": "world",
    "st": []
   }

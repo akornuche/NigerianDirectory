@@ -1,35 +1,311 @@
 {
-"lead": "Nigeria's public debt rose to N166.79 trillion at the end of June, while domestic debt service fell almost a third in the second quarter. Cholera killed two inmates at Kano's Kurmawa custodial centre, and diphtheria deaths in Plateau reached 31. Femi Gbajabiamila said investigations had cleared him over the fake investment council, Abia Governor Alex Otti said the fuel subsidy should not return, and the naira firmed after the CBN's rate cut.",
-"items": [
-{"i": [18], "h": "Public debt rises to N166.79trn", "s": "Debt Management Office data showed total public debt at 30 June 2026 was N7.44 trillion higher than three months earlier.", "c": "economy", "st": []},
-{"i": [10], "h": "Domestic debt service falls 31.8% to N2.14trn", "s": "Payments in the second quarter dropped from N3.14 trillion in the first quarter, the DMO said.", "c": "economy", "st": []},
-{"i": [4], "h": "Cholera kills two inmates in Kano prison", "s": "The Correctional Service confirmed two deaths and said the outbreak at the Kurmawa centre is under control.", "c": "health", "st": ["Kano"]},
-{"i": [30], "h": "Plateau diphtheria deaths reach 31", "s": "Health Commissioner Nicholas Ba'amlong said 469 suspected cases have been recorded across ten local government areas.", "c": "health", "st": ["Plateau"]},
-{"i": [19], "h": "Gbajabiamila says probes cleared him over fake investment council", "s": "The President's chief of staff said police, DSS and ICPC investigations found no link between him and the council.", "c": "politics", "st": []},
-{"i": [9], "h": "Otti backs subsidy removal and warns against its return", "s": "The Abia governor said subsidy promotes inefficiency and corruption, and clarified his support for Tinubu.", "c": "politics", "st": ["Abia"]},
-{"i": [40], "h": "Naira firms after rate cut as FX turnover rises 9%", "s": "The currency strengthened after the CBN lowered its policy rate from 26.5 to 23 per cent.", "c": "economy", "st": []},
-{"i": [6], "h": "Lagos police arrest six over N20bn goods diversion", "s": "The syndicate is accused of diverting imported consignments over about 19 years.", "c": "security", "st": ["Lagos"]},
-{"i": [0], "h": "Super Eagles come from behind to beat Madagascar", "s": "Nigeria won 2-1 in Uyo to start their 2027 AFCON qualifying campaign.", "c": "sports", "st": ["Akwa Ibom"]},
-{"i": [7], "h": "Wike to lead Tinubu campaign in FCT and Rivers", "s": "The FCT minister said he will personally run the re-election effort in both places.", "c": "politics", "st": ["FCT", "Rivers"]},
-{"i": [24, 25], "h": "APC chairman says opposition going nowhere", "s": "Nentawe Yilwatda said Atiku's own local government voted APC in last week's by-election, as party leaders met in Maiduguri.", "c": "politics", "st": ["Borno"]},
-{"i": [35], "h": "Akume tells MDA heads to campaign for Tinubu", "s": "The SGF asked agency chiefs to start grassroots campaigns.", "c": "politics", "st": []},
-{"i": [37], "h": "Sanwo-Olu and Gbajabiamila urge Tinubu's re-election", "s": "They said the administration's policies will improve lives.", "c": "politics", "st": ["Lagos"]},
-{"i": [3, 33], "h": "Atiku campaign to add more names and expand policy team", "s": "The ADC campaign council said further appointments will follow.", "c": "politics", "st": []},
-{"i": [38], "h": "Omo-Agege says Supreme Court ruling did not disqualify him", "s": "The former Deputy Senate President said he can still contest Delta Central.", "c": "politics", "st": ["Delta"]},
-{"i": [12], "h": "Soludo aide disputes Obi's godparent claim", "s": "Nonye Soludo's media aide said Obi and his wife are not godparents to the governor's children.", "c": "politics", "st": ["Anambra"]},
-{"i": [2], "h": "Shettima urges new ECOWAS team to prioritise integration", "s": "The Vice President charged the commission's leadership on regional unity.", "c": "world", "st": []},
-{"i": [1], "h": "UK passport exercise extended to 30 October", "s": "The Immigration Service cited high turnout.", "c": "society", "st": []},
-{"i": [20], "h": "NIS denies issuing passport to realtor during trial", "s": "The service said no court order restricting Rebecca Godwin-Isaac's travel was served on it.", "c": "society", "st": []},
-{"i": [29], "h": "Bandits abduct five in Tsafe", "s": "Women were among those taken in a midnight attack on the town.", "c": "security", "st": ["Zamfara"]},
-{"i": [5], "h": "Troops rescue six kidnap victims in Benue", "s": "Operation Whirl Stroke freed them near Gbise, Katsina-Ala.", "c": "security", "st": ["Benue"]},
-{"i": [36, 39], "h": "Police arrest woman over lover's death in Abuja hotel", "s": "Police said the man found under Katampe Bridge died in a Gwarimpa guest house.", "c": "security", "st": ["FCT"]},
-{"i": [41], "h": "Flood sweeps undergraduate to death in Delta", "s": "Her father was hospitalised.", "c": "environment", "st": ["Delta"]},
-{"i": [22], "h": "Experts say $1trn target needs 28% annual growth", "s": "They said reaching the 2030 goal is a steep climb.", "c": "economy", "st": []},
-{"i": [15], "h": "Nigeria's 44 minerals can tackle poverty, Wunti says", "s": "The World Energy Council Nigeria chief urged local processing.", "c": "economy", "st": []},
-{"i": [23], "h": "New Calabar nautical charts due on 1 October", "s": "The hydrographic agency will release three charts.", "c": "economy", "st": ["Cross River"]},
-{"i": [8], "h": "Kaduna holds prayers ahead of 66th Independence Day", "s": "Special prayers were held at Sultan Bello mosque.", "c": "society", "st": ["Kaduna"]},
-{"i": [34], "h": "Osinachi Ohale ends 16-year Super Falcons career", "s": "The defender won five AFCON titles.", "c": "sports", "st": []},
-{"i": [17], "h": "NPFL leaders seek to extend unbeaten runs", "s": "Four clubs are unbeaten after five rounds.", "c": "sports", "st": []},
-{"i": [42], "h": "Tenth woman's body found in Ekurhuleni", "s": "South African police are investigating the deaths.", "c": "world", "st": []}
-]
+ "lead": "New Debt Management Office figures put Nigeria's public debt at N166.79 trillion at the end of June, even as the cost of servicing domestic debt fell by almost a third in the quarter.\n\nThe day in brief: the debt stock rose N7.44 trillion in three months, with domestic borrowing making up about 55 per cent of the total. The Correctional Service confirmed two cholera deaths at Kano's Kurmawa custodial centre, fewer than Amnesty International reported, and Plateau said diphtheria had now killed 31 people. Femi Gbajabiamila said police, DSS and ICPC inquiries had cleared him over the fake presidential investment council, while Abia's Alex Otti warned against bringing back the fuel subsidy. The naira firmed and foreign exchange turnover rose after the CBN's rate cut. Nyesom Wike said he would personally run President Tinubu's campaign in the FCT and Rivers, and the APC ended its Maiduguri retreat confident of 2027. In Uyo, debutants George Ilenikhena and Moses Usor scored as the Super Eagles came from behind to beat Madagascar 2-1 in their first AFCON qualifier.",
+ "items": [
+  {
+   "i": [
+    18
+   ],
+   "h": "Public debt rises to N166.79trn",
+   "s": "Debt Management Office figures put total public debt at N166.79 trillion on 30 June 2026, up N7.44 trillion from N159.35 trillion at the end of March. Domestic debt was N91.59 trillion, or 54.91 per cent of the total. In dollar terms the DMO put the debt at $120.93 billion, of which $54.52 billion is external and $66.41 billion domestic.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "Domestic debt service falls 31.8% to N2.14trn",
+   "s": "Domestic debt service fell 31.8 per cent to N2.14 trillion in the second quarter, from N3.14 trillion in the first, the DMO said. Interest and rental payments made up N1.98 trillion of the total and principal repayments N164.28 billion, with interest on FGN bonds the largest single item. The decline reversed a 37.5 per cent jump at the start of the year.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "Cholera kills two inmates in Kano prison",
+   "s": "The Nigerian Correctional Service confirmed that two inmates died of cholera at the Kurmawa Medium Security Custodial Centre in Kano and said the outbreak is contained. Its spokesman said the first case appeared on 17 September, when an inmate developed vomiting and diarrhoea, and laboratory tests confirmed cholera on 23 September. Amnesty International had reported at least six deaths in a week.",
+   "c": "health",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    30
+   ],
+   "h": "Plateau diphtheria deaths reach 31",
+   "s": "The diphtheria outbreak in Plateau has killed 31 people, with 469 suspected cases in 10 local government areas, Health Commissioner Nicholas Ba'amlong told a briefing in Jos. The state has activated its incident management system and appointed Maren Job Damala as incident manager to lead the response.",
+   "c": "health",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "Gbajabiamila says probes cleared him over fake investment council",
+   "s": "Femi Gbajabiamila, the President's chief of staff, said investigations by the police, the DSS and the ICPC cleared him of any link to the purported Presidential Foreign Intervention Promotion Council, and that he never betrayed the President's trust. He spoke at his annual empowerment programme in Surulere. A House committee investigating the agency said its preliminary findings showed no evidence he approved or set it up.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Otti backs subsidy removal and warns against its return",
+   "s": "Abia Governor Alex Otti defended the removal of the petrol subsidy in an interview on Arise TV, saying government money should support production rather than consumption, and warned against attempts to bring it back. He said subsidy encourages inefficiency, waste and corruption, pointing out that he has argued so consistently for years, and clarified the nature of his support for President Tinubu.",
+   "c": "politics",
+   "st": [
+    "Abia"
+   ]
+  },
+  {
+   "i": [
+    40
+   ],
+   "h": "Naira firms after rate cut as FX turnover rises 9%",
+   "s": "The naira firmed against the dollar last week after the CBN cut its monetary policy rate from 26.5 per cent to 23 per cent. Turnover in the official foreign exchange market from Monday to Thursday was about $2.25 billion, up 8.9 per cent from $2.07 billion over the same days a week earlier, and the number of deals rose 14.2 per cent to 1,351.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "Lagos police arrest six over N20bn goods diversion",
+   "s": "Lagos police arrested six suspected members of a syndicate accused of diverting imported goods worth more than N20 billion from Apapa Port over about 19 years. The command's anti-kidnapping unit acted on complaints from importers about missing consignments. Police said the alleged leaders, Jamiu Lateef and Abubakar Amadu, own several trailers and have properties in Niger and Benin Republic.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "Super Eagles come from behind to beat Madagascar",
+   "s": "Nigeria opened their 2027 Africa Cup of Nations qualifying campaign with a 2-1 win over Madagascar at the Godswill Akpabio Stadium in Uyo, after Madagascar took an early lead. Debutants George Ilenikhena and Moses Usor scored the goals that turned the game, giving the Super Eagles a positive start after the disappointment of missing the 2026 World Cup.",
+   "c": "sports",
+   "st": [
+    "Akwa Ibom"
+   ]
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "Wike to lead Tinubu campaign in FCT and Rivers",
+   "s": "FCT Minister Nyesom Wike said he would personally lead President Tinubu's re-election campaign in the FCT and Rivers State and would soon inaugurate campaign teams in both places. He spoke after inspecting the second phase of the Kuje-Gwagwalada road dualisation, confirming reports that he had been named coordinator of the campaign there while remaining a member of the PDP.",
+   "c": "politics",
+   "st": [
+    "FCT",
+    "Rivers"
+   ]
+  },
+  {
+   "i": [
+    24,
+    25
+   ],
+   "h": "APC chairman says opposition going nowhere",
+   "s": "Closing a three-day APC retreat in Maiduguri, national chairman Nentawe Yilwatda said opposition parties such as the ADC and the NDC would merely take part in the 2027 elections rather than mount a serious challenge. He pointed to last week's by-election, saying even Atiku Abubakar's own local government voted APC. The party said the retreat reviewed its structures and electoral strategy.",
+   "c": "politics",
+   "st": [
+    "Borno"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "Akume tells MDA heads to campaign for Tinubu",
+   "s": "George Akume, Secretary to the Government of the Federation, said his office would give institutional support to heads of ministries, departments and agencies to mobilise 10 million votes for President Tinubu in 2027. He told the Forum of CEOs of Federal Parastatals to take the government's reforms and achievements to the grassroots to counter disinformation.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "Sanwo-Olu and Gbajabiamila urge Tinubu's re-election",
+   "s": "Lagos governor Babajide Sanwo-Olu, represented by his deputy, and chief of staff Femi Gbajabiamila urged Nigerians to re-elect President Tinubu, saying his policies would reduce poverty and improve lives. They spoke at Gbajabiamila's empowerment programme at the National Stadium, where more than 5,000 Surulere residents received electric vehicles, minibuses, tricycles and cash for small businesses.",
+   "c": "politics",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    3,
+    33
+   ],
+   "h": "Atiku campaign to add more names and expand policy team",
+   "s": "The ADC presidential campaign council said more appointments would follow, and rejected APC spokesman Felix Morka's attack on its recently named members as “trial by insult”. Dele Momodu explained why Atiku named Nasir El-Rufai to the council. Atiku, through his spokesman Phrank Shaibu, also challenged Tinubu to give a detailed account of borrowing under his government.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Omo-Agege says Supreme Court ruling did not disqualify him",
+   "s": "Ovie Omo-Agege, the former Deputy Senate President who is now the NDC's Delta Central candidate, insisted that the Supreme Court's Electoral Act ruling on Thursday leaves his 2027 senatorial bid intact. In a statement from Asaba, his strategy adviser Godwin Anaighe said the court made no order against him and did not declare him ineligible.",
+   "c": "politics",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Soludo aide disputes Obi's godparent claim",
+   "s": "Daniel Ezeigwe, media aide to Anambra's First Lady Nonye Soludo, said Peter Obi is not a godfather to any of Governor Chukwuma Soludo's children. Obi had told the Nigerian Guild of Editors conference in Enugu that he and his wife were godparents to the Soludo children while dismissing reports of a rift between the two men.",
+   "c": "politics",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "Shettima urges new ECOWAS team to prioritise integration",
+   "s": "Vice President Kashim Shettima urged the new leadership of the ECOWAS Commission to put regional unity and integration first, building bridges of friendship and pursuing policies that make a real difference to people's livelihoods across West Africa. He received a delegation from the commission in New York on the sidelines of the UN General Assembly.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "UK passport exercise extended to 30 October",
+   "s": "The Nigeria Immigration Service extended its special passport intervention exercise in the United Kingdom to 30 October 2026, citing continued high turnout at its London and Manchester centres. It is the second extension: the exercise had earlier been moved to 3 October, the service's spokesman said.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    20
+   ],
+   "h": "NIS denies issuing passport to realtor during trial",
+   "s": "The Nigeria Immigration Service denied issuing a new passport to Rebecca Godwin-Isaac while she was on trial at the Federal High Court in Abuja. It said passport B51450551 was renewed on 15 February 2025, about four months before her arraignment on 18 June 2025, and that no court order, watchlist instruction or other lawful directive was served on it before she travelled.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "Bandits abduct five in Tsafe",
+   "s": "Bandits stormed Tsafe, headquarters of Tsafe local government area in Zamfara, at about 1am, firing sporadically in the town centre and abducting five residents, including women, from two houses. A resident said neighbours called one another during the attack to check whether they were safe.",
+   "c": "security",
+   "st": [
+    "Zamfara"
+   ]
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Troops rescue six kidnap victims in Benue",
+   "s": "Troops of Operation Whirl Stroke rescued six kidnap victims around Gbise in Katsina-Ala, Benue State, on Friday, after a patrol received information about their release and moved to evacuate them, said the operation's acting media officer, Lieutenant Ahmad Zubairu. He said the rescue showed the task force's commitment to denying criminals freedom of action.",
+   "c": "security",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    36,
+    39
+   ],
+   "h": "Police arrest woman over lover's death in Abuja hotel",
+   "s": "FCT Police Commissioner Ahmed Muhammed Sanusi said a married woman, Rukayat Muhammed, was arrested over the death of her alleged lover at a guest house in Gwarimpa. The man was first reported missing by his family before his body was found under the Katampe Bridge on the Kubwa Expressway, and police said he had died at the guest house.",
+   "c": "security",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Flood sweeps undergraduate to death in Delta",
+   "s": "A university undergraduate drowned when floodwater swept away her father's car at Okotimi Layout, behind the Asaba Specialist Hospital, after a downpour on Monday. Her body was recovered two days later. Her father was rescued and hospitalised; colleagues at the Delta Ministry of Information and the NUJ mourned the family's loss.",
+   "c": "environment",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Experts say $1trn target needs 28% annual growth",
+   "s": "Speakers at the 42nd Omolayole Management Lecture in Lagos said Nigeria would need compound growth of about 28 per cent a year to lift nominal GDP from an estimated $290.79 billion in 2025 to $1 trillion by 2030. Adetunji Oyebanji, president of the Chartered Institute of Directors, said reaching the target requires higher productivity, savings, investment, policy consistency and stronger institutions.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Nigeria's 44 minerals can tackle poverty, Wunti says",
+   "s": "Bala Wunti, chief executive of World Energy Council Nigeria, urged the government to turn the country's 44 critical minerals into factories and jobs rather than repeat the crude oil pattern of exporting raw materials and importing finished goods. Speaking at the Concordia Summit in New York, he said a US price floor of $110 a kilogram for critical minerals could lower investment risk for African projects.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    23
+   ],
+   "h": "New Calabar nautical charts due on 1 October",
+   "s": "The National Hydrographic Agency will release three nautical charts, NG5514 for the approaches to Calabar, NG5515 for Jamestown and NG4255 for the Port of Calabar, on 1 October. The release coincides with the UK Hydrographic Office's withdrawal of the Admiralty charts that now cover the area, as Nigeria takes over authoritative charting of its own waters.",
+   "c": "economy",
+   "st": [
+    "Cross River"
+   ]
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "Kaduna holds prayers ahead of 66th Independence Day",
+   "s": "The Kaduna State Government held special prayers for peace, stability and prosperity at the Sultan Bello mosque after Friday prayers, as part of activities leading to the 1 October Independence parade. The prayers were led by Deputy Chief Imam Abdullahi Aliyu and attended by the Secretary to the State Government, Abdulkadir Mu'azu Meyere.",
+   "c": "society",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Osinachi Ohale ends 16-year Super Falcons career",
+   "s": "Defender Osinachi Ohale, 33, ended a 16-year career with the Super Falcons. She leaves with 86 caps, four FIFA Women's World Cup appearances, seven Women's Africa Cup of Nations tournaments and five continental titles, one of the longest international careers in the history of Nigerian women's football.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "NPFL leaders seek to extend unbeaten runs",
+   "s": "Kano Pillars, Rivers United, Barau FC and defending champions Enugu Rangers remain unbeaten after five rounds of the 2026/27 NPFL season. Barau FC, owned by Deputy Senate President Barau Jibrin, stretched their run to six games with a 1-1 draw against Sporting Lagos at the Mobolaji Johnson Arena, where Joseph Atule scored from the penalty spot.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    42
+   ],
+   "h": "Tenth woman's body found in Ekurhuleni",
+   "s": "South African police found the body of another woman in Tembisa South, Ekurhuleni, east of Johannesburg, on Saturday, the tenth woman found dead in the municipality in two months. Gauteng police spokeswoman Brenda Muridili said investigators were at the scene; the woman's identity was not released.",
+   "c": "world",
+   "st": []
+  }
+ ]
 }

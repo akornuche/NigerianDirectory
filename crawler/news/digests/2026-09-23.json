@@ -1,39 +1,335 @@
 {
-"lead": "TotalEnergies and AMNI took the final investment decision on the $800 million Ima gas project, which President Tinubu hailed as unlocking a 50-year-old resource. Senate President Akpabio and the ADC clashed over whether the President's long absence requires a transfer of power, and the state police amendment was confirmed as the bill sent to state assemblies. The EFCC declared Abdulrasheed Maina wanted, NIMC denied a data breach, and markets weighed the CBN's rate cut.",
-"items": [
-{"i": [1, 33], "h": "$800m Ima gas project reaches final investment decision", "s": "TotalEnergies and AMNI International signed the FID for the offshore development, targeting first gas by the end of 2028. President Tinubu said it unlocks a resource discovered 50 years ago.", "c": "economy", "st": []},
-{"i": [14], "h": "Akpabio and ADC clash over Tinubu's long absence", "s": "The Senate President said there is no need for a transfer of power, while the ADC argued the prolonged absence raises constitutional questions.", "c": "politics", "st": []},
-{"i": [4], "h": "State police bill sent to state assemblies", "s": "The National Assembly said only the amendment creating state police services has so far been transmitted to the 36 assemblies.", "c": "politics", "st": []},
-{"i": [2], "h": "Markets react to CBN's 350bps rate cut", "s": "Businesses welcomed the lower policy rate but said banks must now reduce lending rates.", "c": "economy", "st": []},
-{"i": [23], "h": "EFCC declares Abdulrasheed Maina wanted", "s": "The commission named the former head of the defunct Pension Reform Task Force a wanted person.", "c": "security", "st": []},
-{"i": [10], "h": "NIMC denies NIN data breach and orders investigation", "s": "The commission rejected claims in a viral video that Nigerians' identity data had been exposed.", "c": "technology", "st": []},
-{"i": [11], "h": "Malami and Fagbemi give conflicting accounts of $200m Mambilla settlement", "s": "The former and current attorneys-general disagreed over the deal with Sunrise Power, and Malami rejected a bribery allegation.", "c": "politics", "st": []},
-{"i": [7], "h": "Makinde denies Oyo got N50bn from Tinubu for airport", "s": "The APM candidate rejected Wike's claim about funding for the Ibadan airport project.", "c": "politics", "st": ["Oyo"]},
-{"i": [18], "h": "NMDPRA approves 830,000 tonnes of petrol imports", "s": "Import permits for several marketers were approved ahead of the fourth quarter amid the regulator's legal dispute with Dangote, Premium Times reported.", "c": "economy", "st": []},
-{"i": [5], "h": "Dangote to help 2 million vulnerable women buy refinery shares", "s": "Aliko Dangote announced support for women to take part in the IPO.", "c": "business", "st": []},
-{"i": [32], "h": "Tinubu calls for African alliance to end raw mineral exports", "s": "The President urged African nations to process critical minerals at home.", "c": "economy", "st": []},
-{"i": [29, 30], "h": "Shettima at UNGA opening; Musa restates peacekeeping commitment", "s": "The Vice President joined world leaders in New York, and the defence minister reaffirmed Nigeria's role in global peacekeeping.", "c": "world", "st": []},
-{"i": [36], "h": "Oyedele calls for cheaper capital for African infrastructure", "s": "The finance minister urged the international community to expand affordable financing.", "c": "economy", "st": []},
-{"i": [13], "h": "INEC seeks adequate funding for 2027 security and logistics", "s": "Chairman Joash Amupitan said proper funding is critical.", "c": "politics", "st": []},
-{"i": [41], "h": "Tinubu and Uzodimma urge police impartiality", "s": "At CARSPO in Owerri, the IGP told politicians to compete with ideas.", "c": "security", "st": ["Imo"]},
-{"i": [16], "h": "5,000 PDP members join APC in Ogun", "s": "Defectors were received at a rally in Ilaro.", "c": "politics", "st": ["Ogun"]},
-{"i": [15], "h": "Masari says Tinubu has the best plans he has seen", "s": "The former Katsina governor praised the President's programme.", "c": "politics", "st": ["Katsina"]},
-{"i": [28], "h": "Umahi plans 4,000 influencers to showcase projects", "s": "The works minister said influencers will publicise infrastructure delivered under Tinubu.", "c": "politics", "st": []},
-{"i": [34], "h": "First 105km of coastal highway to be paved by November", "s": "Works Minister David Umahi gave the timeline for the Lagos-Calabar road.", "c": "economy", "st": ["Lagos"]},
-{"i": [9], "h": "Kano drug taskforce arrests 380, secures 230 convictions", "s": "The multi-agency team also seized illicit substances.", "c": "security", "st": ["Kano"]},
-{"i": [31], "h": "NSCDC arrests three over NNPC pipeline vandalism in Kwali", "s": "A truck carrying 17 vandalised pipes was seized in Dafa.", "c": "security", "st": ["FCT"]},
-{"i": [21], "h": "Group mourns 37 mining suspects as panel begins work", "s": "CREAP Africa Initiative expressed grief over the deaths in Niger State.", "c": "security", "st": ["Niger"]},
-{"i": [8], "h": "Firms to capture flared gas for power", "s": "AfricaGTC and Energy Ventures will convert 5 MMscfd of flared gas.", "c": "environment", "st": []},
-{"i": [24], "h": "First self-service fuel station opens in Abuja", "s": "Sunbeth Energies opened the station in Wuse.", "c": "business", "st": ["FCT"]},
-{"i": [27], "h": "Airtel Money plans London IPO", "s": "The mobile money business announced plans to list on the LSE.", "c": "business", "st": []},
-{"i": [38], "h": "Kenya to launch Dangote-backed $17bn refinery on 30 September", "s": "President William Ruto is expected at the Lamu groundbreaking.", "c": "world", "st": []},
-{"i": [37], "h": "Financial inclusion rises to 79%", "s": "EFInA said 94.2 million adults use at least one financial service.", "c": "economy", "st": []},
-{"i": [20], "h": "ECOWAS warns climate change could displace 32 million", "s": "The bloc said displacement threatens regional stability by 2050.", "c": "environment", "st": []},
-{"i": [39], "h": "Edible oil tanker drivers suspend strike", "s": "The FG and DSS intervened a day before it was due to start.", "c": "economy", "st": []},
-{"i": [44], "h": "Talks begin on moving dry port functions to NPERA", "s": "The ports regulator and NPA discussed the transfer.", "c": "economy", "st": []},
-{"i": [25], "h": "World Bank-backed erosion work starts in Birnin Kebbi", "s": "Gully control began in Badariya and Dukku Malala.", "c": "environment", "st": ["Kebbi"]},
-{"i": [35], "h": "TRCN plans AI training for teachers in all 774 LGAs", "s": "The council is working with GMind.", "c": "education", "st": []},
-{"i": [22], "h": "Troost-Ekong converts to Islam", "s": "The former Super Eagles captain recited the Shahadah in Doha.", "c": "sports", "st": []},
-{"i": [0], "h": "Super Eagles begin qualifiers with 21 players in camp", "s": "Madagascar's Rayan Raveloson said his team has no fear before Friday's game in Uyo.", "c": "sports", "st": ["Akwa Ibom"]}
-]
+ "lead": "TotalEnergies and the Nigerian independent AMNI took the final investment decision on the $800 million Ima gas project, and President Tinubu hailed it as unlocking a field discovered half a century ago.\n\nThe day in brief: the offshore project is expected to produce about 300 million standard cubic feet of gas a day, with first gas targeted for the end of 2028. At home, Senate President Godswill Akpabio insisted there was “no vacancy” while the President stayed abroad, and the ADC said his absence, with the Vice President also away, raised questions under Section 145 of the Constitution. The National Assembly said only the state police amendment has gone to state assemblies. Businesses welcomed the CBN's 350-basis-point rate cut but asked banks to lower lending rates. The EFCC declared Abdulrasheed Maina wanted, NIMC denied that Nigerians' identity data had leaked, and two attorneys-general gave clashing accounts of the $200 million Mambilla settlement. In New York, Tinubu urged Africa to stop exporting raw minerals, and Aliko Dangote pledged to help two million women buy refinery shares.",
+ "items": [
+  {
+   "i": [
+    1,
+    33
+   ],
+   "h": "$800m Ima gas project reaches final investment decision",
+   "s": "AMNI International and TotalEnergies EP Nigeria marked the final investment decision on the $800 million Ima gas project in Abuja. The offshore development is expected to produce about 300 million standard cubic feet of gas a day, with first gas targeted for the end of 2028. President Tinubu welcomed it as a milestone in his drive to unlock Nigeria's gas for industry and jobs, noting that the field was discovered 50 years ago.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Akpabio and ADC clash over Tinubu's long absence",
+   "s": "Speaking in Akwa Ibom, Senate President Godswill Akpabio said President Tinubu remained in charge and was running the country from abroad. “There is no vacancy,” he said, rejecting calls for a transfer of power. The ADC's spokesman, Bolaji Abdullahi, said the President's long absence while Vice President Shettima was also out of the country raised questions of compliance with Section 145 of the Constitution.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "State police bill sent to state assemblies",
+   "s": "The National Assembly said only the constitution alteration bill to establish state police services has so far been sent to the 36 state assemblies, correcting reports that all the amendment bills had gone out. The bill was transmitted on 16 September; some assemblies have approved it, others have set up committees, and several were still awaiting formal receipt.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "Markets react to CBN's 350bps rate cut",
+   "s": "Business groups welcomed the CBN's 350-basis-point cut in the monetary policy rate to 23 per cent but said banks must now pass it on. Muda Yusuf of the Centre for the Promotion of Private Enterprise said the move was particularly positive for the real sector, where financing costs have been crippling, and Segun Ajayi-Kadir of the Manufacturers Association said the next step must be lower lending rates.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    23
+   ],
+   "h": "EFCC declares Abdulrasheed Maina wanted",
+   "s": "The EFCC declared Abdulrasheed Maina, former chairman of the defunct Pension Reform Task Team, wanted over alleged receipt of stolen property, in a notice signed by spokesman Dele Oyewale. Maina and his son Faisal were arraigned on money-laundering charges in 2019, and Justice Okon Abang of the Federal High Court later sentenced him to eight years in prison.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "NIMC denies NIN data breach and orders investigation",
+   "s": "The National Identity Management Commission denied that Nigerians' identity numbers and personal details had been exposed and offered for sale, calling a video circulating on social media misleading. Its spokesman, Kayode Adegoke, said the commission's systems remain protected, but that it had nonetheless opened an investigation into the claims.",
+   "c": "technology",
+   "st": []
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Malami and Fagbemi give conflicting accounts of $200m Mambilla settlement",
+   "s": "An ICC arbitration tribunal in Paris rejected about $3.38 billion in claims by Sunrise Power over the Mambilla hydropower project and ruled that a 2020 settlement of $200 million and its addendum were products of corruption. Former Attorney-General Abubakar Malami said he negotiated the deal in Nigeria's interest and rejected any suggestion of bribery, while his successor, Lateef Fagbemi, gave an opposing account of the ruling.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "Makinde denies Oyo got N50bn from Tinubu for airport",
+   "s": "Oyo Governor Seyi Makinde, the APM's presidential candidate, denied FCT Minister Nyesom Wike's claim that President Tinubu gave the state N50 billion to upgrade the Ladoke Akintola International Airport in Ibadan. Speaking at a town hall in Katsina, he said the Oyo government had received no such money.",
+   "c": "politics",
+   "st": [
+    "Oyo"
+   ]
+  },
+  {
+   "i": [
+    18
+   ],
+   "h": "NMDPRA approves 830,000 tonnes of petrol imports",
+   "s": "The NMDPRA cleared six marketers, including Matrix Energy and AA Rano, to import a combined 830,000 tonnes of petrol in the fourth quarter, keeping the same list of beneficiaries as in earlier rounds even as the Dangote refinery raises domestic supply. The approvals come amid the regulator's legal dispute with Dangote.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Dangote to help 2 million vulnerable women buy refinery shares",
+   "s": "In New York, Aliko Dangote said he would support up to two million vulnerable women across Nigeria to buy shares in the Dangote Petroleum Refinery IPO, responding to a question from Yobe's Secretary to the State Government, Mohammed Goje. He also said the $16 billion Lamu refinery in Kenya, launching on 30 September, would be ready in about three years.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    32
+   ],
+   "h": "Tinubu calls for African alliance to end raw mineral exports",
+   "s": "President Tinubu called for an alliance of African countries to stop exporting raw critical minerals and to process, manufacture and add value at home instead. He said the continent must end the historical exploitation of its resources and move from being a mere supplier of raw materials to a hub of industry that profits from its own wealth.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    29,
+    30
+   ],
+   "h": "Shettima at UNGA opening; Musa restates peacekeeping commitment",
+   "s": "Vice President Kashim Shettima led Nigeria's delegation to the opening of the 81st UN General Assembly in New York. Defence Minister Christopher Musa, who accompanied him, said the government is committed to restoring and expanding Nigeria's role in UN peacekeeping and in international peace and security efforts.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "Oyedele calls for cheaper capital for African infrastructure",
+   "s": "Finance Minister Taiwo Oyedele told a UN dialogue on climate finance in New York that the international community must expand the supply of affordable capital for African infrastructure and development. He said Africa's development ambitions, including in energy and climate resilience, cannot be met with costly financing.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "INEC seeks adequate funding for 2027 security and logistics",
+   "s": "INEC chairman Joash Amupitan said adequate funding is critical for the security and logistics of the 2027 general elections, particularly for moving staff and materials to local governments, wards, registration areas and polling units. He spoke in Owerri at the sixth Conference and Retreat for Senior Police Officers.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Tinubu and Uzodimma urge police impartiality",
+   "s": "At the opening of the 2026 police senior officers' conference in Owerri, President Tinubu and Imo Governor Hope Uzodimma urged the police to stay professional and impartial before the 2027 elections. Inspector-General Olatunji Disu warned officers against compromising their neutrality and told politicians to compete with ideas and shun violence.",
+   "c": "security",
+   "st": [
+    "Imo"
+   ]
+  },
+  {
+   "i": [
+    16
+   ],
+   "h": "5,000 PDP members join APC in Ogun",
+   "s": "About 5,000 PDP members, mostly from Ogun West, defected to the APC at a reception in Ilaro, headquarters of Yewa South, where Governor Dapo Abiodun welcomed them. In Kwara, more than 2,000 APC members in Adewole Ward, Governor AbdulRahman AbdulRazaq's own ward, moved the other way to the PDP.",
+   "c": "politics",
+   "st": [
+    "Ogun"
+   ]
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Masari says Tinubu has the best plans he has seen",
+   "s": "Former Katsina governor and House Speaker Aminu Masari said that in nearly four decades of politics he has not seen a president with a better plan for Nigeria than Bola Tinubu, and urged people to look beyond criticism of the government. He made the remarks to a group of women at a public function, in a video shared by HM Arewa.",
+   "c": "politics",
+   "st": [
+    "Katsina"
+   ]
+  },
+  {
+   "i": [
+    28
+   ],
+   "h": "Umahi plans 4,000 influencers to showcase projects",
+   "s": "The government intends to recruit some 4,000 social media influencers to publicise roads and other projects completed under President Tinubu, Works Minister David Umahi said. He made the disclosure while the national students' association presented findings from its tour of federal roads in Kano, Jigawa, Kaduna and Sokoto, and he asked the students how best to go about it.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "First 105km of coastal highway to be paved by November",
+   "s": "According to David Umahi, paving of the main carriageway on the first 105 kilometres of the Lagos-Calabar coastal highway will be finished in November 2026. At the same meeting with the students he decried thefts and damage to public works along the route, and the government threatened to close a road over mounting deaths and destruction.",
+   "c": "economy",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Kano drug taskforce arrests 380, secures 230 convictions",
+   "s": "Kano's multi-agency task force on drug abuse said it arrested more than 380 suspects and secured over 230 convictions in the two months since Governor Abba Kabir Yusuf set it up on 22 July. Chairman Muhuyi Magaji Rimin Gado said seizures included cannabis, tramadol, diazepam, pentazocine, pregabalin and a methamphetamine-based designer drug.",
+   "c": "security",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "NSCDC arrests three over NNPC pipeline vandalism in Kwali",
+   "s": "Civil Defence officers in the FCT arrested three suspected pipeline vandals as they allegedly loaded 17 vandalised NNPC pipes onto a truck in Dafa, Kwali Area Council. The commandant said the arrests followed intelligence-led surveillance with local vigilantes who had been watching the pipeline right of way.",
+   "c": "security",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    21
+   ],
+   "h": "Group mourns 37 mining suspects as panel begins work",
+   "s": "The independent committee set up by the federal government to investigate the deaths of 37 suspected illegal miners in Civil Defence custody in Niger State began sitting. CREAP Africa Initiative expressed grief over the deaths, condemned the violence that followed, and said citizens have a right to demand answers and accountability peacefully.",
+   "c": "security",
+   "st": [
+    "Niger"
+   ]
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "Firms to capture flared gas for power",
+   "s": "Africa Gas Transport Company and Dutch firm Energy Ventures said they will capture five million standard cubic feet a day of routinely flared gas at the Agbada-2 field in Rivers State and turn it into cooking gas and electricity. Energy Ventures' chief executive, Herbert Okibe, described the project to journalists in Port Harcourt.",
+   "c": "environment",
+   "st": []
+  },
+  {
+   "i": [
+    24
+   ],
+   "h": "First self-service fuel station opens in Abuja",
+   "s": "Sunbeth Energies opened Abuja's first self-service fuel station in Wuse. Its chief marketing officer, Abiola Ameen, said customers can start, complete and monitor their own fuel purchases, giving them more control over the process.",
+   "c": "business",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    27
+   ],
+   "h": "Airtel Money plans London IPO",
+   "s": "Airtel Money, which operates in 13 African countries, said it will publish the price range and number of shares for its planned London Stock Exchange listing in early October. The mobile money business had delayed its original first-half 2026 listing in May because of poor market conditions.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Kenya to launch Dangote-backed $17bn refinery on 30 September",
+   "s": "Kenya finalised preparations for the 30 September groundbreaking of the Dangote-backed refinery in Lamu, Deputy President Kithure Kindiki said on X. President William Ruto is expected to lead the ceremony, which will bring together heads of state and government from East Africa.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "Financial inclusion rises to 79%",
+   "s": "Financial inclusion in Nigeria rose to 79 per cent, meaning about 94.2 million adults use at least one financial product or service, according to EFInA's ninth Access to Financial Services survey. Formal inclusion reached 73 per cent, or about 87.2 million adults, driven by the rapid growth of digital financial services.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    20
+   ],
+   "h": "ECOWAS warns climate change could displace 32 million",
+   "s": "ECOWAS lawmakers meeting in Accra warned that climate change, environmental damage and insecurity are driving displacement across West Africa and threatening regional stability, warning that as many as 32 million people could be displaced by 2050. They urged governments to adopt regional responses rather than only national ones.",
+   "c": "environment",
+   "st": []
+  },
+  {
+   "i": [
+    39
+   ],
+   "h": "Edible oil tanker drivers suspend strike",
+   "s": "Edible oil tanker drivers suspended a strike a day before it was due to start, after the federal government and the DSS intervened, said Ilias Aperun, president of their national union. He announced the decision in Lagos on 22 September.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "Talks begin on moving dry port functions to NPERA",
+   "s": "The Nigerian Ports Economic Regulatory Agency and the Nigerian Ports Authority began talks on transferring inland dry port functions to the regulator, on the directive of the Ministry of Marine and Blue Economy. The government began restructuring port governance two weeks ago, moving dry port oversight away from the Shippers' Council.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "World Bank-backed erosion work starts in Birnin Kebbi",
+   "s": "Kebbi State and the World Bank-supported ACRESAL project began gully erosion control and bio-engineering works in Badariya and Dukku Malala, Birnin Kebbi, which Environment Commissioner Musa Tungulawa said will benefit more than 50,000 residents directly and indirectly.",
+   "c": "environment",
+   "st": [
+    "Kebbi"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "TRCN plans AI training for teachers in all 774 LGAs",
+   "s": "The Teachers Registration Council of Nigeria and GMind Academy are discussing a plan to train 774 artificial intelligence adoption specialists, one in each local government area, to help teachers and schools use AI. GMind's founder, Success Ojo, presented the proposal during a visit to the council in Abuja.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Troost-Ekong converts to Islam",
+   "s": "Former Super Eagles captain William Troost-Ekong converted to Islam, reciting the Shahadah in Doha, where he plays for Qatar Stars League club Al-Ahli, the Qatari newspaper Al-Arab reported. A video of the 33-year-old defender reciting the testimony of faith circulated widely on social media.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "Super Eagles begin qualifiers with 21 players in camp",
+   "s": "Twenty-one players trained in Uyo on the first evening of the Super Eagles' camp, with only goalkeeper Maduka Okoye missing, after captain Wilfred Ndidi, Samuel Chukwueze and Stanley Nwabali arrived. Madagascar midfielder Rayan Raveloson said his team has no fear before Friday's AFCON qualifier against the three-time champions.",
+   "c": "sports",
+   "st": [
+    "Akwa Ibom"
+   ]
+  }
+ ]
 }

@@ -1,5 +1,5 @@
 {
- "lead": "President Tinubu ordered an investigation into the deaths of detained mining suspects in Niger State, where the government cancelled an APC rally and suspended the Civil Defence commandant. The ICC tribunal's Mambilla award highlighted a $500,000 payment to Atiku Abubakar's former wife, and the APC campaign told him to quit the race. The Court of Appeal reversed the deregistration of Peter Obi's NDC, the current account surplus rose 68 per cent to $7.54 billion, and the stock market passed N162 trillion for the first time.",
+ "lead": "President Tinubu ordered an investigation into the deaths of 37 detainees held after illegal mining raids in Niger State, where the state cancelled an APC rally and suspended the Civil Defence commandant.\n\nThe day in brief: Information Minister Mohammed Idris promised a thorough, transparent and impartial inquiry and said no one found culpable would be shielded. The APC campaign told Atiku Abubakar to quit the race after the Mambilla arbitration award flagged a $500,000 payment to his former wife, and the Court of Appeal, by a split decision, reversed the ruling that had stalled the registration of Peter Obi's NDC. Central Bank data showed the current account surplus rising 68 per cent to $7.54 billion on stronger exports and diaspora remittances, and the stock market closed above N162 trillion for the first time. The government and the CBN signed a pact to coordinate fiscal and monetary policy, INEC began recruiting 1.4 million temporary election workers, and the foreign minister warned diplomats against lecturing Nigeria on democracy. In Paris, President Macron hosted Tinubu to a private dinner.",
  "items": [
   {
    "i": [
@@ -7,7 +7,7 @@
     25
    ],
    "h": "Tinubu orders probe of mining suspects' deaths; Niger cancels APC rally",
-   "s": "The Federal Government promised an impartial investigation and prosecution over the deaths of people held after illegal mining raids. Niger State cancelled Saturday's APC rally in Minna and suspended the NSCDC commandant after 37 detainees died.",
+   "s": "Information Minister Mohammed Idris promised a thorough, transparent and impartial investigation into the deaths of people arrested in enforcement operations against illegal mining in the Wushishi area of Niger State, and said anyone found culpable would not be shielded. Niger State cancelled Saturday's APC rally in Minna and suspended the NSCDC commandant after 37 detainees died.",
    "c": "security",
    "st": [
     "Niger"
@@ -19,7 +19,7 @@
     2
    ],
    "h": "Mambilla award flags $500,000 payment to Atiku's ex-wife; APC tells him to quit",
-   "s": "The ICC tribunal said a $500,000 transfer in 2003 to Atiku Abubakar's then wife by a witness's company raised significant red flags. The APC presidential campaign council called on Atiku to withdraw from the race.",
+   "s": "The ICC tribunal's award in the Mambilla arbitration said a $500,000 transfer in 2003 by a witness's company to Atiku Abubakar's then wife raised significant red flags. The APC presidential campaign council seized on the finding and called on Atiku, the ADC candidate, to withdraw from the 2027 race, saying the proceedings raised serious questions about his role in the project.",
    "c": "politics",
    "st": []
   },
@@ -28,7 +28,7 @@
     20
    ],
    "h": "Appeal Court reverses deregistration of Obi's NDC",
-   "s": "In a 2-1 judgment, the Court of Appeal in Abuja overturned a Lokoja High Court decision that had set aside the order for INEC to register the Nigeria Democratic Congress.",
+   "s": "In a 2-1 decision, the Court of Appeal in Abuja set aside a ruling of the Federal High Court in Lokoja that had suspended its own earlier order for INEC to register the Nigeria Democratic Congress, pending a fresh hearing of a dispute over the party's logo. The judgment clears the way for the party on whose platform Peter Obi is running.",
    "c": "politics",
    "st": []
   },
@@ -37,7 +37,7 @@
     5
    ],
    "h": "Current account surplus rises 68% to $7.54bn",
-   "s": "Stronger exports of crude, gas and refined products, together with remittances, lifted Nigeria's surplus in the second quarter of 2026.",
+   "s": "Nigeria's surplus on the current account jumped by about two-thirds in the April-June quarter, to $7.54 billion from $4.49 billion, and stood almost 46 per cent above the same quarter of 2025, according to provisional central bank figures. Higher earnings from oil, gas and refined fuel exports helped, as did money sent home by Nigerians abroad, which climbed nearly 10 per cent to $5.82 billion.",
    "c": "economy",
    "st": []
   },
@@ -46,7 +46,7 @@
     19
    ],
    "h": "NGX market value passes N162trn for first time",
-   "s": "Equities capitalisation closed at a record N162.16 trillion.",
+   "s": "The Nigerian Exchange closed the week at a record market capitalisation of N162.16 trillion, up N2.27 trillion in a day, as the All-Share Index rose 1.42 per cent to an all-time high of 249,804.56 points. The previous record of N161.8 trillion was set on 13 May.",
    "c": "economy",
    "st": []
   },
@@ -55,7 +55,7 @@
     1
    ],
    "h": "Macron hosts Tinubu at private dinner in Paris",
-   "s": "The French President held a private dinner for President Tinubu at the Elysee Palace on Thursday night, the Presidency said.",
+   "s": "French President Emmanuel Macron hosted President Tinubu to a private dinner at the Élysée Palace on Thursday night, presidential spokesman Bayo Onanuga said on X. He said the dinner reflected the enduring relationship between the two countries, and both leaders pledged to deepen bilateral cooperation.",
    "c": "world",
    "st": []
   },
@@ -64,7 +64,7 @@
     4
    ],
    "h": "FG and CBN sign pact on fiscal and monetary coordination",
-   "s": "The government and the Central Bank signed a memorandum in Abuja to formalise coordination of their policies.",
+   "s": "The Ministry of Finance and the CBN signed a memorandum in Abuja that sets up regular consultations, data sharing and joint forecasts between fiscal and monetary authorities. Finance Minister Taiwo Oyedele said the aim is to bring inflation down sustainably and give investors greater policy consistency as the CBN prepares for inflation targeting.",
    "c": "economy",
    "st": []
   },
@@ -73,7 +73,7 @@
     12
    ],
    "h": "INEC begins recruiting 1.4 million ad hoc staff",
-   "s": "The commission started hiring temporary workers for the 2027 general elections.",
+   "s": "INEC opened its online portal to recruit about 1.4 million ad hoc staff to work in more than 176,000 polling units at the 2027 elections. The presidential and National Assembly elections are scheduled for 16 January 2027, with governorship and state assembly polls to follow.",
    "c": "politics",
    "st": []
   },
@@ -82,7 +82,7 @@
     18
    ],
    "h": "Foreign minister warns envoys against unguarded comments on elections",
-   "s": "Bianca Odumegwu-Ojukwu told diplomatic missions to avoid disparaging remarks or lectures on democracy before 2027.",
+   "s": "Meeting ambassadors in Abuja, Foreign Minister Bianca Odumegwu-Ojukwu cautioned foreign missions to keep their public comments measured in the run-up to the 2027 polls, and said Nigeria would not welcome careless or belittling statements or uninvited advice on how to run its democracy.",
    "c": "politics",
    "st": []
   },
@@ -91,7 +91,7 @@
     47
    ],
    "h": "Bandits kill 13 in three Zamfara villages",
-   "s": "At least 13 people died in Dansadau Emirate, Maru, after reprisals for the killing of a bandit leader by local fighters.",
+   "s": "Bandits killed at least 13 people in three villages of Dansadau Emirate in Maru, Zamfara, in reprisal after local vigilantes killed a bandit leader and his men. A resident who asked not to be named said the gunmen targeted the villages over the killing, and called for urgent action on insecurity.",
    "c": "security",
    "st": [
     "Zamfara"
@@ -102,7 +102,7 @@
     29
    ],
    "h": "Mother and children die in Okrika house fire",
-   "s": "A woman and her children died when fire engulfed their home in Okochiri community on Friday. Early reports said four children died; police later put the toll at the mother and three children.",
+   "s": "A mother and her children were burned to death when fire engulfed their house in Okochiri community, Okrika, Rivers State, in the early hours of Friday while the family slept. Early reports said four children died; police later put the toll at the mother and three children. Community youths put out the fire, whose cause was not confirmed.",
    "c": "society",
    "st": [
     "Rivers"
@@ -115,7 +115,7 @@
     48
    ],
    "h": "Atiku urges Tinubu to cut fuel prices and offers his ideas",
-   "s": "Atiku Abubakar said palliatives cannot replace lower petrol prices and offered to share his proposals, telling the President he could rename them and take the credit.",
+   "s": "At a press conference in Abuja, Atiku Abubakar said palliatives cannot replace sound policies that bring down the cost of living, and urged the President to cut petrol prices, which he said have pushed up transport, food and production costs since subsidy removal. He offered to share his proposals, saying Tinubu could rename them and take the credit.",
    "c": "politics",
    "st": []
   },
@@ -124,7 +124,7 @@
     3
    ],
    "h": "Emir Sanusi urges Kano residents to buy Dangote refinery shares",
-   "s": "Khalifa Muhammadu Sanusi II said Kano stands to benefit significantly from the IPO.",
+   "s": "The Emir of Kano, Muhammadu Sanusi II, urged individuals and businesses in Kano to invest in the Dangote refinery IPO, calling share ownership a path to long-term wealth. Defending the project against critics, he challenged them to raise the estimated $22 billion it would take to build a competing refinery.",
    "c": "business",
    "st": [
     "Kano"
@@ -135,7 +135,7 @@
     17
    ],
    "h": "Dangote refinery sourced 60% of its crude locally",
-   "s": "A report said the refinery relied on the naira-for-crude scheme for about 60 per cent of its feedstock in the year to June 2026.",
+   "s": "The Dangote refinery's IPO prospectus shows it bought about 60 per cent of its crude from Nigeria in the 12 months to June 2026, relying heavily on the naira-for-crude scheme to cut its foreign exchange exposure. It processed roughly 26.4 million tonnes of crude in the period.",
    "c": "economy",
    "st": []
   },
@@ -144,7 +144,7 @@
     13
    ],
    "h": "Tinubu orders 180-day roadmap for Digital Free Zones",
-   "s": "The President moved the initiative to its next phase to attract global technology jobs and investment.",
+   "s": "President Tinubu directed that a roadmap for the full launch of Nigeria's Digital Free Zones be ready within 180 days. The scheme aims to let Nigerian technology and service companies raise global capital, employ Nigerians and sell to international markets without moving their businesses and intellectual property abroad.",
    "c": "technology",
    "st": []
   },
@@ -153,7 +153,7 @@
     6
    ],
    "h": "$12m enterprise centre unveiled in Abuja",
-   "s": "SMEDAN, UNDP and Korea's KOICA opened a centre to support small businesses.",
+   "s": "SMEDAN, the UNDP and South Korea, through KOICA, broke ground on the $12 million Abuja Centre for Entrepreneurship at SMEDAN's headquarters. The hub is meant to help young people, women, start-ups and small businesses turn ideas into viable enterprises and create jobs.",
    "c": "business",
    "st": [
     "FCT"
@@ -164,7 +164,7 @@
     14
    ],
    "h": "50MW power project to supply Idu industrial area",
-   "s": "Ground was broken on a plant to give Abuja's Idu industries round-the-clock electricity.",
+   "s": "Ground was broken on a 50-megawatt power project for the Idu industrial zone in Abuja, developed by Welbeck Electricity Distribution, the Abuja Electricity Distribution Company and Shell Gas. It will be built in phases, beginning with 10MW, to give industries and businesses steady supply.",
    "c": "economy",
    "st": [
     "FCT"
@@ -175,7 +175,7 @@
     11
    ],
    "h": "KASU lecturers suspend strike",
-   "s": "ASUU at Kaduna State University called off its strike after the state approved the 2025 salary agreement.",
+   "s": "ASUU's Kaduna State University chapter suspended its strike after the state government approved implementation of the 2025 federal government-ASUU agreement, following a congress on 17 September. Lecturers at the University of Benin also suspended an indefinite strike after management promised to pay outstanding allowances.",
    "c": "education",
    "st": [
     "Kaduna"
@@ -186,7 +186,7 @@
     10
    ],
    "h": "Gombe restricts movement for Saturday by-election",
-   "s": "Police closed commercial activity in Gombe, Kwami and Funakaye for the federal constituency by-election.",
+   "s": "Gombe police restricted movement and closed commercial activities in Gombe, Kwami and Funakaye from 6am to 6pm on Saturday for the federal constituency by-election. Kano police announced a similar restriction in Dawakin Kudu for the state assembly by-election there.",
    "c": "politics",
    "st": [
     "Gombe"
@@ -197,7 +197,7 @@
     8
    ],
    "h": "ICPC questions Ekiti APC House candidate over alleged fraud",
-   "s": "Toyin Okoro, the party's candidate for Ise-Orun/Ikere/Ekiti South-West, appeared before the commission.",
+   "s": "Toyin Okoro, the APC's candidate for Ise-Orun/Ikere/Ekiti South-West federal constituency and a former senior legislative aide to Speaker Tajudeen Abbas, appeared before the ICPC in Abuja, where he was questioned over alleged fraud and abuse of office.",
    "c": "politics",
    "st": [
     "Ekiti"
@@ -208,7 +208,7 @@
     21
    ],
    "h": "Fitch says CBN holding company rules could force bank restructuring",
-   "s": "The ratings agency said proposed rules may require banks to move foreign subsidiaries and reorganise.",
+   "s": "The CBN's draft framework for bank holding companies may oblige some Nigerian lenders to rework who owns what, move subsidiaries abroad under new parents and reorganise operations, Fitch Ratings said in a mid-September report on the cross-border growth of African banking groups.",
    "c": "economy",
    "st": []
   },
@@ -217,7 +217,7 @@
     43
    ],
    "h": "Mafab plans to sell 5G assets to MTN",
-   "s": "ThisDay reported that Mafab Communications intends to sell its $273.6 million 5G spectrum to MTN Nigeria.",
+   "s": "Mafab Communications, backed by businessman Musbahu Muhammad Bashir, plans to sell its 5G spectrum, bought for $273.6 million and covering blocks in the 2.1GHz and 3.5GHz bands, to MTN Nigeria, subject to regulatory approval. Mafab was one of the country's pioneer 5G licensees in 2022.",
    "c": "technology",
    "st": []
   },
@@ -226,7 +226,7 @@
     22
    ],
    "h": "Jonathan calls for unified federal and state civil service pay",
-   "s": "Former President Goodluck Jonathan spoke in Yenagoa.",
+   "s": "Former President Goodluck Jonathan called for the harmonisation of structures and salaries in the federal and state civil services, saying workers doing similar jobs should not be paid differently. He spoke in Yenagoa at the foundation-laying for the Bayelsa association of retired permanent secretaries' secretariat.",
    "c": "politics",
    "st": [
     "Bayelsa"
@@ -237,7 +237,7 @@
     24
    ],
    "h": "Police repatriate Chinese fugitive wanted over rosewood smuggling",
-   "s": "Zhang Shijie was returned to Guangzhou through INTERPOL.",
+   "s": "The police, through Interpol's National Central Bureau in Abuja, sent Chinese fugitive Zhang Shijie back to Guangzhou. He was wanted by Chinese customs over the alleged smuggling of about 1,400 tonnes of endangered African rosewood.",
    "c": "security",
    "st": []
   },
@@ -246,7 +246,7 @@
     31
    ],
    "h": "EFCC probes man caught with fake $212,200 in Kano",
-   "s": "The commission's Kano office began investigating Usaini Ibrahim.",
+   "s": "The EFCC's Kano office began investigating Usaini Ibrahim, arrested by the NDLEA on Maiduguri Road, Kano, on 3 September with counterfeit US dollars with a face value of $212,200. The NDLEA handed him and the fake notes to the commission.",
    "c": "security",
    "st": [
     "Kano"
@@ -257,7 +257,7 @@
     32
    ],
    "h": "FG moves to clear Bida-Kutigi gridlock and Lagos truck parking",
-   "s": "The President ordered urgent measures to restore traffic on the Niger State corridor.",
+   "s": "On President Tinubu's directive, the government ordered urgent measures to clear a long traffic gridlock on the Bida–Kutigi corridor in Niger State and to remove illegally parked trucks from port access roads in Lagos. His transport aide, Adetokunbo Ade-John, joined officials on the road.",
    "c": "economy",
    "st": [
     "Niger",
@@ -269,7 +269,7 @@
     30
    ],
    "h": "Plateau cracks down on houses without toilets",
-   "s": "Households in Jos South were given seven days to provide toilets or face prosecution.",
+   "s": "The Plateau Environmental Protection and Sanitation Agency began a crackdown on houses in Jos South without functional toilets, giving households seven days to build them or face prosecution, after months of community engagement and public education.",
    "c": "health",
    "st": [
     "Plateau"
@@ -280,7 +280,7 @@
     34
    ],
    "h": "Hajj operators demand probe of private slot allocation",
-   "s": "Private operators asked the President to order a review of how 15,000 seats were shared.",
+   "s": "Private Hajj operators asked President Tinubu to order an independent review of how 15,000 private-sector seats for the 2027 pilgrimage were allocated, alleging that 5,000 of them were diverted to two new companies linked to Kano and Adamawa.",
    "c": "society",
    "st": []
   },
@@ -289,7 +289,7 @@
     9
    ],
    "h": "Group urges Wike and APC to protect party unity",
-   "s": "Renewed Hope Ambassadors' coordinators called for restraint in the dispute.",
+   "s": "State coordinators of the Renewed Hope Ambassadors urged FCT Minister Nyesom Wike to support APC structures and avoid actions that could weaken the party or unsettle its governors' commitment to President Tinubu's re-election.",
    "c": "politics",
    "st": []
   },
@@ -298,7 +298,7 @@
     26
    ],
    "h": "Edo council chairman criticised over party caps directive",
-   "s": "Esan West's chairman was accused of barring drivers from wearing rival party caps.",
+   "s": "Blessing Albert Ebhodaghe, chairman of Esan West local government in Edo, was criticised after a video showed him warning commercial drivers in motor parks not to wear caps of rival parties and directing them to wear APC caps.",
    "c": "politics",
    "st": [
     "Edo"
@@ -309,7 +309,7 @@
     36
    ],
    "h": "Christian youths endorse APM's Haske in Adamawa",
-   "s": "A youth group backed Abdulrahman Haske for governor.",
+   "s": "The Adamawa State Youth Christian Movement for Change endorsed Abdulrahman Bashir Haske, the APM's candidate, for the 2027 governorship election. Haske came third in the APC primary in May before moving to the APM and winning its ticket.",
    "c": "politics",
    "st": [
     "Adamawa"
@@ -320,7 +320,7 @@
     28
    ],
    "h": "KADGIS says it has resolved 5,000 land disputes",
-   "s": "Kaduna's land agency also reinstated more than 150 revoked titles.",
+   "s": "The Kaduna Geographic Information Service said it has resolved more than 5,000 land disputes and restored over 150 titles that were unjustly revoked in the past three and a half years, director-general Bashir Garba Ibrahim told a town hall.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -331,7 +331,7 @@
     37
    ],
    "h": "Finchglow plans flying school at Gateway Airport",
-   "s": "The company seeks approval for pilot training in Ogun.",
+   "s": "Finchglow Holdings plans a private flying school at Gateway International Agro-Cargo Airport in Ogun State, subject to regulatory approval, to meet growing demand for pilots in Nigeria and West Africa, group managing director Bankole Bernard said.",
    "c": "business",
    "st": [
     "Ogun"
@@ -342,7 +342,7 @@
     15
    ],
    "h": "World Bank mobilises record $112bn in private capital",
-   "s": "Africa drew $22 billion, nearly 150 per cent more than four years ago.",
+   "s": "In the 2026 fiscal year the World Bank Group attracted a record $112 billion of private money into developing countries alongside its own lending, more than three times the $35 billion of 2022. African projects drew $22 billion, almost two and a half times the figure four years ago, and the bank's guarantees reached a record $25 billion.",
    "c": "world",
    "st": []
   },
@@ -351,7 +351,7 @@
     42
    ],
    "h": "Mbappe leaves Nike for On",
-   "s": "The France captain signed with the Swiss brand as it enters football.",
+   "s": "Kylian Mbappé ended his long partnership with Nike and signed with Swiss sportswear brand On, which is entering football. The France captain will be the centrepiece of the venture and work with its teams on future boots and apparel.",
    "c": "sports",
    "st": []
   }

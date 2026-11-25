@@ -1,40 +1,357 @@
 {
-"lead": "A Federal High Court in Gombe nullified the PDP primary that made former minister Isa Pantami the party's governorship candidate and ordered a new one. NECO released its 2026 results with a 58.67 per cent pass rate, and the NDLEA uncovered a methamphetamine lab in Enugu linked to a Mexican cartel. Atiku named Nasir El-Rufai to his campaign council, a group of lawmakers asked the National Assembly to reconvene over the President's absence, and the government cut the interest charged on late tax payments.",
-"items": [
-{"i": [0], "h": "Court voids Pantami's ticket and orders fresh Gombe PDP primary", "s": "The Federal High Court in Gombe nullified the primary that produced former communications minister Isa Pantami as the PDP governorship candidate.", "c": "politics", "st": ["Gombe"]},
-{"i": [7], "h": "NECO records 58.67% pass rate in 2026 SSCE", "s": "804,948 candidates obtained five credits including English and Mathematics in the internal examination.", "c": "education", "st": []},
-{"i": [8], "h": "NDLEA dismantles meth lab in Enugu linked to Mexican cartel", "s": "Officers uncovered a clandestine laboratory in Eziama, Obeagu, Awgu Local Government Area, and arrested suspected kingpins.", "c": "security", "st": ["Enugu"]},
-{"i": [11], "h": "Atiku names El-Rufai to campaign council", "s": "The ADC candidate approved a lean campaign council and management team that includes the former Kaduna governor.", "c": "politics", "st": []},
-{"i": [22], "h": "Lawmakers' group wants National Assembly to reconvene over Tinubu's absence", "s": "Serving federal lawmakers under the banner Save Democracy raised constitutional concerns about the President's continued stay abroad.", "c": "politics", "st": []},
-{"i": [26, 28], "h": "Late tax payments to attract MPR plus 1% from October", "s": "The government replaced the previous five-point spread with one point above the CBN policy rate for overdue naira taxes.", "c": "economy", "st": []},
-{"i": [9, 33], "h": "Petrol imports fall 26% as Dangote supplies 71%", "s": "NMDPRA data showed daily imports dropped to 14.6 million litres in August while NNPC refineries stayed shut.", "c": "economy", "st": []},
-{"i": [2], "h": "EFCC explains why it declared Maina wanted", "s": "The commission said the former pension reform task force chief is sought over alleged receipt of stolen property.", "c": "security", "st": []},
-{"i": [6], "h": "Atiku says Tinubu must go in 2027", "s": "The ADC candidate blamed the APC for economic decline.", "c": "politics", "st": []},
-{"i": [21], "h": "Wike says a strategy is being built to stop Atiku and Obi", "s": "The FCT minister said a new plan is underway to counter the two challengers.", "c": "politics", "st": []},
-{"i": [31], "h": "Senator Kingibe challenges Wike over FCT loans", "s": "She asked the minister to produce Senate records showing approval for the FCT Administration's loans.", "c": "politics", "st": ["FCT"]},
-{"i": [4], "h": "Ogun signs port agreement in Paris with Tinubu's backing", "s": "The President promised investors policy stability.", "c": "economy", "st": ["Ogun"]},
-{"i": [10], "h": "Umahi orders Tinubu's pictures on First Niger Bridge", "s": "The works minister gave the directive during an inspection of repairs.", "c": "politics", "st": ["Anambra"]},
-{"i": [14], "h": "Nigeria and Italy rally support for $5bn education fund", "s": "The two countries backed the Global Partnership for Education's financing campaign.", "c": "education", "st": []},
-{"i": [5], "h": "SEDC starts 200-hectare model farm in Enugu", "s": "The project is at Nomeh Unataeze, Nkanu East.", "c": "economy", "st": ["Enugu"]},
-{"i": [3], "h": "Tinubu welcomes $12m entrepreneurship centre", "s": "He said the Abuja centre will strengthen small businesses.", "c": "business", "st": ["FCT"]},
-{"i": [38], "h": "Boko Haram kills vigilante commander and four others in Borno", "s": "Terrorists attacked Wumbi in Kala-Balge and injured several civilians.", "c": "security", "st": ["Borno"]},
-{"i": [34], "h": "Three vigilantes killed and four miners die in Plateau", "s": "Gunmen ambushed vigilantes in Mangu, and a sand pit collapsed in Bokkos.", "c": "security", "st": ["Plateau"]},
-{"i": [35], "h": "One shot as NSCDC and traders clash in Jos market", "s": "Vehicles were damaged at Chorbe Market, Jos North.", "c": "security", "st": ["Plateau"]},
-{"i": [20], "h": "Benue doctor reported abducted later found in police custody", "s": "Family members had said Dr Jonah Ogbaji of Multicare Hospital, Makurdi, was taken by gunmen.", "c": "security", "st": ["Benue"]},
-{"i": [15], "h": "Kaduna police arrest arms dealers and foil kidnap", "s": "Officers recovered 300 rounds of ammunition and three locally made guns.", "c": "security", "st": ["Kaduna"]},
-{"i": [36], "h": "Amnesty alleges clampdown on Kano governor's critics", "s": "It reported arrests, detentions and threats against opposition supporters.", "c": "politics", "st": ["Kano"]},
-{"i": [45], "h": "El-Rufai says he bears no resentment over allies' silence", "s": "The detained former governor addressed friends who have not supported him publicly.", "c": "politics", "st": ["Kaduna"]},
-{"i": [47], "h": "CCB verifying assets of 20 ministers and 30 permanent secretaries", "s": "Chairman Abdullahi Bello disclosed the checks in Abuja.", "c": "politics", "st": []},
-{"i": [29], "h": "ICPC reviews Rural Electrification Agency", "s": "The agency invited the review to strengthen accountability.", "c": "economy", "st": []},
-{"i": [27], "h": "Ex-NBA chief says courts usurp voters' powers", "s": "Afam Osigwe warned about INEC's independence and weak electoral laws.", "c": "politics", "st": []},
-{"i": [41], "h": "Lagos takes 34% of states' N5.15trn IGR", "s": "The state led all subnationals in 2025.", "c": "economy", "st": ["Lagos"]},
-{"i": [43], "h": "Inquiry into mining suspects' deaths begins sittings", "s": "The independent committee started hearings.", "c": "security", "st": ["Niger"]},
-{"i": [17], "h": "Moniepoint agents to sell Dangote refinery shares", "s": "Subscriptions will be available around the clock.", "c": "business", "st": []},
-{"i": [16], "h": "Kenya approves transfer of Access Bank Kenya to National Bank", "s": "The deal involves two Access subsidiaries.", "c": "business", "st": []},
-{"i": [23], "h": "Gambia orders banks to phase out foreign staff", "s": "Nigerian-owned banks are among those affected.", "c": "world", "st": []},
-{"i": [37], "h": "Solar mini-grid powers 13,000 residents in Kwara", "s": "A 581kWp grid was commissioned in Oke-Oyi, Ilorin East.", "c": "economy", "st": ["Kwara"]},
-{"i": [39], "h": "Brazil, Germany, India and Japan back permanent African UN seat", "s": "The G4 called for Security Council reform.", "c": "world", "st": []},
-{"i": [12], "h": "Joshua to fight Fury on 11 December", "s": "The British-Nigerian boxer confirmed the bout in the UK.", "c": "sports", "st": []},
-{"i": [1, 13], "h": "Super Eagles eye winning start against Madagascar", "s": "Coach Eric Chelle wants six points from the opening double-header.", "c": "sports", "st": []}
-]
+ "lead": "A court in Gombe voided Isa Pantami's PDP governorship ticket and ordered a new primary, NECO released results showing fewer than six in ten candidates passed five subjects with English and mathematics, and the NDLEA said it had found a methamphetamine laboratory run with a Mexican cartel in Enugu.\n\nThe day in brief: Justice Amina Aliyu Mohammed ruled on a suit by aspirant Usman Aliyu Garry. Atiku Abubakar named the detained Nasir El-Rufai to his campaign council and called for Tinubu to be voted out, while a group of federal lawmakers asked the National Assembly to reconvene over the President's absence without a written handover. The finance ministry cut interest on late tax payments to one point above the CBN rate from October. Regulator data showed Dangote supplied 71 per cent of the petrol Nigerians used in August as imports fell 26 per cent. At the UN, Tinubu backed a $5 billion global education fund co-hosted with Italy, and in Paris he witnessed Ogun's port deal with DP World. Insurgents killed five people in Borno, and violence in Plateau took seven lives.",
+ "items": [
+  {
+   "i": [
+    0
+   ],
+   "h": "Court voids Pantami's ticket and orders fresh Gombe PDP primary",
+   "s": "Justice Amina Aliyu Mohammed of the Federal High Court in Gombe annulled the primary that produced former communications minister Isa Ali Pantami as the PDP's 2027 governorship candidate and ordered the party to hold a fresh one in line with its guidelines and the electoral law. The ruling came on a suit by aspirant Usman Aliyu Garry, who challenged the party's announcement of Pantami as its sole candidate in June.",
+   "c": "politics",
+   "st": [
+    "Gombe"
+   ]
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "NECO records 58.67% pass rate in 2026 SSCE",
+   "s": "NECO said 804,948 candidates, or 58.67 per cent, obtained five credits or more including English and mathematics in the 2026 internal SSCE. Registrar Dantani Wushishi announced the results in Minna, 63 days after the last paper, saying 1,378,048 candidates registered. The share of candidates reaching the benchmark has slipped from 61.60 per cent in 2023.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "NDLEA dismantles meth lab in Enugu linked to Mexican cartel",
+   "s": "The NDLEA said it dismantled a clandestine methamphetamine laboratory run by a Nigerian-Mexican cartel in Eziama community, Obeagu, in Awgu local government area of Enugu. Officers arrested two suspected kingpins, recovered large quantities of precursor chemicals and identified a Mexican member of the cartel allegedly involved in running the lab.",
+   "c": "security",
+   "st": [
+    "Enugu"
+   ]
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Atiku names El-Rufai to campaign council",
+   "s": "Atiku Abubakar approved what his spokesman Phrank Shaibu called a lean, strategically structured national campaign council and campaign management committee, naming former Kaduna governor Nasir El-Rufai among its members. El-Rufai is in ICPC custody and faces several charges filed by the federal and Kaduna State governments.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Lawmakers' group wants National Assembly to reconvene over Tinubu's absence",
+   "s": "A group of serving federal lawmakers calling themselves Save Democracy said there is constitutional uncertainty because President Tinubu appears not to have sent the written declaration required by Section 145 of the Constitution before travelling. They asked both chambers to reconvene at once and decide whether the President has acted within the law.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    26,
+    28
+   ],
+   "h": "Late tax payments to attract MPR plus 1% from October",
+   "s": "From 1 October, interest on late payment of naira taxes will be one percentage point above the CBN's monetary policy rate instead of five, under the Nigeria Tax Administration (Interest on Late Payment of Tax) Order, 2026, issued by Finance Minister Taiwo Oyedele. The ministry said the change links penalties to prevailing market rates.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    9,
+    33
+   ],
+   "h": "Petrol imports fall 26% as Dangote supplies 71%",
+   "s": "NMDPRA's August factsheet shows daily petrol imports fell 26 per cent to 14.6 million litres, from 19.7 million in July, as the Dangote refinery supplied 71 per cent of all petrol received for domestic use. Total daily supply rose 11 per cent to 50.5 million litres on a 39 per cent jump in local volumes, while NNPC's refineries remained shut.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "EFCC explains why it declared Maina wanted",
+   "s": "The EFCC declared Abdulrasheed Maina, the 61-year-old former chairman of the Presidential Task Force on Pension Reform, wanted again over alleged receipt of stolen property, in a notice from spokesman Dele Oyewale. Security agencies, including the Immigration Service, were alerted to arrest him on sight after he failed to honour the commission's invitation.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "Atiku says Tinubu must go in 2027",
+   "s": "Welcoming Eyitayo Jegede, the PDP's former Ondo governorship candidate, and his supporters into the ADC in Akure, Atiku Abubakar urged Nigerians to unite and vote out the Tinubu government in 2027, blaming the APC for the country's economic decline. He also faulted the oil minister Heineken Lokpobiri for comparing Nigerian petrol prices and subsidies with those in the United States.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    21
+   ],
+   "h": "Wike says a strategy is being built to stop Atiku and Obi",
+   "s": "FCT Minister Nyesom Wike said a new political strategy has been put in place to counter Atiku Abubakar of the ADC and Peter Obi of the NDC before the 2027 presidential election, but declined to give details. Speaking after inspecting projects in Abuja, he also sought to clear the air over his controversial remarks about the 2023 election.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "Senator Kingibe challenges Wike over FCT loans",
+   "s": "Senator Ireti Kingibe, who represents the FCT, challenged Nyesom Wike to produce the Senate's votes and proceedings showing it approved loans taken by the FCT Administration, insisting the chamber never considered them. Replying to Wike's claim that she would not return to the Senate, she said no individual can decide whether she is re-elected in 2027.",
+   "c": "politics",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "Ogun signs port agreement in Paris with Tinubu's backing",
+   "s": "President Tinubu was in Paris as Ogun State signed agreements with the ports operator DP World to build the state's Blue Marine special economic zone and port. He told investors at home and abroad that his government would keep rules clear, policies steady and the business climate predictable so that long-term investment can thrive.",
+   "c": "economy",
+   "st": [
+    "Ogun"
+   ]
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "Umahi orders Tinubu's pictures on First Niger Bridge",
+   "s": "Works Minister David Umahi ordered that illegal adverts on the First Niger Bridge be removed and replaced with pictures of President Tinubu once repairs are complete, as a reward for his work. He inspected the bridge, closed earlier this month after vandals removed bolts, nuts and parts of an expansion joint, and appealed to residents to help protect it.",
+   "c": "politics",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Nigeria and Italy rally support for $5bn education fund",
+   "s": "Nigeria and Italy are co-hosting the Global Partnership for Education's 2026–2030 replenishment campaign, which aims to raise $5 billion for education in more than 100 low- and lower-middle-income countries. Speaking in New York, President Tinubu said the partnership's vision matches Nigeria's agenda of widening access and training teachers, and Education Minister Tunji Alausa said co-hosting shows Nigeria's renewed global role.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "SEDC starts 200-hectare model farm in Enugu",
+   "s": "Enugu Governor Peter Mbah flagged off the South East Development Commission's 200-hectare integrated model farm at Nomeh Unateze, Nkanu East, the first project of its South East Agro-Development Programme. The commission said the farm is meant to raise food output, create jobs, train farmers and strengthen value chains; Regional Development Minister Abubakar Momoh attended.",
+   "c": "economy",
+   "st": [
+    "Enugu"
+   ]
+  },
+  {
+   "i": [
+    3
+   ],
+   "h": "Tinubu welcomes $12m entrepreneurship centre",
+   "s": "President Tinubu welcomed the construction of the $12 million Abuja Centre for Entrepreneurship at the SMEDAN Industrial Development Centre in Idu, funded by South Korea through KOICA with support from the UNDP. He said it will strengthen the small business sector and help more firms grow, create jobs and expand activity.",
+   "c": "business",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Boko Haram kills vigilante commander and four others in Borno",
+   "s": "Suspected Boko Haram and ISWAP fighters attacked Wumbi in Kala-Balge, Borno, killing a vigilante commander and four civilians and wounding several others, police spokesman Kenneth Daso confirmed. Wumbi, a farming community on the border with Cameroon, had been deserted because of attacks, and residents had only recently returned under the protection of security forces.",
+   "c": "security",
+   "st": [
+    "Borno"
+   ]
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Three vigilantes killed and four miners die in Plateau",
+   "s": "Seven people died in separate incidents in Plateau: gunmen ambushed and killed three Mwaghavul vigilantes on Tuesday night at the Kyikyau–Gyambwas boundary in Mangu Halle District, and four suspected illegal miners died when a sand pit collapsed in Bokkos. The Mwaghavul Youth Movement condemned the ambush.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "One shot as NSCDC and traders clash in Jos market",
+   "s": "A clash between Civil Defence personnel and traders at Chorbe Market in Jos North left one trader shot and several vehicles smashed on Thursday; reports differed on whether he died or was taken to hospital. Market officials had invited the NSCDC to enforce the weekly sanitation exercise when the confrontation started.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    20
+   ],
+   "h": "Benue doctor reported abducted later found in police custody",
+   "s": "Dr Jonah Ogbaji, medical director of Multicare Hospital in Makurdi, who his daughter said was taken from the hospital by armed men disguised as security operatives while he was seeing patients, was later found in police custody. The family had raised the alarm on Thursday morning that he had been abducted from the premises in Ankpa Quarters.",
+   "c": "security",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Kaduna police arrest arms dealers and foil kidnap",
+   "s": "Kaduna police arrested three suspected arms dealers and another suspect in Makarfi, Gwantu and Giwa, recovering 300 rounds of live ammunition and three locally made guns, spokesman Mansir Hassan said. On 20 September they also foiled a kidnapping after bandits attacked a resident in Gimi Ward, Makarfi, at about 1.15am.",
+   "c": "security",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "Amnesty alleges clampdown on Kano governor's critics",
+   "s": "Amnesty International said critics of Kano Governor Abba Kabir Yusuf, including opposition supporters, are increasingly being arrested, detained, threatened and intimidated over comments and social media posts. It said the trend is creating a “climate of fear” and undermining freedom of expression in the state.",
+   "c": "politics",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "El-Rufai says he bears no resentment over allies' silence",
+   "s": "In a statement titled “My Relationships and the Aftermath”, posted on his social media accounts, detained former Kaduna governor Nasir El-Rufai addressed former colleagues, friends and relatives who have not publicly supported him during his legal troubles. He said he bears neither hatred nor resentment towards those who chose not to stand by him.",
+   "c": "politics",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    47
+   ],
+   "h": "CCB verifying assets of 20 ministers and 30 permanent secretaries",
+   "s": "The Code of Conduct Bureau is verifying the assets of more than 20 ministers and 30 permanent secretaries, its chairman Abdullahi Bello told an anti-corruption and asset-tracing workshop in Abuja organised by HEDA and the Platform to Protect Whistleblowers in Africa. He said the bureau has moved beyond simply receiving declarations to checking them.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "ICPC reviews Rural Electrification Agency",
+   "s": "The ICPC began a full system study and review of the Rural Electrification Agency at the agency's invitation, to identify weaknesses and improve accountability and transparency. The REA was recently ranked top in the power sector in the ICPC's 2025 ethics and integrity compliance ranking.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    27
+   ],
+   "h": "Ex-NBA chief says courts usurp voters' powers",
+   "s": "Former NBA president Afam Osigwe SAN told the Nigerian Guild of Editors conference in Enugu that courts are gradually taking away citizens' power to choose their representatives through legal technicalities. He also said INEC's lack of independence, weak electoral laws and difficult rules of evidence are undermining elections.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Lagos takes 34% of states' N5.15trn IGR",
+   "s": "The 36 states and the FCT generated a record N5.15 trillion in internally generated revenue in 2025, up 40.93 per cent from N3.65 trillion in 2024, according to the National Bureau of Statistics. Taxes made up nearly three-quarters of the total. Lagos alone collected N1.77 trillion, about 34.4 per cent, ahead of Rivers and Enugu.",
+   "c": "economy",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    43
+   ],
+   "h": "Inquiry into mining suspects' deaths begins sittings",
+   "s": "The independent committee set up by Interior Minister Olubunmi Tunji-Ojo to investigate the deaths of 37 suspected illegal miners in Civil Defence custody in Niger State began its sittings, its secretary, Professor Isa Hayatu Chiroma, said in a statement.",
+   "c": "security",
+   "st": [
+    "Niger"
+   ]
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "Moniepoint agents to sell Dangote refinery shares",
+   "s": "Prospective investors can now buy Dangote Petroleum Refinery shares through participating Moniepoint agents 24 hours a day, bringing the IPO closer to millions of people who use agency banking but rarely access conventional investment channels. The minimum investment remains N5,250 for 10 shares, and buyers may subscribe more than once during the offer.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    16
+   ],
+   "h": "Kenya approves transfer of Access Bank Kenya to National Bank",
+   "s": "Kenya's central bank has cleared Access Bank (Kenya) to hand over its business, assets and liabilities to National Bank of Kenya; both lenders belong to Nigeria's Access Bank. The regulator approved the move on 17 August under the Banking Act, and the Treasury cabinet secretary signed off in September, reshaping the group's presence in Kenya.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    23
+   ],
+   "h": "Gambia orders banks to phase out foreign staff",
+   "s": "The Central Bank of The Gambia told commercial banks, including Nigerian-owned ones, to phase out foreign employees not covered by approved expatriate quotas by the end of 2026. The letter, dated 19 September and signed by second deputy governor Ousman Mendy, said an industry study found many banks employ foreigners.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "Solar mini-grid powers 13,000 residents in Kwara",
+   "s": "The federal government commissioned a 581kWp interconnected solar mini-grid in Oke-Oyi, Ilorin East, Kwara, giving about 13,000 residents and 23 businesses better supply. Delivered through the Rural Electrification Agency by Nayo Tropical Technologies, with German and EU support, it powers welders, grain mills, water producers and cold rooms.",
+   "c": "economy",
+   "st": [
+    "Kwara"
+   ]
+  },
+  {
+   "i": [
+    39
+   ],
+   "h": "Brazil, Germany, India and Japan back permanent African UN seat",
+   "s": "The foreign ministers of Brazil, Germany, India and Japan, the G4, backed a permanent African seat on the UN Security Council in a joint statement after meeting in New York, and called for urgent reform to reflect today's realities. Analysts noted that Nigeria's own bid for one of Africa's seats first needs enough support within the continent.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Joshua to fight Fury on 11 December",
+   "s": "Anthony Joshua and Tyson Fury will meet in an all-British heavyweight fight at Cardiff's Principality Stadium on 11 December, promoter Turki Alalshikh confirmed. The long-awaited bout, with an estimated combined purse of $200 million, will be streamed worldwide on Netflix.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    1,
+    13
+   ],
+   "h": "Super Eagles eye winning start against Madagascar",
+   "s": "The Super Eagles prepared to open their 2027 AFCON qualifying campaign against Madagascar in Uyo on Friday at 5pm, before travelling to Guinea-Bissau, with coach Eric Chelle seeking six points from the double-header. Presidential adviser Adeyinka Adeboye urged the team to avoid a shaky start; the tournament will be hosted by Kenya, Tanzania and Uganda.",
+   "c": "sports",
+   "st": []
+  }
+ ]
 }

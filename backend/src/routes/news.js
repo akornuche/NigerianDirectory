@@ -17,6 +17,7 @@
 const express = require('express');
 const { query, withTransaction } = require('../config/database');
 const { authenticate, requireAdmin } = require('../middleware/auth');
+const { buildMatcher, statePath } = require('../utils/newsLinks');
 
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const MONTH = /^\d{4}-\d{2}$/;
@@ -43,6 +44,29 @@ function groupByMonth(rows) {
         months[months.length - 1].days.push(day);
     }
     return months;
+}
+
+// Published records the stories can link to, rebuilt at most every ten minutes.
+let matcherCache = { at: 0, find: null };
+async function directoryMatcher() {
+    if (matcherCache.find && Date.now() - matcherCache.at < 10 * 60 * 1000) return matcherCache.find;
+    const r = await query(
+        `SELECT name, slug, state, city, area, institution_category FROM schools
+         WHERE verification_status IN ('verified')`
+    );
+    matcherCache = { at: Date.now(), find: buildMatcher(r.rows) };
+    return matcherCache.find;
+}
+
+/** Add directory links: institutions a story mentions, and its state pages. */
+async function withLinks(items) {
+    let find = () => [];
+    try { find = await directoryMatcher(); } catch { /* links are optional */ }
+    return items.map((i) => ({
+        ...i,
+        links: find(`${i.headline} ${i.summary}`),
+        state_links: (i.states || []).map((name) => ({ name, path: statePath(name) })),
+    }));
 }
 
 const publicRouter = express.Router();
@@ -119,7 +143,7 @@ publicRouter.get('/day/:date', async (req, res, next) => {
             day: ymd(day.rows[0].day),
             lead: day.rows[0].lead,
             published_at: day.rows[0].published_at,
-            items: items.rows,
+            items: await withLinks(items.rows),
             older: n.older ? ymd(n.older) : null,
             newer: n.newer ? ymd(n.newer) : null,
         });
