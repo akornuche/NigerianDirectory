@@ -365,7 +365,7 @@ export default async function HomePage() {
       {/* ── About ───────────────────────────────────────────────────── */}
       <section className="py-24 lg:py-32">
         <div className="shell grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-12">
-          <h2 className="text-5xl lg:col-span-4 lg:text-[3.25rem]">About Nigerian<wbr />Directory<wbr />.com</h2>
+          <h2 className="text-5xl lg:col-span-4 lg:text-[3.25rem]">About Nigerian Directory</h2>
           <div className="space-y-5 text-lg text-ink-2 lg:col-span-7 lg:col-start-6">
             <p>
               NigerianDirectory.com is a directory of institutions in Nigeria. Its first section covers
