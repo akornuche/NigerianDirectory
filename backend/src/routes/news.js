@@ -12,6 +12,7 @@
  *   PATCH  /:date                    edit the lead; publish or unpublish
  *   PATCH  /:date/items/:id          edit one story
  *   DELETE /:date/items/:id          drop one story; the rest are renumbered
+ *   POST   /bulk                     { action: publish|unpublish|delete, days: [YYYY-MM-DD] }
  */
 const express = require('express');
 const { query, withTransaction } = require('../config/database');
@@ -138,6 +139,44 @@ adminRouter.get('/', async (req, res, next) => {
              GROUP BY d.day ORDER BY d.day DESC`
         );
         res.json({ days: r.rows.map((x) => ({ ...x, day: ymd(x.day) })) });
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Act on several days at once from the review list. Publishing skips days
+// with no stories; deleting removes the days and their stories (cascade).
+adminRouter.post('/bulk', async (req, res, next) => {
+    try {
+        const { action } = req.body || {};
+        const days = Array.isArray(req.body?.days) ? [...new Set(req.body.days.map(String))] : [];
+        if (!['publish', 'unpublish', 'delete'].includes(action)) {
+            return res.status(400).json({ error: 'Action must be publish, unpublish or delete' });
+        }
+        if (!days.length || days.length > 400 || !days.every((d) => DATE.test(d))) {
+            return res.status(400).json({ error: 'Send between 1 and 400 days as YYYY-MM-DD' });
+        }
+        let r;
+        if (action === 'publish') {
+            r = await query(
+                `UPDATE news_days d SET status = 'published', published_at = COALESCE(d.published_at, NOW()),
+                        reviewed_by = $2, updated_at = NOW()
+                 WHERE d.day = ANY($1::date[]) AND d.status = 'draft'
+                   AND EXISTS (SELECT 1 FROM news_items i WHERE i.day = d.day)
+                 RETURNING d.day`,
+                [days, req.user.id]
+            );
+        } else if (action === 'unpublish') {
+            r = await query(
+                `UPDATE news_days SET status = 'draft', updated_at = NOW()
+                 WHERE day = ANY($1::date[]) AND status = 'published' RETURNING day`,
+                [days]
+            );
+        } else {
+            r = await query(`DELETE FROM news_days WHERE day = ANY($1::date[]) RETURNING day`, [days]);
+        }
+        const changed = r.rows.map((x) => ymd(x.day));
+        res.json({ action, requested: days.length, changed: changed.length, days: changed });
     } catch (error) {
         next(error);
     }

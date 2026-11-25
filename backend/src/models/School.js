@@ -390,6 +390,10 @@ class School {
                 COUNT(*) FILTER (WHERE claimed = true) as claimed_schools,
                 COUNT(*) FILTER (WHERE verified = true) as verified_schools,
                 COUNT(*) FILTER (WHERE needs_ai_enrichment = true) as needs_enrichment,
+                COUNT(*) FILTER (WHERE COALESCE(enriched_history, '') <> ''
+                                   AND COALESCE(enriched_academics, '') <> '') as with_content,
+                -- Counted, not filtered: admin totals include unpublished rows.
+                COUNT(*) FILTER (WHERE verification_status IN ('verified')) as published,
                 COUNT(DISTINCT state) as total_states,
                 COUNT(DISTINCT area) as total_areas
             FROM schools

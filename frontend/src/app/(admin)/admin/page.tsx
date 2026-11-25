@@ -17,6 +17,8 @@ interface Overview {
   schools: {
     total_schools: string;
     needs_enrichment: string;
+    with_content?: string;
+    published?: string;
     claimed_schools: string;
     verified_schools: string;
     total_states: string;
@@ -96,7 +98,11 @@ export default function AdminOverview() {
   if (!data) return null;
 
   const total      = parseInt(data.schools.total_schools) || 0;
-  const crawled    = total - (parseInt(data.schools.needs_enrichment) || 0);
+  // Records whose profile has at least the history and academics sections.
+  const crawled    = data.schools.with_content !== undefined
+    ? parseInt(data.schools.with_content) || 0
+    : total - (parseInt(data.schools.needs_enrichment) || 0);
+  const published  = parseInt(data.schools.published ?? '') || 0;
   const enrichPct  = total ? Math.round((crawled / total) * 100) : 0;
   const newMsgs    = parseInt(data.contact.new_count) || 0;
   const totalMsgs  = parseInt(data.contact.total) || 0;
@@ -122,7 +128,7 @@ export default function AdminOverview() {
         />
         <StatCard
           label="Content Coverage" value={`${enrichPct}%`}
-          sub={`${crawled} of ${total} enriched`}
+          sub={`${crawled} of ${total} with profiles`}
           icon={DocumentTextIcon} href="/admin/page-health" color="green"
         />
         <StatCard
@@ -145,9 +151,9 @@ export default function AdminOverview() {
         </h2>
         <div className="space-y-5">
           {[
-            { label: 'Schools with enriched content', value: crawled, total },
-            { label: 'Schools claimed by owners',     value: parseInt(data.schools.claimed_schools) || 0,  total },
-            { label: 'Schools verified',              value: parseInt(data.schools.verified_schools) || 0, total },
+            { label: 'Records with written profiles',             value: crawled, total },
+            { label: 'Published (verified against a source)',     value: published, total },
+            { label: 'Claimed by their institutions',             value: parseInt(data.schools.claimed_schools) || 0, total },
           ].map(row => {
             const pct = row.total ? Math.round((row.value / row.total) * 100) : 0;
             return (
