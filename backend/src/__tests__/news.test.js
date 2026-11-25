@@ -17,7 +17,8 @@ jest.mock('../config/database', () => ({
         if (/FROM news_days WHERE day = \$1 AND status = 'published'/.test(sql)) {
             return { rows: params[0] === '2026-09-01' ? [{ day: new Date('2026-09-01'), lead: 'Lead', published_at: null }] : [] };
         }
-        if (/SELECT rank, headline/.test(sql)) return { rows: [{ rank: 1, headline: 'H', summary: 'S', category: 'politics', states: [], sources: [] }] };
+        if (/SELECT rank, headline/.test(sql)) return { rows: [{ rank: 1, headline: 'UNILAG reopens', summary: 'S', category: 'education', states: ['Lagos'], sources: [] }] };
+        if (/FROM schools/.test(sql)) return { rows: [{ name: 'University of Lagos', slug: 'university-of-lagos', state: 'Lagos', city: 'Akoka', area: null, institution_category: 'university' }] };
         if (/AS older/.test(sql)) return { rows: [{ older: null, newer: new Date('2026-09-02') }] };
         if (/COUNT\(\*\)::int AS n FROM news_items/.test(sql)) return { rows: [{ n: params[0] === '2026-09-03' ? 0 : 5 }] };
         if (/^UPDATE news_days d SET status = 'published'/.test(sql)) return { rows: params[0].slice(0, 1).map((d) => ({ day: new Date(d) })) };
@@ -48,6 +49,8 @@ describe('public news', () => {
         expect(res.body.items).toHaveLength(1);
         expect(res.body.newer).toBe('2026-09-02');
         expect(mockQueries[0].sql).toContain("status = 'published'");
+        expect(res.body.items[0].links).toEqual([{ name: 'University of Lagos', path: '/education/universities/lagos/akoka/university-of-lagos/' }]);
+        expect(res.body.items[0].state_links).toEqual([{ name: 'Lagos', path: '/education/universities/lagos/' }]);
     });
 
     test('a draft or missing day is not found', async () => {

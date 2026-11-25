@@ -40,7 +40,7 @@ function ItemEditor({ date, item, categories, onChanged }: { date: string; item:
           {edit ? (
             <div className="space-y-2">
               <input className={field} value={draft.headline} onChange={(e) => setDraft({ ...draft, headline: e.target.value })} />
-              <textarea className={field} rows={4} value={draft.summary} onChange={(e) => setDraft({ ...draft, summary: e.target.value })} />
+              <textarea className={field} rows={6} value={draft.summary} onChange={(e) => setDraft({ ...draft, summary: e.target.value })} />
               <div className="flex gap-2">
                 <select className={field} value={draft.category} onChange={(e) => setDraft({ ...draft, category: e.target.value })}>
                   {categories.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -125,7 +125,7 @@ export default function NewsReviewDay() {
 
       <div className="mt-6 bg-white p-4">
         <label className="text-sm font-medium text-gray-700">The day in brief</label>
-        <textarea className={`${field} mt-1`} rows={4} value={lead} onChange={(e) => setLead(e.target.value)} />
+        <textarea className={`${field} mt-1`} rows={10} value={lead} onChange={(e) => setLead(e.target.value)} />
         <button onClick={() => patchDay({ lead }, 'Saved.')} className="mt-2 rounded bg-gray-900 px-3 py-1.5 text-sm text-white">Save summary</button>
       </div>
 

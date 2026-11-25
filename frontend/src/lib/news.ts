@@ -33,6 +33,9 @@ export interface NewsItem {
   category: string;
   states: string[];
   sources: NewsSource[];
+  /** Directory records the story mentions, and the pages of its states. */
+  links?: { name: string; path: string }[];
+  state_links?: { name: string; path: string }[];
 }
 
 export interface NewsDay {
