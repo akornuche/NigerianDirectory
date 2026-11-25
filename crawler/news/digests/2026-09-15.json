@@ -1,12 +1,12 @@
 {
- "lead": "Headline inflation eased slightly to 15.39 per cent in August and food inflation fell for the first time in six months. Police warned of terrorist plans to attack places of worship, schools and NYSC camps, and two newly deployed mobile police officers were killed in an ambush in Benue. The NDLEA arrested a Mexican linked to an Ebonyi methamphetamine lab, education unions rejected the suspension of a strike over King's College, and APC governors said they would back no arrangement that hurts President Tinubu's re-election.",
+ "lead": "Headline inflation eased slightly to 15.39 per cent in August, and food inflation fell for the first time in six months, to 19.57 per cent.\n\nThe day in brief: the statistics bureau said cheaper palm oil, pepper, onions, yam flour and beef drove the food slowdown. Police issued a nationwide alert over intelligence that terrorists planned coordinated attacks on places of worship, schools and NYSC orientation camps, and two newly deployed mobile police officers were ambushed and killed in Benue. The NDLEA said it had dismantled another methamphetamine laboratory in Ebonyi and arrested a Mexican kingpin at Lagos airport. The TUC suspended action over King's College, Lagos, but education ministry unions insisted the concession be reversed. APC governors said they would back no arrangement that hurts President Tinubu's re-election, as Nyesom Wike defended his Rainbow Coalition. Aliko Dangote blamed smuggling for high petrol prices, the ADC said Nigerians were near the limits of endurance with petrol at N1,470, and AGRA said 36.3 million Nigerians face crisis-level hunger, the most of 17 countries it tracks.",
  "items": [
   {
    "i": [
     7
    ],
    "h": "Inflation eases to 15.39%; food inflation falls to 19.57%",
-   "s": "Headline inflation slowed to 15.39 per cent in August from 15.43 per cent in July, and food inflation dropped to 19.57 per cent, its first fall in six months.",
+   "s": "The National Bureau of Statistics said headline inflation eased to 15.39 per cent in August from 15.43 per cent in July. Food inflation fell to 19.57 per cent from 20.31 per cent, its first decline in six months and well below the 25.30 per cent of August 2025, helped by lower average prices of palm oil, carrots, pepper, onions, cassava flour, beef and yam flour.",
    "c": "economy",
    "st": []
   },
@@ -15,7 +15,7 @@
     11
    ],
    "h": "Police warn of terrorist plans to attack churches, mosques, schools and NYSC camps",
-   "s": "The Nigeria Police Force issued a nationwide alert over intelligence that terrorists plan coordinated attacks on places of worship, schools and orientation camps.",
+   "s": "Police headquarters put commands across the country on alert. A signal from the Force operations department, dated 13 September, said intelligence showed terrorists gathering for possible simultaneous strikes on churches and mosques, schools, NYSC orientation camps and other soft targets.",
    "c": "security",
    "st": []
   },
@@ -24,7 +24,7 @@
     18
    ],
    "h": "Two newly deployed mobile police killed in Benue ambush",
-   "s": "Armed attackers ambushed and killed two mobile police officers recently deployed to Ayilamo in Logo Local Government Area.",
+   "s": "Two mobile police officers newly deployed to Ayilamo in Logo local government, Benue, were killed in an ambush at about 6pm on Monday while on their way to escort the divisional police officer back to the community from Makurdi.",
    "c": "security",
    "st": [
     "Benue"
@@ -35,7 +35,7 @@
     3
    ],
    "h": "NDLEA arrests Mexican linked to Ebonyi meth lab",
-   "s": "The NDLEA dismantled another industrial methamphetamine laboratory in Ebonyi and arrested a Mexican national accused of recruiting foreign experts for the network.",
+   "s": "The NDLEA said it dismantled another industrial-scale methamphetamine laboratory in Ebonyi and that Mexican kingpin Arturo Carrera Loaiza, arrested on 19 August while trying to leave through Lagos airport, is linked to it. The agency said he was part of a network recruiting foreign experts to set up clandestine drug labs in Nigeria.",
    "c": "security",
    "st": [
     "Ebonyi"
@@ -46,7 +46,7 @@
     6
    ],
    "h": "Education unions reject TUC's suspension of King's College strike",
-   "s": "The TUC told affiliates to suspend action over the concession of King's College, Lagos, after government assurances on workers, but education unions demanded the deal be reversed.",
+   "s": "The TUC suspended its industrial action over King's College, Lagos, after Education Minister Tunji Alausa assured that no staff member would be dismissed or victimised. But unions in the ministry's Joint Workers Council, led by Abraham Onuche, rejected the suspension at a protest in Abuja and insisted the concession must be reversed.",
    "c": "education",
    "st": [
     "Lagos"
@@ -58,7 +58,7 @@
     0
    ],
    "h": "APC governors reject any arrangement that undermines Tinubu",
-   "s": "The Progressives Governors Forum said members will not support alliances that weaken the President's re-election or APC candidates. A PDP faction warned the governors against undermining Wike.",
+   "s": "The Progressives Governors Forum said APC governors would neither join, support nor endorse any alliance that could undermine President Tinubu's re-election or harm the party's candidates in 2027. FCT Minister Nyesom Wike told Arise News the governors' position has no political basis, and a PDP faction warned them against undermining him.",
    "c": "politics",
    "st": []
   },
@@ -67,7 +67,7 @@
     8
    ],
    "h": "Dangote blames smuggling for high petrol prices",
-   "s": "Aliko Dangote said petrol smuggled to neighbouring countries, where it sells for more, is one reason prices remain high in Nigeria.",
+   "s": "Aliko Dangote told Arise TV that petrol prices remain high largely because the product is smuggled to neighbouring countries, where it sells for much more. His comments came after the refinery raised its gantry price and amid the crisis in the Middle East that has pushed up crude.",
    "c": "economy",
    "st": []
   },
@@ -76,7 +76,7 @@
     10
    ],
    "h": "ADC says Tinubu has turned petrol pumps into punishment",
-   "s": "With petrol at about N1,470 a litre, ADC spokesman Bolaji Abdullahi said Nigerians are near the limits of endurance.",
+   "s": "ADC spokesman Bolaji Abdullahi said that with petrol selling for as much as N1,470 a litre, President Tinubu had pushed Nigerians close to the limits of human endurance, making every journey dearer and pricing food, electricity and even basic education out of reach.",
    "c": "politics",
    "st": []
   },
@@ -85,7 +85,7 @@
     34
    ],
    "h": "AGRA says 36.3 million Nigerians face severe food insecurity",
-   "s": "The Alliance for a Green Revolution in Africa said Nigeria had the most people in crisis-level hunger or worse among 17 countries it tracked in August.",
+   "s": "AGRA's August Food Security Monitor said 36.3 million Nigerians, 16.7 per cent of the population, face crisis-level food insecurity or worse, the highest number among the 17 African countries it tracks. It cited conflict, insecurity and displacement among the drivers.",
    "c": "economy",
    "st": []
   },
@@ -95,7 +95,7 @@
     14
    ],
    "h": "Former northern governors form group to back Tinubu",
-   "s": "Simon Lalong, Ibrahim Geidam, Ibrahim Shekarau and Abubakar Badaru are among northern leaders mobilising for the President, and campaign chief Abdulaziz Yari said the North has no reason not to support him.",
+   "s": "Former governors Simon Lalong, Ibrahim Geidam, Ibrahim Shekarau and Abubakar Badaru are among northern leaders who concluded plans to unveil Arewa for Asiwaju, a platform to mobilise the North for President Tinubu's re-election. APC campaign director-general Abdulaziz Yari said the North has no reason not to support the President.",
    "c": "politics",
    "st": []
   },
@@ -104,7 +104,7 @@
     15
    ],
    "h": "Obi's office says academics' endorsement is a plan to rig",
-   "s": "Peter Obi's media office claimed the endorsement of Tinubu by over 600 northern lecturers is part of a plan to manipulate the 2027 election.",
+   "s": "Peter Obi's media office said the endorsement of President Tinubu by more than 600 lecturers from the 19 northern states and the FCT was “profoundly troubling” and part of a plan to rig the election. It asked INEC to bar pro-Tinubu academics from election duty and publish the names of prospective returning and collation officers.",
    "c": "politics",
    "st": []
   },
@@ -114,7 +114,7 @@
     37
    ],
    "h": "Obi asks UNN to release his records and responds on Anambra loans",
-   "s": "Peter Obi said he has nothing to hide and asked institutions to publish his academic records. He also responded to the Anambra finance commissioner's claim that loans from his tenure are still being repaid.",
+   "s": "Peter Obi said on X that he has no objection to the University of Nigeria, Nsukka, releasing his certificates and records, insisting he has nothing to hide, after a suit sought certified copies of his credentials. He also responded to the Anambra finance commissioner's claim that loans from his tenure are still being repaid.",
    "c": "politics",
    "st": [
     "Anambra"
@@ -125,7 +125,7 @@
     9
    ],
    "h": "DMO raises N748.6bn at September bond auction",
-   "s": "The Debt Management Office sold N748.64 billion of FGN bonds, with subscriptions down 13.5 per cent from August.",
+   "s": "The Debt Management Office sold N748.64 billion of FGN bonds at its September auction, which featured a new ten-year bond maturing in 2036 and a reopened issue. Bids totalled N1.49 trillion, down 13.5 per cent from N1.73 trillion in August.",
    "c": "economy",
    "st": []
   },
@@ -134,7 +134,7 @@
     23
    ],
    "h": "N728.97bn power sector bond closes",
-   "s": "Investment bank CardinalStone, which led the deal, said the second tranche of the power sector bond, worth N728.97 billion, has been fully closed.",
+   "s": "CardinalStone Partners, lead adviser and issuing house, announced the close of the N728.97 billion Series 2 Power Sector Bond, which takes the first phase of the government's programme to clear legacy power sector debts and improve liquidity to N1.23 trillion.",
    "c": "economy",
    "st": []
   },
@@ -143,7 +143,7 @@
     2
    ],
    "h": "NYSC Batch C orientation to start on 30 September",
-   "s": "The NYSC said the 2026 Batch C Stream One orientation course runs from 30 September.",
+   "s": "The NYSC said the 2026 Batch C Stream One orientation course will run from Wednesday, 30 September, to Tuesday, 20 October, with corps members sworn in on 2 October, its spokeswoman Caroline Embu said.",
    "c": "society",
    "st": []
   },
@@ -152,7 +152,7 @@
     20
    ],
    "h": "Sokoto shuts mosque where cleric was stabbed",
-   "s": "The state closed the Musa Lukuwa Juma'at Mosque in Mabera and set up a committee of Islamic scholars to investigate the attack.",
+   "s": "Sokoto shut the Musa Lukuwa Jumu'at Mosque in Mabera, in the state capital, after a fatal stabbing there, calling the building a crime scene. The government also named a panel of Islamic scholars to look into what lay behind the recent religious tension and recommend how to stop it happening again.",
    "c": "security",
    "st": [
     "Sokoto"
@@ -163,7 +163,7 @@
     29
    ],
    "h": "Nine passengers killed in Plateau bus attack",
-   "s": "Gunmen opened fire on a commercial bus in Kuru, Jos South, killing nine people; one passenger survived.",
+   "s": "Gunmen opened fire on a commercial bus at Dungus Junction in Kuru, Jos South, on Sunday when the driver stopped to drop five passengers, killing nine people. The conductor, Nasiru Garba, was the only survivor; the bus, heading to Jos, was left riddled with bullets.",
    "c": "security",
    "st": [
     "Plateau"
@@ -174,7 +174,7 @@
     51
    ],
    "h": "Ondo police arrest kidnappers collecting N1.5m ransom",
-   "s": "Police arrested suspects as they collected a N1.5 million ransom and rescued the victims.",
+   "s": "Ondo police said they arrested suspected kidnappers as they collected a N1.5 million ransom, in an intelligence-led operation that also freed their victims.",
    "c": "security",
    "st": [
     "Ondo"
@@ -185,7 +185,7 @@
     32
    ],
    "h": "Mining marshals uncover illegal gold mine in Abuja",
-   "s": "Civil Defence officers on mining enforcement duty said they found a gold site in the Federal Capital Territory being worked without authorisation.",
+   "s": "NSCDC Mining Marshals arrested two suspects over an illegal gold mining operation in Gwagwalada Area Council of the FCT, acting on intelligence and a petition that unlawful mining was taking place within the coordinates of a valid exploration licence.",
    "c": "security",
    "st": [
     "FCT"
@@ -196,7 +196,7 @@
     19
    ],
    "h": "Shettima returns from BRICS summit",
-   "s": "The Vice President returned to Nigeria after representing President Tinubu at the summit in New Delhi.",
+   "s": "Vice President Kashim Shettima returned to Abuja on Tuesday after representing President Tinubu at the 18th BRICS summit in New Delhi, where he took part in high-level sessions and met Indian Prime Minister Narendra Modi.",
    "c": "world",
    "st": []
   },
@@ -206,7 +206,7 @@
     33
    ],
    "h": "Tinubu welcomes Coca-Cola's planned $1bn investment",
-   "s": "The President said the Coca-Cola system's planned investment shows confidence in Nigeria, as Nigerian Bottling Company marked 75 years in the country.",
+   "s": "At the Nigerian Bottling Company's 75th anniversary event in Abuja, President Tinubu welcomed the Coca-Cola system's planned $1 billion investment in Nigeria over five years, which follows $1.5 billion in the previous decade, as a vote of confidence and said his government is making the business environment more predictable.",
    "c": "business",
    "st": []
   },
@@ -217,7 +217,7 @@
     13
    ],
    "h": "Minister hails Dangote IPO as market opens week higher",
-   "s": "The trade ministry called the refinery's share sale a milestone for investment, and the NGX All-Share Index rose 0.10 per cent on the first day of the offer.",
+   "s": "Trade Minister Jumoke Oduwole said the Dangote refinery IPO shows how regulatory reforms can improve access to capital for productive investment. On the first day of the offer the All-Share Index rose 0.10 per cent to 243,299.24 and market capitalisation reached N157.75 trillion.",
    "c": "business",
    "st": []
   },
@@ -226,7 +226,7 @@
     21
    ],
    "h": "Zulum backs Tax Ombud regional office in Maiduguri",
-   "s": "Borno Governor Babagana Zulum said he will support a North-East office of the Tax Ombud.",
+   "s": "Borno was designated the North-East headquarters of the Office of the Tax Ombud, and Governor Babagana Zulum promised to support the regional office in Maiduguri when he received a delegation led by Tax Ombud John Nwabueze.",
    "c": "economy",
    "st": [
     "Borno"
@@ -237,7 +237,7 @@
     40
    ],
    "h": "PenCom extends verification as only 21% of civil servants enrol",
-   "s": "The pension commission extended its one-time verification deadline for federal employees after low turnout.",
+   "s": "PenCom extended the deadline for its mandatory online verification of federal employees with accrued pension rights from 31 July to 31 December 2026, after only about 21 per cent of an estimated 150,000 eligible workers had enrolled.",
    "c": "economy",
    "st": []
   },
@@ -246,7 +246,7 @@
     41
    ],
    "h": "FG commits N10.5bn to train 32,000 in digital skills",
-   "s": "The government enlisted Yaba College of Technology for its Digital Training Academy, targeting more than 32,000 young people.",
+   "s": "Education Minister Tunji Alausa launched the N10.5 billion Digital Training Academy in Abuja to equip more than 32,000 young Nigerians with globally relevant digital skills, and Yaba College of Technology joined the programme.",
    "c": "education",
    "st": [
     "Lagos"
@@ -257,7 +257,7 @@
     24
    ],
    "h": "Atiku camp predicts wins in 19 northern states",
-   "s": "Campaign spokesman Kenneth Okonkwo said Atiku Abubakar will carry all northern states and three in the South-West.",
+   "s": "Kenneth Okonkwo, spokesman for Atiku Abubakar's campaign, told AIT's Democracy Today that the ADC candidate will win all 19 northern states and three in the South-West in the 2027 presidential election.",
    "c": "politics",
    "st": []
   },
@@ -266,7 +266,7 @@
     43
    ],
    "h": "APM tells supporters to guard Makinde's votes",
-   "s": "The Allied Peoples Movement urged Nigerians to resist attempts to deny its candidate victory.",
+   "s": "The Allied Peoples Movement urged Nigerians to stay vigilant and resist any attempt to deny its candidate, Oyo Governor Seyi Makinde, victory, saying his popularity among young people is a sign the party will win, spokesman Abubakar Yusuf said.",
    "c": "politics",
    "st": []
   },
@@ -275,7 +275,7 @@
     4
    ],
    "h": "Radda and Inuwa reunite in Katsina APC",
-   "s": "Governor Dikko Radda and former SSG Mustapha Inuwa reconciled and called for party unity.",
+   "s": "Former Katsina SSG Mustapha Inuwa returned to the APC after four years of criticising Governor Dikko Radda's administration, at a reception in his honour at Capital Hall, Katsina, and both men called for party unity.",
    "c": "politics",
    "st": [
     "Katsina"
@@ -286,7 +286,7 @@
     16
    ],
    "h": "Barau tells Kano North council to deliver all seats",
-   "s": "Deputy Senate President Barau Jibrin urged the campaign council to win every contest for the APC.",
+   "s": "Deputy Senate President Barau Jibrin inaugurated the APC's Kano North campaign council and told it to mobilise voters across the 13 local governments for victory “from top to bottom”, adopting “APC SAK” as the slogan.",
    "c": "politics",
    "st": [
     "Kano"
@@ -297,7 +297,7 @@
     27
    ],
    "h": "Ex-minister says Eno instigated EFCC probe of Udom Emmanuel",
-   "s": "John Akpanudoedehe made the claim, which the Akwa Ibom government called false.",
+   "s": "John Akpanudoedehe, the ADC's Akwa Ibom governorship candidate and a former minister, alleged that Governor Umo Eno instigated the EFCC's actions against his predecessor Udom Emmanuel and officials of his administration. The state government called the claim false and provocative.",
    "c": "politics",
    "st": [
     "Akwa Ibom"
@@ -308,7 +308,7 @@
     50
    ],
    "h": "Disputes threaten ADC in Jigawa",
-   "s": "Candidate Sabo Nakudu and chieftain Bashir Jumbo clashed over power sharing and candidate substitution.",
+   "s": "Disputes threatened the ADC in Jigawa as governorship candidate Sabo Nakudu and party chieftain Bashir Jumbo clashed publicly over power sharing and candidate substitution, complicating the party's uphill battle against the ruling APC.",
    "c": "politics",
    "st": [
     "Jigawa"
@@ -319,7 +319,7 @@
     47
    ],
    "h": "Six parties contest Kano Assembly by-election",
-   "s": "INEC said six parties will field candidates in Saturday's Dawakin Kudu by-election.",
+   "s": "INEC's resident electoral commissioner in Kano, Abdu Zango, said six parties will contest Saturday's Dawakin Kudu state assembly by-election, after a meeting of the inter-agency committee on election security.",
    "c": "politics",
    "st": [
     "Kano"
@@ -330,7 +330,7 @@
     44
    ],
    "h": "Benin-Asaba road concessionaire promises faster work",
-   "s": "The concession company asked motorists for patience as it prepares to speed up work on the 125km highway after the rains.",
+   "s": "The Benin-Asaba Expressway Concession Company asked motorists and communities along the 125km road for patience, saying construction will speed up after the rainy season. Chief executive Samuel Daramola said persistent rain had made work difficult.",
    "c": "economy",
    "st": [
     "Edo",
@@ -342,7 +342,7 @@
     22
    ],
    "h": "Cally Air to expand fleet into 2027",
-   "s": "The airline will take delivery of a CRJ aircraft this month as part of a phased expansion.",
+   "s": "Cally Air will take delivery of a CRJ aircraft, registered 5N-CRF, this September as part of a phased fleet expansion running into early 2027, adding capacity and flexibility across its network.",
    "c": "business",
    "st": []
   },
@@ -351,7 +351,7 @@
     46
    ],
    "h": "Nigeria resumes CAF A-licence coaching course after nine years",
-   "s": "Twenty-five top-flight coaches began training in Abuja.",
+   "s": "Twenty-five top-flight coaches began a two-module CAF A-licence course in Abuja on Monday, the first time Nigeria has hosted the course in nine years, marking its return to the CAF A-licence convention.",
    "c": "sports",
    "st": [
     "FCT"
@@ -362,7 +362,7 @@
     39
    ],
    "h": "Nairobi to host 2029 World Athletics Championships",
-   "s": "It will be the first African city to stage the event, World Athletics said.",
+   "s": "World Athletics confirmed at a council meeting in Budapest that Nairobi will host the 2029 World Championships, the first African city to do so, with Munich awarded 2031. Nairobi had previously bid unsuccessfully for 2025.",
    "c": "sports",
    "st": []
   }

@@ -1,45 +1,396 @@
 {
-"lead": "Benue police said 46 people were arrested over the attack on Peter Obi's convoy, and Obi said he would keep the floating naira if elected. Students will get 100MB of free daily data for learning sites from 1 October, and NERC told distribution companies to put most of their operating funds into investment from 2027. The Falconets drew 0-0 with China, and the cash transfer office rejected the Auditor-General's finding on N33.75 billion.",
-"items": [
-{"i": [15], "h": "Police arrest 46 over attack on Obi's convoy in Benue", "s": "Benue police said 46 people were arrested in connection with the attack and blockade of Peter Obi's convoy on the Gboko-Makurdi road.", "c": "security", "st": ["Benue"]},
-{"i": [3, 50], "h": "Obi says he would keep the floating naira", "s": "Peter Obi named the floating of the naira as the one Tinubu policy he would retain, saying he would raise productivity to strengthen the currency. He described 2027 as a contest between Nigerians and the APC government.", "c": "politics", "st": []},
-{"i": [11], "h": "Students to get 100MB free data daily from 1 October", "s": "The Federal Government said students will receive 100MB of free data each day to reach selected educational websites and learning platforms from 1 October 2026.", "c": "education", "st": []},
-{"i": [29], "h": "NERC orders DisCos to put 60% of operating funds into investment", "s": "From 2027, electricity distribution companies must allocate up to 60 per cent of their non-administrative operating expenditure to capital projects, the regulator said.", "c": "economy", "st": []},
-{"i": [25], "h": "Cash transfer office rejects audit claim over N33.75bn", "s": "The National Cash Transfer Office denied the Auditor-General's finding that it lacked evidence the N33.75 billion in transfers reached beneficiaries, and said it had presented proof.", "c": "politics", "st": []},
-{"i": [2], "h": "Falconets hold China to goalless draw", "s": "Nigeria's under-20 women drew 0-0 with China in Group F, keeping alive slim hopes of reaching the World Cup knockout stage.", "c": "sports", "st": []},
-{"i": [0], "h": "Tinubu says he has kept his promises to national teams", "s": "President Tinubu said he has fulfilled pledges made to the Super Eagles, Super Falcons and D'Tigress after their performances in recent competitions.", "c": "sports", "st": []},
-{"i": [4, 55], "h": "Dangote says IPO will make fuel buyers refinery shareholders", "s": "Aliko Dangote said the share sale is designed so ordinary Nigerians can own part of the refinery. The independent marketers' association backed the IPO and asked for wider direct petrol allocation.", "c": "business", "st": []},
-{"i": [9], "h": "HURIWA condemns killing of Kano social media commentator", "s": "The Human Rights Writers Association condemned the reported killing of Kano political commentator Ibrahim Khalil Dan Shagamu, who had raised alarm over death threats.", "c": "security", "st": ["Kano"]},
-{"i": [8], "h": "NAICOM denies N100bn recapitalisation fraud claim", "s": "The insurance regulator dismissed a report alleging a N100 billion fraud in its recapitalisation exercise and the EFCC detention of its officials.", "c": "business", "st": []},
-{"i": [18], "h": "Police arrest woman over fake OPay shutdown document", "s": "The National Cybercrime Centre arrested 27-year-old Hafsat Abubakar over a forged document falsely claiming OPay was shutting down.", "c": "security", "st": []},
-{"i": [17], "h": "INEC plans polling centres for displaced people in Plateau", "s": "INEC will set up voting centres for internally displaced persons in nine local government areas of Plateau for 2027.", "c": "politics", "st": ["Plateau"]},
-{"i": [52], "h": "Court orders INEC to approve NDC's new logo", "s": "A court directed INEC to approve and upload the Nigeria Democratic Congress's modified logo for all elections.", "c": "politics", "st": []},
-{"i": [46, 51], "h": "Police and ADC supporters clash in Kaduna as campaigns begin", "s": "The ADC said its members were attacked during a walk in Kaduna and accused the APC government of deploying thugs. Police cited traffic and security concerns.", "c": "politics", "st": ["Kaduna"]},
-{"i": [16, 42], "h": "Atiku questions new borrowing and says higher allocations have not helped", "s": "Atiku Abubakar criticised a proposed Vienna-listed bond, and said larger FAAC allocations have brought more naira with less value and rising debt.", "c": "politics", "st": []},
-{"i": [24], "h": "Titi Abubakar says nothing is working under Tinubu", "s": "Atiku Abubakar's wife Titi said she wonders how Nigerians are feeding given the cost of living.", "c": "politics", "st": []},
-{"i": [22], "h": "Alake says Nigeria needs Tinubu beyond 2027", "s": "Solid Minerals Minister Dele Alake, a campaign spokesman, said the President's reforms need continuity.", "c": "politics", "st": []},
-{"i": [54], "h": "Yari says APC will campaign on Tinubu's record", "s": "APC campaign director-general Abdulaziz Yari said the 2027 campaign will rest on performance rather than new promises or personal attacks.", "c": "politics", "st": []},
-{"i": [23], "h": "SDP targets presidency and 28 states", "s": "The Social Democratic Party activated its structures nationwide at its convention in Abuja.", "c": "politics", "st": []},
-{"i": [21], "h": "PDP launches Ogun governorship campaign in the rain", "s": "Supporters of PDP candidate Oladipupo Adebutu filled Abeokuta despite heavy rain as the party opened its campaign.", "c": "politics", "st": ["Ogun"]},
-{"i": [47], "h": "Ogun APC aspirant rejects primary that picked Adeola", "s": "Governorship aspirant Abayomi Hunye said the primary won by Senator Solomon Adeola was unfair and cannot stand.", "c": "politics", "st": ["Ogun"]},
-{"i": [14], "h": "Charismatic bishops back Tinubu's second term", "s": "The Charismatic Bishops Conference of Nigeria pledged support for President Tinubu's 2027 bid.", "c": "politics", "st": []},
-{"i": [45], "h": "Sokoto police warn parties over electoral violence", "s": "Sokoto police commissioner Hayatu Shafa said party leaders will be held accountable for breaches of the peace by their supporters.", "c": "security", "st": ["Sokoto"]},
-{"i": [31], "h": "Lawyer warns of rising political intolerance", "s": "Human rights lawyer Monday Ubani warned politicians against threats and intimidation ahead of 2027.", "c": "politics", "st": []},
-{"i": [5], "h": "Ondo investigates deaths of 24 after local drinks", "s": "The Ondo government opened an investigation into the deaths of at least 24 people in Odigbo who reportedly drank locally brewed drinks.", "c": "health", "st": ["Ondo"]},
-{"i": [28], "h": "Floods sweep away children in Abuja and Abia", "s": "Divers joined the search for 13-year-old Alhassan Jamil, swept away by floodwater in Gwagwalada, while a girl was also lost to flooding in Abia.", "c": "environment", "st": ["FCT", "Abia"]},
-{"i": [7], "h": "Lagos electricity regulator licenses Elektron Energy to generate power", "s": "The Lagos State Electricity Regulatory Commission issued Elektron Energy a licence to generate electricity in the state.", "c": "economy", "st": ["Lagos"]},
-{"i": [33], "h": "Nigeria seeks Chinese partners to speed up power projects", "s": "The government is expanding partnerships with Chinese firms and lenders to deliver Presidential Power Initiative projects faster.", "c": "economy", "st": []},
-{"i": [36], "h": "Committee formed to roll out electric buses for civil servants", "s": "The Head of the Civil Service inaugurated a nine-member committee for a pilot mass transit bus scheme for federal workers.", "c": "economy", "st": ["FCT"]},
-{"i": [44], "h": "NCC moves to block unregistered SIM devices", "s": "The Nigerian Communications Commission began stepping up enforcement of type approval rules to keep unapproved SIM-enabled devices off networks.", "c": "technology", "st": []},
-{"i": [39], "h": "NFIU launches anti-money-laundering partnership with banks and fintechs", "s": "The Nigerian Financial Intelligence Unit asked financial firms to share intelligence under a new public-private framework.", "c": "economy", "st": []},
-{"i": [49], "h": "Commodity exchange launches price guarantee for 500,000 farmers", "s": "The Nigerian Commodity Exchange, Bank of Agriculture and farmers' association started a guaranteed minimum price programme.", "c": "economy", "st": []},
-{"i": [13], "h": "EU and EIB invest €108m in African entrepreneurs", "s": "The EU and European Investment Bank mobilised over €500 million for African businesses, with Nigeria a major beneficiary.", "c": "business", "st": []},
-{"i": [30], "h": "FRSC launches campaign against vehicle overloading", "s": "The Federal Road Safety Corps launched a national movement for safe loading at a policy dialogue in Abuja.", "c": "society", "st": []},
-{"i": [32], "h": "Bauchi governor orders faster work on erosion project", "s": "Governor Bala Mohammed told the contractor on a 15.2km ACReSAL flood and erosion project to add equipment and staff.", "c": "environment", "st": ["Bauchi"]},
-{"i": [53], "h": "Kano police arrest fake officer over recruitment fraud", "s": "Kano police arrested 35-year-old Adamu Musa for allegedly posing as a chief superintendent and defrauding people.", "c": "security", "st": ["Kano"]},
-{"i": [38], "h": "Mastercard and Busha simplify crypto transfers in Nigeria", "s": "Busha users can now send and receive supported digital assets using an email or phone number through Mastercard Crypto Credential.", "c": "technology", "st": []},
-{"i": [12], "h": "Trump promises $5,000 to Americans if Republicans keep Congress", "s": "US President Donald Trump pledged a $5,000 payment to every adult if his party retains control in November.", "c": "world", "st": []},
-{"i": [40], "h": "Algeria cuts ties with the UAE", "s": "Algeria severed diplomatic relations with the United Arab Emirates over actions it called hostile.", "c": "world", "st": []},
-{"i": [41], "h": "Canada lets foreign workers study without permits", "s": "Eligible foreign workers in Canada may now take courses of up to six months without a study permit.", "c": "world", "st": []}
-]
+ "lead": "Benue police said 46 people had been arrested over the blockade and stoning of Peter Obi's convoy on the Gboko-Makurdi road, an attack that stopped him reaching Yelwata, and Obi said he would keep the floating naira if elected.\n\nThe day in brief: the NDC candidate called 2027 a contest between Nigerians and the APC government rather than between parties. The government said students will get 100MB of free daily data for approved learning sites from 1 October, and NERC told distribution companies to put up to 60 per cent of their operating funds into network investment from February 2027. The cash transfer office rejected the Auditor-General's finding over N33.75 billion in payments, and NAICOM denied a report of a N100 billion recapitalisation fraud. Deaths linked to local drinks in Odigbo, Ondo, reached at least 24, and floods swept away children in Gwagwalada and Abia. Political violence dominated the campaign's opening days, with clashes in Kaduna and the killing of a Kano social media commentator. In Poland, the Falconets held China to a goalless draw.",
+ "items": [
+  {
+   "i": [
+    15
+   ],
+   "h": "Police arrest 46 over attack on Obi's convoy in Benue",
+   "s": "Benue Police Commissioner Cletus Nwadiogbu said 46 people were arrested, acting on intelligence, over Tuesday's attack on Peter Obi's convoy, when stick-wielding youths blocked the Gboko-Makurdi road and threw stones. The blockade stopped the NDC presidential candidate from reaching Yelwata in Guma, where he planned to console victims of the June 2025 massacre.",
+   "c": "security",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    3,
+    50
+   ],
+   "h": "Obi says he would keep the floating naira",
+   "s": "In an interview on Arise TV, Peter Obi said the floating of the naira is the one Tinubu policy he would keep, and that he would strengthen the currency by raising productivity. He said 2027 would be a contest between Nigerians and the APC government, not between parties, unlike 2023, when people trusted INEC.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Students to get 100MB free data daily from 1 October",
+   "s": "From 1 October, students, starting with those in public senior secondary schools, will get 100MB of free data a day to use approved educational websites and learning platforms, under a scheme developed by the NCC with telecom operators and the education ministry.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "NERC orders DisCos to put 60% of operating funds into investment",
+   "s": "In an order signed by chairman Musiliu Oseni, NERC directed distribution companies to transfer at least 60 per cent of their earned non-administrative operating expenditure to their capital expenditure accounts from February 2027, to speed up network upgrades and make sure revenue is invested in improving supply.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "Cash transfer office rejects audit claim over N33.75bn",
+   "s": "The National Cash Transfer Office rejected the Auditor-General's finding that the government failed to show N33.75 billion in 2023 electronic cash transfers reached genuine beneficiaries. It said the payments went to identified people through established electronic systems and that an audit query does not by itself prove money was stolen or lost.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "Falconets hold China to goalless draw",
+   "s": "The Falconets held China to a goalless draw in Group F of the FIFA U20 Women's World Cup at Sosnowiec, keeping alive their hopes of reaching the knockout stage after an opening defeat by Spain. They needed a big result in their final group game.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "Tinubu says he has kept his promises to national teams",
+   "s": "President Tinubu said he has redeemed his promises to the Super Eagles, the Super Falcons, winners of a tenth WAFCON title, and D'Tigress. The National Sports Commission confirmed that each D'Tigress player received the naira equivalent of $100,000, about N133 million, and officials $50,000, with the Super Falcons to be paid next month.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    4,
+    55
+   ],
+   "h": "Dangote says IPO will make fuel buyers refinery shareholders",
+   "s": "Aliko Dangote said the refinery's share sale is “for the people” and deliberately designed so ordinary Nigerians who have long spent heavily on fuel can become shareholders in the plant. The Independent Petroleum Marketers Association backed the IPO and asked for wider direct allocation of petrol to its members.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "HURIWA condemns killing of Kano social media commentator",
+   "s": "Ibrahim Khalil Dan Shagamu, 54, a Kano social media political commentator who had raised alarm over death threats, was found dead in the early hours of Wednesday after unknown men broke into his home in Gaida, Kumbotso. HURIWA's Emmanuel Onwubiko condemned the killing and warned that threats against outspoken Nigerians endanger the 2027 elections.",
+   "c": "security",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "NAICOM denies N100bn recapitalisation fraud claim",
+   "s": "NAICOM rejected a publication alleging a N100 billion fraud in the insurance recapitalisation exercise and the EFCC detention of its officials, saying the exercise followed the NIIRA law. It accused the promoters of NICON Insurance and Nigeria Reinsurance Corporation of sponsoring the false report.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    18
+   ],
+   "h": "Police arrest woman over fake OPay shutdown document",
+   "s": "The police National Cybercrime Centre arrested Hafsat Abubakar, 27, on 4 September after a forensic investigation into a forged document, circulated on social media, falsely claiming that fintech company OPay was shutting down and causing panic among its customers, spokesman Ani Iniedu said.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "INEC plans polling centres for displaced people in Plateau",
+   "s": "INEC will set up voting centres for internally displaced people in nine Plateau local governments hit by communal conflict, so that they can take part in the 2027 elections, resident electoral commissioner Samuel Egwu told party leaders and stakeholders in Jos.",
+   "c": "politics",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    52
+   ],
+   "h": "Court orders INEC to approve NDC's new logo",
+   "s": "A court ordered INEC to approve the Nigeria Democratic Congress's modified logo as its “official logo for all purposes as a political party including for all elections” conducted by the commission, and to upload it.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    46,
+    51
+   ],
+   "h": "Police and ADC supporters clash in Kaduna as campaigns begin",
+   "s": "ADC spokesman Bolaji Abdullahi condemned an attack on party members during a walk in Kaduna, warning that bringing thuggery into the 2027 process could have dangerous consequences, and alleged the APC-led government deployed security operatives and “hired thugs”. Police cited traffic and security concerns.",
+   "c": "politics",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    16,
+    42
+   ],
+   "h": "Atiku questions new borrowing and says higher allocations have not helped",
+   "s": "Atiku Abubakar called the proposed Vienna-listed bond another sign of a government with a growing appetite for borrowing that will not account for record revenues, subsidy savings and the windfall from higher oil prices. He said bigger FAAC allocations had brought more naira of less value, alongside rising debt.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    24
+   ],
+   "h": "Titi Abubakar says nothing is working under Tinubu",
+   "s": "Titi Abubakar, wife of the ADC candidate, told a town hall of the party's support groups in Abuja that she wonders how Nigerians are coping with the cost of living, and urged young people to mobilise at the grassroots for her husband, saying they would want him to stay beyond one term.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Alake says Nigeria needs Tinubu beyond 2027",
+   "s": "Solid Minerals Minister Dele Alake, lead spokesman of the APC campaign, said Nigeria needs President Tinubu beyond 2027 for the continuity of his reforms, and that the President put his re-election on the line by taking difficult measures to restructure a “badly damaged” economy.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    54
+   ],
+   "h": "Yari says APC will campaign on Tinubu's record",
+   "s": "After a closed-door meeting in Gusau with Zamfara Governor Dauda Lawal and traditional rulers, APC campaign director-general Abdulaziz Yari said the party's 2027 campaign will be driven by facts and performance rather than new promises or personal attacks.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    23
+   ],
+   "h": "SDP targets presidency and 28 states",
+   "s": "At a special national convention in Abuja, SDP chairman Sadiq Umar Abubakar Gombe said the party will contest the presidency, governorships in 28 states and legislative seats in 2027, and that it has activated its structures nationwide despite past obstacles.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    21
+   ],
+   "h": "PDP launches Ogun governorship campaign in the rain",
+   "s": "Thousands of PDP supporters defied heavy rain to fill the Ake Palace Pavilion in Abeokuta as the party launched the 2027 governorship campaign of its candidate, Ladi Adebutu, singing and waving flags bearing his image.",
+   "c": "politics",
+   "st": [
+    "Ogun"
+   ]
+  },
+  {
+   "i": [
+    47
+   ],
+   "h": "Ogun APC aspirant rejects primary that picked Adeola",
+   "s": "Ogun APC governorship aspirant Abayomi Hunye said the primary that produced Senator Solomon Adeola, known as Yayi, as candidate cannot stand because it lacked fairness and transparency, after he declared he was staying in the race and named a running mate.",
+   "c": "politics",
+   "st": [
+    "Ogun"
+   ]
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Charismatic bishops back Tinubu's second term",
+   "s": "The Charismatic Bishops Conference of Nigeria declared support for President Tinubu's second-term bid at the end of its 12th synod at the National Ecumenical Centre, Abuja, pledging prayers and advocacy. It also appealed for the release of IPOB leader Nnamdi Kanu.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "Sokoto police warn parties over electoral violence",
+   "s": "Sokoto Police Commissioner Hayatu Shafa warned party chairmen that leaders will be held responsible for any breach of the peace by their supporters, and cautioned against violence, hate speech and fake news that could undermine the credibility of the 2027 elections.",
+   "c": "security",
+   "st": [
+    "Sokoto"
+   ]
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "Lawyer warns of rising political intolerance",
+   "s": "Human rights lawyer Monday Ubani SAN warned politicians against rising threats, intimidation and intolerance ahead of 2027, saying the country must not descend into violence in the pursuit of power, as the blockade of Peter Obi's convoy in Benue raised fears of escalating political violence.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Ondo investigates deaths of 24 after local drinks",
+   "s": "At least 24 people died between 3 and 7 September in Odigbo town and Araromi-Obu, Ondo, after drinking a locally brewed herbal liquid, and others were in hospital. The state health ministry said preliminary findings linked the deaths to the drink and opened an investigation.",
+   "c": "health",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    28
+   ],
+   "h": "Floods sweep away children in Abuja and Abia",
+   "s": "Fishermen and divers joined the search for Alhassan Jamil, 13, a student of Ihyau El-Burhan Academy, Gwagwalada, swept away by floodwater at about 7.30am near a filling station while walking to school with his father. A girl was also lost to flooding in Abia.",
+   "c": "environment",
+   "st": [
+    "FCT",
+    "Abia"
+   ]
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "Lagos electricity regulator licenses Elektron Energy to generate power",
+   "s": "The Lagos State Electricity Regulatory Commission issued Elektron Energy a licence to generate electricity for its 40MW Victoria Island power project, moving it closer to commercial operation in December 2026, when it is due to give businesses dedicated supply.",
+   "c": "economy",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "Nigeria seeks Chinese partners to speed up power projects",
+   "s": "Power Minister Joseph Tegbe concluded meetings with leading Chinese power engineering firms and lenders, seeking to speed up Presidential Power Initiative projects and widen Chinese participation in generation, transmission and equipment manufacturing.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "Committee formed to roll out electric buses for civil servants",
+   "s": "Head of the Civil Service Olumuyiwa Enitan Abel inaugurated a nine-member committee to run the pilot phase of the Renewed Hope Mass Transit Bus Scheme, which will deploy electric buses to give federal civil servants affordable, safe transport.",
+   "c": "economy",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "NCC moves to block unregistered SIM devices",
+   "s": "The NCC began strengthening enforcement of its type-approval rules with a framework, backed by its Device Management System, that will check whether imported devices meet standards and prevent unregistered SIM-enabled devices from working on Nigerian networks.",
+   "c": "technology",
+   "st": []
+  },
+  {
+   "i": [
+    39
+   ],
+   "h": "NFIU launches anti-money-laundering partnership with banks and fintechs",
+   "s": "The Nigerian Financial Intelligence Unit asked banks, insurers, fintechs, virtual asset providers and technology firms to join a new public-private partnership to share intelligence against money laundering, terrorist financing and illicit financial flows.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    49
+   ],
+   "h": "Commodity exchange launches price guarantee for 500,000 farmers",
+   "s": "The Nigerian Commodity Exchange, the Bank of Agriculture and the All Farmers Association of Nigeria launched a guaranteed minimum price programme to protect up to 500,000 farmers from price swings and improve food security.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "EU and EIB invest €108m in African entrepreneurs",
+   "s": "EU ambassador Gautier Mignot said the EU and the European Investment Bank have invested €108 million in African businesses through Boost Africa, mobilising a further €400 million and supporting up to 15,000 jobs, with Nigeria a major beneficiary.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    30
+   ],
+   "h": "FRSC launches campaign against vehicle overloading",
+   "s": "The Federal Road Safety Corps launched a National Movement for Safe Loading and Safe Road Use at a policy dialogue in Abuja, calling on transport operators, cargo owners and regulators to end overloading, which it said threatens lives, roads and the economy.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    32
+   ],
+   "h": "Bauchi governor orders faster work on erosion project",
+   "s": "Bauchi Governor Bala Mohammed told the contractor on a 15.2km ACReSAL flood and erosion control project, only 7.2 per cent complete, to bring in more equipment and workers. He also commissioned a soil, water and plant science laboratory at the State College of Agriculture.",
+   "c": "environment",
+   "st": [
+    "Bauchi"
+   ]
+  },
+  {
+   "i": [
+    53
+   ],
+   "h": "Kano police arrest fake officer over recruitment fraud",
+   "s": "Kano police arrested Adamu Musa, 35, of Kureken Sani Quarters, for allegedly posing as a chief superintendent of police and defrauding people with promises of recruitment, after a report from the 52 Police Mobile Force base at Challawa on 1 September.",
+   "c": "security",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "Mastercard and Busha simplify crypto transfers in Nigeria",
+   "s": "Mastercard partnered with the exchange Busha so that eligible Nigerian users can send and receive supported digital assets using an email address or phone number, through Mastercard Crypto Credential, instead of error-prone blockchain addresses.",
+   "c": "technology",
+   "st": []
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Trump promises $5,000 to Americans if Republicans keep Congress",
+   "s": "US President Donald Trump told a Republican convention in Dallas that every adult American would receive $5,000 if his party keeps control of both chambers of Congress in the 3 November midterm elections.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    40
+   ],
+   "h": "Algeria cuts ties with the UAE",
+   "s": "Algeria cut diplomatic relations with the United Arab Emirates, accusing it of “provocative or hostile” actions despite repeated warnings, after years of tension between the two countries.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Canada lets foreign workers study without permits",
+   "s": "Canada introduced a temporary policy, effective 4 September, allowing foreign workers with valid work permits to take courses of up to six months without a separate study permit, or until their permits expire if sooner.",
+   "c": "world",
+   "st": []
+  }
+ ]
 }

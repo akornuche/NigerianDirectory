@@ -1,12 +1,12 @@
 {
- "lead": "The National Assembly suspended all legislative engagement with South Africa over renewed xenophobic attacks, as a Nigerian bishop was reported killed in Johannesburg. Suspected herdsmen killed four mobile policemen and eight villagers in Benue, ASUU threatened to resume its strike, and the Ondo death toll from a suspected poisoned drink rose to 30. Brent crude passed $107 and the Dangote refinery raised its petrol price to N1,350 a litre.",
+ "lead": "The National Assembly suspended all official engagement with South Africa's parliament over renewed xenophobic attacks, as a Nigerian bishop was reported murdered at his Johannesburg home.\n\nThe day in brief: lawmakers told committees and staff to boycott events hosted by South African authorities and demanded protection for Nigerians there. In Benue, attackers said to number more than 200 killed four mobile policemen and eight villagers in Ayilamo, Logo. ASUU warned it could resume its national strike without notice over unpaid salaries and the 2025 agreement, while Kaduna approved the deal for KASU lecturers. Deaths from a suspected poisoned local drink in Odigbo, Ondo, rose to about 30. Brent crude passed $107 for the first time since May on the Iran war, and the Dangote refinery raised petrol to N1,350 a litre. The EFCC and FBI moved to trace US health funds allegedly diverted, Vice President Shettima arrived in New Delhi for the BRICS summit, and the government began paying N18 billion owed to former Nigeria Airways workers. In Budapest, Tobi Amusan won silver in the 100m hurdles.",
  "items": [
   {
    "i": [
     0
    ],
    "h": "National Assembly suspends engagement with South Africa over xenophobia",
-   "s": "The National Assembly halted all official legislative contact with South Africa, including visits, conferences and parliamentary exchanges, over renewed xenophobic attacks on Nigerians and other Africans.",
+   "s": "After consultations between Senate and House leaders, the National Assembly suspended all official legislative engagement with South Africa, including visits, conferences, workshops and parliamentary exchanges, over renewed xenophobic attacks on Nigerians and other Africans. Lawmakers, committees and staff were told to boycott events hosted by South African authorities, and demanded protection for Nigerians and prosecution of attackers.",
    "c": "world",
    "st": []
   },
@@ -15,7 +15,7 @@
     21
    ],
    "h": "Nigerian bishop reported killed in Johannesburg",
-   "s": "The Nigerian Citizens Association South Africa said Bishop Taiwo Michael Fakunle, 58, was killed in Johannesburg.",
+   "s": "The Nigerian Citizens Association South Africa said Bishop Taiwo Michael Fakunle, 58, from Iye in Ilejemeje, Ekiti State, was killed at his home in Kensington, Johannesburg, on 4 September. Its president, Rev Frank Onyekwelu, said two unknown men attacked him.",
    "c": "world",
    "st": []
   },
@@ -24,7 +24,7 @@
     2
    ],
    "h": "Four mobile policemen and eight villagers killed in Benue attack",
-   "s": "Suspected armed herdsmen attacked Ayilamo in Logo Local Government Area, killing four mobile police officers and eight residents.",
+   "s": "Attackers said to number more than 200, believed to be armed herdsmen, entered Ayilamo in Tombo Ward, Logo, Benue, from the Taraba side on Friday morning, shooting residents and burning houses. Four mobile policemen and eight villagers were killed in the farming community, which has suffered repeated attacks.",
    "c": "security",
    "st": [
     "Benue"
@@ -35,7 +35,7 @@
     1
    ],
    "h": "ASUU threatens to resume strike without further notice",
-   "s": "The Academic Staff Union of Universities warned that it may restart its suspended national strike unless federal and state governments address unpaid salaries and the 2025 agreement.",
+   "s": "After an emergency NEC meeting, ASUU president Christopher Piwuna warned the union may resume its suspended national strike without further notice unless federal and state governments act on unpaid salaries, including three and a half months of the seven and a half months withheld, and the poor implementation of the 2025 agreement.",
    "c": "education",
    "st": []
   },
@@ -44,7 +44,7 @@
     30
    ],
    "h": "Ondo poisoned drink death toll rises to 30",
-   "s": "Thirty people have now died after drinking a suspected poisoned local alcohol in Odigbo, and about 50 others are in hospital.",
+   "s": "Deaths from a suspected poisoned locally made herbal-alcoholic drink known as “Monkey Tail” in Odigbo, Ondo, rose from 24 to between 27 and 30, with about 50 people in hospital. The council chairman banned the sale and consumption of locally made alcohol across the area.",
    "c": "health",
    "st": [
     "Ondo"
@@ -56,7 +56,7 @@
     36
    ],
    "h": "Dangote raises petrol to N1,350 as Brent tops $107",
-   "s": "The Dangote refinery increased its petrol gantry price by N85 to N1,350 a litre as Brent crude passed $107 a barrel for the first time since May.",
+   "s": "The Dangote refinery raised its petrol gantry price by N85, or 6.7 per cent, to N1,350 a litre, above the estimated N1,311 landing cost of imports, as Brent crude passed $107 a barrel for the first time since May. Prices rose as fighting in the Strait of Hormuz and the Red Sea intensified in the Iran war.",
    "c": "economy",
    "st": []
   },
@@ -65,7 +65,7 @@
     3
    ],
    "h": "EFCC and FBI probe alleged diversion of US-funded health programme money",
-   "s": "The EFCC said it will trace funds under US-supported HIV and tuberculosis programmes in Nigeria following allegations of mismanagement.",
+   "s": "The EFCC and the FBI began working together to investigate the alleged diversion and mismanagement of funds given to organisations under US-supported HIV and tuberculosis programmes in Nigeria, some of which were cancelled. The EFCC said it would trace how the money was used and who ultimately benefited.",
    "c": "health",
    "st": []
   },
@@ -74,7 +74,7 @@
     4
    ],
    "h": "Shettima represents Tinubu at BRICS summit in India",
-   "s": "Vice President Kashim Shettima arrived in New Delhi for the 18th BRICS Leaders' Summit as Nigeria seeks closer ties with the bloc.",
+   "s": "Vice President Kashim Shettima arrived in New Delhi to represent President Tinubu at the 18th BRICS Leaders' Summit. His spokesman Stanley Nkwocha said the trip aims to deepen bilateral relations and expand trade and investment with the bloc's members and partners.",
    "c": "world",
    "st": []
   },
@@ -83,7 +83,7 @@
     19
    ],
    "h": "Mob kills man who stabbed Sokoto cleric after Friday prayers",
-   "s": "Cleric Malam Musa Lukuwa was stabbed after Juma'at prayers in Sokoto, and his alleged attacker was beaten to death by a crowd.",
+   "s": "Tension gripped Sokoto after the cleric Malam Musa Lukuwa was stabbed in the neck at his mosque in Mabera immediately after leading Friday prayers, by a worshipper seated in the front rows. Witnesses said an angry crowd beat the alleged attacker, identified as Mai Barewa, to death.",
    "c": "security",
    "st": [
     "Sokoto"
@@ -94,7 +94,7 @@
     35
    ],
    "h": "Bandits raid Sokoto village as police open investigation",
-   "s": "Bandits attacked Girekau in Kebbe Local Government Area, with reports of killings and abductions, and police began an investigation.",
+   "s": "Bandits raided Girekau village in Kebbe local government, Sokoto, with reports of killings and abductions. Police spokesman Ahmed Rufai said the command had opened an investigation and sent more personnel to restore normalcy.",
    "c": "security",
    "st": [
     "Sokoto"
@@ -105,7 +105,7 @@
     55
    ],
    "h": "INEC rejects Obi's plan for parallel results collation",
-   "s": "INEC said only it can collate and announce election results, after Peter Obi proposed a parallel tally that the ADC endorsed.",
+   "s": "INEC reaffirmed that it alone has the legal authority to collate and announce election results, after Peter Obi proposed that the opposition track, transmit and tally results from polling units independently in 2027, a plan the ADC endorsed.",
    "c": "politics",
    "st": []
   },
@@ -114,7 +114,7 @@
     37
    ],
    "h": "Atiku says his subsidy plan shifts support to production",
-   "s": "Atiku Abubakar said the Presidency distorted the Dangote refinery's concerns to discredit his proposal, which he said would subsidise production rather than imports.",
+   "s": "Atiku Abubakar accused the Presidency of deliberately distorting the Dangote refinery's concerns to discredit his proposal, saying the refinery's warning against arbitrary pump price controls exposed the government's own argument. He said his plan would support local production rather than imports.",
    "c": "politics",
    "st": []
   },
@@ -123,7 +123,7 @@
     40
    ],
    "h": "Audit says aviation ministry paid N522m for undelivered guns",
-   "s": "According to the Auditor-General's 2024 report, the Ministry of Aviation and Aerospace Development spent N522.49 million on weapons and ammunition that never arrived.",
+   "s": "The Auditor-General's 2024 report on internal control weaknesses said the Ministry of Aviation and Aerospace Development paid N522,490,349 for guns and ammunition, including AK rifles and red-dot sights, that were never delivered; N270 million of it was paid in two transactions.",
    "c": "politics",
    "st": []
   },
@@ -132,7 +132,7 @@
     50
    ],
    "h": "FG begins N18bn payment to former Nigeria Airways workers",
-   "s": "The government started paying N18 billion in severance benefits owed to 2,700 former staff of the defunct national airline.",
+   "s": "Finance Minister Taiwo Oyedele said the government has begun paying N18 billion in severance benefits to 2,700 former Nigeria Airways workers, ending a wait of more than two decades since the airline was liquidated in 2005. About 2,100 workers in the first seven batches have been paid.",
    "c": "economy",
    "st": []
   },
@@ -141,7 +141,7 @@
     7
    ],
    "h": "Immigration extends UK passport exercise to 3 October",
-   "s": "The Nigeria Immigration Service extended its special passport intervention in the United Kingdom after complaints of delays.",
+   "s": "The Nigeria Immigration Service extended its special passport exercise in the United Kingdom to 3 October because of high turnout. It processed 1,477 applicants at its London and Manchester centres in the first four days, and more than half of the passports have been produced and sent out.",
    "c": "society",
    "st": []
   },
@@ -150,7 +150,7 @@
     14
    ],
    "h": "Kaduna to implement ASUU pay deal at KASU from October",
-   "s": "Governor Uba Sani approved the 2025 FGN-ASUU salary agreement for Kaduna State University staff and urged lecturers to end their strike.",
+   "s": "Governor Uba Sani approved implementation of the 2025 FGN-ASUU salary agreement for Kaduna State University lecturers from October 2026, following a nine-member committee's report, Education Commissioner Abubakar Sani Sambo said, and urged the striking lecturers to return to work.",
    "c": "education",
    "st": [
     "Kaduna"
@@ -161,7 +161,7 @@
     15
    ],
    "h": "Police and ADC dispute tear-gassing of Kaduna rally",
-   "s": "ADC governorship candidate Mohammed Ashiru accused security operatives of attacking party members at a rally, which police disputed.",
+   "s": "ADC supporters were tear-gassed during a rally and solidarity walk for the party's Kaduna governorship candidate, Isa Ashiru, around Murtala Square and WAFF Road. Ashiru condemned what he called an attack on party members; police disputed the account.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -172,7 +172,7 @@
     12
    ],
    "h": "Dangote refinery buys 16m barrels of Nigerian crude for October",
-   "s": "Reuters reported, citing four sources, that the refinery bought at least 16 million barrels of local crude for October delivery.",
+   "s": "The Dangote refinery bought at least 16 million barrels of Nigerian crude for October delivery, about 520,000 barrels a day, from NNPC allocations and a tender, four industry sources told Reuters. The volume matches recent months and is well above last year's average.",
    "c": "economy",
    "st": []
   },
@@ -181,7 +181,7 @@
     27
    ],
    "h": "US delivers military equipment to Nigerian Air Force",
-   "s": "US Africa Command said it delivered equipment to the Nigerian Air Force to support counter-terrorism operations.",
+   "s": "US Africa Command said a US Air Force C-17 delivered military equipment to the Nigerian Air Force under a Foreign Military Sales agreement to strengthen counter-terrorism operations, weeks after Washington announced plans to withdraw troops from Nigeria.",
    "c": "security",
    "st": []
   },
@@ -190,7 +190,7 @@
     20
    ],
    "h": "Fire damages Idu train station in Abuja",
-   "s": "An electrical fault caused a fire at the Abuja-Kaduna line's Idu station; the Nigerian Railway Corporation said operations have resumed.",
+   "s": "Fire broke out in the low-voltage electrical room of the Idu train station in Abuja at about 8.30pm on 9 September. The Nigerian Railway Corporation said maintenance staff brought it under control, no one was hurt, and Abuja-Kaduna services were not affected.",
    "c": "society",
    "st": [
     "FCT"
@@ -201,7 +201,7 @@
     23
    ],
    "h": "Bosun Tijani withdraws from ITU deputy secretary-general race",
-   "s": "Communications Minister Bosun Tijani pulled out of the contest for the International Telecommunication Union post despite his nomination by the President.",
+   "s": "Communications Minister Bosun Tijani withdrew from consideration for deputy secretary-general of the International Telecommunication Union, four months after President Tinubu nominated him, saying he would stay to drive projects such as the planned 90,000km national fibre network.",
    "c": "technology",
    "st": []
   },
@@ -210,7 +210,7 @@
     18
    ],
    "h": "Air Peace chief says Tinubu will rescue aviation sector",
-   "s": "Allen Onyema said the President's intervention will address IATA's ranking of Nigeria as the hardest place to run an airline.",
+   "s": "Air Peace chairman Allen Onyema said IATA's description of Nigeria as the worst place in the world to set up an airline will change once President Tinubu is briefed on the causes, including the financial strain of the 5 per cent ticket sales charge.",
    "c": "business",
    "st": []
   },
@@ -219,7 +219,7 @@
     26
    ],
    "h": "NNPC opens smart fuel station in Abuja, plans 70 more",
-   "s": "NNPC Retail commissioned a smart filling station in the FCT, aims to open 70 more in six months, and said no jobs will be lost.",
+   "s": "NNPC Retail commissioned a 24-hour smart self-service station at the Nigeria Immigration Service headquarters in Abuja, with 180,000 litres of petrol storage, EV charging and LPG, and said it plans 50 to 70 more within six months without job losses.",
    "c": "business",
    "st": [
     "FCT"
@@ -230,7 +230,7 @@
     25
    ],
    "h": "CBN targets zero failed transactions by 2028",
-   "s": "The Central Bank wants a faster, more reliable payment system by 2028 but faces infrastructure problems, BusinessDay reported.",
+   "s": "The CBN's goal of eliminating failed electronic transactions by 2028 faces a basic obstacle: NCC data show telecom operators recorded 5,934 fibre-optic cable cuts in the first quarter of 2026, about 65 a day, or one every 22 minutes.",
    "c": "economy",
    "st": []
   },
@@ -239,7 +239,7 @@
     31
    ],
    "h": "D'Tigress players receive $100,000 each for AfroBasket title",
-   "s": "Each player received the naira equivalent of $100,000 under the presidential reward for winning the 2025 Women's AfroBasket.",
+   "s": "Each D'Tigress player received the naira equivalent of $100,000 under the presidential reward for winning the 2025 FIBA Women's AfroBasket, the National Sports Commission said, with accounts credited on 9 September. President Tinubu said on X that the promise had been fully redeemed.",
    "c": "sports",
    "st": []
   },
@@ -248,7 +248,7 @@
     49
    ],
    "h": "Amusan wins 100m hurdles silver in Budapest",
-   "s": "Tobi Amusan took silver at the first World Athletics Ultimate Championships in Budapest on Friday.",
+   "s": "Tobi Amusan won silver in the women's 100m hurdles at the inaugural World Athletics Ultimate Championship in Budapest, running 12.34 seconds behind American Olympic champion Masai Russell, who won in 12.22 to complete an unbeaten season.",
    "c": "sports",
    "st": []
   },
@@ -257,7 +257,7 @@
     28
    ],
    "h": "Reps spokesman clears Wike over loans",
-   "s": "House deputy spokesman Philip Agbese said FCT Minister Nyesom Wike did not take loans without National Assembly approval.",
+   "s": "House deputy spokesman Philip Agbese said FCT Minister Nyesom Wike did not take loans without National Assembly approval and called him one of the most legislatively compliant public servants, rejecting Senator Ireti Kingibe's claims on national television.",
    "c": "politics",
    "st": [
     "FCT"
@@ -268,7 +268,7 @@
     16
    ],
    "h": "FCT APC launches drive to end opposition's hold on Abuja",
-   "s": "The APC in the FCT began grassroots mobilisation to win the capital in the 2027 presidential poll.",
+   "s": "The APC in the FCT launched a grassroots drive to end the opposition's dominance of Abuja in presidential elections, relying on former AMAC chairman Micah Jiba, and chairman Ishaku Tanko Yamawo spoke at the unveiling of the Yari 774 Initiative for Asiwaju's FCT leadership.",
    "c": "politics",
    "st": [
     "FCT"
@@ -279,7 +279,7 @@
     10
    ],
    "h": "Former APC chieftain joins ADC in Gombe",
-   "s": "ADC governorship candidate Bala Tinka received Adamu Abdullahi Masad, a former APC leader, into the party.",
+   "s": "Gombe's ADC governorship candidate, Bala Bello Tinka, welcomed Adamu Abdullahi Masad, a former APC leader from Birin Bolawa Ward, into the party on Thursday, praising his long experience of grassroots organising and party work.",
    "c": "politics",
    "st": [
     "Gombe"
@@ -290,7 +290,7 @@
     29
    ],
    "h": "Buni sets up APC reconciliation committees in Yobe",
-   "s": "Governor Mai Mala Buni inaugurated committees for the three senatorial districts to settle internal disputes.",
+   "s": "Yobe Governor Mai Mala Buni inaugurated APC reconciliation committees for the state's three senatorial districts at the Government House in Damaturu, to settle disputes from recent congresses and primaries before 2027.",
    "c": "politics",
    "st": [
     "Yobe"
@@ -301,7 +301,7 @@
     39
    ],
    "h": "Uba Sani appoints three commissioners and 45 aides",
-   "s": "The Kaduna governor named three new commissioners, 45 aides and 40 board members.",
+   "s": "Kaduna Governor Uba Sani appointed three new commissioners, 45 aides and 40 board members, saying the appointments would speed up his administration's agenda and improve public service delivery, his spokesman Ibraheem Musa said.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -312,7 +312,7 @@
     22
    ],
    "h": "Anambra monarchs give Remi Tinubu chieftaincy title",
-   "s": "Traditional rulers from 179 communities conferred the title Ugo Eze Anambra on the First Lady.",
+   "s": "Traditional rulers representing Anambra's 179 communities conferred the title Ugo Eze Anambra on First Lady Remi Tinubu at Alex Ekwueme Square, Awka, during a one-day visit. Igwe Chidubem Iweka, chairman of the traditional rulers' council, presented it.",
    "c": "society",
    "st": [
     "Anambra"
@@ -323,7 +323,7 @@
     33
    ],
    "h": "Group petitions House over Ajaokuta iron ore lease",
-   "s": "A civil society group, Public Accountability and Transparency International, asked the House of Representatives to examine the sub-lease that hands National Iron Ore Mining Company operations to Premium Steel.",
+   "s": "Public Accountability and Transparency International petitioned the House of Representatives over the sub-lease giving Premium Steel and Mines control of National Iron Ore Mining Company operations at Itakpe, prompting the steel committee, chaired by Zainab Gimba, to open a preliminary inquiry.",
    "c": "economy",
    "st": [
     "Kogi"
@@ -335,7 +335,7 @@
     47
    ],
    "h": "Ogun and FG pay retirees' benefits",
-   "s": "Ogun released N6.75 billion to clear gratuities and pension arrears, while the federal government settled about N1.1 billion owed to 175 retired civil servants.",
+   "s": "Federal retirees who left treasury-funded agencies between January and August 2026 have received about N1.1 billion in extra exit payments, PenCom said, with 175 people paid under the government's exit benefit scheme. In Ogun, the state released N6.75 billion to settle gratuities and pension arrears.",
    "c": "economy",
    "st": [
     "Ogun"
@@ -346,7 +346,7 @@
     32
    ],
    "h": "Katsina launches $1m flood and drought project for farmers",
-   "s": "The 12-month project, run with Mercy Corps Nigeria, will protect vulnerable farming communities.",
+   "s": "Governor Dikko Radda launched a $1 million, 12-month project with Mercy Corps Nigeria to protect farming communities from recurring floods and drought, starting in Bindawa, Bakori and Kafur local governments.",
    "c": "environment",
    "st": [
     "Katsina"
@@ -357,7 +357,7 @@
     38
    ],
    "h": "Nigeria and Burkina Faso seek closer trade ties",
-   "s": "The two countries are working to expand trade, investment, transport and digital cooperation, Nigeria's ambassador said.",
+   "s": "Nigeria's ambassador to Burkina Faso, Syndoph Endoni, met leaders of the country's main employers' body, COGEF, in Ouagadougou, and both sides committed to expanding trade, investment, transport, manufacturing and digital cooperation led by the private sector.",
    "c": "world",
    "st": []
   },
@@ -367,7 +367,7 @@
     54
    ],
    "h": "Kebbi registers 3,257 for 2027 Hajj as Saudi plans reforms",
-   "s": "Kebbi's pilgrims agency remitted N21.5 billion in fares, and a minister backed Saudi Arabia's plan to shift 30 per cent of Nigeria's pilgrims to a new arrangement.",
+   "s": "Kebbi's pilgrims agency said it registered 3,257 intending pilgrims for the 2027 Hajj and remitted N21.5 billion in fares to NAHCON. FCT Minister of State Mariya Mahmoud backed Saudi Arabia's plan to move 30 per cent of Nigeria's quota to a business-to-business tour operator model.",
    "c": "society",
    "st": [
     "Kebbi"
@@ -378,7 +378,7 @@
     5
    ],
    "h": "Julius Berger and Lagos discuss infrastructure for $1trn economy",
-   "s": "Julius Berger and the Lagos government set out a shared vision on infrastructure and public-private investment at the firm's annual soirée.",
+   "s": "At the 2026 Julius Berger Luminary Soirée in Ikoyi, the construction firm and the Lagos government set out a shared vision for infrastructure, investment and public-private partnership to put Lagos on the path to a $1 trillion economy by 2052.",
    "c": "business",
    "st": [
     "Lagos"
@@ -389,7 +389,7 @@
     6
    ],
    "h": "UBA Foundation opens N41m essay competition",
-   "s": "The bank's foundation launched its 2026 national essay contest for secondary school students.",
+   "s": "The UBA Foundation opened its 16th annual National Essay Competition for senior secondary school students, with N41 million in educational grants and prizes for the top five winners.",
    "c": "education",
    "st": []
   }

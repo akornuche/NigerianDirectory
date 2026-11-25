@@ -1,5 +1,5 @@
 {
- "lead": "The Dangote refinery said Nigerians could join its share sale with as little as N5,250, and the listing was expected to push the stock exchange's value past N200 trillion. Bandits killed seven people in a Sokoto village and travellers were abducted on a Katsina highway, while Ondo's Amotekun said it uncovered a self-kidnapping plot. Nigeria escorted former Sierra Leone president Ernest Bai Koroma home, Peter Obi praised Seyi Makinde as fit to be president, and the Falconets lost their World Cup opener to Spain.",
+ "lead": "The Dangote refinery said Nigerians could join its share sale with as little as N5,250 for ten shares, and the listing of 4.1 billion shares was expected to lift the value of the Nigerian Exchange above N200 trillion.\n\nThe day in brief: Aliko Dangote announced the minimum at the IPO signing ceremony in Lagos. Bandits killed at least seven people and abducted 12 in Tofa village, Sokoto, and kidnapped nine travellers on the Funtua-Dandume highway, emptying 15 Katsina communities. Ondo's Amotekun paraded 53 suspects and said it had exposed a self-kidnapping plot. Former President Jonathan and Foreign Minister Bianca Odumegwu-Ojukwu escorted Sierra Leone's Ernest Bai Koroma home after more than two years in Nigeria. Peter Obi called Seyi Makinde qualified to be president at the opening of the APM campaign office. Banks raised dollar limits on naira cards as foreign exchange improved, and the trade surplus more than doubled to N12.6 trillion in the second quarter. In Poland, the Falconets lost their World Cup opener 2-0 to Spain, and Jigawa crowned a NITDA cybersecurity director as the 17th Emir of Gumel.",
  "items": [
   {
    "i": [
@@ -8,7 +8,7 @@
     53
    ],
    "h": "Dangote refinery sets N5,250 minimum for share sale",
-   "s": "Aliko Dangote said Nigerians can buy into the refinery's initial public offering with as little as N5,250. The sale of 4.1 billion shares is expected to lift the total value of the Nigerian Exchange above N200 trillion.",
+   "s": "At the IPO signing ceremony at Eko Hotel in Lagos on Monday, Aliko Dangote said investors can subscribe for a minimum of ten shares, worth N5,250. The sale of 4.1 billion shares in the 700,000-barrel-a-day refinery is expected to push the total market value of the Nigerian Exchange above N200 trillion.",
    "c": "business",
    "st": []
   },
@@ -17,7 +17,7 @@
     43
    ],
    "h": "Bandits kill seven and abduct 12 in Sokoto village",
-   "s": "Armed bandits raided Tofa village in Rabah Local Government Area at about 1am on Monday, killing at least seven people, abducting 12 and taking livestock.",
+   "s": "Armed bandits invaded Tofa village in Rabah local government, Sokoto, in large numbers at about 1am on Monday, firing sporadically, killing at least seven people, abducting 12 and rustling an undisclosed number of animals, a security source said.",
    "c": "security",
    "st": [
     "Sokoto"
@@ -28,7 +28,7 @@
     55
    ],
    "h": "Bandits abduct nine travellers as 15 Katsina villages empty",
-   "s": "Suspected bandits blocked the Funtua-Dandume highway on Sunday evening and kidnapped nine travellers. Residents have fled at least 15 communities in Dandume.",
+   "s": "Suspected bandits blocked the Funtua-Dandume highway at Hawan Fulani, between Ilela and Dandume, at about 6.30pm on Sunday and kidnapped nine travellers. Fresh attacks have forced residents to abandon at least 15 communities in Dandume, Katsina.",
    "c": "security",
    "st": [
     "Katsina"
@@ -39,7 +39,7 @@
     1
    ],
    "h": "Ondo Amotekun arrests 53 and uncovers self-kidnapping scheme",
-   "s": "Amotekun commander Adetunji Adeleye said the corps arrested 53 suspects and exposed a plan in Akure North in which people staged their own kidnapping and raised false alarms.",
+   "s": "Ondo's Amotekun commander Adetunji Adeleye paraded 53 suspects arrested for kidnapping, murder, cultism, robbery, rape and suspected illegal immigration, and said four people were held over a self-kidnapping plot and the spread of false alarms on social media in Akure North.",
    "c": "security",
    "st": [
     "Ondo"
@@ -50,7 +50,7 @@
     7
    ],
    "h": "Nigeria escorts former Sierra Leone president Koroma home",
-   "s": "Foreign Affairs Minister Bianca Odumegwu-Ojukwu accompanied Ernest Bai Koroma to Freetown after more than two years living in Nigeria.",
+   "s": "Former Sierra Leone president Ernest Bai Koroma returned to Freetown after more than two years in Nigeria, escorted by former Presidents Goodluck Jonathan and Olusegun Obasanjo and Foreign Minister Bianca Odumegwu-Ojukwu. Sierra Leone dropped the treason charges over the November 2023 attacks in Freetown that led him to leave in January 2024.",
    "c": "world",
    "st": []
   },
@@ -59,7 +59,7 @@
     4
    ],
    "h": "Obi says Makinde is qualified to be president",
-   "s": "NDC candidate Peter Obi said Oyo Governor Seyi Makinde, the APM's presidential candidate, is fit to lead Nigeria. He spoke at the opening of Makinde's campaign office.",
+   "s": "Peter Obi, the NDC's presidential candidate, attended the commissioning of the Makinde/Daura campaign headquarters of the APM in Wuse, Abuja, and called Oyo Governor Seyi Makinde qualified to be president, saying Nigeria needs a leader committed to unity and inclusion. His presence fuelled talk of a partnership between the parties.",
    "c": "politics",
    "st": [
     "Oyo"
@@ -70,7 +70,7 @@
     6
    ],
    "h": "Bauchi senator denies links to bandit kingpins",
-   "s": "Senator Shehu Buba of Bauchi South, the PRP's governorship candidate, rejected allegations and viral videos connecting him to bandit leaders.",
+   "s": "Senator Shehu Buba of Bauchi South, the PRP's governorship candidate and chairman of the Senate livestock committee, rejected allegations and viral videos linking him to bandit kingpins as fabricated and politically motivated, and said he has gone to court against those spreading them.",
    "c": "politics",
    "st": [
     "Bauchi"
@@ -81,7 +81,7 @@
     3
    ],
    "h": "Falconets lose U20 World Cup opener to Spain",
-   "s": "Spain scored twice to beat Nigeria's under-20 women in their first Group F match at the FIFA U20 Women's World Cup in Sosnowiec, Poland.",
+   "s": "The Falconets lost 2-0 to Spain in their first Group F match of the FIFA U20 Women's World Cup at the Arena Sosnowiec, Poland. Marisa Garcia opened the scoring and Alba Cerrato added a second in the 72nd minute.",
    "c": "sports",
    "st": []
   },
@@ -90,7 +90,7 @@
     11
    ],
    "h": "APC and PDP challenge Adeleke's Osun re-election at tribunal",
-   "s": "The Osun governorship election tribunal displayed petitions from the APC and PDP against the declared re-election of Governor Ademola Adeleke.",
+   "s": "The Osun governorship election tribunal displayed two petitions, filed in the names of the APC and the PDP, challenging the declared re-election of Governor Ademola Adeleke in the 15 August election, contrary to reports that no party had gone to court.",
    "c": "politics",
    "st": [
     "Osun"
@@ -101,7 +101,7 @@
     18
    ],
    "h": "El-Rufai's family gives defence minister seven days to retract comments",
-   "s": "Former Kaduna governor Nasir El-Rufai's family demanded that Defence Minister Christopher Musa withdraw his remarks about violence under El-Rufai's government. A Kaduna governance group backed the minister.",
+   "s": "Nasir El-Rufai's family gave Defence Minister Christopher Musa seven days to retract his comments on Channels TV accusing the former Kaduna governor of actions that deepened divisions and insecurity between 2015 and 2023. The Kaduna Muslim-Christian Network for Good Governance backed the minister, saying his remarks reflected residents' experiences.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -112,7 +112,7 @@
     10
    ],
    "h": "SDP's Adebayo to unveil plan on poverty and insecurity",
-   "s": "The Social Democratic Party and its candidate Adewole Adebayo said they will present a campaign blueprint titled Farewell to Poverty and Insecurity.",
+   "s": "The SDP and its presidential candidate, Adewole Adebayo, announced the public presentation on 8 September of his blueprint, “Farewell to Poverty and Insecurity: Governance & Accelerated Development — Blueprint of a New Nigeria, 2027–2031”.",
    "c": "politics",
    "st": []
   },
@@ -121,7 +121,7 @@
     21
    ],
    "h": "Banks raise dollar limits on naira cards as FX eases",
-   "s": "Zenith Bank, FirstBank and GTBank increased international spending limits on naira cards as the naira strengthens and foreign exchange becomes more available.",
+   "s": "Zenith Bank, FirstBank and GTBank raised international spending limits on naira cards in emails to customers, as the naira strengthened, foreign exchange liquidity improved and reserves grew. Between 2023 and 2025 banks had slashed or suspended such limits because of dollar shortages.",
    "c": "economy",
    "st": []
   },
@@ -130,7 +130,7 @@
     32
    ],
    "h": "Trade surplus more than doubles to N12.6trn in second quarter",
-   "s": "Nigeria's total external trade reached N41.44 trillion in the second quarter of 2026, with a N12.60 trillion surplus as petroleum exports rose and agricultural exports fell.",
+   "s": "NBS data show total merchandise trade rose to N41.44 trillion in the second quarter of 2026, up 5.61 per cent from a year earlier and 19.13 per cent from the first quarter. The trade surplus more than doubled to N12.60 trillion on strong petroleum exports, despite sharp falls in agricultural and manufactured exports.",
    "c": "economy",
    "st": []
   },
@@ -140,7 +140,7 @@
     40
    ],
    "h": "Grid operator rejects DisCos' debt plans as NERC tightens spending rules",
-   "s": "The Nigerian Independent System Operator rejected repayment proposals from some distribution companies and warned of sanctions. NERC enforced limits on how much surplus revenue DisCos can spend at their discretion.",
+   "s": "After a four-day hearing, the Nigerian Independent System Operator rejected repayment proposals from some distribution companies for their debts to the electricity market and warned of sanctions. NERC, over the DisCos' objections, enforced rules that progressively limit how much surplus operating revenue they can spend at their discretion.",
    "c": "economy",
    "st": []
   },
@@ -149,7 +149,7 @@
     12
    ],
    "h": "Zamfara governor appoints new Emir of Zurmi",
-   "s": "Governor Dauda Lawal approved Alhaji Aminu Atiku as the new Emir of Zurmi, the state government announced in Gusau.",
+   "s": "The new Emir of Zurmi, who also carries the title Sarkin Zamfaran Zurmi, is Alhaji Aminu Atiku. Governor Dauda Lawal approved him on the kingmakers' advice, and the state's SSG, Abubakar Mohammad Nakwada, announced the choice in Gusau on Monday.",
    "c": "society",
    "st": [
     "Zamfara"
@@ -160,7 +160,7 @@
     39
    ],
    "h": "NITDA cybersecurity director named 17th Emir of Gumel",
-   "s": "Dr Lawan Ahmed Muhammad Sani, a director at the National Information Technology Development Agency, was appointed Emir of Gumel after his father's death.",
+   "s": "Jigawa appointed Dr Lawan Ahmed Muhammad Sani, director of cybersecurity at NITDA, as the 17th Emir of Gumel after the death of his father, who reigned for 46 years. He was enthroned on 6 September, and NITDA colleagues described him as “a genuine man of the people”.",
    "c": "society",
    "st": [
     "Jigawa"
@@ -171,7 +171,7 @@
     26
    ],
    "h": "Benue bans compulsory extra lessons after school",
-   "s": "As schools resumed on 7 September, Benue's education commissioner Margaret Adamu banned compulsory after-hours lessons in all schools.",
+   "s": "As schools resumed on 7 September, Benue Education Commissioner Margaret Adamu banned compulsory after-hours lessons in all schools and set conditions for parent-teacher associations that want to organise extra classes.",
    "c": "education",
    "st": [
     "Benue"
@@ -182,7 +182,7 @@
     28
    ],
    "h": "Adamawa suspends head of secondary schools board",
-   "s": "The Adamawa government suspended Birsan Penuel, executive secretary of the Post Primary Schools Management Board, over alleged irregularities.",
+   "s": "Governor Ahmadu Fintiri suspended Birsan Penuel, executive secretary of the Adamawa Post Primary Schools Management Board, over alleged irregularities, to allow an investigation; the most senior director will act in the meantime.",
    "c": "education",
    "st": [
     "Adamawa"
@@ -193,7 +193,7 @@
     30
    ],
    "h": "FG moves to release long-delayed cabotage vessel fund",
-   "s": "Marine Minister Adegboyega Oyetola said qualified Nigerian shipowners will be able to access up to $25 million each from the Cabotage Vessel Financing Fund, delayed for two decades.",
+   "s": "Marine and Blue Economy Minister Adegboyega Oyetola said qualified Nigerian shipowners will soon be able to access up to $25 million each from the Cabotage Vessel Financing Fund, which has accumulated for more than two decades without being disbursed.",
    "c": "economy",
    "st": []
   },
@@ -202,7 +202,7 @@
     44
    ],
    "h": "FCT minister of state says APC will rule beyond 2031",
-   "s": "Mariya Mahmud told a City Boy Movement launch in Kano that President Tinubu will hand over to an APC successor.",
+   "s": "Minister of State for the FCT Mariya Mahmud told the launch of the City Boy Movement in Kano that there is “no vacancy in the Villa till 2031” and that the APC will govern beyond then, describing the movement as a platform to mobilise young people and women.",
    "c": "politics",
    "st": [
     "Kano"
@@ -214,7 +214,7 @@
     50
    ],
    "h": "Atiku criticises domestic borrowing and subsidy policy",
-   "s": "Atiku Abubakar said the government's domestic borrowing is crowding out business credit despite higher oil prices, and that its fuel policy favours insiders and oil majors.",
+   "s": "Atiku Abubakar said the government's domestic borrowing is “evidence of dangerous fiscal indiscipline” that starves businesses of credit and kills jobs, despite higher oil prices, and accused President Tinubu of policies that have made almost everything more expensive.",
    "c": "politics",
    "st": []
   },
@@ -223,7 +223,7 @@
     59
    ],
    "h": "ADC calls unverified N33.75bn cash transfers a racket",
-   "s": "The African Democratic Congress said the Auditor-General's finding on N33.75 billion in transfers shows social investment has been abused.",
+   "s": "Bolaji Abdullahi of the ADC said the Auditor-General's inability to confirm where N33.75 billion meant for 3.29 million poor households went shows that, under Tinubu, programmes meant to help the poor now serve officials instead, calling it a racket.",
    "c": "politics",
    "st": []
   },
@@ -232,7 +232,7 @@
     25
    ],
    "h": "Donald Duke says Nigerians were better off under military rule",
-   "s": "PRP presidential candidate Donald Duke said 27 years of civilian government have cost much and delivered too little.",
+   "s": "Donald Duke, the PRP's presidential candidate, said Nigerians were better off under military rule and that 27 years of civilian government have imposed huge costs without matching improvements. “The people today, I would tell you that they were better off under the military,” he said.",
    "c": "politics",
    "st": []
   },
@@ -241,7 +241,7 @@
     24
    ],
    "h": "Sowore says Datti knew Obi was a 'packaged fraud' in 2023",
-   "s": "African Action Congress candidate Omoyele Sowore said Datti Baba-Ahmed joined Peter Obi's 2023 ticket knowing his flaws, after Baba-Ahmed dismissed Obi and Atiku as alternatives to Tinubu.",
+   "s": "Omoyele Sowore, the AAC's presidential candidate, said on X that Datti Baba-Ahmed knew Peter Obi was a “packaged fraud” when he joined his 2023 ticket. He was reacting to Baba-Ahmed's claim that Obi, Atiku and other challengers cannot improve Nigeria, and that Tinubu should leave office after this term.",
    "c": "politics",
    "st": []
   },
@@ -250,7 +250,7 @@
     20
    ],
    "h": "Tompolo launches door-to-door Tinubu movement in Katsina",
-   "s": "Government Ekpemupolo, the Niger Delta leader known as Tompolo, started a grassroots campaign for President Tinubu in Katsina and handed over vehicles to support it.",
+   "s": "Government Ekpemupolo, known as Tompolo, launched the PBAT Door-to-Door Movement in Katsina, its first northern state, to mobilise grassroots support for President Tinubu's re-election, and donated 34 campaign vehicles for coordinators in the state's local governments.",
    "c": "politics",
    "st": [
     "Katsina"
@@ -261,7 +261,7 @@
     54
    ],
    "h": "Anambra APC protests exclusion from Tinubu visit plans",
-   "s": "The APC in Anambra accused Governor Charles Soludo of leaving the party and its women's wing out of arrangements for President Tinubu's visit.",
+   "s": "The Anambra APC protested that it and its women's wing were excluded from arrangements for First Lady Remi Tinubu's visit to the state on Thursday, accusing Governor Charles Soludo's APGA of deceiving the President, though it still welcomed her.",
    "c": "politics",
    "st": [
     "Anambra"
@@ -272,7 +272,7 @@
     58
    ],
    "h": "Aiyedatiwa denies sponsoring APC defections in Ondo",
-   "s": "Ondo Governor Lucky Aiyedatiwa rejected claims that he is encouraging APC members to leave the party.",
+   "s": "Ondo Governor Lucky Aiyedatiwa denied sponsoring APC members to defect to other parties before 2027, saying he has never asked any member or candidate to leave the party and has zero tolerance for anti-party activities.",
    "c": "politics",
    "st": [
     "Ondo"
@@ -283,7 +283,7 @@
     42
    ],
    "h": "Benue PDP candidate says no governor is owed eight years",
-   "s": "Michael Aondoakaa, the PDP's Benue governorship candidate, said voters will decide whether the incumbent gets a second term.",
+   "s": "Michael Aondoakaa, the PDP's Benue governorship candidate, told journalists in Makurdi that no governor is owed eight years and that voters will decide whether the incumbent deserves a second term.",
    "c": "politics",
    "st": [
     "Benue"
@@ -294,7 +294,7 @@
     67
    ],
    "h": "NDC and ADC deny lacking governorship candidates in 12 states",
-   "s": "The Nigeria Democratic Congress and the African Democratic Congress called reports that they have no candidates in 12 states propaganda.",
+   "s": "The Nigeria Democratic Congress and the ADC rejected reports that they lack governorship candidates in 12 states, calling them deliberate propaganda, in a statement on 5 September by NDC spokesman Osa Director.",
    "c": "politics",
    "st": []
   },
@@ -303,7 +303,7 @@
     65
    ],
    "h": "Bill on foreign funding of NGOs pits Senate against civil society",
-   "s": "A Senate bill requiring NGOs to disclose foreign donations has drawn opposition from civil society groups, while lawmakers say it promotes accountability.",
+   "s": "A Senate bill requiring NGOs to disclose funds and aid received from foreign donors has pitted lawmakers, who say it will promote accountability and protect national security, against civil society groups who fear it will hamper humanitarian work and shrink civic space.",
    "c": "politics",
    "st": []
   },
@@ -312,7 +312,7 @@
     48
    ],
    "h": "INEC chairman tells staff to prepare for 2027 challenges",
-   "s": "INEC chairman Joash Amupitan urged electoral officers in the South-West to approach the 2027 elections with discipline and preparation.",
+   "s": "INEC chairman Joash Amupitan told electoral officers and department heads in the South-West, meeting in Lagos, to approach the challenges of the 2027 elections with greater commitment, discipline and preparation.",
    "c": "politics",
    "st": []
   },
@@ -321,7 +321,7 @@
     63
    ],
    "h": "Pensioners' union wants probe of police assault on Lagos protest",
-   "s": "The Nigeria Union of Pensioners demanded an investigation into police officers accused of assaulting and tear-gassing protesting pensioners in Lagos.",
+   "s": "The Nigeria Union of Pensioners demanded an investigation into police officers it accused of assaulting and tear-gassing protesting pensioners in Lagos, and called on Inspector-General Tunji Disu to identify those responsible.",
    "c": "society",
    "st": [
     "Lagos"
@@ -332,7 +332,7 @@
     52
    ],
    "h": "Police rescue 60-year-old kidnap victim and arrest 33 suspects",
-   "s": "The Nigeria Police Force said operations in several states recovered firearms, stolen property and vandalised oil equipment.",
+   "s": "The police said operations in several states between 2 and 5 September rescued a 60-year-old kidnap victim, led to 33 arrests, forced bandits back into the forest in Zamfara and recovered firearms, stolen property and vandalised oil equipment.",
    "c": "security",
    "st": []
   },
@@ -341,7 +341,7 @@
     61
    ],
    "h": "Edo police rescue kidnapped couple",
-   "s": "Edo police freed Rita Emma, 49, and her husband Obareki Emmanuel, 66, abducted in Iruekpen on 4 September, and arrested a suspect.",
+   "s": "Edo police rescued Rita Emma, 49, and her husband Obareki Emmanuel, 66, kidnapped by gunmen in Iruekpen on 4 September and taken into a forest, and arrested a suspect, spokeswoman Eno Ikoedem said.",
    "c": "security",
    "st": [
     "Edo"
@@ -352,7 +352,7 @@
     51
    ],
    "h": "Boy, 13, dies after Dane gun discharges in Bauchi",
-   "s": "Police arrested a hunter after a 13-year-old boy in Udubo, Gamawa, died when a loaded Dane gun went off.",
+   "s": "Bauchi police said Mubarak Mohd, 13, died in Udubo village, Gamawa, on 5 September when a loaded Dane gun left in a room by hunter Suleiman Hamza, 35, went off, and that the hunter was arrested.",
    "c": "security",
    "st": [
     "Bauchi"
@@ -363,7 +363,7 @@
     31
    ],
    "h": "Mining marshals step up enforcement against illegal operators",
-   "s": "The NSCDC's mining marshals intensified operations nationwide to enforce mining regulations.",
+   "s": "The NSCDC Mining Marshals said they have intensified enforcement nationwide, particularly in the South-West, to stop illegal mining and make sure operators comply with mining regulations.",
    "c": "economy",
    "st": []
   },
@@ -372,7 +372,7 @@
     19
    ],
    "h": "Minister promotes ECOWAS trade scheme in North-East",
-   "s": "Minister of State for Foreign Affairs Sola Enikanolaiye briefed North-East stakeholders on the ECOWAS Trade Liberalisation Scheme.",
+   "s": "Minister of State for Foreign Affairs Sola Enikanolaiye told North-East chambers of commerce at a workshop in Bauchi that the ECOWAS Trade Liberalisation Scheme is a major step towards regional integration and new trade opportunities for Nigerian businesses.",
    "c": "economy",
    "st": []
   },
@@ -381,7 +381,7 @@
     34
    ],
    "h": "Hackers take about $320m in Bitcoin from Liquid Network",
-   "s": "Liquid Network said attackers withdrew about 4,000 of the 4,200 Bitcoin in its federation wallet.",
+   "s": "Bitcoin payments network Liquid said purported white-hat hackers withdrew about 4,000 of the 4,200 Bitcoin, worth some $320 million, held in its federation wallet, and that it had temporarily disabled bridge nodes.",
    "c": "technology",
    "st": []
   },
@@ -390,7 +390,7 @@
     5
    ],
    "h": "Amazon cargo plane crash in Miami kills five",
-   "s": "At least five people died and five were hurt in Miami when an Amazon freight aircraft ran off the end of the runway, struck cars and burst into flames on Sunday.",
+   "s": "At least five people died and five were injured when an Amazon Air Boeing 767 freighter from San Juan overshot the runway on landing at Miami International Airport, struck vehicles and caught fire, Miami-Dade fire chief Ray Jadallah said.",
    "c": "world",
    "st": []
   },
@@ -399,7 +399,7 @@
     17
    ],
    "h": "Husband of Tanzania's President Samia dies",
-   "s": "Tanzania's vice-president announced that Hafidh Ameir Hassan, whose wife Samia Suluhu Hassan is the country's president, had died after treatment for a heart condition.",
+   "s": "Hafidh Ameir Hassan, husband of Tanzanian President Samia Suluhu Hassan, died at 8am on Monday at Emilio Mzena Memorial Hospital in Zanzibar, where he was being treated for a heart condition, Vice President Deogratius Ndejembi announced.",
    "c": "world",
    "st": []
   },
@@ -408,7 +408,7 @@
     37
    ],
    "h": "Africa Fashion Week Nigeria returns in December",
-   "s": "Africa Fashion Week Nigeria will hold its 12th edition in Lagos in December.",
+   "s": "Africa Fashion Week Nigeria will return to Lagos in December for its 2026 edition under the theme “The Future Wears Africa”, following its sister event in London.",
    "c": "entertainment",
    "st": [
     "Lagos"

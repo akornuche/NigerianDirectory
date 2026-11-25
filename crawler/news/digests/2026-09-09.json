@@ -1,12 +1,12 @@
 {
- "lead": "About 24 people died in Odigbo, Ondo State, after reportedly drinking a herbal concoction, and diphtheria deaths in Plateau rose to 27. More than ten youths were injured in the attack on Peter Obi's convoy in Makurdi, while Lagos declared an emergency over its waste crisis. The Court of Appeal upheld a 490-year sentence for former NEXIM Bank chief Robert Orya, and analysts valued the Dangote refinery at up to N82.6 trillion ahead of its share sale.",
+ "lead": "At least 24 people died in Odigbo, Ondo State, after reportedly drinking a herbal concoction over the weekend, and the diphtheria outbreak in Plateau rose to 27 deaths and 303 suspected cases.\n\nThe day in brief: more than ten young people were treated in a Makurdi hospital after Tuesday's attack on Peter Obi's convoy, which Oyo Governor Seyi Makinde said showed the APC's desperation to silence the opposition. Lagos declared a state of emergency on waste and ordered 160 compactor trucks. The Court of Appeal upheld the 490-year sentence of former NEXIM chief Robert Orya over a N2.4 billion fraud, and Senate President Akpabio asked the DSS to probe an anti-North statement falsely attributed to him. Analysts valued the Dangote refinery at up to N82.62 trillion ahead of its share sale, and President Tinubu and the World Bank urged banks to lend their N4.65 trillion of new capital to business. APM Terminals signed a deal on the Badagry deep seaport, INEC fixed five by-elections for 19 September, and Lagos State University named Professor Badejo Olawumi its vice-chancellor.",
  "items": [
   {
    "i": [
     30
    ],
    "h": "About 24 die in Ondo after drinking herbal concoction",
-   "s": "At least 24 people in Odigbo town and Araromi-Obu, in Odigbo Local Government Area, reportedly died over the weekend after consuming a herbal mixture.",
+   "s": "At least 24 people reportedly died over the weekend in Odigbo town and Araromi-Obu, in Odigbo local government area of Ondo, after drinking a herbal concoction. Several others were receiving treatment in hospitals, and the deaths caused tension and protests in the two communities.",
    "c": "health",
    "st": [
     "Ondo"
@@ -17,7 +17,7 @@
     25
    ],
    "h": "Plateau diphtheria deaths rise to 27 with 303 suspected cases",
-   "s": "State epidemiologist Maren Damulak said the outbreak has now killed 27 people, with 303 suspected cases recorded.",
+   "s": "The diphtheria outbreak in Plateau has killed 27 people, up from 23, with 303 suspected cases, state epidemiologist Maren Damulak told journalists in Jos. Most cases were recorded in Jos North, and the government said it was working to contain the disease.",
    "c": "health",
    "st": [
     "Plateau"
@@ -28,7 +28,7 @@
     4
    ],
    "h": "More than ten injured in attack on Obi's convoy in Makurdi",
-   "s": "Over ten young people were taken to Benue State University Teaching Hospital after Tuesday's attack on Peter Obi's convoy. Oyo Governor Seyi Makinde said the blockade showed the APC's desperation to silence the opposition.",
+   "s": "More than ten young people were treated at Benue State University Teaching Hospital in Makurdi after suspected thugs attacked Peter Obi's convoy on the Gboko-Makurdi Expressway on Tuesday and stopped him reaching Yelwata. Former Deputy Senate President Ovie Omo-Agege demanded an investigation, and Oyo Governor Seyi Makinde said the blockade showed the APC's desperation to silence the opposition.",
    "c": "politics",
    "st": [
     "Benue"
@@ -39,7 +39,7 @@
     37
    ],
    "h": "Sanwo-Olu declares emergency on Lagos waste crisis",
-   "s": "Lagos Governor Babajide Sanwo-Olu declared a state of emergency on waste management after months of refuse piling up in the state.",
+   "s": "Governor Babajide Sanwo-Olu declared a state of emergency on waste management to get Lagos out of what he called an “unpleasant situation” after months of refuse piling up as generation grew and collection faltered. The government ordered 160 new compactor trucks as part of the emergency response.",
    "c": "environment",
    "st": [
     "Lagos"
@@ -50,7 +50,7 @@
     2
    ],
    "h": "Appeal Court upholds 490-year sentence for ex-NEXIM chief Orya",
-   "s": "The Court of Appeal in Abuja affirmed the conviction of former NEXIM Bank managing director Robert Orya and his cumulative 490-year sentence over a N2.4 billion fraud.",
+   "s": "A three-member Court of Appeal panel in Abuja led by Justice Muhammed Danjuma affirmed the conviction of former NEXIM Bank managing director Robert Orya on all 49 counts in a N2.4 billion fraud case, and his sentence of ten years on each count, 490 years in total, imposed by the FCT High Court.",
    "c": "politics",
    "st": [
     "FCT"
@@ -62,7 +62,7 @@
     15
    ],
    "h": "Analysts value Dangote refinery at up to N82.6trn before IPO",
-   "s": "CardinalStone and Chapel Hill Denham valued the refinery at between N77.7 trillion and N82.62 trillion, above its N65.22 trillion indicative value. Anyone with a Bank Verification Number will be able to buy shares directly.",
+   "s": "CardinalStone Research and Chapel Hill Denham separately valued the Dangote refinery at between N77.7 trillion and N82.62 trillion, about $62 billion, above the N65.22 trillion indicative market value at which it is expected to list. Anyone with a Bank Verification Number will be able to buy shares directly in the IPO.",
    "c": "business",
    "st": []
   },
@@ -71,7 +71,7 @@
     3
    ],
    "h": "Akpabio asks DSS to probe viral anti-North quote",
-   "s": "Senate President Godswill Akpabio petitioned the Department of State Services over an anti-North statement falsely attributed to him on Facebook and other platforms.",
+   "s": "Senate President Godswill Akpabio petitioned the DSS over a statement circulating on Facebook and other platforms in which he purportedly warned northerners they would “suffer the most” if President Tinubu lost in 2027. He called the statement fabricated and inflammatory.",
    "c": "politics",
    "st": []
   },
@@ -81,7 +81,7 @@
     28
    ],
    "h": "NAFDAC says Nigeria is becoming a hub for fake goods",
-   "s": "NAFDAC linked the spread of fake and adulterated products to Chinese syndicates operating in Nigeria, and its director-general said weak pharmaceutical regulation lies behind the counterfeit medicine crisis.",
+   "s": "NAFDAC Director-General Mojisola Adeyeye said Nigeria is becoming a hub for fake and adulterated goods, linking the trade to Chinese syndicates, and called for life imprisonment or the death penalty for makers of counterfeit medicines. She told Channels TV the crisis is rooted in long-standing weaknesses in pharmaceutical regulation and said 64 counterfeiters had been convicted.",
    "c": "health",
    "st": []
   },
@@ -90,7 +90,7 @@
     8
    ],
    "h": "Ground handlers threaten to withdraw services from two airlines",
-   "s": "Ground handling firms threatened to stop serving two major domestic airlines over unpaid debts, raising the risk of cancellations and delays.",
+   "s": "The Association of Ground Handling Companies of Nigeria, whose members include NAHCO and SAHCO, told them to issue seven-day notices of suspension of services to two major domestic airlines over long-standing debts, raising the risk of cancellations and delays.",
    "c": "business",
    "st": []
   },
@@ -99,7 +99,7 @@
     7
    ],
    "h": "NDLEA arrests fugitive linked to 49.7kg heroin seizure",
-   "s": "The NDLEA arrested and returned to Nigeria Festus Ibewuike, a suspected drug kingpin wanted over a 49.7kg heroin seizure.",
+   "s": "The NDLEA arrested Festus Ibewuike, 52, known as Chidibest, at the airport in Cotonou, Benin, and brought him back to Nigeria. He had been on the run for more than two years after the seizure of 49.7kg of heroin at Murtala Muhammed International Airport, Lagos.",
    "c": "security",
    "st": []
   },
@@ -108,7 +108,7 @@
     26
    ],
    "h": "INEC sets 19 September for five by-elections in four states",
-   "s": "INEC will hold by-elections in Gombe, Kano, Bauchi and Delta on 19 September 2026.",
+   "s": "Voters in one federal and four state constituencies across Gombe, Kano, Bauchi and Delta will go to the polls on 19 September, INEC said, through Tunde Oketola, spokesman for the commission's chairman.",
    "c": "politics",
    "st": [
     "Gombe",
@@ -122,7 +122,7 @@
     9
    ],
    "h": "APM Terminals signs deal on Badagry deep seaport",
-   "s": "Maersk subsidiary APM Terminals signed a memorandum of understanding with Badagry Port Development to advance the proposed deep seaport in Lagos.",
+   "s": "APM Terminals, part of A.P. Moller–Maersk, signed a memorandum of understanding in Copenhagen with Badagry Port Development committing both sides to exclusive negotiations on developing the proposed Badagry deep seaport in Lagos, the marine ministry said.",
    "c": "economy",
    "st": [
     "Lagos"
@@ -133,7 +133,7 @@
     10
    ],
    "h": "FG sets up committee to roll out 112 emergency number",
-   "s": "The Federal Government asked agencies to draw up a roadmap for nationwide use of the 112 emergency number and formed a committee to do it.",
+   "s": "The federal government set up a committee of the police, NCC, NEMA, FRSC and other agencies to design an operational roadmap for the nationwide rollout of the 112 emergency number, to be presented to the National Economic Council for endorsement.",
    "c": "society",
    "st": []
   },
@@ -142,7 +142,7 @@
     22
    ],
    "h": "Tinubu and World Bank urge banks to lend recapitalisation funds to business",
-   "s": "President Tinubu, the CBN and the World Bank asked banks to put the N4.65 trillion raised in recapitalisation into productive lending rather than government securities.",
+   "s": "At the annual bankers' dinner, President Tinubu, the CBN and the World Bank urged banks to put the N4.65 trillion raised in recapitalisation into lending to productive businesses rather than government securities, to lower borrowing costs, stimulate investment and create jobs.",
    "c": "economy",
    "st": []
   },
@@ -151,7 +151,7 @@
     47
    ],
    "h": "FG pays academic tools allowance for January to August",
-   "s": "The Education Minister said the Consolidated Academic Tools Allowance for lecturers in federal universities, polytechnics and colleges of education has been paid for January to August 2026.",
+   "s": "Education Minister Tunji Alausa said the government has paid the full Consolidated Academic Tools Allowance to academic staff in federal universities, polytechnics and colleges of education for January to August 2026, and told institutions to begin payment.",
    "c": "education",
    "st": []
   },
@@ -160,7 +160,7 @@
     1
    ],
    "h": "North-West ADC governorship candidates sign development covenant",
-   "s": "The ADC's governorship candidates in the seven North-West states signed a joint pledge, including on the minimum wage, ahead of 2027.",
+   "s": "The ADC's governorship candidates in the seven North-West states signed “Compact 2027–2031” at the Yar'Adua Centre in Abuja, a joint covenant on security, development, public finance and the minimum wage that they pledged to implement if elected.",
    "c": "politics",
    "st": []
   },
@@ -170,7 +170,7 @@
     35
    ],
    "h": "Kano governor warns against hate speech and rallies support for Tinubu",
-   "s": "Governor Abba Kabir Yusuf cautioned parties against hate speech and violence as governorship campaigns began, and urged APC supporters to back President Tinubu's re-election.",
+   "s": "Kano's government asked parties and candidates to campaign on policies and records rather than personal attacks, hate speech and violence as governorship campaigns began, and Governor Abba Kabir Yusuf urged supporters to back President Tinubu's re-election.",
    "c": "politics",
    "st": [
     "Kano"
@@ -181,7 +181,7 @@
     11
    ],
    "h": "Nineteen parties sign peace pact in Kogi",
-   "s": "Political parties in Kogi pledged to campaign within the law under an accord brokered by the inter-agency security committee.",
+   "s": "Nineteen of the 22 parties expected to contest in Kogi signed a peace accord brokered by the inter-agency election security committee, pledging peaceful, violence-free campaigns. Police Commissioner Naziru Kankafori said violence would not be tolerated.",
    "c": "politics",
    "st": [
     "Kogi"
@@ -193,7 +193,7 @@
     33
    ],
    "h": "PDP and APC disown petitions against Adeleke",
-   "s": "The Wike-backed PDP disowned an Osun election petition filed in its name, and the state APC applied to withdraw a disputed petition filed by members it said were unauthorised.",
+   "s": "The PDP disowned an election petition filed in its name against Governor Ademola Adeleke at the Osun governorship tribunal, saying it authorised no petition, and the state APC applied to withdraw a separate disputed petition filed by members it said were unauthorised.",
    "c": "politics",
    "st": [
     "Osun"
@@ -204,7 +204,7 @@
     0
    ],
    "h": "Katsina budget puts 77% into capital projects",
-   "s": "Governor Dikko Radda's N828.64 billion 2027 budget devotes nearly 77 per cent of spending to development projects.",
+   "s": "Governor Dikko Radda presented a N828.64 billion 2027 budget, “Building Your Future IV”, to the Katsina House of Assembly, with nearly 77 per cent set aside for capital projects and internally generated revenue projected at N95.77 billion.",
    "c": "politics",
    "st": [
     "Katsina"
@@ -215,7 +215,7 @@
     16
    ],
    "h": "Kaduna 2027 budget to prioritise agriculture, health and education",
-   "s": "Kaduna's planning commissioner said human capital remains the focus as ministries begin presenting proposals for the 2027 budget.",
+   "s": "Kaduna's planning and budget commissioner, Muktar Ahmed Monrovia, said the 2027 budget will continue to focus on human capital, with agriculture, health and education given priority, as ministries began defending their proposals.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -226,7 +226,7 @@
     17
    ],
    "h": "Adamawa judge says 87-year-old defendant attacked him in court",
-   "s": "An Area Court judge in Fufore, Dauda Hamman, said a defendant aged 87 cut his hand with a cutlass during proceedings.",
+   "s": "Dauda Hamman, an Area Court judge in Fufore, Adamawa, said an 87-year-old defendant, Dahiru Garba, cut his hand with a cutlass during proceedings at the Mayo-Ine Area Court on 31 August while he presided over a dispute between Garba and another man.",
    "c": "security",
    "st": [
     "Adamawa"
@@ -237,7 +237,7 @@
     19
    ],
    "h": "Benue police rescue 18 kidnap victims and recover AK-47s",
-   "s": "Benue police said intelligence-led operations freed 18 kidnapped people, led to 20 arrests and recovered three AK-47 rifles.",
+   "s": "Police in Benue said a run of operations based on intelligence had freed 18 captives and netted 20 suspects, along with three AK-47s, 33 bullets and other arms. Commissioner Cletus Nwadiogbu paraded the suspects at the command headquarters in Makurdi.",
    "c": "security",
    "st": [
     "Benue"
@@ -248,7 +248,7 @@
     20
    ],
    "h": "Rivers police rescue kidnapped woman",
-   "s": "Police in Rivers freed an abducted woman and arrested a suspected member of the gang that took her.",
+   "s": "Rivers police rescued a woman identified as Loveth, abducted on 2 September while sitting in front of her shop in Port Harcourt, and arrested a suspected member of the gang, recovering a vehicle, locally made pistols and ammunition.",
    "c": "security",
    "st": [
     "Rivers"
@@ -259,7 +259,7 @@
     21
    ],
    "h": "Police summon WAEC staff member over alleged cyberstalking of chief",
-   "s": "The National Cybercrime Centre invited WAEC employee Olanrewaju Fadehan to Abuja over alleged cyberstalking of the council's head.",
+   "s": "The police National Cybercrime Centre invited Olanrewaju Fadehan, WAEC's head of examinations for its Anambra office, to Abuja over alleged cyberstalking and criminal defamation of the council's head.",
    "c": "security",
    "st": []
   },
@@ -268,7 +268,7 @@
     54
    ],
    "h": "NSCIA raises concern of religious bias in El-Rufai prosecution",
-   "s": "The Nigerian Supreme Council for Islamic Affairs said there are signs of religious bias in the case against former Kaduna governor Nasir El-Rufai.",
+   "s": "The Nigerian Supreme Council for Islamic Affairs, in a statement by secretary-general Is-haq Oloyede, said there are signs of religious bias in the prosecution of former Kaduna governor Nasir El-Rufai, and warned against people with religious interests using public institutions or the courts against him.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -279,7 +279,7 @@
     24
    ],
    "h": "Kwara government and PDP clash over removed billboards",
-   "s": "The PDP protested the removal of campaign billboards of its governorship candidate, Suleiman Kawu, while the state government defended the action.",
+   "s": "The Kwara PDP accused the government of Governor AbdulRahman AbdulRazaq of removing billboards of its governorship candidate, Suleiman Kawu, across Ilorin despite payment of the required fees. The government said it was enforcing signage regulations.",
    "c": "politics",
    "st": [
     "Kwara"
@@ -291,7 +291,7 @@
     57
    ],
    "h": "Audit flags N39bn at gas fund; Reps to probe N432bn oil debts",
-   "s": "The 2024 audit report said the Midstream and Downstream Gas Infrastructure Fund did not remit N39 billion, which the regulator denies. A House committee said it will make NNPC and marketers account for N432 billion owed.",
+   "s": "The Auditor-General's 2024 report said the Midstream and Downstream Gas Infrastructure Fund failed to remit N39 billion from its share of petroleum revenue and gas flare penalties in 2023; the fund said the discrepancies were not unaccounted revenue. A House committee said it will make NNPC and marketers account for N432 billion owed.",
    "c": "economy",
    "st": []
   },
@@ -300,7 +300,7 @@
     55
    ],
    "h": "NUPRC threatens to revoke unused flare gas site awards",
-   "s": "Upstream regulator chief Oritsemeyiwa Eyesan warned operators that flare gas permits will be withdrawn if the sites are not used.",
+   "s": "NUPRC chief executive Oritsemeyiwa Eyesan warned operators awarded sites under the Nigerian Gas Flare Commercialisation Programme that their permits will be revoked immediately if they do not develop them, during a visit to the Minister of State for Petroleum (Gas), Ekperikpe Ekpo.",
    "c": "economy",
    "st": []
   },
@@ -309,7 +309,7 @@
     27
    ],
    "h": "Tinubu tells accountants to measure what public money achieves",
-   "s": "Represented by the Accountant-General, President Tinubu said accountants should track results, not only spending.",
+   "s": "Opening the Association of National Accountants of Nigeria's 31st annual conference in Abuja through Accountant-General Shamseldeen Ogunjimi, President Tinubu said accountants must go beyond recording spending to measuring what public money actually achieves for citizens.",
    "c": "economy",
    "st": []
   },
@@ -318,7 +318,7 @@
     31
    ],
    "h": "Barge owner clears Nembe E&P over Bayelsa oil spill",
-   "s": "Fresh information on the spill around 22 August at the Nembe Creek facility suggested Nembe Exploration and Production may not have caused it.",
+   "s": "Ebikeme Sokere, chief executive of Fazal Environmental Company, said the oil spill in the Nembe Creek area of Bayelsa around 22 August was a minor accident involving his own remediation barge, and that neither Nembe Exploration and Production nor Aiteo played any role.",
    "c": "environment",
    "st": [
     "Bayelsa"
@@ -329,7 +329,7 @@
     45
    ],
    "h": "Badejo Olawumi appointed LASU vice-chancellor",
-   "s": "Governor Sanwo-Olu approved Professor Badejo Ayodeji Olawumi as Vice-Chancellor of Lagos State University.",
+   "s": "Governor Babajide Sanwo-Olu approved Professor Badejo Ayodeji Olawumi, a professor of guidance and counselling, as vice-chancellor of Lagos State University, succeeding Professor Ibiyemi Olatunji-Bello, information commissioner Gbenga Omotoso said.",
    "c": "education",
    "st": [
     "Lagos"
@@ -340,7 +340,7 @@
     39
    ],
    "h": "ValueJet and Gateway Air start daily Abuja-Ogun flights",
-   "s": "ValueJet and Ogun's state airline began a daily service between Abuja and Gateway International Airport, Iperu.",
+   "s": "ValueJet and Gateway Air, Ogun State's airline, began a daily Abuja–Lagos–Gateway service to Gateway International Airport, Iperu, departing Abuja at 6.30am, to link the capital with Ogun's commercial and industrial corridor.",
    "c": "business",
    "st": [
     "Ogun",
@@ -352,7 +352,7 @@
     51
    ],
    "h": "NCAA and NAICOM sign aviation insurance pact",
-   "s": "The aviation and insurance regulators signed a memorandum to tighten oversight of aviation insurance.",
+   "s": "Nigeria's aviation and insurance regulators agreed to work together on policing insurance cover in the sector. Director-General Chris Najomo of the NCAA and a NAICOM commissioner signed the memorandum in Abuja, saying it would better protect travellers, airlines and investors.",
    "c": "business",
    "st": []
   },
@@ -361,7 +361,7 @@
     36
    ],
    "h": "Niger PDP governorship camp backs Tinubu",
-   "s": "Supporters linked to the PDP's Niger governorship candidate, Muhammad Mamman Nami, declared support for President Tinubu's re-election.",
+   "s": "The Niger Renaissance Network, a group of supporters associated with the PDP's Niger governorship candidate, Muhammad Mamman Nami, declared its backing for President Tinubu's re-election at an event in Minna.",
    "c": "politics",
    "st": [
     "Niger"
@@ -372,7 +372,7 @@
     29
    ],
    "h": "Falconets prepare for China after opening loss",
-   "s": "Nigeria's ambassador to Poland, Chioma Ohakim, encouraged the Falconets before their next U20 Women's World Cup match against China.",
+   "s": "Nigeria's ambassador to Poland, Chioma Ohakim, watched the Falconets' 2-0 defeat by Spain at Stadion Sosnowiec and, with mission staff, encouraged the team before its second Group F match against China at the U20 Women's World Cup.",
    "c": "sports",
    "st": []
   },
@@ -381,7 +381,7 @@
     32
    ],
    "h": "Olu of Warri signs tolerance pact with UAE minister",
-   "s": "Ogiame Atuwatse III and the UAE's Minister of Tolerance, Sheikh Nahyan bin Mubarak Al Nahyan, signed a cooperation protocol.",
+   "s": "The Olu of Warri, Ogiame Atuwatse III, and the UAE's Minister of Tolerance and Coexistence, Sheikh Nahyan bin Mubarak Al Nahyan, signed a cooperation protocol on peacebuilding, cultural exchange and social inclusion at an AIM Congress 2026 event.",
    "c": "society",
    "st": [
     "Delta"
@@ -392,7 +392,7 @@
     49
    ],
    "h": "Nigeria condemns Houthi attacks on Saudi Arabia",
-   "s": "Abuja condemned fresh strikes by Yemen's Houthis against Saudi Arabia, warning that the fighting endangers the world's energy supply.",
+   "s": "The foreign ministry condemned Monday's Houthi attacks on Saudi Arabia, warning through spokesman Oluwafemi Adeniyi that the renewed hostilities threaten regional stability, endanger civilians and could disrupt global energy supplies.",
    "c": "world",
    "st": []
   },
@@ -401,7 +401,7 @@
     34
    ],
    "h": "UK, France and Canada to ban imports from Israeli settlements",
-   "s": "The three countries said they will ban goods from Israeli settlements in the occupied West Bank.",
+   "s": "Citing the spread of settlements and attacks by settlers, the UK, France and Canada announced that goods produced in Israeli settlements in the occupied West Bank will be barred from their markets. Israel responded at once with measures aimed at Britain.",
    "c": "world",
    "st": []
   },
@@ -410,7 +410,7 @@
     50
    ],
    "h": "NNPC-Seplat venture opens STEAM labs in Asaba",
-   "s": "The NEPL/Seplat joint venture handed over two science laboratories in Asaba and trained 500 more teachers.",
+   "s": "The NNPC E&P–Seplat joint venture handed two fully equipped STEAM laboratories at Asagba Mixed Secondary School and Zappa Basic Secondary School in Asaba to the Delta government, and trained 500 more teachers.",
    "c": "education",
    "st": [
     "Delta"

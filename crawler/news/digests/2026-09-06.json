@@ -1,12 +1,12 @@
 {
- "lead": "Gunmen killed the bursar of the National Open University on his way back from Gusau, and Zamfara's deputy police commissioner for operations died in hospital. The consumer protection commission opened an inquiry into how Uber handled customers when it left Nigeria. The NDLEA found more than two tonnes of cannabis hidden in a fuel tanker, D'Tigress went out of the Women's World Cup, and the SDP candidate promised petrol at N200 a litre.",
+ "lead": "Gunmen shot dead the bursar of the National Open University of Nigeria as he returned from Gusau, and Zamfara's deputy police commissioner for operations died in hospital the same day.\n\nThe day in brief: the consumer protection commission said it was examining how Uber handled customers' unfinished services when it abruptly left Nigeria. The NDLEA found more than two tonnes of cannabis in a hidden compartment of a fuel tanker and seized over two million opioid pills, and Defence Headquarters said troops rescued 36 abducted people in four days. Three young siblings were found dead near a stream on a farm in Akure. D'Tigress went out of the Women's Basketball World Cup in Berlin. The SDP's Adewole Adebayo promised petrol, cooking gas and jet fuel at N200 a litre, while the government called demands to restore the subsidy unpatriotic and the downstream regulator explained why prices keep swinging. JAMB set high thresholds for underage admission, Nyesom Wike said Rivers would back Tinubu, Datti Baba-Ahmed dismissed every challenger including Peter Obi, and the Rivers Assembly opened an inquiry into state money paid to Pamo University.",
  "items": [
   {
    "i": [
     13
    ],
    "h": "NOUN bursar shot dead in Zamfara",
-   "s": "Nasiru Gusau Marafa, bursar of the National Open University of Nigeria, was shot dead while returning from Gusau, the university's registrar announced on Sunday.",
+   "s": "Mallam Nasiru Gusau Marafa, bursar of the National Open University of Nigeria, was shot dead while returning from Gusau, the Zamfara capital, on Sunday, 6 September, the university's registrar and secretary to council, Oladipo Ajayi, announced. The university described his death as sudden and untimely.",
    "c": "security",
    "st": [
     "Zamfara"
@@ -17,7 +17,7 @@
     7
    ],
    "h": "FCCPC investigates Uber's exit and unfinished customer services",
-   "s": "Federal Competition and Consumer Protection Commission chief Tunji Bello said the agency is examining how Uber dealt with services it had not fulfilled for customers when it left Nigeria.",
+   "s": "Nigeria's competition and consumer regulator is looking at the way Uber pulled out of the country, its head Tunji Bello told Bloomberg by text. Officials want to know whether riders were left with paid-for trips or other commitments the company never honoured.",
    "c": "business",
    "st": []
   },
@@ -26,7 +26,7 @@
     1
    ],
    "h": "NDLEA finds 2,145kg of cannabis in fuel tanker and seizes 2m opioid pills",
-   "s": "The NDLEA intercepted a 20,000-litre fuel tanker with a hidden compartment holding 2,145kg of cannabis and recovered more than two million opioid pills in coordinated operations.",
+   "s": "The NDLEA intercepted a 20,000-litre fuel tanker fitted with a hidden compartment containing 2,145kg of cannabis, recovered more than two million opioid pills and arrested a convicted cocaine trafficker who allegedly returned to the trade after serving five years, in coordinated operations across several states.",
    "c": "security",
    "st": []
   },
@@ -35,7 +35,7 @@
     5
    ],
    "h": "Military says 36 kidnap victims rescued and terrorist kingpin killed",
-   "s": "Defence Headquarters spokesman Maj.-Gen. Michael Onoja said troops freed 36 abducted people and killed several terrorists, including a kingpin, in recent operations.",
+   "s": "Defence Headquarters spokesman Major General Michael Onoja said troops rescued 36 abducted people and killed several terrorists, including a kingpin, in operations against terrorists, kidnappers and bandits between 31 August and 3 September.",
    "c": "security",
    "st": []
   },
@@ -44,7 +44,7 @@
     28
    ],
    "h": "Zamfara's deputy police commissioner for operations dies",
-   "s": "Zamfara police said their deputy commissioner for operations, DCP Asbagu Aliyu Muhammad, died early on Sunday at the specialist hospital in Gusau.",
+   "s": "Zamfara police said their deputy commissioner for operations, DCP Asbagu Aliyu Muhammad, died at about 1.30am on Sunday at the Ahmed Sani Yariman Bakura Specialist Hospital in Gusau, where he was being treated for an undisclosed illness, spokesman Yazid Abubakar said.",
    "c": "security",
    "st": [
     "Zamfara"
@@ -55,7 +55,7 @@
     2
    ],
    "h": "Three siblings found dead near stream in Akure",
-   "s": "Eleven-year-old twins Joshua and Jacob Jonah and their sibling were found dead near a stream on a farm close to Owena Army Barracks, Akure.",
+   "s": "The bodies of 11-year-old twins Joshua and Jacob Jonah and their five-year-old sister, Blessing, were found near a stream on a farm around Owena Army Barracks in Akure, after they went to the farm with their father, Samuel, on Friday. Ondo police said the circumstances are under investigation.",
    "c": "society",
    "st": [
     "Ondo"
@@ -66,7 +66,7 @@
     50
    ],
    "h": "D'Tigress eliminated from Women's World Cup",
-   "s": "Nigeria's women's basketball team went out of the FIBA World Cup in Berlin after France beat South Korea 95-69, ending their hopes of reaching the knockout stage. The players apologised to Nigerians.",
+   "s": "D'Tigress were eliminated from the FIBA Women's Basketball World Cup in Berlin after France beat South Korea 95-69, ending the African champions' hopes of reaching the knockout stage. South Korea had already beaten Nigeria, and the players apologised to Nigerians.",
    "c": "sports",
    "st": []
   },
@@ -75,7 +75,7 @@
     10
    ],
    "h": "SDP candidate Adebayo promises N200 petrol if elected",
-   "s": "Adewole Adebayo, the Social Democratic Party's presidential candidate, said he would cut the price of petrol, cooking gas and aviation fuel to N200 a litre if he wins in 2027.",
+   "s": "Adewole Adebayo, the SDP's presidential candidate, told a NAN interview that he would cut the prices of petrol, cooking gas and aviation fuel to N200 a litre if elected in 2027.",
    "c": "politics",
    "st": []
   },
@@ -85,7 +85,7 @@
     59
    ],
    "h": "Government says subsidy return would threaten stability as reforms steady prices",
-   "s": "Information Minister Mohammed Idris called demands to restore the petrol subsidy unpatriotic and a risk to public finances. The government said the reforms have brought a reasonable degree of price stability and growth.",
+   "s": "Information Minister Mohammed Idris called demands to restore the petrol subsidy unpatriotic and unrealistic, saying a reversal would threaten fiscal stability and investor confidence. Minister of State Sola Enikanolaiye said the reforms have achieved a reasonable degree of price stability and growth.",
    "c": "economy",
    "st": []
   },
@@ -94,7 +94,7 @@
     29
    ],
    "h": "NMDPRA explains continued swings in petrol prices",
-   "s": "The downstream regulator said petrol prices remain volatile because of how crude is sourced, reliance on a single domestic refinery, and logistics and transport costs.",
+   "s": "NMDPRA spokesman George Ene-Ita told NAN that petrol prices remain volatile because of how crude is sourced, the country's reliance on a single domestic refinery, and logistics and transport costs.",
    "c": "economy",
    "st": []
   },
@@ -103,7 +103,7 @@
     9
    ],
    "h": "JAMB sets 320 UTME score and 80% SSCE mark for underage admission",
-   "s": "JAMB said candidates under the age limit need at least 320 in the UTME and 80 per cent in their school certificate results to be considered for university admission.",
+   "s": "Releasing the 2026 UTME results of underage candidates, JAMB said those below the age limit need at least 320 in the UTME and 80 per cent in their school certificate results to be considered for admission, and that viewing a result does not confer eligibility.",
    "c": "education",
    "st": []
   },
@@ -112,7 +112,7 @@
     3
    ],
    "h": "Exits and imposition claims hit Bauchi APC",
-   "s": "Senior APC figures in Bauchi, including former governorship contenders and legislative aspirants, have resigned from the party, deepening its crisis before 2027.",
+   "s": "Senior APC figures in Bauchi, including former governorship contenders and legislative aspirants, resigned from the party, deepening its crisis. In Kwara, Igbomina leader Gbenga Awoyale, a long-time ally of Governor AbdulRahman AbdulRazaq, also left the APC.",
    "c": "politics",
    "st": [
     "Bauchi"
@@ -124,7 +124,7 @@
     31
    ],
    "h": "APC chairman receives Kano defectors, including NDC's only senator there",
-   "s": "APC national chairman Nentawe Yilwatda welcomed politicians who left opposition parties in Kano, among them former senator Rufa'i Hanga, who resigned from the NDC.",
+   "s": "APC national chairman Nentawe Yilwatda received defectors from opposition parties in Kano, among them former senator Rufa'i Hanga, who resigned from the NDC in a letter dated 3 August to his Dakata Ward chairman, and declared that President Tinubu will win in 2027.",
    "c": "politics",
    "st": [
     "Kano"
@@ -136,7 +136,7 @@
     32
    ],
    "h": "Akpabio asks Northern youths to back Tinubu's reforms",
-   "s": "Senate President Godswill Akpabio urged a delegation of the Northern Ethnic Groups Assembly in Abuja to support President Tinubu's re-election and the continuity of his economic policies.",
+   "s": "Receiving a delegation of the Northern Ethnic Groups Assembly in Abuja, Senate President Godswill Akpabio urged northern youths to support President Tinubu's re-election and the continuity of reforms such as fuel subsidy removal.",
    "c": "politics",
    "st": []
   },
@@ -145,7 +145,7 @@
     24
    ],
    "h": "Wike says Rivers will back Tinubu in 2027",
-   "s": "FCT Minister Nyesom Wike said President Tinubu is now 'our brother' and that the people of Rivers will support his re-election.",
+   "s": "At a reception organised by his Rainbow Coalition in Ikwerre, FCT Minister Nyesom Wike said President Tinubu is now “our brother” and that the people of Rivers State will support his bid for a second term.",
    "c": "politics",
    "st": [
     "Rivers"
@@ -156,7 +156,7 @@
     26
    ],
    "h": "Datti Baba-Ahmed dismisses Obi and Atiku as alternatives to Tinubu",
-   "s": "Yusuf Datti Baba-Ahmed, Peter Obi's 2023 running mate, said none of the leading challengers, including Obi, could improve Nigeria.",
+   "s": "Yusuf Datti Baba-Ahmed, Peter Obi's 2023 running mate, said none of the leading challengers to President Tinubu, including Obi and Atiku, could improve Nigeria, but that Tinubu should prepare to leave office at the end of his term rather than expect to return.",
    "c": "politics",
    "st": []
   },
@@ -165,7 +165,7 @@
     55
    ],
    "h": "EFCC may not reopen 2006 case against Atiku, sources say",
-   "s": "Leadership reported that the EFCC is unlikely to act on a former lawmaker's request to reopen a 2006 corruption case against Atiku Abubakar.",
+   "s": "Indications emerged that the EFCC is unlikely to act on former lawmaker Ehiozuwa Agbonayinma's request to reopen and prosecute a 2006 financial crimes case involving Atiku Abubakar, Leadership reported.",
    "c": "politics",
    "st": []
   },
@@ -175,7 +175,7 @@
     44
    ],
    "h": "Rivers Assembly probes state funds to Pamo University",
-   "s": "The Rivers State House of Assembly opened an inquiry into money the state has released to Pamo University of Medical Sciences since 2017, after stepping down a N6 billion subvention in the 2026 budget.",
+   "s": "The Rivers State House of Assembly set up an ad hoc committee to investigate the state's disbursements to Pamo University of Medical Sciences since 2017, after stepping down a N6 billion subvention in the 2026 budget. The university gave Speaker Martin Amaewhule 24 hours to retract allegedly defamatory remarks.",
    "c": "politics",
    "st": [
     "Rivers"
@@ -186,7 +186,7 @@
     19
    ],
    "h": "Ex-IGP Adamu promises to end bad governance in Nasarawa",
-   "s": "Former Inspector-General Mohammed Adamu, who won the SDP's Nasarawa governorship ticket in a fresh primary, pledged to end years of poor governance.",
+   "s": "Former Inspector-General Mohammed Abubakar Adamu won the SDP's governorship ticket in Nasarawa at a fresh primary across the state's 13 local governments in Lafia on Saturday, and promised to end years of bad governance.",
    "c": "politics",
    "st": [
     "Nasarawa"
@@ -197,7 +197,7 @@
     16
    ],
    "h": "Taraba sets up task force on illegal mining",
-   "s": "Governor Agbu Kefas formed an eight-member task force to enforce the state's ban on illegal mining and protect forests.",
+   "s": "Taraba Governor Agbu Kefas set up an eight-member task force to enforce the state's ban on illegal mining and protect its forests and natural resources, citing environmental and security concerns.",
    "c": "environment",
    "st": [
     "Taraba"
@@ -208,7 +208,7 @@
     53
    ],
    "h": "Enugu police say 211 kidnap victims rescued in 17 months",
-   "s": "Enugu police said they held 6,240 suspects, recovered 156 firearms and freed 211 kidnapped people over 17 months of operations.",
+   "s": "Over 17 months, Enugu's police command says it held 6,240 people, seized 156 guns and nearly 1,500 bullets, and freed 211 hostages. The figures came from Commissioner Mamman Giwa through his spokesman, Daniel Ndukwe.",
    "c": "security",
    "st": [
     "Enugu"
@@ -219,7 +219,7 @@
     57
    ],
    "h": "Troops dislodge bandits and seize arms in Sokoto",
-   "s": "Soldiers of Operation Fansan Yamma drove terrorist elements out of parts of Tangaza Local Government Area and recovered a cache of weapons.",
+   "s": "Troops of the Army Chief's Special Intervention Battalion 7, Sector 2 of Operation Fansan Yamma, dislodged terrorists from parts of Tangaza, Sokoto, and recovered high-calibre weapons and motorcycles in clearance operations.",
    "c": "security",
    "st": [
     "Sokoto"
@@ -230,7 +230,7 @@
     25
    ],
    "h": "Troops destroy terrorists' health facility in Katsina forest",
-   "s": "The army said soldiers attacked terrorists in the Yantumaki forest area and destroyed a facility they used for treatment.",
+   "s": "Soldiers acting on intelligence attacked terrorists in the Yantumaki forest area of Katsina, killing one, forcing others to flee, recovering four motorcycles and destroying a facility the group used for treatment, army spokesman Aliyu Danja said.",
    "c": "security",
    "st": [
     "Katsina"
@@ -241,7 +241,7 @@
     21
    ],
    "h": "Troops rescue kidnap victim in Benue and arrest suspect",
-   "s": "Operation Whirl Stroke rescued an abducted person and arrested a suspected kidnapper in operations in Benue and Nasarawa on Sunday.",
+   "s": "Soldiers of the Operation Whirl Stroke task force freed one kidnap victim and caught a suspected kidnapper in two operations, on 4 and 6 September, in Benue and neighbouring Nasarawa, the force's acting spokesman, Lieutenant Ahmad Zubairu, said on Sunday.",
    "c": "security",
    "st": [
     "Benue",
@@ -253,7 +253,7 @@
     52
    ],
    "h": "Police arrest seven over Bauchi clash that killed two",
-   "s": "Bauchi police arrested seven suspects for conspiracy, inciting disturbance and homicide after violence in Dass on 4 September.",
+   "s": "Bauchi police arrested seven suspects over violence in Dass on 4 September, alleging that Ibrahim El-Safwan, known as Jabala'i, and accomplices intercepted and attacked a 29-year-old man, and that two people died in the clash.",
    "c": "security",
    "st": [
     "Bauchi"
@@ -264,7 +264,7 @@
     49
    ],
    "h": "HURIWA asks police to prosecute politicians over inciting remarks",
-   "s": "The Human Rights Writers Association urged the police to go beyond warnings and prosecute Senator Francis Fadahunsi, Kuje council chairman Danjuma Shekwolo and Borno commissioner Sainna Buba.",
+   "s": "HURIWA urged the police to go beyond invitations and warnings and prosecute politicians accused of inflammatory remarks, naming Senator Francis Fadahunsi, Kuje council chairman Danjuma Shekwolo and Borno commissioner Sainna Buba.",
    "c": "politics",
    "st": []
   },
@@ -274,7 +274,7 @@
     56
    ],
    "h": "Tompolo-backed group takes Tinubu campaign to Katsina",
-   "s": "A movement backed by Government Ekpemupolo deployed campaign vehicles across Katsina, where Tinubu narrowly lost in 2023. Governor Dikko Radda called the state an APC stronghold.",
+   "s": "Tompolo's PBAT Door-to-Door Movement chose Katsina, where Tinubu narrowly lost to Atiku in 2023, for its first northern launch, deploying campaign vehicles across the state. Governor Dikko Radda called Katsina an APC stronghold and promised the President its support.",
    "c": "politics",
    "st": [
     "Katsina"
@@ -285,7 +285,7 @@
     46
    ],
    "h": "Yobe traditional rulers endorse Tinubu and APC candidate Wali",
-   "s": "APC governorship candidate Baba Malam Wali said traditional rulers across Yobe have backed him and President Tinubu for 2027.",
+   "s": "Baba Malam Wali, the APC's governorship candidate in Yobe, said traditional rulers across the state have endorsed him and President Tinubu for 2027 during his visits to thank them for their support.",
    "c": "politics",
    "st": [
     "Yobe"
@@ -296,7 +296,7 @@
     51
    ],
    "h": "Factions and court cases weaken Zamfara ADC",
-   "s": "A leadership dispute in the African Democratic Congress in Zamfara has grown into rival factions, defections and lawsuits.",
+   "s": "A leadership dispute in the ADC in Zamfara has grown into parallel factions, defections and court cases, leaving the party fractured and vulnerable less than a year before the 2027 elections.",
    "c": "politics",
    "st": [
     "Zamfara"
@@ -307,7 +307,7 @@
     22
    ],
    "h": "Bauchi governor Bala Mohammed eyes Senate seat in 2027",
-   "s": "Governor Bala Mohammed is seeking a Senate seat in 2027, an attempt his predecessors failed to achieve, BusinessDay reported.",
+   "s": "Bauchi Governor Bala Mohammed is running for the Bauchi South Senate seat on the APM's platform in 2027, a seat that outgoing governors have historically struggled to win, BusinessDay reported.",
    "c": "politics",
    "st": [
     "Bauchi"
@@ -318,7 +318,7 @@
     15
    ],
    "h": "Uba Sani credits Gani Fawehinmi with opening political space",
-   "s": "Kaduna Governor Uba Sani said the late lawyer Gani Fawehinmi's greatest contribution was his fight to keep Nigeria's political space open to opposition.",
+   "s": "Kaduna Governor Uba Sani said the late lawyer Gani Fawehinmi's greatest contribution was his fight to keep the political space open, recalling his challenge to INEC's stringent conditions for registering new parties, and described him as a committed pan-Nigerian.",
    "c": "politics",
    "st": [
     "Kaduna"
@@ -329,7 +329,7 @@
     0
    ],
    "h": "Sunbeth redeems N25.1bn commercial paper",
-   "s": "Agro-commodities trader Sunbeth Global Concepts repaid its N25.1 billion Series 1 commercial paper, issued under a N200 billion programme, on schedule.",
+   "s": "Agro-commodities trader Sunbeth Global Concepts redeemed its N25.1 billion Series 1 commercial paper on its maturity date of 4 September. The paper was issued under a N200 billion programme.",
    "c": "business",
    "st": []
   },
@@ -338,7 +338,7 @@
     35
    ],
    "h": "Tantita says higher growth needs more oil output",
-   "s": "Pipeline security contractor Tantita said faster GDP growth in 2026 depends on raising oil production and keeping pipelines protected.",
+   "s": "Analysts projected real GDP growth of 4.1 to 7 per cent in 2026 after the second quarter's 4.43 per cent, and pipeline security contractor Tantita said faster growth depends on raising oil output and keeping pipelines protected.",
    "c": "economy",
    "st": []
   },
@@ -347,7 +347,7 @@
     34
    ],
    "h": "NFF confident Super Falcons will qualify for 2028 Olympics",
-   "s": "The Nigeria Football Federation said it expects the Super Falcons to qualify for a second straight Olympic women's football tournament.",
+   "s": "The NFF expressed confidence that the Super Falcons will qualify for the 2028 Los Angeles Olympics, their second in a row after Paris 2024, ahead of their second-round tie against Comoros.",
    "c": "sports",
    "st": []
   },
@@ -356,7 +356,7 @@
     47
    ],
    "h": "Infantino to seek fourth term as FIFA president",
-   "s": "FIFA said Gianni Infantino, its president since 2016, will run again in the March 2027 election despite criticism of a dropped plan to sell stakes in its competitions.",
+   "s": "Gianni Infantino, in charge of world football since 2016, will contest FIFA's presidential election in March 2027, the body confirmed, even after a backlash over a shelved scheme to sell private investors a share of its tournaments. UEFA has gone to court against the governing body.",
    "c": "sports",
    "st": []
   },
@@ -365,7 +365,7 @@
     14
    ],
    "h": "Regina Daniels still single, sister says after visit to Ned Nwoko's home",
-   "s": "Actress Regina Daniels' sister said she has not reconciled with Senator Ned Nwoko, after a video showed her at his house with their children.",
+   "s": "Destiny Daniels, sister of actress Regina Daniels, said Regina visited Senator Ned Nwoko's home only to spend time with their children and has not reconciled with him, after a video of the visit fuelled speculation online.",
    "c": "entertainment",
    "st": []
   }
