@@ -1,0 +1,388 @@
+{
+ "lead": "Plateau closed all its primary and secondary schools as suspected diphtheria cases spread to four council areas. The Auditor-General said there was not enough proof that N33.75 billion in cash transfers reached genuine households, and Atiku Abubakar seized on the finding. The Dangote refinery's share sale was reported to open on 14 September, the House of Representatives dissolved all its ad hoc committees, and the APC received a wave of defectors in Kano.",
+ "items": [
+  {
+   "i": [
+    0
+   ],
+   "h": "Plateau shuts all schools over diphtheria",
+   "s": "Every primary and secondary school in Plateau, public and private, was ordered to close for now after suspected diphtheria cases appeared in four council areas, the state information commissioner announced on Saturday.",
+   "c": "health",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    17,
+    50
+   ],
+   "h": "Auditor-General flags N33.75bn in cash transfers without proof of recipients",
+   "s": "The Auditor-General's 2024 report said the government could not show that N33.75 billion paid to more than 3.29 million households in 2023 reached genuine beneficiaries. Atiku Abubakar called the finding an indictment of the administration.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    8,
+    23,
+    26,
+    32
+   ],
+   "h": "Dangote refinery share sale reported to open on 14 September",
+   "s": "Reuters reported that the refinery's IPO will offer 4.1 billion shares at between N500 and N595 each, which could raise $1.55 billion to $1.8 billion. BusinessDay said the offer opens on 14 September.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "JAMB releases underage candidates' UTME results",
+   "s": "The Joint Admissions and Matriculation Board released the 2026 UTME results of all underage candidates for viewing, and said exceptionally high scorers can proceed with admission.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "House of Representatives dissolves all ad hoc committees",
+   "s": "The Clerk of the House, Sidi Ibrahim, said all ad hoc committees were dissolved with immediate effect on the directive of Speaker Abbas Tajudeen.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    6
+   ],
+   "h": "NSCDC rescues 15 children allegedly sold for N2m each",
+   "s": "The Civil Defence Corps said it freed 15 minors who were trafficked and sold for N2 million each by a man posing as an official of a child rights group, and arrested two suspects.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    3
+   ],
+   "h": "Wike says Amaechi neglected Rivers as transport minister",
+   "s": "FCT Minister Nyesom Wike said Rotimi Amaechi, now the ADC's vice-presidential candidate, had lost political credibility and did little for Rivers while he was transport minister.",
+   "c": "politics",
+   "st": [
+    "Rivers"
+   ]
+  },
+  {
+   "i": [
+    54,
+    47,
+    49
+   ],
+   "h": "Former senators and 136,038 others join APC in Kano; journalists attacked",
+   "s": "Former senators Rufa'i Hanga and Kabiru Gaya and NNPP faction chairman Mas'ud Doguwa were among defectors received by the APC at Sani Abacha Stadium. Suspected thugs attacked journalists returning from the rally.",
+   "c": "politics",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Makinde says Nigerians should not pay for government's failures on fuel",
+   "s": "Oyo Governor Seyi Makinde said fuel pricing needs a review and the debate should not be only about removing or restoring subsidy.",
+   "c": "politics",
+   "st": [
+    "Oyo"
+   ]
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "APM to open Makinde's presidential campaign office in Abuja",
+   "s": "The Allied Peoples Movement said its candidate, Oyo Governor Seyi Makinde, will commission the party's presidential campaign office in Abuja on Monday.",
+   "c": "politics",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "APM says Tinubu lacks capacity to tackle insecurity",
+   "s": "The Allied Peoples Movement accused the government of playing down insecurity, citing Nigeria's fourth place in the 2026 Global Terrorism Index.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "Former IGP Mohammed Adamu becomes Nasarawa SDP governorship candidate",
+   "s": "The Social Democratic Party declared former Inspector-General of Police Mohammed Abubakar Adamu its Nasarawa governorship candidate after a replacement primary in Lafia.",
+   "c": "politics",
+   "st": [
+    "Nasarawa"
+   ]
+  },
+  {
+   "i": [
+    20
+   ],
+   "h": "First Niger Bridge to close from 7 to 21 September",
+   "s": "The Anambra government told residents the First Niger Bridge will be closed to traffic from 7 to 21 September for emergency repairs by the Federal Ministry of Works.",
+   "c": "economy",
+   "st": [
+    "Anambra",
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Fire destroys shops and six houses at Kano's Kofar Wambai market",
+   "s": "A late-night fire on Friday razed shops, stores and six houses in the Babban Layi section of Kofar Wambai Market, the Kano fire service said.",
+   "c": "society",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    53
+   ],
+   "h": "Midnight fire destroys 12 shops in Ilorin",
+   "s": "Goods worth millions of naira were lost when fire swept through 12 shops in a complex near Mandate Market, Ilorin.",
+   "c": "society",
+   "st": [
+    "Kwara"
+   ]
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "Lagos police arrest suspected kidnappers after N21m ransom",
+   "s": "Lagos anti-kidnapping officers arrested three suspected members of a gang operating from Agadagba in Ondo State that targeted Lagos residents, after a N21 million ransom was paid.",
+   "c": "security",
+   "st": [
+    "Lagos",
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    48
+   ],
+   "h": "Two dead after youth clash in Dass, Bauchi",
+   "s": "Two people were killed in attacks that followed a clash between youths in Dass Local Government Area on Friday, and police arrested seven suspects.",
+   "c": "security",
+   "st": [
+    "Bauchi"
+   ]
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "Anambra police arrest suspect 82 days after nursing student's murder",
+   "s": "Police arrested a 26-year-old man over the killing of 23-year-old nursing student Vivian Chilaka in Alor, Idemili South, on 14 June.",
+   "c": "security",
+   "st": [
+    "Anambra"
+   ]
+  },
+  {
+   "i": [
+    24
+   ],
+   "h": "Troops kill terrorist and seize motorcycles in Katsina forest",
+   "s": "Operation Fansan Yamma said soldiers killed a terrorist and recovered four motorcycles at a suspected terrorist health facility in Dan Musa on Friday.",
+   "c": "security",
+   "st": [
+    "Katsina"
+   ]
+  },
+  {
+   "i": [
+    40
+   ],
+   "h": "Katsina police arrest 247 and rescue 17 kidnap victims in August",
+   "s": "The Katsina State Police Command said it arrested 247 suspects and freed 17 kidnapped people during August.",
+   "c": "security",
+   "st": [
+    "Katsina"
+   ]
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Army trains first cohort of Borno forest guards",
+   "s": "Borno's first forest guards finished six weeks of army training in combat support and law enforcement at Rukuba Barracks, Jos.",
+   "c": "security",
+   "st": [
+    "Borno",
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "Police warn politicians that incitement is a crime",
+   "s": "Police spokesman Anietie Iniedu warned political actors that incitement is an offence under Nigerian law as the 2027 campaigns intensify.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    25
+   ],
+   "h": "Delta police arrest six, including a 15-year-old, over drug sales",
+   "s": "Delta police arrested six suspected drug dealers, among them a 15-year-old girl, in an ongoing crackdown.",
+   "c": "security",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    52
+   ],
+   "h": "Police rescue woman kidnapped in Sapele",
+   "s": "Delta police freed a woman abducted by gunmen from her home in Sapele.",
+   "c": "security",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    30
+   ],
+   "h": "World Bank safety-net payments to Nigeria reach $744m",
+   "s": "Nigeria drew another $208.29 million under the World Bank's $800 million National Social Safety Net Programme and has tightened fraud controls, BusinessDay reported.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "Uba Sani unveils locally assembled Peugeot 5008",
+   "s": "Governor Uba Sani unveiled the 2026 Peugeot 5008 at the Dangote Peugeot Automobile plant in Kaduna and said he will ask the National Economic Council to get government bodies to buy local vehicles.",
+   "c": "business",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "IMSU lecturers say they will not grade exams held during strike",
+   "s": "ASUU at Imo State University said members will not mark scripts from examinations held while the union's strike continues.",
+   "c": "education",
+   "st": [
+    "Imo"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "Uba Sani gives plots and cash to 255 APC ward chairmen",
+   "s": "The Kaduna governor allocated a plot of land and cash to each of the 255 APC ward chairmen in the state ahead of 2027.",
+   "c": "politics",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Barau unveils Kano North campaign council",
+   "s": "Deputy Senate President Barau Jibrin inaugurated the APC campaign council for Kano North ahead of the 16 January 2027 elections.",
+   "c": "politics",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    42,
+    55,
+    29
+   ],
+   "h": "Oyo APC presents its 2027 candidates",
+   "s": "The APC in Oyo unveiled its candidates at its Ibadan secretariat, and governorship candidate Sharafadeen Alli asked former rivals for support, saying he cannot win alone.",
+   "c": "politics",
+   "st": [
+    "Oyo"
+   ]
+  },
+  {
+   "i": [
+    56
+   ],
+   "h": "Taraba governor picks Zainab Ibrahim as running mate",
+   "s": "Governor Agbu Kefas named Hajiya Zainab Ibrahim as his running mate for 2027 in place of his current deputy, Aminu Alkali.",
+   "c": "politics",
+   "st": [
+    "Taraba"
+   ]
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "NDC aspirant sues party and INEC over Delta governorship primary",
+   "s": "Ejaife Omizu Odebala filed a suit at the Federal High Court in Abuja against the Nigeria Democratic Congress, INEC and four others over the party's Delta governorship primary.",
+   "c": "politics",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    16
+   ],
+   "h": "Osinbajo warns about unsafe fresh orange juice",
+   "s": "Former Vice President Yemi Osinbajo told a gardeners' seminar that his wife discovered the fresh orange juice she bought was unsafe to drink.",
+   "c": "health",
+   "st": []
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "D'Tigress face Hungary after opening loss",
+   "s": "Nigeria's women's basketball team meet Hungary at the FIBA World Cup after losing 99-81 to South Korea in their opening group match.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "Osimhen doubtful for AFCON qualifiers",
+   "s": "Super Eagles striker Victor Osimhen is a doubt for Nigeria's 2027 Africa Cup of Nations qualifiers after picking up an injury, BusinessDay reported.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "US destroys three Iranian oil tankers",
+   "s": "The US military said it destroyed three Iranian tankers after accusing Tehran of failed missile attacks on US naval vessels, escalating the six-month conflict.",
+   "c": "world",
+   "st": []
+  }
+ ]
+}

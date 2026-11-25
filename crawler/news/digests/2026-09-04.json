@@ -1,0 +1,493 @@
+{
+ "lead": "The SEC approved the Dangote refinery's initial public offering, reported to aim at about $1.5 billion, while the refinery raised its diesel price as crude neared $100. Nigeria denied backing a failed coup in Niger Republic, and the ADC named governorship candidates in 28 states. Suspected Boko Haram fighters attacked the convoy of Borno's APC governorship candidate, and the First Niger Bridge was shut for two weeks of emergency repairs.",
+ "items": [
+  {
+   "i": [
+    6,
+    42
+   ],
+   "h": "SEC clears Dangote refinery IPO, reported to target about $1.5bn",
+   "s": "The Securities and Exchange Commission approved the start of the initial public offering of Dangote Petroleum Refinery and Petrochemicals. Reports put the proposed price at N525 a share for about 4.1 billion shares, which could make it one of the largest deals in the Nigerian capital market.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Nigeria denies supporting failed coup attempt in Niger Republic",
+   "s": "The Minister of State for Foreign Affairs rejected what he called false and mischievous claims that the failed coup in Niger had the backing of ECOWAS and, by extension, Nigeria.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "Nigeria and IEA sign joint work programme on energy data",
+   "s": "Nigeria and the International Energy Agency agreed a joint work programme to improve energy data for policy and investment. Vice President Kashim Shettima said Nigeria's admission as an IEA association country would support growth and energy security.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "ADC names governorship candidates in 28 states",
+   "s": "The African Democratic Congress unveiled governorship and deputy governorship candidates for 28 states for 2027. They include Isa Ashiru in Kaduna and former Attorney-General Abubakar Malami.",
+   "c": "politics",
+   "st": [
+    "Kaduna",
+    "Kebbi"
+   ]
+  },
+  {
+   "i": [
+    17
+   ],
+   "h": "Suspected Boko Haram fighters ambush Borno APC candidate's convoy",
+   "s": "Borno police confirmed an attack on the convoy of Mustapha Gubio, the APC governorship candidate, on the Gubio-Kareto-Damasak highway as he returned to Maiduguri on Thursday.",
+   "c": "security",
+   "st": [
+    "Borno"
+   ]
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "First Niger Bridge closes for two weeks of emergency repairs",
+   "s": "The Federal Ministry of Works in Anambra announced that the First Niger Bridge at Onitsha will be shut for two weeks while urgent repairs are carried out.",
+   "c": "economy",
+   "st": [
+    "Anambra",
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    43
+   ],
+   "h": "Dangote raises diesel price to N1,850 as crude nears $100",
+   "s": "The Dangote refinery increased its gantry price for diesel by N100 to N1,850 a litre as international crude prices climbed toward $100 a barrel.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "Manufacturers say industrial growth nearly halved despite GDP rise",
+   "s": "The Manufacturers Association of Nigeria warned that the industrial sector is weakening: its real growth slowed to 3.96 per cent in the second quarter of 2026, from 7.46 per cent a year earlier.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "Tinubu welcomes African Credit Rating Agency due in October",
+   "s": "President Tinubu said the African Credit Rating Agency, set to launch in October, comes at the right time, after he argued in February for an African alternative to global rating firms.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "NDLEA arrests 68 suspected traffickers in Edo",
+   "s": "The NDLEA's Edo command said intelligence-led operations in August led to the arrest of 68 suspected drug traffickers and the seizure of large quantities of illicit drugs.",
+   "c": "security",
+   "st": [
+    "Edo"
+   ]
+  },
+  {
+   "i": [
+    11
+   ],
+   "h": "Families of 2,971 dead police officers receive N2.3bn in benefits",
+   "s": "Inspector-General Tunji Disu presented N2.317 billion in insurance and welfare payments to next of kin of deceased officers, including balances recovered from insurers.",
+   "c": "security",
+   "st": []
+  },
+  {
+   "i": [
+    21
+   ],
+   "h": "ICPC sacks officer for letting El-Rufai's wife see him in custody",
+   "s": "The ICPC dismissed security officer Daniel Stephen, who was accused of giving one of Nasir El-Rufai's wives unauthorised access to the former Kaduna governor in detention.",
+   "c": "politics",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    8
+   ],
+   "h": "D'Tigress lose World Cup opener to South Korea",
+   "s": "Nigeria's women's basketball team, back at the FIBA World Cup after eight years, lost 99-81 to South Korea in their first Group B game in Berlin.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    16
+   ],
+   "h": "Fubara signs N1.854trn 2026 budget for Rivers",
+   "s": "Governor Siminalayi Fubara signed the 2026 Appropriation Bill into law, calling it the start of a new chapter of unity after the state's long political crisis.",
+   "c": "politics",
+   "st": [
+    "Rivers"
+   ]
+  },
+  {
+   "i": [
+    15
+   ],
+   "h": "NAICOM targets 10% insurance penetration by 2031",
+   "s": "The National Insurance Commission launched a five-year sector plan to raise insurance penetration from 0.5 per cent of GDP to 10 per cent and cover 25 million Nigerians by 2031.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    38
+   ],
+   "h": "FTSE Russell names 31 Nigerian stocks for frontier index",
+   "s": "FTSE Russell will include 31 of Nigeria's largest and most liquid stocks in its frontier index series after the close of trading on 18 September.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    24
+   ],
+   "h": "Presidency says Sahel states' ECOWAS exit created a regional crisis",
+   "s": "A presidential adviser said the withdrawal of Niger, Burkina Faso and Mali from ECOWAS weakened regional integration and cooperation.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    26
+   ],
+   "h": "Court remands Odogwu Asaba over alleged rape and death of 20-year-old",
+   "s": "A Delta State High Court ordered content creator Ifeanyi Ogbonna, known as Odogwu Asaba, held at Ogwashi-Uku correctional centre over the alleged rape and death of Favour Agbro.",
+   "c": "security",
+   "st": [
+    "Delta"
+   ]
+  },
+  {
+   "i": [
+    20
+   ],
+   "h": "Soldiers disperse protesting AAUA students",
+   "s": "Soldiers dispersed students of Adekunle Ajasin University, Akungba-Akoko, who had blocked roads in protest at a 68-day strike.",
+   "c": "education",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "INEC offers JAMB its biometric verification technology",
+   "s": "INEC offered to help JAMB with biometric verification when JAMB registrar Segun Aina led his management on a visit to the commission.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    36
+   ],
+   "h": "Two killed in fresh attacks in Riyom, Plateau",
+   "s": "A Berom youth association said Joel Bwede, 39, and Justice Dadong, 22, were killed in attacks on Rim and Wereng communities in Riyom Local Government Area.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    48
+   ],
+   "h": "Troops rescue six kidnap victims in Kebbi",
+   "s": "Operation Fansan Yamma said soldiers freed six kidnapped people unharmed in Wasagu Local Government Area of Kebbi State on Tuesday.",
+   "c": "security",
+   "st": [
+    "Kebbi"
+   ]
+  },
+  {
+   "i": [
+    57
+   ],
+   "h": "Customs hands N3.95bn in seized drugs to NDLEA",
+   "s": "The Federal Operations Unit Zone A of the Customs Service said it seized synthetic cannabis and other drugs and chemicals worth N3.95 billion and handed them to the NDLEA and NESREA.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    23
+   ],
+   "h": "Kaduna police recover fake dollar notes, guns and stolen cars",
+   "s": "Kaduna police recovered 332 suspected counterfeit $100 notes, nine locally made guns and two stolen vehicles, and arrested four suspects.",
+   "c": "security",
+   "st": [
+    "Kaduna"
+   ]
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "FG opens N2.5bn grant scheme for 50 student start-ups",
+   "s": "Applications are open for the second round of the Federal Government's Student Venture Capital Grant. Up to 50 student-led science and technology ventures can each receive as much as N50 million without giving up equity.",
+   "c": "education",
+   "st": []
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "FCT clears drains after flash floods in Abuja",
+   "s": "The FCT Administration began city-wide drainage clearing after heavy rain flooded major roads in parts of the capital.",
+   "c": "environment",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    65
+   ],
+   "h": "Naira heads for strongest annual gain since 2018",
+   "s": "BusinessDay reported that the naira is on course for its best yearly performance since at least 2018 despite the usual pre-election risks.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    68
+   ],
+   "h": "Tinubu approves N515m relief for Calabar mall fire victims",
+   "s": "First Lady Oluremi Tinubu said the President approved N515 million for victims of the fire at the SPAR shopping mall in Calabar.",
+   "c": "society",
+   "st": [
+    "Cross River"
+   ]
+  },
+  {
+   "i": [
+    70
+   ],
+   "h": "Yobe APC chairman tells women to divorce husbands who block their vote",
+   "s": "Yobe APC chairman Muhammad Gadaka told women at a rally in Nangere to leave husbands who stop them voting for the party, offering to pay their dowries. The remark drew criticism.",
+   "c": "politics",
+   "st": [
+    "Yobe"
+   ]
+  },
+  {
+   "i": [
+    18
+   ],
+   "h": "Atiku campaign spokesman says Obi cannot beat Tinubu without coalition",
+   "s": "Kenneth Okonkwo, spokesman for Atiku Abubakar's campaign, said Peter Obi would struggle to defeat President Tinubu in 2027 unless the opposition unites.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    45
+   ],
+   "h": "First Lady and defence minister warn youths against political violence",
+   "s": "Oluremi Tinubu and Defence Minister Christopher Musa told young people not to let politicians manipulate them into violence ahead of 2027.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    49
+   ],
+   "h": "Parties ask INEC to guard against AI election manipulation",
+   "s": "The APC, SDP and Labour Party asked INEC to build safeguards against the use of artificial intelligence to spread election misinformation.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    50
+   ],
+   "h": "Rivers ADC asks INEC to explain redeployment of electoral officers",
+   "s": "The Rivers chapter of the African Democratic Congress demanded an explanation for INEC's recent redeployment of electoral officers in the state.",
+   "c": "politics",
+   "st": [
+    "Rivers"
+   ]
+  },
+  {
+   "i": [
+    59
+   ],
+   "h": "PDP tells Nwifuru that Ebonyi does not belong to one party",
+   "s": "The PDP responded to Governor Francis Nwifuru's threat to remove council chairmen whose areas fail to vote APC in 2027.",
+   "c": "politics",
+   "st": [
+    "Ebonyi"
+   ]
+  },
+  {
+   "i": [
+    69
+   ],
+   "h": "Law firm asks EFCC to prosecute Atiku over 2006 report",
+   "s": "Sagitarian Law Firm petitioned the EFCC to reopen a financial crimes case against Atiku Abubakar based on a 2006 commission report.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    27,
+    28
+   ],
+   "h": "Refinery owners and Atiku press Tinubu over petrol prices",
+   "s": "The Crude Oil Refinery Owners Association asked President Tinubu to intervene on rising fuel prices, and Atiku Abubakar said marketers' calls on pump prices show flaws in the subsidy policy.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    58
+   ],
+   "h": "UUTH doctors call off strike after apology",
+   "s": "Doctors at the University of Uyo Teaching Hospital returned to work after relatives of the woman accused of attacking a doctor said sorry and the hospital promised to protect its staff better.",
+   "c": "health",
+   "st": [
+    "Akwa Ibom"
+   ]
+  },
+  {
+   "i": [
+    63
+   ],
+   "h": "Five killed and 18 injured in Enugu crash",
+   "s": "Five people died and 18 were hurt in a crash on the Ugwu Onyeama section of the Enugu-Onitsha Expressway, a stretch with frequent accidents.",
+   "c": "society",
+   "st": [
+    "Enugu"
+   ]
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Edo police arrest 69 suspects and rescue nine kidnap victims",
+   "s": "Edo police commissioner Patrick Daaor said the command arrested 69 suspects and freed nine kidnap victims in August.",
+   "c": "security",
+   "st": [
+    "Edo"
+   ]
+  },
+  {
+   "i": [
+    40
+   ],
+   "h": "Nasarawa police arrest 11 suspected robbers",
+   "s": "Nasarawa police arrested 11 suspected armed robbers and rescued a woman kidnapped from her home in August.",
+   "c": "security",
+   "st": [
+    "Nasarawa"
+   ]
+  },
+  {
+   "i": [
+    56
+   ],
+   "h": "Kano police arrest 79 during Takutaha celebrations",
+   "s": "Kano police said 79 suspects were arrested and weapons and drugs recovered during the 1 September Takutaha celebrations, which passed peacefully.",
+   "c": "security",
+   "st": [
+    "Kano"
+   ]
+  },
+  {
+   "i": [
+    60
+   ],
+   "h": "EFCC arraigns two over alleged £110,000 and N500m fraud",
+   "s": "The EFCC arraigned two defendants in Lagos over an alleged fraud of £110,000 and N500 million. They were ordered held in custody.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    72
+   ],
+   "h": "Cross River governor signs three bills and supplementary budget",
+   "s": "Governor Bassey Otu signed laws on social protection and the regulation of healthcare practice, along with a supplementary budget.",
+   "c": "politics",
+   "st": [
+    "Cross River"
+   ]
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Lawyers Alert asks FG to consult Benue on ranching plan",
+   "s": "Rights group Lawyers Alert urged the Federal Government to engage the Benue government and communities before going ahead with reported plans for ranches in the state.",
+   "c": "politics",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "Local ride-hailing app ProTaxi to launch on 1 October",
+   "s": "PromiseLand Innovations said its ProTaxi service will launch on 1 October with a focus on affordable fares.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "OPay restates commitment to Nigeria after shutdown rumour",
+   "s": "Fintech company OPay said it remains committed to Nigeria for the long term after false claims online that it would suspend operations.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "NGX begins climate assessments of listed companies",
+   "s": "Nigerian Exchange Group started baseline climate assessments under its N-Zero programme to help businesses plan credible net-zero pathways.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    3
+   ],
+   "h": "Quadri Aruna backs National Intermediate Games",
+   "s": "Quadri Aruna, Africa's leading table tennis player, said the first National Intermediate Games will help find young talent. About 15,000 athletes are due in Lagos for the event from 1 to 15 October.",
+   "c": "sports",
+   "st": [
+    "Lagos"
+   ]
+  }
+ ]
+}
