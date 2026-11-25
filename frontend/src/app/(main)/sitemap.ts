@@ -6,7 +6,7 @@ import { toSlugSegment } from '@/lib/slug';
 
 // ISR: generate once, cache for 24 hours
 // Googlebot never triggers a cold DB query
-export const revalidate = 86400;
+export const revalidate = 3600;
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nigeriandirectory.com.ng';
 const SITE_UPDATED = new Date('2026-10-19');
@@ -24,10 +24,11 @@ const STATES = [
 const toSlug = (s: string) => toSlugSegment(s);
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [schools, universities, blogPosts] = await Promise.all([
+  const [schools, universities, blogPosts, newsDays] = await Promise.all([
     getSchools(),
     getUniversities(),
     getBlogPosts(),
+    getNewsDays(),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -68,8 +69,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const, priority: 0.7,
   }));
 
+  // The news digest: the archive, each month and each published day.
+  const newsPages: MetadataRoute.Sitemap = newsDays.length
+    ? [
+        { url: `${BASE_URL}/news/`, lastModified: new Date(newsDays[0].updated_at), changeFrequency: 'daily', priority: 0.9 },
+        ...Array.from(new Set(newsDays.map((d) => d.day.slice(0, 7)))).map((ym) => ({
+          url: `${BASE_URL}/news/${ym.slice(0, 4)}/${ym.slice(5, 7)}/`,
+          lastModified: new Date(newsDays.find((d) => d.day.startsWith(ym))!.updated_at),
+          changeFrequency: 'daily' as const, priority: 0.6,
+        })),
+        ...newsDays.map((d) => ({
+          url: `${BASE_URL}/news/${d.day.slice(0, 4)}/${d.day.slice(5, 7)}/${d.day.slice(8, 10)}/`,
+          lastModified: new Date(d.updated_at),
+          changeFrequency: 'monthly' as const, priority: 0.7,
+        })),
+      ]
+    : [];
+
   return [
-    ...staticPages,       //   7
+    ...staticPages,
+    ...newsPages,       //   7
     ...schoolStatePages,  //  37
     ...uniStatePages,     //  37
     ...schoolPages,       // 408
@@ -121,5 +140,16 @@ async function getBlogPosts() {
   try {
     const posts = await getContent().getAllPosts();
     return posts.map((p) => ({ slug: p.slug, publishedAt: p.publishedAt }));
+  } catch { return []; }
+}
+
+async function getNewsDays() {
+  try {
+    const sql = neon(process.env.DATABASE_URL!);
+    const rows = await sql`
+      SELECT TO_CHAR(day, 'YYYY-MM-DD') AS day, updated_at
+      FROM news_days WHERE status = 'published' ORDER BY day DESC
+    `;
+    return rows.map((r) => ({ day: r.day as string, updated_at: r.updated_at as string }));
   } catch { return []; }
 }

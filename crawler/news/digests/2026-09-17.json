@@ -1,0 +1,356 @@
+{
+ "lead": "The death toll from a suspected poisoned herbal drink in Ondo rose to 49, with about 170 people affected, and 33 suspected illegal miners died in Civil Defence custody in Niger State. Nigeria defeated a $2.35 billion arbitration claim over the Mambilla hydropower project, and a South African woman was jailed for 25 years for importing heroin. The Falconets beat England 3-0 to reach the U20 World Cup quarter-finals, and Aisha Buhari visited Atiku Abubakar.",
+ "items": [
+  {
+   "i": [
+    11
+   ],
+   "h": "Ondo poisoned drink death toll rises to 49",
+   "s": "Health authorities said 49 people have now died and about 170 have been affected after drinking a suspected poisonous herbal mixture in Odigbo.",
+   "c": "health",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    7
+   ],
+   "h": "33 suspected illegal miners die in NSCDC custody in Niger",
+   "s": "The Civil Defence Corps ordered an investigation after 33 detained suspected illegal miners died amid a disease outbreak in its custody in Niger State.",
+   "c": "security",
+   "st": [
+    "Niger"
+   ]
+  },
+  {
+   "i": [
+    5
+   ],
+   "h": "Nigeria wins $2.35bn Mambilla arbitration",
+   "s": "An ICC tribunal in Paris rejected Sunrise Power and Transmission's $2.35 billion claim over the stalled Mambilla hydropower project. President Tinubu said the ruling clears the way for the project.",
+   "c": "economy",
+   "st": [
+    "Taraba"
+   ]
+  },
+  {
+   "i": [
+    0
+   ],
+   "h": "South African woman jailed for importing heroin",
+   "s": "The Federal High Court in Abuja handed a South African woman a long combined prison term for bringing 5.75kg of heroin into Nigeria. Reports of the total sentence differ between outlets.",
+   "c": "security",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    3
+   ],
+   "h": "Falconets beat England 3-0 to reach quarter-finals",
+   "s": "Nigeria's under-20 women defeated England in the round of 16 of the FIFA U20 Women's World Cup in Poland on Thursday.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    4
+   ],
+   "h": "Aisha Buhari visits Atiku",
+   "s": "Former First Lady Aisha Buhari, widow of the late President Muhammadu Buhari, visited ADC presidential candidate Atiku Abubakar, who announced it on social media.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    1
+   ],
+   "h": "Shettima clarifies remark on northern governors' support for Tinubu",
+   "s": "The Vice President explained his earlier comment that only six northern governors backed Tinubu before he won the APC ticket.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    27
+   ],
+   "h": "Curfew in Mambilla after killings blamed on ethnic militia",
+   "s": "Several people, including a security operative, were killed in the Mbamnga area of Sardauna Local Government Area, leading to a curfew.",
+   "c": "security",
+   "st": [
+    "Taraba"
+   ]
+  },
+  {
+   "i": [
+    10
+   ],
+   "h": "Mutilated body of woman found in Jos forest reserve",
+   "s": "A woman's mutilated body was discovered on Thursday morning by a stream inside the forest reserve around the Jos Wildlife Park.",
+   "c": "security",
+   "st": [
+    "Plateau"
+   ]
+  },
+  {
+   "i": [
+    9
+   ],
+   "h": "Witness describes abuse of 49 abducted Orire students and teachers",
+   "s": "A DSS witness told the Federal High Court in Abuja how pupils and teachers kidnapped from schools in Orire, Oyo State, were treated in captivity.",
+   "c": "security",
+   "st": [
+    "Oyo"
+   ]
+  },
+  {
+   "i": [
+    34
+   ],
+   "h": "Troops rescue 31 kidnap victims and kill kingpin in Katsina and Kebbi",
+   "s": "Soldiers in the North-West task force freed 31 captives and killed two terrorists, one of them a known gang leader, in separate operations in Katsina and Kebbi.",
+   "c": "security",
+   "st": [
+    "Katsina",
+    "Kebbi"
+   ]
+  },
+  {
+   "i": [
+    2
+   ],
+   "h": "Nwabali recalled as Chelle names Super Eagles squad",
+   "s": "Coach Eric Chelle named 24 players for the AFCON qualifiers against Madagascar and Guinea-Bissau and the friendly with Russia, with goalkeeper Stanley Nwabali returning.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    14
+   ],
+   "h": "NLC demands relief as petrol prices rise",
+   "s": "The Nigeria Labour Congress asked for wage awards and naira-priced crude for local refineries to cushion higher fuel costs.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    33
+   ],
+   "h": "FG and unions pause King's College dispute for two weeks",
+   "s": "The education ministry and its unions reached a five-point agreement to halt action over the proposed concession of King's College, Lagos.",
+   "c": "education",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    22
+   ],
+   "h": "Saudi Arabia rejects Nigeria's request for more Hajj slots",
+   "s": "NAHCON said the kingdom declined to raise Nigeria's 2027 Hajj quota.",
+   "c": "society",
+   "st": []
+  },
+  {
+   "i": [
+    12
+   ],
+   "h": "Air Peace disputes NCAA delay report",
+   "s": "The airline said only 15 per cent of its August delays were caused by internal factors and cited discrepancies in the regulator's data.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    35
+   ],
+   "h": "Minister says Dangote IPO could add $60bn to NGX",
+   "s": "A full subscription and listing would add about $60 billion to the market's capitalisation, the minister said.",
+   "c": "business",
+   "st": []
+  },
+  {
+   "i": [
+    37
+   ],
+   "h": "FG reviews new tax laws and starts 2027 finance bill",
+   "s": "The government began reviewing the new tax laws to fix implementation problems.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    42
+   ],
+   "h": "61% of Nigerian adults in financial distress, EFInA says",
+   "s": "The 2026 Access to Financial Services survey found most adults are under financial strain.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    47
+   ],
+   "h": "Gas flaring rises to 7.48%, worst since October 2025",
+   "s": "NUPRC data showed the flaring rate jumped in August, reversing months of improvement.",
+   "c": "environment",
+   "st": []
+  },
+  {
+   "i": [
+    17,
+    16,
+    20,
+    36
+   ],
+   "h": "APC figures split over Wike's feud with governors",
+   "s": "South-East APC leaders backed the governors, while lawmaker Abdulmumin Jibrin and Josef Onoh urged the party to recognise Wike's role and stay united.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    21
+   ],
+   "h": "Obi-Kwankwaso Movement unveils 59-member campaign council",
+   "s": "The group set up a nationwide structure covering the six zones and the FCT.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    29
+   ],
+   "h": "Utomi's commission to meet opposition candidates on single ticket",
+   "s": "The Movement for Credible Elections' commission will meet shortlisted opposition candidates to push for one presidential ticket.",
+   "c": "politics",
+   "st": []
+  },
+  {
+   "i": [
+    41
+   ],
+   "h": "Major Benue governorship candidates skip peace accord",
+   "s": "Leading candidates stayed away from a peace accord signing organised by security agencies.",
+   "c": "politics",
+   "st": [
+    "Benue"
+   ]
+  },
+  {
+   "i": [
+    39
+   ],
+   "h": "Court strikes out EFCC forfeiture bid against ex-power minister Mamman",
+   "s": "A Federal High Court in Abuja struck out the commission's motion to forfeit properties linked to Saleh Mamman.",
+   "c": "politics",
+   "st": [
+    "FCT"
+   ]
+  },
+  {
+   "i": [
+    28
+   ],
+   "h": "Court upholds KC Luxury's extended detention",
+   "s": "A Lagos Federal High Court said the NDLEA showed reasonable suspicion in the cocaine trafficking case against Afolabi Kazeem.",
+   "c": "security",
+   "st": [
+    "Lagos"
+   ]
+  },
+  {
+   "i": [
+    26
+   ],
+   "h": "Former Osun council chief sues IGP for N500m",
+   "s": "Babajide Jooda sued the Inspector-General and a former force spokesman over an arrest warrant.",
+   "c": "politics",
+   "st": [
+    "Osun"
+   ]
+  },
+  {
+   "i": [
+    32
+   ],
+   "h": "Ogoni youths protest over oil production restart",
+   "s": "Residents of Korokoro and an Ogoni youth coalition demanded inclusion and dialogue before production resumes.",
+   "c": "environment",
+   "st": [
+    "Rivers"
+   ]
+  },
+  {
+   "i": [
+    31
+   ],
+   "h": "ECOWAS rolls out biometric ID card",
+   "s": "Nigeria is among seven states introducing the regional card to speed up border crossings.",
+   "c": "world",
+   "st": []
+  },
+  {
+   "i": [
+    30
+   ],
+   "h": "Power ministry plans national complaints call centre",
+   "s": "Minister Joseph Tegbe said Nigerians will be able to report electricity problems to a central call centre.",
+   "c": "economy",
+   "st": []
+  },
+  {
+   "i": [
+    44
+   ],
+   "h": "Phone traders reject NCC device registration fees",
+   "s": "Mobile phone dealers asked for three to six months of public awareness before any fees are introduced.",
+   "c": "technology",
+   "st": []
+  },
+  {
+   "i": [
+    43
+   ],
+   "h": "Edo police arrest man over abuse of stepdaughter",
+   "s": "A 57-year-old man in Auchi was arrested for allegedly defiling his six-year-old stepdaughter.",
+   "c": "security",
+   "st": [
+    "Edo"
+   ]
+  },
+  {
+   "i": [
+    19
+   ],
+   "h": "City Boy Movement inaugurates Ondo executives",
+   "s": "The pro-Tinubu youth group launched its leadership in Akure.",
+   "c": "politics",
+   "st": [
+    "Ondo"
+   ]
+  },
+  {
+   "i": [
+    13
+   ],
+   "h": "Flamingos beat Niger 5-0 at WAFU B tournament",
+   "s": "Nigeria's under-17 girls started the regional event with a big win ahead of their World Cup.",
+   "c": "sports",
+   "st": []
+  },
+  {
+   "i": [
+    46
+   ],
+   "h": "King Charles warns tech leaders about AI risks",
+   "s": "The British monarch spoke of existential dangers if artificial intelligence falls into the wrong hands.",
+   "c": "world",
+   "st": []
+  }
+ ]
+}

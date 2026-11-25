@@ -351,9 +351,11 @@ app.get('/api/csrf-token', getCsrfToken);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/schools', schoolsRoutes);
+app.use('/api/news', require('./routes/news').publicRouter);
 app.use('/api/locations', locationsRoutes);
 app.use('/api/claims', claimsRoutes);
 app.use('/api/admin/records', require('./routes/adminRecords'));
+app.use('/api/admin/news', require('./routes/news').adminRouter);
 app.use('/api/admin', adminRoutes);
 app.use('/api/cron', require('./routes/cron'));
 app.use('/api/crawl', crawlRoutes);

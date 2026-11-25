@@ -12,6 +12,7 @@ import {
   HomeIcon,
   ArrowRightOnRectangleIcon,
   KeyIcon,
+  NewspaperIcon,
 } from '@heroicons/react/24/outline';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
@@ -22,6 +23,7 @@ const navItems = [
   { href: '/admin/submissions', label: 'Form Submissions',   icon: EnvelopeIcon },
   { href: '/admin/schools',     label: 'Records & queue',    icon: AcademicCapIcon },
   { href: '/admin/claims',      label: 'Ownership Requests', icon: ClipboardDocumentListIcon },
+  { href: '/admin/news',        label: 'News review',        icon: NewspaperIcon },
   { href: '/admin/account',     label: 'Change password',    icon: KeyIcon },
 ];
 

@@ -120,7 +120,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2 lg:col-start-7">
-            <FooterColumn title="Categories" links={categoryLinks.map(({ name, href }) => ({ name, href }))} />
+            <FooterColumn title="Categories" links={[...categoryLinks.map(({ name, href }) => ({ name, href })), { name: 'News', href: '/news/' }]} />
           </div>
           <div className="lg:col-span-2">
             <FooterColumn title="Resources" links={resourceLinks} />

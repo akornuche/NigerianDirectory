@@ -193,6 +193,9 @@ export default function MegaMenu() {
               />
             ))}
 
+            <Link href="/news/" className={linkClass(pathname.startsWith('/news'))}>
+              News
+            </Link>
             <Link href="/blog" className={linkClass(pathname.startsWith('/blog'))}>
               Blog
             </Link>
@@ -248,6 +251,13 @@ export default function MegaMenu() {
               />
             ))}
 
+            <Link
+              href="/news/"
+              className="block py-3 font-display text-2xl font-bold tracking-display"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              News
+            </Link>
             <Link
               href="/blog"
               className="block py-3 font-display text-2xl font-bold tracking-display"
