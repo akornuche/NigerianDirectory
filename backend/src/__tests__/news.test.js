@@ -20,8 +20,10 @@ jest.mock('../config/database', () => ({
         if (/SELECT rank, headline/.test(sql)) return { rows: [{ rank: 1, headline: 'H', summary: 'S', category: 'politics', states: [], sources: [] }] };
         if (/AS older/.test(sql)) return { rows: [{ older: null, newer: new Date('2026-09-02') }] };
         if (/COUNT\(\*\)::int AS n FROM news_items/.test(sql)) return { rows: [{ n: params[0] === '2026-09-03' ? 0 : 5 }] };
+        if (/^UPDATE news_days d SET status = 'published'/.test(sql)) return { rows: params[0].slice(0, 1).map((d) => ({ day: new Date(d) })) };
         if (/^UPDATE news_days/.test(sql)) return { rows: [{ day: new Date(params[0]), status: 'published' }] };
         if (/^UPDATE news_items/.test(sql)) return { rows: [{ id: 1 }] };
+        if (/^DELETE FROM news_days/.test(sql)) return { rows: params[0].map((d) => ({ day: new Date(d) })) };
         return { rows: [] };
     }),
     pool: { query: jest.fn(async () => ({ rows: [] })) },
@@ -94,5 +96,27 @@ describe('admin review', () => {
 
     test('dropping an unknown story is not found', async () => {
         expect((await request(app).delete('/api/admin/news/2026-09-01/items/99')).status).toBe(404);
+    });
+});
+
+describe('bulk review actions', () => {
+    test('publishing several days records the reviewer and reports what changed', async () => {
+        const res = await request(app).post('/api/admin/news/bulk').send({ action: 'publish', days: ['2026-09-01', '2026-09-02'] });
+        expect(res.status).toBe(200);
+        expect(res.body).toMatchObject({ action: 'publish', requested: 2, changed: 1, days: ['2026-09-01'] });
+        const q = mockQueries.find((x) => /^UPDATE news_days d SET status = 'published'/.test(x.sql));
+        expect(q.sql).toContain('EXISTS (SELECT 1 FROM news_items');
+        expect(q.params[1]).toBe(1);
+    });
+
+    test('deleting removes the selected days', async () => {
+        const res = await request(app).post('/api/admin/news/bulk').send({ action: 'delete', days: ['2026-09-03'] });
+        expect(res.body.days).toEqual(['2026-09-03']);
+    });
+
+    test('unknown actions and malformed days are rejected', async () => {
+        expect((await request(app).post('/api/admin/news/bulk').send({ action: 'archive', days: ['2026-09-01'] })).status).toBe(400);
+        expect((await request(app).post('/api/admin/news/bulk').send({ action: 'publish', days: ['1 Sept'] })).status).toBe(400);
+        expect((await request(app).post('/api/admin/news/bulk').send({ action: 'publish', days: [] })).status).toBe(400);
     });
 });

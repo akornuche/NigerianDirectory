@@ -221,79 +221,112 @@ router.post('/bulk-update-schools', async (req, res, next) => {
 });
 
 // ============================================
-// GET /api/admin/page-health - Enrichment & SEO health per school
+// GET /api/admin/page-health - content and SEO health per record
 // ============================================
+// Every record is assessed with the same indexability rule the public site
+// uses for noindex and the sitemap (utils/contentQuality), so "indexable"
+// here means "Google is allowed to index this page". The set is small
+// (hundreds of rows), so it is assessed, filtered, sorted and paged in JS.
+//   ?category=all|university|school
+//   &issue=all|not_indexable|missing_photo|missing_seo|missing_website
+//   &q=<name search>&sort=score|name|state|words|updated&dir=asc|desc
+//   &page=&limit=
+const PAGE_HEALTH_SORTS = {
+    score: (r) => r.page_score,
+    words: (r) => r.original_words,
+    name: (r) => r.name.toLowerCase(),
+    state: (r) => `${r.state} ${r.name}`.toLowerCase(),
+    updated: (r) => (r.updated_at ? new Date(r.updated_at).getTime() : 0),
+};
+
 router.get('/page-health', async (req, res, next) => {
     try {
         const { query } = require('../config/database');
-        const page  = parseInt(req.query.page)  || 1;
-        const limit = parseInt(req.query.limit) || 50;
-        const filter = req.query.filter || 'all'; // all | missing_content | missing_images | missing_meta
-        const offset = (page - 1) * limit;
+        const { assessContentQuality } = require('../utils/contentQuality');
+        const page = Math.max(parseInt(req.query.page, 10) || 1, 1);
+        const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 50, 1), 200);
+        const category = ['university', 'school'].includes(req.query.category) ? req.query.category : 'all';
+        const issue = req.query.issue || req.query.filter || 'all';
+        const sort = PAGE_HEALTH_SORTS[req.query.sort] ? req.query.sort : 'score';
+        const dir = req.query.dir === 'desc' ? 'desc' : 'asc';
+        const q = String(req.query.q || '').trim().toLowerCase();
 
-        let whereClause = '1=1';
-        if (filter === 'missing_content') whereClause = 'enriched_history IS NULL';
-        if (filter === 'missing_images')  whereClause = 'hero_image_url IS NULL';
-        if (filter === 'missing_meta')    whereClause = "meta_title IS NULL OR meta_title = ''";
+        const { rows } = await query(
+            `SELECT id, name, slug, state, city, area, type, institution_category, verification_status,
+                    enriched_history, enriched_academics, enriched_campus_info, enriched_student_life,
+                    meta_title, meta_description, hero_image_url, logo_url, website, updated_at
+             FROM schools`
+        );
 
-        const [countRes, rowsRes, summaryRes] = await Promise.all([
-            query(`SELECT COUNT(*) FROM schools WHERE ${whereClause}`),
-            query(
-                `SELECT
-                    id, name, slug, state, city, area, type,
-                    enriched_at, enrichment_status,
-                    CASE WHEN enriched_history IS NOT NULL AND enriched_history != '' THEN true ELSE false END AS has_history,
-                    CASE WHEN enriched_academics IS NOT NULL AND enriched_academics != '' THEN true ELSE false END AS has_academics,
-                    CASE WHEN enriched_campus_info IS NOT NULL AND enriched_campus_info != '' THEN true ELSE false END AS has_campus,
-                    CASE WHEN enriched_student_life IS NOT NULL AND enriched_student_life != '' THEN true ELSE false END AS has_student_life,
-                    CASE WHEN meta_title IS NOT NULL AND meta_title != '' THEN true ELSE false END AS has_meta_title,
-                    CASE WHEN meta_description IS NOT NULL AND meta_description != '' THEN true ELSE false END AS has_meta_desc,
-                    CASE WHEN hero_image_url IS NOT NULL THEN true ELSE false END AS has_hero_image,
-                    CASE WHEN logo_url IS NOT NULL THEN true ELSE false END AS has_logo,
-                    CASE WHEN website IS NOT NULL THEN true ELSE false END AS has_website,
-                    -- Content score 0-100
-                    (
-                        CASE WHEN enriched_history IS NOT NULL AND enriched_history != '' THEN 25 ELSE 0 END +
-                        CASE WHEN enriched_academics IS NOT NULL AND enriched_academics != '' THEN 25 ELSE 0 END +
-                        CASE WHEN enriched_campus_info IS NOT NULL AND enriched_campus_info != '' THEN 15 ELSE 0 END +
-                        CASE WHEN enriched_student_life IS NOT NULL AND enriched_student_life != '' THEN 15 ELSE 0 END +
-                        CASE WHEN meta_title IS NOT NULL AND meta_title != '' THEN 10 ELSE 0 END +
-                        CASE WHEN meta_description IS NOT NULL AND meta_description != '' THEN 5 ELSE 0 END +
-                        CASE WHEN hero_image_url IS NOT NULL THEN 5 ELSE 0 END
-                    ) AS page_score
-                 FROM schools
-                 WHERE ${whereClause}
-                 ORDER BY page_score ASC, name ASC
-                 LIMIT $1 OFFSET $2`,
-                [limit, offset]
-            ),
-            query(`
-                SELECT
-                    COUNT(*) as total_schools,
-                    COUNT(*) FILTER (WHERE enriched_history IS NOT NULL AND enriched_history != '') as has_content,
-                    COUNT(*) FILTER (WHERE hero_image_url IS NOT NULL) as has_images,
-                    COUNT(*) FILTER (WHERE meta_title IS NOT NULL AND meta_title != '') as has_meta,
-                    ROUND(AVG(
-                        CASE WHEN enriched_history IS NOT NULL AND enriched_history != '' THEN 25 ELSE 0 END +
-                        CASE WHEN enriched_academics IS NOT NULL AND enriched_academics != '' THEN 25 ELSE 0 END +
-                        CASE WHEN enriched_campus_info IS NOT NULL AND enriched_campus_info != '' THEN 15 ELSE 0 END +
-                        CASE WHEN enriched_student_life IS NOT NULL AND enriched_student_life != '' THEN 15 ELSE 0 END +
-                        CASE WHEN meta_title IS NOT NULL AND meta_title != '' THEN 10 ELSE 0 END +
-                        CASE WHEN meta_description IS NOT NULL AND meta_description != '' THEN 5 ELSE 0 END +
-                        CASE WHEN hero_image_url IS NOT NULL THEN 5 ELSE 0 END
-                    ), 1) as avg_page_score
-                FROM schools
-            `)
-        ]);
+        const filled = (v) => typeof v === 'string' && v.trim() !== '';
+        const assessed = rows.map((r) => {
+            const quality = assessContentQuality(r);
+            const row = {
+                id: r.id, name: r.name, slug: r.slug, state: r.state, city: r.city, area: r.area, type: r.type,
+                institution_category: r.institution_category,
+                verification_status: r.verification_status,
+                updated_at: r.updated_at,
+                indexable: quality.indexable,
+                original_words: quality.originalWords,
+                has_history: filled(r.enriched_history),
+                has_academics: filled(r.enriched_academics),
+                has_campus: filled(r.enriched_campus_info),
+                has_student_life: filled(r.enriched_student_life),
+                has_meta_title: filled(r.meta_title),
+                has_meta_desc: filled(r.meta_description),
+                has_hero_image: filled(r.hero_image_url),
+                has_logo: filled(r.logo_url),
+                has_website: filled(r.website),
+            };
+            // 0-100: indexability carries the most weight, then the core
+            // sections, then search snippet, photo and contact details.
+            row.page_score =
+                (row.indexable ? 40 : 0) +
+                (row.has_history ? 15 : 0) + (row.has_academics ? 15 : 0) +
+                (row.has_campus ? 8 : 0) + (row.has_student_life ? 2 : 0) +
+                (row.has_meta_title && row.has_meta_desc ? 10 : 0) +
+                (row.has_hero_image ? 5 : 0) + (row.has_website ? 5 : 0);
+            return row;
+        });
 
+        const inCategory = assessed.filter((r) => category === 'all' || r.institution_category === category);
+        const ISSUES = {
+            not_indexable: (r) => !r.indexable,
+            missing_photo: (r) => !r.has_hero_image,
+            missing_seo: (r) => !(r.has_meta_title && r.has_meta_desc),
+            missing_website: (r) => !r.has_website,
+            // Older links used these names.
+            missing_content: (r) => !r.indexable,
+            missing_images: (r) => !r.has_hero_image,
+            missing_meta: (r) => !(r.has_meta_title && r.has_meta_desc),
+        };
+        let list = inCategory.filter((r) => (ISSUES[issue] ? ISSUES[issue](r) : true));
+        if (q) list = list.filter((r) => r.name.toLowerCase().includes(q));
+
+        const key = PAGE_HEALTH_SORTS[sort];
+        list.sort((a, b) => {
+            const x = key(a), y = key(b);
+            const c = x < y ? -1 : x > y ? 1 : a.name.localeCompare(b.name);
+            return dir === 'desc' ? -c : c;
+        });
+
+        const count = (fn) => inCategory.filter(fn).length;
+        const avg = inCategory.length ? inCategory.reduce((n, r) => n + r.page_score, 0) / inCategory.length : 0;
         res.json({
-            summary: summaryRes.rows[0],
-            schools: rowsRes.rows,
-            pagination: {
-                page, limit,
-                totalCount: parseInt(countRes.rows[0].count),
-                totalPages: Math.ceil(parseInt(countRes.rows[0].count) / limit)
-            }
+            summary: {
+                total: inCategory.length,
+                universities: assessed.filter((r) => r.institution_category === 'university').length,
+                schools: assessed.filter((r) => r.institution_category === 'school').length,
+                indexable: count((r) => r.indexable),
+                not_indexable: count((r) => !r.indexable),
+                has_photo: count((r) => r.has_hero_image),
+                has_seo: count((r) => r.has_meta_title && r.has_meta_desc),
+                has_website: count((r) => r.has_website),
+                avg_page_score: Math.round(avg * 10) / 10,
+            },
+            schools: list.slice((page - 1) * limit, page * limit),
+            pagination: { page, limit, totalCount: list.length, totalPages: Math.max(1, Math.ceil(list.length / limit)) },
+            sort, dir,
         });
     } catch (error) {
         next(error);
