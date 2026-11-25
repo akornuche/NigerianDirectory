@@ -614,16 +614,18 @@
   "established_year": 1980,
   "gender": "co-ed",
   "boarding": true,
-  "h": "Apata Memorial High School is a privately owned school in Lagos run on military lines. It was founded in 1980 by S. O. Apata, a retired brigadier-general of the Nigerian Army.",
-  "a": "The school has about 1,550 pupils and 150 teachers, which gives it relatively small classes for a Lagos school of its size.",
-  "c": "The school is in Lagos.",
+  "h": "Apata Memorial High School is a privately owned school in Lagos run on military lines. It was founded in 1980 by S. O. Apata, a retired brigadier-general of the Nigerian Army. The school grew out of Success Coaching Classes, which S. O. Apata started in 1980 before moving into full-time schooling; its stated mission is to promote self-reliance and hard work.",
+  "a": "The school has about 1,550 pupils and 150 teachers, which gives it relatively small classes for a Lagos school of its size. Admission is based on academic merit: candidates sit written and oral entrance examinations, and successful applicants receive a provisional admission letter.",
+  "c": "The school is in Lagos. The school has modern hostels for both boys and girls.",
   "s": "It takes both boarding and day students, and its military-style discipline is part of daily life for boys and girls alike.",
   "category": "school",
   "source_name": "Wikipedia: Apata Memorial High School",
   "source_url": "https://en.wikipedia.org/wiki/Apata_Memorial_High_School",
   "sources": [
-   "https://en.wikipedia.org/wiki/Apata_Memorial_High_School"
-  ]
+   "https://en.wikipedia.org/wiki/Apata_Memorial_High_School",
+   "https://www.apatamemorialschool.com/"
+  ],
+  "website": "https://www.apatamemorialschool.com/"
  },
  "s002": {
   "name": "Essence International School",
@@ -1281,14 +1283,16 @@
   "city": "Akute",
   "area": "Akute",
   "h": "Isolog Schools is a privately owned group of primary and secondary schools led by its chairman, Engineer Isaac Ogundipe, and its proprietor, Mrs Rachel Ogundipe.",
-  "a": "The group runs junior and senior schools, covering primary and secondary education.",
+  "a": "The group runs junior and senior schools, covering primary and secondary education. Its schools are organised as a nursery and primary school and a secondary college, with a faith-based ethos and an annual valedictory and prize-giving day.",
   "c": "The main campus is in Akute, Ogun State, with a second campus at Ojodu in Lagos State.",
   "category": "school",
   "source_name": "Wikipedia: Isolog Schools",
   "source_url": "https://en.wikipedia.org/wiki/Isolog_schools",
   "sources": [
-   "https://en.wikipedia.org/wiki/Isolog_schools"
-  ]
+   "https://en.wikipedia.org/wiki/Isolog_schools",
+   "https://isologschoolsng.com/"
+  ],
+  "website": "https://isologschoolsng.com/"
  },
  "s042": {
   "name": "Norwegian International School, Port Harcourt",
@@ -1315,15 +1319,17 @@
   "area": "Gbagada",
   "established_year": 1968,
   "gender": "co-ed",
-  "h": "Grace Schools is a co-educational school founded in Gbagada, Lagos, in 1968 by Deaconess Grace Bisola Oshinowo. It added a high school in 1994.",
-  "a": "The school has four sections: nursery, primary, secondary and pre-university. Its facilities include a technical workshop, science laboratories, a library, art studios, a clinic, a multipurpose hall and a sports field, as well as a small zoo.",
+  "h": "Grace Schools is a co-educational school founded in Gbagada, Lagos, in 1968 by Deaconess Grace Bisola Oshinowo. It added a high school in 1994. Its two sections were founded in 1968 and 1994, and the school has maintained its standards for more than five decades.",
+  "a": "The school has four sections: nursery, primary, secondary and pre-university. Its facilities include a technical workshop, science laboratories, a library, art studios, a clinic, a multipurpose hall and a sports field, as well as a small zoo. The secondary school covers every subject area specified by the Ministry of Education, at junior and senior secondary levels, and stresses character education alongside technology. Clubs and other activities are strongly encouraged.",
   "c": "The school is in Gbagada, Lagos.",
   "category": "school",
   "source_name": "Wikipedia: Grace Schools",
   "source_url": "https://en.wikipedia.org/wiki/Grace_Schools",
   "sources": [
-   "https://en.wikipedia.org/wiki/Grace_Schools"
-  ]
+   "https://en.wikipedia.org/wiki/Grace_Schools",
+   "https://graceschools.net/"
+  ],
+  "website": "https://graceschools.net/"
  },
  "s044": {
   "name": "Bells Comprehensive Secondary School",
@@ -1333,14 +1339,16 @@
   "area": "Ota",
   "gender": "co-ed",
   "h": "The Bells Comprehensive Secondary School for Boys and Girls is a private co-educational secondary school in Ota, run by the Bells Educational Foundation, which also founded Bells University of Technology.",
-  "a": "The school educates between about 500 and 1,000 students.",
+  "a": "The school educates between about 500 and 1,000 students. Admission is open to all classes throughout the session, through the office of the head teacher's secretary. School fees cover tuition, uniform, meals, excursions and student insurance.",
   "c": "The school is in Ota, Ogun State.",
   "category": "school",
   "source_name": "Wikipedia: Bells Comprehensive Secondary School",
   "source_url": "https://en.wikipedia.org/wiki/Bells_Comprehensive_Secondary_School",
   "sources": [
-   "https://en.wikipedia.org/wiki/Bells_Comprehensive_Secondary_School"
-  ]
+   "https://en.wikipedia.org/wiki/Bells_Comprehensive_Secondary_School",
+   "https://www.thebellsschools.org"
+  ],
+  "website": "https://www.thebellsschools.org"
  },
  "s045": {
   "name": "Greenoak International School",
@@ -1612,15 +1620,18 @@
   "established_year": 1989,
   "gender": "girls-only",
   "boarding": true,
-  "h": "Presentation National High School is a Catholic girls' boarding school founded on 21 November 1989 by Archbishop Patrick Ebosele Ekpu of Benin City, with an initial intake of 60 girls. Its motto is 'Potestas ex Scientia' ('knowledge is power').",
+  "h": "Presentation National High School is a Catholic girls' boarding school founded on 21 November 1989 by Archbishop Patrick Ebosele Ekpu of Benin City, with an initial intake of 60 girls. Its motto is 'Potestas ex Scientia' ('knowledge is power'). The Catholic Archdiocese of Benin City founded the school to give parents a holistic education that places great weight on moral formation, while leaving room for students' creativity.",
   "a": "The school placed 11th nationally in the 2006 West African Senior School Certificate Examination, and in 2016 the Nigerian Television Authority named it the best girls' school.",
   "c": "The school is on Usunobun Street, Ugbekun Quarters, Benin City, Edo State.",
   "category": "school",
   "source_name": "Wikipedia: Presentation National High School",
   "source_url": "https://en.wikipedia.org/wiki/Presentation_National_High_School",
   "sources": [
-   "https://en.wikipedia.org/wiki/Presentation_National_High_School"
-  ]
+   "https://en.wikipedia.org/wiki/Presentation_National_High_School",
+   "https://www.presentationnationalhighschool.com.ng"
+  ],
+  "website": "https://www.presentationnationalhighschool.com.ng",
+  "s": "All students are boarders, and new junior students begin with an orientation programme."
  },
  "s062": {
   "name": "University of Ilorin Secondary School",
@@ -1703,14 +1714,17 @@
   "established_year": 2000,
   "gender": "co-ed",
   "h": "Emmanuel Baptist College is a private, mixed Baptist secondary school established by Emmanuel Baptist Church, Ilorin, on 9 October 2000. It is affiliated with the Nigerian Baptist Convention and run by a church committee, which appoints the principal.",
-  "a": "The college is an approved centre for the NECO SSCE and WASSCE examinations, and takes part in the Baptist mission schools' annual seminars and workshops.",
+  "a": "The college is an approved centre for the NECO SSCE and WASSCE examinations, and takes part in the Baptist mission schools' annual seminars and workshops. The college prepares students intensively for the WAEC, NECO and JAMB examinations, and teaches practical computing, including coding and digital literacy. Many of its senior students have scored above 300 in JAMB's national examination.",
   "c": "The school is at Tanke, Ilorin, Kwara State.",
   "category": "school",
   "source_name": "Wikipedia: Emmanuel Baptist College, Ilorin",
   "source_url": "https://en.wikipedia.org/wiki/Emmanuel_Baptist_College",
   "sources": [
-   "https://en.wikipedia.org/wiki/Emmanuel_Baptist_College"
-  ]
+   "https://en.wikipedia.org/wiki/Emmanuel_Baptist_College",
+   "https://ebco.com.ng/"
+  ],
+  "website": "https://ebco.com.ng/",
+  "s": "A daily morning assembly emphasises discipline, leadership and spiritual growth, and the school has a zero-tolerance policy on indiscipline."
  },
  "s067": {
   "name": "Regina Pacis Model Secondary School",
@@ -1753,15 +1767,18 @@
   "city": "Ilesa",
   "area": "Ijofi",
   "established_year": 1996,
-  "h": "St. Anthony's Catholic High School (SACHS) is a private Catholic secondary school founded by the Roman Catholic Diocese of Osogbo, after repeated requests from parents of pupils at the local Franciscan nursery and primary school. It was established in 1996 on a temporary site at the Ijofi-Ilesa Franciscan school, and began full operations in 1997.",
+  "h": "St. Anthony's Catholic High School (SACHS) is a private Catholic secondary school founded by the Roman Catholic Diocese of Osogbo, after repeated requests from parents of pupils at the local Franciscan nursery and primary school. It was established in 1996 on a temporary site at the Ijofi-Ilesa Franciscan school, and began full operations in 1997. Its first proprietor was Most Rev. Gabriel Abegunrin, then Catholic Bishop of Osogbo, and the current proprietor is Bishop John Akinkunmi Oyejola. The school has held more than twenty graduation ceremonies.",
   "a": "The school provides Catholic secondary education.",
   "c": "The school is at Ijofi, Ilesa, Osun State. Its permanent site covers about 60 plots, roughly ten hectares.",
   "category": "school",
   "source_name": "Wikipedia: St. Anthony's Catholic High School, Ilesa",
   "source_url": "https://en.wikipedia.org/wiki/Saint_Anthony%27s_Catholic_High_School",
   "sources": [
-   "https://en.wikipedia.org/wiki/Saint_Anthony%27s_Catholic_High_School"
-  ]
+   "https://en.wikipedia.org/wiki/Saint_Anthony%27s_Catholic_High_School",
+   "https://sachsilesa.sch.ng/"
+  ],
+  "website": "https://sachsilesa.sch.ng/",
+  "s": "Sport is a priority: every student takes part in a 40-minute sports period each week, and the school holds intramural competitions at the end of every term."
  },
  "s070": {
   "name": "Christian Secondary Commercial School, Uyo",
