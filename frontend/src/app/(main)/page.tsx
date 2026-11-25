@@ -297,7 +297,7 @@ export default async function HomePage() {
               })}
             </ul>
             <p className="mt-12">
-              <Link href="/states/" className="btn-secondary">
+              <Link href="/education/universities/#states" className="btn-secondary">
                 All 36 states and the FCT
               </Link>
             </p>

@@ -149,7 +149,7 @@ export default async function AboutPage() {
           <p>
             We aim to be accurate, and we correct mistakes promptly. If you find an error, or you represent a
             school and want to update or add a listing, please{' '}
-            <Link href="/contact/?subject=report_error" className="text-primary-600 underline">
+            <Link href="/contact/?subject=report_error" rel="nofollow" className="text-primary-600 underline">
               report it through our contact form
             </Link>
             . Tell us what is wrong and, if you can, where the correct information is published. We check

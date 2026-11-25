@@ -44,16 +44,7 @@ const nextConfig = {
     ];
   },
   
-  // Redirects
-  async redirects() {
-    return [
-      {
-        source: '/schools',
-        destination: '/',
-        permanent: false,
-      },
-    ];
-  },
+  // /schools and /states redirects are permanent (301) and live in src/middleware.ts.
   
   // Trailing slash for SEO consistency
   trailingSlash: true,

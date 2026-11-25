@@ -45,7 +45,7 @@ function getResourceLinks(pathname: string | null) {
   const currentVertical = getCurrentVertical(pathname);
   
   // Build dynamic "All States" link based on current vertical
-  let allStatesLink = '/states/'; // Default
+  let allStatesLink = '/education/universities/#states'; // every state has universities
   let allStatesLabel = 'All States';
   
   if (currentVertical && isLive(currentVertical.status)) {
