@@ -11,6 +11,7 @@ import {
   EnvelopeIcon,
   HomeIcon,
   ArrowRightOnRectangleIcon,
+  KeyIcon,
 } from '@heroicons/react/24/outline';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
@@ -21,6 +22,7 @@ const navItems = [
   { href: '/admin/submissions', label: 'Form Submissions',   icon: EnvelopeIcon },
   { href: '/admin/schools',     label: 'Records & queue',    icon: AcademicCapIcon },
   { href: '/admin/claims',      label: 'Ownership Requests', icon: ClipboardDocumentListIcon },
+  { href: '/admin/account',     label: 'Change password',    icon: KeyIcon },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
