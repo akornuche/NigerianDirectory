@@ -75,7 +75,7 @@ export default function PrivacyPage() {
               browser type, to protect the forms against spam and abuse.
             </li>
             <li>
-              <strong>Usage information</strong>, if you accept analytics cookies: pages viewed, approximate
+              <strong>Usage information</strong>, unless you turn analytics off (or, in the EEA, UK and Switzerland, only if you accept analytics cookies): pages viewed, approximate
               location derived from your IP address, device and browser type, and how you arrived at the site.
               This is collected by Google Analytics (see section 4).
             </li>
@@ -101,7 +101,8 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>To understand how the site is used</strong> and improve it, using analytics. Legal basis:
-              your consent, which you can withdraw at any time.
+              our legitimate interest in measuring use of the site (your consent in the EEA, UK and Switzerland),
+              which you can refuse or withdraw at any time with &ldquo;Necessary only&rdquo;.
             </li>
             <li>
               <strong>To show advertising</strong>, when advertising is enabled. Personalised advertising is used
@@ -113,9 +114,11 @@ export default function PrivacyPage() {
 
         <Section id="cookies" title="4. Cookies and similar technologies">
           <p>
-            When you first visit, we ask whether you accept analytics and advertising cookies. Until you choose,
-            Google services on this site run in a restricted mode that does not store analytics or advertising
-            cookies (Google Consent Mode).
+            When you first visit, we ask whether you accept analytics and advertising cookies. If you are in the
+            European Economic Area, the United Kingdom or Switzerland, Google services on this site store no
+            analytics or advertising cookies until you choose. Elsewhere, anonymous analytics is on until you
+            choose so that we can count visits, and advertising cookies stay off until you accept them
+            (Google Consent Mode).
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Strictly necessary:</strong> your cookie choice, saved in your browser&apos;s local storage.</li>
@@ -145,7 +148,7 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Vercel</strong>: hosts the website and its servers.</li>
             <li><strong>Neon</strong>: hosts our database, where form submissions are stored.</li>
-            <li><strong>Google</strong>: Google Analytics (with consent), email delivery of form notifications, and Google AdSense when advertising is enabled.</li>
+            <li><strong>Google</strong>: Google Analytics (which you can turn off), email delivery of form notifications, and Google AdSense when advertising is enabled.</li>
           </ul>
           <p>
             We may also disclose data where the law requires it, or to protect the rights and safety of our users

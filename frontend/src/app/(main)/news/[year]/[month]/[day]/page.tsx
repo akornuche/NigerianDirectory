@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Fragment } from 'react';
 import { notFound } from 'next/navigation';
-import AdBanner from '@/components/ads/AdBanner';
-import { CATEGORY_LABELS, dayPath, formatDay, formatMonth, formatShortDay, monthPath, newsApi } from '@/lib/news';
+import DayStories from '@/components/news/DayStories';
+import ShareStory from '@/components/news/ShareStory';
+import { CATEGORY_LABELS, dayPath, formatDay, formatMonth, formatShortDay, monthPath, newsApi, storyPath } from '@/lib/news';
 
 type Params = Promise<{ year: string; month: string; day: string }>;
 
@@ -30,10 +30,6 @@ export default async function NewsDayPage({ params }: { params: Params }) {
   const data = await newsApi.day(date);
   if (!data) notFound();
 
-  const counts = data.items.reduce<Record<string, number>>((acc, i) => {
-    acc[i.category] = (acc[i.category] || 0) + 1;
-    return acc;
-  }, {});
   const ym = date.slice(0, 7);
   const leadParas = (data.lead || '').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
@@ -50,8 +46,31 @@ export default async function NewsDayPage({ params }: { params: Params }) {
       itemListElement: data.items.map((i) => ({
         '@type': 'ListItem',
         position: i.rank,
-        name: i.headline,
-        url: i.sources[0]?.url,
+        url: `${SITE}${storyPath(date, i.rank)}`,
+        item: {
+          '@type': 'NewsArticle',
+          '@id': `${SITE}${storyPath(date, i.rank)}`,
+          headline: i.headline.slice(0, 110),
+          description: i.summary.length > 300 ? `${i.summary.slice(0, 297)}...` : i.summary,
+          articleSection: CATEGORY_LABELS[i.category] || i.category,
+          // The news day itself (evening, Lagos time), not the date an editor
+          // approved the digest, which can be weeks later for the archive.
+          datePublished: `${date}T20:00:00+01:00`,
+          dateModified: data.published_at || `${date}T20:00:00+01:00`,
+          inLanguage: 'en-NG',
+          url: `${SITE}${storyPath(date, i.rank)}`,
+          mainEntityOfPage: `${SITE}${dayPath(date)}`,
+          ...(i.states.length ? { contentLocation: i.states.map((st) => ({ '@type': 'Place', name: `${st}, Nigeria` })) } : {}),
+          author: { '@type': 'Organization', name: 'Nigerian Directory', url: SITE },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Nigerian Directory',
+            url: SITE,
+            logo: { '@type': 'ImageObject', url: `${SITE}/naijadir-mark.png` },
+          },
+          isBasedOn: i.sources.map((src) => src.url),
+          citation: i.sources.map((src) => ({ '@type': 'CreativeWork', name: src.name, url: src.url })),
+        },
       })),
     },
   };
@@ -83,77 +102,13 @@ export default async function NewsDayPage({ params }: { params: Params }) {
             ))}
           </div>
         )}
-        <p className="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-[15px] text-ink-muted">
-          {Object.entries(counts)
-            .sort((a, b) => b[1] - a[1])
-            .map(([c, n]) => (
-              <span key={c}>
-                {CATEGORY_LABELS[c] || c} <span className="tabular text-ink">{n}</span>
-              </span>
-            ))}
-        </p>
+        <div className="mt-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Share this day</p>
+          <ShareStory path={dayPath(date)} title={`Nigeria news, ${formatDay(date)}: the ${data.items.length} most reported stories`} compact />
+        </div>
       </header>
 
-      <ol className="shell mt-12 lg:mt-16">
-        {data.items.map((item, idx) => (
-          <Fragment key={item.rank}>
-            <li id={`story-${item.rank}`} className="grid grid-cols-[3rem_1fr] gap-x-4 border-t border-rule py-8 sm:grid-cols-[5rem_1fr] lg:grid-cols-12 lg:gap-x-8">
-              <span className="font-display text-4xl font-bold leading-none tracking-poster tabular text-ink-muted sm:text-5xl lg:col-span-1">
-                {item.rank}
-              </span>
-              <div className="lg:col-span-8">
-                <p className="text-sm font-medium text-primary-700">
-                  {CATEGORY_LABELS[item.category] || item.category}
-                  {item.states.length > 0 && (
-                    <span className="text-ink-muted">
-                      {' · '}
-                      {(item.state_links || item.states.map((name) => ({ name, path: '' }))).map((st, i) => (
-                        <Fragment key={st.name}>
-                          {i > 0 && ', '}
-                          {st.path ? (
-                            <Link href={st.path} title={`Universities in ${st.name}`} className="hover:text-secondary-500 hover:underline">{st.name}</Link>
-                          ) : st.name}
-                        </Fragment>
-                      ))}
-                    </span>
-                  )}
-                </p>
-                <h2 className="mt-2 text-2xl leading-tight lg:text-[1.9rem]">{item.headline}</h2>
-                <p className="mt-3 max-w-[68ch] text-[17px] leading-relaxed text-ink-2">{item.summary}</p>
-                {item.links && item.links.length > 0 && (
-                  <p className="mt-4 text-[15px] text-ink-muted">
-                    In the directory:{' '}
-                    {item.links.map((l, i) => (
-                      <Fragment key={l.path}>
-                        {i > 0 && ' · '}
-                        <Link href={l.path} className="font-medium text-primary-700 underline decoration-1 underline-offset-4 hover:text-secondary-500">
-                          {l.name}
-                        </Link>
-                      </Fragment>
-                    ))}
-                  </p>
-                )}
-                <p className="mt-4 text-[15px] text-ink-muted">
-                  Reported by{' '}
-                  {item.sources.map((s, i) => (
-                    <Fragment key={s.url}>
-                      {i > 0 && ' · '}
-                      <a href={s.url} target="_blank" rel="noopener" className="font-medium text-ink underline decoration-1 underline-offset-4 hover:text-secondary-500">
-                        {s.name}
-                      </a>
-                    </Fragment>
-                  ))}
-                </p>
-              </div>
-            </li>
-            {(idx === 9 || idx === 29) && data.items.length > idx + 5 && (
-              <li className="flex justify-center py-6" aria-hidden="true">
-                <AdBanner slot={idx === 9 ? 'news-day-infeed-1' : 'news-day-infeed-2'} size="rectangle" />
-              </li>
-            )}
-          </Fragment>
-        ))}
-      </ol>
+      <DayStories date={date} items={data.items} />
 
       <nav className="shell flex flex-wrap justify-between gap-6 border-t border-rule py-12 pb-24" aria-label="Other days">
         {data.newer ? (

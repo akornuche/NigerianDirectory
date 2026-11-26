@@ -19,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { getSchoolByPath, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
+import PhotoCredit from '@/components/content/PhotoCredit';
 import { assessContentQuality } from '@/lib/content-quality';
 import { pageTitle } from '@/lib/seo';
 import { recordPath } from '@/lib/slug';
@@ -385,6 +386,7 @@ export default async function SchoolPage({ params }: Props) {
 
           <div className="lg:col-span-5">
             {school.hero_image_url ? (
+              <>
               <div className="duotone-well relative aspect-[4/3] overflow-hidden lg:aspect-square">
                 <Image
                   src={school.hero_image_url}
@@ -395,6 +397,8 @@ export default async function SchoolPage({ params }: Props) {
                   priority
                 />
               </div>
+              <PhotoCredit sources={school.field_sources} />
+              </>
             ) : (
               <div className="field flex aspect-[4/3] flex-col justify-end p-8 lg:aspect-square">
                 {school.established_year ? (
@@ -917,24 +921,17 @@ export default async function SchoolPage({ params }: Props) {
               {/* Browse more in state */}
               <div className="card p-6">
                 <h3 className="font-semibold text-gray-900 mb-3">Browse More Schools</h3>
-                <div className="space-y-2 text-sm">
+                <div className="text-sm">
                   <Link
                     href={`/education/schools/${resolvedParams.state}/`}
-                    className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
-                  >
-                    <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
-                    Schools in {school.state}
-                  </Link>
-                  <Link
-                    href={`/education/schools/${resolvedParams.state}/`}
-                    className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
+                    className="flex min-h-[44px] items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
                   >
                     <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
                     Schools in {school.state}
                   </Link>
                   <Link
                     href="/education/schools/"
-                    className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
+                    className="flex min-h-[44px] items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
                   >
                     <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
                     All Nigerian Schools

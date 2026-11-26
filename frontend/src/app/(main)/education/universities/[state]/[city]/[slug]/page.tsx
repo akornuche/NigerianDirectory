@@ -17,6 +17,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { api, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
+import PhotoCredit from '@/components/content/PhotoCredit';
 import SourceReferences from '@/components/content/SourceReferences';
 import { assessContentQuality } from '@/lib/content-quality';
 import { pageTitle } from '@/lib/seo';
@@ -256,6 +257,7 @@ export default async function UniversityPage({ params }: Props) {
                     </div>
                     <div className="lg:col-span-5">
                         {uni.hero_image_url ? (
+                            <>
                             <div className="duotone-well relative aspect-[4/3] overflow-hidden lg:aspect-square">
                                 <Image
                                     src={uni.hero_image_url}
@@ -265,6 +267,8 @@ export default async function UniversityPage({ params }: Props) {
                                     priority
                                 />
                             </div>
+                            <PhotoCredit sources={uni.field_sources} />
+                            </>
                         ) : (
                             <div className="field flex aspect-[4/3] flex-col justify-end p-8 lg:aspect-square">
                                 {uni.established_year && (
@@ -453,16 +457,16 @@ export default async function UniversityPage({ params }: Props) {
                         {/* Breadcrumbs Navigation */}
                         <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
                             <h3 className="text-lg font-bold text-gray-900 mb-6">Directory Path</h3>
-                            <div className="space-y-4 text-sm">
-                                <Link href="/" className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                            <div className="space-y-1 text-sm">
+                                <Link href="/" className="flex min-h-[44px] items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     Home
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />
-                                <Link href="/education/universities/" className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                                <Link href="/education/universities/" className="flex min-h-[44px] items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     Education / Universities
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />
-                                <Link href={`/education/universities/${toSlugSegment(uni.state)}/`} className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                                <Link href={`/education/universities/${toSlugSegment(uni.state)}/`} className="flex min-h-[44px] items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     {uni.state} State
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />

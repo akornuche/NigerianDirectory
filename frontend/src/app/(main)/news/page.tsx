@@ -3,6 +3,7 @@ import Link from 'next/link';
 import MonthBlock from '@/components/news/MonthBlock';
 import ArchiveMore from '@/components/news/ArchiveMore';
 import AdBanner from '@/components/ads/AdBanner';
+import NewsFinder from '@/components/news/NewsFinder';
 import { newsApi } from '@/lib/news';
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function NewsPage() {
-  const data = await newsApi.months(undefined, 3);
+  const [data, daysData] = await Promise.all([newsApi.months(undefined, 3), newsApi.days()]);
   const months = data?.months || [];
 
   return (
@@ -33,6 +34,12 @@ export default async function NewsPage() {
           </p>
         </div>
       </section>
+
+      {months.length > 0 && (
+        <section aria-label="Find a story" className="shell mt-12 border-y border-rule py-8 lg:mt-16">
+          <NewsFinder days={daysData?.days || []} />
+        </section>
+      )}
 
       <div className="shell pb-8">
         {months.length ? (
@@ -79,8 +86,9 @@ export default async function NewsPage() {
             <li>
               <p className="font-display text-2xl font-bold tracking-display text-ink">3. We summarise in our own words</p>
               <p className="mt-2">
-                Each summary gives the facts in two or three sentences and credits the outlets, with links
-                to their full reports. Claims are attributed to whoever made them.
+                Each summary gives the facts in three or four sentences, with short quotes where they help,
+                and credits the outlets with links to their full reports. Claims are attributed to whoever
+                made them.
               </p>
             </li>
             <li>

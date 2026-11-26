@@ -5,6 +5,8 @@
  *   GET /api/news/months?before=YYYY-MM&limit=3   archive by month, newest first
  *   GET /api/news/month/:ym                       one month's days (ym = YYYY-MM)
  *   GET /api/news/day/:date                       one day's stories (date = YYYY-MM-DD)
+ *   GET /api/news/days                            every published day
+ *   GET /api/news/search?q=&category=&page=       search published stories
  *
  * Admin review (mounted separately at /api/admin/news):
  *   GET    /                         every day, draft or published
@@ -146,6 +148,55 @@ publicRouter.get('/day/:date', async (req, res, next) => {
             items: await withLinks(items.rows),
             older: n.older ? ymd(n.older) : null,
             newer: n.newer ? ymd(n.newer) : null,
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Every published day, newest first: lets the archive's date picker offer
+// only days that exist.
+publicRouter.get('/days', async (req, res, next) => {
+    try {
+        const r = await query(`SELECT TO_CHAR(day, 'YYYY-MM-DD') AS day FROM news_days WHERE status = 'published' ORDER BY day DESC`);
+        res.set('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+        res.json({ days: r.rows.map((x) => x.day) });
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Search published stories: ?q=words&category=politics&page=1. Every word must
+// appear in the headline or summary (English stemming, so "elections" finds
+// "election"). Results are newest first, 20 a page.
+publicRouter.get('/search', async (req, res, next) => {
+    try {
+        const q = String(req.query.q || '').trim().slice(0, 100);
+        const category = String(req.query.category || '');
+        const page = Math.max(parseInt(req.query.page, 10) || 1, 1);
+        if (q.length < 2) return res.status(400).json({ error: 'Search needs at least 2 characters' });
+        if (category && !CATEGORIES.includes(category)) return res.status(400).json({ error: 'Unknown category' });
+        const params = [q];
+        let where = `d.status = 'published'
+            AND to_tsvector('english', i.headline || ' ' || i.summary) @@ plainto_tsquery('english', $1)`;
+        if (category) { params.push(category); where += ` AND i.category = $${params.length}`; }
+        const limit = 20;
+        params.push(limit, (page - 1) * limit);
+        const r = await query(
+            `SELECT TO_CHAR(i.day, 'YYYY-MM-DD') AS day, i.rank, i.headline, i.summary, i.category,
+                    COUNT(*) OVER()::int AS total
+             FROM news_items i JOIN news_days d ON d.day = i.day
+             WHERE ${where}
+             ORDER BY i.day DESC, i.rank
+             LIMIT $${params.length - 1} OFFSET $${params.length}`,
+            params
+        );
+        const total = r.rows[0] ? r.rows[0].total : 0;
+        res.set('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+        res.json({
+            q, category: category || null, page, total,
+            pages: Math.ceil(total / limit),
+            results: r.rows.map(({ total: _t, ...row }) => row),
         });
     } catch (error) {
         next(error);

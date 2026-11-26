@@ -72,8 +72,8 @@ export default function CookieConsent() {
         <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex-1 text-sm">
             <p>
-              We use cookies to enhance your experience, serve personalized ads, and analyze traffic.
-              By clicking &quot;Accept All&quot;, you consent to our use of cookies.{' '}
+              We use cookies to count visits and, if you allow it, to show personalised ads.
+              &quot;Accept All&quot; allows both; &quot;Necessary only&quot; turns analytics and ad cookies off.{' '}
               <Link href="/privacy/" className="underline hover:text-secondary-400">
                 Privacy Policy
               </Link>

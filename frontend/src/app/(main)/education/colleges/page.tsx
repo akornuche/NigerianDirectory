@@ -113,7 +113,7 @@ export default async function CollegesPage() {
                                             className="object-cover"
                                         />
                                         <div className="absolute top-4 left-4">
-                                            <span className="px-3 py-1 bg-white/90 text-emerald-700 text-[10px] font-black rounded-full ">
+                                            <span className="px-3 py-1 bg-white/90 text-emerald-700 text-xs font-black rounded-full ">
                                                 {school.type}
                                             </span>
                                         </div>
