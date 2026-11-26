@@ -74,7 +74,7 @@ export default async function CollegePage({ params }: Props) {
 
                             <div className="flex-1 text-white md:pb-6">
                                 <div className="flex gap-2 mb-3">
-                                    <span className="px-3 py-1 bg-emerald-500 text-white text-[10px] font-black rounded-full ">
+                                    <span className="px-3 py-1 bg-emerald-500 text-white text-xs font-black rounded-full ">
                                         {school.institution_category}
                                     </span>
                                 </div>

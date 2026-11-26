@@ -126,7 +126,7 @@ export default async function HospitalStatePage({ params }: Props) {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                                 <div className="absolute top-4 left-4">
-                                    <span className="px-3 py-1 bg-white/90 backdrop-blur text-red-700 text-[10px] font-black rounded-full shadow-sm tracking-tighter">
+                                    <span className="px-3 py-1 bg-white/90 backdrop-blur text-red-700 text-xs font-black rounded-full shadow-sm tracking-tighter">
                                         {hospital.type}
                                     </span>
                                 </div>
@@ -151,7 +151,7 @@ export default async function HospitalStatePage({ params }: Props) {
                                         More Detail <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                                     </div>
                                     {hospital.established_year && (
-                                        <span className="text-[10px] font-bold text-gray-300">
+                                        <span className="text-xs font-bold text-gray-300">
                                             EST. {hospital.established_year}
                                         </span>
                                     )}

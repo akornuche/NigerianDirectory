@@ -126,7 +126,7 @@ export default function AdminLoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPw(v => !v)}
-                  className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-600"
+                  className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-gray-400 hover:text-gray-600"
                   tabIndex={-1}
                 >
                   {showPw

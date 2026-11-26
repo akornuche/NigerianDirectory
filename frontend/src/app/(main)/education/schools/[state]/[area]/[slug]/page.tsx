@@ -917,24 +917,17 @@ export default async function SchoolPage({ params }: Props) {
               {/* Browse more in state */}
               <div className="card p-6">
                 <h3 className="font-semibold text-gray-900 mb-3">Browse More Schools</h3>
-                <div className="space-y-2 text-sm">
+                <div className="text-sm">
                   <Link
                     href={`/education/schools/${resolvedParams.state}/`}
-                    className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
-                  >
-                    <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
-                    Schools in {school.state}
-                  </Link>
-                  <Link
-                    href={`/education/schools/${resolvedParams.state}/`}
-                    className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
+                    className="flex min-h-[44px] items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
                   >
                     <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
                     Schools in {school.state}
                   </Link>
                   <Link
                     href="/education/schools/"
-                    className="flex items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
+                    className="flex min-h-[44px] items-center gap-2 text-primary-600 hover:text-primary-800 hover:underline"
                   >
                     <span className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0" />
                     All Nigerian Schools

@@ -453,16 +453,16 @@ export default async function UniversityPage({ params }: Props) {
                         {/* Breadcrumbs Navigation */}
                         <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
                             <h3 className="text-lg font-bold text-gray-900 mb-6">Directory Path</h3>
-                            <div className="space-y-4 text-sm">
-                                <Link href="/" className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                            <div className="space-y-1 text-sm">
+                                <Link href="/" className="flex min-h-[44px] items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     Home
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />
-                                <Link href="/education/universities/" className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                                <Link href="/education/universities/" className="flex min-h-[44px] items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     Education / Universities
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />
-                                <Link href={`/education/universities/${toSlugSegment(uni.state)}/`} className="flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                                <Link href={`/education/universities/${toSlugSegment(uni.state)}/`} className="flex min-h-[44px] items-center text-gray-500 hover:text-indigo-600 transition-colors">
                                     {uni.state} State
                                 </Link>
                                 <div className="h-4 border-l-2 border-gray-100 ml-2" />
