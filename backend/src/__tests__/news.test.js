@@ -18,6 +18,8 @@ jest.mock('../config/database', () => ({
             return { rows: params[0] === '2026-09-01' ? [{ day: new Date('2026-09-01'), lead: 'Lead', published_at: null }] : [] };
         }
         if (/SELECT rank, headline/.test(sql)) return { rows: [{ rank: 1, headline: 'UNILAG reopens', summary: 'S', category: 'education', states: ['Lagos'], sources: [] }] };
+        if (/plainto_tsquery/.test(sql)) return { rows: [{ day: '2026-09-30', rank: 1, headline: 'Dangote breaks ground', summary: 'S', category: 'business', total: 21 }] };
+        if (/AS day FROM news_days WHERE status = 'published' ORDER BY day DESC/.test(sql)) return { rows: [{ day: '2026-09-30' }, { day: '2026-09-29' }] };
         if (/FROM schools/.test(sql)) return { rows: [{ name: 'University of Lagos', slug: 'university-of-lagos', state: 'Lagos', city: 'Akoka', area: null, institution_category: 'university' }] };
         if (/AS older/.test(sql)) return { rows: [{ older: null, newer: new Date('2026-09-02') }] };
         if (/COUNT\(\*\)::int AS n FROM news_items/.test(sql)) return { rows: [{ n: params[0] === '2026-09-03' ? 0 : 5 }] };
@@ -68,6 +70,28 @@ describe('public news', () => {
         expect(res.status).toBe(200);
         expect(res.body).toEqual({ months: [], next: null });
         expect(mockQueries[0].sql).toContain("status = 'published'");
+    });
+});
+
+describe('archive search and day list', () => {
+    test('search returns published matches with paging', async () => {
+        const res = await request(app).get('/api/news/search?q=dangote&category=business');
+        expect(res.status).toBe(200);
+        expect(res.body).toMatchObject({ q: 'dangote', category: 'business', total: 21, pages: 2 });
+        expect(res.body.results[0]).not.toHaveProperty('total');
+        const q = mockQueries.find((x) => /plainto_tsquery/.test(x.sql));
+        expect(q.sql).toContain("d.status = 'published'");
+        expect(q.params).toEqual(['dangote', 'business', 20, 0]);
+    });
+
+    test('too-short queries and unknown categories are rejected', async () => {
+        expect((await request(app).get('/api/news/search?q=a')).status).toBe(400);
+        expect((await request(app).get('/api/news/search?q=oil&category=gossip')).status).toBe(400);
+    });
+
+    test('the day list has only published days', async () => {
+        const res = await request(app).get('/api/news/days');
+        expect(res.body.days).toEqual(['2026-09-30', '2026-09-29']);
     });
 });
 

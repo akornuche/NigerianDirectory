@@ -80,7 +80,32 @@ export const newsApi = {
   month: (ym: string) =>
     get<{ month: string; days: NewsDaySummary[]; older: string | null; newer: string | null }>(`/news/month/${ym}`),
   day: (date: string) => get<NewsDay>(`/news/day/${date}`),
+  days: () => get<{ days: string[] }>(`/news/days`),
+  search: (q: string, category?: string, page = 1) =>
+    get<NewsSearch>(
+      `/news/search?q=${encodeURIComponent(q)}${category ? `&category=${encodeURIComponent(category)}` : ''}&page=${page}`
+    ),
 };
+
+export interface NewsSearchResult {
+  day: string;
+  rank: number;
+  headline: string;
+  summary: string;
+  category: string;
+}
+
+export interface NewsSearch {
+  q: string;
+  category: string | null;
+  page: number;
+  total: number;
+  pages: number;
+  results: NewsSearchResult[];
+}
+
+/** Address of one story inside its day page. */
+export const storyPath = (ymd: string, rank: number) => `${dayPath(ymd)}#story-${rank}`;
 
 const asDate = (ymd: string) => new Date(`${ymd.length === 7 ? `${ymd}-01` : ymd}T12:00:00Z`);
 
