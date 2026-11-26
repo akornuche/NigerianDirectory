@@ -96,26 +96,27 @@ def wiki_candidates(rec):
         if toks and not all(tok in t.lower() for tok in toks[:2]):
             continue
         out.append(('commons', t, 'search'))
-    # resolve file -> url + licence
+    # resolve file -> url + licence, in one batched request
     res = []
-    for src, ftitle, via in out[:8]:
-        q = urllib.parse.urlencode({'action': 'query', 'titles': ftitle, 'prop': 'imageinfo',
-                                    'iiprop': 'url|size|extmetadata', 'iiurlwidth': 1600, 'format': 'json'})
-        try:
-            pages = get_json('https://commons.wikimedia.org/w/api.php?' + q)['query']['pages']
-        except Exception:
+    pick = out[:8]
+    if not pick:
+        return res
+    q = urllib.parse.urlencode({'action': 'query', 'titles': '|'.join(f for _, f, _ in pick), 'prop': 'imageinfo',
+                                'iiprop': 'url|size|extmetadata', 'iiurlwidth': 1280, 'format': 'json'})
+    pages = get_json('https://commons.wikimedia.org/w/api.php?' + q)['query']['pages']
+    via = {f: (src, v) for src, f, v in pick}
+    for p in pages.values():
+        ii = (p.get('imageinfo') or [None])[0]
+        if not ii:
+            continue  # local (non-Commons, possibly non-free) file: skip
+        meta = ii.get('extmetadata', {})
+        lic = meta.get('LicenseShortName', {}).get('value', '')
+        if not re.search(r'CC|Public domain|GFDL|PD', lic, re.I):
             continue
-        for p in pages.values():
-            ii = (p.get('imageinfo') or [None])[0]
-            if not ii:
-                continue  # local (non-Commons, possibly non-free) file: skip
-            meta = ii.get('extmetadata', {})
-            lic = meta.get('LicenseShortName', {}).get('value', '')
-            if not re.search(r'CC|Public domain|GFDL|PD', lic, re.I):
-                continue
-            artist = re.sub('<[^>]+>', '', meta.get('Artist', {}).get('value', '')).strip()
-            res.append({'source': src, 'url': ii.get('thumburl') or ii['url'], 'page': ii.get('descriptionurl'),
-                        'licence': lic, 'author': artist[:120], 'via': via})
+        artist = re.sub('<[^>]+>', '', meta.get('Artist', {}).get('value', '')).strip()
+        src, v = via.get(p.get('title'), ('commons', 'search'))
+        res.append({'source': src, 'url': ii.get('thumburl') or ii['url'], 'page': ii.get('descriptionurl'),
+                    'licence': lic, 'author': artist[:120], 'via': v})
     return res
 
 
@@ -178,9 +179,9 @@ def fetch_ok(c, path):
     return {**c, 'file': path, 'size': [w, h], 'bytes': len(data)}
 
 
-def run_one(rec, out_dir):
+def run_one(rec, out_dir, finders, start=0):
     found = []
-    for finder in (wiki_candidates, site_candidates):
+    for finder in finders:
         try:
             cands = finder(rec)
         except Exception as e:  # network or parse errors: try the next source
@@ -189,7 +190,7 @@ def run_one(rec, out_dir):
         for c in cands:
             if len(found) >= 6:
                 break
-            path = os.path.join(out_dir, f"{rec['id']}-{len(found)}")
+            path = os.path.join(out_dir, f"{rec['id']}-{start + len(found)}")
             try:
                 r = fetch_ok(c, path)
             except Exception:
@@ -200,12 +201,22 @@ def run_one(rec, out_dir):
 
 
 if __name__ == '__main__':
+    # python3 -I hero_recrawl.py targets.json out_dir [wiki|website]
     targets = json.load(open(sys.argv[1]))
     out_dir = sys.argv[2]
+    only = sys.argv[3] if len(sys.argv) > 3 else None
+    FINDERS = {'wiki': (wiki_candidates,), 'website': (site_candidates,)}.get(only, (wiki_candidates, site_candidates))
     os.makedirs(out_dir, exist_ok=True)
-    results = {}
-    with ThreadPoolExecutor(6) as ex:
-        for rid, found in ex.map(lambda r: run_one(r, out_dir), targets):
-            results[rid] = found
-            print(rid, len(found), [f['source'] for f in found])
-    json.dump(results, open(os.path.join(out_dir, '..', 'candidates.json'), 'w'), indent=1)
+    res_path = os.path.join(out_dir, '..', 'candidates.json')
+    results = json.load(open(res_path)) if os.path.exists(res_path) else {}
+    lock = threading.Lock()
+
+    def job(rec):
+        rid, found = run_one(rec, out_dir, FINDERS, start=len(results.get(str(rec['id']), [])))
+        with lock:
+            results.setdefault(str(rid), []).extend(found)
+            json.dump(results, open(res_path, 'w'), indent=1)
+        print(rid, len(found), flush=True)
+
+    with ThreadPoolExecutor(1 if only == 'wiki' else 6) as ex:
+        list(ex.map(job, targets))
