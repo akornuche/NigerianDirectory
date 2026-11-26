@@ -59,6 +59,7 @@ export interface School {
     // Images
     logo_url?: string;
     hero_image_url?: string;
+    field_sources?: Record<string, unknown> | null;
     gallery_images?: string[];
 
     // Status flags

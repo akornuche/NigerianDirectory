@@ -17,6 +17,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { api, movedToPath, School } from '@/lib/api';
 import AdBanner from '@/components/ads/AdBanner';
+import PhotoCredit from '@/components/content/PhotoCredit';
 import SourceReferences from '@/components/content/SourceReferences';
 import { assessContentQuality } from '@/lib/content-quality';
 import { pageTitle } from '@/lib/seo';
@@ -256,6 +257,7 @@ export default async function UniversityPage({ params }: Props) {
                     </div>
                     <div className="lg:col-span-5">
                         {uni.hero_image_url ? (
+                            <>
                             <div className="duotone-well relative aspect-[4/3] overflow-hidden lg:aspect-square">
                                 <Image
                                     src={uni.hero_image_url}
@@ -265,6 +267,8 @@ export default async function UniversityPage({ params }: Props) {
                                     priority
                                 />
                             </div>
+                            <PhotoCredit sources={uni.field_sources} />
+                            </>
                         ) : (
                             <div className="field flex aspect-[4/3] flex-col justify-end p-8 lg:aspect-square">
                                 {uni.established_year && (

@@ -173,6 +173,7 @@ export interface School {
   student_count?: number;
   logo_url?: string;
   hero_image_url?: string;
+  field_sources?: Record<string, unknown> | null;
   gallery_images?: string[];
   meta_title?: string;
   meta_description?: string;
