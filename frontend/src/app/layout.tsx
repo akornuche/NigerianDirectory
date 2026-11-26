@@ -35,14 +35,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-NG" className={radioCanada.variable}>
       <head>
         {/* Google Consent Mode defaults. Must run before any Google tag
-            (AdSense, GA), so it is the first script in <head>. Everything
-            is denied until the visitor chooses; a returning visitor's saved
-            choice is re-applied immediately. See CookieConsent. */}
+            (AdSense, GA), so it is the first script in <head>.
+            - EEA, UK and Switzerland: everything is denied until the visitor
+              chooses (opt-in, as the law there requires).
+            - Elsewhere (including Nigeria): anonymous analytics is on by
+              default so visits are counted; advertising storage still waits
+              for "Accept all". "Necessary only" turns analytics off.
+            A returning visitor's saved choice is re-applied immediately.
+            See CookieConsent. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500,region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
 try{var c=localStorage.getItem('cookie-consent');
+if(c==='necessary'){gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});}
 if(c==='all'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}}catch(e){}`,
           }}
         />
